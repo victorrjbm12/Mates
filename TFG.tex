@@ -215,6 +215,33 @@ Volem que cada component $U_I^j$ sigui complex, per tal que oscil·li com $e^{ix
 \begin{equation*}
     U_{\overline{I}} = \overline{U}_I, \quad \overline{\overline{I}} = I.
 \end{equation*}
+Ara tenim un error mètric $h_1 = g - \nabla u_1 ^{\intercal}\nabla u_1$.
+\begin{equation*}
+    h_1 = 
+        \left( h-\sum_{I} \nabla \overline{U}_I ^{\intercal}\nabla U_I \right) 
+        - \sum_{I}\left( \nabla u ^{\intercal}\nabla U_I + \nabla U_I ^{\intercal}\nabla u \right)
+        - \sum_{I,J: J\not = \overline I} \nabla U_I ^{\intercal}\nabla U_J.
+\end{equation*}
+I anomenem els tres sumands, en ordre, $q_{\text{mèt}}$, $q_{\text{lin}}$ i $q_{\text{alt}}$.
+
+Volem una correcció que oscil·li en una sola direcció $\xi\in\mathbb R^2$, $|\xi|=1$. Posem
+\begin{equation*}
+    U_I = W = \frac1\lambda a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi},
+\end{equation*}
+amb $a:D\to\mathbb R$ i $\textbf{n}:D\to\mathbb C^n$ tal que $\textbf{n}\cdot \overline{\textbf{n}}=1$. Perque sigui real, definim també $\overline I\in\mathcal I$ tal que 
+\begin{equation*}
+    U_{\overline{I}} = \overline W = \frac1\lambda a(x)\overline{\textbf{n}}(x)e^{-\lambda i x \cdot \xi}.
+\end{equation*}
+
+Per eliminar el terme $q_{\text{mèt}}$, observem que
+\begin{equation*}
+    \begin{aligned}
+    \nabla_j W &= i\xi_j a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi} + \frac{1}{\lambda}\nabla_j (a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi})\\
+    &=i\xi_j a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi} + O(\frac{1}{\lambda})
+    \end{aligned}
+\end{equation*}
+EXPLICAR PER QUE ÉS O(1/LAMBDA)!!!
+
 
 
 
