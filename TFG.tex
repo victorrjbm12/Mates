@@ -1,0 +1,243 @@
+% chktex-file 1
+\documentclass[11pt,a4paper,openright,oneside]{book}
+\usepackage{amsfonts, amsmath, amssymb,latexsym,amsthm, mathrsfs, enumerate}
+\usepackage[catalan]{babel}
+\usepackage{epsfig}
+
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{natbib}
+\usepackage{comment}
+\usepackage{microtype}
+\usepackage{multicol}
+\usepackage{amsfonts}
+\usepackage{bbm}
+
+%\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+
+\parskip=5pt
+\parindent=15pt
+\usepackage[margin=1.2in]{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\set}{\{}{\}}
+
+\setcounter{page}{0}
+
+
+\numberwithin{equation}{section}
+\newtheorem{teo}{Teorema}[section]
+\newtheorem*{teo*}{Teorema}
+\newtheorem*{prop*}{Proposici\'o}
+\newtheorem*{corol*}{Coro{\l}ari}
+\newtheorem{prop}[teo]{Proposici\'o}
+\newtheorem{corol}[teo]{Coro{\l}ari}
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{defi}[teo]{Definici\'o}
+\newtheorem{nota}{Notaci\'o}
+
+
+\theoremstyle{definition}
+\newtheorem{prob}[teo]{Problema}
+\newtheorem*{sol}{Soluci\'o}
+\newtheorem{ex}[teo]{Exemple}
+\newtheorem{exs}[teo]{Exemples}
+\newtheorem{obs}[teo]{Observaci\'o}
+\newtheorem{obss}[teo]{Observacions}
+
+\def\qed{\hfill $\square$}
+
+\renewcommand{\refname}{Bibliografia}
+% --------------------------------------------------
+\usepackage{fancyhdr}
+
+\lhead{}
+\lfoot{}
+\rhead{}
+\cfoot{}
+\rfoot{\thepage}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\bibstyle{plainnat}
+
+\thispagestyle{empty}
+
+\begin{titlepage}
+\begin{center}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=6cm]{matematiquesinformatica-pos-rgb.png}
+\end{center}
+\end{figure}
+
+\vspace*{1cm}
+\textbf{\LARGE GRAU DE MATEM\`{A}TIQUES } \\
+\vspace*{.5cm}
+\textbf{\LARGE Treball final de grau} \\
+
+\vspace*{1.5cm}
+\rule{16cm}{0.1mm}\\
+\begin{Huge}
+\textbf{EL MEU TFG} \\
+\end{Huge}
+\rule{16cm}{0.1mm}\\
+
+\vspace{1cm}
+
+\begin{flushright}
+\textbf{\LARGE Autor: Víctor Rubio Jiménez}
+
+\vspace*{2cm}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{ll}
+\textbf{\Large Director:} & \textbf{\Large Dr. Ignasi Mundet } \\
+\textbf{\Large Realitzat a:} & \textbf{\Large  Departament de matemàtiques i informàtica   } \\
+\\
+\textbf{\Large Barcelona,} & \textbf{\Large \today }
+\end{tabular}
+
+\end{flushright}
+
+\end{center}
+
+
+
+
+
+
+
+
+
+
+\end{titlepage}
+
+
+\newpage
+\pagenumbering{roman} 
+
+\section*{Abstract}
+My wonderful abstract.
+
+%The aim of this project is to study machine learning's mathematical foundations until the most important results are reached, as well as to analyze a recent research result from the perspective of the previously commented results. At fist place, all theoretical concepts and results, both required or desired, are introduced. Finally, it takes place the mentioned analysis.
+
+\section*{Resum}
+\begin{itemize}
+    \item Explicar diferència entre Continu i Diferenciable i totes les restriccions
+    \item Explicar C1 i mobius
+    \item Mirar tor ambient space isometric embeddings square flat torus
+    \item MIrar article Nash, Gromov
+    \item Mirar quin Cn agafa al paper band
+\end{itemize}
+
+\newpage 
+
+
+\section*{Agra\"{\i}ments}
+
+blablabla
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\chapter{Introducci\'o}
+
+
+
+\subsection*{Objectius del treball}
+
+\begin{itemize}
+    \item explicats
+\end{itemize}
+
+\subsection*{Estructura de la mem\`oria}
+tremendo
+
+\subsection*{Guia de lectura}
+faig servir incrustació, que potser hauria de dir immersió?
+
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{Comencem}
+
+
+\newpage
+\chapter{Teorema Nash-Kuiper C1}
+\section{Explicació del Sung-Jin Oh}
+\begin{teo} Sigui $(M,g)$ una superfície, $N\ge\dim M+1$ i $u:M\to\mathbb R^N$ una incrustació estrictament curta, és a dir, tal que la longitud de cada vector en $M$ s'escurça (estrictament) sota $\nabla u$. Aleshores $u$ es pot aproximar uniformement per incrustacions isomètriques $C^1$.
+\end{teo}
+Per exemple, l'homotècia $\mathbb S^2\to\varepsilon\mathbb S^2$ amb $\varepsilon\in(0,1)$ és una aplicació \textit{curta}. 
+\begin{obs}
+De fet, qualsevol incrustació $C^2$ isomètrica $u:\mathbb S^2\hookrightarrow\mathbb R^3$ ha de ser igual a la incrustació estàndar $\mathbb S^2 \hookrightarrow\set{ x\in\mathbb R^3 : |X| = 1 }$ fins translació i rotació. 
+\end{obs}
+Això és demostra amb \textit{integració convexa}.
+
+Sung-Jin Oh demostra aquí el Baby Nash theorem.
+Sigui $D=\set{x\in\mathbb R^2 : |x|<1}$ el disc unitat, i $g = g_{ij}(x)$ una mètrica de $D$. Una aplicació $u:D\to\mathbb R^n$ és una \textit{immersió} si $\nabla u(x)$ és injectiva per tot $x$. La mètrica en $D$ induïda per $u$ és de la forma 
+\begin{equation*}
+    \nabla u ^{\intercal}(x)\nabla u (x) = \begin{pmatrix}
+    \nabla_1 u\nabla_1 u & \nabla_1 u\nabla_2 u\\
+    \nabla_2 u\nabla_1 u & \nabla_2 u\nabla_2 u
+    \end{pmatrix}
+\end{equation*}
+Diem que l'aplicació és \textit{isomètrica} si $\nabla u ^{\intercal}\nabla u = g$, i diem que és \textit{(estrictament) curta} si $\nabla u(x) \nabla u(x) - g(x) \le 0$ per tot $x\in D$.
+\begin{teo}
+    Sigui $n\ge 4$ i $u:D\to\mathbb R^n$ una immersió isomètrica estrictament curta. Per qualsevol $\varepsilon > 0$, existeix una immersió isomètrica $C^1$ $\tilde u:D\to\mathbb R^n$ tal que $\|u-v\|_{C^0(D)} < \varepsilon$.
+\end{teo}
+\begin{obs}
+    Aquest teorema necessita que la codimensió sigui com a mínim 2.
+\end{obs}
+La manera de demostrar aquest resultat és a través d'un mètode iteratiu amb passos altament oscl·lants.
+Sigui $u_1 = u + U$ amb 
+\begin{equation*}
+    U=\sum_{I\in\mathcal I} U_I
+\end{equation*}
+Volem que cada component $U_I^j$ sigui complex, per tal que oscil·li com $e^{ix \cdot \xi}$ però el resultat del sumatori sigui real. Així, imposem per cada $I\in\mathcal I$ que exiteixi $\overline I\in\mathcal I$ tal que 
+\begin{equation*}
+    U_{\overline{I}} = \overline{U}_I, \quad \overline{\overline{I}} = I.
+\end{equation*}
+
+
+
+
+\newpage
+\chapter{Paper Mobius strip}
+
+\newpage
+\chapter{Conclusions}
+
+Hem apres un munt
+
+\normalfont
+
+\newpage
+
+\begin{thebibliography}{25}
+
+\bibitem[Autor1 \& Autor2(ANY)]{nomdelacita}
+Autor1, A., \& Autor2, B. (ANY).
+\newblock \textit{Nom del treball.}
+\newblock Cambridge University Press.
+
+\end{thebibliography}
+\end{document} 
+
