@@ -241,7 +241,35 @@ Per eliminar el terme $q_{\text{mèt}}$, observem que
     \end{aligned}
 \end{equation*}
 EXPLICAR PER QUE ÉS O(1/LAMBDA)!!!
-
+I, per tant,
+\begin{equation*}
+    \begin{aligned}
+    \nabla_i W^*(x) \nabla_jW(x)&= (-i\xi_ia(x)e^{-\lambda i x \cdot \xi})(i\xi_ja(x)e^{\lambda i x \cdot \xi})\overline{\textbf{n}}(x) \cdot\textbf{n}(x) + O(\frac{1}{\lambda})\\
+    &= \xi_i\xi_j a(x)^2 + O(\frac{1}{\lambda})
+    \end{aligned}
+\end{equation*}
+on definim $(\cdot)^* = (\overline{\cdot})^\intercal$. Així, la oscil·lació és cancel·lada i en resulta un terme $a(x)^2\xi_i\xi_j$.
+\begin{ex}
+    EXPLICAR MILLOR AQUEST EXEMPLE
+    Posem que per un cert $x\in D$, l'error $h$ és de la forma
+    \begin{equation*}
+        h(x) = a^2(x)\xi \otimes \xi + b^2(x)\xi' \otimes \xi' + c^2(x)\xi'' \otimes \xi''
+    \end{equation*}
+    Aleshores, amb això fem desaparèixer el terme $\xi \otimes \xi$. Repetint-ho per $\xi' \otimes \xi'$ i $\xi'' \otimes \xi''$ aconseguim reduir l'error $h(x)$ a un terme $O(\frac{1}{\lambda})$.
+\end{ex}
+\begin{obs}
+    EXPLICAR AQUESTA OBSERVACIÓ
+    Aquest mètode requereix que $h$ sigui curta, ja que $\nabla_i W^*(x) \nabla_jW(x)$ és un terme no-negatiu. De fet, per tal que $h_1$ sigui curt, necessitem que $h$ sigui estrictament curt.
+\end{obs}
+Ara bé, els autovectors $\xi$ depenen de $x$. Això es pot resoldre amb el seguent lema.
+\begin{lema} (Decomposició de l'error mètric)
+    Sigui $\mathcal P$ l'espai de totes les matrius definides positives. Existeix una successió $\xi^{(k)}$ de vectors unitaris en $\mathbb R^n$ i una successió $\Gamma_{(k)}\in C_c^\infty(\mathcal P; [0,\infty))$ tals que
+    \begin{equation*}
+        A_{ij} = \sum_k\Gamma^2_{k}(A)\xi_i^{(k)}\xi_j^{(k)}
+    \end{equation*}
+    i aquesta suma és \textit{localment finita}. És a dir, existeix $N\in\mathbb N$ tal que per tot $A\in\mathcal P$ com a màxim $N$ termes de $\Gamma_{(k)}$ són no-nuls.
+\end{lema}
+Així, podem resoldre el problema de trobar $a$ i $\xi$ per cada $x\in D$.
 
 
 

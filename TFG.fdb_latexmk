@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1739989990.41241 "/Users/vic/Documents/Mates/TFG.tex" "TFG.pdf" "TFG" 1739989991.4367 0
-  "/Users/vic/Documents/Mates/TFG.tex" 1739989990.22059 7786 049aeb6b7759a3bbda32975d97048ccb ""
+["pdflatex"] 1740077862.48298 "/Users/vic/Documents/Mates/TFG.tex" "TFG.pdf" "TFG" 1740077863.55534 0
+  "/Users/vic/Documents/Mates/TFG.tex" 1740077862.26795 9664 100f9723499ef905caeb9c143f334ce2 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -232,9 +232,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1739828379 5466570 e8651e7fa7bb054fee9a07d3f37faf28 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1739828515 3352645 f32712fdeccc7655142b9a5120fbadf2 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "TFG.aux" 1739989991.35652 1237 16cfd940e714896a58a368da927306d3 "pdflatex"
-  "TFG.tex" 1739989990.22059 7786 049aeb6b7759a3bbda32975d97048ccb ""
-  "TFG.toc" 1739989991.35715 414 9e907f5be87aa50f01acbc18da953974 "pdflatex"
+  "TFG.aux" 1740077863.48061 1237 16cfd940e714896a58a368da927306d3 "pdflatex"
+  "TFG.tex" 1740077862.26795 9664 100f9723499ef905caeb9c143f334ce2 ""
+  "TFG.toc" 1740077863.48126 414 9e907f5be87aa50f01acbc18da953974 "pdflatex"
   "matematiquesinformatica-pos-rgb.png" 1739823088.85092 244956 2f8393c2b86636b347b4d7bd7a7110a7 ""
   (generated)
   "TFG.aux"
