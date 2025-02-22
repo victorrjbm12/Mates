@@ -269,8 +269,31 @@ Ara bé, els autovectors $\xi$ depenen de $x$. Això es pot resoldre amb el segu
     \end{equation*}
     i aquesta suma és \textit{localment finita}. És a dir, existeix $N\in\mathbb N$ tal que per tot $A\in\mathcal P$ com a màxim $N$ termes de $\Gamma_{(k)}$ són no-nuls.
 \end{lema}
-Així, podem resoldre el problema de trobar $a$ i $\xi$ per cada $x\in D$.
+\begin{obs}
+    La demostració d'aquest teorema no l'escrivim aquí explícitament. ESTA AL SUNG-JIN OH.
+\end{obs}
+Fins ara no ha calgut específicar el vector $\textbf{n}(x)\in\mathbb C^n$ per tal de minimitzar l'error mètric. Veurem que el podem escollir de tal manera que els termes $q_{\text{lin}}$ i $q_{\text{alt}}$ desapareguin fins a terme $O(1/\lambda)$.
+\begin{itemize}
 
+    \item \textbf{Error de linearització.} Substituïm el terme amb $W$
+    \begin{equation*}
+         \nabla_i u ^{\intercal}\nabla_j W = i\xi_j a(x)e^{ix\cdot\xi}\nabla_i u\cdot\textbf{n}+O(1/\lambda)
+    \end{equation*}
+    i veiem que podem eliminar aquest component escollint un vector perpendicular a l'espai tangent de $u(x)$, $\textbf{n}(x)\perp \nabla_j u(x)$. Això es pot fer perquè l'espai té codimensió 1 (REVISAR!!!)Podem fer el mateix amb $\nabla_iW^{\intercal}\nabla_ju$ i obtenim
+    \begin{equation*}
+        \nabla_i u ^{\intercal}\nabla_j W + \nabla_iW^{\intercal}\nabla_ju = O(1/\lambda)
+    \end{equation*}
+
+    \item \textbf{Interferència altament oscil·lant.} De nou, substituïm el terme
+    \begin{equation*}
+        \nabla_iW^{\intercal}\nabla_jW = (-a^2(x)\xi_i\xi_je^{2ix\cdot\xi})\textbf{n}\cdot\textbf{n} + O(1/\lambda).
+    \end{equation*}
+    I ara només cal aprofitar que la incrustació té codimensió $\ge2$ per escollir un vector complex tal que $\textbf{n}\cdot\textbf{n} = 0$. Podem prendre, per exemple, 
+    \begin{equation*}
+        \textbf{n} = \frac{1}{i\sqrt2}\zeta(x) + \frac{1}{i\sqrt2}\eta(x)
+    \end{equation*}
+    on $\zeta(x)$ i $\eta(x)$ són vectors reals unitaris ortogonals a l'espai tangent $T_{u(x)}u(D)$.
+\end{itemize}
 
 
 
