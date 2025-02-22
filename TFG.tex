@@ -183,25 +183,29 @@ faig servir incrustació, que potser hauria de dir immersió?
 \newpage
 \chapter{Teorema Nash-Kuiper C1}
 \section{Explicació del Sung-Jin Oh}
-\begin{teo} Sigui $(M,g)$ una superfície, $N\ge\dim M+1$ i $u:M\to\mathbb R^N$ una incrustació estrictament curta, és a dir, tal que la longitud de cada vector en $M$ s'escurça (estrictament) sota $\nabla u$. Aleshores $u$ es pot aproximar uniformement per incrustacions isomètriques $C^1$.
+\begin{teo}\label{teo: SJO} Sigui $(M,g)$ una superfície, $N\ge\dim M+1$ i $u:M\to\mathbb R^N$ una incrustació estrictament curta, és a dir, tal que la longitud de cada vector en $M$ s'escurça (estrictament) sota $\nabla u$. Aleshores $u$ es pot aproximar uniformement per incrustacions isomètriques $C^1$.
 \end{teo}
+{\color{blue} Haurem d'explicar què és una incrustació isomètrica, i mirar si cal que li canviem el nom}
+
 Per exemple, l'homotècia $\mathbb S^2\to\varepsilon\mathbb S^2$ amb $\varepsilon\in(0,1)$ és una aplicació \textit{curta}. 
 \begin{obs}
 De fet, qualsevol incrustació $C^2$ isomètrica $u:\mathbb S^2\hookrightarrow\mathbb R^3$ ha de ser igual a la incrustació estàndar $\mathbb S^2 \hookrightarrow\set{ x\in\mathbb R^3 : |X| = 1 }$ fins translació i rotació. 
 \end{obs}
-Això és demostra amb \textit{integració convexa}.
+
+El teorema \ref{teo: SJO} és demostra amb \textit{integració convexa}.
 
 Sung-Jin Oh demostra aquí el Baby Nash theorem.
-Sigui $D=\set{x\in\mathbb R^2 : |x|<1}$ el disc unitat, i $g = g_{ij}(x)$ una mètrica de $D$. Una aplicació $u:D\to\mathbb R^n$ és una \textit{immersió} si $\nabla u(x)$ és injectiva per tot $x$. La mètrica en $D$ induïda per $u$ és de la forma 
+
+Sigui $D=\set{x\in\mathbb R^2 : |x|<1}$ el disc unitat, i $g = g_{ij}(x)$ una mètrica de $D$. Una aplicació $u:D\to\mathbb R^n$ és una \textit{immersió} {\color{blue} per ara diem incrustació als embeddings i immersions als immersions} si $\nabla u(x)$ és injectiva per tot $x$. La mètrica en $D$ induïda per $u$ és de la forma {\color{blue} haurem de recordar i controlar el que era la mètrica induïda}
 \begin{equation*}
     \nabla u ^{\intercal}(x)\nabla u (x) = \begin{pmatrix}
     \nabla_1 u\nabla_1 u & \nabla_1 u\nabla_2 u\\
     \nabla_2 u\nabla_1 u & \nabla_2 u\nabla_2 u
     \end{pmatrix}
 \end{equation*}
-Diem que l'aplicació és \textit{isomètrica} si $\nabla u ^{\intercal}\nabla u = g$, i diem que és \textit{(estrictament) curta} si $\nabla u(x) \nabla u(x) - g(x) \le 0$ per tot $x\in D$.
+Diem que l'aplicació és \textit{isomètrica} {\color{blue} també estaria bé comentar isometries} si $\nabla u ^{\intercal}\nabla u = g$, i diem que és \textit{(estrictament) curta} si $\nabla u(x)^{\intercal} \nabla u(x) - g(x) \le 0$ per tot $x\in D$.
 \begin{teo}
-    Sigui $n\ge 4$ i $u:D\to\mathbb R^n$ una immersió isomètrica estrictament curta. Per qualsevol $\varepsilon > 0$, existeix una immersió isomètrica $C^1$ $\tilde u:D\to\mathbb R^n$ tal que $\|u-v\|_{C^0(D)} < \varepsilon$.
+    Sigui $n\ge 4$ i $u:D\to\mathbb R^n$ una immersió isomètrica estrictament curta. Per qualsevol $\varepsilon > 0$, existeix una immersió isomètrica $C^1$ $\tilde u:D\to\mathbb R^n$ tal que $\|u-v\|_{C^0(D)} < \varepsilon$.{\color{blue} Aquí cal motivar l'interès d'aquest resultat. Entenc que la idea és que partim d'una immersió que és estrictament curta i volem trobar una que sigui contínua i isomètrica. Vull mirar continuitats.}
 \end{teo}
 \begin{obs}
     Aquest teorema necessita que la codimensió sigui com a mínim 2.
@@ -211,7 +215,7 @@ Sigui $u_1 = u + U$ amb
 \begin{equation*}
     U=\sum_{I\in\mathcal I} U_I
 \end{equation*}
-Volem que cada component $U_I^j$ sigui complex, per tal que oscil·li com $e^{ix \cdot \xi}$ però el resultat del sumatori sigui real. Així, imposem per cada $I\in\mathcal I$ que exiteixi $\overline I\in\mathcal I$ tal que 
+Volem que cada component $U_I^j$ sigui complex, per tal que oscil·li com $e^{ix \cdot \xi}$, però que el resultat del sumatori sigui real. Així, imposem per cada $I\in\mathcal I$ que exiteixi $\overline I\in\mathcal I$ tal que 
 \begin{equation*}
     U_{\overline{I}} = \overline{U}_I, \quad \overline{\overline{I}} = I.
 \end{equation*}
@@ -228,7 +232,7 @@ Volem una correcció que oscil·li en una sola direcció $\xi\in\mathbb R^2$, $|
 \begin{equation*}
     U_I = W = \frac1\lambda a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi},
 \end{equation*}
-amb $a:D\to\mathbb R$ i $\textbf{n}:D\to\mathbb C^n$ tal que $\textbf{n}\cdot \overline{\textbf{n}}=1$. Perque sigui real, definim també $\overline I\in\mathcal I$ tal que 
+amb $a:D\to\mathbb R$ i $\textbf{n}:D\to\mathbb C^n$ tal que $\textbf{n}\cdot \overline{\textbf{n}}=1$. Per tal que sigui real, definim també $\overline I\in\mathcal I$ tal que 
 \begin{equation*}
     U_{\overline{I}} = \overline W = \frac1\lambda a(x)\overline{\textbf{n}}(x)e^{-\lambda i x \cdot \xi}.
 \end{equation*}
@@ -290,10 +294,60 @@ Fins ara no ha calgut específicar el vector $\textbf{n}(x)\in\mathbb C^n$ per t
     \end{equation*}
     I ara només cal aprofitar que la incrustació té codimensió $\ge2$ per escollir un vector complex tal que $\textbf{n}\cdot\textbf{n} = 0$. Podem prendre, per exemple, 
     \begin{equation*}
-        \textbf{n} = \frac{1}{i\sqrt2}\zeta(x) + \frac{1}{i\sqrt2}\eta(x)
+        \textbf{n} = \frac{1}{i\sqrt2}\zeta(x) + \frac{1}{\sqrt2}\eta(x)
     \end{equation*}
     on $\zeta(x)$ i $\eta(x)$ són vectors reals unitaris ortogonals a l'espai tangent $T_{u(x)}u(D)$.
+    \item \textbf{Forma final de la correcció.} Tot plegat, tenim una correcció de la forma
+    \begin{equation*}
+        W(x) = \frac{a(x)}{\lambda}\left( \sin(\lambda x \cdot \xi)\zeta(x) + \cos(\lambda x \cdot \xi)\eta(x) \right)
+    \end{equation*}
+    amb les següents propietats:
+    \begin{itemize}
+        \item[--] Norma $C^0$ petita: $$||W||_{C^0}\le C\frac{||a||_{C^0}}{\lambda}$$
+        \item[--] Terme principal en $\nabla W$ $$\nabla W = a(x)\left( \cos(\lambda x \cdot \xi)\zeta(x) - \sin(\lambda x \cdot \xi)\eta(x) \right) + O_{||a||_{C^0}, ||\nabla a||_{C^0}, ||\nabla\zeta||_{C^0}, ||\nabla\eta||_{C^0}}(1/\lambda)$$
+        \item[--] Error mètric petit: $$\nabla_i W^{\intercal}\nabla_j W(x) -a^2(x)\xi_i\xi_j = O(1/\lambda)$$
+        \item[--] Error de linearització petit: $$\nabla_i u ^{\intercal}\nabla_j W + \nabla_iW^{\intercal}\nabla_ju = O(1/\lambda)$$
+        \item[--] Error de interferència petita: $$\nabla_i W ^{\intercal}\nabla_j W = O(1/\lambda)$$
+    \end{itemize}
 \end{itemize}
+\begin{obs}
+    AIXO S'HA DE MIRAR BÉ, NO ACABO D?ENTENDRE COM FA LA DERIVADA
+    Una manera alternativa d'arribar a la forma general de la correció és la següent. Definim 
+    \begin{equation*}
+        \begin{aligned}
+        \gamma = (\gamma_1, \gamma_2) : &D\times \mathbb T\to \mathbb R^2\\
+        & (x,t)\mapsto \gamma(x,t)
+        \end{aligned}
+    \end{equation*}
+    on $\mathbb T = \mathbb R / 2\pi\mathbb Z$.
+    Posant $\dot\gamma$ la derivada respecte de $t$, tenim que
+    \begin{equation*}
+        \nabla W ^{\intercal}(x) \nabla W(x) = \left( \dot\gamma_1^2(x, \lambda x\cdot\xi) + \dot\gamma_2^2(x, \lambda x\cdot\xi) \right)\xi\otimes\xi + O(1/\lambda).
+    \end{equation*}
+    De manera que per cada $x$ cal trobar $\gamma(x,\cdot)$ tal que 
+    (1) $\dot\gamma_1^2 + \dot\gamma_2^2 = a^2$ i 
+    (2) $t\mapsto \dot\gamma(x,t)$ sigui $2\pi$-periòdic i $\int\dot\gamma\text{d}t = 0$
+    De manera que $t\mapsto\gamma(x,t)$ també ha de ser $2\pi$-periòdica i el seu origen ha de pertànyer al disc unitat tancat $\overline D$.
+    IMPORTANT PER DESPRÉS, NASH ANOMENA STEP A CADA ADDICIÓ D'UNA CORRECCIÓ, que es carrega un terme a un error de $O(1/\lambda)$. 
+\end{obs}
+\begin{lema}
+    Sigui $u:D\to\mathbb R^n$ una immersió suau estrictament curta, tal que $h:=g-\nabla u ^{\intercal}\nabla u$ obeeix
+    \begin{equation*}
+        ||h||_{C^0} \le e_h
+    \end{equation*}
+    per algun $e_h > 0$. Aleshores, per qualsevol $\varepsilon > 0$, existeix una immersió suau estrictament curta $u_{[1]} = u + U$, on
+    \begin{equation*}
+        \begin{aligned}
+        ||U||_{C^0(D)} &\le \varepsilon\\
+        ||\nabla U||_{C^0(D)} &\le Ce_h^{1/2}
+        \end{aligned}
+    \end{equation*}
+    i $h_{[1]}:=g-\nabla u_{[1]}^{\intercal}\nabla u_{[1]}$ obeeix
+    \begin{equation*}
+        ||h_{[1]}-h||_{C^0} \le \varepsilon.
+    \end{equation*}
+\end{lema}
+
 
 
 
