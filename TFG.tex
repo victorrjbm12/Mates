@@ -29,6 +29,7 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\set}{\{}{\}}
@@ -70,6 +71,14 @@
 
 \pgfplotsset{compat=1.18}
 
+% Add these accent definitions
+\DeclareUnicodeCharacter{00ED}{\'i}
+\DeclareUnicodeCharacter{00E9}{\'e}
+\DeclareUnicodeCharacter{00E0}{\`a}
+\DeclareUnicodeCharacter{00E8}{\`e}
+\DeclareUnicodeCharacter{00F3}{\'o}
+\DeclareUnicodeCharacter{00FA}{\'u}
+
 \begin{document}
 
 \bibstyle{plainnat}
@@ -105,7 +114,7 @@
 
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ll}
-\textbf{\Large Director:} & \textbf{\Large Dr. Ignasi Mundet } \\
+\textbf{\Large Director:} & \textbf{\Large Dr. Ignasi Mundet i Riera } \\
 \textbf{\Large Realitzat a:} & \textbf{\Large  Departament de matemàtiques i informàtica   } \\
 \\
 \textbf{\Large Barcelona,} & \textbf{\Large \today }
@@ -133,8 +142,6 @@
 \section*{Abstract}
 My wonderful abstract.
 
-%The aim of this project is to study machine learning's mathematical foundations until the most important results are reached, as well as to analyze a recent research result from the perspective of the previously commented results. At fist place, all theoretical concepts and results, both required or desired, are introduced. Finally, it takes place the mentioned analysis.
-
 \section*{Resum}
 \begin{itemize}
     \item Explicar diferència entre Continu i Diferenciable i totes les restriccions
@@ -149,7 +156,7 @@ My wonderful abstract.
 
 \section*{Agra\"{\i}ments}
 
-blablabla
+Bla, bla, bla
 \newpage
 
 \tableofcontents
@@ -163,14 +170,14 @@ blablabla
 \subsection*{Objectius del treball}
 
 \begin{itemize}
-    \item explicats
+    \item Explicats
 \end{itemize}
 
 \subsection*{Estructura de la mem\`oria}
-tremendo
+Tremendo
 
 \subsection*{Guia de lectura}
-faig servir incrustació, que potser hauria de dir immersió?
+Faig servir incrustació, que potser hauria de dir immersió?
 
 \newpage
 
@@ -189,14 +196,15 @@ faig servir incrustació, que potser hauria de dir immersió?
 
 Per exemple, l'homotècia $\mathbb S^2\to\varepsilon\mathbb S^2$ amb $\varepsilon\in(0,1)$ és una aplicació \textit{curta}. 
 \begin{obs}
-De fet, qualsevol incrustació $C^2$ isomètrica $u:\mathbb S^2\hookrightarrow\mathbb R^3$ ha de ser igual a la incrustació estàndar $\mathbb S^2 \hookrightarrow\set{ x\in\mathbb R^3 : |X| = 1 }$ fins translació i rotació. 
+De fet, qualsevol incrustació $C^2$ isomètrica $u:\mathbb S^2\hookrightarrow\mathbb R^3$ ha de ser igual a la incrustació estàndard $\mathbb S^2 \hookrightarrow\set{ x\in\mathbb R^3 : |X| = 1 }$ fins translació i rotació. 
 \end{obs}
 
-El teorema \ref{teo: SJO} és demostra amb \textit{integració convexa}.
+El teorema \ref{teo: SJO} es demostra amb \textit{integració convexa}.
 
 Sung-Jin Oh demostra aquí el Baby Nash theorem.
 
-Sigui $D=\set{x\in\mathbb R^2 : |x|<1}$ el disc unitat, i $g = g_{ij}(x)$ una mètrica de $D$. Una aplicació $u:D\to\mathbb R^n$ és una \textit{immersió} {\color{blue} per ara diem incrustació als embeddings i immersions als immersions} si $\nabla u(x)$ és injectiva per tot $x$. La mètrica en $D$ induïda per $u$ és de la forma {\color{blue} haurem de recordar i controlar el que era la mètrica induïda}
+
+Sigui $D=\set{x\in\mathbb R^2 : |x|<1}$ el disc unitat, i $g = g_{ij}(x)$ una mètrica de $D$. Una aplicació $u:D\to\mathbb R^n$ és una \textit{immersió} {\color{blue} per ara direm incrustació als embeddings i immersions als \textit{immersions}} si $\nabla u(x)$ és injectiva per tot $x$. La mètrica en $D$ induïda per $u$ és de la forma {\color{blue} Haurem de recordar i controlar el que era la mètrica induïda}
 \begin{equation*}
     \nabla u ^{\intercal}(x)\nabla u (x) = \begin{pmatrix}
     \nabla_1 u\nabla_1 u & \nabla_1 u\nabla_2 u\\
@@ -205,17 +213,17 @@ Sigui $D=\set{x\in\mathbb R^2 : |x|<1}$ el disc unitat, i $g = g_{ij}(x)$ una m�
 \end{equation*}
 Diem que l'aplicació és \textit{isomètrica} {\color{blue} també estaria bé comentar isometries} si $\nabla u ^{\intercal}\nabla u = g$, i diem que és \textit{(estrictament) curta} si $\nabla u(x)^{\intercal} \nabla u(x) - g(x) \le 0$ per tot $x\in D$.
 \begin{teo}
-    Sigui $n\ge 4$ i $u:D\to\mathbb R^n$ una immersió isomètrica estrictament curta. Per qualsevol $\varepsilon > 0$, existeix una immersió isomètrica $C^1$ $\tilde u:D\to\mathbb R^n$ tal que $\|u-v\|_{C^0(D)} < \varepsilon$.{\color{blue} Aquí cal motivar l'interès d'aquest resultat. Entenc que la idea és que partim d'una immersió que és estrictament curta i volem trobar una que sigui contínua i isomètrica. Vull mirar continuitats.}
+    Sigui $n\ge 4$ i $u:D\to\mathbb R^n$ una immersió isomètrica estrictament curta. Per qualsevol $\varepsilon > 0$, existeix una immersió isomètrica $C^1$ $\tilde u:D\to\mathbb R^n$ tal que $\|u-v\|_{C^0(D)} < \varepsilon$.{\color{blue} Aquí cal motivar l'interès d'aquest resultat. Entenc que la idea és que partim d'una immersió que és estrictament curta i volem trobar una que sigui contínua i isomètrica. Vull mirar continuïtats.}
 \end{teo}
 \begin{obs}
-    Aquest teorema necessita que la codimensió sigui com a mínim 2.
+    Aquest teorema necessita que la co-dimensió sigui com a mínim 2.
 \end{obs}
-La manera de demostrar aquest resultat és a través d'un mètode iteratiu amb passos altament oscl·lants.
+La manera de demostrar aquest resultat és a través d'un mètode iteratiu amb passos altament oscil·lants.
 Sigui $u_1 = u + U$ amb 
 \begin{equation*}
     U=\sum_{I\in\mathcal I} U_I
 \end{equation*}
-Volem que cada component $U_I^j$ sigui complex, per tal que oscil·li com $e^{ix \cdot \xi}$, però que el resultat del sumatori sigui real. Així, imposem per cada $I\in\mathcal I$ que exiteixi $\overline I\in\mathcal I$ tal que 
+Volem que cada component $U_I^j$ sigui complex, per tal que oscil·li com $e^{ix \cdot \xi}$, però que el resultat del sumatori sigui real. Així, imposem per cada $I\in\mathcal I$ que existeixi $\overline I\in\mathcal I$ tal que 
 \begin{equation*}
     U_{\overline{I}} = \overline{U}_I, \quad \overline{\overline{I}} = I.
 \end{equation*}
@@ -244,7 +252,7 @@ Per eliminar el terme $q_{\text{mèt}}$, observem que
     &=i\xi_j a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi} + O(\frac{1}{\lambda})
     \end{aligned}
 \end{equation*}
-EXPLICAR PER QUE ÉS O(1/LAMBDA)!!!
+EXPLICAR PER QUÈ ÉS O(1/LAMBDA)!!!
 I, per tant,
 \begin{equation*}
     \begin{aligned}
@@ -252,21 +260,21 @@ I, per tant,
     &= \xi_i\xi_j a(x)^2 + O(\frac{1}{\lambda})
     \end{aligned}
 \end{equation*}
-on definim $(\cdot)^* = (\overline{\cdot})^\intercal$. Així, la oscil·lació és cancel·lada i en resulta un terme $a(x)^2\xi_i\xi_j$.
+on definim $(\cdot)^* = (\overline{\cdot})^\intercal$. Així, l'oscil·lació és cancel·lada i en resulta un terme $a(x)^2\xi_i\xi_j$.
 \begin{ex}
     EXPLICAR MILLOR AQUEST EXEMPLE
     Posem que per un cert $x\in D$, l'error $h$ és de la forma
     \begin{equation*}
         h(x) = a^2(x)\xi \otimes \xi + b^2(x)\xi' \otimes \xi' + c^2(x)\xi'' \otimes \xi''
     \end{equation*}
-    Aleshores, amb això fem desaparèixer el terme $\xi \otimes \xi$. Repetint-ho per $\xi' \otimes \xi'$ i $\xi'' \otimes \xi''$ aconseguim reduir l'error $h(x)$ a un terme $O(\frac{1}{\lambda})$.
+    aleshores, amb això fem desaparèixer el terme $\xi \otimes \xi$. Repetint-ho per $\xi' \otimes \xi'$ i $\xi'' \otimes \xi''$ aconseguim reduir l'error $h(x)$ a un terme $O(\frac{1}{\lambda})$.
 \end{ex}
 \begin{obs}
     EXPLICAR AQUESTA OBSERVACIÓ
     Aquest mètode requereix que $h$ sigui curta, ja que $\nabla_i W^*(x) \nabla_jW(x)$ és un terme no-negatiu. De fet, per tal que $h_1$ sigui curt, necessitem que $h$ sigui estrictament curt.
 \end{obs}
-Ara bé, els autovectors $\xi$ depenen de $x$. Això es pot resoldre amb el seguent lema.
-\begin{lema} (Decomposició de l'error mètric)
+Ara bé, els autovectors $\xi$ depenen d'$x$. Això es pot resoldre amb el següent lema.
+\begin{lema} (Descomposició de l'error mètric)
     Sigui $\mathcal P$ l'espai de totes les matrius definides positives. Existeix una successió $\xi^{(k)}$ de vectors unitaris en $\mathbb R^n$ i una successió $\Gamma_{(k)}\in C_c^\infty(\mathcal P; [0,\infty))$ tals que
     \begin{equation*}
         A_{ij} = \sum_k\Gamma^2_{k}(A)\xi_i^{(k)}\xi_j^{(k)}
@@ -274,16 +282,16 @@ Ara bé, els autovectors $\xi$ depenen de $x$. Això es pot resoldre amb el segu
     i aquesta suma és \textit{localment finita}. És a dir, existeix $N\in\mathbb N$ tal que per tot $A\in\mathcal P$ com a màxim $N$ termes de $\Gamma_{(k)}$ són no-nuls.
 \end{lema}
 \begin{obs}
-    La demostració d'aquest teorema no l'escrivim aquí explícitament. ESTA AL SUNG-JIN OH.
+    La demostració d'aquest teorema no l'escrivim aquí explícitament. ESTÀ AL SUNG-JIN OH.
 \end{obs}
-Fins ara no ha calgut específicar el vector $\textbf{n}(x)\in\mathbb C^n$ per tal de minimitzar l'error mètric. Veurem que el podem escollir de tal manera que els termes $q_{\text{lin}}$ i $q_{\text{alt}}$ desapareguin fins a terme $O(1/\lambda)$.
+Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per tal de minimitzar l'error mètric. Veurem que el podem escollir de tal manera que els termes $q_{\text{lin}}$ i $q_{\text{alt}}$ desapareguin fins a terme $O(1/\lambda)$.
 \begin{itemize}
 
     \item \textbf{Error de linearització.} Substituïm el terme amb $W$
     \begin{equation*}
          \nabla_i u ^{\intercal}\nabla_j W = i\xi_j a(x)e^{ix\cdot\xi}\nabla_i u\cdot\textbf{n}+O(1/\lambda)
     \end{equation*}
-    i veiem que podem eliminar aquest component escollint un vector perpendicular a l'espai tangent de $u(x)$, $\textbf{n}(x)\perp \nabla_j u(x)$. Això es pot fer perquè l'espai té codimensió 1 (REVISAR!!!)Podem fer el mateix amb $\nabla_iW^{\intercal}\nabla_ju$ i obtenim
+    i veiem que podem eliminar aquest component escollint un vector perpendicular a l'espai tangent de $u(x)$, $\textbf{n}(x)\perp \nabla_j u(x)$. Això es pot fer perquè l'espai té co-dimensió 1 (REVISAR!!!)Podem fer el mateix amb $\nabla_iW^{\intercal}\nabla_ju$ i obtenim
     \begin{equation*}
         \nabla_i u ^{\intercal}\nabla_j W + \nabla_iW^{\intercal}\nabla_ju = O(1/\lambda)
     \end{equation*}
@@ -292,7 +300,7 @@ Fins ara no ha calgut específicar el vector $\textbf{n}(x)\in\mathbb C^n$ per t
     \begin{equation*}
         \nabla_iW^{\intercal}\nabla_jW = (-a^2(x)\xi_i\xi_je^{2ix\cdot\xi})\textbf{n}\cdot\textbf{n} + O(1/\lambda).
     \end{equation*}
-    I ara només cal aprofitar que la incrustació té codimensió $\ge2$ per escollir un vector complex tal que $\textbf{n}\cdot\textbf{n} = 0$. Podem prendre, per exemple, 
+    I ara només cal utilitzar que la incrustació té co-dimensió $\ge2$ per escollir un vector complex tal que $\textbf{n}\cdot\textbf{n} = 0$. Podem prendre, per exemple, 
     \begin{equation*}
         \textbf{n} = \frac{1}{i\sqrt2}\zeta(x) + \frac{1}{\sqrt2}\eta(x)
     \end{equation*}
@@ -307,12 +315,12 @@ Fins ara no ha calgut específicar el vector $\textbf{n}(x)\in\mathbb C^n$ per t
         \item[--] Terme principal en $\nabla W$ $$\nabla W = a(x)\left( \cos(\lambda x \cdot \xi)\zeta(x) - \sin(\lambda x \cdot \xi)\eta(x) \right) + O_{||a||_{C^0}, ||\nabla a||_{C^0}, ||\nabla\zeta||_{C^0}, ||\nabla\eta||_{C^0}}(1/\lambda)$$
         \item[--] Error mètric petit: $$\nabla_i W^{\intercal}\nabla_j W(x) -a^2(x)\xi_i\xi_j = O(1/\lambda)$$
         \item[--] Error de linearització petit: $$\nabla_i u ^{\intercal}\nabla_j W + \nabla_iW^{\intercal}\nabla_ju = O(1/\lambda)$$
-        \item[--] Error de interferència petita: $$\nabla_i W ^{\intercal}\nabla_j W = O(1/\lambda)$$
+        \item[--] Error d'interferència petita: $$\nabla_i W ^{\intercal}\nabla_j W = O(1/\lambda)$$
     \end{itemize}
 \end{itemize}
 \begin{obs}
-    AIXO S'HA DE MIRAR BÉ, NO ACABO D?ENTENDRE COM FA LA DERIVADA
-    Una manera alternativa d'arribar a la forma general de la correció és la següent. Definim 
+    AIXÒ S'HA DE MIRAR BÉ, NO ACABO D'ENTENDRE COM FA LA DERIVADA
+    Una manera alternativa d'arribar a la forma general de la correcció és la següent. Definim 
     \begin{equation*}
         \begin{aligned}
         \gamma = (\gamma_1, \gamma_2) : &D\times \mathbb T\to \mathbb R^2\\
@@ -328,7 +336,7 @@ Fins ara no ha calgut específicar el vector $\textbf{n}(x)\in\mathbb C^n$ per t
     (1) $\dot\gamma_1^2 + \dot\gamma_2^2 = a^2$ i 
     (2) $t\mapsto \dot\gamma(x,t)$ sigui $2\pi$-periòdic i $\int\dot\gamma\text{d}t = 0$
     De manera que $t\mapsto\gamma(x,t)$ també ha de ser $2\pi$-periòdica i el seu origen ha de pertànyer al disc unitat tancat $\overline D$.
-    IMPORTANT PER DESPRÉS, NASH ANOMENA STEP A CADA ADDICIÓ D'UNA CORRECCIÓ, que es carrega un terme a un error de $O(1/\lambda)$. 
+    IMPORTANT Per a després, NASH ANOMENA STEP A CADA ADDICIÓ D'UNA CORRECCIÓ, que es carrega un terme a un error d'ordre $O(1/\lambda)$. 
 \end{obs}
 \begin{lema}
     Sigui $u:D\to\mathbb R^n$ una immersió suau estrictament curta, tal que $h:=g-\nabla u ^{\intercal}\nabla u$ obeeix
@@ -357,7 +365,7 @@ Fins ara no ha calgut específicar el vector $\textbf{n}(x)\in\mathbb C^n$ per t
 \newpage
 \chapter{Conclusions}
 
-Hem apres un munt
+Hem après un munt
 
 \normalfont
 

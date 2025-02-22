@@ -1,0 +1,44 @@
+{
+    "ltex.latex.ignoreMath": true,
+    "ltex.language": "ca-ES",
+    "ltex.latex.commands": {
+        "\\[": "ignore",
+        "\\]": "ignore",
+        "\\(": "ignore",
+        "\\)": "ignore"
+    },
+    "ltex.latex.environments": {
+        "equation": "ignore",
+        "equation*": "ignore",
+        "align": "ignore",
+        "align*": "ignore",
+        "gather": "ignore",
+        "gather*": "ignore",
+        "multline": "ignore",
+        "multline*": "ignore"
+    },
+    "ltex.markdown.ignore": {
+        "environments": [
+            "equation",
+            "equation*",
+            "align",
+            "align*",
+            "gather",
+            "gather*",
+            "multline",
+            "multline*"
+        ]
+    },
+    "ltex.additionalRules.languageModel": "ca-ES",
+    "ltex.dictionary": {
+        "ca": [
+            "curta",
+            "trobar",
+            "immersió",
+            "isomètrica",
+            "estrictament",
+            "contínua",
+            "continuïtats"
+        ]
+    }
+}

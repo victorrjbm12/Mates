@@ -1,0 +1,10 @@
+{"rule":"MORFOLOGIK_RULE_CA_ES","sentence":"^\\QExisteix una successió \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q de vectors unitaris en \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q i una successió \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q tals que \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q i aquesta suma és localment finita.\\E$"}
+{"rule":"USA_COMA_DECIMALS","sentence":"^\\Qcompat=1.18\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\Q=5pt =15pt\\E$"}
+{"rule":"CA_SIMPLE_REPLACE","sentence":"^\\QAbstract.\\E$"}
+{"rule":"CA_SIMPLE_REPLACE","sentence":"^\\QMy wonderful abstract.\\E$"}
+{"rule":"SUBSTANTIUS_JUNTS","sentence":"^\\QSigui \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q el disc unitat, i \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q una mètrica de \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"ESPAIS_QUE_FALTEN_PUNTUACIO","sentence":"^\\QPer eliminar el terme \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Qmèt, observem que \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q EXPLICAR PER QUÈ ÉS O(1/LAMBDA)!!!\\E$"}
+{"rule":"ESPAI_EN_UNITATS","sentence":"^\\Q00ED í 00E9 é 00E0 à 00E8 è 00F3 ó 00FA ú\\E$"}
+{"rule":"CONCORDANCES_DET_NOM","sentence":"^\\QUna aplicació \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és una immersió per ara direm incrustació als embeddings i immersions als immersions si \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és injectiva per tot \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"FALTA_ELEMENT_ENTRE_VERBS","sentence":"^\\QUna aplicació \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és una immersió per ara direm incrustació als embeddings i immersions als immersions si \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és injectiva per tot \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
