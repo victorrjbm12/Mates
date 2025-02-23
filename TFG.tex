@@ -223,11 +223,11 @@ Sigui $u_1 = u + U$ amb
 \begin{equation*}
     U=\sum_{I\in\mathcal I} U_I
 \end{equation*}
-Volem que cada component $U_I^j$ sigui complex, per tal que oscil·li com $e^{ix \cdot \xi}$, però que el resultat del sumatori sigui real. Així, imposem per cada $I\in\mathcal I$ que existeixi $\overline I\in\mathcal I$ tal que 
+Volem que cada component $U_I^j$ sigui complex, per tal que oscil·li com $e^{ix \cdot \xi}$, però que el resultat del sumatori sigui real. Així, imposem que per cada $I\in\mathcal I$ que existeixi $\overline I\in\mathcal I$ tal que 
 \begin{equation*}
     U_{\overline{I}} = \overline{U}_I, \quad \overline{\overline{I}} = I.
 \end{equation*}
-Ara tenim un error mètric $h_1 = g - \nabla u_1 ^{\intercal}\nabla u_1$.
+Ara tenim un error mètric $h_1 = g - \nabla u_1 ^{\intercal}\nabla u_1$. {\color{blue} On entenem que l'error mètric és la diferència entre la mètrica i la mètrica induïda per la immersió? Té sentit, però cal veure per què només agafo el primer terme.}
 \begin{equation*}
     h_1 = 
         \left( h-\sum_{I} \nabla \overline{U}_I ^{\intercal}\nabla U_I \right) 
@@ -248,11 +248,11 @@ amb $a:D\to\mathbb R$ i $\textbf{n}:D\to\mathbb C^n$ tal que $\textbf{n}\cdot \o
 Per eliminar el terme $q_{\text{mèt}}$, observem que
 \begin{equation*}
     \begin{aligned}
-    \nabla_j W &= i\xi_j a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi} + \frac{1}{\lambda}\nabla_j (a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi})\\
+    \nabla_j W &= i\xi_j a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi} + \frac{1}{\lambda}\nabla_j (a(x)\textbf{n}(x))e^{\lambda i x \cdot \xi}\\
     &=i\xi_j a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi} + O(\frac{1}{\lambda})
     \end{aligned}
 \end{equation*}
-EXPLICAR PER QUÈ ÉS O(1/LAMBDA)!!!
+{\color{blue} EXPLICAR PER QUÈ ÉS O(1/LAMBDA)!!! De fet, explicar d'on surt la lambda aquesta.}
 I, per tant,
 \begin{equation*}
     \begin{aligned}
@@ -262,7 +262,7 @@ I, per tant,
 \end{equation*}
 on definim $(\cdot)^* = (\overline{\cdot})^\intercal$. Així, l'oscil·lació és cancel·lada i en resulta un terme $a(x)^2\xi_i\xi_j$.
 \begin{ex}
-    EXPLICAR MILLOR AQUEST EXEMPLE
+    {\color{blue} EXPLICAR MILLOR AQUEST EXEMPLE}
     Posem que per un cert $x\in D$, l'error $h$ és de la forma
     \begin{equation*}
         h(x) = a^2(x)\xi \otimes \xi + b^2(x)\xi' \otimes \xi' + c^2(x)\xi'' \otimes \xi''
@@ -270,7 +270,7 @@ on definim $(\cdot)^* = (\overline{\cdot})^\intercal$. Així, l'oscil·lació é
     aleshores, amb això fem desaparèixer el terme $\xi \otimes \xi$. Repetint-ho per $\xi' \otimes \xi'$ i $\xi'' \otimes \xi''$ aconseguim reduir l'error $h(x)$ a un terme $O(\frac{1}{\lambda})$.
 \end{ex}
 \begin{obs}
-    EXPLICAR AQUESTA OBSERVACIÓ
+    {\color{blue} EXPLICAR AQUESTA OBSERVACIÓ}
     Aquest mètode requereix que $h$ sigui curta, ja que $\nabla_i W^*(x) \nabla_jW(x)$ és un terme no-negatiu. De fet, per tal que $h_1$ sigui curt, necessitem que $h$ sigui estrictament curt.
 \end{obs}
 Ara bé, els autovectors $\xi$ depenen d'$x$. Això es pot resoldre amb el següent lema.
@@ -282,16 +282,16 @@ Ara bé, els autovectors $\xi$ depenen d'$x$. Això es pot resoldre amb el segü
     i aquesta suma és \textit{localment finita}. És a dir, existeix $N\in\mathbb N$ tal que per tot $A\in\mathcal P$ com a màxim $N$ termes de $\Gamma_{(k)}$ són no-nuls.
 \end{lema}
 \begin{obs}
-    La demostració d'aquest teorema no l'escrivim aquí explícitament. ESTÀ AL SUNG-JIN OH.
+    La demostració d'aquest teorema no l'escrivim aquí explícitament. {\color{blue} ESTÀ AL SUNG-JIN OH.}
 \end{obs}
-Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per tal de minimitzar l'error mètric. Veurem que el podem escollir de tal manera que els termes $q_{\text{lin}}$ i $q_{\text{alt}}$ desapareguin fins a terme $O(1/\lambda)$.
+Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per tal de minimitzar l'error mètric, més enllà que necessitem que sigui unitari. Veurem que el podem escollir de tal manera que els termes $q_{\text{lin}}$ i $q_{\text{alt}}$ desapareguin fins a terme $O(1/\lambda)$.
 \begin{itemize}
 
     \item \textbf{Error de linearització.} Substituïm el terme amb $W$
     \begin{equation*}
          \nabla_i u ^{\intercal}\nabla_j W = i\xi_j a(x)e^{ix\cdot\xi}\nabla_i u\cdot\textbf{n}+O(1/\lambda)
     \end{equation*}
-    i veiem que podem eliminar aquest component escollint un vector perpendicular a l'espai tangent de $u(x)$, $\textbf{n}(x)\perp \nabla_j u(x)$. Això es pot fer perquè l'espai té co-dimensió 1 (REVISAR!!!)Podem fer el mateix amb $\nabla_iW^{\intercal}\nabla_ju$ i obtenim
+    i veiem que podem eliminar aquest component escollint un vector perpendicular a l'espai tangent de $u(x)$, $\textbf{n}(x)\perp \nabla_j u(x)$. Això es pot fer perquè l'espai té co-dimensió 1 ({\color{blue}REVISAR!!!}). Podem fer el mateix amb $\nabla_iW^{\intercal}\nabla_ju$ i obtenim
     \begin{equation*}
         \nabla_i u ^{\intercal}\nabla_j W + \nabla_iW^{\intercal}\nabla_ju = O(1/\lambda)
     \end{equation*}
@@ -300,7 +300,7 @@ Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per ta
     \begin{equation*}
         \nabla_iW^{\intercal}\nabla_jW = (-a^2(x)\xi_i\xi_je^{2ix\cdot\xi})\textbf{n}\cdot\textbf{n} + O(1/\lambda).
     \end{equation*}
-    I ara només cal utilitzar que la incrustació té co-dimensió $\ge2$ per escollir un vector complex tal que $\textbf{n}\cdot\textbf{n} = 0$. Podem prendre, per exemple, 
+    I ara només cal utilitzar que la incrustació té co-dimensió $\ge2$ per escollir un vector complex tal que $\textbf{n}\cdot\textbf{n} = 0$ {\color{blue}Com està definit aquest producte?}. Podem prendre, per exemple, 
     \begin{equation*}
         \textbf{n} = \frac{1}{i\sqrt2}\zeta(x) + \frac{1}{\sqrt2}\eta(x)
     \end{equation*}
@@ -311,15 +311,21 @@ Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per ta
     \end{equation*}
     amb les següents propietats:
     \begin{itemize}
-        \item[--] Norma $C^0$ petita: $$||W||_{C^0}\le C\frac{||a||_{C^0}}{\lambda}$$
-        \item[--] Terme principal en $\nabla W$ $$\nabla W = a(x)\left( \cos(\lambda x \cdot \xi)\zeta(x) - \sin(\lambda x \cdot \xi)\eta(x) \right) + O_{||a||_{C^0}, ||\nabla a||_{C^0}, ||\nabla\zeta||_{C^0}, ||\nabla\eta||_{C^0}}(1/\lambda)$$
+        \item[--] Norma $C^0$ petita {\color{blue} Explicar C-normes}: $$||W||_{C^0}\le C\frac{||a||_{C^0}}{\lambda}$$
+        \item[--] Terme principal en $\nabla W$ 
+        \begin{equation*}
+            \begin{aligned}
+                \nabla W = &a(x)\left( \cos(\lambda x \cdot \xi)\zeta(x) - \sin(\lambda x \cdot \xi)\eta(x) \right) \\
+                &+ O_{||a||_{C^0}, ||\nabla a||_{C^0}, ||\nabla\zeta||_{C^0}, ||\nabla\eta||_{C^0}}(1/\lambda)
+            \end{aligned}
+        \end{equation*}
         \item[--] Error mètric petit: $$\nabla_i W^{\intercal}\nabla_j W(x) -a^2(x)\xi_i\xi_j = O(1/\lambda)$$
         \item[--] Error de linearització petit: $$\nabla_i u ^{\intercal}\nabla_j W + \nabla_iW^{\intercal}\nabla_ju = O(1/\lambda)$$
         \item[--] Error d'interferència petita: $$\nabla_i W ^{\intercal}\nabla_j W = O(1/\lambda)$$
     \end{itemize}
 \end{itemize}
 \begin{obs}
-    AIXÒ S'HA DE MIRAR BÉ, NO ACABO D'ENTENDRE COM FA LA DERIVADA
+    {\color{blue} Aquesta derivada es pot entendre si l'escrius i fas els passos. Mirar si cal explicar-ho millor.}
     Una manera alternativa d'arribar a la forma general de la correcció és la següent. Definim 
     \begin{equation*}
         \begin{aligned}
@@ -336,7 +342,7 @@ Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per ta
     (1) $\dot\gamma_1^2 + \dot\gamma_2^2 = a^2$ i 
     (2) $t\mapsto \dot\gamma(x,t)$ sigui $2\pi$-periòdic i $\int\dot\gamma\text{d}t = 0$
     De manera que $t\mapsto\gamma(x,t)$ també ha de ser $2\pi$-periòdica i el seu origen ha de pertànyer al disc unitat tancat $\overline D$.
-    IMPORTANT Per a després, NASH ANOMENA STEP A CADA ADDICIÓ D'UNA CORRECCIÓ, que es carrega un terme a un error d'ordre $O(1/\lambda)$. 
+    {\color{blue} IMPORTANT Per a després, NASH ANOMENA STEP A CADA ADDICIÓ D'UNA CORRECCIÓ, que es carrega un terme a un error d'ordre $O(1/\lambda)$. }
 \end{obs}
 \begin{lema}
     Sigui $u:D\to\mathbb R^n$ una immersió suau estrictament curta, tal que $h:=g-\nabla u ^{\intercal}\nabla u$ obeeix
@@ -355,6 +361,7 @@ Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per ta
         ||h_{[1]}-h||_{C^0} \le \varepsilon.
     \end{equation*}
 \end{lema}
+
 
 
 
