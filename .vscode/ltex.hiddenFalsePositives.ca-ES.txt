@@ -8,3 +8,4 @@
 {"rule":"ESPAI_EN_UNITATS","sentence":"^\\Q00ED í 00E9 é 00E0 à 00E8 è 00F3 ó 00FA ú\\E$"}
 {"rule":"CONCORDANCES_DET_NOM","sentence":"^\\QUna aplicació \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és una immersió per ara direm incrustació als embeddings i immersions als immersions si \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és injectiva per tot \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"FALTA_ELEMENT_ENTRE_VERBS","sentence":"^\\QUna aplicació \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és una immersió per ara direm incrustació als embeddings i immersions als immersions si \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és injectiva per tot \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"CONCORDANCES_ADJ_NOM","sentence":"^\\QPer la compacitat d' \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, Per què? existeix un nombre finit de sumands que són funcions no-nul·les Non-vanishing, mirar la traducció.\\E$"}

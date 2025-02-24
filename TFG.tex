@@ -274,7 +274,7 @@ on definim $(\cdot)^* = (\overline{\cdot})^\intercal$. Així, l'oscil·lació é
     Aquest mètode requereix que $h$ sigui curta, ja que $\nabla_i W^*(x) \nabla_jW(x)$ és un terme no-negatiu. De fet, per tal que $h_1$ sigui curt, necessitem que $h$ sigui estrictament curt.
 \end{obs}
 Ara bé, els autovectors $\xi$ depenen d'$x$. Això es pot resoldre amb el següent lema.
-\begin{lema} (Descomposició de l'error mètric)
+\begin{lema}\label{lema:descomposicio_error_metric} (Descomposició de l'error mètric)
     Sigui $\mathcal P$ l'espai de totes les matrius definides positives. Existeix una successió $\xi^{(k)}$ de vectors unitaris en $\mathbb R^n$ i una successió $\Gamma_{(k)}\in C_c^\infty(\mathcal P; [0,\infty))$ tals que
     \begin{equation*}
         A_{ij} = \sum_k\Gamma^2_{k}(A)\xi_i^{(k)}\xi_j^{(k)}
@@ -344,23 +344,76 @@ Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per ta
     De manera que $t\mapsto\gamma(x,t)$ també ha de ser $2\pi$-periòdica i el seu origen ha de pertànyer al disc unitat tancat $\overline D$.
     {\color{blue} IMPORTANT Per a després, NASH ANOMENA STEP A CADA ADDICIÓ D'UNA CORRECCIÓ, que es carrega un terme a un error d'ordre $O(1/\lambda)$. }
 \end{obs}
-\begin{lema}
+\begin{lema}[Lema d'iteració]
     Sigui $u:D\to\mathbb R^n$ una immersió suau estrictament curta, tal que $h:=g-\nabla u ^{\intercal}\nabla u$ obeeix
-    \begin{equation*}
+    \begin{equation}
         ||h||_{C^0} \le e_h
-    \end{equation*}
+    \end{equation}
     per algun $e_h > 0$. Aleshores, per qualsevol $\varepsilon > 0$, existeix una immersió suau estrictament curta $u_{[1]} = u + U$, on
-    \begin{equation*}
+    \begin{equation}
         \begin{aligned}
         ||U||_{C^0(D)} &\le \varepsilon\\
         ||\nabla U||_{C^0(D)} &\le Ce_h^{1/2}
         \end{aligned}
-    \end{equation*}
+    \end{equation}
     i $h_{[1]}:=g-\nabla u_{[1]}^{\intercal}\nabla u_{[1]}$ obeeix
-    \begin{equation*}
+    \begin{equation}
         ||h_{[1]}-h||_{C^0} \le \varepsilon.
-    \end{equation*}
+    \end{equation}
 \end{lema}
+\textit{Prova.} Pel lema \ref{lema:descomposicio_error_metric}, tenim que $h$ es pot escriure com
+\begin{equation*}
+    h(x) = \sum_k \Gamma^2_{(k)}(h(x))\xi^{(k)}\otimes\xi^{(k)}
+\end{equation*}
+on per cada $h(x)$ hi ha com a molt $K$ termes no-nuls.
+
+Per la compacitat d' $h(D)\subseteq\mathcal P$, {\color{blue} Per què?} existeix un nombre finit de sumands que són funcions no-nul·les{\color{blue} Non-vanishing, mirar la traducció}. Reanomenem aquests sumands d'aquesta manera:
+\begin{equation*}
+    \Gamma^2_{(1)}(h(x))\xi^{(1)}\otimes\xi^{(1)}, \Gamma^2_{(2)}(h(x))\xi^{(2)}\otimes\xi^{(2)}, \dots, \Gamma^2_{(N)}(h(x))\xi^{(N)}\otimes\xi^{(N)}
+\end{equation*}
+Prenent la traça, veiem que 
+\begin{equation*}
+    ||\Gamma_{(j)}(h)||_{C^0} \le ||h||_{C^0}^{1/2} \le e_h^{1/2}
+\end{equation*}
+{\color{blue} Mirar d'on surt això (Sembla Cauchy-Schwarz, però què passa amb la traça de h?)}
+Ara podem fer $N$ correccions a $u$ de la mateixa manera que hem fet abans, en les direccions $\xi^{(1)}, \xi^{(2)}, \dots, \xi^{(N)}$, per cancel·lar aquests errors. En concret, per un $\delta>0$, definim de manera recursiva $u_j = u_{j-1}+(1-\delta)^{1/2}U_j$, amb $u_0 = u$ i 
+\begin{equation*}
+    U_j = \frac{\Gamma_{(j)}(h(x))}{\lambda_j}\left( \sin(\lambda_j x\cdot\xi^{(j)})\zeta_j(x) + \cos(\lambda_j x\cdot\xi^{(j)})\eta_j(x) \right)
+\end{equation*}
+per uns certs $\lambda_j$ i $\zeta_j, \eta_j:D\to\mathbb R^n$ unitaris.
+
+Prenem $\delta > 0$ per tal d'assegurar curtedat estricta {\color{blue} no sé com es diu shortness la veritat}. De fet, fixem $0<\delta<\frac{\varepsilon}{2e_h^{1/2}}$ per tal que $h\ge\delta I$. {\color{blue} uiuiui això mirar-ho bé}
+
+Escollint $\lambda_j$ prou gran, tenim
+\begin{itemize}
+    \item[--]
+    \begin{equation}
+        ||U_j||_{C^0} \ll \varepsilon
+    \end{equation}
+    \item[--]
+    \begin{equation}
+        \nabla U_j = \Gamma_{(j)}(h)\xi^{(j)}(\cos(\lambda_j x\cdot\xi^{(j)})\zeta - \sin(\lambda_j x\cdot\xi^{(j)})\eta) + \text{err}_j,\quad ||\text{err}_j||_{C^0} \ll \varepsilon
+    \end{equation}
+    \item[--]
+    \begin{equation}
+        h_j=h_{j-1}-(1-\delta)\Gamma^2_{(k)}(h)\xi^{(j)}\xi^{(j)} + \text{err}_j', \quad ||\text{err}_j'||_{C^0} \ll \delta^2
+    \end{equation}
+    {\color{blue} Les dues primeres són fàcils d'entendre, però la tercera l'hem de revisar.}
+\end{itemize}
+On $h_j=g-\nabla u_j ^{\intercal}\nabla u_j$. 
+
+Per tal de concloure la prova, verifiquem que $U=U_1+\dots+U_N$ i $u_{[1]}=u_N=u+U$ satisfan les propietats desitjades.
+
+\begin{itemize}
+    \item És fàcil veure que $||U_j|| \ll \varepsilon$ implica $||U||_{C^0(D)} \ll \varepsilon$.
+    \item A més, de $\nabla U_j = \Gamma_{(j)}(h)\xi^{(j)}(\cos(\lambda_j x\cdot\xi^{(j)})\zeta - \sin(\lambda_j x\cdot\xi^{(j)})\eta) + \text{err}_j$ i $||\Gamma_{(j)}(h)||_{C^0} \le e_h^{1/2}$ tenim que $||\nabla U||_{C^0(D)} \le Ke_h^{1/2} + \sum_{j=1}^N ||\text{err}_j||_{C^0} \le 2Ke_h^{1/2}$ si es prenen les constants adequades. 
+    \item Finalment, sumant els termes $h_j$ obtenim 
+    \begin{equation*}
+        h_N = h-(1-\delta)\sum_{j=1}^N \Gamma^2_{(j)}(h)\xi^{(j)}\xi^{(j)} + \sum_{j=1}^N \text{err}'_j = \delta h + \sum_{j=1}^N \text{err}'_j
+    \end{equation*}
+    i imposant que $u_{[1]} = u_N$ sigui estrictament curta, $h_{[1]}=h_N \ge \delta^2 I$, obtenim el resultat.
+\end{itemize}
+\qed
 
 
 

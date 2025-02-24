@@ -3,5 +3,5 @@
 \contentsline {chapter}{\numberline {2}Comencem}{1}{}%
 \contentsline {chapter}{\numberline {3}Teorema Nash-Kuiper C1}{2}{}%
 \contentsline {section}{\numberline {3.1}Explicació del Sung-Jin Oh}{2}{}%
-\contentsline {chapter}{\numberline {4}Paper Mobius strip}{6}{}%
-\contentsline {chapter}{\numberline {5}Conclusions}{7}{}%
+\contentsline {chapter}{\numberline {4}Paper Mobius strip}{7}{}%
+\contentsline {chapter}{\numberline {5}Conclusions}{8}{}%
