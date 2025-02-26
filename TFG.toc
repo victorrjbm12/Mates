@@ -1,7 +1,10 @@
 \babel@toc {catalan}{}\relax 
-\contentsline {chapter}{\numberline {1}Introducci\'o}{iv}{}%
-\contentsline {chapter}{\numberline {2}Comencem}{1}{}%
-\contentsline {chapter}{\numberline {3}Teorema Nash-Kuiper C1}{2}{}%
-\contentsline {section}{\numberline {3.1}Explicació del Sung-Jin Oh}{2}{}%
-\contentsline {chapter}{\numberline {4}Paper Mobius strip}{7}{}%
-\contentsline {chapter}{\numberline {5}Conclusions}{8}{}%
+\contentsline {chapter}{\numberline {1}Introducci\'o}{iv}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Comencem}{1}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Suavitat i diferenciabilitat}{2}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Suavitat}{2}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Classes de diferenciabilitat com espais normats}{3}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Teorema Nash-Kuiper C1}{4}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Explicació del Sung-Jin Oh}{4}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Paper Mobius strip}{10}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusions}{11}{chapter.6}%

@@ -13,6 +13,7 @@
 \usepackage{multicol}
 \usepackage{amsfonts}
 \usepackage{bbm}
+\usepackage{hyperref}
 
 %\usepackage[utf8]{inputenc}
 \usepackage{pgfplots}
@@ -188,6 +189,60 @@ Faig servir incrustació, que potser hauria de dir immersió?
 
 
 \newpage
+
+\chapter{Suavitat i diferenciabilitat}
+
+\section{Suavitat}
+{\color{blue} El que hi ha aquí ho estic traient de wikipedia. Preguntar a l'Ignasi per una font més bona.}
+\begin{defi}
+    Sigui $U\subseteq\mathbb R$ un conjunt obert, $f:U\to\mathbb R$ una funció real contínua.
+    Diem que $f$ és {\normalfont $k$-vegades derivable contínuament}, amb $k\in\mathbb N_0$, si la derivada d'ordre $k$, $$f^{(k)}:= \frac{d^k}{dx^k}f,$$ existeix i és contínua en $U$. Anomenem l'índex $k$ \textit{suavitat} de $f$.
+    Diem que $f$ és {\normalfont suau} o {\normalfont infinitament derivable} si existeix la derivada de qualsevol ordre.
+\end{defi}
+\begin{obss}
+\end{obss}
+\begin{itemize}
+    \item $f$ és $0$ vegades derivable contínuament si i només si $f$ és contínua. 
+    \item Si $f$ és $k$ vegades derivable contínuament, aleshores també és $j$ vegades derivable contínuament per $0\le j\le k$.
+\end{itemize}
+\begin{defi}
+    Anomenem \textit{classe de diferenciabilitat} $C^k(U)$, amb $k\in\mathbb N_0$ l'espai de les funcions $k$-vegades derivables contínuament en $U\subseteq\mathbb R^n$. Anomenem $C^\infty(U)$ l'espai de les funcions infinitament derivables en $U$.
+\end{defi}
+De la mateixa manera, podem definir aquests conceptes per funcions de diverses variables.
+\begin{defi}
+    Sigui $U\subseteq\mathbb R^n$ un conjunt obert, $f:U\to\mathbb R$ una funció real contínua.
+    Diem que $f$ és \textit{$k$-vegades derivable contínuament}, amb $k\in\mathbb N_0$, si totes les seves derivades parcials d'ordre $k$, $$\frac{\partial^k}{\partial x_1^{\alpha_1}\cdots\partial x_n^{\alpha_n}}f,$$ tals que $\sum_{i=1}^n\alpha_i = k$, existeixen i són contínues en $U$. És a dir, si $f$ és $k$-vegades derivable contínuament en cada component de $U$.
+\end{defi}
+\begin{defi}
+    Anomenem \textit{classe de diferenciabilitat} $C^k(U)$, amb $k\in\mathbb N_0$ l'espai de les funcions $k$-vegades derivables contínuament en $U\subseteq\mathbb R^n$. Anomenem $C^\infty(U)$ l'espai de les funcions infinitament derivables en $U$.
+\end{defi}
+\begin{obss}{\color{blue} Potser caldria donar la definició explícita en el cas de funcions de diverses variables.}
+\end{obss}
+\begin{itemize}
+    \item Moltes vegades, en lloc de $C^k(U)$ es fa servir $C^k(U;\mathbb R^m)$ per a funcions $f:U\to\mathbb R^m$.
+    \item També escriurem simplement $C^k$ en lloc de $C^k(U)$ si el domini és clar pel context.
+\end{itemize}
+
+\section{Classes de diferenciabilitat com espais normats}
+A continuació definirem normes en $C^k(U)$ i $C^\infty(U)$ que ens permetran tractar-les com espais vectorials normats.
+\begin{defi}
+    Sigui $U\subseteq\mathbb R^n$ un conjunt obert, $f:U\to\mathbb R^m$ una funció. Definim la norma $\|\cdot\|_{C^k(U)}$ de $f$ com
+    \begin{equation*}
+        \|f\|_{C^k(U)} = \sum_{|\alpha|\le k} \|D^\alpha f\|_{L^\infty(U)},
+    \end{equation*}
+    on $\|\cdot\|_{L^\infty(U)}$ és la norma del suprem en $U$, tal que $\|g\|_{L^\infty(U)} = \sup_{x\in U} |g(x)|$.
+\end{defi}
+{\color{blue} Aquí podríem proposar i demostrar que $\|\cdot\|_{C^k(U)}$ és efectivament una norma, ho tenim a \url{https://proofwiki.org/wiki/C%5Ek_Norm_is_Norm}. També cal decidir si definim explícitament la $D^\alpha$.}
+
+
+
+
+
+
+
+
+\newpage
+
 \chapter{Teorema Nash-Kuiper C1}
 \section{Explicació del Sung-Jin Oh}
 \begin{teo}\label{teo: SJO} Sigui $(M,g)$ una superfície, $N\ge\dim M+1$ i $u:M\to\mathbb R^N$ una incrustació estrictament curta, és a dir, tal que la longitud de cada vector en $M$ s'escurça (estrictament) sota $\nabla u$. Aleshores $u$ es pot aproximar uniformement per incrustacions isomètriques $C^1$.
@@ -212,7 +267,7 @@ Sigui $D=\set{x\in\mathbb R^2 : |x|<1}$ el disc unitat, i $g = g_{ij}(x)$ una m�
     \end{pmatrix}
 \end{equation*}
 Diem que l'aplicació és \textit{isomètrica} {\color{blue} també estaria bé comentar isometries} si $\nabla u ^{\intercal}\nabla u = g$, i diem que és \textit{(estrictament) curta} si $\nabla u(x)^{\intercal} \nabla u(x) - g(x) \le 0$ per tot $x\in D$.
-\begin{teo}
+\begin{teo}\label{Baby Nash}
     Sigui $n\ge 4$ i $u:D\to\mathbb R^n$ una immersió isomètrica estrictament curta. Per qualsevol $\varepsilon > 0$, existeix una immersió isomètrica $C^1$ $\tilde u:D\to\mathbb R^n$ tal que $\|u-v\|_{C^0(D)} < \varepsilon$.{\color{blue} Aquí cal motivar l'interès d'aquest resultat. Entenc que la idea és que partim d'una immersió que és estrictament curta i volem trobar una que sigui contínua i isomètrica. Vull mirar continuïtats.}
 \end{teo}
 \begin{obs}
@@ -344,7 +399,7 @@ Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per ta
     De manera que $t\mapsto\gamma(x,t)$ també ha de ser $2\pi$-periòdica i el seu origen ha de pertànyer al disc unitat tancat $\overline D$.
     {\color{blue} IMPORTANT Per a després, NASH ANOMENA STEP A CADA ADDICIÓ D'UNA CORRECCIÓ, que es carrega un terme a un error d'ordre $O(1/\lambda)$. }
 \end{obs}
-\begin{lema}[Lema d'iteració]
+\begin{lema}[Lema d'iteració]\label{Lema_iteracio}
     Sigui $u:D\to\mathbb R^n$ una immersió suau estrictament curta, tal que $h:=g-\nabla u ^{\intercal}\nabla u$ obeeix
     \begin{equation}
         ||h||_{C^0} \le e_h
@@ -367,7 +422,7 @@ Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per ta
 \end{equation*}
 on per cada $h(x)$ hi ha com a molt $K$ termes no-nuls.
 
-Per la compacitat d' $h(D)\subseteq\mathcal P$, {\color{blue} Per què?} existeix un nombre finit de sumands que són funcions no-nul·les{\color{blue} Non-vanishing, mirar la traducció}. Reanomenem aquests sumands d'aquesta manera:
+Per la compacitat d' $h(D)\subseteq\mathcal P$, existeix un nombre finit de sumands que són funcions no-nul·les{\color{blue} Non-vanishing, mirar la traducció}. Reanomenem aquests sumands d'aquesta manera:
 \begin{equation*}
     \Gamma^2_{(1)}(h(x))\xi^{(1)}\otimes\xi^{(1)}, \Gamma^2_{(2)}(h(x))\xi^{(2)}\otimes\xi^{(2)}, \dots, \Gamma^2_{(N)}(h(x))\xi^{(N)}\otimes\xi^{(N)}
 \end{equation*}
@@ -415,6 +470,21 @@ Per tal de concloure la prova, verifiquem que $U=U_1+\dots+U_N$ i $u_{[1]}=u_N=u
 \end{itemize}
 \qed
 
+Ara podem iterar diverses vegades per concloure la prova del teorema \ref{Baby Nash}.
+
+\textit{Prova del teorema \ref{Baby Nash}.} Sigui $e_{h,[k]}>0$ una successió tal que
+$$\sum_{k}e_{h,[k]}\le \epsilon,\quad\sum_{k}e_{h,[k]}^{1/2}<\infty.$$ 
+Pel lema \ref{Lema_iteracio}, obtenim una successió d'aplicacions suaus estrictament curtes $u_{[k]}$ tal que $u_{[0]}=u$ i
+\begin{equation*}
+    \begin{aligned}
+    ||g-\nabla u_{[k]}^\intercal\nabla u_{[k]}||_{C^0} &\le e_{h,[k]}\\
+    ||\nabla u_{[k+1]}-\nabla u_{[k]}||_{C^0} &\le Ce^{1/2}_{h,[k]}\\
+    ||u_{[k+1]}-u_{[k]}||_{C^0} &\le e_{h,[k+1]},
+    \end{aligned}
+\end{equation*}
+demostrant el teorema.\qed
+
+{\color{blue} revisar això últim perquè just estava parlant amb la marina}
 
 
 
