@@ -223,7 +223,7 @@ De la mateixa manera, podem definir aquests conceptes per funcions de diverses v
     \item També escriurem simplement $C^k$ en lloc de $C^k(U)$ si el domini és clar pel context.
 \end{itemize}
 
-\section{Classes de diferenciabilitat com espais normats}
+\subsection{Classes de diferenciabilitat com espais normats}
 A continuació definirem normes en $C^k(U)$ i $C^\infty(U)$ que ens permetran tractar-les com espais vectorials normats.
 \begin{defi}
     Sigui $U\subseteq\mathbb R^n$ un conjunt obert, $f:U\to\mathbb R^m$ una funció. Definim la norma $\|\cdot\|_{C^k(U)}$ de $f$ com
@@ -234,7 +234,8 @@ A continuació definirem normes en $C^k(U)$ i $C^\infty(U)$ que ens permetran tr
 \end{defi}
 {\color{blue} Aquí podríem proposar i demostrar que $\|\cdot\|_{C^k(U)}$ és efectivament una norma, ho tenim a \url{https://proofwiki.org/wiki/C%5Ek_Norm_is_Norm}. També cal decidir si definim explícitament la $D^\alpha$.}
 
-
+\section{Fonaments de geometria diferencial}
+Aquí hauriem de parlar d'embedding preferiblement.
 
 
 
@@ -485,12 +486,45 @@ Pel lema \ref{Lema_iteracio}, obtenim una successió d'aplicacions suaus estrict
 demostrant el teorema.\qed
 
 {\color{blue} revisar això últim perquè just estava parlant amb la marina}
+\subsection{Extensions}
+\subsubsection{Extensió a incrustacions de varietats}
+Per estendre el teorema \ref{Baby Nash} a immersions a superfícies generals, només cal reduir a cartes coordenades. Per estendre'l a incrustacions usem que, per la compacitat d'$M$, podem trobar $\varepsilon>0$ tal que 
+$$\inf_{x,y} \text{dist}(u(x), u(y))\ge\varepsilon.$$ Ara només cal dur a terme la construcció en un entorn de $0.01\varepsilon$.{\color{blue} entendre millor això últim perquè és bastant random}
+\subsubsection{Refinament de Kuiper: incrustació de codimensió 1}
+Modificant la forma de la correcció, podem aconseguir la mateixa construcció amb només co-dimensió 1. Sigui $\eta:D\to\mathbb R^{3}$ el camp vectorial unitari en $u(D)$, i sigui
+$$\zeta = \nabla u (\nabla u^\intercal \nabla u)^{-1}\xi.$$
+Prenem 
+$$U = \frac1\lambda \left( \gamma_{1}(x, \lambda x \cdot \xi)\tilde{\zeta}(x) + \gamma_{2}(x, \lambda x \cdot \xi)\tilde{\eta}(x) \right)$$
+on 
+$$\tilde{\zeta} = \frac{\zeta}{|\zeta|^2}, \quad \tilde{\eta} = \frac{\eta}{|\zeta|},$$
+i $u_1 = u + U$. Això porta a 
+{\color{blue} paper i boli}
+$$\nabla u_1^\intercal \nabla u_1 = \nabla u^\intercal \nabla u +\frac{1}{|\zeta|^2}\left( 2\dot\gamma_{1} + \dot\gamma_1^2 + \dot\gamma_{2}^2 \right) \xi \otimes \xi + O(1/\lambda).$$
+De manera que per cada $x$ i $a=a(x)\in\mathbb R$ volem que $\gamma$ sigui tal que
+\begin{itemize}
+    \item {\color{blue} posar això amb la cosa aquella de (1) i (2)}
+    \item $(1+\dot\gamma_1)^2+\dot\gamma_2^2=|\zeta|^2a^2+1$,
+    \item $t \mapsto \dot\gamma(x,t)$ és $2\pi$-periòdica i $\int\dot\gamma\textrm{d}t=0$
+\end{itemize}
+i tal que $|\dot\gamma|\le C|a|$. Això és possible perquè l'envolupant convexa de $\set{(x,y):(1+x)^2+y^2 = |\zeta|^2a^2+1}$ conté el $0$. 
 
 
 
 
 \newpage
-\chapter{Paper Mobius strip}
+\chapter{Cinta de Moebius de paper òptima}
+\section{Explicació del Schwartz}
+{\color{blue}En aquesta secció expliquem el paper de Richard Evan Schwartz, en què demostra que la sinta de Moebius de paper òptima ha de tenir relació d'aspecte més gran que $\sqrt{3}$, i que qualsevol successió de cintes de Moebius amb relació d'aspecte convergint a $\sqrt{3}$ convergeix a la cinta de Moebius triangular.}
+\subsection{Introducció al problema}
+\begin{defi}
+    Una {\normalfont cinta de Moebius de paper de relació d'aspecte $\lambda$} és una aplicació infinitament diferenciable (suau) $I:M_{\lambda}\to\mathbb R^3$, on $M_\lambda$ és la cinta de Moebius plana obtinguda amb la següent identificació d'un rectangle
+    $$M_\lambda = ([0,\lambda] \times [0,1])/\sim, \quad\quad (0,y)\sim(\lambda,1-y)$$
+Una {\normalfont aplicació isomètrica} és una aplicació que preserva longituds d'arc. L'aplicació és una {\normalfont incrustació} si és injectiva, i una {\normalfont immersió} en general {\color{blue} Interessant veure si aquesta notació la seguim utilitzant o si se l'ha inventat}. Sigui $\Omega=I(M_\lambda)$. Diem que $\Omega$ està {\normalfont incrustada} si $I$ és una incrustació. 
+\end{defi}
+{\color{blue} el shwartz menciona aquí uns papers que expliquem més sobre la banda de moebius, si volem escriure més sobre el tema els podem utilitzar.}
+
+
+
 
 \newpage
 \chapter{Conclusions}
