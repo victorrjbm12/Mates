@@ -13,4 +13,6 @@
 \contentsline {chapter}{\numberline {5}Cinta de Moebius de paper òptima}{10}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Explicació del Schwartz}{10}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Introducció al problema}{10}{subsection.5.1.1}%
-\contentsline {chapter}{\numberline {6}Conclusions}{11}{chapter.6}%
+\contentsline {subsection}{\numberline {5.1.2}Definicions}{10}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Lemes addicionals}{10}{subsection.5.1.3}%
+\contentsline {chapter}{\numberline {6}Conclusions}{12}{chapter.6}%
