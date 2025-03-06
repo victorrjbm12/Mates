@@ -115,7 +115,7 @@
 
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ll}
-\textbf{\Large Director:} & \textbf{\Large Dr. Ignasi Mundet i Riera } \\
+\textbf{\Large Director:} & \textbf{\Large Dr. Ignasi Mundet Riera } \\
 \textbf{\Large Realitzat a:} & \textbf{\Large  Departament de matemàtiques i informàtica   } \\
 \\
 \textbf{\Large Barcelona,} & \textbf{\Large \today }
@@ -191,7 +191,7 @@ Faig servir incrustació, que potser hauria de dir immersió?
 \newpage
 
 \chapter{Suavitat i diferenciabilitat}
-
+{\color{blue} L'Ignasi m'ha dit que el que hauria de ressaltar més és la diferència entre $C^1$ i $C^\infty$. Potser podria comentar alguns dels resultats que són vàlids en un i no en l'altre?}
 \section{Suavitat}
 {\color{blue} El que hi ha aquí ho estic traient de wikipedia. Preguntar a l'Ignasi per una font més bona.}
 \begin{defi}
@@ -245,6 +245,22 @@ Aquí hauriem de parlar d'embedding preferiblement.
 \newpage
 
 \chapter{Teorema Nash-Kuiper C1}
+\section{Paper de Nash del 1954}
+{
+\color{blue}
+\begin{itemize}
+    \item Parlar abans de la diferència entre el punt de vista extrínsec i intrínsec de la geometria, un cop haguem parlat de geodif. 
+    \item Veurem que una varietat de dimensió $n$ es pot ficar en un espai $E^{2n}$, on aquí diem que $E^k$ és l'espai euclidià de dimensió $k$.
+    \item Interessant que el procés de les correccions sempre augmenta les distàncies localment, motiu pel qual el primer ha de ser curt. Diu Nash que l'anem "estirant".
+    \item Mirar el tema de si la caracterització de una immersió curta és diferent que a la que dona SJO.
+    \item Si la varietat és tancada només cal canviar l'escala de $E^k$ per fer la immersió curta. Si és oberta cal fer una cosa més complicada.
+    \item 
+\end{itemize}
+
+}
+
+
+\newpage
 \section{Explicació del Sung-Jin Oh}
 \begin{teo}\label{teo: SJO} Sigui $(M,g)$ una superfície, $N\ge\dim M+1$ i $u:M\to\mathbb R^N$ una incrustació estrictament curta, és a dir, tal que la longitud de cada vector en $M$ s'escurça (estrictament) sota $\nabla u$. Aleshores $u$ es pot aproximar uniformement per incrustacions isomètriques $C^1$.
 \end{teo}
@@ -535,14 +551,18 @@ Una {\normalfont aplicació isomètrica} és una aplicació que preserva longitu
 \end{teo}
 \subsection{Definicions}
 \begin{defi}
-    Sigui $I:M_\lambda\to\Omega$ una cinta de Moebius de paper incrustada. Un {\normalfont plec} a $\Omega$ és un vector $N:\Omega\to\mathbb S^2$ que a cada punt de $\Omega$ li assigna un vector normal unitari.
+    Sigui $I:M_\lambda\to\Omega$ una cinta de Moebius de paper incrustada. Un {\normalfont plec} {\color{blue} "doblec" o alguna cosa així?} a $\Omega$ és un segment de recta $B'$ que talla a través de $\Omega$ i té els seus extrems a la frontera.
 \end{defi}
-
+Veurem més endavant que tota cinta de Moebius de paper incrustada té una foliació per plecs.
+\begin{defi}
+    Sigui $B'$ un plec. Anomenem {\normalfont pre-plec} a la preimatge $B=I^{-1}(B')$.
+\end{defi}
+Degut al fet que $I$ no incrementa distàncies, és fàcil veure que els pre-plecs també són segments de recta, i que $M_\lambda$ té una foliació per pre-plecs.
 
 \subsection{Lemes addicionals}
 Per demostrar el teorema principal, es necessiten aquests dos lemes.
 \begin{lema}[T]\label{lema T}
-    Una cinta de Moebius de paper incrustada suau té un 
+    Una cinta de Moebius de paper incrustada suau té un  
 
 \end{lema}
 \newpage
@@ -557,9 +577,19 @@ Hem après un munt
 \begin{thebibliography}{25}
 
 \bibitem[Autor1 \& Autor2(ANY)]{nomdelacita}
-Autor1, A., \& Autor2, B. (ANY).
+Autor1, A., \& Autor2, B. (ANY)
 \newblock \textit{Nom del treball.}
 \newblock Cambridge University Press.
+
+\bibitem[Oh(2018)]{oh2018}
+Oh, S. J. (2018)
+\newblock \textit{The Nash $C^1$ isometric embedding theorem.}
+\newblock LINK O PUBLISHER?
+
+\bibitem[Nash(1954)]{nash1954}
+Nash, J. (1954)
+\newblock \textit{$C^1$ isometric imbeddings.}
+\newblock Annals of Mathematics, 60(3), 383-396.
 
 \end{thebibliography}
 \end{document} 
