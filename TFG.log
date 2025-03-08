@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  8 MAR 2025 12:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  8 MAR 2025 17:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -649,7 +649,13 @@ Package pgfplots: loading complementary utilities for your pgf version...
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+))) (/usr/local/texlive/2024/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
+Package: dirtytalk 2010/11/21 A package making "quoting" easier
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\c@dirtytalk@qdepth=\count342
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -659,7 +665,7 @@ File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen304
 \WF@size=\dimen305
-\c@WF@wrappedlines=\count342
+\c@WF@wrappedlines=\count343
 \WF@box=\box114
 \WF@everypar=\toks52
 Package: wrapfig 2003/01/31  v 3.6
@@ -687,9 +693,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count343
-\Gm@cntv=\count344
-\c@Gm@tempcnt=\count345
+\Gm@cnth=\count344
+\Gm@cntv=\count345
+\c@Gm@tempcnt=\count346
 \Gm@bindingoffset=\dimen306
 \Gm@wd@mp=\dimen307
 \Gm@odd@mp=\dimen308
@@ -700,24 +706,24 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen313
 \Gm@dimlist=\toks54
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count346
+\lst@mode=\count347
 \lst@gtempboxa=\box115
 \lst@token=\toks55
-\lst@length=\count347
+\lst@length=\count348
 \lst@currlwidth=\dimen314
-\lst@column=\count348
-\lst@pos=\count349
+\lst@column=\count349
+\lst@pos=\count350
 \lst@lostspace=\dimen315
 \lst@width=\dimen316
-\lst@newlines=\count350
-\lst@lineno=\count351
+\lst@newlines=\count351
+\lst@lineno=\count352
 \lst@maxwidth=\dimen317
  (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count352
-\lst@skipnumbers=\count353
+\c@lstnumber=\count353
+\lst@skipnumbers=\count354
 \lst@framebox=\box116
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
@@ -730,8 +736,8 @@ Package: inputenc 2024/02/08 v1.3d Input encoding file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
-\c@teo=\count354
-\c@nota=\count355
+\c@teo=\count355
+\c@nota=\count356
    defining Unicode char U+00ED (decimal 237)
    defining Unicode char U+00E9 (decimal 233)
    defining Unicode char U+00E0 (decimal 224)
@@ -740,43 +746,43 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
    defining Unicode char U+00FA (decimal 250)
  (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count356
+\l__color_backend_stack_int=\count357
 \l__pdf_internal_box=\box117
-) (./TFG.aux)
+) (./TFG.aux (./1_Introducció.aux) (./2_Comencem.aux) (./3_Suavitat.aux) (./4_Nash.aux) (./5_Moebius.aux))
 \openout1 = `TFG.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Info: Redefining \l on input line 83.
-LaTeX Info: Redefining \L on input line 83.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Info: Redefining \l on input line 78.
+LaTeX Info: Redefining \L on input line 78.
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count357
+\scratchcounter=\count358
 \scratchdimen=\dimen318
 \scratchbox=\box118
-\nofMPsegments=\count358
-\nofMParguments=\count359
+\nofMPsegments=\count359
+\nofMParguments=\count360
 \everyMPshowfont=\toks58
-\MPscratchCnt=\count360
+\MPscratchCnt=\count361
 \MPscratchDim=\dimen319
-\MPnumerator=\count361
-\makeMPintoPDFobject=\count362
+\MPnumerator=\count362
+\makeMPintoPDFobject=\count363
 \everyMPtoPDFconversion=\toks59
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -792,35 +798,35 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \symgns@font=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/b/n on input line 83.
-Package gensymb Info: Math companion symbols declared on input line 83.
-LaTeX Info: Redefining \degree on input line 83.
-LaTeX Info: Redefining \celsius on input line 83.
-Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 83.
-LaTeX Info: Redefining \ohm on input line 83.
-Package gensymb Info: Using \textohm for \ohm on input line 83.
-Package gensymb Info: Using \textmu for \micro on input line 83.
-LaTeX Info: Redefining \microtypecontext on input line 83.
-Package microtype Info: Applying patch `item' on input line 83.
-Package microtype Info: Applying patch `toc' on input line 83.
-Package microtype Info: Applying patch `eqnum' on input line 83.
-Package microtype Info: Applying patch `footnote' on input line 83.
-Package microtype Info: Applying patch `verbatim' on input line 83.
-LaTeX Info: Redefining \microtypesetup on input line 83.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/b/n on input line 78.
+Package gensymb Info: Math companion symbols declared on input line 78.
+LaTeX Info: Redefining \degree on input line 78.
+LaTeX Info: Redefining \celsius on input line 78.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 78.
+LaTeX Info: Redefining \ohm on input line 78.
+Package gensymb Info: Using \textohm for \ohm on input line 78.
+Package gensymb Info: Using \textmu for \micro on input line 78.
+LaTeX Info: Redefining \microtypecontext on input line 78.
+Package microtype Info: Applying patch `item' on input line 78.
+Package microtype Info: Applying patch `toc' on input line 78.
+Package microtype Info: Applying patch `eqnum' on input line 78.
+Package microtype Info: Applying patch `footnote' on input line 78.
+Package microtype Info: Applying patch `verbatim' on input line 78.
+LaTeX Info: Redefining \microtypesetup on input line 78.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 83.
+LaTeX Info: Redefining \showhyphens on input line 78.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 83.
+Package hyperref Info: Link coloring OFF on input line 78.
  (./TFG.out) (./TFG.out)
 \@outlinefile=\write5
 \openout5 = `TFG.out'.
@@ -863,39 +869,39 @@ Couldn't patch \deferred@thm@head!
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count363
-<matematiquesinformatica-pos-rgb.png, id=71, 1352.05125pt x 639.89063pt>
+\c@lstlisting=\count364
+<matematiquesinformatica-pos-rgb.png, id=51, 1352.05125pt x 639.89063pt>
 File: matematiquesinformatica-pos-rgb.png Graphic file (type png)
 <use matematiquesinformatica-pos-rgb.png>
-Package pdftex.def Info: matematiquesinformatica-pos-rgb.png  used on input line 93.
+Package pdftex.def Info: matematiquesinformatica-pos-rgb.png  used on input line 88.
 (pdftex.def)             Requested size: 170.71652pt x 80.78677pt.
 
-Overfull \hbox (31.18375pt too wide) in paragraph at lines 103--103
+Overfull \hbox (31.18375pt too wide) in paragraph at lines 98--98
  [][] 
  []
 
 
-Overfull \hbox (31.18375pt too wide) in paragraph at lines 107--107
+Overfull \hbox (31.18375pt too wide) in paragraph at lines 102--102
  [][] 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 117.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 112.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 117.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 112.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 117.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 112.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 117.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 112.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
@@ -916,12 +922,19 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 [3
 
 ]
+\openout2 = `1_Introducció.aux'.
+
+ (./1_Introducció.tex
 Cap\'{\i }tol 1.
 
 
 [4
 
-]
+
+])
+\openout2 = `2_Comencem.aux'.
+
+ (./2_Comencem.tex
 Cap\'{\i }tol 2.
 
 
@@ -929,14 +942,23 @@ Cap\'{\i }tol 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.191 \newpage
-               [1
+l.4 \newpage
+             [1
 
-]
+
+
+
+])
+\openout2 = `3_Suavitat.aux'.
+
+ (./3_Suavitat.tex
 Cap\'{\i }tol 3.
 
 
 [2
+
+
+
 
 ]
 Package microtype Info: Loading generic protrusion settings for font family
@@ -945,23 +967,29 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[3]
+[3])
+\openout2 = `4_Nash.aux'.
+
+ (./4_Nash.tex
 Cap\'{\i }tol 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 247.
+(hyperref)                removing `math shift' on input line 1.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 247.
+(hyperref)                removing `superscript' on input line 1.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 247.
+(hyperref)                removing `math shift' on input line 1.
 
 
 
 [4
+
+
+
 
 ]
 
@@ -978,44 +1006,47 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [10]
 
 [11]
+
+[12])
+\openout2 = `5_Moebius.aux'.
+
+
+No file 5_Moebius.tex.
 Cap\'{\i }tol 5.
 
 
-[12
+[13
+
+
+
+
+
 
 ]
-
-[13]
-Cap\'{\i }tol 6.
-
 
 [14
 
-]
-
-[15
-
-] (./TFG.aux)
+] (./TFG.aux (./1_Introducció.aux) (./2_Comencem.aux) (./3_Suavitat.aux) (./4_Nash.aux) (./5_Moebius.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: E34AC4046B71A0BFB1451A1B8724C769;2607.
+(rerunfilecheck)             Checksum: F6309E8B4FC8D2782B0B1B779BDEF0C5;1753.
  ) 
 Here is how much of TeX's memory you used:
- 38247 strings out of 473201
- 852852 string characters out of 5716120
- 1369118 words of memory out of 5000000
- 60577 multiletter control sequences out of 15000+600000
- 593289 words of font info for 221 fonts, out of 8000000 for 9000
+ 38442 strings out of 473201
+ 857377 string characters out of 5716120
+ 1372401 words of memory out of 5000000
+ 60749 multiletter control sequences out of 15000+600000
+ 592702 words of font info for 216 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,10n,105p,1027b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on TFG.pdf (20 pages, 654750 bytes).
+Output written on TFG.pdf (19 pages, 649022 bytes).
 PDF statistics:
- 380 PDF objects out of 1000 (max. 8388607)
- 301 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
- 62098 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 271 compressed objects within 3 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 62058 words of extra memory for PDF output out of 74296 (max. 10000000)
 

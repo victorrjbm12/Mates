@@ -3,7 +3,6 @@
 \usepackage{amsfonts, amsmath, amssymb,latexsym,amsthm, mathrsfs, enumerate}
 \usepackage[catalan]{babel}
 \usepackage{epsfig}
-
 \usepackage{mathtools}
 \usepackage{textcomp}
 \usepackage{gensymb}
@@ -14,16 +13,14 @@
 \usepackage{amsfonts}
 \usepackage{bbm}
 \usepackage{hyperref}
-
-%\usepackage[utf8]{inputenc}
 \usepackage{pgfplots}
+\usepackage{dirtytalk}
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
 \usepackage{wrapfig}
 \usepackage{fancyhdr}
 \usepackage{parskip}
-
 \parskip=5pt
 \parindent=15pt
 \usepackage[margin=1.2in]{geometry}
@@ -31,14 +28,12 @@
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\set}{\{}{\}}
-
 \setcounter{page}{0}
-
-
 \numberwithin{equation}{section}
+
+
 \newtheorem{teo}{Teorema}[section]
 \newtheorem*{teo*}{Teorema}
 \newtheorem*{prop*}{Proposici\'o}
@@ -120,20 +115,8 @@
 \\
 \textbf{\Large Barcelona,} & \textbf{\Large \today }
 \end{tabular}
-
 \end{flushright}
-
 \end{center}
-
-
-
-
-
-
-
-
-
-
 \end{titlepage}
 
 
@@ -164,416 +147,13 @@ Bla, bla, bla
 
 \newpage
 
-\chapter{Introducci\'o}
 
+\include{1_Introducció.tex}
+\include{2_Comencem.tex}
+\include{3_Suavitat.tex}
+\include{4_Nash.tex}
+\include{5_Moebius.tex}
 
-
-\subsection*{Objectius del treball}
-
-\begin{itemize}
-    \item Explicats
-\end{itemize}
-
-\subsection*{Estructura de la mem\`oria}
-Tremendo
-
-\subsection*{Guia de lectura}
-Faig servir incrustació, que potser hauria de dir immersió?
-
-\newpage
-
-\pagenumbering{arabic}
-\setcounter{page}{1}
-
-\chapter{Comencem}
-
-
-\newpage
-
-\chapter{Suavitat i diferenciabilitat}
-{\color{blue} L'Ignasi m'ha dit que el que hauria de ressaltar més és la diferència entre $C^1$ i $C^\infty$. Potser podria comentar alguns dels resultats que són vàlids en un i no en l'altre?}
-\section{Suavitat}
-{\color{blue} El que hi ha aquí ho estic traient de wikipedia. Preguntar a l'Ignasi per una font més bona.}
-\begin{defi}
-    Sigui $U\subseteq\mathbb R$ un conjunt obert, $f:U\to\mathbb R$ una funció real contínua.
-    Diem que $f$ és {\normalfont $k$-vegades derivable contínuament}, amb $k\in\mathbb N_0$, si la derivada d'ordre $k$, $$f^{(k)}:= \frac{d^k}{dx^k}f,$$ existeix i és contínua en $U$. Anomenem l'índex $k$ \textit{suavitat} de $f$.
-    Diem que $f$ és {\normalfont suau} o {\normalfont infinitament derivable} si existeix la derivada de qualsevol ordre.
-\end{defi}
-\begin{obss}
-\end{obss}
-\begin{itemize}
-    \item $f$ és $0$ vegades derivable contínuament si i només si $f$ és contínua. 
-    \item Si $f$ és $k$ vegades derivable contínuament, aleshores també és $j$ vegades derivable contínuament per $0\le j\le k$.
-\end{itemize}
-\begin{defi}
-    Anomenem \textit{classe de diferenciabilitat} $C^k(U)$, amb $k\in\mathbb N_0$ l'espai de les funcions $k$-vegades derivables contínuament en $U\subseteq\mathbb R^n$. Anomenem $C^\infty(U)$ l'espai de les funcions infinitament derivables en $U$.
-\end{defi}
-De la mateixa manera, podem definir aquests conceptes per funcions de diverses variables.
-\begin{defi}
-    Sigui $U\subseteq\mathbb R^n$ un conjunt obert, $f:U\to\mathbb R$ una funció real contínua.
-    Diem que $f$ és \textit{$k$-vegades derivable contínuament}, amb $k\in\mathbb N_0$, si totes les seves derivades parcials d'ordre $k$, $$\frac{\partial^k}{\partial x_1^{\alpha_1}\cdots\partial x_n^{\alpha_n}}f,$$ tals que $\sum_{i=1}^n\alpha_i = k$, existeixen i són contínues en $U$. És a dir, si $f$ és $k$-vegades derivable contínuament en cada component de $U$.
-\end{defi}
-\begin{defi}
-    Anomenem \textit{classe de diferenciabilitat} $C^k(U)$, amb $k\in\mathbb N_0$ l'espai de les funcions $k$-vegades derivables contínuament en $U\subseteq\mathbb R^n$. Anomenem $C^\infty(U)$ l'espai de les funcions infinitament derivables en $U$.
-\end{defi}
-\begin{obss}{\color{blue} Potser caldria donar la definició explícita en el cas de funcions de diverses variables.}
-\end{obss}
-\begin{itemize}
-    \item Moltes vegades, en lloc de $C^k(U)$ es fa servir $C^k(U;\mathbb R^m)$ per a funcions $f:U\to\mathbb R^m$.
-    \item També escriurem simplement $C^k$ en lloc de $C^k(U)$ si el domini és clar pel context.
-\end{itemize}
-
-\subsection{Classes de diferenciabilitat com espais normats}
-A continuació definirem normes en $C^k(U)$ i $C^\infty(U)$ que ens permetran tractar-les com espais vectorials normats.
-\begin{defi}
-    Sigui $U\subseteq\mathbb R^n$ un conjunt obert, $f:U\to\mathbb R^m$ una funció. Definim la norma $\|\cdot\|_{C^k(U)}$ de $f$ com
-    \begin{equation*}
-        \|f\|_{C^k(U)} = \sum_{|\alpha|\le k} \|D^\alpha f\|_{L^\infty(U)},
-    \end{equation*}
-    on $\|\cdot\|_{L^\infty(U)}$ és la norma del suprem en $U$, tal que $\|g\|_{L^\infty(U)} = \sup_{x\in U} |g(x)|$.
-\end{defi}
-{\color{blue} Aquí podríem proposar i demostrar que $\|\cdot\|_{C^k(U)}$ és efectivament una norma, ho tenim a \url{https://proofwiki.org/wiki/C%5Ek_Norm_is_Norm}. També cal decidir si definim explícitament la $D^\alpha$.}
-
-\section{Fonaments de geometria diferencial}
-Aquí hauriem de parlar d'embedding preferiblement.
-
-
-
-
-
-
-\newpage
-
-\chapter{Teorema Nash-Kuiper $C^1$}
-\section{Paper de Nash del 1954}
-{
-\color{blue}
-\begin{itemize}
-    \item Parlar abans de la diferència entre el punt de vista extrínsec i intrínsec de la geometria, un cop haguem parlat de geodif. 
-    \item Veurem que una varietat de dimensió $n$ es pot ficar en un espai $E^{2n}$, on aquí diem que $E^k$ és l'espai euclidià de dimensió $k$.
-    \item Interessant que el procés de les correccions sempre augmenta les distàncies localment, motiu pel qual el primer ha de ser curt. Diu Nash que l'anem "estirant".
-    \item Mirar el tema de si la caracterització de una immersió curta és diferent que a la que dona SJO.
-    \item Si la varietat és tancada només cal canviar l'escala de $E^k$ per fer la immersió curta. Si és oberta cal fer una cosa més complicada.
-    \item Cada correcció es va fent en infinites "etapes", cada una d'elles corregint la correcció de la etapa anterior. L'important aquí és que cada correcció manté el fet que la immersió sigui curta, tot i que cada vegada menys. Cada etapa ens hi hauria d'apropar la meitat del camí. Per exemple, després de la primera, l'error hauria de ser
-    $$g_{ij}-\overline{h_{ij}}\approx \frac12(g_{ij}-h_{ij})$$
-    \item Ho fem d'aquesta manera perquè així ens assegurem que cada correcció només ha d'augmentar la mètrica. 
-    \item Cada etapa es divideix en passes (passos?), que afecten només localment la immersió augmentant la mètrica en una sola direcció. 
-    \item Per tal de dividir en passos, dividim la varietat en una sèrie d'entorns amb $n$ paràmetres $C^\infty$ no singulars, i cada entorn es pot trobar amb un nombre finit d'altres entorns.
-    \item Per cada un d'aquests entorns, per exemple $N_p$, prenem una funció $\varphi_p$ positiva a l'interior de $N_p$ i $0$ fora d'ell. Definim aquestes funcions tals que la suma de totes les $\varphi_p$ valgui $1$ en qualsevol punt. (Això com es fa? Diu que és estàndard però em sembla una mica complicat si ha de ser $C^\infty$.) Això serveix per distribuir la "càrrega" de la correcció.
-    \item En cada entorn, la "càrrega" de la correcció es divideix també entre les passes. Sigui $\delta_{ij}=g_{ij}-h_{ij}$ l'error mètric després d'unes quantes etapes. A la propera voldríem augmentar la mètrica més o menys $\frac12\delta_{ij}$, de manera que a l'entorn $N_p$ voldríem augmentar la mètrica en $\frac12\varphi_p\delta_{ij}$. Per fer-ho haurem de trobar un tensor definit positiu $\beta_{ij}$ que sigui $C^\infty$ i aproximi $\delta_{ij}$.
-    \item $$\frac12\varphi_p\beta_{ij} = \sum_{\nu}a_{\nu}\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}$$ on $x^i$ són coordenades de l'entorn $N_p$, $a_\nu$ funcions no-negatives $C^\infty$ i $\psi^\nu$ funcions lineals en $x^i$.
-    \item 
-\end{itemize}
-
-}
-
-
-\newpage
-\section{Explicació del Sung-Jin Oh}
-\begin{teo}\label{teo: SJO} Sigui $(M,g)$ una superfície, $N\ge\dim M+1$ i $u:M\to\mathbb R^N$ una incrustació estrictament curta, és a dir, tal que la longitud de cada vector en $M$ s'escurça (estrictament) sota $\nabla u$. Aleshores $u$ es pot aproximar uniformement per incrustacions isomètriques $C^1$.
-\end{teo}
-{\color{blue} Haurem d'explicar què és una incrustació isomètrica, i mirar si cal que li canviem el nom}
-
-Per exemple, l'homotècia $\mathbb S^2\to\varepsilon\mathbb S^2$ amb $\varepsilon\in(0,1)$ és una aplicació \textit{curta}. 
-\begin{obs}
-De fet, qualsevol incrustació $C^2$ isomètrica $u:\mathbb S^2\hookrightarrow\mathbb R^3$ ha de ser igual a la incrustació estàndard $\mathbb S^2 \hookrightarrow\set{ x\in\mathbb R^3 : |X| = 1 }$ fins translació i rotació. 
-\end{obs}
-
-El teorema \ref{teo: SJO} es demostra amb \textit{integració convexa}.
-
-Sung-Jin Oh demostra aquí el Baby Nash theorem.
-
-
-Sigui $D=\set{x\in\mathbb R^2 : |x|<1}$ el disc unitat, i $g = g_{ij}(x)$ una mètrica de $D$. Una aplicació $u:D\to\mathbb R^n$ és una \textit{immersió} {\color{blue} per ara direm incrustació als embeddings i immersions als \textit{immersions}} si $\nabla u(x)$ és injectiva per tot $x$. La mètrica en $D$ induïda per $u$ és de la forma {\color{blue} Haurem de recordar i controlar el que era la mètrica induïda}
-\begin{equation*}
-    \nabla u ^{\intercal}(x)\nabla u (x) = \begin{pmatrix}
-    \nabla_1 u\nabla_1 u & \nabla_1 u\nabla_2 u\\
-    \nabla_2 u\nabla_1 u & \nabla_2 u\nabla_2 u
-    \end{pmatrix}
-\end{equation*}
-Diem que l'aplicació és \textit{isomètrica} {\color{blue} també estaria bé comentar isometries} si $\nabla u ^{\intercal}\nabla u = g$, i diem que és \textit{(estrictament) curta} si $\nabla u(x)^{\intercal} \nabla u(x) - g(x) \le 0$ per tot $x\in D$.
-\begin{teo}\label{Baby Nash}
-    Sigui $n\ge 4$ i $u:D\to\mathbb R^n$ una immersió isomètrica estrictament curta. Per qualsevol $\varepsilon > 0$, existeix una immersió isomètrica $C^1$ $\tilde u:D\to\mathbb R^n$ tal que $\|u-v\|_{C^0(D)} < \varepsilon$.{\color{blue} Aquí cal motivar l'interès d'aquest resultat. Entenc que la idea és que partim d'una immersió que és estrictament curta i volem trobar una que sigui contínua i isomètrica. Vull mirar continuïtats.}
-\end{teo}
-\begin{obs}
-    Aquest teorema necessita que la co-dimensió sigui com a mínim 2.
-\end{obs}
-La manera de demostrar aquest resultat és a través d'un mètode iteratiu amb passos altament oscil·lants.
-Sigui $u_1 = u + U$ amb 
-\begin{equation*}
-    U=\sum_{I\in\mathcal I} U_I
-\end{equation*}
-Volem que cada component $U_I^j$ sigui complex, per tal que oscil·li com $e^{ix \cdot \xi}$, però que el resultat del sumatori sigui real. Així, imposem que per cada $I\in\mathcal I$ que existeixi $\overline I\in\mathcal I$ tal que 
-\begin{equation*}
-    U_{\overline{I}} = \overline{U}_I, \quad \overline{\overline{I}} = I.
-\end{equation*}
-Ara tenim un error mètric $h_1 = g - \nabla u_1 ^{\intercal}\nabla u_1$. {\color{blue} On entenem que l'error mètric és la diferència entre la mètrica i la mètrica induïda per la immersió? Té sentit, però cal veure per què només agafo el primer terme.}
-\begin{equation*}
-    h_1 = 
-        \left( h-\sum_{I} \nabla \overline{U}_I ^{\intercal}\nabla U_I \right) 
-        - \sum_{I}\left( \nabla u ^{\intercal}\nabla U_I + \nabla U_I ^{\intercal}\nabla u \right)
-        - \sum_{I,J: J\not = \overline I} \nabla U_I ^{\intercal}\nabla U_J.
-\end{equation*}
-I anomenem els tres sumands, en ordre, $q_{\text{mèt}}$, $q_{\text{lin}}$ i $q_{\text{alt}}$.
-
-Volem una correcció que oscil·li en una sola direcció $\xi\in\mathbb R^2$, $|\xi|=1$. Posem
-\begin{equation*}
-    U_I = W = \frac1\lambda a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi},
-\end{equation*}
-amb $a:D\to\mathbb R$ i $\textbf{n}:D\to\mathbb C^n$ tal que $\textbf{n}\cdot \overline{\textbf{n}}=1$. Per tal que sigui real, definim també $\overline I\in\mathcal I$ tal que 
-\begin{equation*}
-    U_{\overline{I}} = \overline W = \frac1\lambda a(x)\overline{\textbf{n}}(x)e^{-\lambda i x \cdot \xi}.
-\end{equation*}
-
-Per eliminar el terme $q_{\text{mèt}}$, observem que
-\begin{equation*}
-    \begin{aligned}
-    \nabla_j W &= i\xi_j a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi} + \frac{1}{\lambda}\nabla_j (a(x)\textbf{n}(x))e^{\lambda i x \cdot \xi}\\
-    &=i\xi_j a(x)\textbf{n}(x)e^{\lambda i x \cdot \xi} + O(\frac{1}{\lambda})
-    \end{aligned}
-\end{equation*}
-{\color{blue} EXPLICAR PER QUÈ ÉS O(1/LAMBDA)!!! De fet, explicar d'on surt la lambda aquesta.}
-I, per tant,
-\begin{equation*}
-    \begin{aligned}
-    \nabla_i W^*(x) \nabla_jW(x)&= (-i\xi_ia(x)e^{-\lambda i x \cdot \xi})(i\xi_ja(x)e^{\lambda i x \cdot \xi})\overline{\textbf{n}}(x) \cdot\textbf{n}(x) + O(\frac{1}{\lambda})\\
-    &= \xi_i\xi_j a(x)^2 + O(\frac{1}{\lambda})
-    \end{aligned}
-\end{equation*}
-on definim $(\cdot)^* = (\overline{\cdot})^\intercal$. Així, l'oscil·lació és cancel·lada i en resulta un terme $a(x)^2\xi_i\xi_j$.
-\begin{ex}
-    {\color{blue} EXPLICAR MILLOR AQUEST EXEMPLE}
-    Posem que per un cert $x\in D$, l'error $h$ és de la forma
-    \begin{equation*}
-        h(x) = a^2(x)\xi \otimes \xi + b^2(x)\xi' \otimes \xi' + c^2(x)\xi'' \otimes \xi''
-    \end{equation*}
-    aleshores, amb això fem desaparèixer el terme $\xi \otimes \xi$. Repetint-ho per $\xi' \otimes \xi'$ i $\xi'' \otimes \xi''$ aconseguim reduir l'error $h(x)$ a un terme $O(\frac{1}{\lambda})$.
-\end{ex}
-\begin{obs}
-    {\color{blue} EXPLICAR AQUESTA OBSERVACIÓ}
-    Aquest mètode requereix que $h$ sigui curta, ja que $\nabla_i W^*(x) \nabla_jW(x)$ és un terme no-negatiu. De fet, per tal que $h_1$ sigui curt, necessitem que $h$ sigui estrictament curt.
-\end{obs}
-Ara bé, els autovectors $\xi$ depenen d'$x$. Això es pot resoldre amb el següent lema.
-\begin{lema}\label{lema:descomposicio_error_metric} (Descomposició de l'error mètric)
-    Sigui $\mathcal P$ l'espai de totes les matrius definides positives. Existeix una successió $\xi^{(k)}$ de vectors unitaris en $\mathbb R^n$ i una successió $\Gamma_{(k)}\in C_c^\infty(\mathcal P; [0,\infty))$ tals que
-    \begin{equation*}
-        A_{ij} = \sum_k\Gamma^2_{k}(A)\xi_i^{(k)}\xi_j^{(k)}
-    \end{equation*}
-    i aquesta suma és \textit{localment finita}. És a dir, existeix $N\in\mathbb N$ tal que per tot $A\in\mathcal P$ com a màxim $N$ termes de $\Gamma_{(k)}$ són no-nuls.
-\end{lema}
-\begin{obs}
-    La demostració d'aquest teorema no l'escrivim aquí explícitament. {\color{blue} ESTÀ AL SUNG-JIN OH.}
-\end{obs}
-Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per tal de minimitzar l'error mètric, més enllà que necessitem que sigui unitari. Veurem que el podem escollir de tal manera que els termes $q_{\text{lin}}$ i $q_{\text{alt}}$ desapareguin fins a terme $O(1/\lambda)$.
-\begin{itemize}
-
-    \item \textbf{Error de linearització.} Substituïm el terme amb $W$
-    \begin{equation*}
-         \nabla_i u ^{\intercal}\nabla_j W = i\xi_j a(x)e^{ix\cdot\xi}\nabla_i u\cdot\textbf{n}+O(1/\lambda)
-    \end{equation*}
-    i veiem que podem eliminar aquest component escollint un vector perpendicular a l'espai tangent de $u(x)$, $\textbf{n}(x)\perp \nabla_j u(x)$. Això es pot fer perquè l'espai té co-dimensió 1 ({\color{blue}REVISAR!!!}). Podem fer el mateix amb $\nabla_iW^{\intercal}\nabla_ju$ i obtenim
-    \begin{equation*}
-        \nabla_i u ^{\intercal}\nabla_j W + \nabla_iW^{\intercal}\nabla_ju = O(1/\lambda)
-    \end{equation*}
-
-    \item \textbf{Interferència altament oscil·lant.} De nou, substituïm el terme
-    \begin{equation*}
-        \nabla_iW^{\intercal}\nabla_jW = (-a^2(x)\xi_i\xi_je^{2ix\cdot\xi})\textbf{n}\cdot\textbf{n} + O(1/\lambda).
-    \end{equation*}
-    I ara només cal utilitzar que la incrustació té co-dimensió $\ge2$ per escollir un vector complex tal que $\textbf{n}\cdot\textbf{n} = 0$ {\color{blue}Com està definit aquest producte?}. Podem prendre, per exemple, 
-    \begin{equation*}
-        \textbf{n} = \frac{1}{i\sqrt2}\zeta(x) + \frac{1}{\sqrt2}\eta(x)
-    \end{equation*}
-    on $\zeta(x)$ i $\eta(x)$ són vectors reals unitaris ortogonals a l'espai tangent $T_{u(x)}u(D)$.
-    \item \textbf{Forma final de la correcció.} Tot plegat, tenim una correcció de la forma
-    \begin{equation*}
-        W(x) = \frac{a(x)}{\lambda}\left( \sin(\lambda x \cdot \xi)\zeta(x) + \cos(\lambda x \cdot \xi)\eta(x) \right)
-    \end{equation*}
-    amb les següents propietats:
-    \begin{itemize}
-        \item[--] Norma $C^0$ petita {\color{blue} Explicar C-normes}: $$||W||_{C^0}\le C\frac{||a||_{C^0}}{\lambda}$$
-        \item[--] Terme principal en $\nabla W$ 
-        \begin{equation*}
-            \begin{aligned}
-                \nabla W = &a(x)\left( \cos(\lambda x \cdot \xi)\zeta(x) - \sin(\lambda x \cdot \xi)\eta(x) \right) \\
-                &+ O_{||a||_{C^0}, ||\nabla a||_{C^0}, ||\nabla\zeta||_{C^0}, ||\nabla\eta||_{C^0}}(1/\lambda)
-            \end{aligned}
-        \end{equation*}
-        \item[--] Error mètric petit: $$\nabla_i W^{\intercal}\nabla_j W(x) -a^2(x)\xi_i\xi_j = O(1/\lambda)$$
-        \item[--] Error de linearització petit: $$\nabla_i u ^{\intercal}\nabla_j W + \nabla_iW^{\intercal}\nabla_ju = O(1/\lambda)$$
-        \item[--] Error d'interferència petita: $$\nabla_i W ^{\intercal}\nabla_j W = O(1/\lambda)$$
-    \end{itemize}
-\end{itemize}
-\begin{obs}
-    {\color{blue} Aquesta derivada es pot entendre si l'escrius i fas els passos. Mirar si cal explicar-ho millor.}
-    Una manera alternativa d'arribar a la forma general de la correcció és la següent. Definim 
-    \begin{equation*}
-        \begin{aligned}
-        \gamma = (\gamma_1, \gamma_2) : &D\times \mathbb T\to \mathbb R^2\\
-        & (x,t)\mapsto \gamma(x,t)
-        \end{aligned}
-    \end{equation*}
-    on $\mathbb T = \mathbb R / 2\pi\mathbb Z$.
-    Posant $\dot\gamma$ la derivada respecte de $t$, tenim que
-    \begin{equation*}
-        \nabla W ^{\intercal}(x) \nabla W(x) = \left( \dot\gamma_1^2(x, \lambda x\cdot\xi) + \dot\gamma_2^2(x, \lambda x\cdot\xi) \right)\xi\otimes\xi + O(1/\lambda).
-    \end{equation*}
-    De manera que per cada $x$ cal trobar $\gamma(x,\cdot)$ tal que 
-    (1) $\dot\gamma_1^2 + \dot\gamma_2^2 = a^2$ i 
-    (2) $t\mapsto \dot\gamma(x,t)$ sigui $2\pi$-periòdic i $\int\dot\gamma\text{d}t = 0$
-    De manera que $t\mapsto\gamma(x,t)$ també ha de ser $2\pi$-periòdica i el seu origen ha de pertànyer al disc unitat tancat $\overline D$.
-    {\color{blue} IMPORTANT Per a després, NASH ANOMENA STEP A CADA ADDICIÓ D'UNA CORRECCIÓ, que es carrega un terme a un error d'ordre $O(1/\lambda)$. }
-\end{obs}
-\begin{lema}[Lema d'iteració]\label{Lema_iteracio}
-    Sigui $u:D\to\mathbb R^n$ una immersió suau estrictament curta, tal que $h:=g-\nabla u ^{\intercal}\nabla u$ obeeix
-    \begin{equation}
-        ||h||_{C^0} \le e_h
-    \end{equation}
-    per algun $e_h > 0$. Aleshores, per qualsevol $\varepsilon > 0$, existeix una immersió suau estrictament curta $u_{[1]} = u + U$, on
-    \begin{equation}
-        \begin{aligned}
-        ||U||_{C^0(D)} &\le \varepsilon\\
-        ||\nabla U||_{C^0(D)} &\le Ce_h^{1/2}
-        \end{aligned}
-    \end{equation}
-    i $h_{[1]}:=g-\nabla u_{[1]}^{\intercal}\nabla u_{[1]}$ obeeix
-    \begin{equation}
-        ||h_{[1]}-h||_{C^0} \le \varepsilon.
-    \end{equation}
-\end{lema}
-\textit{Prova.} Pel lema \ref{lema:descomposicio_error_metric}, tenim que $h$ es pot escriure com
-\begin{equation*}
-    h(x) = \sum_k \Gamma^2_{(k)}(h(x))\xi^{(k)}\otimes\xi^{(k)}
-\end{equation*}
-on per cada $h(x)$ hi ha com a molt $K$ termes no-nuls.
-
-Per la compacitat d' $h(D)\subseteq\mathcal P$, existeix un nombre finit de sumands que són funcions no-nul·les{\color{blue} Non-vanishing, mirar la traducció}. Reanomenem aquests sumands d'aquesta manera:
-\begin{equation*}
-    \Gamma^2_{(1)}(h(x))\xi^{(1)}\otimes\xi^{(1)}, \Gamma^2_{(2)}(h(x))\xi^{(2)}\otimes\xi^{(2)}, \dots, \Gamma^2_{(N)}(h(x))\xi^{(N)}\otimes\xi^{(N)}
-\end{equation*}
-Prenent la traça, veiem que 
-\begin{equation*}
-    ||\Gamma_{(j)}(h)||_{C^0} \le ||h||_{C^0}^{1/2} \le e_h^{1/2}
-\end{equation*}
-{\color{blue} Mirar d'on surt això (Sembla Cauchy-Schwarz, però què passa amb la traça de h?)}
-Ara podem fer $N$ correccions a $u$ de la mateixa manera que hem fet abans, en les direccions $\xi^{(1)}, \xi^{(2)}, \dots, \xi^{(N)}$, per cancel·lar aquests errors. En concret, per un $\delta>0$, definim de manera recursiva $u_j = u_{j-1}+(1-\delta)^{1/2}U_j$, amb $u_0 = u$ i 
-\begin{equation*}
-    U_j = \frac{\Gamma_{(j)}(h(x))}{\lambda_j}\left( \sin(\lambda_j x\cdot\xi^{(j)})\zeta_j(x) + \cos(\lambda_j x\cdot\xi^{(j)})\eta_j(x) \right)
-\end{equation*}
-per uns certs $\lambda_j$ i $\zeta_j, \eta_j:D\to\mathbb R^n$ unitaris.
-
-Prenem $\delta > 0$ per tal d'assegurar curtedat estricta {\color{blue} no sé com es diu shortness la veritat}. De fet, fixem $0<\delta<\frac{\varepsilon}{2e_h^{1/2}}$ per tal que $h\ge\delta I$. {\color{blue} uiuiui això mirar-ho bé}
-
-Escollint $\lambda_j$ prou gran, tenim
-\begin{itemize}
-    \item[--]
-    \begin{equation}
-        ||U_j||_{C^0} \ll \varepsilon
-    \end{equation}
-    \item[--]
-    \begin{equation}
-        \nabla U_j = \Gamma_{(j)}(h)\xi^{(j)}(\cos(\lambda_j x\cdot\xi^{(j)})\zeta - \sin(\lambda_j x\cdot\xi^{(j)})\eta) + \text{err}_j,\quad ||\text{err}_j||_{C^0} \ll \varepsilon
-    \end{equation}
-    \item[--]
-    \begin{equation}
-        h_j=h_{j-1}-(1-\delta)\Gamma^2_{(k)}(h)\xi^{(j)}\xi^{(j)} + \text{err}_j', \quad ||\text{err}_j'||_{C^0} \ll \delta^2
-    \end{equation}
-    {\color{blue} Les dues primeres són fàcils d'entendre, però la tercera l'hem de revisar.}
-\end{itemize}
-On $h_j=g-\nabla u_j ^{\intercal}\nabla u_j$. 
-
-Per tal de concloure la prova, verifiquem que $U=U_1+\dots+U_N$ i $u_{[1]}=u_N=u+U$ satisfan les propietats desitjades.
-
-\begin{itemize}
-    \item És fàcil veure que $||U_j|| \ll \varepsilon$ implica $||U||_{C^0(D)} \ll \varepsilon$.
-    \item A més, de $\nabla U_j = \Gamma_{(j)}(h)\xi^{(j)}(\cos(\lambda_j x\cdot\xi^{(j)})\zeta - \sin(\lambda_j x\cdot\xi^{(j)})\eta) + \text{err}_j$ i $||\Gamma_{(j)}(h)||_{C^0} \le e_h^{1/2}$ tenim que $||\nabla U||_{C^0(D)} \le Ke_h^{1/2} + \sum_{j=1}^N ||\text{err}_j||_{C^0} \le 2Ke_h^{1/2}$ si es prenen les constants adequades. 
-    \item Finalment, sumant els termes $h_j$ obtenim 
-    \begin{equation*}
-        h_N = h-(1-\delta)\sum_{j=1}^N \Gamma^2_{(j)}(h)\xi^{(j)}\xi^{(j)} + \sum_{j=1}^N \text{err}'_j = \delta h + \sum_{j=1}^N \text{err}'_j
-    \end{equation*}
-    i imposant que $u_{[1]} = u_N$ sigui estrictament curta, $h_{[1]}=h_N \ge \delta^2 I$, obtenim el resultat.
-\end{itemize}
-\qed
-
-Ara podem iterar diverses vegades per concloure la prova del teorema \ref{Baby Nash}.
-
-\textit{Prova del teorema \ref{Baby Nash}.} Sigui $e_{h,[k]}>0$ una successió tal que
-$$\sum_{k}e_{h,[k]}\le \epsilon,\quad\sum_{k}e_{h,[k]}^{1/2}<\infty.$$ 
-Pel lema \ref{Lema_iteracio}, obtenim una successió d'aplicacions suaus estrictament curtes $u_{[k]}$ tal que $u_{[0]}=u$ i
-\begin{equation*}
-    \begin{aligned}
-    ||g-\nabla u_{[k]}^\intercal\nabla u_{[k]}||_{C^0} &\le e_{h,[k]}\\
-    ||\nabla u_{[k+1]}-\nabla u_{[k]}||_{C^0} &\le Ce^{1/2}_{h,[k]}\\
-    ||u_{[k+1]}-u_{[k]}||_{C^0} &\le e_{h,[k+1]},
-    \end{aligned}
-\end{equation*}
-demostrant el teorema.\qed
-
-{\color{blue} revisar això últim perquè just estava parlant amb la marina}
-\subsection{Extensions}
-\subsubsection{Extensió a incrustacions de varietats}
-Per estendre el teorema \ref{Baby Nash} a immersions a superfícies generals, només cal reduir a cartes coordenades. Per estendre'l a incrustacions usem que, per la compacitat d'$M$, podem trobar $\varepsilon>0$ tal que 
-$$\inf_{x,y} \text{dist}(u(x), u(y))\ge\varepsilon.$$ Ara només cal dur a terme la construcció en un entorn de $0.01\varepsilon$.{\color{blue} entendre millor això últim perquè és bastant random}
-\subsubsection{Refinament de Kuiper: incrustació de codimensió 1}
-Modificant la forma de la correcció, podem aconseguir la mateixa construcció amb només co-dimensió 1. Sigui $\eta:D\to\mathbb R^{3}$ el camp vectorial unitari en $u(D)$, i sigui
-$$\zeta = \nabla u (\nabla u^\intercal \nabla u)^{-1}\xi.$$
-Prenem 
-$$U = \frac1\lambda \left( \gamma_{1}(x, \lambda x \cdot \xi)\tilde{\zeta}(x) + \gamma_{2}(x, \lambda x \cdot \xi)\tilde{\eta}(x) \right)$$
-on 
-$$\tilde{\zeta} = \frac{\zeta}{|\zeta|^2}, \quad \tilde{\eta} = \frac{\eta}{|\zeta|},$$
-i $u_1 = u + U$. Això porta a 
-{\color{blue} paper i boli}
-$$\nabla u_1^\intercal \nabla u_1 = \nabla u^\intercal \nabla u +\frac{1}{|\zeta|^2}\left( 2\dot\gamma_{1} + \dot\gamma_1^2 + \dot\gamma_{2}^2 \right) \xi \otimes \xi + O(1/\lambda).$$
-De manera que per cada $x$ i $a=a(x)\in\mathbb R$ volem que $\gamma$ sigui tal que
-\begin{itemize}
-    \item {\color{blue} posar això amb la cosa aquella de (1) i (2)}
-    \item $(1+\dot\gamma_1)^2+\dot\gamma_2^2=|\zeta|^2a^2+1$,
-    \item $t \mapsto \dot\gamma(x,t)$ és $2\pi$-periòdica i $\int\dot\gamma\textrm{d}t=0$
-\end{itemize}
-i tal que $|\dot\gamma|\le C|a|$. Això és possible perquè l'envolupant convexa de $\set{(x,y):(1+x)^2+y^2 = |\zeta|^2a^2+1}$ conté el $0$. 
-
-
-
-
-\newpage
-\chapter{Cinta de Moebius de paper òptima}
-\section{Explicació del Schwartz}
-{\color{blue}En aquesta secció expliquem el paper de Richard Evan Schwartz, en què demostra que la sinta de Moebius de paper òptima ha de tenir relació d'aspecte més gran que $\sqrt{3}$, i que qualsevol successió de cintes de Moebius amb relació d'aspecte convergint a $\sqrt{3}$ convergeix a la cinta de Moebius triangular.}
-\subsection{Introducció al problema}
-\begin{defi}
-    Una {\normalfont cinta de Moebius de paper de relació d'aspecte $\lambda$} és una aplicació infinitament diferenciable (suau) $I:M_{\lambda}\to\mathbb R^3$, on $M_\lambda$ és la cinta de Moebius plana obtinguda amb la següent identificació d'un rectangle
-    $$M_\lambda = ([0,\lambda] \times [0,1])/\sim, \quad\quad (0,y)\sim(\lambda,1-y)$$
-Una {\normalfont aplicació isomètrica} és una aplicació que preserva longituds d'arc. L'aplicació és una {\normalfont incrustació} si és injectiva, i una {\normalfont immersió} en general {\color{blue} Interessant veure si aquesta notació la seguim utilitzant o si se l'ha inventat}. Sigui $\Omega=I(M_\lambda)$. Diem que $\Omega$ està {\normalfont incrustada} si $I$ és una incrustació. 
-\end{defi}
-\begin{ex}
-    Anomenem \textit{cinta de Moebius de paper triangular} la cinta de Moebius de paper de relació d'aspecte $\lambda = \sqrt{3}$.
-\end{ex}
-{\color{blue} el shwartz menciona aquí uns papers que expliquem més sobre la banda de moebius, si volem escriure més sobre el tema els podem utilitzar.}
-
-\begin{teo}[Principal]\label{teo:Main Schwartz}
-    Una cinta de Moebius de paper suau incrustada en $\mathbb R^3$ té relació d'aspecte més gran que $\sqrt{3}$.
-\end{teo}
-
-\begin{teo}[Límit Triangular]\label{teo:Límit triangular}
-    Sigui $I_n:M_{\lambda_n}\to\mathbb R^3$ una successió de cintes de Moebius de paper suaus incrustades, tals que $\lambda_n\to\sqrt{3}$. Aleshores, $I_n$ convergeix uniformement a una cinta de Moebius de paper triangular, llevat d'isometria.
-\end{teo}
-\subsection{Definicions}
-\begin{defi}
-    Sigui $I:M_\lambda\to\Omega$ una cinta de Moebius de paper incrustada. Un {\normalfont plec} {\color{blue} "doblec" o alguna cosa així?} a $\Omega$ és un segment de recta $B'$ que talla a través de $\Omega$ i té els seus extrems a la frontera.
-\end{defi}
-Veurem més endavant que tota cinta de Moebius de paper incrustada té una foliació per plecs.
-\begin{defi}
-    Sigui $B'$ un plec. Anomenem {\normalfont pre-plec} a la preimatge $B=I^{-1}(B')$.
-\end{defi}
-Degut al fet que $I$ no incrementa distàncies, és fàcil veure que els pre-plecs també són segments de recta, i que $M_\lambda$ té una foliació per pre-plecs.
-
-\subsection{Lemes addicionals}
-Per demostrar el teorema principal, es necessiten aquests dos lemes.
-\begin{lema}[T]\label{lema T}
-    Una cinta de Moebius de paper incrustada suau té un  
-
-\end{lema}
-\newpage
 \chapter{Conclusions}
 
 Hem après un munt
