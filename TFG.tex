@@ -244,7 +244,7 @@ Aquí hauriem de parlar d'embedding preferiblement.
 
 \newpage
 
-\chapter{Teorema Nash-Kuiper C1}
+\chapter{Teorema Nash-Kuiper $C^1$}
 \section{Paper de Nash del 1954}
 {
 \color{blue}
@@ -254,6 +254,14 @@ Aquí hauriem de parlar d'embedding preferiblement.
     \item Interessant que el procés de les correccions sempre augmenta les distàncies localment, motiu pel qual el primer ha de ser curt. Diu Nash que l'anem "estirant".
     \item Mirar el tema de si la caracterització de una immersió curta és diferent que a la que dona SJO.
     \item Si la varietat és tancada només cal canviar l'escala de $E^k$ per fer la immersió curta. Si és oberta cal fer una cosa més complicada.
+    \item Cada correcció es va fent en infinites "etapes", cada una d'elles corregint la correcció de la etapa anterior. L'important aquí és que cada correcció manté el fet que la immersió sigui curta, tot i que cada vegada menys. Cada etapa ens hi hauria d'apropar la meitat del camí. Per exemple, després de la primera, l'error hauria de ser
+    $$g_{ij}-\overline{h_{ij}}\approx \frac12(g_{ij}-h_{ij})$$
+    \item Ho fem d'aquesta manera perquè així ens assegurem que cada correcció només ha d'augmentar la mètrica. 
+    \item Cada etapa es divideix en passes (passos?), que afecten només localment la immersió augmentant la mètrica en una sola direcció. 
+    \item Per tal de dividir en passos, dividim la varietat en una sèrie d'entorns amb $n$ paràmetres $C^\infty$ no singulars, i cada entorn es pot trobar amb un nombre finit d'altres entorns.
+    \item Per cada un d'aquests entorns, per exemple $N_p$, prenem una funció $\varphi_p$ positiva a l'interior de $N_p$ i $0$ fora d'ell. Definim aquestes funcions tals que la suma de totes les $\varphi_p$ valgui $1$ en qualsevol punt. (Això com es fa? Diu que és estàndard però em sembla una mica complicat si ha de ser $C^\infty$.) Això serveix per distribuir la "càrrega" de la correcció.
+    \item En cada entorn, la "càrrega" de la correcció es divideix també entre les passes. Sigui $\delta_{ij}=g_{ij}-h_{ij}$ l'error mètric després d'unes quantes etapes. A la propera voldríem augmentar la mètrica més o menys $\frac12\delta_{ij}$, de manera que a l'entorn $N_p$ voldríem augmentar la mètrica en $\frac12\varphi_p\delta_{ij}$. Per fer-ho haurem de trobar un tensor definit positiu $\beta_{ij}$ que sigui $C^\infty$ i aproximi $\delta_{ij}$.
+    \item $$\frac12\varphi_p\beta_{ij} = \sum_{\nu}a_{\nu}\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}$$ on $x^i$ són coordenades de l'entorn $N_p$, $a_\nu$ funcions no-negatives $C^\infty$ i $\psi^\nu$ funcions lineals en $x^i$.
     \item 
 \end{itemize}
 
