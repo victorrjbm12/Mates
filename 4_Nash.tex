@@ -30,10 +30,58 @@
             \boxed{\overline{z}^\alpha = z^\alpha + \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu) + \eta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\sin(\lambda \psi^\nu)}
         \end{equation}
         on $\lambda$ és un paràmetre que podem triar.
-    \item El canvi mètric és $\sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}$. No cal calcular tots els termes en detall, perquè molts contenen $1/\lambda$ o $1/\lambda^2$ i, per tant, convergeixen uniformement a $0$ quan $\lambda\to\infty$. Altres termes es cancel·len.
+    \item El canvi mètric és $\sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}$. No cal calcular tots els termes en detall, perquè molts contenen $1/\lambda$ o $1/\lambda^2$ i, per tant, convergeixen uniformement a $0$ quan $\lambda\to\infty$. Altres termes es cancel·len. CALDRIA FER AIXÒ A MÀ.
+    \item $\lambda$ no fa desaparèixer els termes en què s'ha derivat les trigonomètriques, perquè en surt una $\lambda$ de dins. Ara bé, ens queden termes de l'estil $\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\zeta^\alpha\sqrt{a_\nu}(-\sin(\lambda \psi^\nu))\frac{\partial\psi^\nu}{\partial x^j}$, o amb les $i$ i $j$ bescanviades o amb $\eta^\alpha$ en comptes del $\zeta^\alpha$. Cadascun d'aquests termes són $0$, ja que $\zeta$ i $\eta$ són normals a la immersió.
+    \item La resta de termes tindran el producte de dues funcions trigonomètriques o el quadrat d'una d'elles. Les que tinguin el producte també contenen $\zeta^\alpha\eta^\alpha$, i desapareixen per ortogonalitat.
+    \item El que queda, doncs és 
+    $$\sum_\alpha (\zeta^\alpha)^2 a_\nu (\sin^2(\lambda \psi^\nu) ) \frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + \sum_\alpha (\eta^\alpha)^2 a_\nu (\cos^2(\lambda \psi^\nu) ) \frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}$$
+    i si traiem factor comú i usem que els vectors són unitaris, ens queda
+    $$a_\nu\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}$$
+    que és el que volíem.
+    \item I amb això veiem que l'error mètric és $O(1/\lambda)$.
+    \item A \textbf{Size of immersion...} repetim que la pertorbació canvia segons $O(1/\lambda)$ després de cada passa. Mirant el que fa a la primera derivada, veiem el canvi que fa en un entorn totes les passes d'una etapa, i queda que el canvi en les derivades acaba sent $$\left|\left( \frac{\partial z^\alpha}{\partial x^i}\right)_{\text{final}}-\left( \frac{\partial z^\alpha}{\partial x^i}\right)_{\text{inicial}}\right| \le 2\sqrt{K\beta_{ii}}+O(1/\lambda_1)+\dots + O(1/\lambda_\nu)+\cdots$$ LA VERITAT ÉS QUE NO SÉ D'ON SURTEN ELS TRES PUNTS DEL FINAL.
+    \item A \textbf{Global considerations and convergence} volem veure quina $\lambda$ s'ha d'agafar. 
+    \begin{itemize}
+        \item[$\bullet$] $B_1$ és el màxim error que volem en l'aproximació del canvi mètric, \\$a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right)$.
+        \item[$\bullet$] $B_2$ és el màxim error $O(1/\lambda)$ que volem en el canvi de les primeres derivades.
+        \item[$\bullet$] $B_3$ és la cota de $\overline{z}^\alpha - z^\alpha$.
+    \end{itemize}
+    \item Després d'una etapa, la nova mètrica induïda és $h'_{ij} = h_{ij} + \frac12\delta_{ij}$. Posem $h'_{ij} = g_{ij} - \delta'_{ij}$, on $\delta'_{ij} =-\frac12\delta_{ij} +e_{ij}$ i $e_{ij}$ és un terme d'error. Per tal que la successió convergeixi, necessitem que $\delta'_{ij}$ sigui estrictament més petita que $\delta_{ij}$. Si imposem que en tot punt de $N_p$ el màxim dels components de $e_{ij}$ sigui menor o igual a un sisè del màxim de $\delta_{ij}$, aleshores el màxim de $\delta'_{ij}$ serà menor o igual a dos terços del màxim de $\delta_{ij}$. MIRAR SI AIXÒ ÉS ALGUNA NORMA $C^k$ O ALGO.
+    \item Volem que $\delta'_{ij}$ sigui definida positiva, que ho podem assegurar si imposem que la mida de $e_{ij}$ sigui més petita que un cert $\varepsilon_p$ que depèn de l'entorn compacte $N_p$. Com cada entorn se superposa amb un nombre finit $\sigma$ d'altres entorns, es poden trobar límits per $e_{ij}$ tal que el que busquem sigui cert en tots ells. Anomenem $\varepsilon_p^*$ el mínim d'aquestes limitacions.  
+    \item L'error ve de l'aproximació de $\delta_{ij}$ per $\beta_{ij}$ i dels passos. Per tant, imposant $(\delta_{ij}- \beta_{ij}) < \varepsilon_p^*$, tenim que $(\frac12\varphi_p\delta_{ij}- \frac12\varphi_p\beta_{ij}) < \frac12\varepsilon_p^*$. Així, podem imposar que en un entorn $N_p$ els passos tinguin aquesta seqüència de $B_{1}$: $B_{11}\le\frac14\varepsilon_p^*$, $B_{12}\le\frac18\varepsilon_p^*$, $B_{13}\le\frac1{16}\varepsilon_p^*$, etc.
+    \item A \textbf{Performability of the steps} simplement diu que a cada pas tenim una immersió $C^\infty$ i que tot és definit positiu. La única font de negativitat és l'error, però això sempre es pot contenir amb $\lambda$.
+    \item A \textbf{General organization} es fa aquest resum:
+        \begin{itemize}
+            \item[$\bullet$] El procés es fa en una sèrie d'etapes que prenen una immersió curta $C^\infty$ i en retornen una amb un error mètric com a molt $2/3$ del de l'anterior.
+            \item[$\bullet$] La varietat es divideix en entorns $N_p$. 
+            \item[$\bullet$] Cada etapa es divideix en passos. A cada etapa, la correcció és pesada per $\varphi_p$ i dividida per tal que la duguin a terme les passes. 
+            \item[$\bullet$] Si la varietat és oberta, hi ha un nombre infinit de passos per etapa, però a cada porció compacta hi ha un nombre finit.
+        \end{itemize}
+    \item A \textbf{Convergence of the immersion} diu que necessitem que les $B_3$ del pas $r$ de l'etapa $s$ siguin més petites que $2^{-(r+s)}$, i el mateix per $B_2$. La manera per fer-ho és escollir que la mida de $\beta_{ij}$ estigui entre $9/10$ i $9/8$ de la de $\delta_{ij}$. Això fa que el canvi en les derivades estigui limitat per una geomètrica de raó $\sqrt{5/6}$ MIRAR AIXÒ, de manera que les funcions $C^\infty$ convergeixen uniformement a una de $C^1$.
+    \item ES MOLT IMPORTANT QUE ESCRIVIM ALGUNA COSA SOBRE LA DIFERÈNCIA ENTRE IMMERSIONS I INCRUSTACIONS.
+    \item A \textbf{Isometric Imbeddings} {\color{black} QUAN PARLA DE CONJUNT LÍMIT CREC QUE ES REFEREIX A LA PART DEL CONJUNT OBERT MÉS LLUNYANA, EL QUE ESTARIA JUST A TOCAR DE LA FRONTERA} diu que per incrustacions és bàsicament el mateix, però necessitem controlar les auto-interseccions. Per veure que pas a pas no n'hi ha, cal comprovar que per $\lambda$ prou gran les evitem. 
+    \item Sigui $M$ un conjunt tancat de l'incrustació que conté $N_p$ al seu interior. $M$ té un entorn obert $H$ tal que no hi ha punt de $H$ amb dues rectes perpendiculars a $M$. MIRAR AIXÒ, HI HA UNA CITA.
+    \item Posem $Q$ la unió del conjunt límit amb la part de la incrustació que no està a l'interior de $M$. Aleshores $Q$ és tancat i una pertorbació prou petita de $N_p^*$ no afectarà $Q$. AQUÍ NO SÉ QUÈ ÉS $N_p^*$. EN GENERAL, AQUEST APARTAT ES POSA MOLT TÈRBOL. 
+    \item A \textbf{Constructing the initial immersion} explica que si la varietat té dimensió $n$, sabem que es pot trobar una incrustació en $E^{2n}$ no-singular i analítica. Es pot prendre aquesta immersió i escalar-la per a que sigui curta. 
+    \item Per un conjunt obert, podem recobrir la varietat per entorns $N_p$ pesats amb funcions $C^\infty$ $\varphi_p$ amb paràmetres $x_{pi}$ tals que $|x_{pi}|\le1$. Volem que en qualsevol punt de la varietat els conjunts d'aquest recobriment se superposin un nombre finit de vegades $s$, com a molt.
+    \item Podem dividir els conjunts $N_p$ en $s$ classes, de manera que en cada classe no hi hagi conjunts que es superposin. 
+    \item Podem definir una incrustació en un espai $s(n+2)$ dimensional, a partir de funcions $u_\sigma=\varepsilon_p\varphi_p$ en conjunts de la classe $\sigma$ i $0$ en la resta, $v_\sigma=\varepsilon^2_p\varphi_p$ en conjunts de la classe $\sigma$ i $0$ en la resta, i $w_\sigma=\varepsilon_p\varphi_px_{pi}$ en conjunts de la classe $\sigma$ i $0$ en la resta, on $x_{pi}$ la coordenada $i$-èssima de $N_p$ i $\set{\varepsilon_p}_p$ és una successió monòtona decreixent de nombres positius que convergeix a $0$.
+    \item Observem: que totes aquestes funcions són $C^\infty$, que dos punts de conjunts interiors a conjunts diferents tenen raons $v_\sigma/u_\sigma$ diferents, i que punts interiors a un mateix entorn $N_p$ tenen $w_{\sigma i}$ diferents. (EL CONJUNT LÍMIT ÉS L'ORIGEN PERÒ CAP PUNT ÉS ENVIAT A L'ORIGEN)
+    \item Podem escollir que la incrustació sigui curta escollint la successió $\set{\varepsilon_p}_p$. Si la mètrica induïda pels primers $p$ entorns és curta per un factor $\frac13(2-1/p)$, podem escollor $p+1$ tal que sigui curta per un factor $1/3(2-1/(p+1))$. Amb això tenim una incrustació curta i $C^\infty$ en $E^{s(n+2)}$, i a partir de projeccions podem arribar a $E^{2n+1}$
+
+
 \end{itemize}
 
 }
+
+
+
+
+
+
+
+
+
 \begin{equation}\label{eq:un_mig_de_phi_p}
     \frac12\varphi_p\beta_{ij} = \sum_{\nu}a_{\nu}\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}
 \end{equation}

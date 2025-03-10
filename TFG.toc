@@ -7,8 +7,8 @@
 \contentsline {section}{\numberline {3.2}Fonaments de geometria diferencial}{3}{section.3.2}%
 \contentsline {chapter}{\numberline {4}Teorema Nash-Kuiper $C^1$}{4}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Paper de Nash del 1954}{4}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Explicació del Sung-Jin Oh}{7}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Extensions}{11}{subsection.4.2.1}%
-\contentsline {subsubsection}{Extensió a incrustacions de varietats}{11}{section*.8}%
-\contentsline {subsubsection}{Refinament de Kuiper: incrustació de codimensió 1}{12}{section*.9}%
-\contentsline {chapter}{\numberline {5}Conclusions}{13}{chapter.5}%
+\contentsline {section}{\numberline {4.2}Explicació del Sung-Jin Oh}{9}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Extensions}{13}{subsection.4.2.1}%
+\contentsline {subsubsection}{Extensió a incrustacions de varietats}{13}{section*.8}%
+\contentsline {subsubsection}{Refinament de Kuiper: incrustació de codimensió 1}{14}{section*.9}%
+\contentsline {chapter}{\numberline {5}Conclusions}{15}{chapter.5}%
