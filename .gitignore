@@ -1,0 +1,17 @@
+# LaTeX temporary files
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.blg
+*.bbl
+*.dvi
+*.ps
+*.pdf
+*.gz
+*.DS_Store
+
+# Keep .aux files in repository
+# !*.aux 

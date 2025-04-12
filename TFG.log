@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  16 MAR 2025 14:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  12 APR 2025 12:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -748,7 +748,7 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count357
 \l__pdf_internal_box=\box117
-) (./TFG.aux (./1_Introducció.aux) (./2_Comencem.aux) (./3_Suavitat.aux) (./4_Nash.aux) (./5_Mobius.aux))
+) (./TFG.aux (./1_Introducció.aux) (./2_Suavitat.aux) (./3_Nash.aux) (./4_Tor.aux) (./5_Mobius.aux) (./APUNTS.aux))
 \openout1 = `TFG.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
@@ -870,7 +870,7 @@ Couldn't patch \deferred@thm@head!
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count364
-<matematiquesinformatica-pos-rgb.png, id=71, 1352.05125pt x 639.89063pt>
+<matematiquesinformatica-pos-rgb.png, id=95, 1352.05125pt x 639.89063pt>
 File: matematiquesinformatica-pos-rgb.png Graphic file (type png)
 <use matematiquesinformatica-pos-rgb.png>
 Package pdftex.def Info: matematiquesinformatica-pos-rgb.png  used on input line 88.
@@ -931,10 +931,7 @@ Cap\'{\i }tol 1.
 [4
 
 
-])
-\openout2 = `2_Comencem.aux'.
-
- (./2_Comencem.tex
+]
 Cap\'{\i }tol 2.
 
 
@@ -942,16 +939,13 @@ Cap\'{\i }tol 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4 \newpage
-             [1
-
-
-
+l.45 \newpage
+              [1
 
 ])
-\openout2 = `3_Suavitat.aux'.
+\openout2 = `2_Suavitat.aux'.
 
- (./3_Suavitat.tex
+ (./2_Suavitat.tex
 Cap\'{\i }tol 3.
 
 
@@ -968,9 +962,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 [3])
-\openout2 = `4_Nash.aux'.
+\openout2 = `3_Nash.aux'.
 
- (./4_Nash.tex
+ (./3_Nash.tex
 Cap\'{\i }tol 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1014,6 +1008,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [14]
 
 [15])
+\openout2 = `4_Tor.aux'.
+
+ (./4_Tor.tex)
 \openout2 = `5_Mobius.aux'.
 
  (./5_Mobius.tex
@@ -1025,9 +1022,15 @@ Cap\'{\i }tol 5.
 
 
 
+
+
+
 ]
 
 [17])
+\openout2 = `APUNTS.aux'.
+
+ (./APUNTS.tex
 Cap\'{\i }tol 6.
 
 
@@ -1035,31 +1038,46 @@ Cap\'{\i }tol 6.
 
 
 
+
 ]
 
-[19
+[19]
 
-] (./TFG.aux (./1_Introducció.aux) (./2_Comencem.aux) (./3_Suavitat.aux) (./4_Nash.aux) (./5_Mobius.aux))
+[20])
+
+[21]
+Cap\'{\i }tol 7.
+
+
+[22
+
+
+
+]
+
+[23
+
+] (./TFG.aux (./1_Introducció.aux) (./2_Suavitat.aux) (./3_Nash.aux) (./4_Tor.aux) (./5_Mobius.aux) (./APUNTS.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: E34AC4046B71A0BFB1451A1B8724C769;2607.
+(rerunfilecheck)             Checksum: C63B50C1A91B07E68775054AAC8D2308;3296.
  ) 
 Here is how much of TeX's memory you used:
- 38528 strings out of 473201
- 858277 string characters out of 5716120
- 1375514 words of memory out of 5000000
- 60760 multiletter control sequences out of 15000+600000
- 594662 words of font info for 242 fonts, out of 8000000 for 9000
+ 38614 strings out of 473201
+ 859280 string characters out of 5716120
+ 1375981 words of memory out of 5000000
+ 60785 multiletter control sequences out of 15000+600000
+ 595834 words of font info for 261 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,10n,105p,1027b,810s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on TFG.pdf (24 pages, 685072 bytes).
+Output written on TFG.pdf (28 pages, 711098 bytes).
 PDF statistics:
- 410 PDF objects out of 1000 (max. 8388607)
- 327 compressed objects within 4 object streams
- 93 named destinations out of 1000 (max. 500000)
- 62098 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 467 PDF objects out of 1000 (max. 8388607)
+ 380 compressed objects within 4 object streams
+ 109 named destinations out of 1000 (max. 500000)
+ 62146 words of extra memory for PDF output out of 74296 (max. 10000000)
 

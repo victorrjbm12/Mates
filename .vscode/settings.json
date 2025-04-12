@@ -23,6 +23,7 @@
         "exemple",
         "Explicació",
         "Explicar",
+        "Faraco",
         "geodif",
         "GRAU",
         "Haurem",
@@ -77,5 +78,6 @@
     },
     "ltex.disabledRules": {
         "ca-ES": ["UNKNOWN_WORDS"]
-    }
+    },
+    "explorer.excludeGitIgnore": false
 }

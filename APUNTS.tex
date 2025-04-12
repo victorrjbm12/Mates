@@ -1,0 +1,108 @@
+\chapter{Apunts d'integració convexa}
+El que segueix són apunts del seminari \textit{Convex Integration, Staircase Laminates and Applications} d'en Daniel Faraco, de part de la Universitat Autònoma de Madrid, el dia 17 de març de 2025. BGSMATH2025.
+
+\section{Dia 1}
+La integració convexa comença amb l'article de Nash sobre les incrustacions $C^1$. La pregunta era si pots posar una esfera de manera isomètrica en una esfera més petita. Fiques una varietat $2D$, l'esfera, en una esfera en $\mathbb R^3$. 
+
+La condició \textbf{d'isometria} és que $Du^\intercal Du = g$. Nash comença amb una immersió curta i troba una d'isomètrica. 
+
+Esculls adequadament les pertorbacions de la immersió i obtens el resultat, com ja sabem. El resultat no és particularment útil, potser, però el mètode concret que fa servir és el que anomenem \textbf{integració convexa}, que és molt útil. En general, si hi ha una sèrie de PDE i les dones a través del límit d'unes pertorbacions, donada una subsolució final. 
+$$u^\infty = \lim_{N\to\infty} u^N,$$
+on $u^{N+1} - u^N = \omega_q$ i $\omega_q$ té paràmetres d'oscil·lació i concentració $\lambda_q$ i $\tau_q$, amb direccions $\eta_k^1\eta_k^2$. i funcions oscil·lants $\phi$.
+
+Considerarem que les aplicacions curtes són \textbf{límits febles}, on els límits febles tals que 
+$$\not\int_E u_\gamma \to \not\int_E \overline u$$
+FORMULA 1, són \textbf{course grain solutions}. Diu que en aplicacions a PDE, la solució seria \say{micro} i el límit feble seria \say{macro}.
+
+Gromov és potser qui comença a desenvolupar aquest mètode de Nash. Altres van veure que això servia en dinàmica de fluids. 
+
+\textbf{Laminats d'escala} són un mètode inventat pel Faraco per resoldre equacions el·líptiques isotròpiques. Es fan en tres passos:
+\begin{itemize}
+    \item[(1)] Escriure el problema com una inclusió diferencial: trobar un conjunt $K\subseteq M^{m\times n}$ tal que $u:\Omega\to\mathbb R^m$ i $Du(x)\in K$ a.e. $x\in\Omega$, on $K$ és un conjunt tancat euclidià que representa les dades del problema.
+    \item[(2)] Aproximar la solució per $K$ per $$\int\text{dist}_K(Du)^p\le\varepsilon$$.
+    \item[(3)] Combinar moltes solucions aproximades per construir una solució exacta.
+\end{itemize}
+Veurem aquí tota una sèrie d'aplicacions.
+
+\subsubsection{Teoria de Calderón Zygmund}
+Tenint en compte aquestes propietats i definició de la transformada de Fourier, FORMULA 2.
+
+Per Plancherel, FORMULA 3, les derivades estan controlades per la laplaciana en la norma $L^2$. Però en $L^1$ això no és cert:
+\begin{teo}\label{teo:primer}
+    $\forall N,\Omega$ regular $\exists f_N$ amb $\int|\partial_{x1x2}f|\ge N$ i $\sup\set{|\partial_{x1x1}|,|\partial_{x2x2}|}\le 1$
+\end{teo}
+
+\subsubsection{Equacions el·líptiques i aplicacions quasiconformals}
+En electrostàtica, si $u$ és el potencial elèctric, aleshores 
+\begin{itemize}
+    \item[--] $\text{div}(\rho\nabla u) = 0$ on $\rho$ la conductivitat.
+    \item[--] Condició de frontera $u|_{\partial\Omega} = g$
+    \item[--] Quan $\rho = 1$: $\text{div}(\nabla u) = \Delta u$
+\end{itemize}
+El·lipticitat quantitativa:
+$$\frac1KI\le\rho(x)\le KI$$
+
+La solució feble en forma distribucional és $$\int_\Omega\rho\nabla u \nabla \phi \text dx = 0,\quad,\forall\phi\in C_0^\infty(\Omega)$$
+La manera d'arribar a això és amb la primera variació del funcional d'energia
+$$I[u] = \int_\Omega\rho|\nabla u|^2\text dx$$
+Però hem de veure quin és l'espai en què això té sentit. En general, necessitem $W^{1,2}(\Omega)$. La pregunta és si són solucions febles honestes. Hi ha qui les anomena solucions molt febles. 
+
+I ara està parlant de coses del BIMR que no arribo a entendre. 
+
+\section{Dia 2}
+Mirarem C-Z en $L^1$, equacions el·líptiques, homeomorfismes patològics etc., on el que ens interessa és que els podem escriure $Df(x)\in E\subseteq M^{m\times n}$. 
+
+El mètode que explicarà sera trobar $Df(x)\in E\subseteq M^{m\times n}$ tal que hi ha un exponent crític $p$ a $(J)$ tal que $Df\in L^{p,\infty}\subset\cap_{q<p}L^q\setminus L^p$.
+
+Pel que fa a CZ ens interessa veure que no és vàlid en $L^1$. És a dir, que exiteis $u$ tal que $\int|\partial_{x1x2}u|=\infty$ però $|\partial_{x1x1}|+|\partial_{x2x2}|\le 1$.
+
+Vam deduir l'operador estrella de Hodge, $\star$, per equacions el·líptiques. Les derivades conformes i anticonformes es poden escriure com coordenades complexes d'una matriu $2\times 2$. 
+
+Si $A = \begin{pmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{pmatrix} = (a_-,a_+)$, aleshores $\partial_{\overline z}f = \pm \kappa\overline{\partial_z}f$.
+Escrivim $Df \in E_{\pm\kappa} = \set{a_-=\pm\kappa a_+}$. Si tenim una matriu conforme i diagonal, aleshores està en una diagonal. El que tenim ara és en dos plans, $a_-=-\kappa a_+$ i $a_-=\kappa a_+$. MIRAR DIBUIX.
+
+\subsubsection{Beltrami no lineals}
+$\partial_{\overline z}f = \mu\partial_z f$, ${\partial_{\overline z}f} = v\overline{\partial_z}f$, $\partial_{\overline z}f =\mu\partial_z f + v\overline{\partial_z}f$
+es poden posar en una certa forma.
+
+
+
+\section{Dia 3}
+Recordem que el que volem, donat $u:\mathbb R^2\to\mathbb R^2$, descriure 
+$$Du(x)\in K\quad\textrm{a.e. x}\quad (I)$$
+Quina és la integrabilitat de $Du$? 
+I volem reformular el problema com:
+$$\exists g.d. v_u \text{ tal que } ...$$
+
+
+
+
+
+\section{Dia 4}
+Volem, com sempre, $Du\in K$ tal que $Du\in L^{p,\infty}\setminus L^p$ per algun $p$ crític.
+Això és el mateix que fer una distribució de gradients tq el suport de $v_u\in K$, $v_u(x:|x|\ge t)\approx t^{-p}$.
+Que serà el mateix que construir un laminat d'escala tal que $v_u\in\mathcal{SL}^p(K)$ 
+
+Recordem que diem que $A$ i $B$ són rang 1 connectades si $A-B=a\otimes n$ tal que $\det(A-B)=0$. Per tant, $\forall 0\le\lambda\le1$, $\lambda s_A+(1-\lambda)s_B$ és (aprox) distribució de gradients.
+
+Amb això podem trobar ua funció amb distribució de gradients només un en $A$ i un en $B$ (l'espai gradient vius a l'espai de les matrius, generat per $(1 0, 0 0)$ i $(0 0, 0 1)$ ) Aleshores les direccions de rang 1 són les horitzontals i verticals. El centre de masses d'una mesura generada (en horitzontal) per A i B està en el segment entre $A$ i $B$.
+
+Les propietats que té la distribució de gradients per tal que funcionin és que siguin afins a trossos amb condicions afins de frontera, que ens fa més fàcil generar laminats. Si tenim $ABABAB$ haurem de posar a la frontera lateral una regió d'interpolació, i no hi ha problema canviant per exemple $B$ per $DEDEDE$ o alguna cosa així. Cada vegada que fem aquest procés, que la massa de $A$ es divideix entre $B$ i $C$ i la de $B$ entre $D$ i $E$, tenim una altra distribució gradient. 
+Ara bé, amb això només podem fer coses amb matrius connectades rang 1. Ara bé, si no són connectades rang 1 això no funciona. El que hem construit fins ara eren prelaminats, els laminats són els límits de successions de prelaminats a mesura que fem més i més petites les cantonades.
+
+La gran contribució de Tartar és que ser un camp gradient és només que el rotacional sigui 0. Anul·lar el rotacional és com resoldre un sistema d'equacions de primer ordre, per exemple $\mathcal L(z) = A_{ijk}\partial_j z^k$. Per cada operador diferencial existeix el que anomenem con d'ones $\Lambda_L$, el subconjunt de $\mathbb R^n$ tal que si $I\in\Lambda_L$ aleshores exiteix una direcció $\xi$ tal que per qualsevol $h:\mathbb R\to \mathbb R$ tenim que $\mathcal L(h)$ LHA TRET :(, que generalitza el concepte de connexió de rang 1.
+
+Aquesta teoria no es restringeix només a gradients, sinó també a coses de Fraday blablabla.
+
+Definició de laminat escala: tenim un conjunt $K\in M^{d\times m}$ on vull que es suporti, i $A\not\in K$. Aleshores l'esglaó $n$ serà $\omega_1=(1-\gamma_n)\mu_n+\gamma_n\delta_{A_n}$ i tal, de manera que anem pujant i suportant-nos on toca.
+
+
+
+
+
+
+
+
+
+
+
