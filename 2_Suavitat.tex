@@ -1,6 +1,92 @@
-\chapter{Suavitat i diferenciabilitat}
-{\color{blue} L'Ignasi m'ha dit que el que hauria de ressaltar més és la diferència entre $C^1$ i $C^\infty$. Potser podria comentar alguns dels resultats que són vàlids en un i no en l'altre?}
+\chapter{Suavitat i Varietats}
+\section{Introducció al capítol}
+En aquest capítol ens ocuparem de definir i comentar algunes de les nocions bàsiques de geometria diferencial i de varietats diferenciables i suaus. La referència principal per aquest capítol és \cite{lee2013}.\\
+A un nivell intuïtiu, les varietats suaus (\textit{smooth manifolds}) són espais topològics que, localment, es poden veure com espais euclidians $\mathbb R^n$, i tals que hi sigui possible fer càlcul infinitesimal. Si bé és fàcil entendre la noció de suavitat (\textit{smoothness}) en els exemples senzills de corbes i superfícies immerses en $\mathbb R^3$, cal tenir en compte que no és cap requeriment per a una varietat suau que sigui immersa en un espai ambient $\mathbb R^n$, sinó que s'haurà de treballar en termes intrínsecs. Aquest fet és molt rellevant en una de les aplicacions més interessants de la geometria diferencial, la teoria de la relativitat general, on l'espai-temps es modela com una varietat diferenciable de dimensió 4 i on no hi ha cap espai ambient en el sentit clàssic. Un altra subtilesa és que la noció de suavitat no pot ser una propietat purament topològica, ja que no és preservada per homeomorfismes. L'exemple més evident és el d'un cercle i un quadrat, que són homeomorfs en $\mathbb R^2$, però el cercle és suau mentre que el quadrat no ho és.
+{\color{blue} Aquí podem escriure més quan haguem acabat el capítol.}
+
+\section{Varietats topològiques}
+\begin{defi} 
+    Sigui $M$ un espai topològic. Diem que $M$ és una \textbf{varietat topològica de dimensió $n$} si es compleixen les propietats següents:
+    \begin{itemize}
+        \item $M$ és \underline{Hausdorff}, és a dir, si per a cada $p,q\in M$ amb $p\neq q$ existeixen entorns oberts $U\subseteq M$ i $V\subseteq M$ de $p$ i $q$ respectivament tals que $U\cap V = \emptyset$,
+        \item $M$ verifica el \underline{segon axioma de numerabilitat}, és a dir, existeix una base numerable de la topologia de $M$,
+        \item $M$ és \underline{localment homeomorf a $\mathbb R^n$}, és a dir, per a cada $p\in M$ existeix un entorn obert $U\subseteq M$ de $p$ que és homeomorf a un obert de $\mathbb R^n$.
+    \end{itemize}
+\end{defi}
+{\color{blue} Es pot posar un exemple}
+
+Per tal de poder descriure localment els punts de les varietats i de poder operar amb ells, serà útil introduir el concepte de carta coordenada.
+
+\begin{defi}
+    Sigui $M$ una varietat topològica de dimensió $n$. Diem que un parell $(U,\varphi)$ és una \textbf{carta coordenada de $M$} si $U$ és un obert de $M$ i $\varphi:U\to\hat U$ és un homeomorfisme amb un obert $\hat U\subseteq\mathbb R^n$. Anomenem $U$ el \textbf{domini de la carta} i $\varphi$ la \textbf{funció coordenada}.
+\end{defi}
+\begin{obs}
+    De la definició de carta coordenada, observem que no tota varietat topològica $M$ es pot cobrir amb una única carta coordenada. Per exemple, si $M$ és homeomorf al cercle $\mathbb S^1$ amb la topologia induïda per $\mathbb R^2$, no es pot trobar cap aplicació $\varphi:M\to\mathbb R$ que sigui un homeomorfisme amb un obert de $\mathbb R$, ja que $\mathbb S^1$ és compacte.
+\end{obs}
+
+{\color{blue} Es pot posar un exemple.}
+
+A continuació, donarem algunes propietats de les varietats topològiques i les cartes coordenades, sense reproduir les demostracions explícitament.
+
+\begin{lema}
+    Tota varietat topològica es pot recobrir amb numerables cartes coordenades.
+\end{lema}
+
+
+\begin{lema}
+    Tota varietat topològica té una base numerable de boles coordenades amb adherència compacta.
+\end{lema}
+
+
+\begin{prop}
+Sigui $M$ una varietat topològica. Aleshores, 
+\end{prop}
+{
+    \begin{itemize}
+        \item \textit{$M$ és localment arc-connexa.}{\color{blue} Aquí utilitzo arc-connexa com a sinònim de connex per camins.}
+        \item \textit{$M$ és connex si i només si és arc-connex.}
+        \item \textit{Els components connexos de $M$ són els seus components arc-connexos.}
+        \item \textit{$M$ té un conjunt numerable de components connexos, i cada un d'ells és un obert i una varietat topològica connexa.}
+    \end{itemize}
+}
+\begin{prop}
+    Tota varietat topològica és localment compacta. És a dir, per a cada $p\in M$ existeix un entorn obert $U$ de $p$ tal que $U\subseteq K$ per algun compacte $K\subseteq M$.
+\end{prop}
+\begin{defi}
+    Diem que una col·lecció $\mathcal X$ de subconjunts d'un espai topològic $M$ és \textbf{localment finita} si per a cada $p\in M$ existeix un entorn obert $U$ de $p$ tal que $U\cap X = \emptyset$ per a tots $X\in\mathcal X$ excepte un nombre finit d'ells.
+\end{defi}
+\begin{defi}
+    Donat un recobriment per oberts $\mathcal U$ d'un espai topològic $M$, diem que un recobriment per oberts $\mathcal V$ és un \textbf{subrecobriment de $\mathcal U$} si per a cada $V\in\mathcal V$ existeix $U\in\mathcal U$ tal que $V\subseteq U$.
+\end{defi}
+\begin{defi}
+    Diem que un espai topològic $M$ és \textbf{paracompacte} si qualsevol recobriment per oberts de $M$ té un subrecobriment localment finit.
+\end{defi}
+\begin{teo}
+    Tota varietat topològica és paracompacta. De fet, donat un recobriment per oberts $\mathcal X$ i qualsevol base $\mathcal B$ de la topologia de $M$, existeix un subrecobriment numerable localment finit $\mathcal V$ de $\mathcal X$ format només d'elements de $\mathcal B$.
+\end{teo}
+{\color{blue} Aquesta demostració està en el Lee, no té gaire a veure amb el tema així que potser no la posem, però bueno, allà està.}
+\section{Estructura suau}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
 \section{Suavitat}
+{\color{blue} L'Ignasi m'ha dit que el que hauria de ressaltar més és la diferència entre $C^1$ i $C^\infty$. Potser podria comentar alguns dels resultats que són vàlids en un i no en l'altre?}
 {\color{blue} El que hi ha aquí ho estic traient de wikipedia. Preguntar a l'Ignasi per una font més bona.}
 \begin{defi}
     Sigui $U\subseteq\mathbb R$ un conjunt obert, $f:U\to\mathbb R$ una funció real contínua.
