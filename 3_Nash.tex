@@ -1,4 +1,232 @@
 \chapter{Teorema Nash-Kuiper $C^1$}
+\section{Introducció al capítol}
+En aquesta secció enunciarem i demostrarem els quatre teoremes d'immersions isomètriques $C^1$ de John Forbes Nash Jr., seguint l'article en què els va publicar el 1954 a Annals of Mathematics, \cite{nash1954}.\\
+{\color{blue} explicar una mica el context i tal. Bàsicament, dir que és un teorema sorprenent perquè no se l'esperava ningú, explicar que el que fa és dividir en etapes i passos, i explicar que Kuiper fa una millora de la demostració de Nash per a una dimensió menys.}
+\section{Enunciat dels teoremes}
+{\color{blue} Hauria de fer servir $\mathbb R^k$ en comptes de $E^k$?}
+\begin{teo}
+    Qualsevol varietat Riemanniana tancada de dimensió $n$ té un encabiment isomètric $C^1$ en $E^{2n}$.
+\end{teo}
+\begin{teo}
+    Qualsevol varietat Riemanniana de dimensió $n$ té una immersió isomètrica $C^1$ en $E^{2n}$ i un encabiment isomètric $C^1$ en $E^{2n+1}$.
+\end{teo}
+\begin{teo}
+    Si una varietat Riemanniana tancada de dimensió $n$ té una immersió o encabiment $C^\infty$ en $E^{k}$ amb $k\ge n+2$, aleshores també té una immersió o encabiment, respectivament, isomètric en $E^{k}$.
+\end{teo}
+\begin{teo}
+    Si una varietat Riemanniana oberta de dimensió $n$ té una immersió o encabiment $C^\infty$ curta en $E^{k}$ amb $k\ge n+2$ que no se solapa amb el seu conjunt límit (si aquest existeix), aleshores també té una immersió o encabiment, respectivament, isomètric en $E^{k}$ del mateix tipus.
+\end{teo}
+\section{Demostració}
+Comencem amb una varietat diferenciable Riemanniana $M$ de dimensió $n$, amb una mètrica intrínseca donada per un tensor mètric $g_{ij}$. L'objectiu principal serà trobar una immersió isomètrica d'aquesta varietat $M$ en algun espai euclidià.
+
+Suposem que tenim una immersió de $M$ en un espai euclidià $\mathbb R^k$.
+\begin{align*}
+    f:M&\to \mathbb R^k \\
+    \set{x^i} &\mapsto \set{z^\alpha(x^1, \dots, x^n)} 
+\end{align*}
+Aleshores, la mètrica induïda en $M$ és 
+\begin{equation}
+    h_{ij} = \sum_\alpha \frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}.
+\end{equation}
+Per tal de començar la demostració, el primer que necessitarem serà una immersió $f$ que sigui de classe $C^\infty$ i \textit{curta}.
+\begin{defi}
+    Una immersió $f:M\to \mathbb R^k$ és \textbf{curta} si la diferència de les mètriques $g_{ij}-h_{ij}$ és definida positiva.
+\end{defi}
+El més important d'aquesta definició és que, si $f$ és curta, els vectors sobre $M$ mai s'allarguen sota $f$. Aquesta primera immersió $f$ és fàcil de trobar, en general, per a varietats tancades, mentre que per a varietats obertes cal entrar en més detalls. {\color{blue}  AQUÍ CITAR LA PART ON ES FA.}
+
+Un cop trobada aquesta immersió curta, l'estructura de la demostració dels teoremes de Nash consisteix en fer una successió de pertorbacions de $f$ que, progressivament, disminueixen l'error mètric fins a trobar una immersió isomètrica en el límit. En general, el procés de pertorbació es divideix en \textbf{etapes} (en anglès, \textit{stages}), i a cada etapa es divideix en \textbf{passos} (en anglès, \textit{steps}). Així, la primera etapa prendrà la nostra immersió curta $f$ i en retornarà una $f_1$ amb un error mètric com a molt la meitat del de $f$, que serà també $C^\infty$ i curta. Aquesta $f_1$ serà millorada en la segona etapa, i així successivament.
+
+La manera en què l'error mètric disminueix en cada etapa és la següent: en la primera immersió, l'error mètric és 
+\begin{equation}
+    \delta_{ij} = g_{ij}-h_{ij}.
+\end{equation}
+En la segona etapa, l'error mètric serà
+\begin{equation}
+    \overline\delta_{ij} = g_{ij}-\overline{h}_{ij}\approx \frac12\delta_{ij},
+\end{equation}
+on $\overline{h}_{ij}$ és la mètrica induïda per $f_1$. Aquest error mètric anirà disminuint geomètricament després de cada etapa, i en el límit obtindrem una immersió isomètrica.
+
+En cada etapa, el procés de pertorbació es divideix en passos. Cada pas afectarà només un entorn local de $M$, però s'hauran de dur a terme l'un rere l'altre, no simultàniament. Per tal de fer-ho, cal prendre un recobriment localment finit de $M$ per conjunts tancats $\set{N_p}_p$. És a dir, tals que $M$ és la unió de tots ells, i cada $N_p$ interseca només un nombre finit d'altres $N_q$. {\color{blue}  Al Lee crec que s'explica el fet que sempre es pot trobar aquest recobriment per tancats.}
+
+Associarem a cada $N_p$ una funció ponderació $\varphi_p$ de classe $C^\infty$ positiva a l'interior de $N_p$ i nul·la fora d'ell i a la frontera. Definim aquestes funcions tals que la suma de totes les $\varphi_p$ valgui $1$ en qualsevol punt. {\color{blue} crec que això s'anomena una partició de la unitat. Mirar el Lee. } En cada entorn tancat, voldrem que l'error mètric $\delta_{ij}$ sigui reduït en $\frac12\varphi_p\delta_{ij}$ després d'una etapa. Per fer-ho, necessitem aproximar $\delta_{ij}$ per un tensor de classe $C^\infty$ i positiu $\beta_{ij}$.
+
+Per tal de fer servir aquest $\beta_{ij}$ per a reduir l'error mètric, necessitem el següent resultat:
+\begin{lema}
+    Sigui $\beta_{ij}$ un tensor de classe $C^\infty$ i definit positiu, i sigui $\varphi_p$ seguint la definició de més amunt. Aleshores, es poden trobar funcions no-negatives $a_\nu$ de classe $C^\infty$ i un nombre finit de funcions lineals $\psi^\nu = \psi^\nu(x^1, \dots, x^n)$ tals que
+\begin{equation}\label{eq:lema_descomp}
+    \frac12\varphi_p\beta_{ij} = \sum_\nu a_\nu \left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right),
+\end{equation}
+\end{lema}
+\begin{obs}
+    Cal remarcar que aquest lema només és cert si $\beta_{ij}$ és definit positiu, i que el nombre de termes del sumatori és finit.
+\end{obs}
+{\color{green!50!black}\textit{Prova} ({\color{blue} Aquesta és la demostració del Nash. És una mica llarga però s'entén bastant bé si la mires amb cura. El Sung-Jin Oh té una versió més curta amb una notació diferent.}).
+El conjunt de les matrius simètriques definides positives de rang $n$ és un con de dimensió $\frac12n(n+1)$.{\color{blue} Revisar d'on surt això, sembla bastant directe mirant quins coeficients es poden canviar.} És possible cobrir aquest con amb conjunts simplicials geomètrics oberts, de tal manera que cada punt del con estigui cobert per, com a molt, un nombre $W$ d'aquests entorns, on $W$ depèn només de $n$. 
+
+Una matriu qualsevol representada per un punt interior d'un símplex és combinació lineal de les matrius que representen els vèrtexs del símplex. Podem posar
+$$\begin{aligned}
+    &C_{1,1}; \quad C_{1,2}; \quad C_{1,3}; \quad \dots\\
+    &C_{2,1}; \quad C_{2,2}; \quad C_{2,3}; \quad \dots\\
+    &\vdots\\
+    &C_{q,1}; \quad C_{q,2}; \quad C_{q,3}; \quad \dots
+\end{aligned}$$
+els coeficients per $q$ representacions diferents d'una matriu del con que pertany a l'interior de $q$ símplexs diferents. 
+Ara podem escriure uns altres coeficients
+$$ C_{\mu,\nu}^* = \frac{C_{\mu,\nu} \exp\set{-\sum_\sigma 1/C_{\mu,\sigma}}}{\sum_{\rho}\exp\set{-\sum_\sigma 1/C_{\rho,\sigma}}}, $$ on cal considerar que els exponencials són nuls si qualsevol dels termes del seu sumatori ho és. 
+Observem que aquests coeficients són $C^\infty$ com a funcions de la matriu que representen. A més, per cada matriu, com a molt $W[\frac12n(n+1)+1]$ coeficients $C_{\mu,\nu}^*$ són no-nuls.
+
+Si ara considerem que $\beta_{ij}$ defineix una aplicació de classe $C^\infty$ de $N_p$ al con, aleshores podem escriure 
+\begin{equation}\label{eq:beta_con}
+    \beta_{ij} = \sum_{\mu,\nu}C_{\mu,\nu}^*M_{(\mu,\nu)ij}
+\end{equation}
+on $M_{(\mu,\nu)ij}$ són les diferents matrius que representen els vèrtexs dels símplexs. Ara, per cada matriu $M_{(\mu,\nu)ij}$ obtenim $n$ autovectors unitaris ortogonals $\set{V_r}$ i els seus autovalors $\set{v_r}$.
+
+Si $\psi_r$ és per cada $r$ la funció lineal dels paràmetres locals pels quals $\sqrt{v_r}V_r$ és el vector gradient {\color{blue}Aquesta és la part més rara, entenc que simplement es pot fer}, tenim que
+\begin{equation}
+    M_{(\mu,\nu)ij} = \sum_{r}\frac{\partial\psi_r}{\partial x^i}\frac{\partial\psi_r}{\partial x^j}
+\end{equation}
+i, substituint en \ref{eq:beta_con}, tenim que
+\begin{equation}
+    \beta_{ij} = \sum_{r}\sum_{\mu,\nu}C_{\mu,\nu}^*M_{(\mu,\nu)ij}\frac{\partial\psi_r}{\partial x^i}\frac{\partial\psi_r}{\partial x^j}
+\end{equation}
+i, agrupant termes en $a_\nu$, obtenim el resultat.\qed
+}
+
+\subsection{La pertorbació en un pas}
+En el pas associat a $N_p$ en una etapa donada, caldrà fer una pertorbació de la immersió curta obtinguda anteriorment. Per fer-ho, Nash considera dos camps vectorials unitaris ortogonals entre ells i a la immersió en l'entorn $N_p$, representats per funcions de classe $C^\infty$, $\zeta^\alpha$ i $\eta^\alpha$. És a dir, compleixen les següents propietats:
+\begin{align}
+    \sum_\alpha (\zeta^\alpha)^2 = 1, \\
+    \sum_\alpha (\eta^\alpha)^2 = 1, \\
+    \sum_\alpha \zeta^\alpha\eta^\alpha = 0, \\
+    \sum_\alpha \zeta^\alpha\frac{\partial z^\alpha}{\partial x^i} = \sum_\alpha \eta^\alpha\frac{\partial z^\alpha}{\partial x^i} = 0.
+\end{align}
+\begin{obs}
+    {\color{blue} És possible que això ho expliqui en algun altre lloc, però per ara ho deixo aquí. Estaria bé explicar el canvi que fa Kuiper, si hi ha espai, que jo crec que sí.}
+
+    El fet que Nash utilitzi dos camps vectorials unitaris ortogonals entre ells i a la immersió en l'entorn $N_p$ restringeix severament la utilitat del seu resultat. En concret, per varietats Riemannianes de dimensió $2$, com l'esfera o el tor, el que ens interessa idealment és obtenir immersions en l'espai euclidià tridimensional, per tal de poder-les representar visualment, mentre que el resultat de Nash dóna immersions en un espai euclidià de dimensió $4$. Afortunadament, com veurem més endavant, Nicolaas H. Kuiper va modificar lleugerament la prova de Nash per rebaixar la codimensió de l'espai euclidià de $k=2$ a $k=1$.
+\end{obs}
+
+Amb aquests camps vectorials, la pertorbació de la immersió curta $z^\alpha$ en un pas a l'entorn $N_p$ és
+\begin{equation}\label{eq:pertorbacio}
+    \boxed{\overline{z}^\alpha = z^\alpha + \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu) + \eta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\sin(\lambda \psi^\nu)}
+\end{equation}
+on $\lambda$ és una constant positiva tan gran com vulguem.
+
+Ara cal veure que el canvi mètric $\sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}$ és aproximadament igual al terme $\nu$ del sumatori de \ref{eq:lema_descomp}.
+
+\begin{prop}\label{prop:mida_pertorbacio}
+    El canvi mètric a l'entorn $N_p$ en el pas associat a $a_\nu$ i $\psi^\nu$ donat per \ref{eq:pertorbacio} compleix
+    \begin{equation}
+        \sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j} =  a_\nu \frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right)
+    \end{equation}
+\end{prop}
+
+{\color{green!50!black}\textit{Prova}. Desenvolupant les derivades parcials i cancel·lant els termes que apareixen en ambdós costats, tenim
+\begin{align}\label{eq:pertorbacio_descomp}
+    \nonumber\sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}
+    =
+    \sum_{\alpha}\Bigg[ &\frac{\partial}{\partial x^i}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right) \frac{\partial}{\partial x^j}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right) +
+    \\
+    &+ \frac{\partial}{\partial x^i}\left( \eta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\sin(\lambda \psi^\nu)\right) \frac{\partial}{\partial x^j}\left( \eta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\sin(\lambda \psi^\nu)\right)
+    \Bigg]
+\end{align}
+Observem que cada en terme del sumatori apareixen quatre derivades similars, canviant $\zeta^\alpha$ per $\eta^\alpha$ i $\cos$ per $\sin$, així com $i$ per $j$. Podem considerar una sola d'aquestes, per exemple $\frac{\partial}{\partial x^i}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right)$. Desenvolupant-la, tenim
+\begin{align*}
+    \frac{\partial}{\partial x^i}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right)
+    =&
+    \left(\frac{\partial \zeta^\alpha}{\partial x^i} \right)\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu) 
+    \\&+ 
+    \zeta^\alpha\frac{1}{\lambda}\left(\frac{\partial}{\partial x^i}\sqrt{a_\nu}\right) \cos(\lambda \psi^\nu)
+    \\&-
+    \zeta^\alpha\sqrt{a_\nu}\sin(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i}.
+\end{align*}
+Observem que els dos primers termes d'aquesta suma són $O\left(\frac1\lambda\right)$, de manera que es pot prendre $\lambda$ prou gran per fer-los tan petits com vulguem. Així, 
+\begin{equation*}
+    \frac{\partial}{\partial x^i}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right) = -
+    \zeta^\alpha\sqrt{a_\nu}\sin(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i} + O\left(\frac1\lambda\right).
+\end{equation*}
+El producte d'aquest terme amb la derivada respecte de $x^j$ en \ref{eq:pertorbacio_descomp} és, per tant,
+\begin{equation*}
+    \frac{\partial}{\partial x^i}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right) \frac{\partial}{\partial x^j}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right) = 
+    (\zeta^\alpha)^2{a_\nu}\sin^2(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right).
+\end{equation*}
+Sumant aquest resultat amb el corresponent a $\eta^\alpha$, obtenim que el terme $\alpha$ del sumatori de \ref{eq:pertorbacio_descomp} és
+\begin{align*}
+    &(\zeta^\alpha)^2{a_\nu}\sin^2(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + (\eta^\alpha)^2{a_\nu}\cos^2(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right)
+    \\&=
+    ((\zeta^\alpha)^2\sin^2(\lambda \psi^\nu) + (\eta^\alpha)^2\cos^2(\lambda \psi^\nu)) a_\nu\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right).
+\end{align*}
+De manera que 
+\begin{align*}
+    \sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha&\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}=\\
+    &=
+    \sum_{\alpha}\Bigg[((\zeta^\alpha)^2\sin^2(\lambda \psi^\nu) + (\eta^\alpha)^2\cos^2(\lambda \psi^\nu)) a_\nu\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}
+    + O\left(\frac1\lambda\right) \Bigg]
+    \\
+    &=a_\nu\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}\left( \sin^2(\lambda \psi^\nu)\sum_\alpha(\zeta^\alpha)^2 + \cos^2(\lambda \psi^\nu)\sum_\alpha(\eta^\alpha)^2\right) + O\left(\frac1\lambda\right)
+    \\&=
+    a_\nu\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right),
+\end{align*}
+on per a la darrera igualtat hem usat que $\sum_\alpha(\zeta^\alpha)^2 = \sum_\alpha(\eta^\alpha)^2 = 1$.\qed
+}
+
+Amb aquesta última proposició s'ha demostrat que la pertorbació indueix un canvi mètric molt proper al que volem, amb un error $O\left(\frac1\lambda\right)$. De la mateixa manera, observem que la pertorbació en un pas, \ref{eq:pertorbacio}, és $O\left(\frac1\lambda\right)$. A continuació, volem veure quin és el canvi en les primeres derivades després d'una etapa del procés en un entorn $N_p$. És a dir, volem aproximar l'efecte de totes les pertorbacions associades a cada pas de l'etapa. Per fer-ho, primer notem que el canvi en les primeres derivades associat al pas $\nu$ és el següent:
+\begin{equation}
+    \left| \frac{\partial\overline{z}^\alpha}{\partial x^i} - \frac{\partial z^\alpha}{\partial x^i} \right| \le 2\sqrt{a_\nu}\left| \frac{\partial\psi^\nu}{\partial x^i} \right| + O\left(\frac1\lambda\right).
+\end{equation}
+\begin{prop}
+    El canvi en les primeres derivades associat a una etapa del procés en un entorn $N_p$ és
+    \begin{align}
+        \nonumber\Bigg| \left(\frac{\partial{z}^\alpha}{\partial x^i} \right)_{\textrm{abans}}- &\left(\frac{\partial{z}^\alpha}{\partial x^i} \right)_{\textrm{després}} \Bigg| \\
+        &\le 2\sqrt{K\beta_{ii}} + O\left(\frac1\lambda_1\right) + O\left(\frac1\lambda_2\right) + \cdots + O\left(\frac1\lambda_\nu\right) + \cdots,
+    \end{align}
+    on $K$ és una constant que depèn només de la dimensió $n$ de la varietat i les diferents $\lambda_\nu$ són els paràmetres de les pertorbacions.
+\end{prop}
+{
+\color{green!50!black}\textit{Prova}.
+Considerem l'element $i$ de la diagonal de les matrius de \ref{eq:lema_descomp}:
+\begin{equation}
+    \frac12\varphi_p\beta_{ii} = \sum_\nu a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)^2 = \sum_\nu \left(\sqrt{a_\nu}\left|\frac{\partial\psi^\nu}{\partial x^i}\right|\right)^2.
+\end{equation}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
 \section{Apunts del paper de Nash del 1954}
 {
 \color{blue}
@@ -58,29 +286,29 @@
             \item[$\bullet$] Si la varietat és oberta, hi ha un nombre infinit de passos per etapa, però a cada porció compacta hi ha un nombre finit.
         \end{itemize}
     \item A \textbf{Convergence of the immersion} diu que necessitem que les $B_3$ del pas $r$ de l'etapa $s$ siguin més petites que $2^{-(r+s)}$, i el mateix per $B_2$. La manera per fer-ho és escollir que la mida de $\beta_{ij}$ estigui entre $9/10$ i $9/8$ de la de $\delta_{ij}$. Això fa que el canvi en les derivades estigui limitat per una geomètrica de raó $\sqrt{5/6}$ MIRAR AIXÒ, de manera que les funcions $C^\infty$ convergeixen uniformement a una de $C^1$.
-    \item ES MOLT IMPORTANT QUE ESCRIVIM ALGUNA COSA SOBRE LA DIFERÈNCIA ENTRE IMMERSIONS I INCRUSTACIONS.
-    \item A \textbf{Isometric Imbeddings} {\color{black} QUAN PARLA DE CONJUNT LÍMIT CREC QUE ES REFEREIX A LA PART DEL CONJUNT OBERT MÉS LLUNYANA, EL QUE ESTARIA JUST A TOCAR DE LA FRONTERA} diu que per incrustacions és bàsicament el mateix, però necessitem controlar les auto-interseccions. Per veure que pas a pas no n'hi ha, cal comprovar que per $\lambda$ prou gran les evitem. 
-    \item Sigui $M$ un conjunt tancat de l'incrustació que conté $N_p$ al seu interior. $M$ té un entorn obert $H$ tal que no hi ha punt de $H$ amb dues rectes perpendiculars a $M$. MIRAR AIXÒ, HI HA UNA CITA.
-    \item Posem $Q$ la unió del conjunt límit amb la part de la incrustació que no està a l'interior de $M$. Aleshores $Q$ és tancat i una pertorbació prou petita de $N_p^*$ no afectarà $Q$. AQUÍ NO SÉ QUÈ ÉS $N_p^*$. EN GENERAL, AQUEST APARTAT ES POSA MOLT TÈRBOL. 
-    \item A \textbf{Constructing the initial immersion} explica que si la varietat té dimensió $n$, sabem que es pot trobar una incrustació en $E^{2n}$ no-singular i analítica. Es pot prendre aquesta immersió i escalar-la per a que sigui curta. 
+    \item ES MOLT IMPORTANT QUE ESCRIVIM ALGUNA COSA SOBRE LA DIFERÈNCIA ENTRE IMMERSIONS I encabiments.
+    \item A \textbf{Isometric Imbeddings} {\color{black} QUAN PARLA DE CONJUNT LÍMIT CREC QUE ES REFEREIX A LA PART DEL CONJUNT OBERT MÉS LLUNYANA, EL QUE ESTARIA JUST A TOCAR DE LA FRONTERA} diu que per encabiments és bàsicament el mateix, però necessitem controlar les auto-interseccions. Per veure que pas a pas no n'hi ha, cal comprovar que per $\lambda$ prou gran les evitem. 
+    \item Sigui $M$ un conjunt tancat de l'encabiment que conté $N_p$ al seu interior. $M$ té un entorn obert $H$ tal que no hi ha punt de $H$ amb dues rectes perpendiculars a $M$. MIRAR AIXÒ, HI HA UNA CITA.
+    \item Posem $Q$ la unió del conjunt límit amb la part de la encabiment que no està a l'interior de $M$. Aleshores $Q$ és tancat i una pertorbació prou petita de $N_p^*$ no afectarà $Q$. AQUÍ NO SÉ QUÈ ÉS $N_p^*$. EN GENERAL, AQUEST APARTAT ES POSA MOLT TÈRBOL. 
+    \item A \textbf{Constructing the initial immersion} explica que si la varietat té dimensió $n$, sabem que es pot trobar una encabiment en $E^{2n}$ no-singular i analítica. Es pot prendre aquesta immersió i escalar-la per a que sigui curta. 
     \item Per un conjunt obert, podem recobrir la varietat per entorns $N_p$ pesats amb funcions $C^\infty$ $\varphi_p$ amb paràmetres $x_{pi}$ tals que $|x_{pi}|\le1$. Volem que en qualsevol punt de la varietat els conjunts d'aquest recobriment se superposin un nombre finit de vegades $s$, com a molt.
     \item Podem dividir els conjunts $N_p$ en $s$ classes, de manera que en cada classe no hi hagi conjunts que es superposin. 
-    \item Podem definir una incrustació en un espai $s(n+2)$ dimensional, a partir de funcions $u_\sigma=\varepsilon_p\varphi_p$ en conjunts de la classe $\sigma$ i $0$ en la resta, $v_\sigma=\varepsilon^2_p\varphi_p$ en conjunts de la classe $\sigma$ i $0$ en la resta, i $w_\sigma=\varepsilon_p\varphi_px_{pi}$ en conjunts de la classe $\sigma$ i $0$ en la resta, on $x_{pi}$ la coordenada $i$-èssima de $N_p$ i $\set{\varepsilon_p}_p$ és una successió monòtona decreixent de nombres positius que convergeix a $0$.
+    \item Podem definir una encabiment en un espai $s(n+2)$ dimensional, a partir de funcions $u_\sigma=\varepsilon_p\varphi_p$ en conjunts de la classe $\sigma$ i $0$ en la resta, $v_\sigma=\varepsilon^2_p\varphi_p$ en conjunts de la classe $\sigma$ i $0$ en la resta, i $w_\sigma=\varepsilon_p\varphi_px_{pi}$ en conjunts de la classe $\sigma$ i $0$ en la resta, on $x_{pi}$ la coordenada $i$-èssima de $N_p$ i $\set{\varepsilon_p}_p$ és una successió monòtona decreixent de nombres positius que convergeix a $0$.
     \item Observem: que totes aquestes funcions són $C^\infty$, que dos punts de conjunts interiors a conjunts diferents tenen raons $v_\sigma/u_\sigma$ diferents, i que punts interiors a un mateix entorn $N_p$ tenen $w_{\sigma i}$ diferents. (EL CONJUNT LÍMIT ÉS L'ORIGEN PERÒ CAP PUNT ÉS ENVIAT A L'ORIGEN)
-    \item Podem escollir que la incrustació sigui curta escollint la successió $\set{\varepsilon_p}_p$. Si la mètrica induïda pels primers $p$ entorns és curta per un factor $\frac13(2-1/p)$, podem escollor $p+1$ tal que sigui curta per un factor $1/3(2-1/(p+1))$. Amb això tenim una incrustació curta i $C^\infty$ en $E^{s(n+2)}$, i a partir de projeccions podem arribar a $E^{2n+1}$
+    \item Podem escollir que la encabiment sigui curta escollint la successió $\set{\varepsilon_p}_p$. Si la mètrica induïda pels primers $p$ entorns és curta per un factor $\frac13(2-1/p)$, podem escollor $p+1$ tal que sigui curta per un factor $1/3(2-1/(p+1))$. Amb això tenim una encabiment curta i $C^\infty$ en $E^{s(n+2)}$, i a partir de projeccions podem arribar a $E^{2n+1}$
     \item A \textbf{General summary} enumera els quatre teoremes que ha demostrat en aquest article:
     \begin{itemize}
         \item[$\bullet$] \begin{teo}
-            Qualsevol varietat Riemanniana tancada de dimensió $n$ té una incrustació isomètrica $C^1$ en $E^{2n}$.
+            Qualsevol varietat Riemanniana tancada de dimensió $n$ té una encabiment isomètrica $C^1$ en $E^{2n}$.
         \end{teo}
         \item[$\bullet$] \begin{teo}
-            Qualsevol varietat Riemanniana de dimensió $n$ té una immersió isomètrica $C^1$ en $E^{2n}$ i una incrustació isomètrica $C^1$ en $E^{2n+1}$.
+            Qualsevol varietat Riemanniana de dimensió $n$ té una immersió isomètrica $C^1$ en $E^{2n}$ i una encabiment isomètrica $C^1$ en $E^{2n+1}$.
         \end{teo}
         \item[$\bullet$] \begin{teo}
-            Si una varietat Riemanniana tancada de dimensió $n$ té una immersió o incrustació $C^\infty$ en $E^{k}$ amb $k\ge n+2$, aleshores també té una immersió o incrustació, respectivament, isomètrica en $E^{k}$.
+            Si una varietat Riemanniana tancada de dimensió $n$ té una immersió o encabiment $C^\infty$ en $E^{k}$ amb $k\ge n+2$, aleshores també té una immersió o encabiment, respectivament, isomètrica en $E^{k}$.
         \end{teo}
         \item[$\bullet$] \begin{teo}
-            Si una varietat Riemanniana oberta de dimensió $n$ té una immersió o incrustació $C^\infty$ curta en $E^{k}$ amb $k\ge n+2$ que no se solapa amb el seu conjunt límit (si aquest existeix), aleshores també té una immersió o incrustació, respectivament, isomètrica en $E^{k}$ del mateix tipus.
+            Si una varietat Riemanniana oberta de dimensió $n$ té una immersió o encabiment $C^\infty$ curta en $E^{k}$ amb $k\ge n+2$ que no se solapa amb el seu conjunt límit (si aquest existeix), aleshores també té una immersió o encabiment, respectivament, isomètrica en $E^{k}$ del mateix tipus.
         \end{teo}
     \end{itemize}
     \item Per últim, un comentari super interessant que fa és que potser es pot canviar $n+2$ per $n+1$ si es fa una una pertorbació diferent que només necessita una direcció, que crec que és just el que fa Kuiper!
@@ -117,7 +345,7 @@ $$ C_{\mu,\nu}^* = \frac{C_{\mu,\nu} \exp\set{-\sum_\sigma 1/C_{\mu,\sigma}}}{\s
 de manera que aquests coeficients són $C^\infty$ com a funcions de la matriu que representen. Per cada matriu, com a molt $W[\frac12n(n+1)+1]$ coeficients $C_{\mu,\nu}^*$ són no-nuls.
 
 Si ara considerem que $\beta_{ij}$ defineix una aplicació $C^\infty$ de $N_p$ al con, aleshores podem escriure 
-\begin{equation}\label{eq:beta_con}
+\begin{equation}
     \beta_{ij} = \sum_{\mu,\nu}C_{\mu,\nu}^*M_{(\mu,\nu)ij}
 \end{equation}
 on $M_{(\mu,\nu)ij}$ són les diferents matrius que representen els vèrtexs dels símplexs. Ara, per cada matriu $M_{(\mu,\nu)ij}$ obtenim $n$ autovectors unitaris ortogonals $\set{V_r}$ i els seus autovalors $\set{v_r}$.
@@ -162,13 +390,13 @@ i, agrupant termes en $a_\nu$, obtenim el resultat.\qed
 
 \newpage
 \section{Explicació del Sung-Jin Oh}
-\begin{teo}\label{teo: SJO} Sigui $(M,g)$ una superfície, $N\ge\dim M+1$ i $u:M\to\mathbb R^N$ una incrustació estrictament curta, és a dir, tal que la longitud de cada vector en $M$ s'escurça (estrictament) sota $\nabla u$. Aleshores $u$ es pot aproximar uniformement per incrustacions isomètriques $C^1$.
+\begin{teo}\label{teo: SJO} Sigui $(M,g)$ una superfície, $N\ge\dim M+1$ i $u:M\to\mathbb R^N$ una encabiment estrictament curta, és a dir, tal que la longitud de cada vector en $M$ s'escurça (estrictament) sota $\nabla u$. Aleshores $u$ es pot aproximar uniformement per encabiments isomètriques $C^1$.
 \end{teo}
-{\color{blue} Haurem d'explicar què és una incrustació isomètrica, i mirar si cal que li canviem el nom}
+{\color{blue} Haurem d'explicar què és una encabiment isomètrica, i mirar si cal que li canviem el nom}
 
 Per exemple, l'homotècia $\mathbb S^2\to\varepsilon\mathbb S^2$ amb $\varepsilon\in(0,1)$ és una aplicació \textit{curta}. 
 \begin{obs}
-De fet, qualsevol incrustació $C^2$ isomètrica $u:\mathbb S^2\hookrightarrow\mathbb R^3$ ha de ser igual a la incrustació estàndard $\mathbb S^2 \hookrightarrow\set{ x\in\mathbb R^3 : |X| = 1 }$ fins translació i rotació. 
+De fet, qualsevol encabiment $C^2$ isomètrica $u:\mathbb S^2\hookrightarrow\mathbb R^3$ ha de ser igual a la encabiment estàndard $\mathbb S^2 \hookrightarrow\set{ x\in\mathbb R^3 : |X| = 1 }$ fins translació i rotació. 
 \end{obs}
 
 El teorema \ref{teo: SJO} es demostra amb \textit{integració convexa}.
@@ -176,7 +404,7 @@ El teorema \ref{teo: SJO} es demostra amb \textit{integració convexa}.
 Sung-Jin Oh demostra aquí el Baby Nash theorem.
 
 
-Sigui $D=\set{x\in\mathbb R^2 : |x|<1}$ el disc unitat, i $g = g_{ij}(x)$ una mètrica de $D$. Una aplicació $u:D\to\mathbb R^n$ és una \textit{immersió} {\color{blue} per ara direm incrustació als embeddings i immersions als \textit{immersions}} si $\nabla u(x)$ és injectiva per tot $x$. La mètrica en $D$ induïda per $u$ és de la forma {\color{blue} Haurem de recordar i controlar el que era la mètrica induïda}
+Sigui $D=\set{x\in\mathbb R^2 : |x|<1}$ el disc unitat, i $g = g_{ij}(x)$ una mètrica de $D$. Una aplicació $u:D\to\mathbb R^n$ és una \textit{immersió} {\color{blue} per ara direm encabiment als embeddings i immersions als \textit{immersions}} si $\nabla u(x)$ és injectiva per tot $x$. La mètrica en $D$ induïda per $u$ és de la forma {\color{blue} Haurem de recordar i controlar el que era la mètrica induïda}
 \begin{equation*}
     \nabla u ^{\intercal}(x)\nabla u (x) = \begin{pmatrix}
     \nabla_1 u\nabla_1 u & \nabla_1 u\nabla_2 u\\
@@ -272,7 +500,7 @@ Fins ara no ha calgut especificar el vector $\textbf{n}(x)\in\mathbb C^n$ per ta
     \begin{equation*}
         \nabla_iW^{\intercal}\nabla_jW = (-a^2(x)\xi_i\xi_je^{2ix\cdot\xi})\textbf{n}\cdot\textbf{n} + O(1/\lambda).
     \end{equation*}
-    I ara només cal utilitzar que la incrustació té co-dimensió $\ge2$ per escollir un vector complex tal que $\textbf{n}\cdot\textbf{n} = 0$ {\color{blue}Com està definit aquest producte?}. Podem prendre, per exemple, 
+    I ara només cal utilitzar que la encabiment té co-dimensió $\ge2$ per escollir un vector complex tal que $\textbf{n}\cdot\textbf{n} = 0$ {\color{blue}Com està definit aquest producte?}. Podem prendre, per exemple, 
     \begin{equation*}
         \textbf{n} = \frac{1}{i\sqrt2}\zeta(x) + \frac{1}{\sqrt2}\eta(x)
     \end{equation*}
@@ -403,10 +631,10 @@ demostrant el teorema.\qed
 
 {\color{blue} revisar això últim perquè just estava parlant amb la marina}
 \subsection{Extensions}
-\subsubsection{Extensió a incrustacions de varietats}
-Per estendre el teorema \ref{Baby Nash} a immersions a superfícies generals, només cal reduir a cartes coordenades. Per estendre'l a incrustacions usem que, per la compacitat d'$M$, podem trobar $\varepsilon>0$ tal que 
+\subsubsection{Extensió a encabiments de varietats}
+Per estendre el teorema \ref{Baby Nash} a immersions a superfícies generals, només cal reduir a cartes coordenades. Per estendre'l a encabiments usem que, per la compacitat d'$M$, podem trobar $\varepsilon>0$ tal que 
 $$\inf_{x,y} \text{dist}(u(x), u(y))\ge\varepsilon.$$ Ara només cal dur a terme la construcció en un entorn de $0.01\varepsilon$.{\color{blue} entendre millor això últim perquè és bastant random}
-\subsubsection{Refinament de Kuiper: incrustació de codimensió 1}
+\subsubsection{Refinament de Kuiper: encabiment de codimensió 1}
 Modificant la forma de la correcció, podem aconseguir la mateixa construcció amb només co-dimensió 1. Sigui $\eta:D\to\mathbb R^{3}$ el camp vectorial unitari en $u(D)$, i sigui
 $$\zeta = \nabla u (\nabla u^\intercal \nabla u)^{-1}\xi.$$
 Prenem 
