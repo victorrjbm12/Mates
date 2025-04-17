@@ -116,7 +116,7 @@ Ara cal veure que el canvi mètric $\sum_\alpha\frac{\partial\overline{z}^\alpha
 
 \begin{prop}\label{prop:mida_pertorbacio}
     El canvi mètric a l'entorn $N_p$ en el pas associat a $a_\nu$ i $\psi^\nu$ donat per \ref{eq:pertorbacio} compleix
-    \begin{equation}
+    \begin{equation}\label{eq:pertorbacio_cota}
         \sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j} =  a_\nu \frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right)
     \end{equation}
 \end{prop}
@@ -171,28 +171,59 @@ on per a la darrera igualtat hem usat que $\sum_\alpha(\zeta^\alpha)^2 = \sum_\a
 }
 
 Amb aquesta última proposició s'ha demostrat que la pertorbació indueix un canvi mètric molt proper al que volem, amb un error $O\left(\frac1\lambda\right)$. De la mateixa manera, observem que la pertorbació en un pas, \ref{eq:pertorbacio}, és $O\left(\frac1\lambda\right)$. A continuació, volem veure quin és el canvi en les primeres derivades després d'una etapa del procés en un entorn $N_p$. És a dir, volem aproximar l'efecte de totes les pertorbacions associades a cada pas de l'etapa. Per fer-ho, primer notem que el canvi en les primeres derivades associat al pas $\nu$ és el següent:
-\begin{equation}
+\begin{equation}\label{eq:primera_derivada_cota}
     \left| \frac{\partial\overline{z}^\alpha}{\partial x^i} - \frac{\partial z^\alpha}{\partial x^i} \right| \le 2\sqrt{a_\nu}\left| \frac{\partial\psi^\nu}{\partial x^i} \right| + O\left(\frac1\lambda\right).
 \end{equation}
 \begin{prop}
     El canvi en les primeres derivades associat a una etapa del procés en un entorn $N_p$ és
     \begin{align}
         \nonumber\Bigg| \left(\frac{\partial{z}^\alpha}{\partial x^i} \right)_{\textrm{abans}}- &\left(\frac{\partial{z}^\alpha}{\partial x^i} \right)_{\textrm{després}} \Bigg| \\
-        &\le 2\sqrt{K\beta_{ii}} + O\left(\frac1\lambda_1\right) + O\left(\frac1\lambda_2\right) + \cdots + O\left(\frac1\lambda_\nu\right) + \cdots,
+        &\le 2\sqrt{K\beta_{ii}} + O\left(\frac1{\lambda_1}\right) + O\left(\frac1{\lambda_2}\right) + \cdots + O\left(\frac1{\lambda_\nu}\right) + \cdots,
     \end{align}
     on $K$ és una constant que depèn només de la dimensió $n$ de la varietat i les diferents $\lambda_\nu$ són els paràmetres de les pertorbacions.
 \end{prop}
 {
 \color{green!50!black}\textit{Prova}.
 Considerem l'element $i$ de la diagonal de les matrius de \ref{eq:lema_descomp}:
-\begin{equation}
+\begin{equation*}
     \frac12\varphi_p\beta_{ii} = \sum_\nu a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)^2 = \sum_\nu \left(\sqrt{a_\nu}\left|\frac{\partial\psi^\nu}{\partial x^i}\right|\right)^2.
-\end{equation}
+\end{equation*}
+Recordem de la prova del lema \ref{eq:lema_descomp} que hi ha com a molt $M = W[\frac12n(n+1)+1]$ coeficients no nuls del sumatori, on $W$ és una constant que només depèn de la dimensió $n$ de la varietat. Així doncs, per la desigualtat de Cauchy-Schwarz,
+\begin{align*}
+    \sum_\nu \sqrt{a_\nu}\left|\frac{\partial\psi^\nu}{\partial x^i}\right| 
+    \le 
+    \left(M\frac12\varphi_p\beta_{ii}\right)^{\frac12}
+    \le
+    \left(K\varphi_p\beta_{ii}\right)^{\frac12}
+    \le
+    \sqrt{\left(K\beta_{ii}\right)}.
+\end{align*}
+Combinant aquest resultat amb \ref{eq:primera_derivada_cota}, obtenim que el canvi en les primeres derivades associat a una etapa del procés en un entorn $N_p$ és
+\begin{equation*}
+    \left| \frac{\partial\overline{z}^\alpha}{\partial x^i} - \frac{\partial z^\alpha}{\partial x^i} \right| \le \sqrt{K\beta_{ii}} + O\left(\frac1{\lambda_1}\right) + O\left(\frac1{\lambda_2}\right) + \cdots + O\left(\frac1{\lambda_\nu}\right) + \cdots.
+\end{equation*}
+\qed
 }
+\subsection{Convergència dels passos en una etapa}
+{\color{blue} He de mirar si realment aquest és el títol que toca.}
 
+A continuació ens interessa veure quines són les constants $\set{\lambda_\nu}$ necessàries en les diferents passes d'una etapa per tal que el procés convergeixi tal com desitgem.
+\begin{defi}
+    Sigui $N_p$ un entorn de $M$, i considerem el pas $\nu$ d'una etapa donada.
+\end{defi}
+\begin{itemize}
+    \item \textit{Anomenem $B_1$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi mètric per $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right)$ en \ref{eq:pertorbacio_cota}, per tots els parells $(i,j)$ i tots els punts de l'entorn $N_p$.}
+    \item \textit{Anomenem $B_2$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi de les primeres derivades en \ref{eq:primera_derivada_cota}, per tots els punts de l'entorn $N_p$.}
+    \item \textit{Anomenem $B_3$ la cota superior permesa del canvi $\overline{z}^\alpha - z^\alpha$ en $N_p$.}
+\end{itemize}
+\begin{obs}
+    Es pot trobar una pertorbació que compleixi les condicions anteriors per a qualsevol $B_1$, $B_2$ i $B_3$ donats, ja que tots tres disminueixen quan $\lambda$ augmenta i aquesta pot ser presa arbitràriament gran.
+\end{obs}
 
-
-
+Recordem que l'efecte desitjat després d'una etapa és prendre una mètrica induida $h_{ij}$ i trobar-ne una $h'_{ij}$ que redueixi a la meitat l'error mètric $\delta_{ij}$. És a dir, la nova mètrica $h'_{ij}$ ha de complir
+\begin{equation}
+    h'_{ij} =  \approx h_{ij} + \frac12\delta_{ij}.
+\end{equation}
 
 
 
