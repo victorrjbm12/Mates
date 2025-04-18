@@ -211,7 +211,7 @@ A continuació ens interessa veure quines són les constants $\set{\lambda_\nu}$
 \begin{defi}
     Sigui $N_p$ un entorn de $M$, i considerem el pas $\nu$ d'una etapa donada.
 \end{defi}
-\begin{itemize}
+\begin{itemize}\label{def: B1 B2 B3}
     \item \textit{Anomenem $B_1$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi mètric per $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right)$ en \ref{eq:pertorbacio_cota}, per tots els parells $(i,j)$ i tots els punts de l'entorn $N_p$.}
     \item \textit{Anomenem $B_2$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi de les primeres derivades en \ref{eq:primera_derivada_cota}, per tots els punts de l'entorn $N_p$.}
     \item \textit{Anomenem $B_3$ la cota superior permesa del canvi $\overline{z}^\alpha - z^\alpha$ en $N_p$.}
@@ -222,8 +222,80 @@ A continuació ens interessa veure quines són les constants $\set{\lambda_\nu}$
 
 Recordem que l'efecte desitjat després d'una etapa és prendre una mètrica induida $h_{ij}$ i trobar-ne una $h'_{ij}$ que redueixi a la meitat l'error mètric $\delta_{ij}$. És a dir, la nova mètrica $h'_{ij}$ ha de complir
 \begin{equation}
-    h'_{ij} =  \approx h_{ij} + \frac12\delta_{ij}.
+    h'_{ij} =  \approx h_{ij} + \frac12\delta_{ij},
 \end{equation}
+que també podem escriure com 
+\begin{equation}
+    h'_{ij} = g_{ij} - \frac12\delta_{ij} + e_{ij},
+\end{equation}
+on $e_{ij}$ és el terme de l'error de l'aproximació. Així, la diferència entre la mètrica de la nova immersió i la original és
+\begin{equation}\label{eq:delta_prima}
+    \delta_{ij}' = \frac12\delta_{ij} - e_{ij}.
+\end{equation}
+A continuació, ens volem assegurar que $\delta_{ij}'$ sigui definit positiu, i que el tensor d'error $e_{ij}$ sigui prou petit per permetre la convergència del procés.
+\begin{nota}
+    Per un tensor donat $T_{ij}$ en un entorn $N_p$, escrivim $|T_{ij}|_{N_p}$ per denotar el màxim dels valors absoluts dels components de $T_{ij}$ en $N_p$. Aquesta és una bona aproximació de la mida del tensor $T_{ij}$ en $N_p$. {\color{blue} Cal mirar si hi ha una millor notació}
+\end{nota}
+\begin{prop}
+    Sigui $N_p$ un entorn de $M$. En una etapa donada del procés, existeix una successió $\set{B_{1\nu}}_{\nu}$, on $B_{1\nu}$ és el $B_1$ de la definició \ref{def: B1 B2 B3} al pas $\nu$, tal que, després de fer tots els passos en $N_p$
+\end{prop}
+\begin{itemize}
+    \item \textit{$\delta_{ij}'$ és definit positiu en $N_p$.}
+    \item \textit{$e_{ij}$ és prou petit per assegurar que el procés convergeix després de fer totes les etapes.}
+    \item \textit{La convergència és tal que la mida de $\delta_{ij}'$ és aproximadament $2/3$ de la mida de $\delta_{ij}$ després de cada etapa. }{\color{blue} No m'agrada gaire com està descrita aquesta proposició}
+\end{itemize}
+
+{\color{green!50!black} \textit{Prova.} 
+En $N_p$, sempre es pot trobar una constant real $\varepsilon_p>0$ tal que, si imposem 
+\begin{equation}\label{eq:epsilon_p}
+    |e_{ij}|_{N_p} \le \varepsilon_p,
+\end{equation}
+aleshores $\delta_{ij}'= \delta_{ij} - e_{ij}$ és definit positiu.
+
+Si també imposem que, després d'una etapa,
+\begin{equation}\label{eq:e_cota}
+    \max|e_{ij}|_{N_p} \le \frac16\min|\delta_{ij}|_{N_p},
+\end{equation}
+podem prendre \ref{eq:delta_prima} i veure que
+\begin{align}\label{eq:delta_prima_cota}
+    \nonumber\max|\delta_{ij}'|_{N_p} = \max\left|\frac12\delta_{ij} - e_{ij}\right|_{N_p} \le \max\left|\frac12\delta_{ij}\right|_{N_p} + \max|e_{ij}|_{N_p} \\
+    \le \frac12\max|\delta_{ij}|_{N_p} + \frac16\min|\delta_{ij}|_{N_p} \le \frac23\max|\delta_{ij}|_{N_p}.
+\end{align}
+Amb això queda demostrat que es pot escollir $e_{ij}$ tal que la mida de $\delta_{ij}'$ és aproximadament $2/3$ de la mida de $\delta_{ij}$ després de cada etapa. Així, és clar que la diferència entre la mètrica de la immersió i $g_{ij}$ convergeix a $0$ en el límit.
+
+Hem obtingut dues restriccions a la mida de $e_{ij}$ que cal complir, \ref{eq:epsilon_p} i \ref{eq:e_cota}. Ara cal relacionar-les amb les passes de l'etapa, per tal d'obtenir la successió $\set{B_{1\nu}}_{\nu}$ desitjada. 
+
+Primer de tot, recordem que els entorns $N_p$ poden intersecar amb altres entorns $N_q$. Així, els canvis que fem en $N_p$ poden afectar a $N_q$. Afortunadament, el nombre d'entorns que intersequen cada $N_p$ és finit. Si $N_p$ interseca amb $\sigma$ entorns $N_q$, incloent $N_p$ mateix, aleshores podem prendre les restriccions de $N_p$, dividir-les per $\sigma$, i imposar-les a tots els $N_q$. Sigui $\varepsilon_p^*$ el mínim de totes aquestes restriccions sobre l'error de $N_p$.
+
+Notem que hi ha dues fonts de l'error en $N_p$: el primer és l'aproximació preliminar de $\delta_{ij}$ pel tensor $\beta_{ij}$, i el segon és l'error acumulat per les passes individuals. Per tant, imposant $|\delta_{ij}-\beta_{ij}|_{N_p} \le \varepsilon_p^*$ obtenim 
+\begin{equation}\label{eq:error_aproximacio}
+    \left|\frac12\varphi_p\delta_{ij}-\frac12\varphi_p\beta_{ij}\right|_{N_p} \le \frac12\varepsilon_p^*.
+\end{equation}
+Ens resta $\frac12\varepsilon_p^*$
+per a l'error de les passes individuals, que podem assignar de la següent manera:
+\begin{equation}\label{eq:error_passos}
+    B_{1\nu} \le \frac{1}{2^{\nu+1}}\varepsilon_p^*.
+\end{equation}
+De manera que l'error total obtingut sumant \ref{eq:error_aproximacio} i \ref{eq:error_passos} és menor que
+\begin{equation*}
+    \frac12\varepsilon_p^* + \sum_{\nu=1}^\infty \frac1{2^{\nu+1}}\varepsilon_p^* = \varepsilon_p^*.
+\end{equation*}
+Així, hem trobat la successió $\set{B_{1\nu}}_{\nu}$ desitjada.
+\qed
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 
