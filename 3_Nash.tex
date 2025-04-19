@@ -236,7 +236,7 @@ A continuació, ens volem assegurar que $\delta_{ij}'$ sigui definit positiu, i 
 \begin{nota}
     Per un tensor donat $T_{ij}$ en un entorn $N_p$, escrivim $|T_{ij}|_{N_p}$ per denotar el màxim dels valors absoluts dels components de $T_{ij}$ en $N_p$. Aquesta és una bona aproximació de la mida del tensor $T_{ij}$ en $N_p$. {\color{blue} Cal mirar si hi ha una millor notació}
 \end{nota}
-\begin{prop}
+\begin{prop}\label{prop:dos de tres}
     Sigui $N_p$ un entorn de $M$. En una etapa donada del procés, existeix una successió $\set{B_{1\nu}}_{\nu}$, on $B_{1\nu}$ és el $B_1$ de la definició \ref{def: B1 B2 B3} al pas $\nu$, tal que, després de fer tots els passos en $N_p$
 \end{prop}
 \begin{itemize}
@@ -244,7 +244,9 @@ A continuació, ens volem assegurar que $\delta_{ij}'$ sigui definit positiu, i 
     \item \textit{$e_{ij}$ és prou petit per assegurar que el procés convergeix després de fer totes les etapes.}
     \item \textit{La convergència és tal que la mida de $\delta_{ij}'$ és aproximadament $2/3$ de la mida de $\delta_{ij}$ després de cada etapa. }{\color{blue} No m'agrada gaire com està descrita aquesta proposició}
 \end{itemize}
-
+\begin{obs}
+    Aquest resultat confirma que el procés convergeix, de tal manera que la immersió resultant després de realitzar totes les etapes és isomètrica.
+\end{obs}
 {\color{green!50!black} \textit{Prova.} 
 En $N_p$, sempre es pot trobar una constant real $\varepsilon_p>0$ tal que, si imposem 
 \begin{equation}\label{eq:epsilon_p}
@@ -280,30 +282,32 @@ De manera que l'error total obtingut sumant \ref{eq:error_aproximacio} i \ref{eq
 \begin{equation*}
     \frac12\varepsilon_p^* + \sum_{\nu=1}^\infty \frac1{2^{\nu+1}}\varepsilon_p^* = \varepsilon_p^*.
 \end{equation*}
-Així, hem trobat la successió $\set{B_{1\nu}}_{\nu}$ desitjada.
+Així, obtenim la successió $\set{B_{1\nu}}_{\nu}$ desitjada.
 \qed
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+\subsubsection{Realitzabilitat dels passos}
+Per tal que els passos siguin realitzables, només cal tenir una immersió $C^\infty$. Això és cert sempre que la mètrica induida sigui definida positiva i les immersions siguin $C^\infty$. Totes les funcions utilitzades en el procés són $C^\infty$, de manera que només cal veure que la mètrica induida és definida positiva.
 
+Procedim per inducció. Suposem que cada pas pas pren una immersió que produeix una mètrica induida definida positiva, i augmenta la mètrica induida en $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}\right)$. Així, la mètrica induida és definida positiva. Aquest augment és un tensor no-negatiu, i l'error és $O\left(\frac1{\lambda}\right)$, de manera que per una $\lambda$ prou gran, ens podem assegurar que la mètrica induida és definida positiva.
 
+\subsection{Organització general}
+{\color{blue} Aquest apartat haurem de mirar de moure'l a un lloc més adequat, potser. }
 
+\begin{itemize}
+    \item El procés es divideix en una sèrie \textbf{d'etapes}. Cada una d'elles és igual que la resta, però la primera necessita una immersió $f$ de classe $C^\infty$ curta. Després de cada etapa, la nova immersió segueix sent $C^\infty$ i curta, però l'error mètric és aproximadament $2/3$ de l'error de la immersió de l'etapa anterior.
+    \item S'escull un recobriment localment finit de $M$ per conjunts tancats $N_p$. És a dir, tal que cada punt de $M$ pertany a, com a molt, un nombre finit de conjunts $N_p$.
+    \item Cada etapa es divideix en un nombre finit de \textbf{passos}. Primer, la correcció es divideix entre tots els conjunts $N_p$ amb unes funcions pes $\varphi_p$. Aleshores es divideix la correcció de cada $N_p$ en un nombre finit de passos, \ref{eq:lema_descomp}
+    \item Els passos s'han de realitzar un rere l'altre. L'ordre concret no importa, però s'ha d'escollir un ordre i seguir-lo. En varietats obertes, el nombre de passes és infinit, però en cada entorn compacte el nombre de passos és finit.
+\end{itemize}
 
+\subsection{Convergència de la immersió}
+Per la Proposició \ref{prop:dos de tres}, sabem que la immersió resultant del procés és isomètrica. Ara bé, encara no tenim demostrat que aquesta immersió és de classe $C^1$. Per tal que sigui $C^1$, cal que la immersió sigui contínua i que les primeres derivades siguin contínues. Per assegurar que la immersió que obtenim al límit és contínua, només cal que la successió dels $B_3$ sigui convergent. De la mateixa manera, si la successió dels $B_2$ és convergent, aleshores les primeres derivades de la immersió resultant són contínues. Podem escollir, per tant, acotar el $B_2$ i $B_3$ al pas $r$ de l'etapa $s$ per la sèrie geomètrica
 
+\begin{equation}
+    B_2 \le \frac1{2^{(s+r)}} \quad \text{i} \quad B_{3} \le \frac1{2^{(s+r)}}.
+\end{equation}
 
-
-
+a
 
 
 
