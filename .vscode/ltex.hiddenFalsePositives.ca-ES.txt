@@ -9,3 +9,5 @@
 {"rule":"CONCORDANCES_DET_NOM","sentence":"^\\QUna aplicació \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és una immersió per ara direm encabiment als embeddings i immersions als immersions si \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és injectiva per tot \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"FALTA_ELEMENT_ENTRE_VERBS","sentence":"^\\QUna aplicació \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és una immersió per ara direm encabiment als embeddings i immersions als immersions si \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q és injectiva per tot \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"CONCORDANCES_ADJ_NOM","sentence":"^\\QPer la compacitat d' \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, Per què? existeix un nombre finit de sumands que són funcions no-nul·les Non-vanishing, mirar la traducció.\\E$"}
+{"rule":"APOSTROFACIO_MOT_DESCONEGUT","sentence":"^\\QAnomenem solució de \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q a una corba\\E$"}
+{"rule":"APOSTROFACIO_MOT_DESCONEGUT","sentence":"^\\QDe fet, si anomenem \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q a l'origen de \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, aleshores\\E$"}

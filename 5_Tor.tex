@@ -1,0 +1,76 @@
+\chapter{Encabiments isomètrics del tor pla}
+{\color{blue}La idea d'aquest capítol és la següent:
+\begin{itemize}
+    \item Recordar que el tor pla no es podia encabir isomètricament en l'espai euclidià tridimensional de manera suau, pel tema del punt el·líptic.
+    \item Explicar com el teorema de Nash ens permet fer-ho de manera $C^1$.
+\end{itemize}
+}
+\section{Introducció al capítol}
+Havent enunciat i demostrat el teorema de Nash{\color{blue}-Kuiper?}, veurem un encabiment isomètric del tor pla en l'espai euclidià tridimensional. L'elaboració d'aquest encabiment va ser realitzat per Vincent Borrelli, Saïd Jabrane, Francis Lazarus i Boris Thibert i publicada l'any 2013. La cita principal d'aquest capítol és \cite{borrelli2013}. \textbf{En aquest capítol no donem, en general, les demostracions de lemes i sublemes, que es troben en \cite{borrelli2013}. En canvi, donem les demostracions dels teoremes i proposicions més importants.}
+
+{\color{blue} RESUM DEL QUE VEUREM!!!
+
+També podem parlar del fet que fins aquest moment no havíem visualitzat cap encabiment isomètric d'aquesta mena, i que han aconseguit fer-ho per primera vegada. També podem mencionar que ho han fet per altres encabiments com l'esfera reduïda i el pla projectiu.}
+
+\section{Integració convexa}
+{\color{blue}Aquí s'explica el que es necessita sobre integració convexa per tal de poder fer aquest encabiment isomètric.}
+\subsection{Integració convexa 1D}
+\begin{defi}
+    Per cada $x\in I := [0,1]$, sigui $\mathcal R_x$ un conjunt de vectors en $\mathbb R^n$. Anomenem \textbf{relació diferencial} a la unió $\mathcal R := \bigcup_{x\in I} \mathcal R_x$. Anomenem \textbf{solució de} $\mathcal R$ a una corba $f:I\to\mathbb R^n$ de classe $C^1$ tal que $f'(x)\in\mathcal R_x$ per a tot $x\in I$.
+\end{defi}
+
+El mètode d'Integració Convexa ens permetrà trobar solucions de relacions diferencials arbitràriament properes a corbes $f:I\to\mathbb R^n$ de classe $C^1$ qualssevol. Per a això necessitarem una família de \textbf{voltes} $h(x, \cdot): \mathbb R / \mathbb Z \to \mathcal R_x$ tals que 
+\begin{equation}\label{eq:def voltes}
+    f'(x) = \int_0^1 h(x, u)  du,
+\end{equation}
+és a dir, tals que la derivada $f'(x)$ és la mitjana de la volta $h(x, \cdot)$ sobre el cercle unitat. Si aquestes voltes existeixen, el següent que voldrem és definir la \textbf{integral convexa} de $h$ com la solució $f$ de la relació diferencial 
+\begin{equation*}
+    F(t) := f(0) + \int_0^t h(x, \set{Nx})  dx,
+\end{equation*}
+on $\set{Nx}$ és la part fraccionària {\color{blue} (fraccionaria? fraccional? decimal?)} de $x$. Intuïtivament, $F$ s'obté integrant $h$ sobre una corba de període $1/N$, de tal manera que per $N$ molt gran, cada període és proper a una volta concreta $h(x, \cdot)$, i per tant la seva integral és propera a $f'(x)$. L'efecte acumulat de les $N$ voltes és proper a $f(t)$. Aquest fet s'expressa en el lema següent.
+
+\begin{lema}\label{lema:C0-1D}
+    Siguin $f$, $h$, $N$ i $F$ com hem definit abans. Aleshores, $F$ és solució de la relació diferencial $\mathcal R$ i 
+    \begin{equation}
+    ||F-f||_\infty \le \frac{K(h)}{N},
+    \end{equation}
+    on $K(h)$ només depèn de $||h||_{C^1}$.
+\end{lema}
+
+{\color{blue} Podem mirar de moure aquesta part més amunt, de manera que sigui evident com s'escullen les voltes.}
+
+En el nostre cas, les relacions diferencials $\mathcal R_s$ seran esferes de radi $r(s)>0$, tal que la relació diferencial restringeix la mida de la derivada $f'$. En concret, tindrem corbes $f$ que seran curtes si i només si $||f'(s)||\le r(s)$.
+
+Suposant que $f'$ mai s'anul·la, podem definir $\vec n:I\to\mathbb R^n$ un vector normal a $f'$ i $\vec t(s):=f'(s)/||f'(s)||$. Podem fer ús d'aquests vectors per definir les voltes $h(s, \cdot)$ de la següent manera:
+\begin{equation}
+    h(s, u) = r(s)(\cos(\alpha_s\cos(2\pi u))\vec t(s) + \sin(\alpha_s\sin(2\pi u))\vec n(s)),
+\end{equation}
+on $\alpha_s := J_0^{-1}(||f'(s)||/r(s))$, on $J_0$ és la funció de Bessel de primer tipus i d'ordre 0. Per la propietat
+\begin{equation}
+    J_0(x) = \int_0^1 \cos(x\cos(2\pi u)) du,
+\end{equation}
+es verifica la condició \ref{eq:def voltes}.
+
+\section{Integració convexa 2D: el cas primitiu}
+Havent vist com es troba un encabiment isomètric mitjançant Integració Convexa en el cas 1D, ara veurem com es pot fer en el cas 2D. Intuitivament, considerarem la superfície resultant d'un encabiment com una família de corbes unidimensionals, per tal de poder aplicar el resultat del lema \ref{lema:C0-1D}.
+
+Considerem el problema que volem resoldre, és a dir, trobar un encabiment isomètric d'un tor $\mathbb T^2 = \mathbb R^2/\mathbb Z^2$ amb una mètrica $\mu$ en l'espai euclidià tridimensional. Com hem fet en la demostració del teorema de Nash al capítol anterior, partirem d'un encabiment inicial no isomètric $f:(\mathbb T^2, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ de classe $C^\infty$. Abans de considerar el cas més general, però, partirem primer de la suposició que la diferència entre la mètrica $\mu$ i el \textit{pullback} de la mètrica euclidiana per $f$ és una mètrica primitiva, és a dir:
+\begin{equation}
+    \mu = f^*\langle\cdot, \cdot\rangle + \rho \ell\otimes \ell,
+\end{equation}
+on $\rho:\mathbb T^2\to\mathbb R_+$ i $\ell$ una forma lineal que identifica plans tangents de $\mathbb T^2$ amb $\mathbb R^2$. 
+
+Sigui $V\in\ker(\ell)$ un vector amb coordenades enteres coprimeres. Aleshores, la corba $f_V$ donada per 
+\begin{align}
+    \nonumber\gamma:[0,1]&\to\mathbb T^2\\
+    \nonumber t&\mapsto [O+tV],
+\end{align}
+és tancada i simple en $\mathbb T^2$. Per tant, podem tallar el tor per aquesta corba i obtenir un cilindre, que anomenarem $\mathcal Cil$. Sigui $U$ el vector tal que $(U,V)$ és una base directa ortogonal i $||U||\cdot||V||=1$. De fet, si anomenem $O$ a l'origen de $\mathbb R^2$, aleshores el rectangle format per $O, O+U, O+U+V, O+V$ és un domini fonamental de $\mathbb T^2$, i podem escriure 
+\begin{equation}
+    \mathcal Cil = \set{O+tV+sU : (t,s)\in[0,1]\times(\mathbb R / \mathbb Z)}.
+\end{equation}
+A més, canviem l'escala tal que $\ell(U)=||U||$.
+
+\subsection{Integració convexa del cilindre $\mathcal Cil$}
+
+

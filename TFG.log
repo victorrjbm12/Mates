@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  19 APR 2025 18:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  20 APR 2025 18:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -748,7 +748,7 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count357
 \l__pdf_internal_box=\box117
-) (./TFG.aux (./1_Introducció.aux) (./2_Suavitat.aux) (./3_Nash.aux) (./4_Tor.aux) (./5_Mobius.aux) (./APUNTS.aux))
+) (./TFG.aux (./1_Introducció.aux) (./2_Suavitat.aux) (./3_Mobius.aux) (./4_Nash.aux) (./5_Tor.aux) (./APUNTS.aux))
 \openout1 = `TFG.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
@@ -870,7 +870,7 @@ Couldn't patch \deferred@thm@head!
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count364
-<matematiquesinformatica-pos-rgb.png, id=143, 1352.05125pt x 639.89063pt>
+<matematiquesinformatica-pos-rgb.png, id=167, 1352.05125pt x 639.89063pt>
 File: matematiquesinformatica-pos-rgb.png Graphic file (type png)
 <use matematiquesinformatica-pos-rgb.png>
 Package pdftex.def Info: matematiquesinformatica-pos-rgb.png  used on input line 88.
@@ -930,47 +930,57 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 Cap\'{\i }tol 1.
 
 
-[5
-
-
-]
-Cap\'{\i }tol 2.
-
-
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.45 \newpage
-              [1
+l.39 \begin{obs}
+                 [1
 
-])
+
+]
+
+[2])
 \openout2 = `2_Suavitat.aux'.
 
  (./2_Suavitat.tex
-Cap\'{\i }tol 3.
+Cap\'{\i }tol 2.
 
 
-[2
+[3
 
 
 
 
 ]
 
-[3]
+[4]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
 
-[4]
+[5]
 
-[5])
-\openout2 = `3_Nash.aux'.
+[6])
+\openout2 = `3_Mobius.aux'.
 
- (./3_Nash.tex
+ (./3_Mobius.tex
+Cap\'{\i }tol 3.
+
+
+[7
+
+
+
+
+]
+
+[8])
+\openout2 = `4_Nash.aux'.
+
+ (./4_Nash.tex
 Cap\'{\i }tol 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -986,18 +996,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[6
+[9
 
 
 
 
 ]
-
-[7]
-
-[8]
-
-[9]
 
 [10]
 
@@ -1015,17 +1019,46 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [17]
 
-[18]
+[18])
 
 [19]
+\openout2 = `5_Tor.aux'.
 
-[20]
+ (./5_Tor.tex
+Cap\'{\i }tol 5.
+
+
+[20
+
+
+
+
+]
 
 [21]
 
-[22]
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 74.
 
-[23]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 74.
+
+)
+
+[22]
+\openout2 = `APUNTS.aux'.
+
+ (./APUNTS.tex
+Cap\'{\i }tol 6.
+
+
+[23
+
+
+
+
+]
 
 [24]
 
@@ -1033,77 +1066,59 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [26]
 
-[27])
-\openout2 = `4_Tor.aux'.
+[27]
 
- (./4_Tor.tex)
-\openout2 = `5_Mobius.aux'.
+[28]
 
- (./5_Mobius.tex
-Cap\'{\i }tol 5.
+[29]
 
-
-[28
-
-
-
-
-
-
-
-]
-
-[29])
-\openout2 = `APUNTS.aux'.
-
- (./APUNTS.tex
-Cap\'{\i }tol 6.
-
-
-[30
-
-
-
-
-]
+[30]
 
 [31]
 
-[32])
+[32]
 
 [33]
+
+[34]
+
+[35]
+
+[36]
+
+[37])
 Cap\'{\i }tol 7.
 
 
-[34
+[38
 
 
 
 ]
 
-[35
+[39
 
-] (./TFG.aux (./1_Introducció.aux) (./2_Suavitat.aux) (./3_Nash.aux) (./4_Tor.aux) (./5_Mobius.aux) (./APUNTS.aux))
+] (./TFG.aux (./1_Introducció.aux) (./2_Suavitat.aux) (./3_Mobius.aux) (./4_Nash.aux) (./5_Tor.aux) (./APUNTS.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 3CA1125652F28BBD042E466248848555;5574.
+(rerunfilecheck)             Checksum: 2474FA795A33C133AF75F4FD58A2634A;6978.
  ) 
 Here is how much of TeX's memory you used:
- 38859 strings out of 473201
- 862445 string characters out of 5716120
- 1384908 words of memory out of 5000000
- 60850 multiletter control sequences out of 15000+600000
- 603552 words of font info for 312 fonts, out of 8000000 for 9000
+ 38926 strings out of 473201
+ 863335 string characters out of 5716120
+ 1386025 words of memory out of 5000000
+ 60879 multiletter control sequences out of 15000+600000
+ 606172 words of font info for 330 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,105p,1195b,649s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,105p,1195b,669s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on TFG.pdf (41 pages, 821243 bytes).
+Output written on TFG.pdf (44 pages, 839876 bytes).
 PDF statistics:
- 706 PDF objects out of 1000 (max. 8388607)
- 599 compressed objects within 6 object streams
- 199 named destinations out of 1000 (max. 500000)
- 74530 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 771 PDF objects out of 1000 (max. 8388607)
+ 660 compressed objects within 7 object streams
+ 217 named destinations out of 1000 (max. 500000)
+ 78674 words of extra memory for PDF output out of 89155 (max. 10000000)
 
