@@ -1,7 +1,9 @@
 \chapter{Teorema Nash-Kuiper $C^1$}
 \section{Introducció al capítol}
 En aquesta secció enunciarem i demostrarem els quatre teoremes d'immersions isomètriques $C^1$ de John Forbes Nash Jr., seguint l'article en què els va publicar el 1954 a Annals of Mathematics, \cite{nash1954}.\\
-{\color{blue} explicar una mica el context i tal. Bàsicament, dir que és un teorema sorprenent perquè no se l'esperava ningú, explicar que el que fa és dividir en etapes i passos, i explicar que Kuiper fa una millora de la demostració de Nash per a una dimensió menys.}
+{\color{blue} explicar una mica el context i tal. Bàsicament, dir que és un teorema sorprenent perquè no se l'esperava ningú, explicar que el que fa és dividir en etapes i passos, i explicar que Kuiper fa una millora de la demostració de Nash per a una dimensió menys.
+
+Important tornar a llegir i revisar quan dic successió i quan dic sèrie.}
 \section{Enunciat dels teoremes}
 {\color{blue} Hauria de fer servir $\mathbb R^k$ en comptes de $E^k$?}
 \begin{teo}
@@ -176,7 +178,7 @@ Amb aquesta última proposició s'ha demostrat que la pertorbació indueix un ca
 \end{equation}
 \begin{prop}
     El canvi en les primeres derivades associat a una etapa del procés en un entorn $N_p$ és
-    \begin{align}
+    \begin{align}\label{eq:moltes_lambdes}
         \nonumber\Bigg| \left(\frac{\partial{z}^\alpha}{\partial x^i} \right)_{\textrm{abans}}- &\left(\frac{\partial{z}^\alpha}{\partial x^i} \right)_{\textrm{després}} \Bigg| \\
         &\le 2\sqrt{K\beta_{ii}} + O\left(\frac1{\lambda_1}\right) + O\left(\frac1{\lambda_2}\right) + \cdots + O\left(\frac1{\lambda_\nu}\right) + \cdots,
     \end{align}
@@ -245,7 +247,7 @@ A continuació, ens volem assegurar que $\delta_{ij}'$ sigui definit positiu, i 
     \item \textit{La convergència és tal que la mida de $\delta_{ij}'$ és aproximadament $2/3$ de la mida de $\delta_{ij}$ després de cada etapa. }{\color{blue} No m'agrada gaire com està descrita aquesta proposició}
 \end{itemize}
 \begin{obs}
-    Aquest resultat confirma que el procés convergeix, de tal manera que la immersió resultant després de realitzar totes les etapes és isomètrica.
+    Aquest resultat confirma que el procés convergeix, de tal manera que la immersió resultant després de realitzar totes les etapes és isomètrica. {\color{blue} Potser seria més correcte dir que la mètrica resultant és isomètrica, però encara no sabem si la immersió convergeix correctament.}
 \end{obs}
 {\color{green!50!black} \textit{Prova.} 
 En $N_p$, sempre es pot trobar una constant real $\varepsilon_p>0$ tal que, si imposem 
@@ -301,13 +303,123 @@ Procedim per inducció. Suposem que cada pas pas pren una immersió que produeix
 \end{itemize}
 
 \subsection{Convergència de la immersió}
-Per la Proposició \ref{prop:dos de tres}, sabem que la immersió resultant del procés és isomètrica. Ara bé, encara no tenim demostrat que aquesta immersió és de classe $C^1$. Per tal que sigui $C^1$, cal que la immersió sigui contínua i que les primeres derivades siguin contínues. Per assegurar que la immersió que obtenim al límit és contínua, només cal que la successió dels $B_3$ sigui convergent. De la mateixa manera, si la successió dels $B_2$ és convergent, aleshores les primeres derivades de la immersió resultant són contínues. Podem escollir, per tant, acotar el $B_2$ i $B_3$ al pas $r$ de l'etapa $s$ per la sèrie geomètrica
-
-\begin{equation}
-    B_2 \le \frac1{2^{(s+r)}} \quad \text{i} \quad B_{3} \le \frac1{2^{(s+r)}}.
+Per la Proposició \ref{prop:dos de tres}, sabem que la mètrica resultant del procés en el límit és la mètrica intrínseca de la varietat, com volíem. Ara bé, encara no hem demostrat que convergeixi en una immersió $C^1$. El primer que cal assegurar és que el resultat en el límit és, efectivament, una immersió. Amb aquest fi, podem imposar que en el pas $r$ de l'etapa $s$ del procés, el corresponent $B_3$ estigui fitat per
+\begin{equation}\label{eq:b3_cota}
+    B_{3} \le \frac1{2^{(s+r)}},
 \end{equation}
+de manera que la successió dels $B_3$ sigui més petita que una successió convergent.
 
-a
+Imposant les mateixes fites per la successió de $B_2$, 
+\begin{equation}
+    B_2 \le \frac1{2^{(s+r)}},
+\end{equation}
+controlem els termes d'error d'ordre $O\left(\frac1{\lambda}\right)$ de l'equació \ref{eq:moltes_lambdes}. Ara bé, per tal que les primeres derivades convergeixin al final del procés, cal que el terme irreductible $2\sqrt{K\beta_{ii}}$ també convergeixi.
+
+\begin{prop}
+    La sèrie formada per la successió $\set{2\sqrt{K\beta_{ii}}}_{\nu}$ convergeix per cada $i$ i uniformement en cada entorn $N_p$.
+\end{prop}
+{
+\color{green!50!black} \textit{Prova.} 
+$K$ és una constant que només depèn de la dimensió $n$ de la varietat, de manera que només ens hem d'ocupar de $\beta_{ii}$.
+El tensor $\beta_{ij}$ aproxima l'error mètric $\delta_{ij}$, que es redueix per un factor $1/3$ o major després de cada etapa, com hem vist a la desigualtat \ref{eq:delta_prima_cota} {\color{blue} Nash diu que això és després de cada pas, em fa pal ara mirar com és.}. Cal veure que $\beta_{ij}$ decreix de manera similar. Podem imposar que $\beta_{ij}$ sigui prou proper a $\delta_{ij}$ tal que 
+\begin{equation}
+    \frac{9}{10} \le \frac{\max|\beta_{ij}|_{N_p}}{\max|\delta_{ij}|_{N_p}} \le \frac{9}{8}.
+\end{equation}
+Aleshores,
+\begin{equation}
+    |\beta_{ij}'|_{N_p} \le \frac{9}{8}|\delta_{ij}'|_{N_p}\le \frac{9}{8}\frac{2}{3}|\delta_{ij}|_{N_p} \le \frac{9}{8}\frac{2}{3}\frac{10}{9}|\beta_{ij}|_{N_p} =  \frac{5}{6}|\beta_{ij}|_{N_p}.
+\end{equation}
+Així, el terme $\beta_{ii}$ decreix per un factor $5/6$ o major després de cada etapa. Per tant, la sèrie formada per la successió $\set{2\sqrt{K\beta_{ii}}}_{\nu}$ convergeix com una geomètrica de raó $\sqrt{5/6}$. \qed
+}
+
+\begin{obs}
+    La conseqüència d'això és que, en el límit, la immersió $f$ és $C^1$, com volíem demostrar.
+\end{obs}
+
+\subsection{Encabiments isomètrics}
+
+Fins ara hem estat tractant el cas de les immersions, per les quals no hi ha restricció pel que fa a les interseccions amb elles mateixes. Ara bé, per demostrar que el procés descrit per Nash també aplica als encabiments, que han de ser injectius, cal comprovar que les immersions resultants també ho són.
+
+\begin{nota}
+    Sigui $M$ una varietat oberta i $f:M\to \mathbb R^n$ un encabiment. Anomenem \textbf{frontera de l'encabiment} al conjunt $\partial f(M) = \overline{f(M)}\setminus f(M)$. {\color{blue} Ho deixo indicat perquè no sé si aquest és el terme estàndard, però no m'agrada com l'anomena el Nash.}
+\end{nota}
+
+La demostració per encabiments és la mateixa que per immersions generals, però l'aplicació $f$ de la que partim ha de ser un encabiment. Si la varietat és oberta, demanem també que la frontera de l'encabiment, si existeix, no intersequi la imatge de l'encabiment. Un cop es té aquest primer encabiment curt, la única consideració addicional és que s'ha de controlar la mida de l'encabiment $|\overline z^\alpha - z^\alpha|$ en cada pas.
+
+Ens haurem de fixar primer en què cada pas es pugui fer sense que el nou encabiment intersequi amb si mateix, i després en què l'encabiment resultant en el límit del procés sigui injectiu.
+\begin{obs}
+    Si la varietat és oberta, l'elecció de $B_3$ a \ref{eq:b3_cota} assegura que la frontera de l'encabiment roman fix durant tot el procés.
+\end{obs}
+\begin{prop}
+    En qualsevol pas d'una etapa i en qualsevol entorn $N_p$ de la frontera de l'encabiment, es pot escollir una $\lambda$ prou gran tal que el pas no produeixi interseccions de l'encabiment amb si mateix ni amb la frontera de l'encabiment.
+\end{prop}
+{
+\color{green!50!black} \textit{Prova.} 
+    Sigui $K$ un component compacte de l'encabiment que inclogui $N_p$ al seu interior. $K$, al seu torn, està inclòs en un entorn obert $H$ tan proper a $K$ tal que per qualsevol punt $P$ en $H$ no pot tenir dues perpendiculars a $K$ en $H$. {\color{blue} Això és el que vam parlar amb l'Ignasi. Podríem mirar si cal posar una demostració o un dibuixet o algo.}
+
+    Sigui $Q$ la unió de la frontera de l'encabiment i la part de l'encabiment que no està inclòs en $K$. Com $Q$ és un conjunt tancat, una pertorbació prou petita no pot intersecar $Q$. A més, com la pertorbació és normal a l'encabiment, estarà dins de $H$ i els punts de $K$ no es podran intersecar. Així doncs, el pas no produeix interseccions de l'encabiment amb si mateix ni amb la frontera de l'encabiment.\qed
+}
+
+Amb aquest resultat, obtenim per inducció que en qualsevol nombre finit de passos del procés, l'encabiment no produeix interseccions amb si mateix ni amb la frontera de l'encabiment. Això no assegura que el límit del procés sigui injectiu després d'infinits passos, sinó que cal considerar això a part.
+
+\begin{prop}
+    Es pot escollir una successió dels $B_3$ tal que el límit del procés sigui injectiu, és a dir, tal que la immersió resultant sigui un encabiment.
+\end{prop}
+{
+\color{green!50!black} \textit{Prova.} 
+    Considerem una enumeració dels $N_p$ qualsevol. Sigui $S_r$ el conjunt de tots els parells de punts dels primers $r$ entorns tals que estaven separats per una distància major que $2^{-r}$ en l'encabiment curt original. Qualsevol parell de punts pertany a $S_r$ per algun $r$. A partir de l'etapa $r$ requerirem que el $B_3$ de l'etapa $\mu\le r$ i el pas $\nu$ sigui més petit que $\varepsilon_r2^{-\mu-\nu}$, on $\varepsilon_r$ s'escull prou petit per assegurar que cap parell de punts pugui ajuntar-se al límit. D'aquesta manera, tots els parells de punts queden protegits en el límit, i la immersió resultant és un encabiment. \qed
+}
+\subsection{Obtenint la immersió o l'encabiment inicial}
+Amb tot el que hem demostrat fins aquí, ja hem vist que per qualsevol immersió o encabiment curt inicial $C^\infty$, es pot trobar una immersió o encabiment $C^1$ isomètric de la varietat en un espai euclidià. Només queda veure que es pot trobar aquesta immersió o aquest encabiment inicial. En aquesta subsecció expliquem el procés per obtenir-lo. 
+
+En el cas d'una varietat tancada, podem obtenir l'encabiment inicial en $\mathbb R^{2n}$ mitjançant el teorema de Whitney. {\color{blue} Haurem de mirar d'explicar-lo.} Per tar de fer-lo curt, es pot canviar l'escala de l'espai euclidià.
+
+En el cas d'una varietat oberta, s'escull un recobriment per tancats $N_p$ i unes funcions $\varphi_p$ de classe $C^\infty$que sumin $1$ en qualsevol punt, com abans, i denotem $x_{p_i}$ per la coordenada $i$-èssima de $N_p$. Suposem $|x_{p_i}|<1$ per a qualsevol $i$ i $p$. A més, imposem que cada $N_p$ interseca com a molt amb $s$ d'aquests conjunts, incloent-hi el mateix $N_p$. A continuació, separem els conjunts en $s$ classes, tals que cap conjunt té intersecció amb un altre de la mateixa classe. 
+
+Construim un encabiment en un espai $s(n+2)$-dimensional $E^{s(n+2)}$ amb les següents funcions:
+\begin{equation}
+    u_\sigma = 
+    \begin{cases}
+        \varepsilon_p\varphi_p & \text{en entorns $N_p$ de la classe $\sigma$} \\
+        0 & \text{en la resta d'entorns}
+    \end{cases}
+\end{equation}
+\begin{equation}
+    v_\sigma = 
+    \begin{cases}
+        \varepsilon_p^2\varphi_p & \text{en entorns $N_p$ de la classe $\sigma$} \\
+        0 & \text{en la resta d'entorns}
+    \end{cases}
+\end{equation}
+\begin{equation}
+    w_{\sigma i} = 
+    \begin{cases}
+        \varepsilon_p\varphi_p x_{p i} & \text{en entorns $N_p$ de la classe $\sigma$} \\
+        0 & \text{en la resta d'entorns}
+    \end{cases}
+\end{equation}
+on $\varepsilon_p$ formen part d'una successió monòtona decreixent i convergent a $0$. Qualsevol parell de punts de la varietat en entorns diferents es pot distingir per tenir diferents conjunts de raons $u_\sigma/v_\sigma$, i qualsevol parell de punts en el mateix entorn es pot distingir pels $w_{\sigma i}$ corresponents. A més, la frontera de l'encabiment és l'origen de coordenades.
+
+Per últim, aquesta immersió es pot fer curta escollint els $\varepsilon_p$ tal que, si la immersió amb els $p$ primers entorns és curta per un factor $\frac13(2-1/p)$ o més gran, prenem $\varepsilon_{p+1}$ prou petit perquè la immersió amb $p+1$ primers entorns sigui curta per un factor $\frac13(2-1/(p+1))$ o més gran. 
+
+Amb això obtenim un encabiment curt de classe $C^\infty$ de la varietat en un espai $s(n+2)$-dimensional. Mitjançant projeccions lineals, podem rebaixar la dimensió de l'espai de l'encabiment fins a $2n+1$, i fins a $2n$ per a immersions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
