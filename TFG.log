@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  20 APR 2025 18:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  21 APR 2025 18:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -870,7 +870,7 @@ Couldn't patch \deferred@thm@head!
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count364
-<matematiquesinformatica-pos-rgb.png, id=167, 1352.05125pt x 639.89063pt>
+<matematiquesinformatica-pos-rgb.png, id=175, 1352.05125pt x 639.89063pt>
 File: matematiquesinformatica-pos-rgb.png Graphic file (type png)
 <use matematiquesinformatica-pos-rgb.png>
 Package pdftex.def Info: matematiquesinformatica-pos-rgb.png  used on input line 88.
@@ -1038,33 +1038,46 @@ Cap\'{\i }tol 5.
 [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 74.
+(hyperref)                removing `math shift' on input line 76.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 74.
+(hyperref)                removing `math shift' on input line 76.
 
-)
+
 
 [22]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 180.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 180.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 180.
+
+
+
+[23]
+
+[24])
+
+[25]
 \openout2 = `APUNTS.aux'.
 
  (./APUNTS.tex
 Cap\'{\i }tol 6.
 
 
-[23
+[26
 
 
 
 
 ]
-
-[24]
-
-[25]
-
-[26]
 
 [27]
 
@@ -1086,17 +1099,23 @@ Cap\'{\i }tol 6.
 
 [36]
 
-[37])
+[37]
+
+[38]
+
+[39]
+
+[40])
 Cap\'{\i }tol 7.
 
 
-[38
+[41
 
 
 
 ]
 
-[39
+[42
 
 ] (./TFG.aux (./1_Introducció.aux) (./2_Suavitat.aux) (./3_Mobius.aux) (./4_Nash.aux) (./5_Tor.aux) (./APUNTS.aux))
  ***********
@@ -1104,21 +1123,21 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 2474FA795A33C133AF75F4FD58A2634A;6978.
+(rerunfilecheck)             Checksum: 89CF9A37EB50E46B84032D06BFDE705D;7430.
  ) 
 Here is how much of TeX's memory you used:
- 38926 strings out of 473201
- 863335 string characters out of 5716120
- 1386025 words of memory out of 5000000
- 60879 multiletter control sequences out of 15000+600000
- 606172 words of font info for 330 fonts, out of 8000000 for 9000
+ 38974 strings out of 473201
+ 863865 string characters out of 5716120
+ 1386265 words of memory out of 5000000
+ 60890 multiletter control sequences out of 15000+600000
+ 606522 words of font info for 335 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,105p,1195b,669s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on TFG.pdf (44 pages, 839876 bytes).
+Output written on TFG.pdf (47 pages, 858815 bytes).
 PDF statistics:
- 771 PDF objects out of 1000 (max. 8388607)
- 660 compressed objects within 7 object streams
- 217 named destinations out of 1000 (max. 500000)
- 78674 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 822 PDF objects out of 1000 (max. 8388607)
+ 707 compressed objects within 8 object streams
+ 244 named destinations out of 1000 (max. 500000)
+ 78690 words of extra memory for PDF output out of 89155 (max. 10000000)
 

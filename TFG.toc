@@ -31,17 +31,19 @@
 \contentsline {subsection}{\numberline {5.2.1}Integració convexa 1D}{20}{subsection.5.2.1}%
 \contentsline {section}{\numberline {5.3}Integració convexa 2D: el cas primitiu}{21}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Integració convexa del cilindre $\mathcal Cil$}{22}{subsection.5.3.1}%
-\contentsline {chapter}{\numberline {6}Apunts d'integració convexa}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Dia 1}{23}{section.6.1}%
-\contentsline {subsubsection}{Teoria de Calderón Zygmund}{24}{section*.9}%
-\contentsline {subsubsection}{Equacions el·líptiques i aplicacions quasiconformals}{24}{section*.10}%
-\contentsline {section}{\numberline {6.2}Dia 2}{24}{section.6.2}%
-\contentsline {subsubsection}{Beltrami no lineals}{25}{section*.11}%
-\contentsline {section}{\numberline {6.3}Dia 3}{25}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Dia 4}{25}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Apunts del paper de Nash del 1954}{27}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Explicació del Sung-Jin Oh}{32}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}Extensions}{36}{subsection.6.6.1}%
-\contentsline {subsubsection}{Extensió a encabiments de varietats}{36}{section*.12}%
-\contentsline {subsubsection}{Refinament de Kuiper: encabiment de codimensió 1}{37}{section*.13}%
-\contentsline {chapter}{\numberline {7}Conclusions}{38}{chapter.7}%
+\contentsline {subsection}{\numberline {5.3.2}Integració convexa del tor $\mathbb T^2$}{24}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Encabiment isomètric del tor pla}{24}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Apunts d'integració convexa}{26}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Dia 1}{26}{section.6.1}%
+\contentsline {subsubsection}{Teoria de Calderón Zygmund}{27}{section*.9}%
+\contentsline {subsubsection}{Equacions el·líptiques i aplicacions quasiconformals}{27}{section*.10}%
+\contentsline {section}{\numberline {6.2}Dia 2}{27}{section.6.2}%
+\contentsline {subsubsection}{Beltrami no lineals}{28}{section*.11}%
+\contentsline {section}{\numberline {6.3}Dia 3}{28}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Dia 4}{28}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Apunts del paper de Nash del 1954}{30}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Explicació del Sung-Jin Oh}{35}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Extensions}{39}{subsection.6.6.1}%
+\contentsline {subsubsection}{Extensió a encabiments de varietats}{39}{section*.12}%
+\contentsline {subsubsection}{Refinament de Kuiper: encabiment de codimensió 1}{40}{section*.13}%
+\contentsline {chapter}{\numberline {7}Conclusions}{41}{chapter.7}%

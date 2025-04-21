@@ -10,7 +10,9 @@ Havent enunciat i demostrat el teorema de Nash{\color{blue}-Kuiper?}, veurem un 
 
 {\color{blue} RESUM DEL QUE VEUREM!!!
 
-També podem parlar del fet que fins aquest moment no havíem visualitzat cap encabiment isomètric d'aquesta mena, i que han aconseguit fer-ho per primera vegada. També podem mencionar que ho han fet per altres encabiments com l'esfera reduïda i el pla projectiu.}
+També podem parlar del fet que fins aquest moment no havíem visualitzat cap encabiment isomètric d'aquesta mena, i que han aconseguit fer-ho per primera vegada. També podem mencionar que ho han fet per altres encabiments com l'esfera reduïda i el pla projectiu.
+
+Hem de revisar el que hi ha escrit aquí i anar-ho relacionant amb el que hem vist al Teorema de Nash. Per exemple, com el nombre $N$ es relaciona amb la $\lambda$.}
 
 \section{Integració convexa}
 {\color{blue}Aquí s'explica el que es necessita sobre integració convexa per tal de poder fer aquest encabiment isomètric.}
@@ -30,7 +32,7 @@ El mètode d'Integració Convexa ens permetrà trobar solucions de relacions dif
 on $\set{Nx}$ és la part fraccionària {\color{blue} (fraccionaria? fraccional? decimal?)} de $x$. Intuïtivament, $F$ s'obté integrant $h$ sobre una corba de període $1/N$, de tal manera que per $N$ molt gran, cada període és proper a una volta concreta $h(x, \cdot)$, i per tant la seva integral és propera a $f'(x)$. L'efecte acumulat de les $N$ voltes és proper a $f(t)$. Aquest fet s'expressa en el lema següent.
 
 \begin{lema}\label{lema:C0-1D}
-    Siguin $f$, $h$, $N$ i $F$ com hem definit abans. Aleshores, $F$ és solució de la relació diferencial $\mathcal R$ i 
+    Siguin $f$, $h$, $N$ i $F$ com hem definit més amunt. Aleshores, $F$ és solució de la relació diferencial $\mathcal R$ i 
     \begin{equation}
     ||F-f||_\infty \le \frac{K(h)}{N},
     \end{equation}
@@ -55,7 +57,7 @@ es verifica la condició \ref{eq:def voltes}.
 Havent vist com es troba un encabiment isomètric mitjançant Integració Convexa en el cas 1D, ara veurem com es pot fer en el cas 2D. Intuitivament, considerarem la superfície resultant d'un encabiment com una família de corbes unidimensionals, per tal de poder aplicar el resultat del lema \ref{lema:C0-1D}.
 
 Considerem el problema que volem resoldre, és a dir, trobar un encabiment isomètric d'un tor $\mathbb T^2 = \mathbb R^2/\mathbb Z^2$ amb una mètrica $\mu$ en l'espai euclidià tridimensional. Com hem fet en la demostració del teorema de Nash al capítol anterior, partirem d'un encabiment inicial no isomètric $f:(\mathbb T^2, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ de classe $C^\infty$. Abans de considerar el cas més general, però, partirem primer de la suposició que la diferència entre la mètrica $\mu$ i el \textit{pullback} de la mètrica euclidiana per $f$ és una mètrica primitiva, és a dir:
-\begin{equation}
+\begin{equation}\label{eq:def primitiva}
     \mu = f^*\langle\cdot, \cdot\rangle + \rho \ell\otimes \ell,
 \end{equation}
 on $\rho:\mathbb T^2\to\mathbb R_+$ i $\ell$ una forma lineal que identifica plans tangents de $\mathbb T^2$ amb $\mathbb R^2$. 
@@ -72,5 +74,182 @@ Sigui $V\in\ker(\ell)$ un vector amb coordenades enteres coprimeres. Aleshores, 
 A més, canviem l'escala tal que $\ell(U)=||U||$.
 
 \subsection{Integració convexa del cilindre $\mathcal Cil$}
+Per tal de poder aplicar el lema \ref{lema:C0-1D}, no és prou amb prendre una família de corbes unidimensionals qualssevol, com
+\begin{align}
+    \nonumber\phi_t:[0,1]&\to\mathbb T^2\\
+    \nonumber s&\mapsto [O+tV+sU],
+\end{align}
+sinó que haurà de ser una mica més elaborat. 
 
+En concret, definim 
+\begin{equation}
+    W=U+\zeta V, \text{ on } \zeta = -\frac{\mu(U,V)}{\mu(V,V)} = -\frac{\langle U\cdot f, V\cdot f\rangle}{\langle V\cdot f, V\cdot f\rangle}
+\end{equation}
+i $X\cdot f = \text df(X)$ denota la derivada de $f$ al llarg de $X$. Observem que, amb aquesta definició, $\mu(W,V)=0$. Ara podem definir la família de corbes $\varphi(t,\cdot):[0,1]\to\mathbb \mathcal Cil$ tals que 
+\begin{equation}
+    \varphi(t,0) = O + tV, \text{ i } \frac{\partial\varphi}{\partial s}(t,s) = W(\varphi(t,s)).
+\end{equation}
+Resolent l'equació diferencial, obtenim
+\begin{equation}
+    \varphi(t,s) = O + sU + \psi(t,s)V.
+\end{equation}
+per alguna funció $\psi:(\mathbb R/\mathbb Z)\times[0,1]\to\mathbb R$ amb $\psi(t,0)=t$. En particular, $\varphi(t,\cdot)$ connecta $O+tV$ i $O+U+\psi(t,1)V$. Així, $\varphi:\mathbb R/\mathbb Z\times[0,1]\to\mathcal Cil$ és un difeomorfisme. A més, 
+\begin{equation}
+    \ell\left( \frac{\partial\varphi}{\partial t} \right) = 0, \text{ i } \mu\left( \frac{\partial\varphi}{\partial s}, W \right) = 0.
+\end{equation}
 
+Voldrem aplicar integració convexa a cada corba $f\circ\varphi(t,\cdot)$. Per fer-ho, considerem ara les voltes $h(t,s,u)$ donades per
+\begin{equation}
+    h(t,s,u) = \bar h(\varphi(t,s), \cos(2\pi u))
+\end{equation}
+on 
+\begin{equation*}
+    \bar h(p, c) = r(p)\left( \cos(\alpha(p)c)\vec t(p) + \sin(\alpha(p)c)\vec n(p) \right),
+\end{equation*}
+amb $r:=\sqrt{\mu(W,W)}$, $\vec t := \frac{W\cdot f}{||W\cdot f||}$, $\vec n := \frac{W\cdot f\times V\cdot f}{||W\cdot f\times V\cdot f||}$ i $\alpha:= J_0^{-1}(||W\cdot f||/r)$.
+
+Si ara escrivim 
+\begin{equation*}
+    (W\cdot f)(\varphi(t,s)) = \frac{\partial(f\circ\varphi)}{\partial s}(t,s)= \int_0^1 h(t,s,u) du,
+\end{equation*}
+obtenim l'aplicació suau $F:(\mathcal Cil, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ amb
+\begin{equation}
+    F\circ\varphi(t,s) := f(O+tV) + \int_0^s h(t,u,\set{Nu}) du.
+\end{equation}
+
+A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $F$ i $f$ i les seves derivades.
+
+\begin{lema}
+    \label{lema:C0-2D}
+    Siguin $f$, $h$, $N$ i $F$ com hem definit més amunt. Aleshores,
+    \begin{equation*}
+        ||F-f||_\infty \le \frac{K(h)}{N},
+    \end{equation*}
+    on $K(h)$ només depèn de $||h||_{C^1}$.
+\end{lema}
+
+\begin{lema}
+    \label{lema:lema3}
+    Siguin $f$, $h$, $N$ i $F$ com hem definit més amunt. Aleshores,
+    \begin{equation*}
+        \left|\left|\frac{\partial (F\circ \varphi)}{\partial t}-\frac{\partial (f\circ \varphi)}{\partial t}\right|\right|_\infty \le \frac{K(h)}{N},
+    \end{equation*}
+    on $K(h)$ només depèn de $||h||_{C^2}$.
+\end{lema}
+
+\begin{lema}
+    \label{lema:lema4}
+    Siguin $f$ i $F$ com hem definit més amunt i $\mu = f^*\langle\cdot, \cdot\rangle + \rho\ell\otimes\ell$. Aleshores,
+    \begin{equation*}
+        \left|\left|W\cdot F-W\cdot f\right|\right|_\infty \le \sqrt7\cdot||U||\cdot||\rho||^{1/2}_\infty.
+    \end{equation*}
+\end{lema}
+
+\begin{lema}
+    {\color{blue} SI AQUEST LEMA NO ES FA SERVIR ENS EL CARREGUEM}
+    Es verifica
+    \begin{equation*}
+        1+J_0^2(\alpha)-2J_0(\alpha)\cos(\alpha) \le 7(1-J_0^2(\alpha)).
+    \end{equation*}
+    per tot $\alpha\in[0,z]$, on $z$ és el primer zero de $J_0$.
+\end{lema}
+
+\begin{lema}
+    \label{lema:lema6}
+    \begin{equation*}
+        \left|\left| \text dF -\text df \right|\right|_\infty \le \sqrt{7}||\rho||^{1/2}_\infty + \frac{K(\zeta,\psi,h)}{N}
+    \end{equation*}
+    on $K(\zeta,\psi,h)$ només depèn de $||\zeta||_\infty$, de $\left|\left|\left(  \frac{\partial\psi}{\partial t}\right)^{-1}\right|\right|_\infty$ i $||h||_{C^2}$.
+\end{lema}
+
+\begin{lema}
+    \label{lema:lema7}
+    \begin{equation*}
+        ||\mu-F^*\langle\cdot, \cdot\rangle||_\infty \le \frac{K(f\circ\varphi,h)}{N}||\textrm d\varphi ^{-1}||_\infty^2,
+    \end{equation*}
+    on $K(f\circ\varphi,h)$ només depèn de $||\frac{\partial(f\circ\varphi)}{\partial t}||_\infty$ i de $||h||_{C^2}$.
+\end{lema}
+
+{
+\color{blue}
+\begin{obs}
+    Aquí podríem donar unes interpretacions d'aquests lemes, comparant-los amb els del teorema de Nash.
+\end{obs}
+}
+    
+\subsection{Integració convexa del tor $\mathbb T^2$}
+Amb la integració convexa del cilindre, hem obtingut una aplicació $F:(\mathcal Cil, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ gairebé isomètrica i $C_0$-propera a l'aplicació induïda sobre $\mathcal Cil$ per $f:(\mathbb T^2, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$. Ara bé, les imatges de les dues corbes que defineixen la frontera del cilindre no coincideixen necessàriament. Per tant, el nostre objectiu serà deformar $F$ de tal manera que coincideixin, tal que sigui possible prendre el quocient d'aquesta nova aplicació per a obtenir un encabiment isomètric del tor.
+
+Definim una nova aplicació $\bar F$ tal que
+\begin{equation}
+    \bar F\circ\varphi(t,s) := F\circ\varphi(t,s) - w(s)(F\circ\varphi(t,1)-f\circ\varphi(t,1)),
+\end{equation}
+on $w:I\to I$ és una funció $C^\infty$ tal que 
+\begin{equation*}
+    w(0)=0, \text{ } w(1)=1 \text{ i } w^{(k)}(0)=w^{(k)}(1)=0.
+\end{equation*}
+\begin{lema}
+    \label{lema:lema8}
+    Si $f:\mathbb T^2\to\mathbb R^3$ i $w:I\to I$ són de classe $C^\infty$, aleshores $\bar F$ és de classe $C^\infty$ com a aplicació de $\mathbb T^2$ en $\mathbb R^3$.
+\end{lema}
+Podem reunir tots aquests resultats en el teorema següent.
+\begin{teo}[One Step Theorem]
+    Sigui $f:(\mathbb T^2, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ un encabiment de classe $C^\infty$ tal que $\mu = f^*\langle\cdot, \cdot\rangle + \rho\ell\otimes\ell$ i $\rho\in L^\infty(\mathbb T^2)$. Aleshores, 
+    \begin{enumerate}
+        \item $|||\bar F-f|||_\infty\le\frac{K_1(h)}{N}$ i $|||\bar F-f|||_\infty\le 2\sqrt7||U||\cdot||\rho||^{1/2}_\infty$,
+        \item $||\text d\bar F-\text df||_\infty\le\frac{K_2(h,\zeta,\psi,w')}{N} + \sqrt7||\rho||^{1/2}_\infty||$,
+        \item $||V\cdot\bar F-V\cdot f||_\infty\le\frac{K_3(h,\psi)}{N}$,
+        \item $||W\cdot\bar F-W\cdot f||_\infty\le\sqrt7||U||(1+||w'||_\infty)||\rho||^{1/2}_\infty$, i
+        \item $||\mu - \bar F^*\langle\cdot, \cdot\rangle||_\infty\le\frac{K_4(f\circ\varphi,r,h,w',\varphi^{-1})}{N}$.
+    \end{enumerate}
+    on 
+    \begin{itemize}
+        \item $K_1(h)$ només depèn de $||h||_{C^1}$.
+        \item $K_2(h,\zeta,\psi,w')$ només depèn de $||\zeta||_\infty$, de $\left|\left|\left(  \frac{\partial\psi}{\partial t}\right)^{-1}\right|\right|_\infty$, de $||w'||_\infty$ i de $||h||_{C^2}$.
+        \item $K_3(h,\psi)$ només depèn de $\left|\left|\left(  \frac{\partial\psi}{\partial t}\right)^{-1}\right|\right|_\infty$ i de $||h||_{C^2}$.
+        \item $K_4(f\circ\varphi,r,h,w',\varphi^{-1})$ només depèn de $||\frac{\partial(f\circ\varphi)}{\partial t}||_\infty$, de $||w'||_\infty$, de $||r||_\infty$, de $\left|\left|\text d\varphi^{-1}\right|\right|_\infty$ i de $||h||_{C^2}$.
+    \end{itemize}
+\end{teo}
+\begin{nota}
+    Anomenarem 
+    \begin{equation*}
+        IC(f,\mu,N):=\bar F
+    \end{equation*}
+    l'aplicació obtinguda amb un pas d'integració convexa de l'aplicació $f$, la mètrica $\mu$ i el nombre d'oscil·lació $N$.
+\end{nota}
+{
+\color{green!50!black}
+\textit{Prova.} Aquí posaríem la prova si veiem que tenim espai.
+}
+\section{Encabiment isomètric del tor pla}
+{
+\color{blue} Per algun motiu, aquí canvien la mètrica de $\mu$ a $g$. Si veiem que no hi ha cap motiu, ho podem canviar.
+}
+
+A la secció anterior ens hem fixat en el cas primitiu, de manera que podiem construir una aplicació gairebé isomètrica $\bar f:(\mathbb T^2, g)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ a partir d'una immersió $f:\mathbb T^2\to\mathbb R^3$ quan
+\begin{equation*}
+    g - f^*\langle\cdot, \cdot\rangle = \rho\ell\otimes\ell.
+\end{equation*}
+
+A continuació, prendrem aquests mètode i el generalitzarem al cas en què el defecte isomètric (\textit{isometric default}) 
+\begin{equation*}
+    D:=g-f^*\langle\cdot, \cdot\rangle
+\end{equation*}
+és una mètrica. Aquest és el cas si i només si la immersió $f$ és estrictament curta. Per tal d'aplicar els resultats anteriors, haurem de descompondre aquest defecte isomètric en una suma de mètriques primitives. Observem que el conjunt de productes interiors en $\mathbb R^2$ és un con convex
+\begin{equation*}
+    Q_+ = \set{E\text dx\otimes\text dx + F(\text dx\otimes\text dy + \text dy\otimes\text dx) + G\text dy\otimes\text dy : EG-F^2>0, F>0, G>0},
+\end{equation*}
+{\color{blue} estas segur de que aquest $F>0$ és correcte? potser és $E$.}
+Aleshores, d'una manera anàloga a la que hem vist a la demostració de l'equació \ref{eq:lema_descomp} al capítol anterior, podem trobar una descomposició del defecte isomètric
+\begin{equation*}
+    D = \sum_{j=1}^N \rho_j(D) \ell_j\otimes\ell_j,
+\end{equation*}
+on $N$ és un enter i les $\ell_j$ es defineixen per entorns. El procés d'integració convexa que es presenta aquí aconsegueix trobar tres formes lineals $\ell_1, \ell_2, \ell_3$ que funcionen a un nivell global, de manera que $N$ es redueix a $3$.
+En concret, suposarem que la immersió $f$ és tal que el defecte isomètric pertany al con obert
+\begin{equation*}
+    \mathcal C:=\set{\rho_1\ell_1\otimes\ell_1 + \rho_2\ell_2\otimes\ell_2 + \rho_3\ell_3\otimes\ell_3 : \rho_1, \rho_2, \rho_3 > 0},
+\end{equation*}
+on $\ell_1, \ell_2, \ell_3$ són formes lineals en $\mathbb R^2$ donades per 
+\begin{equation*}
+    \ell_1:=\text dx, \text{ } \ell_2:=\frac{1}{\sqrt5}(\text dx + 2\text dy) \text{ i } \ell_3:=\frac{1}{\sqrt5}(\text dx - 2\text dy).
+\end{equation*}

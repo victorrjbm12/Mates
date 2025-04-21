@@ -11,3 +11,4 @@
 {"rule":"CONCORDANCES_ADJ_NOM","sentence":"^\\QPer la compacitat d' \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, Per què? existeix un nombre finit de sumands que són funcions no-nul·les Non-vanishing, mirar la traducció.\\E$"}
 {"rule":"APOSTROFACIO_MOT_DESCONEGUT","sentence":"^\\QAnomenem solució de \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q a una corba\\E$"}
 {"rule":"APOSTROFACIO_MOT_DESCONEGUT","sentence":"^\\QDe fet, si anomenem \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q a l'origen de \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, aleshores\\E$"}
+{"rule":"ESPAIS_QUE_FALTEN_PUNTUACIO","sentence":"^\\QEn concret, definim \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, on \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q i \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Qdf(X)\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Qf\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\QX\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q,(W,V)=0\\E$"}
