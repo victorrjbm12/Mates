@@ -253,3 +253,16 @@ on $\ell_1, \ell_2, \ell_3$ són formes lineals en $\mathbb R^2$ donades per
 \begin{equation*}
     \ell_1:=\text dx, \text{ } \ell_2:=\frac{1}{\sqrt5}(\text dx + 2\text dy) \text{ i } \ell_3:=\frac{1}{\sqrt5}(\text dx - 2\text dy).
 \end{equation*}
+Per reduir els tres coeficients del defecte isomètric, farem tres integracions convexes {\color{blue} PASSOS?} successives. És a dir, prendrem primer
+\begin{equation*}
+    \mu_1 = f^*\langle\cdot, \cdot\rangle + \rho_1(D_1)\ell_1\otimes\ell_1,
+\end{equation*}
+amb $D_1:=D$ i construirem $f_1:=IC(f, \mu_1, N_1)$. Després, prendrem el nou defecte isomètric $D_2 := g-f_1^*\langle\cdot, \cdot\rangle\in\mathcal C$ i la mètrica
+\begin{equation*}
+    \mu_2 = f_1^*\langle\cdot, \cdot\rangle + \rho_2(D_2)\ell_2\otimes\ell_2,
+\end{equation*}
+ per obtenir $f_2:=IC(f_1, \mu_2, N_2)$. Finalment, prendrem el nou defecte isomètric $D_3 := g-f_2^*\langle\cdot, \cdot\rangle\in\mathcal C$ i la mètrica
+\begin{equation*}
+    \mu_3 = f_2^*\langle\cdot, \cdot\rangle + \rho_3(D_3)\ell_3\otimes\ell_3,
+\end{equation*}
+per obtenir $f_3:=IC(f_2, \mu_3, N_3)$. Per tal que aquests tres passos d'integració convexa resultin en un encabiment isomètric, tal com volem, haurem de veure que podem triar les constants $N_1, N_2, N_3$ prou grans tal que, després de la $i$-èssima integració convexa, el component $\rho_i$ del nou defecte isomètric sigui proper a zero, mentre la resta romanen aproximadament iguals. 
