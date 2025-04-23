@@ -220,6 +220,8 @@ Podem reunir tots aquests resultats en el teorema següent.
 {
 \color{green!50!black}
 \textit{Prova.} Aquí posaríem la prova si veiem que tenim espai.
+
+
 }
 \section{Encabiment isomètric del tor pla}
 {
@@ -246,6 +248,9 @@ Aleshores, d'una manera anàloga a la que hem vist a la demostració de l'equaci
 \end{equation*}
 on $N$ és un enter i les $\ell_j$ es defineixen per entorns. El procés d'integració convexa que es presenta aquí aconsegueix trobar tres formes lineals $\ell_1, \ell_2, \ell_3$ que funcionen a un nivell global, de manera que $N$ es redueix a $3$.
 En concret, suposarem que la immersió $f$ és tal que el defecte isomètric pertany al con obert
+
+{\color{blue}Rellegir això perquè ho he fet al bus i no m'he concentrat molt.}
+
 \begin{equation*}
     \mathcal C:=\set{\rho_1\ell_1\otimes\ell_1 + \rho_2\ell_2\otimes\ell_2 + \rho_3\ell_3\otimes\ell_3 : \rho_1, \rho_2, \rho_3 > 0},
 \end{equation*}
@@ -266,3 +271,35 @@ amb $D_1:=D$ i construirem $f_1:=IC(f, \mu_1, N_1)$. Després, prendrem el nou d
     \mu_3 = f_2^*\langle\cdot, \cdot\rangle + \rho_3(D_3)\ell_3\otimes\ell_3,
 \end{equation*}
 per obtenir $f_3:=IC(f_2, \mu_3, N_3)$. Per tal que aquests tres passos d'integració convexa resultin en un encabiment isomètric, tal com volem, haurem de veure que podem triar les constants $N_1, N_2, N_3$ prou grans tal que, després de la $i$-èssima integració convexa, el component $\rho_i$ del nou defecte isomètric sigui proper a zero, mentre la resta romanen aproximadament iguals. 
+
+Per tal d'obtenir un encabiment isomètric, no és prou amb triar $N_1, N_2, N_3$ prou grans, sinó que caldrà repetir el procés sencer indefinidament. La realització d'aquests tres passos s'anomena, com en la demostració dels teoremes de Nash, una \textbf{etapa} (\textit{stage}). Al final de cadascuna obtenim un encabiment $\mathcal F_k$ amb una mètrica $g_k$ que és cada vegada més propera a $\langle\cdot, \cdot\rangle$. Anomenem a l'encabiment obtingut després de l'etapa $k$-èssima 
+\begin{equation*}
+    \mathcal F_k:=IC(\mathcal F_{k-1}, g_k, N_{k,1}, N_{k,2}, N_{k,3}),
+\end{equation*}
+on $\mathcal F_0:=f$. En cada etapa, ens haurem de preocupar de que el defecte isomètric $D_k:=g-f_{k-1}^*\langle\cdot, \cdot\rangle$ pertanyi al con convex $\mathcal C$.
+
+\begin{teo}[Stage Theorem]\label{teo:Stage}
+    Siguin $g$ i $\bar g$ dues mètriques Riemannianes sobre $\mathbb T^2$ i sigui 
+    \begin{equation*}
+        f:(\mathbb T^2, g)\to\mathbb E^3
+    \end{equation*}
+    una immersió tal que
+    \begin{enumerate}
+        \item $\bar g - g\in C^\infty(\mathbb T^2, \mathcal C)$
+        \item $g-f^*\langle\cdot, \cdot\rangle\in C^\infty(\mathbb T^2, \mathcal C)$
+    \end{enumerate}
+    Aleshores, existeixen enters $N_1, N_2, N_3$ tals que l'immersió
+    \begin{equation*}
+        \bar f:=IC(\mathcal f, g_k, N_1, N_2, N_3)
+    \end{equation*}
+    satisfà
+    \begin{enumerate}
+        \item $\bar f(0,0) = f(0,0)$
+        \item $\bar g - \bar f^*\langle\cdot, \cdot\rangle\in C^\infty(\mathbb T^2, \mathcal C)$
+        \item $||\bar g - \bar f^*\langle\cdot, \cdot\rangle||_\infty\le ||\bar g - g||_\infty$
+        \item $||d\bar f - df||_\infty\le11||g-f^*\langle\cdot, \cdot\rangle||_\infty^{\frac{1}{2}}$
+    \end{enumerate}
+\end{teo}
+{\color{green!50!black}
+\textit{Prova.} Aquí posaríem la prova si tenim espai.
+}
