@@ -4,6 +4,8 @@
     \item Recordar que el tor pla no es podia encabir isomètricament en l'espai euclidià tridimensional de manera suau, pel tema del punt el·líptic.
     \item Explicar com el teorema de Nash ens permet fer-ho de manera $C^1$.
 \end{itemize}
+
+Ens hauriem de mirar bé què és això de $W\cdot F$
 }
 \section{Introducció al capítol}
 Havent enunciat i demostrat el teorema de Nash{\color{blue}-Kuiper?}, veurem un encabiment isomètric del tor pla en l'espai euclidià tridimensional. L'elaboració d'aquest encabiment va ser realitzat per Vincent Borrelli, Saïd Jabrane, Francis Lazarus i Boris Thibert i publicada l'any 2013. La cita principal d'aquest capítol és \cite{borrelli2013}. \textbf{En aquest capítol no donem, en general, les demostracions de lemes i sublemes, que es troben en \cite{borrelli2013}. En canvi, donem les demostracions dels teoremes i proposicions més importants.}
@@ -120,7 +122,7 @@ obtenim l'aplicació suau $F:(\mathcal Cil, \mu)\to(\mathbb R^3, \langle\cdot, \
 A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $F$ i $f$ i les seves derivades.
 
 \begin{lema}
-    \label{lema:C0-2D}
+    \label{lema:lema2}
     Siguin $f$, $h$, $N$ i $F$ com hem definit més amunt. Aleshores,
     \begin{equation*}
         ||F-f||_\infty \le \frac{K(h)}{N},
@@ -162,6 +164,25 @@ A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $
     on $K(\zeta,\psi,h)$ només depèn de $||\zeta||_\infty$, de $\left|\left|\left(  \frac{\partial\psi}{\partial t}\right)^{-1}\right|\right|_\infty$ i $||h||_{C^2}$.
 \end{lema}
 
+{\color{green!50!black}
+\textit{Prova.} Com $(U,V)$ és una base directa ortogonal, aleshores 
+\begin{equation*}
+    ||dF-df||\le \frac{||U\cdot F - U\cdot f||}{||U||} + \frac{||V\cdot F - V\cdot f||}{||V||}.
+\end{equation*}
+A més, $\frac{\partial \varphi}{\partial t} = \frac{\partial \psi}{\partial t}V$. Per tant,
+\begin{equation}\label{eq: dospuntonze}
+    ||V\cdot F - V\cdot f|| = \left|\frac{\partial\psi}{\partial t}\right|^{-1} \left|\left| \frac{\partial(F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right|\right|.
+\end{equation}
+Com $W=U+\zeta V$, obtenim
+\begin{equation*}
+    ||U\cdot F - U\cdot f|| \le ||W\cdot F - W\cdot f|| + |\zeta |\cdot||V\cdot F - V\cdot f||.
+\end{equation*}
+Per últim, prenent les últimes tres equacions,
+\begin{equation}\label{eq:demo lema 6}
+    ||dF-df||\le \frac{||W\cdot F - W\cdot f||}{||U||} + \frac{|\zeta|\cdot||V||^2+1}{||V||}\left|\frac{\partial\psi}{\partial t}\right|^{-1} \left|\left| \frac{\partial(F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right|\right|.
+\end{equation}
+Aplicant els lemes \ref{lema:lema3} i \ref{lema:lema4}, obtenim el resultat. \qed
+}
 \begin{lema}
     \label{lema:lema7}
     \begin{equation*}
@@ -169,6 +190,76 @@ A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $
     \end{equation*}
     on $K(f\circ\varphi,h)$ només depèn de $||\frac{\partial(f\circ\varphi)}{\partial t}||_\infty$ i de $||h||_{C^2}$.
 \end{lema}
+{\color{blue} Mirar això que ho he escrit amb molta son.}
+
+
+{
+\color{green!50!black}
+\textit{Prova.} Primer volem acotar la diferència entre $\varphi^*\mu$ i $\varphi^*F^*\langle\cdot, \cdot\rangle = (F\circ\varphi)^*\langle\cdot, \cdot\rangle$. Notem que 
+\begin{align*}
+    (F\circ\varphi)^*\langle\cdot, \cdot\rangle(\partial_s, \partial_s) 
+    &= \left|\left|\frac{\partial(F\circ\varphi)}{\partial s}\right|\right|^2
+    \\
+    &= ||h(t,s,\set{Ns})||^2
+    \\
+    &= \mu(W,W)
+    \\
+    &= \varphi^*(\mu)(\partial_s, \partial_s).
+\end{align*}
+Per tant, com $\mu\left(\frac{\partial\varphi}{\partial t},\frac{\partial\varphi}{\partial t}\right) = f^*\langle\cdot, \cdot\rangle\left(\frac{\partial\varphi}{\partial t},\frac{\partial\varphi}{\partial t}\right)$, tenim que
+\begin{align*}
+    |((F\circ\varphi)^*\langle\cdot, \cdot\rangle - \varphi^*\mu)(\partial_t, \partial_t)| 
+    &= 
+    \left|
+    \left|\left|  \frac{\partial F\circ\varphi}{\partial t} \right|\right|^2 - \left|\left|\frac{\partial f\circ\varphi}{\partial t}\right|\right|
+    \right|
+    \\
+    &\le \left|\left|\frac{\partial F\circ\varphi}{\partial t} - \frac{\partial f\circ\varphi}{\partial t}\right|\right|\left|\left|\frac{\partial F\circ\varphi}{\partial t} - \frac{\partial f\circ\varphi}{\partial t}\right|\right|
+    \\
+    &\le \left|\left|\frac{\partial F\circ\varphi}{\partial t} - \frac{\partial f\circ\varphi}{\partial t}\right|\right|\left(2\left|\left|\frac{\partial f\circ\varphi}{\partial t}\right|\right|+\left|\left|\frac{\partial F\circ\varphi}{\partial t} - \frac{\partial f\circ\varphi}{\partial t}\right|\right|\right)
+\end{align*}
+De manera que, pel lema \ref{lema:lema3},
+\begin{equation*}
+    |((F\circ\varphi)^*\langle\cdot, \cdot\rangle - \varphi^*\mu)(\partial_t, \partial_t)| \le \frac{K_1(f\circ\varphi,h)}{N},
+\end{equation*}
+on $K_1(f\circ\varphi,h)$ només depèn de $||\frac{\partial(f\circ\varphi)}{\partial t}||_\infty$ i de $||h||_{C^2}$. 
+
+Per la manera en què hem definit els vectors, tenim que 
+\begin{equation*}
+    f^*\langle\cdot, \cdot\rangle\left(\frac{\partial\varphi}{\partial t},\frac{\partial\varphi}{\partial s}\right) = \mu\left(\frac{\partial\varphi}{\partial t},\frac{\partial\varphi}{\partial s}\right) = \mu\left(\frac{\partial\varphi}{\partial t},W\right) = 0,
+\end{equation*}
+d'on podem inferir que 
+\begin{equation*}
+    \left\langle \frac{\partial(f\circ\varphi)}{\partial t}, h(t,s,\set{Ns})\right\rangle = 0.
+\end{equation*}
+Per tant,
+\begin{align*}
+    |((F\circ\varphi)^*\langle\cdot,\cdot\rangle-\varphi^*\mu)(\partial_t,\partial_s)| &= |(F\circ\varphi)^*\langle\partial_t,\partial_s\rangle - \varphi^*\mu(\partial_t,\partial_s)|
+    \\
+    &= \left|\left\langle \frac{\partial(F\circ\varphi)}{\partial t}, h(t,s,\set{Ns}) \right\rangle\right|
+    \\
+    &= \left|\left\langle \frac{\partial(F\circ\varphi)}{\partial t}-\frac{\partial(f\circ\varphi)}{\partial t}, h(t,s,\set{Ns}) \right\rangle\right|
+    \\
+    &\le \left|\left| \frac{\partial(F\circ\varphi)}{\partial t} -\frac{\partial(f\circ\varphi)}{\partial t}\right|\right|||h(t,s,\set{Ns})||.
+\end{align*}
+De manera que, de nou pel lema \ref{lema:lema3},
+\begin{equation*}
+    |((F\circ\varphi)^*\langle\cdot,\cdot\rangle-\varphi^*\mu)(\partial_t,\partial_s)| \le \frac{K_2(h)}{N},
+\end{equation*}
+Tot plegat, 
+\begin{equation*}
+    ||\varphi^*\mu - \varphi^*F^*\langle\cdot,\cdot\rangle||_\infty \le \frac{K_1(f\circ \varphi, h) + 2K_2(h)}{N}.
+\end{equation*}
+I acabem amb 
+\begin{equation*}
+    ||\mu-F^*\langle\cdot,\cdot\rangle|| \le ||\varphi^*\mu - \varphi^*F^*\langle\cdot,\cdot\rangle|| ||d\varphi^{-1}||^2_\infty.
+\end{equation*}
+\qed
+}
+
+
+
+
 
 {
 \color{blue}
@@ -182,6 +273,7 @@ Amb la integració convexa del cilindre, hem obtingut una aplicació $F:(\mathca
 
 Definim una nova aplicació $\bar F$ tal que
 \begin{equation}
+    \label{eq:def_barF}
     \bar F\circ\varphi(t,s) := F\circ\varphi(t,s) - w(s)(F\circ\varphi(t,1)-f\circ\varphi(t,1)),
 \end{equation}
 on $w:I\to I$ és una funció $C^\infty$ tal que 
@@ -196,7 +288,7 @@ Podem reunir tots aquests resultats en el teorema següent.
 \begin{teo}[One Step Theorem]
     Sigui $f:(\mathbb T^2, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ un encabiment de classe $C^\infty$ tal que $\mu = f^*\langle\cdot, \cdot\rangle + \rho\ell\otimes\ell$ i $\rho\in L^\infty(\mathbb T^2)$. Aleshores, 
     \begin{enumerate}
-        \item $|||\bar F-f|||_\infty\le\frac{K_1(h)}{N}$ i $|||\bar F-f|||_\infty\le 2\sqrt7||U||\cdot||\rho||^{1/2}_\infty$,
+        \item $||\bar F-f||_\infty\le\frac{K_1(h)}{N}$ i $||\bar F-f||_\infty\le 2\sqrt7||U||\cdot||\rho||^{1/2}_\infty$,
         \item $||\text d\bar F-\text df||_\infty\le\frac{K_2(h,\zeta,\psi,w')}{N} + \sqrt7||\rho||^{1/2}_\infty||$,
         \item $||V\cdot\bar F-V\cdot f||_\infty\le\frac{K_3(h,\psi)}{N}$,
         \item $||W\cdot\bar F-W\cdot f||_\infty\le\sqrt7||U||(1+||w'||_\infty)||\rho||^{1/2}_\infty$, i
@@ -219,8 +311,70 @@ Podem reunir tots aquests resultats en el teorema següent.
 \end{nota}
 {
 \color{green!50!black}
-\textit{Prova.} Aquí posaríem la prova si veiem que tenim espai.
+\textit{Prova.}
 
+\underline{Primer punt.}
+De la definició \ref{eq:def_barF}, tenim que
+\begin{equation}\label{eq: 2Ff}
+    ||\bar F(p)-f(p)||\le||F(p)-f(p)|| + ||w(s)||_\infty ||F-f||_\infty \le 2||F-f||_\infty.
+\end{equation}
+Pel lema \ref{lema:lema2}, $||F-f||_\infty\le\frac{K(h)}{N}$. Així, obtenim la primera desigualtat del primer punt del teorema,
+\begin{equation*}
+    ||\bar F(p)-f(p)||_\infty\le\frac{K_1(h)}{N}.
+\end{equation*}
+Per la segona desigualtat, considerem
+\begin{align*}
+    ||F\circ\varphi(t,s)-f\circ\varphi(t,s)|| &= \left|\left|\int_0^s \left( \frac{\partial F\circ\varphi}{\partial s}(t,u) -  \frac{\partial f\circ\varphi}{\partial s}(t,u)\right)\text du\right|\right|\\
+    &\le \int_0^s\left|\left| 
+        (W\cdot F)(\varphi(t,u)) - (W\cdot f)(\varphi(t,u))
+    \right|\right|\text du\\
+    &\le ||W\cdot F-W\cdot f||_\infty.
+\end{align*}
+Pel lema \ref{lema:lema4}, $||W\cdot F-W\cdot f||_\infty\le\sqrt7||U||\cdot||\rho||^{1/2}_\infty$. Prenent això i la desigualtat \ref{eq: 2Ff}, obtenim la segona desigualtat del primer punt del teorema,
+\begin{equation*}
+    ||\bar F-f||_\infty\le 2\sqrt7||U||\cdot||\rho||^{1/2}_\infty.
+\end{equation*}
+
+\underline{Segon punt.}
+Seguim la demostració del lema \ref{lema:lema6} per a obtenir una desigualtat anàloga a \ref{eq:demo lema 6},
+\begin{equation*}
+    ||d\bar F-df||\le \frac{||W\cdot\bar F - W\cdot f||}{||U||} + \frac{|\zeta|\cdot||V||^2+1}{||V||}\left|\frac{\partial\psi}{\partial t}\right|^{-1} \left|\left| \frac{\partial(\bar F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right|\right|.
+\end{equation*}
+Derivant la definició \ref{eq:def_barF} respecte de $t$ i $s$, obtenim les desigualtats
+\begin{equation}\label{eq: respecte t}
+    ||W\cdot\bar F - W\cdot f|| \le ||W\cdot F - W\cdot f||_\infty + ||w'||_\infty||F - f||_\infty.
+\end{equation}
+\begin{equation}\label{eq: respecte s}
+    \left|\left| \frac{\partial(\bar F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right|\right| \le 2\left|\left| \frac{\partial(F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right|\right|_\infty
+\end{equation}
+Prenent aquestes tres desigualtats, 
+\begin{align*}
+    ||d\bar F-df||_\infty
+    &\le\frac{1}{||U||}\left(||W\cdot F - W\cdot f||_\infty + ||w'||_\infty||F - f||_\infty\right) 
+    \\&\quad\quad\quad+ \frac{|\zeta|\cdot||V||^2+1}{||V||}\left|\frac{\partial\psi}{\partial t}\right|^{-1}\left( 2\left|\left| \frac{\partial(F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right|\right|_\infty\right),
+\end{align*}
+i amb els lemes \ref{lema:lema2}, \ref{lema:lema3} i \ref{lema:lema4}, obtenim la desigualtat del segon punt del teorema.
+
+\underline{Tercer punt.}
+Prenent una equació com la de \ref{eq: dospuntonze} i considerant la desigualtat obtinguda derivant respecte de $s$, \ref{eq: respecte s}, trobem
+\begin{align*}
+    ||V\cdot \bar F - V\cdot f|| &= \left|\frac{\partial\psi}{\partial t}\right|^{-1} \left|\left| \frac{\partial(\bar F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right|\right|\\
+    &\le 2\left|\frac{\partial\psi}{\partial t}\right|^{-1} \left|\left| \frac{\partial(F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right|\right|_\infty.
+\end{align*}
+aplicant el lema \ref{lema:lema3}, obtenim el tercer punt del teorema.
+
+\underline{Quart punt.}
+Prenent la desigualtat obtinguda derivant respecte de $t$, \ref{eq: respecte t}, i considerant que $||F-f||_\infty\le||W\cdot F - W\cdot f||_\infty$, obtenim
+\begin{equation*}
+    ||W\cdot\bar F - W\cdot f||_\infty\le ||W\cdot F - W\cdot f||_\infty + ||w'||_\infty||W\cdot F - W\cdot f||_\infty.
+\end{equation*}
+Pel lema \ref{lema:lema4}, $||W\cdot F - W\cdot f||_\infty\le\sqrt7||U||\cdot||\rho||^{1/2}_\infty$, de manera que
+\begin{equation*}
+    ||W\cdot\bar F - W\cdot f||_\infty\le\sqrt7||U||\cdot||\rho||^{1/2}_\infty(1+||w'||_\infty),
+\end{equation*}
+tal com volíem.
+
+\underline{Cinquè punt.}
 
 }
 \section{Encabiment isomètric del tor pla}
