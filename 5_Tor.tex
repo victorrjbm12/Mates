@@ -374,9 +374,55 @@ Pel lema \ref{lema:lema4}, $||W\cdot F - W\cdot f||_\infty\le\sqrt7||U||\cdot||\
 \end{equation*}
 tal com volíem.
 
-\underline{Cinquè punt.}
+\underline{Cinquè punt.} 
+Seguim la demostració del lema \ref{lema:lema7} per acotar la diferència entre $\varphi^*\mu$ i $(F\circ\varphi)^*\langle\cdot,\cdot\rangle$. Per la definició \ref{eq:def_barF}, tenim que
+\begin{equation*}
+    (\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle (\partial_s, \partial_s) = \left|\left|\frac{\partial(\bar F\circ\varphi)}{\partial s}\right|\right|^2 = \left|\left| W\cdot F - w'(s)(F\circ\varphi(t,1)-f\circ\varphi(t,1)) \right|\right|^2,
+\end{equation*}
+i com $\varphi^*\mu(\partial_s,\partial_s) = ||W\cdot F||^2 = r^2$, obtenim
+\begin{equation*}
+    |(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_s, \partial_s) - \varphi^*\mu(\partial_s, \partial_s)| \le ||w'||_\infty||F-f||_\infty(2||r||_\infty + ||w'||_\infty||F-f||_\infty).
+\end{equation*}
+Pel lema \ref{lema:lema2}, obtenim
+\begin{equation}
+    |(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_s, \partial_s) - \varphi^*\mu(\partial_s, \partial_s)| \le \frac{X(w',r,h)}{N}
+\end{equation}
+on $X(w',r,h)$ depèn de $||w'||_\infty$, $||r||_\infty$ i $||h||_{C^2}$.
+
+Ara, com $\varphi^*\mu(\partial_t,\partial_t) = \left|\left| \frac{\partial f\circ\varphi}{\partial t} \right|\right|^2$, obtenim
+\begin{align*}
+    |(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_t, \partial_t) - \varphi^*\mu(\partial_t, \partial_t)| &\le 
+    \Bigg|\left|\left|\frac{\partial F\circ\varphi}{\partial t}-w(s)\left(\frac{\partial F\circ\varphi}{\partial t}(t,1) - \frac{\partial f\circ\varphi}{\partial t}(t,1)\right)\right|\right|^2 \\&\quad\quad\quad- \left|\left| \frac{\partial f\circ\varphi}{\partial t} \right|\right|^2\Bigg|
+\end{align*}
+Podem escriure $A:=\frac{\partial F\circ\varphi}{\partial t}$, $B:=\frac{\partial F\circ \varphi}{\partial t}(t,1) - \frac{\partial f\circ\varphi}{\partial t}(t,1)$ i $C:=\frac{\partial f\circ\varphi}{\partial t}$.
+\begin{align*}
+    |(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_t, \partial_t) - \varphi^*\mu(\partial_t, \partial_t)| 
+    &=
+    \left|\left|\left|A-w(s)B\right|\right|^2 - \left|\left|C\right|\right|^2\right|
+    \\&\le
+    \left|\left|A-w(s)B - C\right|\right|\left|\left|A-w(s)B + C\right|\right|
+    \\&\le
+    \left|\left|A - C\right|\right| + \left|\left|B\right|\right| \left|\left|A-w(s)B + C\right|\right|
+\end{align*}
+
+
+
+
+
+
+
+
 
 }
+
+
+
+
+
+
+
+
+
 \section{Encabiment isomètric del tor pla}
 {
 \color{blue} Per algun motiu, aquí canvien la mètrica de $\mu$ a $g$. Si veiem que no hi ha cap motiu, ho podem canviar.
