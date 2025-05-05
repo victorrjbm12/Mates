@@ -211,8 +211,61 @@ Si definim $\varphi_\alpha$ tals que siguin idènticament zero si cap $\varphi_i
 Veiem que el suport de cada $\varphi_\alpha$ és contingut en $U_\alpha$, ja que si $\mathcal A$ és una col·lecció localment finita de conjunts tancats, aleshores $\overline{\bigcup_{A\in \mathcal A} A} = \bigcup_{A\in \mathcal A} A$. Ara bé, observem que en aquest cas el suport de $\varphi_\alpha$ no és necessàriament compacte.
 \qed
 }
+\begin{corol}
+    Sigui $G$ un obert d'una varietat diferenciable de classe $C^\infty$ i $A\subseteq G$ un subconjunt tancat. Aleshores, existeix una funció $\varphi:M\to\mathbb R$ de classe $C^\infty$ en $M$ tal que
+    \begin{enumerate}
+        \item $0\leq\varphi(p)\leq 1$ per a tot $p\in M$,
+        \item $\varphi(p) = 1$ per a tot $p\in A$,
+        \item $\text{supp}\varphi\subseteq G$.
+    \end{enumerate}
+\end{corol}
+{
+\color{green!50!black} \textit{Prova.} 
+Existeix una partició de la unitat $\set{\varphi, \psi}$ subordinada al recobriment $\set{G, M\setminus A}$ de $M$ amb $\text{supp}\varphi\subseteq G$ i $\text{supp}\psi\subseteq M\setminus A$. $\varphi$ és, per tant, la funció desitjada. \qed
+}
 
+{\color{red} ÉS MOLT IMPORTANT QUE DESPRÉS MIREM LA PÀGINA 24 DEL LEE, ON DEFINEIX TAMBÉ VARIETATS AMB FRONTERA}
 
+\subsection{Vectors tangents}
+Un vector en $\mathbb R^n$ es pot pensar com un operador lineal sobre funcions reals diferenciables. En concret, donada una funció $f$ diferenciable en un punt $p\in\mathbb R^n$, el vector $v$ assigna a $f$ un valor real que és la derivada direccional de $f$ en la direcció i sentit de $v$ a $p$,
+\begin{equation*}
+    v(f) = v_1\frac{\partial f}{\partial x_1}\Big|_p + \cdots + v_n\frac{\partial f}{\partial x_n}\Big|_p,
+\end{equation*}
+amb les propietats de linealitat esperades,
+\begin{equation*}
+    v(f+g) = v(f) + v(g),
+\end{equation*}
+\begin{equation*}
+    v(\lambda f) = \lambda v(f),
+\end{equation*}
+i la propietat de Leibniz,
+\begin{equation*}
+    v(fg) = v(f)g(p) + f(p)v(g).
+\end{equation*}
+
+És evident que volem un anàleg a aquesta definició que sigui útil en el context de varietats diferenciables, per tal d'aprofitar el fet que aquestes són espais localment similars a $\mathbb R^n$. 
+\begin{defi}
+    Sigui $M$ una varietat diferenciable i $(U,\varphi)$ una carta coordenada de $M$. Un \textbf{vector tangent} a $M$ en un punt $p\in M$ és una aplicació que assigna a cada funció $f$ de classe $C^k$ en un entorn de $p$ un valor real $v(f)$ tal que existeixi una col·lecció de nombres reals $(a_1,\dots,a_n)$ tals que
+    \begin{equation*}
+        v(f) = \sum_{i=1}^n a_i\frac{\partial (f\circ\varphi^{-1})}{\partial x_i}\Big|_{\varphi(p)}.
+    \end{equation*}
+    Anomenem el conjunt de tots aquests vectors tangents l'\textbf{espai tangent} a $M$ en $p$ i el denotem per $T_pM$.
+\end{defi}
+{\color{blue} Hi ha al Lee una mica més de detall i demostra que té la dimensió que toca i tal, es pot mirar.}
+
+Una eina essencial per treballar amb vectors tangents serà el concepte de \textbf{diferencial} d'una aplicació diferenciable entre varietats.
+{\color{blue} Crec que el concepte d'aplicació diferenciable entre varietats no l'hem definit encara.}
+\begin{defi}
+    Sigui $M$ i $N$ varietats diferenciables, $F:M\to N$ una aplicació diferenciable i $p\in M$. Anomenem \textbf{diferencial de $F$ en $p$} l'aplicació
+    \begin{equation*}
+        dF_p:T_pM\to T_{F(p)}N
+    \end{equation*}
+    que assigna a cada vector tangent $v\in T_pM$ el vector tangent $dF_p(v)\in T_{F(p)}N$ que compleix
+    \begin{equation*}
+        dF_p(v)(f) = v(f\circ F),
+    \end{equation*}
+    per a tota $f\in C^\infty(N)$.{\color{red} ni de conya}
+\end{defi}
 
 
 
