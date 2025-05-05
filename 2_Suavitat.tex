@@ -10,141 +10,207 @@
     \item Enunciar i demostrar el tema de que qualsevol encabiment suau del tor ha de tenir algun punt el·líptic. A la pàgina 9 del llibre del Tor es comenta.
 
 \end{itemize}
-
-
 }
+
 
 \section{Introducció al capítol}
 En aquest capítol ens ocuparem de definir i comentar algunes de les nocions bàsiques de geometria diferencial i de varietats diferenciables i suaus. La referència principal per aquest capítol és \cite{lee2013}.\\
 A un nivell intuïtiu, les varietats suaus (\textit{smooth manifolds}) són espais topològics que, localment, es poden veure com espais euclidians $\mathbb R^n$, i tals que hi sigui possible fer càlcul infinitesimal. Si bé és fàcil entendre la noció de suavitat (\textit{smoothness}) en els exemples senzills de corbes i superfícies immerses en $\mathbb R^3$, cal tenir en compte que no és cap requeriment per a una varietat suau que sigui immersa en un espai ambient $\mathbb R^n$, sinó que s'haurà de treballar en termes intrínsecs. Aquest fet és molt rellevant en una de les aplicacions més interessants de la geometria diferencial, la teoria de la relativitat general, on l'espai-temps es modela com una varietat diferenciable de dimensió 4 i on no hi ha cap espai ambient en el sentit clàssic. Un altra subtilesa és que la noció de suavitat no pot ser una propietat purament topològica, ja que no és preservada per homeomorfismes. L'exemple més evident és el d'un cercle i un quadrat, que són homeomorfs en $\mathbb R^2$, però el cercle és suau mentre que el quadrat no ho és.
-{\color{blue} Aquí podem escriure més quan haguem acabat el capítol.}
-
-\section{Varietats topològiques}
-\begin{defi} 
-    Sigui $M$ un espai topològic. Diem que $M$ és una \textbf{varietat topològica de dimensió $n$} si es compleixen les propietats següents:
-    \begin{itemize}
-        \item $M$ és \underline{Hausdorff}, és a dir, si per a cada $p,q\in M$ amb $p\neq q$ existeixen entorns oberts $U\subseteq M$ i $V\subseteq M$ de $p$ i $q$ respectivament tals que $U\cap V = \emptyset$,
-        \item $M$ verifica el \underline{segon axioma de numerabilitat}, és a dir, existeix una base numerable de la topologia de $M$,
-        \item $M$ és \underline{localment homeomorf a $\mathbb R^n$}, és a dir, per a cada $p\in M$ existeix un entorn obert $U\subseteq M$ de $p$ que és homeomorf a un obert de $\mathbb R^n$.
-    \end{itemize}
-\end{defi}
-{\color{blue} Es pot posar un exemple}
-
-Per tal de poder descriure localment els punts de les varietats i de poder operar amb ells, serà útil introduir el concepte de carta coordenada.
-
-\begin{defi}
-    Sigui $M$ una varietat topològica de dimensió $n$. Diem que un parell $(U,\varphi)$ és una \textbf{carta coordenada de $M$} si $U$ és un obert de $M$ i $\varphi:U\to\hat U$ és un homeomorfisme amb un obert $\hat U\subseteq\mathbb R^n$. Anomenem $U$ el \textbf{domini de la carta} i $\varphi$ la \textbf{funció coordenada}.
-\end{defi}
-\begin{obs}
-    De la definició de carta coordenada, observem que no tota varietat topològica $M$ es pot cobrir amb una única carta coordenada. Per exemple, si $M$ és homeomorf al cercle $\mathbb S^1$ amb la topologia induïda per $\mathbb R^2$, no es pot trobar cap aplicació $\varphi:M\to\mathbb R$ que sigui un homeomorfisme amb un obert de $\mathbb R$, ja que $\mathbb S^1$ és compacte.
-\end{obs}
-
-{\color{blue} Es pot posar un exemple.}
-
-A continuació, donarem algunes propietats de les varietats topològiques i les cartes coordenades, sense reproduir les demostracions explícitament.
-
-\begin{lema}
-    Tota varietat topològica es pot recobrir amb numerables cartes coordenades.
-\end{lema}
-
-
-\begin{lema}
-    Tota varietat topològica té una base numerable de boles coordenades amb adherència compacta.
-\end{lema}
-
-
-\begin{prop}
-Sigui $M$ una varietat topològica. Aleshores, 
-\end{prop}
-{
-    \begin{itemize}
-        \item \textit{$M$ és localment arc-connexa.}{\color{blue} Aquí utilitzo arc-connexa com a sinònim de connex per camins.}
-        \item \textit{$M$ és connex si i només si és arc-connex.}
-        \item \textit{Els components connexos de $M$ són els seus components arc-connexos.}
-        \item \textit{$M$ té un conjunt numerable de components connexos, i cada un d'ells és un obert i una varietat topològica connexa.}
-    \end{itemize}
-}
-\begin{prop}
-    Tota varietat topològica és localment compacta. És a dir, per a cada $p\in M$ existeix un entorn obert $U$ de $p$ tal que $U\subseteq K$ per algun compacte $K\subseteq M$.
-\end{prop}
-\begin{defi}
-    Diem que una col·lecció $\mathcal X$ de subconjunts d'un espai topològic $M$ és \textbf{localment finita} si per a cada $p\in M$ existeix un entorn obert $U$ de $p$ tal que $U\cap X = \emptyset$ per a tots $X\in\mathcal X$ excepte un nombre finit d'ells.
-\end{defi}
-\begin{defi}
-    Donat un recobriment per oberts $\mathcal U$ d'un espai topològic $M$, diem que un recobriment per oberts $\mathcal V$ és un \textbf{subrecobriment de $\mathcal U$} si per a cada $V\in\mathcal V$ existeix $U\in\mathcal U$ tal que $V\subseteq U$.
-\end{defi}
-\begin{defi}
-    Diem que un espai topològic $M$ és \textbf{paracompacte} si qualsevol recobriment per oberts de $M$ té un subrecobriment localment finit.
-\end{defi}
-\begin{teo}
-    Tota varietat topològica és paracompacta. De fet, donat un recobriment per oberts $\mathcal X$ i qualsevol base $\mathcal B$ de la topologia de $M$, existeix un subrecobriment numerable localment finit $\mathcal V$ de $\mathcal X$ format només d'elements de $\mathcal B$.
-\end{teo}
-{\color{blue} Aquesta demostració està en el Lee, no té gaire a veure amb el tema així que potser no la posem, però bueno, allà està.}
-\section{Estructura suau}
-
-
-
-
-
-
-
-
-
-
-
-
-
+{\color{blue} Amb el que escriuré ara, la referència principal passa a ser el Warner, \cite{warner1983}.}
 
 
 
 
 
 \newpage
-\section{Suavitat}
-{\color{blue} L'Ignasi m'ha dit que el que hauria de ressaltar més és la diferència entre $C^1$ i $C^\infty$. Potser podria comentar alguns dels resultats que són vàlids en un i no en l'altre?}
-{\color{blue} El que hi ha aquí ho estic traient de wikipedia. Preguntar a l'Ignasi per una font més bona.}
+\section{Definicions i propietats bàsiques}
 \begin{defi}
-    Sigui $U\subseteq\mathbb R$ un conjunt obert, $f:U\to\mathbb R$ una funció real contínua.
-    Diem que $f$ és {\normalfont $k$-vegades derivable contínuament}, amb $k\in\mathbb N_0$, si la derivada d'ordre $k$, $$f^{(k)}:= \frac{d^k}{dx^k}f,$$ existeix i és contínua en $U$. Anomenem l'índex $k$ \textit{suavitat} de $f$.
-    Diem que $f$ és {\normalfont suau} o {\normalfont infinitament derivable} si existeix la derivada de qualsevol ordre.
+    Siguin $U\subseteq\mathbb R^n$ un conjunt obert i $f:U\to\mathbb R$ una funció real contínua.
+    Diem que $f$ és \textbf{ $k$-vegades derivable contínuament}, o \textbf{de classe $C^k(U)$}, amb $k\in\mathbb N_0$, si totes les derivades parcials d'ordre $k$, \begin{equation*}
+        \frac{\partial^k f}{\partial r_1^{\alpha_1}\cdots\partial r_n^{\alpha_n}}\quad\text{tal que }\sum_{i=1}^n\alpha_i = k,
+    \end{equation*} existeixen i són contínues en $U$.
+
+    Si $g:U\to\mathbb R^m$ és una aplicació contínua, diem que $g$ és \textbf{ $k$-vegades derivable contínuament}, o \textbf{de classe $C^k(U)$}, si totes les seves components $g_i:U\to\mathbb R$ són $k$-vegades derivables contínuament.
 \end{defi}
+\begin{nota}
+    No indicarem el domini en què una aplicació és de classe $C^k$ quan el domini sigui clar pel context.
+\end{nota}
+
 \begin{obss}
 \end{obss}
 \begin{itemize}
-    \item $f$ és $0$ vegades derivable contínuament si i només si $f$ és contínua. 
+    \item Una aplicació $f$ és $0$ vegades derivable contínuament si i només si $f$ és contínua. 
     \item Si $f$ és $k$ vegades derivable contínuament, aleshores també és $j$ vegades derivable contínuament per $0\le j\le k$.
 \end{itemize}
-\begin{defi}
-    Anomenem \textit{classe de diferenciabilitat} $C^k(U)$, amb $k\in\mathbb N_0$ l'espai de les funcions $k$-vegades derivables contínuament en $U\subseteq\mathbb R^n$. Anomenem $C^\infty(U)$ l'espai de les funcions infinitament derivables en $U$.
-\end{defi}
-De la mateixa manera, podem definir aquests conceptes per funcions de diverses variables.
-\begin{defi}
-    Sigui $U\subseteq\mathbb R^n$ un conjunt obert, $f:U\to\mathbb R$ una funció real contínua.
-    Diem que $f$ és \textit{$k$-vegades derivable contínuament}, amb $k\in\mathbb N_0$, si totes les seves derivades parcials d'ordre $k$, $$\frac{\partial^k}{\partial x_1^{\alpha_1}\cdots\partial x_n^{\alpha_n}}f,$$ tals que $\sum_{i=1}^n\alpha_i = k$, existeixen i són contínues en $U$. És a dir, si $f$ és $k$-vegades derivable contínuament en cada component de $U$.
-\end{defi}
-\begin{defi}
-    Anomenem \textit{classe de diferenciabilitat} $C^k(U)$, amb $k\in\mathbb N_0$ l'espai de les funcions $k$-vegades derivables contínuament en $U\subseteq\mathbb R^n$. Anomenem $C^\infty(U)$ l'espai de les funcions infinitament derivables en $U$.
-\end{defi}
-\begin{obss}{\color{blue} Potser caldria donar la definició explícita en el cas de funcions de diverses variables.}
-\end{obss}
-\begin{itemize}
-    \item Moltes vegades, en lloc de $C^k(U)$ es fa servir $C^k(U;\mathbb R^m)$ per a funcions $f:U\to\mathbb R^m$.
-    \item També escriurem simplement $C^k$ en lloc de $C^k(U)$ si el domini és clar pel context.
-\end{itemize}
 
-\subsection{Classes de diferenciabilitat com espais normats}
-A continuació definirem normes en $C^k(U)$ i $C^\infty(U)$ que ens permetran tractar-les com espais vectorials normats.
 \begin{defi}
-    Sigui $U\subseteq\mathbb R^n$ un conjunt obert, $f:U\to\mathbb R^m$ una funció. Definim la norma $\|\cdot\|_{C^k(U)}$ de $f$ com
+    Direm que una aplicació és \textbf{suau} o \textbf{de classe $C^\infty$} si és infinitament derivable, és a dir, si és $k$-vegades derivable contínuament per a tot $k\in\mathbb N_0$.
+\end{defi}
+
+\begin{defi}
+    
+    Siguin $U\subseteq \mathbb R^n$ un obert i $f:U\to\mathbb R$ una funció de classe $C^k(U)$. Definim la \textbf{norma $\|\cdot\|_{C^k(U)}$} de $f$ com
     \begin{equation*}
-        \|f\|_{C^k(U)} = \sum_{|\alpha|\le k} \|D^\alpha f\|_{L^\infty(U)},
+        \|f\|_{C^k(U)} := \sum_{i = 0}^k \sup_{x\in U} \left\| f^{(i)}(x) \right\|.
     \end{equation*}
-    on $\|\cdot\|_{L^\infty(U)}$ és la norma del suprem en $U$, tal que $\|g\|_{L^\infty(U)} = \sup_{x\in U} |g(x)|$.
-\end{defi}
-{\color{blue} Aquí podríem proposar i demostrar que $\|\cdot\|_{C^k(U)}$ és efectivament una norma, ho tenim a \url{https://proofwiki.org/wiki/C%5Ek_Norm_is_Norm}. També cal decidir si definim explícitament la $D^\alpha$.}
+    Per una aplicació $g:U\to\mathbb{R}^m$ de classe $C^k(U)$, definim la \textbf{norma $\|\cdot\|_{C^k(U)}$} de $g$ com
+    \begin{equation*}
+        \|g\|_{C^k(U)} := \sum_{|\alpha| \leq k} \sup_{x\in U} \left\| \partial^\alpha f(x) \right\|,
+    \end{equation*}
+    on $\alpha = (\alpha_1, \dots, \alpha_n)$, $|\alpha| = \alpha_1 + \dots + \alpha_n$, i
+    \[
+    \partial^\alpha f(x) := \frac{\partial^{|\alpha|} f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}.
+    \]
 
-\section{Fonaments de geometria diferencial}
-Aquí hauriem de parlar d'embedding preferiblement.
+
+
+
+\end{defi}
+
+\begin{defi} 
+    Sigui $M$ un espai topològic {\color{blue} Cal definició d'espai topològic?}. Diem que $M$ és una \textbf{varietat topològica de dimensió $n$} si es compleixen les propietats següents:
+    \begin{itemize}
+        \item $M$ és \underline{Hausdorff}, és a dir, si per a cada $p,q\in M$ amb $p\neq q$ existeixen entorns oberts $U\subseteq M$ i $V\subseteq M$ de $p$ i $q$ respectivament tals que $U\cap V = \emptyset$,
+        \item $M$ verifica el \underline{segon axioma de numerabilitat}, és a dir, existeix una base numerable de la topologia de $M$,
+        \item $M$ és \underline{localment homeomorf a $\mathbb R^n$}, és a dir, per a cada $p\in M$ existeix un entorn obert $U\subseteq M$ de $p$ que és homeomorf a un obert de $\mathbb R^n$.
+    \end{itemize}
+\end{defi}
+
+Per tal de poder descriure localment els punts de les varietats i de poder operar amb ells, és necessari introduir el concepte de carta coordenada. 
+
+\begin{defi}
+    Sigui $M$ una varietat topològica de dimensió $n$. Diem que un parell $(U,\varphi)$ és una \textbf{carta coordenada} o un \textbf{sistema de coordenades de $M$} si $U$ és un obert de $M$ i $\varphi:U\to\hat U$ és un homeomorfisme amb un obert $\hat U\subseteq\mathbb R^n$. Anomenem $U$ el \textbf{domini de la carta} i $\varphi$ l'\textbf{aplicació coordenada}. Donat un punt $p\in U$, anomenem \textbf{coordenades de $p$} respecte de la carta $(U,\varphi)$ als components de $\varphi(p)$ en la base canònica de $\mathbb R^n$.
+\end{defi}
+\begin{nota}
+    Sovint anomenarem carta coordenada o simplement carta a l'aplicació coordenada $\varphi$.
+\end{nota}
+
+\begin{obs}
+    De la definició de carta coordenada, observem que no tota varietat topològica $M$ es pot cobrir amb una única carta coordenada. Per exemple, si $M$ és homeomorf al cercle $\mathbb S^1$ amb la topologia induïda per $\mathbb R^2$, no es pot trobar cap aplicació $\varphi:M\to\mathbb R$ que sigui un homeomorfisme amb un obert de $\mathbb R$, ja que $\mathbb S^1$ és compacte.
+\end{obs}
+
+{\color{blue} Es pot posar un exemple.}
+
+\begin{defi}
+    Sigui $M$ una varietat topològica de dimensió $n$. Anomenem \textbf{estructura diferenciable de classe $C^k$} en $M$ una col·lecció $\mathcal F:=\set{(U_\alpha,\varphi_\alpha)}$ de cartes coordenades de $M$ que compleixen les propietats següents:
+    \begin{itemize}
+        \item $\bigcup_{\alpha\in A} U_\alpha = M$,
+        \item Si $U_\alpha\cap U_\beta\neq\emptyset$, aleshores $\varphi_\beta\circ\varphi_\alpha^{-1}$ és $C^k$.
+        \item $\mathcal F$ és maximal respecte de la propietat anterior, és a dir, si $\mathcal G$ és una altra estructura diferenciable de classe $C^k$ en $M$ i $\mathcal F\subseteq\mathcal G$, aleshores $\mathcal F = \mathcal G$.
+    \end{itemize}
+\end{defi}
+
+\begin{defi}
+    Sigui $M$ una varietat topològica de dimensió $n$. Diem que $(M, \mathcal F)$ és una \textbf{varietat diferenciable de dimensió $n$ i classe $C^k$} si $\mathcal F$ és una estructura diferenciable de classe $C^k$ en $M$.
+\end{defi}
+
+\begin{nota}
+    Sovint ens referirem a $M$ com a varietat diferenciable, sense especificar-ne l'estructura diferenciable.
+\end{nota}
+
+\begin{defi}
+    {\color{blue} Aquesta definició no m'acaba d'agradar. Podem mirar si canviar-la.}
+
+    Sigui $M$ una varietat diferenciable, $U\subseteq M$ un obert i $f:U\to\mathbb R$ una funció real. Diem que $f$ és \textbf{de classe $C^k$ en $U$} si $f\circ\varphi^{-1}$ és de classe $C^k$ per tota aplicació coordenada $\varphi$ de $M$.
+    Una aplicació $\psi:M\to N$ és de classe $C^k(M,N)$ si per tota $g$ definida en oberts $V$ de $N$ la composició $g\circ\psi$ és de classe $C^k$ en $V$.
+\end{defi}
+
+\subsection{Segon axioma de numerabilitat}
+A continuació veurem algunes propietats de les varietats diferenciables que es desprenen del fet que verifiquen el segon axioma de numerabilitat. El que més ens interessarà serà l'existència de particions de la unitat, en el cas les varietats de classe $C^\infty$.{\color{blue} Potser hauríem de deixar més clar en quin moment estem parlant de varietats de classe $C^\infty$ i quan no.}
+
+\begin{defi}
+    Sigui $M$ una varietat diferenciable. Anomenem \textbf{recobriment de $W\subseteq M$} a una col·lecció $\set{U_\alpha}$ de subconjunts de $M$ tals que $W = \bigcup_{\alpha\in A} U_\alpha$. Diem que el recobriment és un \textbf{recobriment per oberts} si tots els $U_\alpha$ són oberts, i un \textbf{recobriment per tancats} si tots els $U_\alpha$ són tancats.
+
+    Donat un recobriment $\set{U_\alpha}$ de $W\subseteq M$, diem que $\set{V_\beta}$ n'és un \textbf{refinament} si per tot $\beta$ existeix un $\alpha$ tal que $V_\beta\subseteq U_\alpha$ i $\bigcup_{\beta\in B} V_\beta = \bigcup_{\alpha\in A} U_\alpha$.
+
+    Diem que un recobriment $\set{U_\alpha}$ de $W\subseteq M$ és \textbf{localment finit} si per a cada $p\in W$ existeix un entorn $V$ de $p$ en $M$ tal que $V\cap U_\alpha = \emptyset$ per a tot $\alpha$ excepte un nombre finit. Diem que una varietat diferenciable és \textbf{paracompacta} si qualsevol recobriment per oberts té un refinament localment finit.
+\end{defi}
+
+\begin{defi}
+    Sigui $M$ una varietat diferenciable suau.Una \textbf{partició de la unitat en $M$} és una col·lecció $\set{\varphi_i}_{i\in I}$ de funcions reals de classe $C^\infty(M)$ tals que:
+    \begin{itemize}
+        \item $0\leq\varphi_i(p)\leq 1$ per a tot $i\in I$ i $p\in M$,
+        \item $\sum_{i\in I}\varphi_i(p) = 1$ per a tot $p\in M$,
+        \item El conjunt de suports $\set{\text{supp}(\varphi_i)}$ és localment finit, on el \textbf{suport} d'una funció és l'adherència del conjunt de punts del seu domini on la funció no és $0$.
+    \end{itemize}
+    Diem que la partició de la unitat és \textbf{subordinada al recobriment} $\set{U_\alpha}$ si per a cada $i\in I$ existeix un $\alpha$ tal que $\text{supp}(\varphi_i)\subseteq U_\alpha$.
+\end{defi}
+
+\begin{lema}\label{lema:paracompact}
+    Sigui $X$ un espai topològic localment compacte (és a dir, tal que tot punt de $X$ té un entorn compacte), Hausdorff i tal que verifica el segon axioma de numerabilitat. Aleshores $X$ és paracompacte, i cada recobriment per oberts de $X$ té un refinament numerable i localment finit per oberts d'adherència compacta.
+\end{lema}
+{\color{green!50!black} \textit{Prova.} Com $X$ verifica el segon axioma de numerabilitat, existeix una base numerable de la topologia de $X$. Com $X$ és localment compacte, podem prendre d'aquesta base numerable els conjunts amb adherència compacta, i pel fet que $X$ és Hausdorff, aquesta col·lecció de subconjunts serà una base en si mateixa. Sigui $\set{U_i}_{i\in I}$ aquesta base.
+
+Sigui $G_1 := U_1$, i suposem que hem definit un cert $G_k=U_1\cup\cdots\cup U_{j_k}$. Sigui $j_{k+1}$ l'enter més petit tal que sigui estrictament més gran que $j_k$ i tal que 
+\begin{equation*}
+    \overline{G_k}\subseteq \bigcup_{i = 1}^{j_{k+1}} U_i,
+\end{equation*}
+i definim 
+\begin{equation*}
+    G_{k+1} := G_k\cup U_{j_{k+1}}.
+\end{equation*}
+D'aquesta manera, obtenim inductivament una successió de conjunts oberts $G_k$ tals que per tot $k$ tenim que
+\begin{enumerate}
+    \item $\overline{G_k}$ és compacte,
+    \item $\overline{G_k}\subseteq G_{k+1}$,
+    \item $X = \bigcup_{k\in\mathbb N} G_k$.
+\end{enumerate}
+{\color{blue} Ojito aqui que hem canviat la manera en què enumerem els $G_k$ a $G_i$. El millor seria que els escrivissim de manera consistent.}
+Ara sigui $\set{U_\alpha:\alpha\in A}$ un recobriment per oberts qualsevol. El conjunt $\overline{G_{i+1}}\setminus G_{i-1}$ és compacte i contingut en l'obert $G_{i+1}\setminus \overline{G_{i-2}}$. Per tot $i\ge3$, podem escollir un subrecobriment finit del recobriment per oberts $U_\alpha\cap(G_{i+1}\setminus \overline{G_{i-2}})$ de $\overline{G_i}\setminus G_{i-1}$, i es pot escollir un subrecobriment finit del recobriment per oberts $U_\alpha\cap G_3$ del conjunt compacte $\overline{G_2}$. Aquesta nova col·lecció serà un refinament numerable i localment finit per oberts d'adherència compacta del recobriment $\set{U_\alpha}$, com volíem veure. \qed
+}
+\begin{lema}
+    Existeix una funció real no-negativa $\varphi:\mathbb R^n\to\mathbb R$ de classe $C^\infty$ en que és igual a 1 en $[-1,1]^n$ i $0$ en el complementari de $(-2,2)^n$.
+\end{lema}
+{\color{green!50!black} \textit{Prova.} Definim la funció com un producte de la forma
+\begin{equation}\label{eq:phi}
+    \varphi = (h\circ x_1)\cdots(h\circ x_n),
+\end{equation}
+on
+\begin{equation*}
+    h(t) = g(t+2)g(2-t),
+\end{equation*}
+\begin{equation*}
+    g(t) = \frac{f(t)}{f(t) + f(1-t)}
+\end{equation*}
+i 
+\begin{equation*}
+    f(t) = \begin{cases}
+        e^{-1/t} & \text{si } t > 0, \\
+        0 & \text{si } t\le 0.
+    \end{cases}
+\end{equation*}
+\qed
+}
+\begin{teo}[\textbf{Existència de particions de la unitat}]
+    {\color{blue}Fer referència a això a la demostració del Teorema de Nash.}
+
+    Sigui $M$ una varietat diferenciable de classe $C^\infty$ i $\set{U_\alpha:\alpha\in A}$ un recobriment per oberts de $M$. Aleshores, existeix una partició de la unitat numberable $\set{\varphi_i:i\in I}$ subordinada al recobriment $\set{U_\alpha}$ amb suports $\set{\text{supp}\varphi_i}$ compactes. A més, si no exigim que els suports siguin compactes, existeix una partició de la unitat $\set{\varphi_\alpha}$ subordinada al recobriment $\set{U_\alpha}$ amb $\text{supp}\varphi_\alpha \subseteq U_\alpha$ per a tot $\alpha\in A$, amb com a molt un conjunt numerable dels $\varphi_\alpha$ no idènticament zero.
+\end{teo}
+{\color{green!50!black} \textit{Prova.} 
+Sigui $\set{G_i}$ un recobriment com el definit a la demostració del lema \ref{lema:paracompact} i definim $G_0=\emptyset$. Per cada punt $p\in M$, sigui $i_p$ l'enter més gran tal que $p\in M\setminus \overline{G_{i_p}}$. Escollim un $\alpha_p$ tal que $p\in U_{\alpha_p}$ i sigui $(V,\tau)$ una carta coordenada centrada en $p$ (és a dir, tal que $\tau(p)=0$ {\color{blue} Comprovar que aquesta és la definició correcta molt ràpid}) i tal que $V\subseteq U_{\alpha_p}\cap(G_{i_p+2}\setminus \overline{G_{i_p}})$ i $[-2,2]^n\subseteq\tau(V)$.
+
+Definim 
+\begin{equation*}
+    \psi_p = \begin{cases}
+        \varphi\circ\tau & \text{a } V, \\
+        0 & \text{fora de } V.
+    \end{cases}
+\end{equation*}
+on $\varphi$ és tal com l'hem definit a l'equació \ref{eq:phi}. Aleshores, $\psi_p$ és una funció de classe $C^\infty$ en $M$ que val $1$ en un entorn $W_p$ de $p$ i té suport compacte en $V\subseteq U_{\alpha_p}\cap(G_{i_p+2}\setminus \overline{G_{i_p}})$. Per cada $i\ge1$, escollim un nombre finit de punts $p\in M$ tals que els respectius $W_p$ siguin un recobriment de $\overline{G_i}\setminus G_{i-1}$. Podem escollir un ordre qualsevol per les funcions corresponents $\psi_p$ per obtenir una successió $\set{\psi_j}$, i els seus suports formen una col·lecció localment finita de subconjunts de $M$. Amb això veiem que la funció 
+\begin{equation*}
+    \psi = \sum_{j=1}^\infty \psi_j
+\end{equation*}
+és positiva i de classe $C^\infty$ en $M$. Ara, per tot $i=1,2,\dots$ definim 
+\begin{equation*}
+    \varphi_i = \frac{\psi_i}{\psi}.
+\end{equation*}
+Les funcions $\varphi_i$ formen una partició de la unitat subordinada al recobriment $\set{U_\alpha}$ amb suports compactes.
+
+Si definim $\varphi_\alpha$ tals que siguin idènticament zero si cap $\varphi_i$ té suport en $U_\alpha$, i en cas contrari que siguin la suma de totes les $\varphi_i$ que hi tenen suport, aleshores tenim que $\varphi_\alpha$ formen una partició de la unitat subordinada al recobriment $\set{U_\alpha}$ amb com a molt un conjunt numerable dels $\varphi_\alpha$ no idènticament zero.
+
+Veiem que el suport de cada $\varphi_\alpha$ és contingut en $U_\alpha$, ja que si $\mathcal A$ és una col·lecció localment finita de conjunts tancats, aleshores $\overline{\bigcup_{A\in \mathcal A} A} = \bigcup_{A\in \mathcal A} A$. Ara bé, observem que en aquest cas el suport de $\varphi_\alpha$ no és necessàriament compacte.
+\qed
+}
 
 
 

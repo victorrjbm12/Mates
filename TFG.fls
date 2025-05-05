@@ -464,8 +464,11 @@ INPUT ./2_Suavitat.tex
 INPUT ./2_Suavitat.tex
 INPUT 2_Suavitat.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecbi1095.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecti0800.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecti0600.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcti1095.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ectt1095.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
 INPUT ./3_Mobius.tex
 OUTPUT 3_Mobius.aux
 INPUT ./3_Mobius.tex
@@ -503,16 +506,12 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm2488.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm2074.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1728.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecti0800.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecti0600.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy5.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
 INPUT ./5_Tor.tex
 OUTPUT 5_Tor.aux
 INPUT ./5_Tor.tex
@@ -535,6 +534,7 @@ INPUT APUNTS.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcbx1095.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecbx0800.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecbx0600.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ectt1095.tfm
 INPUT TFG.aux
 INPUT ./1_Introducció.aux
 INPUT ./1_Introducció.aux
