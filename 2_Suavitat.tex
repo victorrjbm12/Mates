@@ -254,9 +254,9 @@ i la propietat de Leibniz,
 {\color{blue} Hi ha al Lee una mica més de detall i demostra que té la dimensió que toca i tal, es pot mirar.}
 
 Una eina essencial per treballar amb vectors tangents serà el concepte de \textbf{diferencial} d'una aplicació diferenciable entre varietats.
-{\color{blue} Crec que el concepte d'aplicació diferenciable entre varietats no l'hem definit encara.}
+{\color{blue} Crec que el concepte d'aplicació diferenciable entre varietats no l'hem definit encara. A més, serà important definir-lo pel cas $C^k$ ja que el necessitarem.}
 \begin{defi}
-    Sigui $M$ i $N$ varietats diferenciables, $F:M\to N$ una aplicació diferenciable i $p\in M$. Anomenem \textbf{diferencial de $F$ en $p$} l'aplicació
+    {\color{blue} La necessitem en el cas $C^k$ ja que és important per les definicions de la subsecció següent}Sigui $M$ i $N$ varietats diferenciables suaus, $F:M\to N$ una aplicació diferenciable i $p\in M$. Anomenem \textbf{diferencial de $F$ en $p$} l'aplicació
     \begin{equation*}
         dF_p:T_pM\to T_{F(p)}N
     \end{equation*}
@@ -264,9 +264,21 @@ Una eina essencial per treballar amb vectors tangents serà el concepte de \text
     \begin{equation*}
         dF_p(v)(f) = v(f\circ F),
     \end{equation*}
-    per a tota $f\in C^\infty(N)$.{\color{red} ni de conya}
+    per a tota $f\in C^\infty(N)$.
 \end{defi}
-
+\begin{defi}
+    Diem que una aplicació $F$ és \textbf{no-singular} en $p\in M$ si $dF_p$ no és singular, és a dir, si el seu nucli és $\set0$.
+\end{defi}
+\subsection{Subvarietats, immersions, encabiments i difeomorfismes}
+\begin{defi}
+    Sigui $\psi:M\to N$ una aplicació diferenciable {\color{blue} $C^\infty$}.
+    \begin{enumerate}
+        \item Diem que $\psi$ és una \textbf{immersió} si $d\psi_p$ és no-singular per a tot $p\in M$.
+        \item Diem que $\psi$ és un \textbf{encabiment} si és una immersió injectiva i un homeomorfisme sobre la seva imatge.
+        \item Diem que $\psi$ és un \textbf{difeomorfisme} si és una injectiva amb inversa diferenciable {\color{blue} $C^\infty$}.
+        \item El parell $(M, \psi)$ és una \textbf{subvarietat de $N$} si $\psi$ és una immersió injectiva.
+    \end{enumerate}
+\end{defi}
 
 
 
