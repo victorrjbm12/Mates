@@ -269,16 +269,37 @@ Una eina essencial per treballar amb vectors tangents serà el concepte de \text
 \begin{defi}
     Diem que una aplicació $F$ és \textbf{no-singular} en $p\in M$ si $dF_p$ no és singular, és a dir, si el seu nucli és $\set0$.
 \end{defi}
+
 \subsection{Subvarietats, immersions, encabiments i difeomorfismes}
+{\color{blue} Important motivar bé aquesta secció perquè és de les més importants per al nostre TFG}
 \begin{defi}
     Sigui $\psi:M\to N$ una aplicació diferenciable {\color{blue} $C^\infty$}.
     \begin{enumerate}
         \item Diem que $\psi$ és una \textbf{immersió} si $d\psi_p$ és no-singular per a tot $p\in M$.
-        \item Diem que $\psi$ és un \textbf{encabiment} si és una immersió injectiva i un homeomorfisme sobre la seva imatge.
+        \item Diem que $\psi$ és un \textbf{encabiment} (en anglès \textit{embedding}) si és una immersió injectiva i un homeomorfisme sobre la seva imatge.
         \item Diem que $\psi$ és un \textbf{difeomorfisme} si és una injectiva amb inversa diferenciable {\color{blue} $C^\infty$}.
         \item El parell $(M, \psi)$ és una \textbf{subvarietat de $N$} si $\psi$ és una immersió injectiva.
     \end{enumerate}
 \end{defi}
+
+\subsection{Camps vectorials}
+\begin{defi}
+    Sigui $M$ una varietat diferenciable suau, i $(a,b)$ un interval obert de $\mathbb R$. Una \textbf{corba suau} en $M$ és una aplicació diferenciable $\sigma:(a,b)\to M$. Si es pot estendre a un interval obert $(a-\epsilon,b+\epsilon)$ per algun $\epsilon>0$ escrivim també $\sigma:[a,b]\to M$. Definim el \textbf{vector tangent} a $\sigma$ en $t\in(a,b)$ com
+
+    \begin{equation*}
+        \dot{\sigma}_t = d\sigma\left(\frac{d}{dr}\Big|_{t}\right)\in T_{\sigma(t)}M
+    \end{equation*}
+\end{defi}
+
+{\color{red} CAL EXPLICAR FIBRAT TANGENT COM EN EL LEE PER EXPLICAR CAMP VECTORIAL COM EN EL WARREN PER EXPLICAR MÈTRICA RIEMANNIANA COM EN EL CHAVEL}
+
+\begin{defi}
+    Un \textbf{camp vectorial} $X$ al llarg d'una corba $\sigma:[a,b]\to M$ és una aplicació $X:[a,b]\to T(M)$ que \say{aixeca} un vector, és a dir, tal que $\pi\circ X = \sigma$, on $\pi$ és la projecc
+\end{defi}
+
+
+
+\subsection{Geometria Riemanniana}
 
 
 
