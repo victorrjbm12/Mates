@@ -11,7 +11,7 @@
 
 \end{itemize}
 }
-
+{\color{red} El que haurem de fer per a que tot tingui sentit un cop estigui acabat és assegurar-nos que anomenem $x$ a les coordenades normals i $z$ a les coordenades de la carta.}
 
 \section{Introducció al capítol}
 En aquest capítol ens ocuparem de definir i comentar algunes de les nocions bàsiques de geometria diferencial i de varietats diferenciables i suaus. La referència principal per aquest capítol és \cite{lee2013}.\\
@@ -179,6 +179,7 @@ i
         0 & \text{si } t\le 0.
     \end{cases}
 \end{equation*}
+{\color{blue} L'Ignasi vol que expliqui bé aquesta demostració}
 \qed
 }
 \begin{teo}[\textbf{Existència de particions de la unitat}]
@@ -252,11 +253,24 @@ i la propietat de Leibniz,
     Anomenem el conjunt de tots aquests vectors tangents l'\textbf{espai tangent} a $M$ en $p$ i el denotem per $T_pM$.
 \end{defi}
 {\color{blue} Hi ha al Lee una mica més de detall i demostra que té la dimensió que toca i tal, es pot mirar.}
+\begin{defi}
+    Sigui $M$ una varietat diferenciable. Per cada punt $p\in M$, definim \textbf{l'espai cotangent} a $p$, $T^*_pM$, com l'espai vectorial dual de $T_pM$,
+    \begin{equation*}
+        T^*_pM = (T_pM)^*.
+    \end{equation*}
+\end{defi}
+
+
+
+
+
 
 Una eina essencial per treballar amb vectors tangents serà el concepte de \textbf{diferencial} d'una aplicació diferenciable entre varietats.
 {\color{blue} Crec que el concepte d'aplicació diferenciable entre varietats no l'hem definit encara. A més, serà important definir-lo pel cas $C^k$ ja que el necessitarem.}
 \begin{defi}
-    {\color{blue} La necessitem en el cas $C^k$ ja que és important per les definicions de la subsecció següent}Sigui $M$ i $N$ varietats diferenciables suaus, $F:M\to N$ una aplicació diferenciable i $p\in M$. Anomenem \textbf{diferencial de $F$ en $p$} l'aplicació
+    {\color{blue} La necessitem en el cas $C^k$ ja que és important per les definicions de la subsecció següent}
+    
+    Siguin $M$ i $N$ varietats diferenciables suaus, $F:M\to N$ una aplicació diferenciable i $p\in M$. Anomenem \textbf{diferencial de $F$ en $p$} l'aplicació
     \begin{equation*}
         dF_p:T_pM\to T_{F(p)}N
     \end{equation*}
@@ -269,14 +283,49 @@ Una eina essencial per treballar amb vectors tangents serà el concepte de \text
 \begin{defi}
     Diem que una aplicació $F$ és \textbf{no-singular} en $p\in M$ si $dF_p$ no és singular, és a dir, si el seu nucli és $\set0$.
 \end{defi}
+Dualitzant l'aplicació que defineix el diferencial, podem definir el \textit{pullback} d'una funció diferenciable, que serà particularment important per a les mètriques Riemannianes.
+\begin{defi}
+    Siguin $M$ i $N$ varietats diferenciables suaus, $F:M\to N$ una aplicació diferenciable i $p\in M$. Anomenem \textbf{\textit{pullback} puntual de $F$ en $p$} l'aplicació
+    \begin{equation*}
+        dF_p^*:T_{F(p)}^*N\to T^*_pM 
+    \end{equation*}
+    obtinguda dualitzant el diferencial $dF_p$.
+\end{defi}
+Observem que el \textit{pullback} puntual està caracteritzat per la propietat
+\begin{equation*}
+    dF_p^*(w)(v) = w(dF_p(v)),
+\end{equation*}
+per a tot $v\in T_pM$ i $w\in T^*_{F(p)}N$.
 
+
+
+Una altra eina que necessitarem per descriure la geometria local de les varietats diferenciables és el de \textbf{fibrat tangent}.
+\begin{defi}
+    Sigui $M$ una varietat diferenciable. El \textbf{fibrat tangent} de $M$ és la unió disjunta dels espais tangents de tots els punts de $M$, 
+    \begin{equation*}
+        TM = \bigcup_{p\in M} T_pM,
+    \end{equation*}
+    juntament amb la \textbf{projecció} $\pi:TM\to M$ que a cada vector tangent li assigna el punt de la varietat al qual és tangent,
+    \begin{equation*}
+        \pi(v) = p,
+    \end{equation*}
+    on $v\in T_pM$.
+\end{defi}
+De la mateixa manera, podem definir el \textbf{fibrat cotangent} de $M$ com la unió disjunta dels espais cotangents de tots els punts de $M$,
+\begin{equation*}
+    T^*M = \bigcup_{p\in M} T^*_pM,
+\end{equation*}
+junt amb la \textbf{projecció} $\pi:T^*M\to M$ que envia $w\in T^*_pM$ a $p\in M$.
+
+
+{\color{blue} Hi ha la propietat 3.18 del Lee que explica alguna cosa de que té dimensió $2n$, potser hauríem de mirar-ho.}
 \subsection{Subvarietats, immersions, encabiments i difeomorfismes}
 {\color{blue} Important motivar bé aquesta secció perquè és de les més importants per al nostre TFG}
 \begin{defi}
     Sigui $\psi:M\to N$ una aplicació diferenciable {\color{blue} $C^\infty$}.
     \begin{enumerate}
         \item Diem que $\psi$ és una \textbf{immersió} si $d\psi_p$ és no-singular per a tot $p\in M$.
-        \item Diem que $\psi$ és un \textbf{encabiment} (en anglès \textit{embedding}) si és una immersió injectiva i un homeomorfisme sobre la seva imatge.
+        \item Diem que $\psi$ és un \textbf{encabiment} (en anglès, \textit{embedding}) si és una immersió injectiva i un homeomorfisme sobre la seva imatge.
         \item Diem que $\psi$ és un \textbf{difeomorfisme} si és una injectiva amb inversa diferenciable {\color{blue} $C^\infty$}.
         \item El parell $(M, \psi)$ és una \textbf{subvarietat de $N$} si $\psi$ és una immersió injectiva.
     \end{enumerate}
@@ -291,15 +340,108 @@ Una eina essencial per treballar amb vectors tangents serà el concepte de \text
     \end{equation*}
 \end{defi}
 
-{\color{red} CAL EXPLICAR FIBRAT TANGENT COM EN EL LEE PER EXPLICAR CAMP VECTORIAL COM EN EL WARREN PER EXPLICAR MÈTRICA RIEMANNIANA COM EN EL CHAVEL}
-
 \begin{defi}
-    Un \textbf{camp vectorial} $X$ al llarg d'una corba $\sigma:[a,b]\to M$ és una aplicació $X:[a,b]\to T(M)$ que \say{aixeca} un vector, és a dir, tal que $\pi\circ X = \sigma$, on $\pi$ és la projecc
+    Un \textbf{camp vectorial} $X$ \textbf{al llarg d'una corba} $\sigma:[a,b]\to M$ és una aplicació $X:[a,b]\to T(M)$ que \say{aixeca} $\sigma$, és a dir, tal que $\pi\circ X = \sigma$, on $\pi$ és la projecció del fibrat tangent tal com l'hem definit abans. 
+
+    Un \textbf{camp vectorial} $X$ \textbf{en un conjunt obert} $U\subseteq M$ és una aplicació $X:U\to T(M)$ que \say{aixeca} $U$, és a dir, tal que $\pi\circ X = \text{id}_U$.
 \end{defi}
 
 
 
 \subsection{Geometria Riemanniana}
+Per tal de poder parlar de geometria en varietats diferenciables arbitràries, necessitem introduir el concepte de mètrica Riemanniana. Abans, però, recordem la definició de producte intern en $\mathbb R^n$.
+\begin{defi}
+    Un \textbf{producte intern} en un espai vectorial real $V$ és una aplicació $g:V\times V\to\mathbb R$ que és bilineal, simètrica i definida positiva, és a dir, que verifica
+    \begin{enumerate}
+        \item $g(\alpha u + \beta v, w) = \alpha g(u,w) + \beta g(v,w)$ per a tot $u,v,w\in V$ i $\alpha,\beta\in\mathbb R$,
+        \item $g(u,v) = g(v,u)$ per a tot $u,v\in V$,
+        \item $g(u,u)\ge0$ per a tot $u\in V$,
+        \item $g(u,u) = 0$ si i només si $u = 0$.
+    \end{enumerate}
+\end{defi}
+
+\begin{defi}
+    Sigui $M$ una varietat diferenciable. Anomenem \textbf{mètrica Riemanniana} en $M$ una aplicació $g$ que assigna a cada punt $p$ en $M$ un producte intern $g_p:M_p\times M_p\to\mathbb R$ tal que per qualsevol obert $U\subseteq M$, si $X,Y$ són camps vectorials diferenciables en $U$, aleshores la funció $g(X,Y):U\to\mathbb R$ donada per
+    \begin{equation*}
+        g(X,Y)(p) = g_p(X_{|p},Y_{|p}),
+    \end{equation*}
+    és diferenciable.
+    
+    Anomenem \textbf{varietat Riemanniana} a una varietat diferenciable dotada d'una mètrica Riemanniana.
+\end{defi}
+En qualsevol sistema de coordenades tal que les coordenades siguin $z_1,\dots,z_n$, la mètrica Riemanniana es pot expressar com
+\begin{equation*}
+    g = \sum_{i,j=1}^n g_{ij}dz^i\otimes dz^j = g_{ij}dz^idz^j,
+\end{equation*}
+on $g_{ij}$ són funcions diferenciables en $U$.
+
+\begin{defi}
+    Anomenarem \textbf{mètrica euclidiana} en $\mathbb R^n$ la mètrica Riemanniana que en qualsevol sistema de coordenades tal que les coordenades siguin $z_1,\dots,z_n$ es pot expressar com
+    \begin{equation*}
+        \langle\cdot,\cdot\rangle = \delta_{ij}dz^idz^j,
+    \end{equation*}
+    on $\delta_{ij}$ és la delta de Kronecker.
+\end{defi}
+
+\begin{defi}
+    Siguin $M$ i $N$ dues varietats Riemannianes, $g$ una mètrica Riemanniana en $N$ i $F:M\to N$ una aplicació diferenciable. Anomenem \textbf{pullback de $g$ per $F$} la mètrica Riemanniana $F^*g$ en $M$ tal que, per qualsevol parell de vectors tangents $u,v\in T_pM$,
+    \begin{equation*}
+        (F^*g)_p(v,u) = g_{F(p)}(dF_p(v),dF_p(u)),
+    \end{equation*}
+    on $dF_p$ és el diferencial de $F$ en $p$.
+\end{defi}
+
+\begin{prop}[\textbf{Existència de mètriques Riemannianes}]
+    Tota varietat diferenciable suau admet una mètrica Riemanniana.
+\end{prop}
+{
+    \color{green!50!black} \textit{Prova.}
+    Sigui $M$ una varietat diferenciable suau {\color{blue}amb o sense frontera}. Sigui $\set{(U_\alpha,\varphi_\alpha)}$ un recobriment per cartes coordenades. En cada domini de carta, existeix una mètrica Riemanniana $g_\alpha = \varphi_\alpha^*\langle\cdot,\cdot\rangle = \delta_{ij}dz^idz^j$. Sigui $\set{\psi_\alpha}$ una partició de la unitat subordinada a $\set{U_\alpha}$. Definim 
+    \begin{equation*}
+        g = \sum_{\alpha} \psi_\alpha g_\alpha,
+    \end{equation*}
+    on els termes són zero fora dels suports de les $\psi_\alpha$. Com les particions de la unitat són localment finites, la suma és localment finita i per tant $g$ hereta la suavitat de les $g_\alpha$. És evidentment bilineal i simètrica per construcció, i només cal veure que és definida positiva.
+
+    Sigui $v\in T_pM$ un vector tangent en $p\in M$ diferent de zero. Aleshores el producte intern definit en aquest punt és
+    \begin{equation*}
+        g_p(v,v) = \sum_\alpha \psi_\alpha(p) g_\alpha|_p(v,v)
+    \end{equation*}
+    que és una suma de termes no-negatius. Com a mínim alguna de les $\psi_\alpha$ és positiva en $p$ i, per tant, $g_p(v,v) > 0$.
+    \qed
+}
+
+\begin{defi}
+    Siguin $(M,g)$ i $(\tilde M,\tilde g)$ dues varietats Riemannianes {\color{blue} suaus}. Una aplicació {\color{blue} $C^\infty$} $F: M\to \tilde M$ és una \textbf{isometria (Riemanniana)} si és un difeomorfisme i $F^*\tilde g = g$. Diem que $F$ és una \textbf{isometria local} si tot punt $p\in M$ té un entorn $U$ tal que $F|_U$ és una isometria d'un entorn de $F(p)$ en $\tilde M$. Si $F$ és una isometria, diem que $M$ i $\tilde M$ són \textbf{isomètriques}, i si $F$ és una isometria local, diem que $M$ i $\tilde M$ són \textbf{localment isomètriques}.
+\end{defi}
+
+Hi ha diverses propietats de les varietats Riemannianes que són invariants per isometries. La més important per nosaltres és la planitud (en anglès, \textit{flatness}).
+\begin{defi}
+    Diem que una varietat Riemanniana $(M,g)$ és \textbf{plana} si és isomètrica a l'espai euclidià $\mathbb R^n$ amb la mètrica euclidiana.
+\end{defi}
+
+{\color{blue} estaria molt bé demostrar que la planitud és invariant per isometries}
+% \begin{teo}
+%     Sigui $(M,g)$ una varietat Riemanniana. Aleshores, són equivalents:
+%     \begin{enumerate}
+%         \item $g$ és plana
+%         \item Tot punt de $M$ està contingut en el domini d'una carta coordenada suau en què $g=\delta_{ij}dz^idz^j$
+%         \item Tot punt de $M$ està contingut en el domini d'una carta coordenada suau en què el \textbf{coordinate frame} {\color{blue} Important mirar què és això} és ortonormal.
+%         \item Tot punt de $M$ està contingut en el domini d'un \textbf{coordinate frame commutatiu} {\color{blue} Important mirar què és això}
+%     \end{enumerate}
+% \end{teo}
+% {
+%     \color{red} MIRAR DEMOSTRACIÓ!!!!
+% }
+
+\subsection{Un resultat interessant en $\mathbb R^3$}
+{\color{blue} motivar una mica}
+{\color{red} EXPLICAR SUBVARIETATS RIEMANNIANES COM EN EL LEE, DE MANERA QUE TENIM LA MÈTRICA INDUÏDA. A MÉS; EN AQUEST CAPÏTOL ES PARLA DEL TEOREMA DE WHITNEY CAL DEFINIR SUPERFÍCIE REGULAR EN R3 I DEMOSTRAR QUE EL TOR ÉS SUPERFÍCIE REGULAR COMPACTA. CAL DEFINIR CURVATURA DE GAUSS I ENUNCIAR I DEMOSTRAR EL TEOREMA QUE TOTA SUPERFÍCIE REGULAR COMPACTA TÉ COM A MÍNIM UN PUNT ELÍPTIC. POTSER TAMBÉ CAL EXPLICAR SEGONA FORMA FONAMENTAL UF}
+
+Si $(M,g)$ és una varietat Riemanniana, qualsevol subvarietat diferenciable $S\subseteq M$ admet una \textbf{mètrica induïda} $\imath^*g$, on $\imath:S\hookrightarrow M$ és la inclusió.
+
+\begin{defi}
+    Sigui $M$ una varietat diferenciable suau. {\color{blue} Això està ben dit?}. Una \textbf{subvarietat encabida} (en anglès, \textit{embedded submanifold}) de $M$ és un subconjunt $S\subseteq M$ que és una varietat topològica en la topologia induïda, dotada d'una estructura suau{\color{blue} això ho he definit?} tal que la inclusió $\imath:S\to M$ és un encabiment suau. 
+\end{defi}
 
 
 
