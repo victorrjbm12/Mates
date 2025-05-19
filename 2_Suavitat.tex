@@ -331,6 +331,25 @@ junt amb la \textbf{projecció} $\pi:T^*M\to M$ que envia $w\in T^*_pM$ a $p\in 
     \end{enumerate}
 \end{defi}
 
+Un dels tipus de subvarietats que més ens interessarà seran les subvarietats encabides en $\mathbb R^n$. En concret, posarem particular atenció a $n=3$.
+
+\begin{defi}
+    Diem que $S\subseteq\mathbb R^3$ és una \textbf{superfície regular i simple} {\color{blue} no sé si cal di simple la veritat} si és la imatge d'un encabiment suau $\psi:T\to\mathbb R^3$ d'una regió elemental $T\subseteq\mathbb R^2$ en $\mathbb R^3$.
+\end{defi}
+
+\begin{ex}
+    Siguin $R>r>0$. Per $T = [0,1)\times[0,1)\subseteq\mathbb R^2$, sigui $\psi:T\to\mathbb R^3$ l'aplicació
+    \begin{equation*}
+        \psi(u,v) = \left( (R+r\cos(2\pi v))\cos(2\pi u), (R+r\cos(2\pi v))\sin(2\pi u), r\sin(2\pi v) \right).
+    \end{equation*}
+    Aleshores, $\psi$ és un encabiment suau i $S = \psi(T)$ és una superfície regular i simple.
+\end{ex}
+
+
+
+
+
+
 \subsection{Camps vectorials}
 \begin{defi}
     Sigui $M$ una varietat diferenciable suau, i $(a,b)$ un interval obert de $\mathbb R$. Una \textbf{corba suau} en $M$ és una aplicació diferenciable $\sigma:(a,b)\to M$. Si es pot estendre a un interval obert $(a-\epsilon,b+\epsilon)$ per algun $\epsilon>0$ escrivim també $\sigma:[a,b]\to M$. Definim el \textbf{vector tangent} a $\sigma$ en $t\in(a,b)$ com
@@ -344,6 +363,11 @@ junt amb la \textbf{projecció} $\pi:T^*M\to M$ que envia $w\in T^*_pM$ a $p\in 
     Un \textbf{camp vectorial} $X$ \textbf{al llarg d'una corba} $\sigma:[a,b]\to M$ és una aplicació $X:[a,b]\to T(M)$ que \say{aixeca} $\sigma$, és a dir, tal que $\pi\circ X = \sigma$, on $\pi$ és la projecció del fibrat tangent tal com l'hem definit abans. 
 
     Un \textbf{camp vectorial} $X$ \textbf{en un conjunt obert} $U\subseteq M$ és una aplicació $X:U\to T(M)$ que \say{aixeca} $U$, és a dir, tal que $\pi\circ X = \text{id}_U$.
+\end{defi}
+
+En parlar de subvarietats encabides en espais euclidians $\mathbb R^n$, també serà interessant parlar del que anomenarem \textbf{vectors normals}.
+\begin{defi}\label{def:espai_normal}
+    Sigui $M\subseteq\mathbb R^n$ una subvarietat $m$-dimensional encabida en $\mathbb R^n$. Per tot punt $x\in M$, definim l'\textbf{espai normal} a $M$ en $x$, $N_xM$, com el subespai vectorial de $T_x\mathbb R^n$ ortogonal a $T_xM$ pel producte escalar euclidià.
 \end{defi}
 
 
@@ -415,7 +439,7 @@ on $g_{ij}$ són funcions diferenciables en $U$.
 \end{defi}
 
 Hi ha diverses propietats de les varietats Riemannianes que són invariants per isometries. La més important per nosaltres és la planitud (en anglès, \textit{flatness}).
-\begin{defi}
+\begin{defi}\label{def:flatness}
     Diem que una varietat Riemanniana $(M,g)$ és \textbf{plana} si és isomètrica a l'espai euclidià $\mathbb R^n$ amb la mètrica euclidiana.
 \end{defi}
 
@@ -434,7 +458,7 @@ Hi ha diverses propietats de les varietats Riemannianes que són invariants per 
 % }
 
 \subsection{Un resultat interessant en $\mathbb R^3$}
-{\color{blue} motivar una mica}
+{\color{blue} El que hi ha aquí s'ha de moure mes amunt}
 {\color{red} EXPLICAR SUBVARIETATS RIEMANNIANES COM EN EL LEE, DE MANERA QUE TENIM LA MÈTRICA INDUÏDA. A MÉS; EN AQUEST CAPÏTOL ES PARLA DEL TEOREMA DE WHITNEY CAL DEFINIR SUPERFÍCIE REGULAR EN R3 I DEMOSTRAR QUE EL TOR ÉS SUPERFÍCIE REGULAR COMPACTA. CAL DEFINIR CURVATURA DE GAUSS I ENUNCIAR I DEMOSTRAR EL TEOREMA QUE TOTA SUPERFÍCIE REGULAR COMPACTA TÉ COM A MÍNIM UN PUNT ELÍPTIC. POTSER TAMBÉ CAL EXPLICAR SEGONA FORMA FONAMENTAL UF}
 
 Si $(M,g)$ és una varietat Riemanniana, qualsevol subvarietat diferenciable $S\subseteq M$ admet una \textbf{mètrica induïda} $\imath^*g$, on $\imath:S\hookrightarrow M$ és la inclusió.
@@ -442,6 +466,78 @@ Si $(M,g)$ és una varietat Riemanniana, qualsevol subvarietat diferenciable $S\
 \begin{defi}
     Sigui $M$ una varietat diferenciable suau. {\color{blue} Això està ben dit?}. Una \textbf{subvarietat encabida} (en anglès, \textit{embedded submanifold}) de $M$ és un subconjunt $S\subseteq M$ que és una varietat topològica en la topologia induïda, dotada d'una estructura suau{\color{blue} això ho he definit?} tal que la inclusió $\imath:S\to M$ és un encabiment suau. 
 \end{defi}
+
+{\color{blue} Cal demostrar que el tor és superfície regular compacta}
+En el cas de superfícies regulars en $\mathbb R^3$, l'espai normal tal com l'hem definit a la definició \ref{def:espai_normal} en qualsevol punt de la superfície és unidimensional. En general, el que ens interessarà d'aquest espai normal és la seva direcció, de manera que definim l'aplicació següent:
+\begin{defi}
+    Sigui $S$ una superfície regular. Anomenem \textbf{aplicació de Gauss} o \textbf{aplicació normal} de $S$ a una aplicació $N:S\to \mathbb S^2$ que a cada punt $p\in S$ li assigna un vector normal unitari a $S$ en $p$.
+\end{defi}
+Diem que $S$ és \textbf{orientable} si existeix una aplicació de Gauss $N$.
+\begin{ex}
+    La cinta de Möbius, donada per $S=\phi(\mathbb R \times (-1,1))$, on $\phi(u,v) = 2(\cos(2u), \sin(2u), 0) + v(\cos(u)\cos(2u), \cos(u)\sin(2u), \sin(u))$, és una superfície regular no orientable.
+\end{ex}
+Un dels resultats més rellevants pel que fa a l'orientació de superfícies regulars, que no demostrarem aquí, és el següent:
+\begin{teo}
+    Tota superfície regular compacta és orientable.
+\end{teo}
+
+El diferencial de l'aplicació de Gauss $N$ d'una superfície regular orientable $S$, $dN_p:T_pS\to T_{N(p)}\mathbb S^2$, es pot interpretar com un operador lineal del pla tangent a $S$ en si mateix, ja que el pla tangent a $\mathbb S^2$ en $N(p)$ és el mateix que el pla tangent a $S$ en $p$. Per veure això, només cal considerar que $T_{N(p)}\mathbb S^2 = N(p)^\perp = T_pS$.{\color{blue} això és una mica handwavey} Per aquest motiu, denotem \textbf{endomorfisme de Weingarten} $W_p$ el diferencial de l'aplicació de Gauss quan és considerat com un endomorfisme de $T_pS$. Amb aquest endomorfisme, podem arribar a definir la curvatura d'una superfície regular orientada.
+
+\begin{defi}
+    Sigui $S$ una superfície regular orientada, $p$ un punt de $S$. Anomenem \textbf{segona forma fonamental} de $S$ en $p$ la forma bilineal
+    \begin{align*}
+        II_p:T_pS\times T_pS&\to\mathbb R\\
+        (v,w)&\mapsto \langle W_p(v),w\rangle
+    \end{align*}
+    on $\langle\cdot,\cdot\rangle$ és el producte escalar euclidià en $T_pS$.
+\end{defi}
+
+\begin{defi}
+    Sigui $S$ una superfície regular orientada, $p$ un punt de $S$. Anomenem \textbf{curvatura de Gauss} $\kappa_S(p)$ de $S$ en $p$ el determinant de l'endomorfisme de Weingarten $W_p$.
+\end{defi}
+
+Es pot demostrar, {\color{blue} potser ho hauriem de fer, esta als apunts de l'Ignasi de geodif} de fet, que la l'endomorfisme de Weingarten diagonalitza amb valors propis reals $k_1$ i $k_2$, de manera que la curvatura de Gauss és
+\begin{equation*}
+    \kappa_S(p) = k_1(p)k_2(p).
+\end{equation*}
+Anomenem $k_1(p)$ i $k_2(p)$ les \textbf{curvatures principals} de $S$ en $p$, i els vectors propis corresponents a aquests valors propis s'anomenen \textbf{direccions principals de curvatura}. Localment, corbes sobre la superfície que passen per $p$ i segueixen les direccions principals de curvatura coincideixen amb cercles encabits a $\mathbb R^3$ tangents a aquest mateix punt i de radis $1/|k_1(p)|$ i $1/|k_2(p)|$.  La curvatura de Gauss és negativa quan els centres d'aquests cercles, que anomenem \textbf{centres de curvatura}, es troben en costats oposats del pla tangent, i positiva quan estan en el mateix costat.  {\color{blue}mirar si això està ben explicat.}
+
+\begin{defi}
+    Sigui $S$ una superfície regular orientada, $p$ un punt de $S$. Diem que $p$ és un \textbf{punt el·líptic} si $\kappa_S(p) > 0$.
+\end{defi}
+
+Intuïtivament, una superfície regular és el·líptica en un punt si, localment, la superfície roman a un mateix costat del pla tangent, sense creuar-lo. 
+
+\begin{teo}
+    Tota superfície regular compacta té un punt el·líptic.
+\end{teo}
+{
+    \color{green!50!black}
+    \textit{Prova.}
+    Sigui $S$ una superfície regular compacta, i considerem l'aplicació 
+    \begin{align*}
+        g:S&\to\mathbb R\\
+        p&\mapsto ||p||^2.
+    \end{align*}
+    Com $S$ és compacta i $g$ és una funció real contínua, $g$ assoleix un màxim en un punt $p_{\max}\in S$. Sigui $R^2 = ||p_{\max}||^2$ el valor màxim de $g$. 
+    
+    Com a $p_{\max}$ s'assoleix el màxim de la distància a l'origen, el vector posició $p_{\max}$ és ortogonal a la superfície en $p_{\max}$. És a dir, $p_{\max}$ és un punt comú de la superfície regular $S$ i la frontera de l'esfera $B_{R}(0)$, on els espais tangents a $S$ i $B_{R}(0)$ coincideixen. {\color{blue} crec que això és el que l'ignasi va quedar-se demostrant quan ho vam fer a classe}
+
+    Tots els punts de $S$ tenen distància a l'origen menor que $R$, de manera que $S\subseteq B_{R}(0)$. Siguin $k_1$ i $k_2$ les curvatures principals de $S$ en $p_{\max}$, i $\alpha:[0,1]\to S$ i $\beta:[0,1]\to S$ corbes tangents a $S$ en $p_{\max}$ que corresponen a les direccions principals de curvatura. Les curvatures principals de l'esfera $B_{R}(0)$ en $p_{\max}$ són ambdues $1/R$ o ambdues $-1/R$, depenent de la orientació $N$ escollida. Escollim una orientació $N$ de $S$ tal que en $p_{\max}$ les curvatures principals de l'esfera siguin $1/R$. Aleshores, si alguna de les curvatures principals de $S$ és menor que $1/R$, la corba $\alpha$ o $\beta$ tindrà un radi de curvatura més gran que el de l'esfera, de manera que hi haurà un punt $\tilde p\in S$ proper a $p_{\max}$ que té distància a l'origen més gran que $R$. Això entra en contradicció amb el fet que la distància a l'origen de $p_{\max}$ és màxima. Per tant, ambdues curvatures principals de $S$ en $p_{\max}$ han de ser majors que $1/R$, i per tant $S$ té un punt el·líptic.
+    \qed
+}
+
+A continuació enunciem un dels teoremes més importants de la geometria de corbes i superfícies regulars en $\mathbb R^3$, demostrat per Carl Friedrich Gauss el 1827, que relaciona la curvatura de Gauss d'una superfície regular amb la seva mètrica com a varietat Riemanniana.
+
+\begin{teo}[Teorema Egregi de Gauss]
+    La curvatura de Gauss d'una superfície regular només depèn de la mètrica de la superfície com a varietat Riemanniana. En concret, la curvatura de Gauss és invariant per isometries. 
+\end{teo}
+
+Un cas particular d'aquest teorema és que la planitud tal com l'hem definit a la definició \ref{def:flatness}, que la mètrica d'una varietat Riemanniana sigui la mètrica euclidiana, és equivalent a que la curvatura de Gauss sigui nul·la. Això té una implicació a l'hora de determinar quines varietats Riemannianes bidimensionals es poden encabir de manera isomètrica en $\mathbb R^3$. En concret, obtenim el següent resultat per al tor pla. 
+
+\begin{teo}
+    Anomenem \textbf{tor pla} la varietat Riemanniana $(\mathbb T^2, g)$ on $\mathbb T^2 = \mathbb R^2/\mathbb Z^2$ és el tor, i $g$ és la mètrica euclidiana. No existeix cap encabiment isomètric $C^\infty$ del tor pla en $\mathbb R^3$.
+\end{teo}
 
 
 
