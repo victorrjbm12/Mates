@@ -1,33 +1,26 @@
-\chapter{Geometria diferencial i suavitat}
+\chapter{Introducció a la geometria diferencial}
 
-
-{\color{blue} La ide d'aquest capítol ha de ser la següent:
-\begin{itemize}
-    \item Explicar temes de varietats topològiques.
-    \item Parlar sobre geometria Riemanniana.
-    \item Definir immersions i encabiments.
-    \item Parlar de la suavitat de les immersions i encabiments.
-    \item Enunciar i demostrar el tema de que qualsevol encabiment suau del tor ha de tenir algun punt el·líptic. A la pàgina 9 del llibre del Tor es comenta.
-
-\end{itemize}
-}
 {\color{red} El que haurem de fer per a que tot tingui sentit un cop estigui acabat és assegurar-nos que anomenem $x$ a les coordenades normals i $z$ a les coordenades de la carta.}
 
+{\color{red} ÉS MOLT IMPORTANT QUE DESPRÉS MIREM LA PÀGINA 24 DEL LEE, ON DEFINEIX TAMBÉ VARIETATS AMB FRONTERA}
+
 \section{Introducció al capítol}
-En aquest capítol ens ocuparem de definir i comentar algunes de les nocions bàsiques de geometria diferencial i de varietats diferenciables i suaus. La referència principal per aquest capítol és \cite{lee2013}.\\
-A un nivell intuïtiu, les varietats suaus (\textit{smooth manifolds}) són espais topològics que, localment, es poden veure com espais euclidians $\mathbb R^n$, i tals que hi sigui possible fer càlcul infinitesimal. Si bé és fàcil entendre la noció de suavitat (\textit{smoothness}) en els exemples senzills de corbes i superfícies immerses en $\mathbb R^3$, cal tenir en compte que no és cap requeriment per a una varietat suau que sigui immersa en un espai ambient $\mathbb R^n$, sinó que s'haurà de treballar en termes intrínsecs. Aquest fet és molt rellevant en una de les aplicacions més interessants de la geometria diferencial, la teoria de la relativitat general, on l'espai-temps es modela com una varietat diferenciable de dimensió 4 i on no hi ha cap espai ambient en el sentit clàssic. Un altra subtilesa és que la noció de suavitat no pot ser una propietat purament topològica, ja que no és preservada per homeomorfismes. L'exemple més evident és el d'un cercle i un quadrat, que són homeomorfs en $\mathbb R^2$, però el cercle és suau mentre que el quadrat no ho és.
-{\color{blue} Amb el que escriuré ara, la referència principal passa a ser el Warner, \cite{warner1983}.}
+L'objectiu d'aquest capítol serà oferir els fonaments matemàtics necessaris per a entendre i justificar els resultats que es mostraran en els capítols posteriors, alhora que volem motivar l'interès d'aquests. Així, es definiran els conceptes i objectes matemàtics basics amb els quals treballarem, veurem algunes de les seves propietats i enunciarem i demostrarem alguns teoremes que seran clau en el treball que segueix.
 
+Voldrem estudiar, al llarg d'aquest capítol, els conceptes de varietat topològica, varietat diferenciable i varietat Riemanniana. A un nivell intuïtiu, es tractarà d'espais topològics que es poden veure localment com espais reals $\mathbb R^n$, sobre els quals es pot fer càlcul infinitesimal i que es poden dotar de diferents mètriques. Prendrem especial atenció a la manera en què aquests espais es poden encabir (en anglès, \textit{embed}) en altres varietats i espais ambients. Si bé és generalment fàcil entendre i visualitzar aquests espais quan es consideren encabits en un espai $\mathbb R^n$, com el cas de les superfícies regulars en $\mathbb R^2$, cal notar que les varietats topològiques no requereixen aquest espai ambient per a la seva definició i estudi, sinó que en són independents. Aquest fet és molt rellevant, tot i que no el veurem aquí, en una de les aplicacions més interessants de la geometria diferencial, la teoria de la relativitat general, on l'espai-temps es modela com una varietat diferenciable de dimensió 4 i on no hi ha motiu per introduir cap espai ambient en el sentit clàssic.
 
+Si bé seguirem la línia general d'estudi en molts llibres de referència, centrant-nos en funcions i aplicacions de regularitat $C^\infty$, més endavant ens caldrà treballar amb regularitats més baixes. Per aquest motiu, el primer que ens ocuparem de definir, serà el de funcions i aplicacions de classe $C^k$ i les normes associades. Això serà rellevant pel fet que també es pot definir la classe de regularitat d'una varietat diferenciable en un punt, i direm que una varietat és suau (en anglès, \textit{smooth}) quan és de classe $C^\infty$. La noció de suavitat no pot ser una propietat purament topològica, ja que no és preservada per homeomorfismes. L'exemple més evident és el d'un cercle i un quadrat, que són homeomorfs en $\mathbb R^2$, però el cercle és suau mentre que el quadrat no ho és. 
 
+La suavitat de les varietats diferenciables serà clau per a desenvolupar eines potents en geometria diferencial, com veurem amb l'existència de particions de la unitat {\color{blue} i el teorema de Whitney}. Ara bé, veurem que això comporta un grau afegit de rigidesa en les propietats de les varietats Riemannianes pel que fa a la seva relació amb els encabiments (en anglès, \textit{embeddings}). La última part d'aquest capítol serà dedicada a un exemple d'això mateix: demostrar que no existeix cap encabiment  $C^\infty$ del tor pla en $\mathbb R^3$ tal que preservi les distàncies entre els seus punts. Veurem, a més, que el motiu principal d'aquesta impossibilitat es relaciona amb el concepte de curvatura gaussiana, que només es pot definir per a superfícies immerses en $\mathbb R^3$ de regularitat $C^2$ o superior. 
 
+{\color{blue} Les cites principals en aquest capítol seran \cite{lee2013} i \cite{warner1983}, pel que fa a varietats suaus, i \cite{chavel2006}, pel que fa a varietats Riemannianes.}
 
-\newpage
-\section{Definicions i propietats bàsiques}
+\section{Classes de regularitat}
+Comencem amb la definició estàndard de classes de regularitat de funcions i aplicacions.
 \begin{defi}
     Siguin $U\subseteq\mathbb R^n$ un conjunt obert i $f:U\to\mathbb R$ una funció real contínua.
     Diem que $f$ és \textbf{ $k$-vegades derivable contínuament}, o \textbf{de classe $C^k(U)$}, amb $k\in\mathbb N_0$, si totes les derivades parcials d'ordre $k$, \begin{equation*}
-        \frac{\partial^k f}{\partial r_1^{\alpha_1}\cdots\partial r_n^{\alpha_n}}\quad\text{tal que }\sum_{i=1}^n\alpha_i = k,
+        \frac{\partial^k f}{\partial x_1^{\alpha_1}\cdots\partial x_n^{\alpha_n}}\quad\text{tal que }\sum_{i=1}^n\alpha_i = k,
     \end{equation*} existeixen i són contínues en $U$.
 
     Si $g:U\to\mathbb R^m$ és una aplicació contínua, diem que $g$ és \textbf{ $k$-vegades derivable contínuament}, o \textbf{de classe $C^k(U)$}, si totes les seves components $g_i:U\to\mathbb R$ són $k$-vegades derivables contínuament.
@@ -61,14 +54,11 @@ A un nivell intuïtiu, les varietats suaus (\textit{smooth manifolds}) són espa
     \[
     \partial^\alpha f(x) := \frac{\partial^{|\alpha|} f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}.
     \]
-
-
-
-
 \end{defi}
 
+\section{Varietats topològiques i diferenciables}
 \begin{defi} 
-    Sigui $M$ un espai topològic {\color{blue} Cal definició d'espai topològic?}. Diem que $M$ és una \textbf{varietat topològica de dimensió $n$} si es compleixen les propietats següents:
+    Sigui $M$ un espai topològic. Diem que $M$ és una \textbf{varietat topològica de dimensió $n$} si es compleixen les propietats següents:
     \begin{itemize}
         \item $M$ és \underline{Hausdorff}, és a dir, si per a cada $p,q\in M$ amb $p\neq q$ existeixen entorns oberts $U\subseteq M$ i $V\subseteq M$ de $p$ i $q$ respectivament tals que $U\cap V = \emptyset$,
         \item $M$ verifica el \underline{segon axioma de numerabilitat}, és a dir, existeix una base numerable de la topologia de $M$,
@@ -86,10 +76,8 @@ Per tal de poder descriure localment els punts de les varietats i de poder opera
 \end{nota}
 
 \begin{obs}
-    De la definició de carta coordenada, observem que no tota varietat topològica $M$ es pot cobrir amb una única carta coordenada. Per exemple, si $M$ és homeomorf al cercle $\mathbb S^1$ amb la topologia induïda per $\mathbb R^2$, no es pot trobar cap aplicació $\varphi:M\to\mathbb R$ que sigui un homeomorfisme amb un obert de $\mathbb R$, ja que $\mathbb S^1$ és compacte.
+    De la definició de carta coordenada, observem que no tota varietat topològica $M$ es pot descriure globalment amb una única carta coordenada. Per exemple, si $M$ és homeomorf al cercle $\mathbb S^1$ amb la topologia induïda per $\mathbb R^2$, no es pot trobar cap aplicació $\varphi:M\to\mathbb R$ que sigui un homeomorfisme amb un obert de $\mathbb R$, ja que $\mathbb S^1$ és compacte.
 \end{obs}
-
-{\color{blue} Es pot posar un exemple.}
 
 \begin{defi}
     Sigui $M$ una varietat topològica de dimensió $n$. Anomenem \textbf{estructura diferenciable de classe $C^k$} en $M$ una col·lecció $\mathcal F:=\set{(U_\alpha,\varphi_\alpha)}$ de cartes coordenades de $M$ que compleixen les propietats següents:
@@ -105,29 +93,33 @@ Per tal de poder descriure localment els punts de les varietats i de poder opera
 \end{defi}
 
 \begin{nota}
-    Sovint ens referirem a $M$ com a varietat diferenciable, sense especificar-ne l'estructura diferenciable.
+    Sovint ens referirem a $M$ com a varietat diferenciable, sense especificar-ne l'estructura diferenciable. Diem que la varietat diferenciable és suau si és de classe $C^\infty$.
 \end{nota}
 
 \begin{defi}
-    {\color{blue} Aquesta definició no m'acaba d'agradar. Podem mirar si canviar-la.}
-
-    Sigui $M$ una varietat diferenciable, $U\subseteq M$ un obert i $f:U\to\mathbb R$ una funció real. Diem que $f$ és \textbf{de classe $C^k$ en $U$} si $f\circ\varphi^{-1}$ és de classe $C^k$ per tota aplicació coordenada $\varphi$ de $M$.
-    Una aplicació $\psi:M\to N$ és de classe $C^k(M,N)$ si per tota $g$ definida en oberts $V$ de $N$ la composició $g\circ\psi$ és de classe $C^k$ en $V$.
+    Sigui $M$ una varietat diferenciable suau, $U\subseteq M$ un obert i $f:U\to\mathbb R$ una funció real. Diem que $f$ és \textbf{de classe $C^k$ en $U$} si $f\circ\varphi^{-1}$ és de classe $C^k$ per tota aplicació coordenada $\varphi$ de $M$.\\
+    Una aplicació $\psi:M\to N$ és de classe $C^k(M,N)$ si per tota funció real $g$ definida en oberts $V$ de $N$ la composició $g\circ\psi$ és de classe $C^k$ en $V$.
 \end{defi}
 
-\subsection{Segon axioma de numerabilitat}
-A continuació veurem algunes propietats de les varietats diferenciables que es desprenen del fet que verifiquen el segon axioma de numerabilitat. El que més ens interessarà serà l'existència de particions de la unitat, en el cas les varietats de classe $C^\infty$.{\color{blue} Potser hauríem de deixar més clar en quin moment estem parlant de varietats de classe $C^\infty$ i quan no.}
+\begin{defi}
+    Siguin $M$ i $N$ varietats diferenciables de classe $C^k$. Diem que una aplicació $\psi:M\to N$ és un \textbf{difeomorfisme de classe $C^k$} si és bijectiva, de classe $C^k(M,N)$ i la seva inversa és de classe $C^k(N,M)$.
+\end{defi}
+
+\subsection{Particions de la unitat}
+A continuació veurem algunes propietats de les varietats diferenciables que es desprenen del fet que verifiquen el segon axioma de numerabilitat. En aquesta subsecció ens centrarem en varietats diferenciables suaus, per tal d'obtenir el potent teorema de l'existència de particions de la unitat, que serà una eina essencial pel capítol \ref{chap:capitol_nash}.
 
 \begin{defi}
     Sigui $M$ una varietat diferenciable. Anomenem \textbf{recobriment de $W\subseteq M$} a una col·lecció $\set{U_\alpha}$ de subconjunts de $M$ tals que $W = \bigcup_{\alpha\in A} U_\alpha$. Diem que el recobriment és un \textbf{recobriment per oberts} si tots els $U_\alpha$ són oberts, i un \textbf{recobriment per tancats} si tots els $U_\alpha$ són tancats.
 
     Donat un recobriment $\set{U_\alpha}$ de $W\subseteq M$, diem que $\set{V_\beta}$ n'és un \textbf{refinament} si per tot $\beta$ existeix un $\alpha$ tal que $V_\beta\subseteq U_\alpha$ i $\bigcup_{\beta\in B} V_\beta = \bigcup_{\alpha\in A} U_\alpha$.
 
-    Diem que un recobriment $\set{U_\alpha}$ de $W\subseteq M$ és \textbf{localment finit} si per a cada $p\in W$ existeix un entorn $V$ de $p$ en $M$ tal que $V\cap U_\alpha = \emptyset$ per a tot $\alpha$ excepte un nombre finit. Diem que una varietat diferenciable és \textbf{paracompacta} si qualsevol recobriment per oberts té un refinament localment finit.
+    Diem que un recobriment $\set{U_\alpha}$ de $W\subseteq M$ és \textbf{localment finit} si per a cada $p\in W$ existeix un entorn $V$ de $p$ en $M$ tal que $V\cap U_\alpha = \emptyset$ per a tot $\alpha$ excepte un nombre finit. 
+    
+    Diem que una varietat diferenciable és \textbf{paracompacta} si qualsevol recobriment per oberts té un refinament localment finit.
 \end{defi}
 
 \begin{defi}
-    Sigui $M$ una varietat diferenciable suau.Una \textbf{partició de la unitat en $M$} és una col·lecció $\set{\varphi_i}_{i\in I}$ de funcions reals de classe $C^\infty(M)$ tals que:
+    Sigui $M$ una varietat diferenciable suau. Una \textbf{partició de la unitat en $M$} és una col·lecció $\set{\varphi_i}_{i\in I}$ de funcions reals de classe $C^\infty(M)$ tals que:
     \begin{itemize}
         \item $0\leq\varphi_i(p)\leq 1$ per a tot $i\in I$ i $p\in M$,
         \item $\sum_{i\in I}\varphi_i(p) = 1$ per a tot $p\in M$,
@@ -139,78 +131,84 @@ A continuació veurem algunes propietats de les varietats diferenciables que es 
 \begin{lema}\label{lema:paracompact}
     Sigui $X$ un espai topològic localment compacte (és a dir, tal que tot punt de $X$ té un entorn compacte), Hausdorff i tal que verifica el segon axioma de numerabilitat. Aleshores $X$ és paracompacte, i cada recobriment per oberts de $X$ té un refinament numerable i localment finit per oberts d'adherència compacta.
 \end{lema}
-{\color{green!50!black} \textit{Prova.} Com $X$ verifica el segon axioma de numerabilitat, existeix una base numerable de la topologia de $X$. Com $X$ és localment compacte, podem prendre d'aquesta base numerable els conjunts amb adherència compacta, i pel fet que $X$ és Hausdorff, aquesta col·lecció de subconjunts serà una base en si mateixa. Sigui $\set{U_i}_{i\in I}$ aquesta base.
+{\color{green!50!black} 
+    \textit{Prova.} 
+    Com $X$ verifica el segon axioma de numerabilitat, existeix una base numerable de la topologia de $X$. Com $X$ és localment compacte, podem prendre d'aquesta base numerable els conjunts amb adherència compacta, i pel fet que $X$ és Hausdorff, aquesta col·lecció de subconjunts serà una base en si mateixa. Sigui $\set{U_i}_{i\in I}$ aquesta base.
 
-Sigui $G_1 := U_1$, i suposem que hem definit un cert $G_k=U_1\cup\cdots\cup U_{j_k}$. Sigui $j_{k+1}$ l'enter més petit tal que sigui estrictament més gran que $j_k$ i tal que 
-\begin{equation*}
-    \overline{G_k}\subseteq \bigcup_{i = 1}^{j_{k+1}} U_i,
-\end{equation*}
-i definim 
-\begin{equation*}
-    G_{k+1} := G_k\cup U_{j_{k+1}}.
-\end{equation*}
-D'aquesta manera, obtenim inductivament una successió de conjunts oberts $G_k$ tals que per tot $k$ tenim que
-\begin{enumerate}
-    \item $\overline{G_k}$ és compacte,
-    \item $\overline{G_k}\subseteq G_{k+1}$,
-    \item $X = \bigcup_{k\in\mathbb N} G_k$.
-\end{enumerate}
-{\color{blue} Ojito aqui que hem canviat la manera en què enumerem els $G_k$ a $G_i$. El millor seria que els escrivissim de manera consistent.}
-Ara sigui $\set{U_\alpha:\alpha\in A}$ un recobriment per oberts qualsevol. El conjunt $\overline{G_{i+1}}\setminus G_{i-1}$ és compacte i contingut en l'obert $G_{i+1}\setminus \overline{G_{i-2}}$. Per tot $i\ge3$, podem escollir un subrecobriment finit del recobriment per oberts $U_\alpha\cap(G_{i+1}\setminus \overline{G_{i-2}})$ de $\overline{G_i}\setminus G_{i-1}$, i es pot escollir un subrecobriment finit del recobriment per oberts $U_\alpha\cap G_3$ del conjunt compacte $\overline{G_2}$. Aquesta nova col·lecció serà un refinament numerable i localment finit per oberts d'adherència compacta del recobriment $\set{U_\alpha}$, com volíem veure. \qed
+    Sigui $G_1 := U_1$, i suposem que hem definit un cert $G_k=U_1\cup\cdots\cup U_{j_k}$. Sigui $j_{k+1}$ l'enter més petit tal que sigui estrictament més gran que $j_k$ i tal que 
+    \begin{equation*}
+        \overline{G_k}\subseteq \bigcup_{i = 1}^{j_{k+1}} U_i,
+    \end{equation*}
+    i definim 
+    \begin{equation*}
+        G_{k+1} := G_k\cup U_{j_{k+1}}.
+    \end{equation*}
+    D'aquesta manera, obtenim inductivament una successió de conjunts oberts $G_k$ tals que per tot $k$ tenim que
+    \begin{enumerate}
+        \item $\overline{G_k}$ és compacte,
+        \item $\overline{G_k}\subseteq G_{k+1}$,
+        \item $X = \bigcup_{k\in\mathbb N} G_k$.
+    \end{enumerate}
+    Ara sigui $\set{U_\alpha:\alpha\in A}$ un recobriment per oberts qualsevol. El conjunt $\overline{G_{k+1}}\setminus G_{k-1}$ és compacte i contingut en l'obert $G_{k+1}\setminus \overline{G_{k-2}}$. Per tot $i\ge3$, podem escollir un subrecobriment finit del recobriment per oberts $U_\alpha\cap(G_{k+1}\setminus \overline{G_{k-2}})$ de $\overline{G_k}\setminus G_{k-1}$, i es pot escollir un subrecobriment finit del recobriment per oberts $U_\alpha\cap G_3$ del conjunt compacte $\overline{G_2}$. Aquesta nova col·lecció serà un refinament numerable i localment finit per oberts d'adherència compacta del recobriment $\set{U_\alpha}$, com volíem veure. \qed
 }
 \begin{lema}
-    Existeix una funció real no-negativa $\varphi:\mathbb R^n\to\mathbb R$ de classe $C^\infty$ en que és igual a 1 en $[-1,1]^n$ i $0$ en el complementari de $(-2,2)^n$.
+    Existeix una funció real no-negativa $\varphi:\mathbb R^n\to\mathbb R$ de classe $C^\infty$ que és igual a 1 en $[-1,1]^n$ i $0$ en el complementari de $(-2,2)^n$.
 \end{lema}
-{\color{green!50!black} \textit{Prova.} Definim la funció com un producte de la forma
-\begin{equation}\label{eq:phi}
-    \varphi = (h\circ x_1)\cdots(h\circ x_n),
-\end{equation}
-on
-\begin{equation*}
-    h(t) = g(t+2)g(2-t),
-\end{equation*}
-\begin{equation*}
-    g(t) = \frac{f(t)}{f(t) + f(1-t)}
-\end{equation*}
-i 
-\begin{equation*}
-    f(t) = \begin{cases}
-        e^{-1/t} & \text{si } t > 0, \\
-        0 & \text{si } t\le 0.
-    \end{cases}
-\end{equation*}
-{\color{blue} L'Ignasi vol que expliqui bé aquesta demostració}
-\qed
+
+{\color{green!50!black} 
+    \textit{Prova.} 
+    Definim la funció com un producte de la forma
+    \begin{equation}\label{eq:phi}
+        \varphi = (h\circ x_1)\cdots(h\circ x_n),
+    \end{equation}
+    on
+    \begin{equation*}
+        h(t) = g(t+2)g(2-t),
+    \end{equation*}
+    \begin{equation*}
+        g(t) = \frac{f(t)}{f(t) + f(1-t)}
+    \end{equation*}
+    i 
+    \begin{equation*}
+        f(t) = \begin{cases}
+            e^{-1/t} & \text{si } t > 0, \\
+            0 & \text{si } t\le 0.
+        \end{cases}
+    \end{equation*}
+    {\color{blue} L'Ignasi vol que expliqui bé aquesta demostració}
+    \qed
 }
+
 \begin{teo}[\textbf{Existència de particions de la unitat}]
-    {\color{blue}Fer referència a això a la demostració del Teorema de Nash.}
 
     Sigui $M$ una varietat diferenciable de classe $C^\infty$ i $\set{U_\alpha:\alpha\in A}$ un recobriment per oberts de $M$. Aleshores, existeix una partició de la unitat numberable $\set{\varphi_i:i\in I}$ subordinada al recobriment $\set{U_\alpha}$ amb suports $\set{\text{supp}\varphi_i}$ compactes. A més, si no exigim que els suports siguin compactes, existeix una partició de la unitat $\set{\varphi_\alpha}$ subordinada al recobriment $\set{U_\alpha}$ amb $\text{supp}\varphi_\alpha \subseteq U_\alpha$ per a tot $\alpha\in A$, amb com a molt un conjunt numerable dels $\varphi_\alpha$ no idènticament zero.
 \end{teo}
-{\color{green!50!black} \textit{Prova.} 
-Sigui $\set{G_i}$ un recobriment com el definit a la demostració del lema \ref{lema:paracompact} i definim $G_0=\emptyset$. Per cada punt $p\in M$, sigui $i_p$ l'enter més gran tal que $p\in M\setminus \overline{G_{i_p}}$. Escollim un $\alpha_p$ tal que $p\in U_{\alpha_p}$ i sigui $(V,\tau)$ una carta coordenada centrada en $p$ (és a dir, tal que $\tau(p)=0$ {\color{blue} Comprovar que aquesta és la definició correcta molt ràpid}) i tal que $V\subseteq U_{\alpha_p}\cap(G_{i_p+2}\setminus \overline{G_{i_p}})$ i $[-2,2]^n\subseteq\tau(V)$.
 
-Definim 
-\begin{equation*}
-    \psi_p = \begin{cases}
-        \varphi\circ\tau & \text{a } V, \\
-        0 & \text{fora de } V.
-    \end{cases}
-\end{equation*}
-on $\varphi$ és tal com l'hem definit a l'equació \ref{eq:phi}. Aleshores, $\psi_p$ és una funció de classe $C^\infty$ en $M$ que val $1$ en un entorn $W_p$ de $p$ i té suport compacte en $V\subseteq U_{\alpha_p}\cap(G_{i_p+2}\setminus \overline{G_{i_p}})$. Per cada $i\ge1$, escollim un nombre finit de punts $p\in M$ tals que els respectius $W_p$ siguin un recobriment de $\overline{G_i}\setminus G_{i-1}$. Podem escollir un ordre qualsevol per les funcions corresponents $\psi_p$ per obtenir una successió $\set{\psi_j}$, i els seus suports formen una col·lecció localment finita de subconjunts de $M$. Amb això veiem que la funció 
-\begin{equation*}
-    \psi = \sum_{j=1}^\infty \psi_j
-\end{equation*}
-és positiva i de classe $C^\infty$ en $M$. Ara, per tot $i=1,2,\dots$ definim 
-\begin{equation*}
-    \varphi_i = \frac{\psi_i}{\psi}.
-\end{equation*}
-Les funcions $\varphi_i$ formen una partició de la unitat subordinada al recobriment $\set{U_\alpha}$ amb suports compactes.
+{\color{green!50!black} 
+    \textit{Prova.} 
+    Sigui $\set{G_i}$ un recobriment com el definit a la demostració del lema \ref{lema:paracompact} i definim $G_0=\emptyset$. Per cada punt $p\in M$, sigui $i_p$ l'enter més gran tal que $p\in M\setminus \overline{G_{i_p}}$. Escollim un $\alpha_p$ tal que $p\in U_{\alpha_p}$ i sigui $(V,\tau)$ una carta coordenada centrada en $p$ (és a dir, tal que $\tau(p)=0$) i tal que $V\subseteq U_{\alpha_p}\cap(G_{i_p+2}\setminus \overline{G_{i_p}})$ i $[-2,2]^n\subseteq\tau(V)$.
 
-Si definim $\varphi_\alpha$ tals que siguin idènticament zero si cap $\varphi_i$ té suport en $U_\alpha$, i en cas contrari que siguin la suma de totes les $\varphi_i$ que hi tenen suport, aleshores tenim que $\varphi_\alpha$ formen una partició de la unitat subordinada al recobriment $\set{U_\alpha}$ amb com a molt un conjunt numerable dels $\varphi_\alpha$ no idènticament zero.
+    Definim 
+    \begin{equation*}
+        \psi_p = \begin{cases}
+            \varphi\circ\tau & \text{a } V, \\
+            0 & \text{fora de } V.
+        \end{cases}
+    \end{equation*}
+    on $\varphi$ és tal com l'hem definit a l'equació \ref{eq:phi}. Aleshores, $\psi_p$ és una funció de classe $C^\infty$ en $M$ que val $1$ en un entorn $W_p$ de $p$ i té suport compacte en $V\subseteq U_{\alpha_p}\cap(G_{i_p+2}\setminus \overline{G_{i_p}})$. Per cada $i\ge1$, escollim un nombre finit de punts $p\in M$ tals que els respectius $W_p$ siguin un recobriment de $\overline{G_i}\setminus G_{i-1}$. Podem escollir un ordre qualsevol per les funcions corresponents $\psi_p$ per obtenir una successió $\set{\psi_j}$, i els seus suports formen una col·lecció localment finita de subconjunts de $M$. Amb això veiem que la funció 
+    \begin{equation*}
+        \psi = \sum_{j=1}^\infty \psi_j
+    \end{equation*}
+    és positiva i de classe $C^\infty$ en $M$. Ara, per tot $i=1,2,\dots$ definim 
+    \begin{equation*}
+        \varphi_i = \frac{\psi_i}{\psi}.
+    \end{equation*}
+    Les funcions $\varphi_i$ formen una partició de la unitat subordinada al recobriment $\set{U_\alpha}$ amb suports compactes.
 
-Veiem que el suport de cada $\varphi_\alpha$ és contingut en $U_\alpha$, ja que si $\mathcal A$ és una col·lecció localment finita de conjunts tancats, aleshores $\overline{\bigcup_{A\in \mathcal A} A} = \bigcup_{A\in \mathcal A} A$. Ara bé, observem que en aquest cas el suport de $\varphi_\alpha$ no és necessàriament compacte.
-\qed
+    Si definim $\varphi_\alpha$ tals que siguin idènticament zero si cap $\varphi_i$ té suport en $U_\alpha$, i en cas contrari que siguin la suma de totes les $\varphi_i$ que hi tenen suport, aleshores tenim que $\varphi_\alpha$ formen una partició de la unitat subordinada al recobriment $\set{U_\alpha}$ amb com a molt un conjunt numerable dels $\varphi_\alpha$ no idènticament zero.
+
+    Veiem que el suport de cada $\varphi_\alpha$ és contingut en $U_\alpha$, ja que si $\mathcal A$ és una col·lecció localment finita de conjunts tancats, aleshores $\overline{\bigcup_{A\in \mathcal A} A} = \bigcup_{A\in \mathcal A} A$. Ara bé, observem que en aquest cas el suport de $\varphi_\alpha$ no és necessàriament compacte.
+    \qed
 }
 \begin{corol}
     Sigui $G$ un obert d'una varietat diferenciable de classe $C^\infty$ i $A\subseteq G$ un subconjunt tancat. Aleshores, existeix una funció $\varphi:M\to\mathbb R$ de classe $C^\infty$ en $M$ tal que
@@ -225,8 +223,6 @@ Veiem que el suport de cada $\varphi_\alpha$ és contingut en $U_\alpha$, ja que
 Existeix una partició de la unitat $\set{\varphi, \psi}$ subordinada al recobriment $\set{G, M\setminus A}$ de $M$ amb $\text{supp}\varphi\subseteq G$ i $\text{supp}\psi\subseteq M\setminus A$. $\varphi$ és, per tant, la funció desitjada. \qed
 }
 
-{\color{red} ÉS MOLT IMPORTANT QUE DESPRÉS MIREM LA PÀGINA 24 DEL LEE, ON DEFINEIX TAMBÉ VARIETATS AMB FRONTERA}
-
 \subsection{Vectors tangents}
 Un vector en $\mathbb R^n$ es pot pensar com un operador lineal sobre funcions reals diferenciables. En concret, donada una funció $f$ diferenciable en un punt $p\in\mathbb R^n$, el vector $v$ assigna a $f$ un valor real que és la derivada direccional de $f$ en la direcció i sentit de $v$ a $p$,
 \begin{equation*}
@@ -234,25 +230,38 @@ Un vector en $\mathbb R^n$ es pot pensar com un operador lineal sobre funcions r
 \end{equation*}
 amb les propietats de linealitat esperades,
 \begin{equation*}
-    v(f+g) = v(f) + v(g),
+    v(f+g) = v(f) + v(g), 
 \end{equation*}
 \begin{equation*}
     v(\lambda f) = \lambda v(f),
 \end{equation*}
 i la propietat de Leibniz,
 \begin{equation*}
-    v(fg) = v(f)g(p) + f(p)v(g).
+    v(fg) = v(f)g(p) + f(p)v(g)
 \end{equation*}
+per qualssevol $f,g\in C^\infty(\mathbb R^n)$ i $\lambda\in\mathbb R$.
 
 És evident que volem un anàleg a aquesta definició que sigui útil en el context de varietats diferenciables, per tal d'aprofitar el fet que aquestes són espais localment similars a $\mathbb R^n$. 
+
 \begin{defi}
-    Sigui $M$ una varietat diferenciable i $(U,\varphi)$ una carta coordenada de $M$. Un \textbf{vector tangent} a $M$ en un punt $p\in M$ és una aplicació que assigna a cada funció $f$ de classe $C^k$ en un entorn de $p$ un valor real $v(f)$ tal que existeixi una col·lecció de nombres reals $(a_1,\dots,a_n)$ tals que
+    Sigui $p$ un punt d'una varietat diferenciable de dimensió $n$. Un \textbf{vector tangent} a $M$ en $p$ és una aplicació lineal $v_p:C^\infty(M)\to\mathbb R$ que compleix la propietat de linealitat,
     \begin{equation*}
-        v(f) = \sum_{i=1}^n a_i\frac{\partial (f\circ\varphi^{-1})}{\partial x_i}\Big|_{\varphi(p)}.
+        v_p(\lambda f+\mu g) = \lambda v_p(f) + \mu v_p(g), 
     \end{equation*}
+    i la propietat de Leibniz,
+    \begin{equation*}
+        v_p(fg) = v_p(f)g(p) + f(p)v_p(g).
+    \end{equation*}
+    Per qualssevol $f,g\in C^\infty(M)$ i $\lambda,\mu\in\mathbb R$.
     Anomenem el conjunt de tots aquests vectors tangents l'\textbf{espai tangent} a $M$ en $p$ i el denotem per $T_pM$.
 \end{defi}
-{\color{blue} Hi ha al Lee una mica més de detall i demostra que té la dimensió que toca i tal, es pot mirar.}
+
+En concret, podem construir els següents vectors tangents:
+\begin{equation*}
+    \frac{\partial}{\partial z_i}\Big|_p(f) := \frac{\partial(f\circ\varphi^{-1})}{\partial \hat z_i}(\varphi(p)),
+\end{equation*}
+on $\hat z_i$ és la $i$-èssima coordenada de $\varphi(p)$ en la carta coordenada $(U,\varphi)$ centrada en $p$. Es pot demostrar que aquests vectors tangents formen una base de $T_pM$, de manera que $T_pM$ un espai vectorial de dimensió $n$. Tractant-lo com a tal, podem definir el seu espai dual. {\color{blue} ja veurem si cal donar més detalls.}
+
 \begin{defi}
     Sigui $M$ una varietat diferenciable. Per cada punt $p\in M$, definim \textbf{l'espai cotangent} a $p$, $T^*_pM$, com l'espai vectorial dual de $T_pM$,
     \begin{equation*}
@@ -266,11 +275,10 @@ i la propietat de Leibniz,
 
 
 Una eina essencial per treballar amb vectors tangents serà el concepte de \textbf{diferencial} d'una aplicació diferenciable entre varietats.
-{\color{blue} Crec que el concepte d'aplicació diferenciable entre varietats no l'hem definit encara. A més, serà important definir-lo pel cas $C^k$ ja que el necessitarem.}
 \begin{defi}
     {\color{blue} La necessitem en el cas $C^k$ ja que és important per les definicions de la subsecció següent}
     
-    Siguin $M$ i $N$ varietats diferenciables suaus, $F:M\to N$ una aplicació diferenciable i $p\in M$. Anomenem \textbf{diferencial de $F$ en $p$} l'aplicació
+    Siguin $M$ i $N$ varietats diferenciables, $F:M\to N$ una aplicació diferenciable i $p\in M$. Anomenem \textbf{diferencial de $F$ en $p$} l'aplicació
     \begin{equation*}
         dF_p:T_pM\to T_{F(p)}N
     \end{equation*}
@@ -283,7 +291,7 @@ Una eina essencial per treballar amb vectors tangents serà el concepte de \text
 \begin{defi}
     Diem que una aplicació $F$ és \textbf{no-singular} en $p\in M$ si $dF_p$ no és singular, és a dir, si el seu nucli és $\set0$.
 \end{defi}
-Dualitzant l'aplicació que defineix el diferencial, podem definir el \textit{pullback} d'una funció diferenciable, que serà particularment important per a les mètriques Riemannianes.
+Dualitzant l'aplicació que defineix el diferencial, podem definir el \textit{pullback} d'una funció diferenciable, que serà particularment important per a l'estudi de mètriques Riemannianes.
 \begin{defi}
     Siguin $M$ i $N$ varietats diferenciables suaus, $F:M\to N$ una aplicació diferenciable i $p\in M$. Anomenem \textbf{\textit{pullback} puntual de $F$ en $p$} l'aplicació
     \begin{equation*}
@@ -296,8 +304,9 @@ Observem que el \textit{pullback} puntual està caracteritzat per la propietat
     dF_p^*(w)(v) = w(dF_p(v)),
 \end{equation*}
 per a tot $v\in T_pM$ i $w\in T^*_{F(p)}N$.
-
-
+\begin{obs}
+    Sovint anomenem \textit{pushforward} a l'aplicació $dF_p$. Mentre el \textit{pushforward} actua sobre camps vectorials, el \textit{pullback} actua sobre funcions i formes diferencials. En concret, com veurem {\color{blue} on? }més endavant, es fa servir per transportar mètriques de $N$ a $M$.
+\end{obs}
 
 Una altra eina que necessitarem per descriure la geometria local de les varietats diferenciables és el de \textbf{fibrat tangent}.
 \begin{defi}
@@ -319,6 +328,23 @@ junt amb la \textbf{projecció} $\pi:T^*M\to M$ que envia $w\in T^*_pM$ a $p\in 
 
 
 {\color{blue} Hi ha la propietat 3.18 del Lee que explica alguna cosa de que té dimensió $2n$, potser hauríem de mirar-ho.}
+
+\subsection{Camps vectorials}
+\begin{defi}
+    Sigui $M$ una varietat diferenciable suau, i $(a,b)$ un interval obert de $\mathbb R$. Una \textbf{corba suau} en $M$ és una aplicació diferenciable $\sigma:(a,b)\to M$. Si es pot estendre a un interval obert $(a-\epsilon,b+\epsilon)$ per algun $\epsilon>0$ escrivim també $\sigma:[a,b]\to M$. Definim el \textbf{vector tangent} a $\sigma$ en $t\in(a,b)$ com
+
+    \begin{equation*}
+        \dot{\sigma}_t = d\sigma\left(\frac{d}{dr}\Big|_{t}\right)\in T_{\sigma(t)}M
+    \end{equation*}
+\end{defi}
+
+\begin{defi}
+    Un \textbf{camp vectorial} $X$ \textbf{al llarg d'una corba} $\sigma:[a,b]\to M$ és una aplicació $X:[a,b]\to T(M)$ que \say{aixeca} $\sigma$, és a dir, tal que $\pi\circ X = \sigma$, on $\pi$ és la projecció del fibrat tangent tal com l'hem definit abans. 
+
+    Un \textbf{camp vectorial} $X$ \textbf{en un conjunt obert} $U\subseteq M$ és una aplicació $X:U\to T(M)$ que \say{aixeca} $U$, és a dir, tal que $\pi\circ X = \text{id}_U$.
+\end{defi}
+
+
 \subsection{Subvarietats, immersions, encabiments i difeomorfismes}
 {\color{blue} Important motivar bé aquesta secció perquè és de les més importants per al nostre TFG}
 \begin{defi}
@@ -329,6 +355,11 @@ junt amb la \textbf{projecció} $\pi:T^*M\to M$ que envia $w\in T^*_pM$ a $p\in 
         \item Diem que $\psi$ és un \textbf{difeomorfisme} si és una injectiva amb inversa diferenciable {\color{blue} $C^\infty$}.
         \item El parell $(M, \psi)$ és una \textbf{subvarietat de $N$} si $\psi$ és una immersió injectiva.
     \end{enumerate}
+\end{defi}
+
+En parlar de subvarietats encabides en espais euclidians $\mathbb R^n$, també serà interessant parlar del que anomenarem \textbf{vectors normals}.
+\begin{defi}\label{def:espai_normal}
+    Sigui $M\subseteq\mathbb R^n$ una subvarietat $m$-dimensional encabida en $\mathbb R^n$. Per tot punt $x\in M$, definim l'\textbf{espai normal} a $M$ en $x$, $N_xM$, com el subespai vectorial de $T_x\mathbb R^n$ ortogonal a $T_xM$ pel producte escalar euclidià.
 \end{defi}
 
 Un dels tipus de subvarietats que més ens interessarà seran les subvarietats encabides en $\mathbb R^n$. En concret, posarem particular atenció a $n=3$.
@@ -350,25 +381,7 @@ Un dels tipus de subvarietats que més ens interessarà seran les subvarietats e
 
 
 
-\subsection{Camps vectorials}
-\begin{defi}
-    Sigui $M$ una varietat diferenciable suau, i $(a,b)$ un interval obert de $\mathbb R$. Una \textbf{corba suau} en $M$ és una aplicació diferenciable $\sigma:(a,b)\to M$. Si es pot estendre a un interval obert $(a-\epsilon,b+\epsilon)$ per algun $\epsilon>0$ escrivim també $\sigma:[a,b]\to M$. Definim el \textbf{vector tangent} a $\sigma$ en $t\in(a,b)$ com
 
-    \begin{equation*}
-        \dot{\sigma}_t = d\sigma\left(\frac{d}{dr}\Big|_{t}\right)\in T_{\sigma(t)}M
-    \end{equation*}
-\end{defi}
-
-\begin{defi}
-    Un \textbf{camp vectorial} $X$ \textbf{al llarg d'una corba} $\sigma:[a,b]\to M$ és una aplicació $X:[a,b]\to T(M)$ que \say{aixeca} $\sigma$, és a dir, tal que $\pi\circ X = \sigma$, on $\pi$ és la projecció del fibrat tangent tal com l'hem definit abans. 
-
-    Un \textbf{camp vectorial} $X$ \textbf{en un conjunt obert} $U\subseteq M$ és una aplicació $X:U\to T(M)$ que \say{aixeca} $U$, és a dir, tal que $\pi\circ X = \text{id}_U$.
-\end{defi}
-
-En parlar de subvarietats encabides en espais euclidians $\mathbb R^n$, també serà interessant parlar del que anomenarem \textbf{vectors normals}.
-\begin{defi}\label{def:espai_normal}
-    Sigui $M\subseteq\mathbb R^n$ una subvarietat $m$-dimensional encabida en $\mathbb R^n$. Per tot punt $x\in M$, definim l'\textbf{espai normal} a $M$ en $x$, $N_xM$, com el subespai vectorial de $T_x\mathbb R^n$ ortogonal a $T_xM$ pel producte escalar euclidià.
-\end{defi}
 
 
 
@@ -508,7 +521,7 @@ Anomenem $k_1(p)$ i $k_2(p)$ les \textbf{curvatures principals} de $S$ en $p$, i
 
 Intuïtivament, una superfície regular és el·líptica en un punt si, localment, la superfície roman a un mateix costat del pla tangent, sense creuar-lo. 
 
-\begin{teo}
+\begin{teo}\label{teo:elliptic_point}
     Tota superfície regular compacta té un punt el·líptic.
 \end{teo}
 {
@@ -535,9 +548,23 @@ A continuació enunciem un dels teoremes més importants de la geometria de corb
 
 Un cas particular d'aquest teorema és que la planitud tal com l'hem definit a la definició \ref{def:flatness}, que la mètrica d'una varietat Riemanniana sigui la mètrica euclidiana, és equivalent a que la curvatura de Gauss sigui nul·la. Això té una implicació a l'hora de determinar quines varietats Riemannianes bidimensionals es poden encabir de manera isomètrica en $\mathbb R^3$. En concret, obtenim el següent resultat per al tor pla. 
 
+\begin{defi}
+    Anomenem \textbf{tor} la varietat topològica $\mathbb T^2 = \mathbb R^2/\mathbb Z^2 = [0,1]\times[0,1]/\sim$, on $\sim$ és la relació d'equivalència tal que $(x,0)\sim(x,1)$ i $(0,y)\sim(1,y)$ per a tot $x,y\in[0,1]$. Anomenem \textbf{tor pla} la varietat Riemanniana $(\mathbb T^2, g)$ on $\mathbb T^2$ és el tor, i $g$ és la mètrica euclidiana.
+\end{defi}
+
 \begin{teo}
-    Anomenem \textbf{tor pla} la varietat Riemanniana $(\mathbb T^2, g)$ on $\mathbb T^2 = \mathbb R^2/\mathbb Z^2$ és el tor, i $g$ és la mètrica euclidiana. No existeix cap encabiment isomètric $C^\infty$ del tor pla en $\mathbb R^3$.
+    No existeix cap encabiment isomètric $C^\infty$ del tor pla en $\mathbb R^3$.
 \end{teo}
+{
+    \color{green!50!black}
+    \textit{Prova.}
+    Primer de tot, cal veure que el tor és un espai topològic compacte. En efecte, el tor és la imatge del quadrat $[0,1]\times[0,1]$ pel quocient $\pi:[0,1]\times[0,1]\to\mathbb T^2$. Com el quocient és una aplicació contínua i el quadrat és compacte, el tor és compacte.
+
+    Sigui $f:\mathbb T^2\to\mathbb R^3$ un encabiment isomètric $C^\infty$ de $(\mathbb T^2, g)$, on $g$ és la mètrica euclidiana en $\mathbb R^2$. Com $f$ és un encabiment suau, $f(\mathbb T^2)$ és una superfície regular. A més,com $f$ és una aplicació contínua d'un espai topològic compacte, $f(\mathbb T^2)$ és compacte. Per tant, $f(\mathbb T^2)$ és una superfície regular compacta.
+
+    Pel Teorema Egregi de Gauss, la curvatura de Gauss de $f(\mathbb T^2)$ és invariant per isometries, i només depèn de la mètrica $g$. Com $g$ és la mètrica euclidiana, la curvatura de Gauss de $f(\mathbb T^2)$ ha de ser idènticament zero. Ara bé, pel Teorema \ref{teo:elliptic_point}, $f(\mathbb T^2)$ té un punt el·líptic, i per tant la curvatura de Gauss no pot ser idènticament zero. Així doncs, no existeix cap encabiment isomètric $C^\infty$ del tor pla en $\mathbb R^3$.
+    \qed
+}
 
 
 
