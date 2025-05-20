@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  19 MAY 2025 17:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  20 MAY 2025 18:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -870,7 +870,7 @@ Couldn't patch \deferred@thm@head!
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count364
-<matematiquesinformatica-pos-rgb.png, id=155, 1352.05125pt x 639.89063pt>
+<matematiquesinformatica-pos-rgb.png, id=159, 1352.05125pt x 639.89063pt>
 File: matematiquesinformatica-pos-rgb.png Graphic file (type png)
 <use matematiquesinformatica-pos-rgb.png>
 Package pdftex.def Info: matematiquesinformatica-pos-rgb.png  used on input line 88.
@@ -970,40 +970,44 @@ Cap\'{\i }tol 2.
 
 [11]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 473.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 473.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 473.
-
-
-
 [12]
 
 [13]
 
 [14]
 
-[15])
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 578.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 578.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 578.
+
+
+
+[15]
+
+[16]
+
+[17])
 \openout2 = `3_Mobius.aux'.
 
  (./3_Mobius.tex
 Cap\'{\i }tol 3.
 
 
-[16
+[18
 
 
 
 
 ]
 
-[17])
+[19])
 \openout2 = `4_Nash.aux'.
 
  (./4_Nash.tex
@@ -1022,16 +1026,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[18
+[20
 
 
 
 
 ]
-
-[19]
-
-[20]
 
 [21]
 
@@ -1045,43 +1045,47 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [26]
 
-[27])
+[27]
 
 [28]
+
+[29])
+
+[30]
 \openout2 = `5_Tor.aux'.
 
  (./5_Tor.tex
 Cap\'{\i }tol 5.
 
 
-[29
+[31
 
 
 
 
 ]
 
-[30]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 78.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 78.
-
-
-
-[31]
-
 [32]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 78.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 78.
+
+
+
+[33]
+
+[34]
 Overfull \hbox (5.55449pt too wide) detected at line 220
 []
  []
 
 
 
-[33]
+[35]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 271.
@@ -1096,25 +1100,31 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[34]
-
-[35]
-
 [36]
 
-[37])
+[37]
 
 [38]
+
+[39])
+
+[40]
 Cap\'{\i }tol 6.
 
 
-[39
+[41
 
 
 
 ]
+Cap\'{\i }tol 7.
 
-[40
+
+[42
+
+]
+
+[43
 
 ] (./TFG.aux (./1_Introducció.aux) (./2_Suavitat.aux) (./3_Mobius.aux) (./4_Nash.aux) (./5_Tor.aux))
  ***********
@@ -1122,21 +1132,21 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: DD5AD5884E1D876AA60BFFBAA67125F8;7096.
+(rerunfilecheck)             Checksum: 982697203CF3398D8346860C8946DBBA;7445.
  ) 
 Here is how much of TeX's memory you used:
- 39006 strings out of 473201
- 863918 string characters out of 5716120
- 1386353 words of memory out of 5000000
- 60869 multiletter control sequences out of 15000+600000
- 607760 words of font info for 352 fonts, out of 8000000 for 9000
+ 39033 strings out of 473201
+ 864178 string characters out of 5716120
+ 1386412 words of memory out of 5000000
+ 60872 multiletter control sequences out of 15000+600000
+ 608104 words of font info for 357 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,105p,1225b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on TFG.pdf (45 pages, 810224 bytes).
+Output written on TFG.pdf (48 pages, 825879 bytes).
 PDF statistics:
- 841 PDF objects out of 1000 (max. 8388607)
- 731 compressed objects within 8 object streams
- 268 named destinations out of 1000 (max. 500000)
- 76090 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 872 PDF objects out of 1000 (max. 8388607)
+ 759 compressed objects within 8 object streams
+ 282 named destinations out of 1000 (max. 500000)
+ 76098 words of extra memory for PDF output out of 89155 (max. 10000000)
 

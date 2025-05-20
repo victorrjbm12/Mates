@@ -151,7 +151,7 @@ A continuació veurem algunes propietats de les varietats diferenciables que es 
     \end{enumerate}
     Ara sigui $\set{U_\alpha:\alpha\in A}$ un recobriment per oberts qualsevol. El conjunt $\overline{G_{k+1}}\setminus G_{k-1}$ és compacte i contingut en l'obert $G_{k+1}\setminus \overline{G_{k-2}}$. Per tot $i\ge3$, podem escollir un subrecobriment finit del recobriment per oberts $U_\alpha\cap(G_{k+1}\setminus \overline{G_{k-2}})$ de $\overline{G_k}\setminus G_{k-1}$, i es pot escollir un subrecobriment finit del recobriment per oberts $U_\alpha\cap G_3$ del conjunt compacte $\overline{G_2}$. Aquesta nova col·lecció serà un refinament numerable i localment finit per oberts d'adherència compacta del recobriment $\set{U_\alpha}$, com volíem veure. \qed
 }
-\begin{lema}
+\begin{lema}\label{lema:bump}
     Existeix una funció real no-negativa $\varphi:\mathbb R^n\to\mathbb R$ de classe $C^\infty$ que és igual a 1 en $[-1,1]^n$ i $0$ en el complementari de $(-2,2)^n$.
 \end{lema}
 
@@ -222,6 +222,33 @@ A continuació veurem algunes propietats de les varietats diferenciables que es 
 \color{green!50!black} \textit{Prova.} 
 Existeix una partició de la unitat $\set{\varphi, \psi}$ subordinada al recobriment $\set{G, M\setminus A}$ de $M$ amb $\text{supp}\varphi\subseteq G$ i $\text{supp}\psi\subseteq M\setminus A$. $\varphi$ és, per tant, la funció desitjada. \qed
 }
+
+A continuació utilitzarem l'existència de particions de la unitat per a demostrar l'existència d'un tipus diferent de funcions, que utilitzarem per demostrar el teorema de Whitney.
+
+\begin{defi}
+    Sigui $M$ una varietat diferenciable. Una funció $f:M\to\mathbb R$ és una \textbf{funció d'exhauriment} si és contínua i per qualsevol $c\in\mathbb R$, la preimatge $f^{-1}(-\infty,c]$ és compacta.
+\end{defi}
+
+\begin{prop}
+    Sigui $M$ una varietat diferenciable suau. Aleshores, existeix una funció d'exhauriment $f:M\to\mathbb R_+$ de classe $C^\infty$.
+\end{prop}
+{
+    \color{green!50!black} \textit{Prova.} 
+    Sigui $\set{V_j}_j$ un recobriment numerable per oberts de $M$ per oberts amb adherències compactes, i sigui $\set{\psi_j}_j$ una partició de la unitat suau subordinada a aquest recobriment. Definim la funció
+    \begin{equation*}
+        f(p) = \sum_{j=1}^\infty j\psi_j(p)
+    \end{equation*}
+    De la definició de partició de la unitat obtenim que $f$ és positiva, i com és una suma localment finita de funcions $C^\infty$, és de classe $C^\infty$.
+
+    Cal veure que és, efectivament, una funció d'exhauriment. Sigui $c\in\mathbb R$ i $N>c$ un enter. Per $p\not\in\bigcup_{j=1}^N \overline{V_j}$, tenim que $\psi_j(p)=0$ per a tot $1\le j\le N$. Per tant,
+    \begin{equation*}
+        f(p) = \sum_{j=N+1}^N j\psi_j(p) \ge \sum_{j=N+1}^N N\psi_j(p) =N\sum_{j=1}^N\psi_j(p) = N>c.
+    \end{equation*}
+    Equivalentment, si $f(p)\le c$, aleshores $p\in\bigcup_{j=1}^N \overline{V_j}$. Per tant, $f^{-1}(-\infty,c]$ és un subconjunt tancat del conjunt compacte $\bigcup_{j=1}^N \overline{V_j}$, i per tant és compacte.
+    \qed
+}
+
+
 
 \subsection{Vectors tangents}
 Un vector en $\mathbb R^n$ es pot pensar com un operador lineal sobre funcions reals diferenciables. En concret, donada una funció $f$ diferenciable en un punt $p\in\mathbb R^n$, el vector $v$ assigna a $f$ un valor real que és la derivada direccional de $f$ en la direcció i sentit de $v$ a $p$,
@@ -353,9 +380,26 @@ junt amb la \textbf{projecció} $\pi:T^*M\to M$ que envia $w\in T^*_pM$ a $p\in 
         \item Diem que $\psi$ és una \textbf{immersió} si $d\psi_p$ és no-singular per a tot $p\in M$.
         \item Diem que $\psi$ és un \textbf{encabiment} (en anglès, \textit{embedding}) si és una immersió injectiva i un homeomorfisme sobre la seva imatge.
         \item Diem que $\psi$ és un \textbf{difeomorfisme} si és una injectiva amb inversa diferenciable {\color{blue} $C^\infty$}.
-        \item El parell $(M, \psi)$ és una \textbf{subvarietat de $N$} si $\psi$ és una immersió injectiva.
+        \item El parell $(M, \psi)$ és una \textbf{subvarietat de $N$} si $\psi$ és una immersió injectiva, i és una \textbf{subvarietat encabida} si és un encabiment.
     \end{enumerate}
 \end{defi}
+
+Es pot demostrar, {\color{blue} tot i que no ho farem aquí,} la següent proposició:
+\begin{prop}\label{prop:encabiment_immersio}
+    Sigui $\psi:M\to N$ una immersió injectiva entre varietats $C^k$, amb $k\ge 1$. Si qualsevol de les següents condicions és certa, aleshores $\psi$ és un encabiment:
+    \begin{enumerate}
+        \item $M$ és compacta.
+        \item $\psi$ és un aplicació pròpia, és a dir, la imatge inversa de qualsevol compacte de $N$ és compacta.
+        \item $\psi$ és oberta o tancada.
+    \end{enumerate}
+\end{prop}
+
+{\color{blue}AQUESTA ÉS LA DEFINICIÓ DE SUBVARIETAT ENCABIDA
+
+\begin{defi}
+    Sigui $M$ una varietat diferenciable suau. {\color{blue} Això està ben dit?}. Una \textbf{subvarietat encabida} (en anglès, \textit{embedded submanifold}) de $M$ és un subconjunt $S\subseteq M$ que és una varietat topològica en la topologia induïda, dotada d'una estructura suau{\color{blue} això ho he definit?} tal que la inclusió $\imath:S\to M$ és un encabiment suau. 
+\end{defi}
+}
 
 En parlar de subvarietats encabides en espais euclidians $\mathbb R^n$, també serà interessant parlar del que anomenarem \textbf{vectors normals}.
 \begin{defi}\label{def:espai_normal}
@@ -376,17 +420,87 @@ Un dels tipus de subvarietats que més ens interessarà seran les subvarietats e
     Aleshores, $\psi$ és un encabiment suau i $S = \psi(T)$ és una superfície regular i simple.
 \end{ex}
 
+\subsubsection{Els teoremes de Whitney}
+La possibilitat de prendre varietats diferenciables arbitràries com a subvarietats d'altres espais amb estructura més senzilla, com és el cas de $\mathbb R^n$, pot oferir una major facilitat a l'hora de treballar amb aquestes varietats. Si bé, com hem dit més amunt i hem vist fins ara, les varietats diferenciables suaus no requereixen ser subvarietat de cap espai euclidià, sí és cert que totes elles poden ser subvarietats encabides de $\mathbb R^N$ per a $N$ prou gran.
 
+El teorema de Whitney (o teoremes, degut a les seves diverses formulacions) afirma això mateix, que tota varietat diferenciable suau $n$-dimensional $M$ admet un encabiment suau en $\mathbb R^{2n+1}$. Per demostrar el teorema de Whitney, cal utilitzar el teorema de Sard. No demostrarem aquest darrer teorema, però el farem servir en la demostració del teorema de Whitney.
 
+\begin{teo}[\textbf{Teorema de Sard}]
+    Siguin $M, N$ varietats diferenciables suaus i $F:M\to N$ una aplicació de classe $C^\infty$. Aleshores, la imatge del conjunt de punts crítics, és a dir, d'aquells punts $p\in M$ tals que $dF_p$ no és injectiva, és un subconjunt de mesura zero de $N$. {\color{blue} potser s'hauria de posar en un corol·lari} En concret, si la dimensió de $M$ és menor que la de $N$, $F(M)$ té mesura zero en $N$.
+\end{teo}
 
+\begin{lema}
+    Sigui $M\subseteq\mathbb R^N$ una subvarietat suau $n$-dimensional. Per tot $v\in \mathbb R^N\setminus R^{N-1}$, sigui $\pi_v : \mathbb R^N\setminus R^{N-1}\to S^{N-1}$ la projecció amb nucli $\mathbb Rv$, on identifiquem $\mathbb R^{N-1}$ amb el subespai de $\mathbb R^N$ amb la última coordenada nul·la. Si $N>2n+1$, aleshores hi ha un conjunt dens de vectors $v\in \mathbb R^N\setminus R^{N-1}$ tals que hi ha un conjunt dens de vectors $v\in \mathbb R^N\setminus R^{N-1}$ tals que $\pi_v|_M$ és una immersió injectiva de $M$ en $\mathbb R^{N-1}$.
+\end{lema}
+{
+    \color{green!50!black} 
+    \textit{Prova.}
+    Observem les següents equivalències entre propietats:
+    \begin{itemize}
+        \item $\pi_v|_M$ és injectiva $\iff$ $p-q$ mai és paral·lel a $v$ per a $p,q\in M$ diferents.
+        \item $\pi_v|_M$ és una immersió suau $\iff$ $T_pM$ no conté vectors no-nuls de $\ker d(\pi_v)_p$ per a $p\in M$.
+    \end{itemize}
+    Com $\pi_v$ és lineal, el seu diferencial és la mateixa aplicació lineal, de manera que aquesta última condició és equivalent a demanar que $T_pM$ no contingui vectors no nuls paral·lels a $v$.
 
+    Siguin ara
+    \begin{align*}
+        \Delta_M &= \set{(p,p):p\in M}\subseteq M\times M,\\
+        M_0 &= \set{(p,0):p\in M}\subseteq TM,\\
+    \end{align*}
+    i considerem les aplicacions següents cap a l'espai projectiu real $\mathbb {RP}^{N-1}$:
+    \begin{align*}
+        \kappa:(M\times M)\setminus\Delta_M&\to\mathbb {RP}^{N-1},\\
+        (p,q) &\mapsto [p-q]\\
+    \end{align*}
+    i
+    \begin{align*}
+        \tau:(TM)\setminus M_0&\to\mathbb {RP}^{N-1},\\
+        (p,w) &\mapsto [w]
+    \end{align*}
+    On $[v]$ denota la classe d'equivalència del vector $v$ de $\mathbb R^N\setminus\set0$ com a punt de $\mathbb {RP}^{N-1}$.
+
+    Ambdues aplicacions són suaus, ja que són composició d'aplicacions suaus amb la projecció $\mathbb R^N\setminus\set0\to\mathbb {RP}^{N-1}$, i les dues condicions donades al principi de la demostració són equivalents a la condició que $[v]$ no sigui imatge de $\kappa$ ni de $\tau$. Com els dominis d'ambdues aplicacions tenen dimensió $2n<N-1$, pel teorema de Sard, les imatges de $\kappa$ i $\tau$ tenen mesura zero en $\mathbb {RP}^{N-1}$ i, per tant, el conjunt de vectors que pertanyen a les classes d'equivalència que no pertanyen a cap d'aquestes imatges és dens.
+    \qed
+}
+
+Iterant el procés donat en aquesta demostració, veiem que podem reduir la dimensió de l'espai ambient d'un encabiment a partir d'una sèrie de projeccions sobre subespais d'una dimensió més baixa, fins arribar a un espai de dimensió $2n+1$. Tot i que això només ens ofereix una immersió i no un encabiment, és possible modificar lleugerament el lema per assegurar un encabiment. {\color{red} ÉS POSSIBLE QUE EL LEE FACI SERVIR ENCABIMENT DE MANERA DIFERENT A LA RESTA?} No detallem aquí de quina manera, però acaba reduint a imposar una condició no gaire restrictiva a l'elecció de $v$. {\color{blue} Està al Lee, si ho volem posar.}
+
+Hem vist que podem reduir la dimensió de l'espai ambient en què haguem encabit la nostra varietat, però encara queda veure que es pot encabir en algun espai real per acabar la demostració.
+
+\begin{teo}[\textbf{Teorema de Whitney}]
+    Tota varietat diferenciable suau $n$-dimensional admet un encabiment suau en $\mathbb R^{2n+1}$.
+\end{teo}
+{
+    \color{green!50!black} \textit{Prova.}
+    Sigui $M$ una varietat diferenciable suau $n$-dimensional. Com hem dit, només cal veure que $M$ admet un encabiment en algun espai $\mathbb R^N$ amb $N$ prou gran.
+
+    Suposem primer que $M$ és compacta. Aquest és el cas més senzill. Sigui $\set{B_1,\dots,B_m}$ un recobriment finit per boles coordenades, de manera que per cada $i$ existeix un domini de coordenades $B_i'\supseteq \overline{B_i}$ i una carta coordenada $\varphi_i:B_i'\to\mathbb R^n$ que és homeomorfisme de $\overline{B_i}$ amb un compacte de $\mathbb R^n$.
+
+    Sigui $\set{\rho_i}_i$ un conjunt de funcions de relleu, tals que $\rho_i$ val 1 en $\overline{B_i}$ i 0 en $\mathbb R^n\setminus B_i'$. L'existència d'aquests conjunts de funcions de relleu és conseqüència de l'existència de funcions de relleu en espais euclidians, com hem vist al lema \ref{lema:bump}. Definim una aplicació suau
+
+    \begin{align*}
+        F:M&\to\mathbb R^{nm + m},\\
+        p&\mapsto \left(\rho_1(p)\varphi_1(p),\dots,\rho_m(p)\varphi_m(p), \rho_1(p),\dots,\rho_m(p)\right)
+    \end{align*}
+    on $\rho_i\varphi_i$ és zero fora del suport de $\rho_i$. Com hem suposat que $M$ és compacte, només cal veure que $F$ és una immersió injectiva suau, per la proposició \ref{prop:encabiment_immersio}.
+
+    Vegem que $F$ és injectiva. Suposem $F(p) = F(q)$ per a $p,q\in M$. Com els $B_i$ són un recobriment de $M$, existeix un $i$ tal que $p\in B_i'$, i $\rho_i(p)=1$. Com $F(p) = F(q)$, tenim que $\rho_i(p) = \rho_i(q)$ i $\rho_i\varphi_i(p) = \rho_i\varphi_i(q)$. Com $\rho_i(p)=1$, tenim que $\varphi_i(p) = \varphi_i(q)$. Com $\varphi_i$ és un homeomorfisme, tenim que $p=q$. Així, $F$ és injectiva.
+
+    Vegem que $F$ és una immersió suau. Sigui $p\in M$ i $p\in B_i$. Com $\rho_i\equiv1$ en un entorn de $p$, tenim $d(\rho_i\varphi_i)_p = d\varphi_p$, que és injectiva. Per tant, $dF_p$ és injectiva, i $F$ és una immersió suau.
+    Amb això acabem el cas de $M$ compacte.
+
+    Suposem ara que $M$ no és compacte. Sigui 
+
+    
+
+}
 
 
 
 
 
 \subsection{Geometria Riemanniana}
-Per tal de poder parlar de geometria en varietats diferenciables arbitràries, necessitem introduir el concepte de mètrica Riemanniana. Abans, però, recordem la definició de producte intern en $\mathbb R^n$.
+Per tal de poder parlar de geometria en varietats diferenciables arbitràries, necessitem introduir el concepte de mètrica Riemanniana. Abans, però, recordem la definició de producte intern en espais vectorials reals.
 \begin{defi}
     Un \textbf{producte intern} en un espai vectorial real $V$ és una aplicació $g:V\times V\to\mathbb R$ que és bilineal, simètrica i definida positiva, és a dir, que verifica
     \begin{enumerate}
@@ -410,7 +524,7 @@ En qualsevol sistema de coordenades tal que les coordenades siguin $z_1,\dots,z_
 \begin{equation*}
     g = \sum_{i,j=1}^n g_{ij}dz^i\otimes dz^j = g_{ij}dz^idz^j,
 \end{equation*}
-on $g_{ij}$ són funcions diferenciables en $U$.
+on $g_{ij}$ són funcions diferenciables en $U$. {\color{blue} i què és aquesta $dz$?}
 
 \begin{defi}
     Anomenarem \textbf{mètrica euclidiana} en $\mathbb R^n$ la mètrica Riemanniana que en qualsevol sistema de coordenades tal que les coordenades siguin $z_1,\dots,z_n$ es pot expressar com
@@ -457,30 +571,12 @@ Hi ha diverses propietats de les varietats Riemannianes que són invariants per 
 \end{defi}
 
 {\color{blue} estaria molt bé demostrar que la planitud és invariant per isometries}
-% \begin{teo}
-%     Sigui $(M,g)$ una varietat Riemanniana. Aleshores, són equivalents:
-%     \begin{enumerate}
-%         \item $g$ és plana
-%         \item Tot punt de $M$ està contingut en el domini d'una carta coordenada suau en què $g=\delta_{ij}dz^idz^j$
-%         \item Tot punt de $M$ està contingut en el domini d'una carta coordenada suau en què el \textbf{coordinate frame} {\color{blue} Important mirar què és això} és ortonormal.
-%         \item Tot punt de $M$ està contingut en el domini d'un \textbf{coordinate frame commutatiu} {\color{blue} Important mirar què és això}
-%     \end{enumerate}
-% \end{teo}
-% {
-%     \color{red} MIRAR DEMOSTRACIÓ!!!!
-% }
-
-\subsection{Un resultat interessant en $\mathbb R^3$}
-{\color{blue} El que hi ha aquí s'ha de moure mes amunt}
-{\color{red} EXPLICAR SUBVARIETATS RIEMANNIANES COM EN EL LEE, DE MANERA QUE TENIM LA MÈTRICA INDUÏDA. A MÉS; EN AQUEST CAPÏTOL ES PARLA DEL TEOREMA DE WHITNEY CAL DEFINIR SUPERFÍCIE REGULAR EN R3 I DEMOSTRAR QUE EL TOR ÉS SUPERFÍCIE REGULAR COMPACTA. CAL DEFINIR CURVATURA DE GAUSS I ENUNCIAR I DEMOSTRAR EL TEOREMA QUE TOTA SUPERFÍCIE REGULAR COMPACTA TÉ COM A MÍNIM UN PUNT ELÍPTIC. POTSER TAMBÉ CAL EXPLICAR SEGONA FORMA FONAMENTAL UF}
 
 Si $(M,g)$ és una varietat Riemanniana, qualsevol subvarietat diferenciable $S\subseteq M$ admet una \textbf{mètrica induïda} $\imath^*g$, on $\imath:S\hookrightarrow M$ és la inclusió.
 
-\begin{defi}
-    Sigui $M$ una varietat diferenciable suau. {\color{blue} Això està ben dit?}. Una \textbf{subvarietat encabida} (en anglès, \textit{embedded submanifold}) de $M$ és un subconjunt $S\subseteq M$ que és una varietat topològica en la topologia induïda, dotada d'una estructura suau{\color{blue} això ho he definit?} tal que la inclusió $\imath:S\to M$ és un encabiment suau. 
-\end{defi}
 
-{\color{blue} Cal demostrar que el tor és superfície regular compacta}
+\subsection{Un resultat interessant en $\mathbb R^3$}
+
 En el cas de superfícies regulars en $\mathbb R^3$, l'espai normal tal com l'hem definit a la definició \ref{def:espai_normal} en qualsevol punt de la superfície és unidimensional. En general, el que ens interessarà d'aquest espai normal és la seva direcció, de manera que definim l'aplicació següent:
 \begin{defi}
     Sigui $S$ una superfície regular. Anomenem \textbf{aplicació de Gauss} o \textbf{aplicació normal} de $S$ a una aplicació $N:S\to \mathbb S^2$ que a cada punt $p\in S$ li assigna un vector normal unitari a $S$ en $p$.
