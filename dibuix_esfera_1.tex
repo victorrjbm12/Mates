@@ -1,0 +1,29 @@
+% dibuix_esfera_1.tex
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.markings}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    identified_edge/.style={
+        decoration={
+            markings,
+            mark=at position 0.5 with {\arrow{Latex}}
+        },
+        postaction={decorate}
+    },
+    edge_label/.style={midway, auto, font=\small}
+]
+
+\def\squaresize{3}
+\fill[gray!10] (0,0) -- (\squaresize,\squaresize) -- (2*\squaresize,\squaresize) -- (\squaresize,0) -- cycle;
+\draw[red, thick] (0,0) -- node[edge_label, left] {$\partial_+$} (\squaresize,\squaresize);
+\draw[blue, thick] (\squaresize,0) -- node[edge_label, right] {$\partial_-$} (2 * \squaresize,\squaresize);
+\draw[identified_edge] (\squaresize,\squaresize) -- node[edge_label, above] {$a$} (2 * \squaresize,\squaresize);
+\draw[identified_edge] (0,0)       -- node[edge_label, below] {$a$} (\squaresize,0);
+
+
+\end{tikzpicture}
+
+\end{document}

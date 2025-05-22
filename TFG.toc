@@ -14,33 +14,34 @@
 \contentsline {subsection}{\numberline {2.3.6}Un resultat interessant en $\mathbb R^3$}{16}{subsection.2.3.6}%
 \contentsline {chapter}{\numberline {3}Cinta de Möbius de paper òptima}{19}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introducció al capítol}{19}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Introducció al problema}{20}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Definicions}{20}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.2}Introducció al problema}{19}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Definicions}{19}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Enunciats dels teoremes}{20}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Preliminars a la demostració}{20}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Demostració}{20}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Existència de la foliació per plecs}{20}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Demostració del lema T}{21}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Demostració del lema G}{22}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {4}Teorema Nash-Kuiper $C^1$}{24}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introducció al capítol}{24}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Enunciat dels teoremes}{24}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Demostració}{25}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}La pertorbació en un pas}{27}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Convergència dels passos en una etapa}{29}{subsection.4.3.2}%
-\contentsline {subsubsection}{Realitzabilitat dels passos}{31}{section*.9}%
-\contentsline {subsection}{\numberline {4.3.3}Organització general}{31}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Convergència de la immersió}{32}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Encabiments isomètrics}{32}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Obtenint la immersió o l'encabiment inicial}{33}{subsection.4.3.6}%
-\contentsline {section}{\numberline {4.4}El refinament de Kuiper}{34}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Encabiments isomètrics del tor pla}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introducció al capítol}{35}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Integració convexa}{35}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Integració convexa 1D}{35}{subsection.5.2.1}%
-\contentsline {section}{\numberline {5.3}Integració convexa 2D: el cas primitiu}{36}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Integració convexa del cilindre $\mathcal Cil$}{37}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Integració convexa del tor $\mathbb T^2$}{40}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Encabiment isomètric del tor pla}{43}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Conclusions}{45}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Glossari d'alguns termes traduïts de l'anglès al català}{46}{chapter.7}%
+\contentsline {subsection}{\numberline {3.3.3}Demostració del lema G}{23}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Conclusions}{24}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Teorema Nash-Kuiper $C^1$}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducció al capítol}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Enunciat dels teoremes}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Demostració}{26}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}La pertorbació en un pas}{28}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Convergència dels passos en una etapa}{30}{subsection.4.3.2}%
+\contentsline {subsubsection}{Realitzabilitat dels passos}{32}{section*.9}%
+\contentsline {subsection}{\numberline {4.3.3}Organització general}{32}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Convergència de la immersió}{33}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Encabiments isomètrics}{33}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Obtenint la immersió o l'encabiment inicial}{34}{subsection.4.3.6}%
+\contentsline {section}{\numberline {4.4}El refinament de Kuiper}{35}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Encabiments isomètrics del tor pla}{36}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introducció al capítol}{36}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Integració convexa}{36}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Integració convexa 1D}{36}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Integració convexa 2D: el cas primitiu}{37}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Integració convexa del cilindre $\mathcal Cil$}{38}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Integració convexa del tor $\mathbb T^2$}{41}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Encabiment isomètric del tor pla}{44}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Conclusions}{46}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Glossari d'alguns termes traduïts de l'anglès al català}{47}{chapter.7}%

@@ -1,12 +1,5 @@
 \chapter{Cinta de Möbius de paper òptima}
-{\color{blue}La idea d'aquest capítol és la següent:
-\begin{itemize}
-    \item Introduir que estem parlant d'això per mostrar d'una altra manera la rigidesa dels encabiments suaus.
-    \item Explicar el problema de la cinta de Möbius de paper òptima.
-    \item Enunciar i demostrar el teorema principal.
-    \item Enunciar i demostrar el teorema del límit triangular.
-    \item Explicar l'acordió de Möbius, donant peu al següent capítol.
-\end{itemize}
+{\color{red} Manca fer un repàs al que hem escrit i assegurar que s'entengui tot, però està bastant bé.
 }
 \section{Introducció al capítol}
 Al capítol anterior hem vist que, tot i que sempre existeix algun espai euclidià de dimensió prou alta tal que s'hi pugui encabir una varietat topològica $C^\infty$, pel teorema de Whitney, no sempre és possible encabir-los en espai de dimensió 3. En concret, fins i tot per varietats que sí es poden encabir suaument en $\mathbb R^3$, hem vist que no sempre és possible encabir-les isomètricament, com hem vist en el cas del tor. 
@@ -27,11 +20,11 @@ La font d'aquest capítol és gairebé exclusivament la versió més nova de l'a
     $$M_\lambda := ([0,\lambda] \times [0,1])/\sim, \quad\quad (0,y)\sim(\lambda,1-y).$$
 \end{defi}
 
-\begin{defi}
+\begin{defi}\label{def:cinta_mobius_paper}
     Una \textbf{cinta de Möbius de paper de raó d'aspecte $\lambda$} és una aplicació isomètrica $I:M_{\lambda}\to\mathbb R^3$ de classe $C^\infty$
 \end{defi}
 \begin{nota}
-    Anomenarem $\Omega=I(M_\lambda)$ la imatge de $M_\lambda$ per $I$. Quan $I$ sigui un encabiment, direm que $\Omega$ està \textbf{encabida} en $\mathbb R^3$.
+    Anomenarem $\Omega=I(M_\lambda)$ la imatge de $M_\lambda$ per $I$. Sovint anomenarem cinta de Möbius de paper a $\Omega$ en lloc de $I$. Quan $I$ sigui un encabiment, direm que $\Omega$ està \textbf{encabida} en $\mathbb R^3$.
 \end{nota}
 
 \begin{ex}
@@ -43,10 +36,6 @@ La font d'aquest capítol és gairebé exclusivament la versió més nova de l'a
     Una cinta de Möbius de paper encabida en $\mathbb R^3$ té raó d'aspecte més gran que $\sqrt{3}$.
 \end{teo}
 
-{\color{red} AIXÒ IMPORTA? SI SOBRA ESPAI ENS HO PODEM CARREGAR}
-\begin{teo}[\textbf{Límit Triangular}]\label{teo:Límit triangular}
-    Sigui $I_n:M_{\lambda_n}\to\mathbb R^3$ una successió de cintes de Möbius de paper suaus encabides, tals que $\lambda_n\to\sqrt{3}$. Aleshores, $I_n$ convergeix uniformement a una cinta de Möbius de paper triangular, llevat d'isometria.
-\end{teo}
 
 \subsection{Preliminars a la demostració}
 \begin{defi}
@@ -61,7 +50,7 @@ Veurem més endavant que tota cinta de Möbius de paper encabida té una foliaci
     Un \textbf{patró T en $\Omega$} (en anglès, \textit{T-pattern}) és un parell de plecs que es troben en rectes perpendiculars que intersequen en un punt. Diem que el patró T està \textbf{encabit} en $\Omega$ si els plecs no intersequen.
 \end{defi}
 
-El Teorema Principal es desprendrà de la demostració dels dos lemes que enunciem a continuació.
+El Teorema Principal es conseqüència directa dels dos lemes que enunciem a continuació. Només caldrà demostrar cada un d'ells.
 \begin{lema}[\textbf{T}]\label{lema T}
     Tota cinta de Möbius de paper encabida té un patró T encabit.
 \end{lema}
@@ -79,7 +68,7 @@ Per demostrar l'existència de la foliació per plecs, utilitzarem el lema segü
     Tot punt $p\in U$ pertany a un únic plec $\gamma$, i tot punt de $\gamma$ té curvatura mitjana diferent de zero, fins i tot a la frontera. {\color{blue} hauríem de mirar de demostrar això si és possible.}
 \end{lema}
 
-\begin{teo}[\textbf{Existència de la foliació per plecs}]
+\begin{teo}[\textbf{Existència de la foliació per plecs}]\label{teo:existencia_foliacio_plecs}
     $\Omega$ té una foliació per plecs.
 \end{teo}
 {
@@ -122,8 +111,25 @@ Per demostrar l'existència de la foliació per plecs, utilitzarem el lema segü
 
 Sigui $\Gamma$ l'espai de parelles $(x_0,x_1)\in(\mathbb R/2\pi)^2$ tals que $x_0\neq x_1$. Per la observació anterior, cada parella de plecs de $\beta$ diferents es correspon amb un únic element de $\Gamma$. $\Gamma$ és homeomorf a un cilindre.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=0.25\textwidth]{dibuix_cilindre_1}
+    \raisebox{5\height}{$\quad\quad\Large\cong\quad$}
+    \includegraphics[height=0.25\textwidth]{dibuix_cilindre_2}
+    \caption{Cilindre de $\Gamma$.}
+    \label{fig:cilindre}
+\end{figure}
+
 Podem compactificar $\Gamma$ afegint $\partial_+$ com el límit de les parelles en què $x_1$ va just abans que $x_0$ en el cilindre, i $\partial_-$ com el límit de les parelles en què $x_1$ va just després que $x_0$. Aquest nou espai, $\overline{\Gamma}$, és homeomorf a l'esfera $\mathbb S^2$. L'aplicació $\Sigma(x_0,x_1) = (x_0,x_1)$ es pot estendre a una aplicació contínua de l'esfera que bescanvia $\partial_+$ i $\partial_-$.
-{\color{blue} DIBUIXET!!!}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=0.25\textwidth]{dibuix_esfera_1}
+    \raisebox{5\height}{$\quad\quad\Large\cong\quad$}
+    \includegraphics[height=0.25\textwidth]{dibuix_esfera_2}
+    \caption{Esfera de $\overline{\Gamma}$.}
+    \label{fig:esfera}
+\end{figure}
 
 Per tot parell $(x_0,x_1)\in{\Gamma}$, hi ha un únic camí positiu $\set{x_t}$ en l'ordre cíclic de $\mathbb R/2\pi$ que va de $x_0$ a $x_1$. Aquest camí té longitud propera a zero quan $(x_0,x_1)$ està a prop de $\partial_+$, i propera a $2\pi$ quan $(x_0,x_1)$ està a prop de $\partial_-$.
 
@@ -196,7 +202,18 @@ Sigui $I:M_\lambda\to\Omega$ una cinta de Möbius de paper encabida amb un patr�
     Per qualsevol subconjunt $S\subseteq M_\lambda$, anomenem $S'=I(S)$ la imatge de $S$ per $I$.
 \end{nota}
 
-Rotem $\Omega$ tal que un plec sigui horitzontal, $T'$, i l'altre estigui per sota en el mateix pla, $B'$. Observant $\Omega$ i $M_\lambda$, verifiquem que tenen la forma de la figura {\color{red} DIBUIXET!!!}
+Rotem $\Omega$ tal que un plec sigui horitzontal, $T'$, i l'altre estigui per sota en el mateix pla, $B'$. Observant $\Omega$ i $M_\lambda$, verifiquem que tenen la forma de la figura {\color{red} Explicar com s'ha de llegir el dibuixet!!!}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=0.33\textwidth]{dibuix_mobius_1}
+    \quad
+    \raisebox{4\height}{$\xrightarrow{\scalebox{1.5}{$I$}}$}
+    \quad
+    \includegraphics[height=0.33\textwidth]{dibuix_mobius_2}
+    \caption{Cinta de Möbius de paper encabida amb un patró T encabit.}
+    \label{fig:mobius_1}
+\end{figure}
 
 Ara observem que 
 \begin{equation*}
@@ -223,19 +240,23 @@ Definim les corbes
         \beta(t) := 2\sqrt{5+t^2}-2t < 2\ell(D)-2t = \ell(D) + \ell(H) = 2\lambda
     \end{cases}
 \end{equation*}
+{\color{red} Una mica hadwavey, de nou. Caldria argumentar millor.}
 
 Per tant, $2\lambda > \max(\alpha(t),\beta(t))$. Posant $t_0 = 1/\sqrt{3}$, tenim que $\alpha(t_0) = \beta(t_0) = 2\sqrt3$.
 
 Observem que $\alpha$ és creixent en $(0,\infty)$. Per tant, $\alpha(t)>2\sqrt3$ per a tot $t>t_0$. En canvi, $\beta$ és decreixent en $t\in\mathbb R$. Per tant, $\beta(t)>2\sqrt3$ per a tot $t<t_0$. Tot plegat, obtenim que $\lambda>\sqrt3$, com volíem demostrar.
 
+\section{Conclusions}
+Amb això hem vist i demostrat una nova restricció sobre els encabiments isomètrics d'una varietat amb vora tan familiar com és la cinta de Möbius. De fet, l'article de \cite{schwartz2024} va un pas més enllà, demostrant el següent teorema sobre successions de cintes de Möbius de paper encabides amb raons d'aspecte convergint a $\sqrt{3}$:
 
-\begin{tikzpicture}
-    \draw (0,0) rectangle (2,2); % Draws a square
-    \draw[->] (0,0.5) -- (0,1.5) node[left, midway] {$a$}; % Arrow on left edge
-    \draw[->] (2,1.5) -- (2,0.5) node[right, midway] {$a$}; % Arrow on right edge (Mobius identification)
-    \node at (1,-0.2) {Identify edges marked 'a'};
-  \end{tikzpicture}
+\begin{teo}[\textbf{Límit Triangular}]\label{teo:Límit triangular}
+    Sigui $I_n:M_{\lambda_n}\to\mathbb R^3$ una successió de cintes de Möbius de paper encabides, tals que $\lambda_n\to\sqrt{3}$. Aleshores, $I_n$ convergeix uniformement a una cinta de Möbius de paper triangular, llevat d'isometria.
+\end{teo}
 
+Ara bé, hi ha una manera de prendre un tros de paper de raó d'aspecte $\lambda = 1$, i doblegar-lo de tal manera que el resultat sigui \textit{gairebé} idèntic a una cinta de Möbius de paper encabida. Per aconseguir això, només cal prendre el tros de paper i doblegar-lo un nombre parell de vegades, de tal manera que quedi dividit en un nombre senar de seccions iguals. Si aquestes seccions es dobleguen de manera alternant, com un acordió, podem enganxar els dos extrems i aconseguir un \textbf{acordió de Möbius}. De fet, amb aquest mètode podem aconseguir prendre un paper rectangular de qualsevol raó d'aspecte i tornar-lo en un acordió de Möbius. 
 
+Què té d'especial l'acordió de Möbius que impedeix que serveixi com a contraexemple del teorema Principal? Aquest objecte no és una cinta de Möbius de paper encabida, tal com l'hem definit a la definició \ref{def:cinta_mobius_paper}, perquè els dos extrems no poden encaixar correctament sense doblegar el paper de manera suau. Els punts per on dobleguem, dit d'altra manera, no són regulars, de manera que l'encabiment no és $C^\infty$. En concret, hem necessitat regularitat com a mínim $C^2$ per poder definir la curvatura mitjana en la demostració del teorema \ref{teo:existencia_foliacio_plecs}. Si l'encabiment no és prou regular, no hi ha la foliació per plecs necessària per demostrar el teorema Principal. 
+
+L'acordió de Möbius deixa clar que, relaxant les condicions de regularitat, aconseguim encabiments isomètrics de varietats que no n'admetrien altrament. Aquest fet destacable és el que podem generalitzar en el capítol que segueix, on estudiarem el Teorema de Nash d'immersions i encabiments isomètrics $C^1$.
 
 \newpage

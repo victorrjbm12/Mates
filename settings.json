@@ -1,4 +1,11 @@
 {
+    "files.exclude": {
+        "**/*.log": true,
+        "**/*.gz": true,
+        "**/*.fls": true,
+        "**/*.fdb_latexmk": true,
+        "**/*.aux": true,
+    },
     "ltex.latex.ignoreMath": true,
     "ltex.language": "ca-ES",
     "ltex.latex.commands": {
@@ -41,4 +48,6 @@
             "continuïtats"
         ]
     }
+
+    
 }
