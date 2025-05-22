@@ -7,11 +7,11 @@
 \section{Introducció al capítol}
 L'objectiu d'aquest capítol serà oferir els fonaments matemàtics necessaris per a entendre i justificar els resultats que es mostraran en els capítols posteriors, alhora que volem motivar l'interès d'aquests. Així, es definiran els conceptes i objectes matemàtics basics amb els quals treballarem, veurem algunes de les seves propietats i enunciarem i demostrarem alguns teoremes que seran clau en el treball que segueix.
 
-Voldrem estudiar, al llarg d'aquest capítol, els conceptes de varietat topològica, varietat diferenciable i varietat Riemanniana. A un nivell intuïtiu, es tractarà d'espais topològics que es poden veure localment com espais reals $\mathbb R^n$, sobre els quals es pot fer càlcul infinitesimal i que es poden dotar de diferents mètriques. Prendrem especial atenció a la manera en què aquests espais es poden encabir (en anglès, \textit{embed}) en altres varietats i espais ambients. Si bé és generalment fàcil entendre i visualitzar aquests espais quan es consideren encabits en un espai $\mathbb R^n$, com el cas de les superfícies regulars en $\mathbb R^2$, cal notar que les varietats topològiques no requereixen aquest espai ambient per a la seva definició i estudi, sinó que en són independents. Aquest fet és molt rellevant, tot i que no el veurem aquí, en una de les aplicacions més interessants de la geometria diferencial, la teoria de la relativitat general, on l'espai-temps es modela com una varietat diferenciable de dimensió 4 i on no hi ha motiu per introduir cap espai ambient en el sentit clàssic.
+Voldrem estudiar, al llarg d'aquest capítol, els conceptes de varietat topològica, varietat diferenciable i varietat Riemanniana. A un nivell intuïtiu, es tractarà d'espais topològics que es poden veure localment com espais reals $\mathbb R^n$, sobre els quals es pot fer càlcul infinitesimal i que es poden dotar de diferents mètriques. Prendrem especial atenció a la manera en què aquests espais es poden encabir (en anglès, \textit{embed}) en altres varietats i espais ambients. Si bé és generalment fàcil entendre i visualitzar aquests espais quan es consideren encabits en un espai $\mathbb R^n$, com el cas de les superfícies regulars en $\mathbb R^3$, cal notar que les varietats topològiques no requereixen aquest espai ambient per a la seva definició i estudi, sinó que en són independents. Aquest fet és molt rellevant, tot i que no el veurem aquí, en una de les aplicacions més interessants de la geometria diferencial, la teoria de la relativitat general, on l'espai-temps es modela com una varietat diferenciable de dimensió 4 i on no hi ha motiu per introduir cap espai ambient en el sentit clàssic.
 
 Si bé seguirem la línia general d'estudi en molts llibres de referència, centrant-nos en funcions i aplicacions de regularitat $C^\infty$, més endavant ens caldrà treballar amb regularitats més baixes. Per aquest motiu, el primer que ens ocuparem de definir, serà el de funcions i aplicacions de classe $C^k$ i les normes associades. Això serà rellevant pel fet que també es pot definir la classe de regularitat d'una varietat diferenciable en un punt, i direm que una varietat és suau (en anglès, \textit{smooth}) quan és de classe $C^\infty$. La noció de suavitat no pot ser una propietat purament topològica, ja que no és preservada per homeomorfismes. L'exemple més evident és el d'un cercle i un quadrat, que són homeomorfs en $\mathbb R^2$, però el cercle és suau mentre que el quadrat no ho és. 
 
-La suavitat de les varietats diferenciables serà clau per a desenvolupar eines potents en geometria diferencial, com veurem amb l'existència de particions de la unitat {\color{blue} i el teorema de Whitney}. Ara bé, veurem que això comporta un grau afegit de rigidesa en les propietats de les varietats Riemannianes pel que fa a la seva relació amb els encabiments (en anglès, \textit{embeddings}). La última part d'aquest capítol serà dedicada a un exemple d'això mateix: demostrar que no existeix cap encabiment  $C^\infty$ del tor pla en $\mathbb R^3$ tal que preservi les distàncies entre els seus punts. Veurem, a més, que el motiu principal d'aquesta impossibilitat es relaciona amb el concepte de curvatura gaussiana, que només es pot definir per a superfícies immerses en $\mathbb R^3$ de regularitat $C^2$ o superior. 
+La suavitat de les varietats diferenciables serà clau per a desenvolupar eines potents en geometria diferencial, com veurem amb l'existència de particions de la unitat i el teorema de Whitney. Ara bé, veurem que això comporta un grau afegit de rigidesa en les propietats de les varietats Riemannianes pel que fa a la seva relació amb els encabiments (en anglès, \textit{embeddings}). La última part d'aquest capítol serà dedicada a un exemple d'això mateix: demostrar que no existeix cap encabiment  $C^\infty$ del tor pla en $\mathbb R^3$ tal que preservi les distàncies entre els seus punts. Veurem, de fet, que el motiu principal d'aquesta impossibilitat es relaciona amb el concepte de curvatura gaussiana, que només es pot definir per a superfícies immerses en $\mathbb R^3$ de regularitat $C^2$ o superior. 
 
 {\color{blue} Les cites principals en aquest capítol seran \cite{lee2013} i \cite{warner1983}, pel que fa a varietats suaus, i \cite{chavel2006}, pel que fa a varietats Riemannianes.}
 
@@ -43,17 +43,19 @@ Comencem amb la definició estàndard de classes de regularitat de funcions i ap
 \begin{defi}
     
     Siguin $U\subseteq \mathbb R^n$ un obert i $f:U\to\mathbb R$ una funció de classe $C^k(U)$. Definim la \textbf{norma $\|\cdot\|_{C^k(U)}$} de $f$ com
+
     \begin{equation*}
-        \|f\|_{C^k(U)} := \sum_{i = 0}^k \sup_{x\in U} \left\| f^{(i)}(x) \right\|.
-    \end{equation*}
-    Per una aplicació $g:U\to\mathbb{R}^m$ de classe $C^k(U)$, definim la \textbf{norma $\|\cdot\|_{C^k(U)}$} de $g$ com
-    \begin{equation*}
-        \|g\|_{C^k(U)} := \sum_{|\alpha| \leq k} \sup_{x\in U} \left\| \partial^\alpha f(x) \right\|,
+        \|f\|_{C^k(U)} := \sum_{|\alpha| \leq k} \sup_{x\in U} \left| \partial^\alpha f(x) \right|.
     \end{equation*}
     on $\alpha = (\alpha_1, \dots, \alpha_n)$, $|\alpha| = \alpha_1 + \dots + \alpha_n$, i
     \[
     \partial^\alpha f(x) := \frac{\partial^{|\alpha|} f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}.
     \]
+
+    Per una aplicació $g:U\to\mathbb{R}^m$ de classe $C^k(U)$, definim la \textbf{norma $\|\cdot\|_{C^k(U)}$} de $g$ com
+    \begin{equation*}
+        \|g\|_{C^k(U)} := \sum_{|\alpha| \leq k} \sup_{x\in U} \left\| \partial^\alpha g(x) \right\|.
+    \end{equation*}    
 \end{defi}
 
 \section{Varietats topològiques i diferenciables}
@@ -97,8 +99,9 @@ Per tal de poder descriure localment els punts de les varietats i de poder opera
 \end{nota}
 
 \begin{defi}
-    Sigui $M$ una varietat diferenciable suau, $U\subseteq M$ un obert i $f:U\to\mathbb R$ una funció real. Diem que $f$ és \textbf{de classe $C^k$ en $U$} si $f\circ\varphi^{-1}$ és de classe $C^k$ per tota aplicació coordenada $\varphi$ de $M$.\\
-    Una aplicació $\psi:M\to N$ és de classe $C^k(M,N)$ si per tota funció real $g$ definida en oberts $V$ de $N$ la composició $g\circ\psi$ és de classe $C^k$ en $V$.
+    Sigui $M$ una varietat diferenciable suau, $U\subseteq M$ un obert i $f:U\to\mathbb R$ una funció real. Diem que $f$ és \textbf{de classe $C^k$ en $U$} si $f\circ\varphi^{-1}$ és de classe $C^k$ per tota aplicació coordenada $\varphi$ de $M$.
+
+    Una aplicació $\psi:M\to N$ és de classe $C^k(M,N)$ si per qualsevol $p\in M$ existeixen cartes $(U,\phi)$ al voltant de $p$ i $(V,\xi)$ al voltant de $\psi(p)$ tals que $\xi\circ\psi\circ\phi^{-1}$ és de classe $C^k$.
 \end{defi}
 
 \begin{defi}
@@ -157,25 +160,34 @@ A continuació veurem algunes propietats de les varietats diferenciables que es 
 
 {\color{green!50!black} 
     \textit{Prova.} 
-    Definim la funció com un producte de la forma
-    \begin{equation}\label{eq:phi}
-        \varphi = (h\circ x_1)\cdots(h\circ x_n),
-    \end{equation}
-    on
-    \begin{equation*}
-        h(t) = g(t+2)g(2-t),
-    \end{equation*}
-    \begin{equation*}
-        g(t) = \frac{f(t)}{f(t) + f(1-t)}
-    \end{equation*}
-    i 
+    Sigui
     \begin{equation*}
         f(t) = \begin{cases}
             e^{-1/t} & \text{si } t > 0, \\
             0 & \text{si } t\le 0.
         \end{cases}
     \end{equation*}
-    {\color{blue} L'Ignasi vol que expliqui bé aquesta demostració}
+    Observem que $f$ és clarament $C^\infty$ en $t<0$ i $t>0$. En el punt $t=0$, tenim que
+    \begin{equation*}
+        \lim_{t\to0^+} f(t) = \lim_{t\to0^+} e^{-1/t} = \lim_{x\to\infty} \frac{1}{e^x} = 0,
+    \end{equation*}
+    de manera que $f$ és contínua a $t=0$. Per veure que totes les derivades de $f$ existeixen i són iguals a $0$ en $t=0$, podem veure que totes les derivades de $\phi(t) = e^{-1/t}$ són el producte de $\phi(t)$ per un polinomi de $1/t$. En efecte, si $\phi^{(n)}(t) = \phi(t)P_n(1/t)$, aleshores $\phi^{(n+1)}(t) = \frac{1}{t^2}(\phi(t)P_n(1/t) - \phi(t)P_n'(1/t)) := \phi(t)P_{n+1}(1/t)$, on $P_{n+1}(1/t)$ és un nou polinomi en $1/t$. Com $\phi(t)$ decreix exponencialment quan $t\to0^+$ i tots els polinomis $P_n(1/t)$ creixen polinomialment quan $t\to0^+$, tenim que totes les derivades de $f$ existeixen i són iguals a $0$ en $t=0$.
+
+    Així, podem definir
+    \begin{equation*}
+        g(t) = \frac{f(t)}{f(t) + f(1-t)},
+    \end{equation*}
+    que és $C^\infty$ per ser una composició de funcions $C^\infty$, i on el denominador no s'anul·la mai. Observem que $g(t)$ val 1 per $t\ge1$ i 0 per $t\le0$.
+
+    A continuació, definim la funció $h$ com
+    \begin{equation*}
+        h(t) = g(t+2)g(2-t),
+    \end{equation*}
+    que és $C^\infty$ per ser producte de funcions $C^\infty$. Observem que $h(t)$ és la funció que buscàvem pel cas $n=1$. Per $n$ arbitrari, definim 
+    \begin{equation}\label{eq:phi}
+        \varphi = (h\circ x_1)\cdots(h\circ x_n),
+    \end{equation}
+    que té exactament les propietats que volíem.
     \qed
 }
 
@@ -225,7 +237,7 @@ Existeix una partició de la unitat $\set{\varphi, \psi}$ subordinada al recobri
 
 A continuació utilitzarem l'existència de particions de la unitat per a demostrar l'existència d'un tipus diferent de funcions, que utilitzarem per demostrar el teorema de Whitney.
 
-\begin{defi}
+\begin{defi}\label{def:funció_exhauriment}
     Sigui $M$ una varietat diferenciable. Una funció $f:M\to\mathbb R$ és una \textbf{funció d'exhauriment} si és contínua i per qualsevol $c\in\mathbb R$, la preimatge $f^{-1}(-\infty,c]$ és compacta.
 \end{defi}
 
@@ -287,7 +299,7 @@ En concret, podem construir els següents vectors tangents:
 \begin{equation*}
     \frac{\partial}{\partial z_i}\Big|_p(f) := \frac{\partial(f\circ\varphi^{-1})}{\partial \hat z_i}(\varphi(p)),
 \end{equation*}
-on $\hat z_i$ és la $i$-èssima coordenada de $\varphi(p)$ en la carta coordenada $(U,\varphi)$ centrada en $p$. Es pot demostrar que aquests vectors tangents formen una base de $T_pM$, de manera que $T_pM$ un espai vectorial de dimensió $n$. Tractant-lo com a tal, podem definir el seu espai dual. {\color{blue} ja veurem si cal donar més detalls.}
+on $\hat z_i$ és la $i$-èssima coordenada de $\varphi(p)$ en la carta coordenada $(U,\varphi)$ centrada en $p$. Es pot demostrar que aquests vectors tangents formen una base de $T_pM$, de manera que $T_pM$ un espai vectorial de dimensió $n$. Tractant-lo com a tal, podem definir el seu espai dual.
 
 \begin{defi}
     Sigui $M$ una varietat diferenciable. Per cada punt $p\in M$, definim \textbf{l'espai cotangent} a $p$, $T^*_pM$, com l'espai vectorial dual de $T_pM$,
@@ -303,9 +315,7 @@ on $\hat z_i$ és la $i$-èssima coordenada de $\varphi(p)$ en la carta coordena
 
 Una eina essencial per treballar amb vectors tangents serà el concepte de \textbf{diferencial} d'una aplicació diferenciable entre varietats.
 \begin{defi}
-    {\color{blue} La necessitem en el cas $C^k$ ja que és important per les definicions de la subsecció següent}
-    
-    Siguin $M$ i $N$ varietats diferenciables, $F:M\to N$ una aplicació diferenciable i $p\in M$. Anomenem \textbf{diferencial de $F$ en $p$} l'aplicació
+    Siguin $M$ i $N$ varietats diferenciables de classe $C^k$, $F:M\to N$ una aplicació diferenciable de classe $C^l$, $l\le k$, i $p\in M$. Anomenem \textbf{diferencial de $F$ en $p$} l'aplicació
     \begin{equation*}
         dF_p:T_pM\to T_{F(p)}N
     \end{equation*}
@@ -332,7 +342,7 @@ Observem que el \textit{pullback} puntual està caracteritzat per la propietat
 \end{equation*}
 per a tot $v\in T_pM$ i $w\in T^*_{F(p)}N$.
 \begin{obs}
-    Sovint anomenem \textit{pushforward} a l'aplicació $dF_p$. Mentre el \textit{pushforward} actua sobre camps vectorials, el \textit{pullback} actua sobre funcions i formes diferencials. En concret, com veurem {\color{blue} on? }més endavant, es fa servir per transportar mètriques de $N$ a $M$.
+    Sovint anomenem \textit{pushforward} a l'aplicació $dF_p$. Mentre el \textit{pushforward} actua sobre camps vectorials, el \textit{pullback} actua sobre funcions i formes diferencials. En concret, com veurem més endavant, es fa servir per transportar mètriques de $N$ a $M$.
 \end{obs}
 
 Una altra eina que necessitarem per descriure la geometria local de les varietats diferenciables és el de \textbf{fibrat tangent}.
@@ -353,8 +363,7 @@ De la mateixa manera, podem definir el \textbf{fibrat cotangent} de $M$ com la u
 \end{equation*}
 junt amb la \textbf{projecció} $\pi:T^*M\to M$ que envia $w\in T^*_pM$ a $p\in M$.
 
-
-{\color{blue} Hi ha la propietat 3.18 del Lee que explica alguna cosa de que té dimensió $2n$, potser hauríem de mirar-ho.}
+Es pot demostrar, tot i que no ho farem aquí, que tant el fibrat tangent com el fibrat cotangent són varietats diferenciables de dimensió $2n$. La demostració és més tècnica i requereix un cert joc amb les cartes coordenades i les projeccions, però recau en última instància en el simple fet que el fibrat tangent, així com el cotangent, assigna a cada punt de la varietat de dimensió $n$ un espai vectorial de dimensió $n$.
 
 \subsection{Camps vectorials}
 \begin{defi}
@@ -380,11 +389,11 @@ junt amb la \textbf{projecció} $\pi:T^*M\to M$ que envia $w\in T^*_pM$ a $p\in 
         \item Diem que $\psi$ és una \textbf{immersió} si $d\psi_p$ és no-singular per a tot $p\in M$.
         \item Diem que $\psi$ és un \textbf{encabiment} (en anglès, \textit{embedding}) si és una immersió injectiva i un homeomorfisme sobre la seva imatge.
         \item Diem que $\psi$ és un \textbf{difeomorfisme} si és una injectiva amb inversa diferenciable {\color{blue} $C^\infty$}.
-        \item El parell $(M, \psi)$ és una \textbf{subvarietat de $N$} si $\psi$ és una immersió injectiva, i és una \textbf{subvarietat encabida} si és un encabiment.
+        \item El parell $(M, \psi)$ és una \textbf{subvarietat de $N$} si $\psi$ és una immersió injectiva, i és una \textbf{subvarietat encabida} (en anglès, \textit{embedded submanifold}) si és un encabiment.
     \end{enumerate}
 \end{defi}
 
-Es pot demostrar, {\color{blue} tot i que no ho farem aquí,} la següent proposició:
+Es pot demostrar la següent proposició:
 \begin{prop}\label{prop:encabiment_immersio}
     Sigui $\psi:M\to N$ una immersió injectiva entre varietats $C^k$, amb $k\ge 1$. Si qualsevol de les següents condicions és certa, aleshores $\psi$ és un encabiment:
     \begin{enumerate}
@@ -394,13 +403,6 @@ Es pot demostrar, {\color{blue} tot i que no ho farem aquí,} la següent propos
     \end{enumerate}
 \end{prop}
 
-{\color{blue}AQUESTA ÉS LA DEFINICIÓ DE SUBVARIETAT ENCABIDA
-
-\begin{defi}
-    Sigui $M$ una varietat diferenciable suau. {\color{blue} Això està ben dit?}. Una \textbf{subvarietat encabida} (en anglès, \textit{embedded submanifold}) de $M$ és un subconjunt $S\subseteq M$ que és una varietat topològica en la topologia induïda, dotada d'una estructura suau{\color{blue} això ho he definit?} tal que la inclusió $\imath:S\to M$ és un encabiment suau. 
-\end{defi}
-}
-
 En parlar de subvarietats encabides en espais euclidians $\mathbb R^n$, també serà interessant parlar del que anomenarem \textbf{vectors normals}.
 \begin{defi}\label{def:espai_normal}
     Sigui $M\subseteq\mathbb R^n$ una subvarietat $m$-dimensional encabida en $\mathbb R^n$. Per tot punt $x\in M$, definim l'\textbf{espai normal} a $M$ en $x$, $N_xM$, com el subespai vectorial de $T_x\mathbb R^n$ ortogonal a $T_xM$ pel producte escalar euclidià.
@@ -409,7 +411,7 @@ En parlar de subvarietats encabides en espais euclidians $\mathbb R^n$, també s
 Un dels tipus de subvarietats que més ens interessarà seran les subvarietats encabides en $\mathbb R^n$. En concret, posarem particular atenció a $n=3$.
 
 \begin{defi}
-    Diem que $S\subseteq\mathbb R^3$ és una \textbf{superfície regular i simple} {\color{blue} no sé si cal di simple la veritat} si és la imatge d'un encabiment suau $\psi:T\to\mathbb R^3$ d'una regió elemental $T\subseteq\mathbb R^2$ en $\mathbb R^3$.
+    Diem que $S\subseteq\mathbb R^3$ és una \textbf{superfície regular (i simple)} si és la imatge d'un encabiment suau $\psi:T\to\mathbb R^3$ d'una regió elemental $T\subseteq\mathbb R^2$ en $\mathbb R^3$.
 \end{defi}
 
 \begin{ex}
@@ -417,16 +419,19 @@ Un dels tipus de subvarietats que més ens interessarà seran les subvarietats e
     \begin{equation*}
         \psi(u,v) = \left( (R+r\cos(2\pi v))\cos(2\pi u), (R+r\cos(2\pi v))\sin(2\pi u), r\sin(2\pi v) \right).
     \end{equation*}
-    Aleshores, $\psi$ és un encabiment suau i $S = \psi(T)$ és una superfície regular i simple.
+    Aleshores, $\psi$ és un encabiment suau i $S = \psi(T)$ és una superfície regular. Aquest és un dels possibles encabiments del \textbf{tor} en $\mathbb R^3$ com a superfície regular.
 \end{ex}
 
 \subsubsection{Els teoremes de Whitney}
 La possibilitat de prendre varietats diferenciables arbitràries com a subvarietats d'altres espais amb estructura més senzilla, com és el cas de $\mathbb R^n$, pot oferir una major facilitat a l'hora de treballar amb aquestes varietats. Si bé, com hem dit més amunt i hem vist fins ara, les varietats diferenciables suaus no requereixen ser subvarietat de cap espai euclidià, sí és cert que totes elles poden ser subvarietats encabides de $\mathbb R^N$ per a $N$ prou gran.
 
 El teorema de Whitney (o teoremes, degut a les seves diverses formulacions) afirma això mateix, que tota varietat diferenciable suau $n$-dimensional $M$ admet un encabiment suau en $\mathbb R^{2n+1}$. Per demostrar el teorema de Whitney, cal utilitzar el teorema de Sard. No demostrarem aquest darrer teorema, però el farem servir en la demostració del teorema de Whitney.
+\begin{defi}
+    Sigui $F:M\to N$ una aplicació diferenciable. Diem que $p\in M$ és un \textbf{punt regular} de $F$ si $dF_p$ és exhaustiva. Altrament, diem que és un \textbf{punt crític}. Un punt $c\in N$ és un \textbf{valor regular} de $F$ si tots els punts de la preimatge $F^{-1}(c)$ són regulars.
+\end{defi}
 
 \begin{teo}[\textbf{Teorema de Sard}]
-    Siguin $M, N$ varietats diferenciables suaus i $F:M\to N$ una aplicació de classe $C^\infty$. Aleshores, la imatge del conjunt de punts crítics, és a dir, d'aquells punts $p\in M$ tals que $dF_p$ no és injectiva, és un subconjunt de mesura zero de $N$. {\color{blue} potser s'hauria de posar en un corol·lari} En concret, si la dimensió de $M$ és menor que la de $N$, $F(M)$ té mesura zero en $N$.
+    Siguin $M, N$ varietats diferenciables suaus i $F:M\to N$ una aplicació de classe $C^\infty$. Aleshores, la imatge del conjunt de punts crítics és un subconjunt de mesura zero de $N$. En concret, si la dimensió de $M$ és menor que la de $N$, $F(M)$ té mesura zero en $N$.
 \end{teo}
 
 \begin{lema}
@@ -463,9 +468,13 @@ El teorema de Whitney (o teoremes, degut a les seves diverses formulacions) afir
     \qed
 }
 
-Iterant el procés donat en aquesta demostració, veiem que podem reduir la dimensió de l'espai ambient d'un encabiment a partir d'una sèrie de projeccions sobre subespais d'una dimensió més baixa, fins arribar a un espai de dimensió $2n+1$. Tot i que això només ens ofereix una immersió i no un encabiment, és possible modificar lleugerament el lema per assegurar un encabiment. {\color{red} ÉS POSSIBLE QUE EL LEE FACI SERVIR ENCABIMENT DE MANERA DIFERENT A LA RESTA?} No detallem aquí de quina manera, però acaba reduint a imposar una condició no gaire restrictiva a l'elecció de $v$. {\color{blue} Està al Lee, si ho volem posar.}
+Iterant el procés donat en aquesta demostració, veiem que podem reduir la dimensió de l'espai ambient d'un encabiment a partir d'una sèrie de projeccions sobre subespais d'una dimensió més baixa, fins arribar a un espai de dimensió $2n+1$. Tot i que això només ens ofereix una immersió i no un encabiment, és possible modificar lleugerament el lema per assegurar un encabiment. No detallem aquí de quina manera, però s'acaba reduint a imposar una condició no gaire restrictiva a l'elecció de $v$.
 
-Hem vist que podem reduir la dimensió de l'espai ambient en què haguem encabit la nostra varietat, però encara queda veure que es pot encabir en algun espai real per acabar la demostració.
+\begin{lema}\label{lema:encabiment_whitney}
+    Sigui $M$ una varietat suau $n$-dimensional. Si $M$ admet un encabiment suau propi en algun espai $\mathbb R^N$, aleshores $M$ admet un encabiment suau propi en $\mathbb R^{2n+1}$.
+\end{lema}
+
+Al lema anterior, \textbf{propi} tan sols vol dir que l'encabiment és una aplicació pròpia, és a dir, tal que la preimatge de qualsevol compacte és compacta. Hem vist que podem reduir la dimensió de l'espai ambient en què haguem encabit la nostra varietat, però encara queda veure que es pot encabir en algun espai real per acabar la demostració.
 
 \begin{teo}[\textbf{Teorema de Whitney}]
     Tota varietat diferenciable suau $n$-dimensional admet un encabiment suau en $\mathbb R^{2n+1}$.
@@ -489,10 +498,28 @@ Hem vist que podem reduir la dimensió de l'espai ambient en què haguem encabit
     Vegem que $F$ és una immersió suau. Sigui $p\in M$ i $p\in B_i$. Com $\rho_i\equiv1$ en un entorn de $p$, tenim $d(\rho_i\varphi_i)_p = d\varphi_p$, que és injectiva. Per tant, $dF_p$ és injectiva, i $F$ és una immersió suau.
     Amb això acabem el cas de $M$ compacte.
 
-    Suposem ara que $M$ no és compacte. Sigui 
+    Suposem ara que $M$ no és compacte. Sigui $f:M\to \mathbb R$ una funció d'exhauriment suau, tal com les hem definit a la definició \ref{def:funció_exhauriment}. Pel teorema de Sard, per tot enter no-negatiu $i$ existeixen valors regulars $a_i,b_i$ de $f$ tals que $i<a_i<b_i<i+1$. Definim els subconjunts de $M$
+    \begin{align*}
+        D_0 &= f^{-1}(-\infty,1],\quad E_0 = f^{-1}(-\infty,a_1],\\
+        D_i &= f^{-1}(i,i+1],\quad E_i = f^{-1}(b_{i-1},a_{i+1}],\\
+    \end{align*}
+    Cada $E_i$ és un domini regular compacte {\color{blue} definició?}. Tenim que $D_i\subseteq Int(E_i)$, $M=\bigcup_i D_i$ i $E_i\cap E_j = \emptyset$ si $j\not\in\set{i-1,i,i+1}$. 
 
-    
+    Vegem que per tot $i$ hi ha un encabiment suau de $E_i$ en algun espai $\mathbb R^N$. Per tot $i$, sigui $\rho_i:M\to \mathbb R$ una funció de relleu que val 1 en un entorn de $D_i$ i té suport en $Int(E_i)$. Definim
+    \begin{align*}
+        F:M&\to\mathbb R^{2n + 1}\times\mathbb R^{2n + 1}\times\mathbb R.\\
+        p&\mapsto \left(    \sum_{i\text{ parell}}    \rho_i(p)\varphi_i(p), \sum_{i\text{ senar}}    \rho_i(p)\varphi_i(p), f(p)\right)
+    \end{align*}
+    Clarament, $F$ és suau perquè en cada punt $p$ només un terme de cada sumatori és diferent de zero.
+    Per veure que $F$ és injectiva, notem que si $F(p)=F(q)$, aleshores $p\in D_j$ i com $f(p)=f(q)$, $q\in D_j$. Per un argument com el del cas compacte, tenim que $p=q$.
+    Per veure que $F$ és una immersió, sigui $p\in M$ i $p\in D_j$. Aleshores $\rho_j\equiv1$ en un entorn de $p$. Si $j$ és senar, aleshores tenim que per tot $q$ en aquest entorn de $p$, 
+    \begin{equation*}
+        F(p) = (\varphi_j(q),\dots,\dots)
+    \end{equation*}
+    de manera que $dF_p$ és injectiva. Si $j$ és parell, un argument anàleg ens diu que $dF_p$ és injectiva. {\color{blue}MIRAR PER QUÈ AIXÒ ÉS VERITAT ABANS D'ENTREGAR}
 
+    Amb això, hem vist que tota varietat diferenciable suau $n$-dimensional admet un encabiment en $\mathbb R^{N}$. Pel lema \ref{lema:encabiment_whitney}, tenim que $M$ admet un encabiment en $\mathbb R^{2n+1}$.
+    \qed
 }
 
 
@@ -520,21 +547,25 @@ Per tal de poder parlar de geometria en varietats diferenciables arbitràries, n
     
     Anomenem \textbf{varietat Riemanniana} a una varietat diferenciable dotada d'una mètrica Riemanniana.
 \end{defi}
-En qualsevol sistema de coordenades tal que les coordenades siguin $z_1,\dots,z_n$, la mètrica Riemanniana es pot expressar com
+En qualsevol sistema de coordenades tal que les coordenades siguin $z_1,\dots,z_n$, la mètrica Riemanniana es pot expressar com\footnote{Per l'última igualtat prenem la notació d'Einstein per als sumatoris.}
 \begin{equation*}
-    g = \sum_{i,j=1}^n g_{ij}dz^i\otimes dz^j = g_{ij}dz^idz^j,
+    g = \sum_{i,j=1}^n g_{ij}dz^i\otimes dz^j := g_{ij}dz^idz^j,
 \end{equation*}
-on $g_{ij}$ són funcions diferenciables en $U$. {\color{blue} i què és aquesta $dz$?}
+on $g_{ij}$ són funcions diferenciables en $U$ i $dz^i$ són les 1-formes coordenades.
+
+\begin{defi}
+    Anomenem $1-$formes coordenades, $\set{dz^1,\dots,dz^n}$, a la base de $T_p^*M$ obtinguda dualitzant la base $\set{\frac{\partial}{\partial z_1},\dots,\frac{\partial}{\partial z_n}}$ de $T_pM$ en un sistema de coordenades $z_1,\dots,z_n$.
+\end{defi}
 
 \begin{defi}
     Anomenarem \textbf{mètrica euclidiana} en $\mathbb R^n$ la mètrica Riemanniana que en qualsevol sistema de coordenades tal que les coordenades siguin $z_1,\dots,z_n$ es pot expressar com
     \begin{equation*}
-        \langle\cdot,\cdot\rangle = \delta_{ij}dz^idz^j,
+        \langle\cdot,\cdot\rangle := \delta_{ij}dz^idz^j,
     \end{equation*}
     on $\delta_{ij}$ és la delta de Kronecker.
 \end{defi}
 
-\begin{defi}
+\begin{defi}\label{def:pullback_metric}
     Siguin $M$ i $N$ dues varietats Riemannianes, $g$ una mètrica Riemanniana en $N$ i $F:M\to N$ una aplicació diferenciable. Anomenem \textbf{pullback de $g$ per $F$} la mètrica Riemanniana $F^*g$ en $M$ tal que, per qualsevol parell de vectors tangents $u,v\in T_pM$,
     \begin{equation*}
         (F^*g)_p(v,u) = g_{F(p)}(dF_p(v),dF_p(u)),

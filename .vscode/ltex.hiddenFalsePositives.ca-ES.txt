@@ -12,3 +12,4 @@
 {"rule":"APOSTROFACIO_MOT_DESCONEGUT","sentence":"^\\QAnomenem solució de \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q a una corba\\E$"}
 {"rule":"APOSTROFACIO_MOT_DESCONEGUT","sentence":"^\\QDe fet, si anomenem \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q a l'origen de \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, aleshores\\E$"}
 {"rule":"ESPAIS_QUE_FALTEN_PUNTUACIO","sentence":"^\\QEn concret, definim \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, on \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q i \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Qdf(X)\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Qf\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\QX\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q,(W,V)=0\\E$"}
+{"rule":"FALTA_ELEMENT_ENTRE_VERBS","sentence":"^\\QAnomenem cinta de Möbius plana de rela la varietat topològica amb frontera Hem de definir a la secció anterior varietat topològica amb frontera obtinguda amb la següent identificació d'un rectangle \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
