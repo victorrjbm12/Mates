@@ -2,7 +2,7 @@
 {\color{red} Manca fer un repàs al que hem escrit i assegurar que s'entengui tot, però està bastant bé.
 }
 \section{Introducció al capítol}
-Al capítol anterior hem vist que, tot i que sempre existeix algun espai euclidià de dimensió prou alta tal que s'hi pugui encabir una varietat topològica $C^\infty$, pel teorema de Whitney, no sempre és possible encabir-los en espai de dimensió 3. En concret, fins i tot per varietats que sí es poden encabir suaument en $\mathbb R^3$, hem vist que no sempre és possible encabir-les isomètricament, com hem vist en el cas del tor. 
+Al capítol anterior hem vist que, tot i que pel teorema de Whitney sempre existeix algun espai euclidià de dimensió prou alta tal que s'hi pugui encabir una varietat topològica $C^\infty$, no sempre és possible encabir-los en un espai de dimensió 3. En concret, fins i tot per varietats que sí es poden encabir suaument en $\mathbb R^3$, hem vist que no sempre és possible encabir-les isomètricament, com és el cas del tor. 
 
 A continuació presentem un resultat obtingut recentment, l'any 2023, per Richard Evan Schwartz, on demostra una altra restricció per una varietat amb frontera, aquesta vegada en el cas de les cintes de Möbius. Veurem que, tot i que és possible encabir-les suaument i isomètrica en $\mathbb R^3$ quan el costat llarg de la cinta de Möbius és $\sqrt3$ vegades major que el curt, no és possible fer-ho quan és més petit. 
 
@@ -13,6 +13,15 @@ La font d'aquest capítol és gairebé exclusivament la versió més nova de l'a
 {\color{red} El Schwartz menciona aquí uns papers que expliquem més sobre la banda de Möbius, si volem escriure més sobre el tema els podem utilitzar.}
 
 \section{Introducció al problema}
+Comencem introduint un tipus d'objecte que no havíem vist fins ara, la varietat topològica amb frontera. No dedicarem gaire espai a estudiar-les, però és important entendre que molts dels conceptes i resultats que hem vist al capítol anterior es poden generalitzar a varietats topològiques amb frontera, tractant la frontera com un altre varietat topològica de dimensió $n-1$.
+\begin{defi}
+    Sigui $M$ un espai topològic Hausdorff i tal que verifica el segon axioma de numerabilitat. Diem que $M$ és una \textbf{varietat topològica amb frontera de dimensió $n$} si per a cada $p\in M$ existeix un entorn obert $U\subseteq M$ de $p$ que és homeomorf a un obert de $\mathbb R^n$ o a un obert del semiespai superior $\mathbb H^n := \set{(x_1, \dots, x_n)\in\mathbb R^n:x_n\geq 0}$. 
+\end{defi}
+
+\begin{nota}
+    Escriurem $\partial M$ per denotar \textbf{la frontera de $M$}, és a dir, el subconjunt de punts de $M$ al voltant dels quals la varietat topològica amb frontera té un entorn homeomorf a $\mathbb H^n$ però no en té cap d'homeomorf a $\mathbb R^n$. Recíprocament, anomenarem $Int(M)$ l' \textbf{interior de $M$}, és a dir, els punts de $M$ que no pertanyen a $\partial M$.
+\end{nota}
+
 
 \subsection{Definicions}
 \begin{defi}

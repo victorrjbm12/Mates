@@ -4,67 +4,88 @@
     \item Motivar que estem parlant d'això inspirats per l'acordió de Möbius.
     \item Enunciar i demostrar el teorema de Nash.
     \item Com a mínim explicar les millores de Kuiper i Thurston.
-    \item Explicar la demostració de que qualsevol encabiment suau del tor ha de tenir algun punt el·líptic.
 \end{itemize}
 }
+
+{\color{red}Cal canviar les passes per passos}
+
+
+
 \section{Introducció al capítol}
+Al final del capítol anterior hem vist que és possible trobar immersions i encabiments isomètrics que resultarien impossibles en altres condicions si no imposem que aquestes aplicacions siguin de classe $C^\infty$. Aquest capítol està dedicat a una formalització d'aquesta idea mitjançant el teorema de Nash-Kuiper. El cos principal del capítol consistirà en la demostració dels teoremes originals tals com els va demostrar \cite{nash1954}, de manera que veurem que si una varietat Riemanniana es pot encabir de manera curta en un espai euclidià de dimensió $k\ge n+2$, aleshores es pot modificar aquesta aplicació per obtenir-ne una d'isomètrica tan propera com vulguem. Al final del capítol veurem una millora clau en la demostració, comentant breument l'article de Nicolaas H. Kuiper, \cite{kuiper1955}, que demostra el mateix resultat per a immersions $C^\infty$ de dimensió $n+1$.
+
 En aquesta secció enunciarem i demostrarem els quatre teoremes d'immersions isomètriques $C^1$ de John Forbes Nash Jr., seguint l'article en què els va publicar el 1954 a Annals of Mathematics, \cite{nash1954}.\\
 {\color{blue} explicar una mica el context i tal. El podem treure de la introducció del llibre del Tor.
 
 Bàsicament, dir que és un teorema sorprenent perquè no se l'esperava ningú, explicar que el que fa és dividir en etapes i passos, i explicar que Kuiper fa una millora de la demostració de Nash per a una dimensió menys.
 
 Important tornar a llegir i revisar quan dic successió i quan dic sèrie.}
+
+\begin{defi}
+    Diem que una varietat Riemanniana $M$ és \textbf{tancada} si és compacta, i diem que és \textbf{oberta} si tots els seus components connexos no són tancats. {\color{blue} Potser s'ha de moure a algun altre lloc?}
+\end{defi}
+
+\begin{nota}
+    Sempre que parlem d'encabiments o immersions de varietats en espais $\mathbb R^n$, suposarem que aquests tenen la mètrica euclidiana.
+\end{nota}
+
+La imatge d'una varietat tancada per un encabiment o immersió contínua és compacta. Si la imatge és una subvarietat de $\mathbb R^k$, aleshores és tancada i acotada. Ara bé, per a una varietat oberta la imatge no és necessàriament compacta. En aquest cas, és possible definir el \textbf{conjunt límit} de la imatge, que és el conjunt de punts de $\mathbb R^k$ tals que són el límit de successions de punts de la imatge, però que no pertanyen a la imatge. 
+
+\begin{ex}
+    El conjunt límit de l'encabiment per la inclusió $\imath$ de la bola oberta $\mathbb B^2$ en $\mathbb R^2$ és el cercle $\mathbb S^1$.
+\end{ex}
+
 \section{Enunciat dels teoremes}
-{\color{blue} Hauria de fer servir $\mathbb R^k$ en comptes de $E^k$?}
+
 \begin{teo}
-    Qualsevol varietat Riemanniana tancada de dimensió $n$ té un encabiment isomètric $C^1$ en $E^{2n}$.
+    Qualsevol varietat Riemanniana tancada de dimensió $n$ té un encabiment isomètric $C^1$ en $\mathbb R^{2n}$.
 \end{teo}
 \begin{teo}
-    Qualsevol varietat Riemanniana de dimensió $n$ té una immersió isomètrica $C^1$ en $E^{2n}$ i un encabiment isomètric $C^1$ en $E^{2n+1}$.
+    Qualsevol varietat Riemanniana de dimensió $n$ té una immersió isomètrica $C^1$ en $\mathbb R^{2n}$ i un encabiment isomètric $C^1$ en $\mathbb R^{2n+1}$.
 \end{teo}
 \begin{teo}
-    Si una varietat Riemanniana tancada de dimensió $n$ té una immersió o encabiment $C^\infty$ en $E^{k}$ amb $k\ge n+2$, aleshores també té una immersió o encabiment, respectivament, isomètric en $E^{k}$.
+    Si una varietat Riemanniana tancada de dimensió $n$ té una immersió o encabiment $C^\infty$ en $\mathbb R^{k}$ amb $k\ge n+2$, aleshores també té una immersió o encabiment, respectivament, isomètric en $\mathbb R^{k}$.
 \end{teo}
 \begin{teo}
-    Si una varietat Riemanniana oberta de dimensió $n$ té una immersió o encabiment $C^\infty$ curta en $E^{k}$ amb $k\ge n+2$ que no se solapa amb el seu conjunt límit (si aquest existeix), aleshores també té una immersió o encabiment, respectivament, isomètric en $E^{k}$ del mateix tipus.
+    Si una varietat Riemanniana oberta de dimensió $n$ té una immersió o encabiment $C^\infty$ curta en $\mathbb R^{k}$ amb $k\ge n+2$ que no se solapa amb el seu conjunt límit (si aquest existeix), aleshores també té una immersió o encabiment, respectivament, isomètric en $\mathbb R^{k}$ del mateix tipus.
 \end{teo}
 \section{Demostració}
-Comencem amb una varietat diferenciable Riemanniana $M$ de dimensió $n$, amb una mètrica intrínseca donada per un tensor mètric $g_{ij}$. L'objectiu principal serà trobar una immersió isomètrica d'aquesta varietat $M$ en algun espai euclidià.
+Sigui $(M,g)$ una varietat diferenciable Riemanniana de dimensió $n$, amb la seva mètrica intrínseca donada per un tensor mètric $g_{ij}$. Volem trobar una immersió isomètrica d'aquesta varietat $M$ en algun espai euclidià.
 
-Suposem que tenim una immersió de $M$ en un espai euclidià $\mathbb R^k$.
+Suposem que tenim una immersió $f$ de $M$ en un espai euclidià $\mathbb R^k$, de manera que per un punt amb coordenades locals $\set{x^i}$ de $M$, les coordenades de la seva imatge en $\mathbb R^k$ són $\set{z^\alpha(x^1, \dots, x^n)}$,
 \begin{align*}
-    f:M&\to \mathbb R^k \\
-    \set{x^i} &\mapsto \set{z^\alpha(x^1, \dots, x^n)} 
+    f:M&\to \mathbb R^k, \\
+    \set{x^i} &\mapsto \set{z^\alpha(x^1, \dots, x^n)}. 
 \end{align*}
-Aleshores, la mètrica induïda en $M$ és 
-\begin{equation}
+Aleshores, la mètrica induïda en $M$ és donada pel tensor mètric
+\begin{equation*}
     h_{ij} = \sum_\alpha \frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}.
-\end{equation}
-Per tal de començar la demostració, el primer que necessitarem serà una immersió $f$ que sigui de classe $C^\infty$ i \textit{curta}.
+\end{equation*}
+El nostre objectiu és equivalent a aconseguir que $h_{ij}=g_{ij}.$
+
+Per tal de començar la demostració, el primer que necessitarem serà que la immersió original $f$ que sigui de classe $C^\infty$ i \textit{curta}.
 \begin{defi}
-    Una immersió $f:M\to \mathbb R^k$ és \textbf{curta} si la diferència de les mètriques $g_{ij}-h_{ij}$ és definida positiva.
+    Diem que una immersió $f:M\to \mathbb R^k$ és \textbf{curta} si l'error mètric és definit positiu, on l'\textbf{error mètric} és el tensor diferència $\delta_{ij} = g_{ij} - h_{ij}$.
 \end{defi}
-El més important d'aquesta definició és que, si $f$ és curta, els vectors sobre $M$ mai s'allarguen sota $f$. Aquesta primera immersió $f$ és fàcil de trobar, en general, per a varietats tancades, mentre que per a varietats obertes cal entrar en més detalls. {\color{blue}  AQUÍ CITAR LA PART ON ES FA.}
+El més important d'aquesta definició és que, si $f$ és curta, els vectors tangents a $M$ mai s'allarguen sota $f$. És fàcil trobar immersions d'aquesta mena per a varietats tancades, mentre que per varietats obertes cal utilitzar un mecanisme més complicat. Discutim la manera d'obtenir aquestes immersions a la secció \ref{sec:encabiment_inicial}.
 
-Un cop trobada aquesta immersió curta, l'estructura de la demostració dels teoremes de Nash consisteix en fer una successió de pertorbacions de $f$ que, progressivament, disminueixen l'error mètric fins a trobar una immersió isomètrica en el límit. En general, el procés de pertorbació es divideix en \textbf{etapes} (en anglès, \textit{stages}), i a cada etapa es divideix en \textbf{passos} (en anglès, \textit{steps}). Així, la primera etapa prendrà la nostra immersió curta $f$ i en retornarà una $f_1$ amb un error mètric com a molt la meitat del de $f$, que serà també $C^\infty$ i curta. Aquesta $f_1$ serà millorada en la segona etapa, i així successivament.
+Un cop trobada aquesta immersió curta, l'estructura de la demostració dels teoremes de Nash consisteix en fer una successió de pertorbacions de $f$ que disminueixen l'error mètric progressivament fins a convergir en una immersió isomètrica. En general, el procés de pertorbació es divideix en \textbf{etapes} (en anglès, \textit{stages}), i a cada etapa es divideix en \textbf{passos} (en anglès, \textit{steps}). Així, la primera etapa prendrà la nostra immersió curta $f$ i en retornarà una $f_1$ amb un error mètric com a molt la meitat del de $f$, que serà també $C^\infty$ i curta. Aquesta $f_1$ serà millorada en la segona etapa, i així successivament.
 
-La manera en què l'error mètric disminueix en cada etapa és la següent: en la primera immersió, l'error mètric és 
-\begin{equation}
-    \delta_{ij} = g_{ij}-h_{ij}.
-\end{equation}
-En la segona etapa, l'error mètric serà
-\begin{equation}
+La manera en què l'error mètric haurà de disminuir en cada etapa és la següent: si en la primera immersió, l'error mètric és 
+\begin{equation*}
+    \delta_{ij} = g_{ij}-h_{ij},
+\end{equation*}
+en la segona etapa, l'error mètric serà
+\begin{equation*}
     \overline\delta_{ij} = g_{ij}-\overline{h}_{ij}\approx \frac12\delta_{ij},
-\end{equation}
+\end{equation*}
 on $\overline{h}_{ij}$ és la mètrica induïda per $f_1$. Aquest error mètric anirà disminuint geomètricament després de cada etapa, i en el límit obtindrem una immersió isomètrica.
 
-En cada etapa, el procés de pertorbació es divideix en passos. Cada pas afectarà només un entorn local de $M$, però s'hauran de dur a terme l'un rere l'altre, no simultàniament. Per tal de fer-ho, cal prendre un recobriment localment finit de $M$ per conjunts tancats $\set{N_p}_p$. És a dir, tals que $M$ és la unió de tots ells, i cada $N_p$ interseca només un nombre finit d'altres $N_q$. {\color{blue}  Al Lee crec que s'explica el fet que sempre es pot trobar aquest recobriment per tancats.}
+En cada etapa individual, el procés de pertorbació es divideix en passos. Cada pas afectarà només un cert entorn de $M$, però s'hauran de dur a terme l'un rere l'altre, no simultàniament. Per tal de fer-ho, cal prendre un recobriment localment finit de $M$ per conjunts compactes $\set{N_p}_p$. La construcció d'aquest recobriment és possible, com hem vist al lema \ref{lema:paracompact}. Sigui $\set{\varphi_p}_p$ una partició de la unitat subordinada a $\set{N_p}_p$. 
 
-Associarem a cada $N_p$ una funció ponderació $\varphi_p$ de classe $C^\infty$ positiva a l'interior de $N_p$ i nul·la fora d'ell i a la frontera. Definim aquestes funcions tals que la suma de totes les $\varphi_p$ valgui $1$ en qualsevol punt. {\color{blue} crec que això s'anomena una partició de la unitat. Mirar el Lee. } En cada entorn tancat, voldrem que l'error mètric $\delta_{ij}$ sigui reduït en $\frac12\varphi_p\delta_{ij}$ després d'una etapa. Per fer-ho, necessitem aproximar $\delta_{ij}$ per un tensor de classe $C^\infty$ i positiu $\beta_{ij}$.
-
-Per tal de fer servir aquest $\beta_{ij}$ per a reduir l'error mètric, necessitem el següent resultat:
+En cada entorn $N_p$, voldrem que l'error mètric $\delta_{ij}$ sigui reduït en $\frac12\varphi_p\delta_{ij}$ després d'una etapa. Per fer-ho, necessitem aproximar $\delta_{ij}$ per un tensor de classe $C^\infty$ i definit positiu $\beta_{ij}$. Per tal de fer servir aquest $\beta_{ij}$ per reduir l'error mètric, necessitem el següent resultat:
 \begin{lema}
-    Sigui $\beta_{ij}$ un tensor de classe $C^\infty$ i definit positiu, i sigui $\varphi_p$ seguint la definició de més amunt. Aleshores, es poden trobar funcions no-negatives $a_\nu$ de classe $C^\infty$ i un nombre finit de funcions lineals $\psi^\nu = \psi^\nu(x^1, \dots, x^n)$ tals que
+    Sigui $\beta_{ij}$ un tensor de classe $C^\infty$ i definit positiu, i sigui $\varphi_p$ la funció de la partició de la unitat associada a $N_p$. Aleshores, es poden trobar funcions no-negatives $a_\nu$ de classe $C^\infty$ i un nombre finit de funcions lineals $\psi^\nu = \psi^\nu(x^1, \dots, x^n)$ tals que
 \begin{equation}\label{eq:lema_descomp}
     \frac12\varphi_p\beta_{ij} = \sum_\nu a_\nu \left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right),
 \end{equation}
@@ -73,7 +94,7 @@ Per tal de fer servir aquest $\beta_{ij}$ per a reduir l'error mètric, necessit
     Cal remarcar que aquest lema només és cert si $\beta_{ij}$ és definit positiu, i que el nombre de termes del sumatori és finit.
 \end{obs}
 {\color{green!50!black}\textit{Prova} ({\color{blue} Aquesta és la demostració del Nash. És una mica llarga però s'entén bastant bé si la mires amb cura. El Sung-Jin Oh té una versió més curta amb una notació diferent.}).
-El conjunt de les matrius simètriques definides positives de rang $n$ és un con de dimensió $\frac12n(n+1)$.{\color{blue} Revisar d'on surt això, sembla bastant directe mirant quins coeficients es poden canviar.} És possible cobrir aquest con amb conjunts simplicials geomètrics oberts, de tal manera que cada punt del con estigui cobert per, com a molt, un nombre $W$ d'aquests entorns, on $W$ depèn només de $n$. 
+El conjunt de les matrius simètriques definides positives de rang $n$ és un con de dimensió $\frac12n(n+1)${ \color{blue} Revisar d'on surt això abans de fer la presentació}. És possible cobrir aquest con amb conjunts simplicials oberts, de tal manera que cada punt del con estigui cobert per, com a molt, un nombre $W$ d'aquests entorns, on $W$ depèn només de $n$. 
 
 Una matriu qualsevol representada per un punt interior d'un símplex és combinació lineal de les matrius que representen els vèrtexs del símplex. Podem posar
 $$\begin{aligned}
@@ -94,40 +115,36 @@ Si ara considerem que $\beta_{ij}$ defineix una aplicació de classe $C^\infty$ 
 on $M_{(\mu,\nu)ij}$ són les diferents matrius que representen els vèrtexs dels símplexs. Ara, per cada matriu $M_{(\mu,\nu)ij}$ obtenim $n$ autovectors unitaris ortogonals $\set{V_r}$ i els seus autovalors $\set{v_r}$.
 
 Si $\psi_r$ és per cada $r$ la funció lineal dels paràmetres locals pels quals $\sqrt{v_r}V_r$ és el vector gradient {\color{blue}Aquesta és la part més rara, entenc que simplement es pot fer}, tenim que
-\begin{equation}
+\begin{equation*}
     M_{(\mu,\nu)ij} = \sum_{r}\frac{\partial\psi_r}{\partial x^i}\frac{\partial\psi_r}{\partial x^j}
-\end{equation}
-i, substituint en \ref{eq:beta_con}, tenim que
-\begin{equation}
+\end{equation*}
+i, substituint en l'equació \ref{eq:beta_con}, tenim que
+\begin{equation*}
     \beta_{ij} = \sum_{r}\sum_{\mu,\nu}C_{\mu,\nu}^*M_{(\mu,\nu)ij}\frac{\partial\psi_r}{\partial x^i}\frac{\partial\psi_r}{\partial x^j}
-\end{equation}
+\end{equation*}
 i, agrupant termes en $a_\nu$, obtenim el resultat.\qed
 }
 
 \subsection{La pertorbació en un pas}
-En el pas associat a $N_p$ en una etapa donada, caldrà fer una pertorbació de la immersió curta obtinguda anteriorment. Per fer-ho, Nash considera dos camps vectorials unitaris ortogonals entre ells i a la immersió en l'entorn $N_p$, representats per funcions de classe $C^\infty$, $\zeta^\alpha$ i $\eta^\alpha$. És a dir, compleixen les següents propietats:
-\begin{align}
+En el pas associat a $N_p$ d'una etapa donada, caldrà fer una pertorbació de la immersió curta obtinguda anteriorment. Per fer-ho, considerem dos camps vectorials unitaris ortogonals entre ells i a la immersió en l'entorn $N_p$, representats per funcions de classe $C^\infty$, $\zeta^\alpha$ i $\eta^\alpha$. 
+És a dir, les coordenades dels camps vectorials normals $\zeta$ i $\eta$ compleixen les següents propietats:
+\begin{align*}
     \sum_\alpha (\zeta^\alpha)^2 = 1, \\
     \sum_\alpha (\eta^\alpha)^2 = 1, \\
     \sum_\alpha \zeta^\alpha\eta^\alpha = 0, \\
     \sum_\alpha \zeta^\alpha\frac{\partial z^\alpha}{\partial x^i} = \sum_\alpha \eta^\alpha\frac{\partial z^\alpha}{\partial x^i} = 0.
-\end{align}
-\begin{obs}
-    {\color{blue} És possible que això ho expliqui en algun altre lloc, però per ara ho deixo aquí. Estaria bé explicar el canvi que fa Kuiper, si hi ha espai, que jo crec que sí.}
+\end{align*}
 
-    El fet que Nash utilitzi dos camps vectorials unitaris ortogonals entre ells i a la immersió en l'entorn $N_p$ restringeix severament la utilitat del seu resultat. En concret, per varietats Riemannianes de dimensió $2$, com l'esfera o el tor, el que ens interessa idealment és obtenir immersions en l'espai euclidià tridimensional, per tal de poder-les representar visualment, mentre que el resultat de Nash dóna immersions en un espai euclidià de dimensió $4$. Afortunadament, com veurem més endavant, Nicolaas H. Kuiper va modificar lleugerament la prova de Nash per rebaixar la codimensió de l'espai euclidià de $k=2$ a $k=1$.
-\end{obs}
-
-Amb aquests camps vectorials, la pertorbació de la immersió curta $z^\alpha$ en un pas a l'entorn $N_p$ és
+Amb aquests camps vectorials, la pertorbació trobada per Nash de la immersió curta $z^\alpha$ en un pas a l'entorn $N_p$ és
 \begin{equation}\label{eq:pertorbacio}
     \boxed{\overline{z}^\alpha = z^\alpha + \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu) + \eta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\sin(\lambda \psi^\nu)}
 \end{equation}
 on $\lambda$ és una constant positiva tan gran com vulguem.
 
-Ara cal veure que el canvi mètric $\sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}$ és aproximadament igual al terme $\nu$ del sumatori de \ref{eq:lema_descomp}.
+Ara cal veure que el canvi mètric $\sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}$ és aproximadament igual al terme $\nu$ del sumatori de l'equació \ref{eq:lema_descomp}.
 
 \begin{prop}\label{prop:mida_pertorbacio}
-    El canvi mètric a l'entorn $N_p$ en el pas associat a $a_\nu$ i $\psi^\nu$ donat per \ref{eq:pertorbacio} compleix
+    El canvi mètric a l'entorn $N_p$ en el pas associat a $a_\nu$ i $\psi^\nu$ donat per l'equació \ref{eq:pertorbacio} compleix
     \begin{equation}\label{eq:pertorbacio_cota}
         \sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j} =  a_\nu \frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right)
     \end{equation}
@@ -157,12 +174,12 @@ Observem que els dos primers termes d'aquesta suma són $O\left(\frac1\lambda\ri
     \frac{\partial}{\partial x^i}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right) = -
     \zeta^\alpha\sqrt{a_\nu}\sin(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i} + O\left(\frac1\lambda\right).
 \end{equation*}
-El producte d'aquest terme amb la derivada respecte de $x^j$ en \ref{eq:pertorbacio_descomp} és, per tant,
+El producte d'aquest terme amb la derivada respecte de $x^j$ en l'equació \ref{eq:pertorbacio_descomp} és, per tant,
 \begin{equation*}
     \frac{\partial}{\partial x^i}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right) \frac{\partial}{\partial x^j}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right) = 
     (\zeta^\alpha)^2{a_\nu}\sin^2(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right).
 \end{equation*}
-Sumant aquest resultat amb el corresponent a $\eta^\alpha$, obtenim que el terme $\alpha$ del sumatori de \ref{eq:pertorbacio_descomp} és
+Sumant aquest resultat amb el corresponent a $\eta^\alpha$, obtenim que el terme $\alpha$ del sumatori de l'equació \ref{eq:pertorbacio_descomp} és
 \begin{align*}
     &(\zeta^\alpha)^2{a_\nu}\sin^2(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + (\eta^\alpha)^2{a_\nu}\cos^2(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right)
     \\&=
@@ -182,7 +199,9 @@ De manera que
 on per a la darrera igualtat hem usat que $\sum_\alpha(\zeta^\alpha)^2 = \sum_\alpha(\eta^\alpha)^2 = 1$.\qed
 }
 
-Amb aquesta última proposició s'ha demostrat que la pertorbació indueix un canvi mètric molt proper al que volem, amb un error $O\left(\frac1\lambda\right)$. De la mateixa manera, observem que la pertorbació en un pas, \ref{eq:pertorbacio}, és $O\left(\frac1\lambda\right)$. A continuació, volem veure quin és el canvi en les primeres derivades després d'una etapa del procés en un entorn $N_p$. És a dir, volem aproximar l'efecte de totes les pertorbacions associades a cada pas de l'etapa. Per fer-ho, primer notem que el canvi en les primeres derivades associat al pas $\nu$ és el següent:
+Amb aquesta última proposició s'ha demostrat que la pertorbació indueix un canvi mètric molt proper al que volem, amb un error d'ordre $O\left(\frac1\lambda\right)$. De la mateixa manera, observem que la pertorbació en un pas, \ref{eq:pertorbacio}, és també d'ordre $O\left(\frac1\lambda\right)$. 
+
+A continuació, volem veure quin és el canvi en les primeres derivades després d'una etapa del procés en un entorn $N_p$. És a dir, volem aproximar l'efecte de totes les pertorbacions associades a cada pas de l'etapa. Per fer-ho, primer notem que el canvi en les primeres derivades associat al pas $\nu$ és el següent:
 \begin{equation}\label{eq:primera_derivada_cota}
     \left| \frac{\partial\overline{z}^\alpha}{\partial x^i} - \frac{\partial z^\alpha}{\partial x^i} \right| \le 2\sqrt{a_\nu}\left| \frac{\partial\psi^\nu}{\partial x^i} \right| + O\left(\frac1\lambda\right).
 \end{equation}
@@ -196,7 +215,7 @@ Amb aquesta última proposició s'ha demostrat que la pertorbació indueix un ca
 \end{prop}
 {
 \color{green!50!black}\textit{Prova}.
-Considerem l'element $i$ de la diagonal de les matrius de \ref{eq:lema_descomp}:
+Considerem l'element $i$ de la diagonal de les matrius de l'equació \ref{eq:lema_descomp}:
 \begin{equation*}
     \frac12\varphi_p\beta_{ii} = \sum_\nu a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)^2 = \sum_\nu \left(\sqrt{a_\nu}\left|\frac{\partial\psi^\nu}{\partial x^i}\right|\right)^2.
 \end{equation*}
@@ -210,43 +229,41 @@ Recordem de la prova del lema \ref{eq:lema_descomp} que hi ha com a molt $M = W[
     \le
     \sqrt{\left(K\beta_{ii}\right)}.
 \end{align*}
-Combinant aquest resultat amb \ref{eq:primera_derivada_cota}, obtenim que el canvi en les primeres derivades associat a una etapa del procés en un entorn $N_p$ és
+Combinant aquest resultat amb la desigualtat \ref{eq:primera_derivada_cota}, obtenim que el canvi en les primeres derivades associat a una etapa del procés en un entorn $N_p$ és
 \begin{equation*}
     \left| \frac{\partial\overline{z}^\alpha}{\partial x^i} - \frac{\partial z^\alpha}{\partial x^i} \right| \le \sqrt{K\beta_{ii}} + O\left(\frac1{\lambda_1}\right) + O\left(\frac1{\lambda_2}\right) + \cdots + O\left(\frac1{\lambda_\nu}\right) + \cdots.
 \end{equation*}
 \qed
 }
 \subsection{Convergència dels passos en una etapa}
-{\color{blue} He de mirar si realment aquest és el títol que toca.}
-
 A continuació ens interessa veure quines són les constants $\set{\lambda_\nu}$ necessàries en les diferents passes d'una etapa per tal que el procés convergeixi tal com desitgem.
 \begin{defi}
-    Sigui $N_p$ un entorn de $M$, i considerem el pas $\nu$ d'una etapa donada.
+    Sigui $N_p$ un entorn del recobriment de $M$, i considerem el pas $\nu$ d'una etapa donada.
 \end{defi}
 \begin{itemize}\label{def: B1 B2 B3}
-    \item \textit{Anomenem $B_1$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi mètric per $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right)$ en \ref{eq:pertorbacio_cota}, per tots els parells $(i,j)$ i tots els punts de l'entorn $N_p$.}
-    \item \textit{Anomenem $B_2$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi de les primeres derivades en \ref{eq:primera_derivada_cota}, per tots els punts de l'entorn $N_p$.}
+    \item \textit{Anomenem $B_1$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi mètric per $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right)$ en l'equació \ref{eq:pertorbacio_cota}, per tots els parells $(i,j)$ i tots els punts de l'entorn $N_p$.}
+    \item \textit{Anomenem $B_2$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi de les primeres derivades en la desigualtat \ref{eq:primera_derivada_cota}, per tots els punts de l'entorn $N_p$.}
     \item \textit{Anomenem $B_3$ la cota superior permesa del canvi $\overline{z}^\alpha - z^\alpha$ en $N_p$.}
 \end{itemize}
 \begin{obs}
     Es pot trobar una pertorbació que compleixi les condicions anteriors per a qualsevol $B_1$, $B_2$ i $B_3$ donats, ja que tots tres disminueixen quan $\lambda$ augmenta i aquesta pot ser presa arbitràriament gran.
 \end{obs}
 
-Recordem que l'efecte desitjat després d'una etapa és prendre una mètrica induida $h_{ij}$ i trobar-ne una $h'_{ij}$ que redueixi a la meitat l'error mètric $\delta_{ij}$. És a dir, la nova mètrica $h'_{ij}$ ha de complir
-\begin{equation}
-    h'_{ij} =  \approx h_{ij} + \frac12\delta_{ij},
-\end{equation}
+Recordem que l'efecte desitjat després d'una etapa és prendre una mètrica induïda $h_{ij}$ i trobar-ne una $h'_{ij}$ que redueixi a la meitat l'error mètric $\delta_{ij}$. És a dir, la nova mètrica $h'_{ij}$ ha de complir
+\begin{equation*}
+    h'_{ij} \approx h_{ij} + \frac12\delta_{ij},
+\end{equation*}
 que també podem escriure com 
-\begin{equation}
+\begin{equation*}
     h'_{ij} = g_{ij} - \frac12\delta_{ij} + e_{ij},
-\end{equation}
+\end{equation*}
 on $e_{ij}$ és el terme de l'error de l'aproximació. Així, la diferència entre la mètrica de la nova immersió i la original és
 \begin{equation}\label{eq:delta_prima}
     \delta_{ij}' = \frac12\delta_{ij} - e_{ij}.
 \end{equation}
-A continuació, ens volem assegurar que $\delta_{ij}'$ sigui definit positiu, i que el tensor d'error $e_{ij}$ sigui prou petit per permetre la convergència del procés.
+A continuació, volem assegurar que $\delta_{ij}'$ sigui definit positiu, i que el tensor d'error $e_{ij}$ sigui prou petit per permetre la convergència del procés.
 \begin{nota}
-    Per un tensor donat $T_{ij}$ en un entorn $N_p$, escrivim $|T_{ij}|_{N_p}$ per denotar el màxim dels valors absoluts dels components de $T_{ij}$ en $N_p$. Aquesta és una bona aproximació de la mida del tensor $T_{ij}$ en $N_p$. {\color{blue} Cal mirar si hi ha una millor notació}
+    Per un tensor donat $T_{ij}$ en un entorn $N_p$, escrivim $|T_{ij}|_{N_p}$ per denotar el màxim dels valors absoluts dels components de $T_{ij}$ en $N_p$. Aquesta és una bona aproximació de la mida del tensor $T_{ij}$ en $N_p$.
 \end{nota}
 \begin{prop}\label{prop:dos de tres}
     Sigui $N_p$ un entorn de $M$. En una etapa donada del procés, existeix una successió $\set{B_{1\nu}}_{\nu}$, on $B_{1\nu}$ és el $B_1$ de la definició \ref{def: B1 B2 B3} al pas $\nu$, tal que, després de fer tots els passos en $N_p$
@@ -254,7 +271,7 @@ A continuació, ens volem assegurar que $\delta_{ij}'$ sigui definit positiu, i 
 \begin{itemize}
     \item \textit{$\delta_{ij}'$ és definit positiu en $N_p$.}
     \item \textit{$e_{ij}$ és prou petit per assegurar que el procés convergeix després de fer totes les etapes.}
-    \item \textit{La convergència és tal que la mida de $\delta_{ij}'$ és aproximadament $2/3$ de la mida de $\delta_{ij}$ després de cada etapa. }{\color{blue} No m'agrada gaire com està descrita aquesta proposició}
+    \item \textit{La convergència és tal que la mida de $\delta_{ij}'$ és aproximadament $2/3$ de la mida de $\delta_{ij}$ després de cada etapa. }
 \end{itemize}
 \begin{obs}
     Aquest resultat confirma que el procés convergeix, de tal manera que la immersió resultant després de realitzar totes les etapes és isomètrica. {\color{blue} Potser seria més correcte dir que la mètrica resultant és isomètrica, però encara no sabem si la immersió convergeix correctament.}
@@ -270,18 +287,18 @@ Si també imposem que, després d'una etapa,
 \begin{equation}\label{eq:e_cota}
     \max|e_{ij}|_{N_p} \le \frac16\min|\delta_{ij}|_{N_p},
 \end{equation}
-podem prendre \ref{eq:delta_prima} i veure que
+podem prendre l'equació \ref{eq:delta_prima} i veure que
 \begin{align}\label{eq:delta_prima_cota}
     \nonumber\max|\delta_{ij}'|_{N_p} = \max\left|\frac12\delta_{ij} - e_{ij}\right|_{N_p} \le \max\left|\frac12\delta_{ij}\right|_{N_p} + \max|e_{ij}|_{N_p} \\
     \le \frac12\max|\delta_{ij}|_{N_p} + \frac16\min|\delta_{ij}|_{N_p} \le \frac23\max|\delta_{ij}|_{N_p}.
 \end{align}
-Amb això queda demostrat que es pot escollir $e_{ij}$ tal que la mida de $\delta_{ij}'$ és aproximadament $2/3$ de la mida de $\delta_{ij}$ després de cada etapa. Així, és clar que la diferència entre la mètrica de la immersió i $g_{ij}$ convergeix a $0$ en el límit.
+Amb això queda demostrat que es pot escollir $e_{ij}$ tal que la mida de $\delta_{ij}'$ sigui aproximadament $2/3$ de la mida de $\delta_{ij}$ després de cada etapa. Així, és clar que la diferència entre la mètrica de la immersió i $g_{ij}$ convergeix a $0$ en el límit.
 
-Hem obtingut dues restriccions a la mida de $e_{ij}$ que cal complir, \ref{eq:epsilon_p} i \ref{eq:e_cota}. Ara cal relacionar-les amb les passes de l'etapa, per tal d'obtenir la successió $\set{B_{1\nu}}_{\nu}$ desitjada. 
+Hem obtingut dues restriccions a la mida de $e_{ij}$ que cal complir, les desigualtats \ref{eq:epsilon_p} i \ref{eq:e_cota}. Ara cal relacionar-les amb les passes de l'etapa, per tal d'obtenir la successió $\set{B_{1\nu}}_{\nu}$ desitjada. 
 
-Primer de tot, recordem que els entorns $N_p$ poden intersecar amb altres entorns $N_q$. Així, els canvis que fem en $N_p$ poden afectar a $N_q$. Afortunadament, el nombre d'entorns que intersequen cada $N_p$ és finit. Si $N_p$ interseca amb $\sigma$ entorns $N_q$, incloent $N_p$ mateix, aleshores podem prendre les restriccions de $N_p$, dividir-les per $\sigma$, i imposar-les a tots els $N_q$. Sigui $\varepsilon_p^*$ el mínim de totes aquestes restriccions sobre l'error de $N_p$.
+Primer de tot, recordem que els entorns $N_p$ poden intersecar amb altres entorns $N_q$. Així, els canvis que fem en $N_p$ poden afectar a $N_q$. Afortunadament, el nombre d'entorns que intersequen cada $N_p$ és finit. Si $N_p$ interseca amb un nombre $\sigma$ d'entorns $N_q$, incloent $N_p$ mateix, aleshores podem prendre les restriccions de $N_p$, dividir-les per $\sigma$, i imposar-les a tots els $N_q$. Sigui $\varepsilon_p^*$ el mínim de totes aquestes restriccions sobre l'error de $N_p$.
 
-Notem que hi ha dues fonts de l'error en $N_p$: el primer és l'aproximació preliminar de $\delta_{ij}$ pel tensor $\beta_{ij}$, i el segon és l'error acumulat per les passes individuals. Per tant, imposant $|\delta_{ij}-\beta_{ij}|_{N_p} \le \varepsilon_p^*$ obtenim 
+Notem que hi ha dues fonts de l'error en $N_p$: el primer és l'aproximació preliminar de $\delta_{ij}$ pel tensor $\beta_{ij}$, i el segon és l'error acumulat pels passos individuals. Per tant, imposant $|\delta_{ij}-\beta_{ij}|_{N_p} \le \varepsilon_p^*$ obtenim 
 \begin{equation}\label{eq:error_aproximacio}
     \left|\frac12\varphi_p\delta_{ij}-\frac12\varphi_p\beta_{ij}\right|_{N_p} \le \frac12\varepsilon_p^*.
 \end{equation}
@@ -290,7 +307,7 @@ per a l'error de les passes individuals, que podem assignar de la següent maner
 \begin{equation}\label{eq:error_passos}
     B_{1\nu} \le \frac{1}{2^{\nu+1}}\varepsilon_p^*.
 \end{equation}
-De manera que l'error total obtingut sumant \ref{eq:error_aproximacio} i \ref{eq:error_passos} és menor que
+De manera que l'error total obtingut sumant les cotes \ref{eq:error_aproximacio} i \ref{eq:error_passos} és menor que
 \begin{equation*}
     \frac12\varepsilon_p^* + \sum_{\nu=1}^\infty \frac1{2^{\nu+1}}\varepsilon_p^* = \varepsilon_p^*.
 \end{equation*}
@@ -298,22 +315,22 @@ Així, obtenim la successió $\set{B_{1\nu}}_{\nu}$ desitjada.
 \qed
 }
 \subsubsection{Realitzabilitat dels passos}
-Per tal que els passos siguin realitzables, només cal tenir una immersió $C^\infty$. Això és cert sempre que la mètrica induida sigui definida positiva i les immersions siguin $C^\infty$. Totes les funcions utilitzades en el procés són $C^\infty$, de manera que només cal veure que la mètrica induida és definida positiva.
+Per tal que els passos siguin realitzables, només cal tenir una immersió $C^\infty$. Això és cert sempre que la mètrica induïda sigui definida positiva i les immersions siguin $C^\infty$. Totes les funcions utilitzades en el procés són $C^\infty$, de manera que només cal veure que la mètrica induïda és definida positiva.
 
-Procedim per inducció. Suposem que cada pas pas pren una immersió que produeix una mètrica induida definida positiva, i augmenta la mètrica induida en $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}\right)$. Així, la mètrica induida és definida positiva. Aquest augment és un tensor no-negatiu, i l'error és $O\left(\frac1{\lambda}\right)$, de manera que per una $\lambda$ prou gran, ens podem assegurar que la mètrica induida és definida positiva.
+Procedim per inducció. Suposem que cada pas pas pren una immersió que produeix una mètrica induïda definida positiva, i augmenta la mètrica induïda en $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}\right)$. Així, la mètrica induïda és definida positiva. Aquest augment és un tensor no-negatiu, i l'error és $O\left(\frac1{\lambda}\right)$, de manera que per una $\lambda$ prou gran, ens podem assegurar que la mètrica induïda és definida positiva.
 
 \subsection{Organització general}
 {\color{blue} Aquest apartat haurem de mirar de moure'l a un lloc més adequat, potser. }
 
 \begin{itemize}
-    \item El procés es divideix en una sèrie \textbf{d'etapes}. Cada una d'elles és igual que la resta, però la primera necessita una immersió $f$ de classe $C^\infty$ curta. Després de cada etapa, la nova immersió segueix sent $C^\infty$ i curta, però l'error mètric és aproximadament $2/3$ de l'error de la immersió de l'etapa anterior.
+    \item El procés es divideix en una sèrie \textbf{d'etapes}. Cada una d'elles és igual que la resta, però la primera necessita una immersió $f$ de classe $C^\infty$ curta. Després de cada etapa, la nova immersió segueix sent $C^\infty$ i curta, però l'error mètric és com a molt $2/3$ de l'error de la immersió de l'etapa anterior.
     \item S'escull un recobriment localment finit de $M$ per conjunts tancats $N_p$. És a dir, tal que cada punt de $M$ pertany a, com a molt, un nombre finit de conjunts $N_p$.
-    \item Cada etapa es divideix en un nombre finit de \textbf{passos}. Primer, la correcció es divideix entre tots els conjunts $N_p$ amb unes funcions pes $\varphi_p$. Aleshores es divideix la correcció de cada $N_p$ en un nombre finit de passos, \ref{eq:lema_descomp}
+    \item Cada etapa es divideix en un nombre finit de \textbf{passos}. Primer, la correcció es divideix entre tots els conjunts $N_p$ amb unes funcions pes $\varphi_p$. Aleshores es divideix la correcció de cada $N_p$ en un nombre finit de passos, en l'equació \ref{eq:lema_descomp}
     \item Els passos s'han de realitzar un rere l'altre. L'ordre concret no importa, però s'ha d'escollir un ordre i seguir-lo. En varietats obertes, el nombre de passes és infinit, però en cada entorn compacte el nombre de passos és finit.
 \end{itemize}
 
 \subsection{Convergència de la immersió}
-Per la Proposició \ref{prop:dos de tres}, sabem que la mètrica resultant del procés en el límit és la mètrica intrínseca de la varietat, com volíem. Ara bé, encara no hem demostrat que convergeixi en una immersió $C^1$. El primer que cal assegurar és que el resultat en el límit és, efectivament, una immersió. Amb aquest fi, podem imposar que en el pas $r$ de l'etapa $s$ del procés, el corresponent $B_3$ estigui fitat per
+Per la proposició \ref{prop:dos de tres}, sabem que la mètrica resultant del procés en el límit és la mètrica intrínseca de la varietat, com volíem. Ara bé, encara no hem demostrat que convergeixi en una immersió $C^1$. El primer que cal assegurar és que el resultat en el límit és, efectivament, una immersió. Amb aquest fi, podem imposar que en el pas $r$ de l'etapa $s$ del procés, el corresponent $B_3$ estigui fitat per
 \begin{equation}\label{eq:b3_cota}
     B_{3} \le \frac1{2^{(s+r)}},
 \end{equation}
@@ -350,27 +367,23 @@ Així, el terme $\beta_{ii}$ decreix per un factor $5/6$ o major després de cad
 
 Fins ara hem estat tractant el cas de les immersions, per les quals no hi ha restricció pel que fa a les interseccions amb elles mateixes. Ara bé, per demostrar que el procés descrit per Nash també aplica als encabiments, que han de ser injectius, cal comprovar que les immersions resultants també ho són.
 
-\begin{nota}
-    Sigui $M$ una varietat oberta i $f:M\to \mathbb R^n$ un encabiment. Anomenem \textbf{frontera de l'encabiment} al conjunt $\partial f(M) = \overline{f(M)}\setminus f(M)$. {\color{blue} Ho deixo indicat perquè no sé si aquest és el terme estàndard, però no m'agrada com l'anomena el Nash.}
-\end{nota}
-
-La demostració per encabiments és la mateixa que per immersions generals, però l'aplicació $f$ de la que partim ha de ser un encabiment. Si la varietat és oberta, demanem també que la frontera de l'encabiment, si existeix, no intersequi la imatge de l'encabiment. Un cop es té aquest primer encabiment curt, la única consideració addicional és que s'ha de controlar la mida de l'encabiment $|\overline z^\alpha - z^\alpha|$ en cada pas.
+La demostració per encabiments és la mateixa que per immersions generals, però l'aplicació $f$ de la que partim ha de ser un encabiment. Si la varietat és oberta, demanem també que el conjunt límit, si existeix, no intersequi la imatge de l'encabiment. Un cop s'ha obtingut aquest primer encabiment curt, la única consideració addicional és que s'ha de controlar la mida de l'encabiment $|\overline z^\alpha - z^\alpha|$ en cada pas.
 
 Ens haurem de fixar primer en què cada pas es pugui fer sense que el nou encabiment intersequi amb si mateix, i després en què l'encabiment resultant en el límit del procés sigui injectiu.
 \begin{obs}
-    Si la varietat és oberta, l'elecció de $B_3$ a \ref{eq:b3_cota} assegura que la frontera de l'encabiment roman fix durant tot el procés.
+    Si la varietat és oberta, l'elecció de $B_3$ a \ref{eq:b3_cota} assegura que el conjunt límit roman fix durant tot el procés.
 \end{obs}
 \begin{prop}
-    En qualsevol pas d'una etapa i en qualsevol entorn $N_p$ de la frontera de l'encabiment, es pot escollir una $\lambda$ prou gran tal que el pas no produeixi interseccions de l'encabiment amb si mateix ni amb la frontera de l'encabiment.
+    En qualsevol pas d'una etapa i en qualsevol entorn $N_p$ de la frontera de l'encabiment, es pot escollir una $\lambda$ prou gran tal que el pas no produeixi interseccions de l'encabiment amb si mateix ni amb el conjunt límit.
 \end{prop}
 {
 \color{green!50!black} \textit{Prova.} 
     Sigui $K$ un component compacte de l'encabiment que inclogui $N_p$ al seu interior. $K$, al seu torn, està inclòs en un entorn obert $H$ tan proper a $K$ tal que per qualsevol punt $P$ en $H$ no pot tenir dues perpendiculars a $K$ en $H$. {\color{blue} Això és el que vam parlar amb l'Ignasi. Podríem mirar si cal posar una demostració o un dibuixet o algo.}
 
-    Sigui $Q$ la unió de la frontera de l'encabiment i la part de l'encabiment que no està inclòs en $K$. Com $Q$ és un conjunt tancat, una pertorbació prou petita no pot intersecar $Q$. A més, com la pertorbació és normal a l'encabiment, estarà dins de $H$ i els punts de $K$ no es podran intersecar. Així doncs, el pas no produeix interseccions de l'encabiment amb si mateix ni amb la frontera de l'encabiment.\qed
+    Sigui $Q$ la unió de la frontera de l'encabiment i la part de l'encabiment que no està inclòs en $K$. Com $Q$ és un conjunt tancat, una pertorbació prou petita no pot intersecar $Q$. A més, com la pertorbació és normal a l'encabiment, estarà dins de $H$ i els punts de $K$ no es podran intersecar. Així doncs, el pas no produeix interseccions de l'encabiment amb si mateix ni amb el conjunt límit.\qed
 }
 
-Amb aquest resultat, obtenim per inducció que en qualsevol nombre finit de passos del procés, l'encabiment no produeix interseccions amb si mateix ni amb la frontera de l'encabiment. Això no assegura que el límit del procés sigui injectiu després d'infinits passos, sinó que cal considerar això a part.
+Amb aquest resultat, obtenim per inducció que en qualsevol nombre finit de passos del procés, l'encabiment no produeix interseccions amb si mateix ni amb el conjunt límit. Això no assegura que el límit del procés sigui injectiu després d'infinits passos, sinó que cal considerar això a part.
 
 \begin{prop}
     Es pot escollir una successió dels $B_3$ tal que el límit del procés sigui injectiu, és a dir, tal que la immersió resultant sigui un encabiment.
@@ -379,14 +392,17 @@ Amb aquest resultat, obtenim per inducció que en qualsevol nombre finit de pass
 \color{green!50!black} \textit{Prova.} 
     Considerem una enumeració dels $N_p$ qualsevol. Sigui $S_r$ el conjunt de tots els parells de punts dels primers $r$ entorns tals que estaven separats per una distància major que $2^{-r}$ en l'encabiment curt original. Qualsevol parell de punts pertany a $S_r$ per algun $r$. A partir de l'etapa $r$ requerirem que el $B_3$ de l'etapa $\mu\le r$ i el pas $\nu$ sigui més petit que $\varepsilon_r2^{-\mu-\nu}$, on $\varepsilon_r$ s'escull prou petit per assegurar que cap parell de punts pugui ajuntar-se al límit. D'aquesta manera, tots els parells de punts queden protegits en el límit, i la immersió resultant és un encabiment. \qed
 }
-\subsection{Obtenint la immersió o l'encabiment inicial}
+\subsection{Obtenint la immersió o l'encabiment inicial}\label{sec:encabiment_inicial}
 Amb tot el que hem demostrat fins aquí, ja hem vist que per qualsevol immersió o encabiment curt inicial $C^\infty$, es pot trobar una immersió o encabiment $C^1$ isomètric de la varietat en un espai euclidià. Només queda veure que es pot trobar aquesta immersió o aquest encabiment inicial. En aquesta subsecció expliquem el procés per obtenir-lo. 
 
-En el cas d'una varietat tancada, podem obtenir l'encabiment inicial en $\mathbb R^{2n}$ mitjançant el teorema de Whitney. {\color{blue} Haurem de mirar d'explicar-lo.} Per tar de fer-lo curt, es pot canviar l'escala de l'espai euclidià.
+En el cas d'una varietat tancada, podem obtenir l'encabiment inicial en $\mathbb R^{2n}$ mitjançant el teorema de Whitney. Per tal de fer-lo curt, només cal canviar l'escala de l'espai euclidià.
+\begin{obs}
+    El teorema de Whitney que hem demostrat en aquest treball, al teorema \ref{teo:whitney}, només ens assegura l'existència d'encabiments en espais de dimensió $2n+1$. Com hem mencionat allà, hi ha diferents formulacions del teorema de Whitney, amb la més forta assegurant l'existència d'encabiments en espais de dimensió $2n$.
+\end{obs}
 
-En el cas d'una varietat oberta, s'escull un recobriment per tancats $N_p$ i unes funcions $\varphi_p$ de classe $C^\infty$que sumin $1$ en qualsevol punt, com abans, i denotem $x_{p_i}$ per la coordenada $i$-èssima de $N_p$. Suposem $|x_{p_i}|<1$ per a qualsevol $i$ i $p$. A més, imposem que cada $N_p$ interseca com a molt amb $s$ d'aquests conjunts, incloent-hi el mateix $N_p$. A continuació, separem els conjunts en $s$ classes, tals que cap conjunt té intersecció amb un altre de la mateixa classe. 
+En el cas d'una varietat oberta, s'escull un recobriment per tancats $N_p$ i una partició de la unitat $\set{\varphi_p}$ subordinada a aquest recobriment, com abans, i denotem $x_{p_i}$ per la coordenada $i$-èssima de $N_p$. Suposem $|x_{p_i}|<1$ per a qualsevol $i$ i $p$. A més, imposem que cada $N_p$ interseca com a molt amb $s$ d'aquests conjunts, incloent-hi el mateix $N_p$. A continuació, separem els conjunts en $s$ classes, tals que cap conjunt té intersecció amb un altre de la mateixa classe. 
 
-Construim un encabiment en un espai $s(n+2)$-dimensional $E^{s(n+2)}$ amb les següents funcions:
+Construim un encabiment en un espai $s(n+2)$-dimensional $\mathbb R^{s(n+2)}$ amb les següents funcions:
 \begin{equation}
     u_\sigma = 
     \begin{cases}
@@ -412,59 +428,23 @@ on $\varepsilon_p$ formen part d'una successió monòtona decreixent i convergen
 
 Per últim, aquesta immersió es pot fer curta escollint els $\varepsilon_p$ tal que, si la immersió amb els $p$ primers entorns és curta per un factor $\frac13(2-1/p)$ o més gran, prenem $\varepsilon_{p+1}$ prou petit perquè la immersió amb $p+1$ primers entorns sigui curta per un factor $\frac13(2-1/(p+1))$ o més gran. 
 
-Amb això obtenim un encabiment curt de classe $C^\infty$ de la varietat en un espai $s(n+2)$-dimensional. Mitjançant projeccions lineals, podem rebaixar la dimensió de l'espai de l'encabiment fins a $2n+1$, i fins a $2n$ per a immersions.
+Amb això obtenim un encabiment curt de classe $C^\infty$ de la varietat en un espai $s(n+2)$-dimensional. Mitjançant projeccions lineals com les de la demostració del teorema de Whitney, podem rebaixar la dimensió de l'espai de l'encabiment fins a $2n+1$, i fins a $2n$ per a immersions.
+
+Amb això hem acabat la demostració del teorema de Nash.
 
 \section{El refinament de Kuiper}
+El fet que Nash utilitzi dos camps vectorials unitaris ortogonals entre ells i a la immersió en l'entorn $N_p$ restringeix severament la utilitat del seu resultat. En concret, per varietats Riemannianes de dimensió $2$, com l'esfera o el tor, el que ens interessa idealment és obtenir encabiments isomètrics en l'espai euclidià tridimensional, per tal de poder-les representar visualment, mentre que el resultat de Nash només ens permet construir encabiments isomètrics en un espai euclidià de dimensió $4$. 
 
+En efecte, al final de l'article original, \cite{nash1954}, Nash mateix conjectura que és possible que el resultat es pugui refinar de tal manera que la codimensió de l'espai ambient sigui $1$ en lloc de $2$. Com hem mencionat a la introducció d'aquest capítol, Nicolaas H. Kuiper va demostrar aquest resultat l'any posterior a la publicació de Nash, de manera que acabem obtenint la següent formulació del teorema de Nash-Kuiper per encabiments $C^1$, \cite{kuiper1955}:
 
+\begin{teo}[\textbf{Nash-Kuiper}]
+    Qualsevol varietat Riemanniana tancada de dimensió $n$ té una immersió o encabiment $C^\infty$ en $\mathbb R^k$ amb $k\ge n+1$, aleshores també té una immersió o encabiment, respectivament, isomètric en $\mathbb R^k$.
+\end{teo}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+El mètode de Kuiper és molt similar al de Nash, però fa servir un tipus de pertorbació diferent, que anomenem \textbf{corrugació} (en anglès, \textit{strain}). Sigui $x^1$ la primera coordenada local de la varietat $M$, i $h_{ij}$ el tensor mètric induït per una primera immersió curta $C^\infty$ de la varietat en $\mathbb R^k$. Sigui $\eta$ un camp vectorial unitari normal a la imatge de la immersió, i $\xi$ el camp vectorial tangent tal que $\xi^\beta := \frac{\partial z^\beta}{\partial x^1}$, on $\set{z^\beta}$ és el sistema de coordenades de l'espai euclidià. Aleshores, la pertorbació de Kuiper és
+\begin{equation*}
+    \boxed{
+        \overline{z}^\beta = z^\beta - \left(\frac{\overline \alpha^2}{8\lambda}\right)h\sin\left(2\lambda x^1\right)\xi^\beta + \left(\frac{\overline\alpha}{\lambda}\right)\sin\left(\lambda x^1 - \left(\frac{\overline\alpha ^2}{8}\right)\sin\left(2\lambda x^1\right)\right)h\eta^\beta
+        }
+\end{equation*}
+on $h$ és un valor derivat de la mètrica induïda tal que $h^2 = h_{11}$, $\overline\alpha = \alpha / \sqrt{h_{11}}$ amb $\alpha$ constant i  $\lambda$ és una constant que juga el mateix rol que a la pertorbació de Nash. Aquesta no és la única manera d'obtenir una pertorbació que arribi a un encabiment isomètric, sinó que es poden trobar altres mètodes que s'ajustin millor a la varietat concreta que es vulgui encabir.
