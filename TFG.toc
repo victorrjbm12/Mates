@@ -1,5 +1,5 @@
 \babel@toc {catalan}{}\relax 
-\contentsline {chapter}{\numberline {1}Introducci\'o}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Introducci\'o}{v}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Temes de les reunions}{1}{section.1.1}%
 \contentsline {chapter}{\numberline {2}Introducció a la geometria diferencial}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introducció al capítol}{3}{section.2.1}%
@@ -28,12 +28,12 @@
 \contentsline {section}{\numberline {4.2}Enunciat dels teoremes}{26}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Demostració}{26}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}La pertorbació en un pas}{28}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Convergència dels passos en una etapa}{31}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}Convergència dels passos en una etapa}{30}{subsection.4.3.2}%
 \contentsline {subsubsection}{Realitzabilitat dels passos}{32}{section*.9}%
-\contentsline {subsection}{\numberline {4.3.3}Organització general}{33}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.3}Organització general}{32}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Convergència de la immersió}{33}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Encabiments isomètrics}{34}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Obtenint la immersió o l'encabiment inicial}{35}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.5}Encabiments isomètrics}{33}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Obtenint la immersió o l'encabiment inicial}{34}{subsection.4.3.6}%
 \contentsline {section}{\numberline {4.4}El refinament de Kuiper}{35}{section.4.4}%
 \contentsline {chapter}{\numberline {5}Encabiments isomètrics del tor pla}{37}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Introducció al capítol}{37}{section.5.1}%
@@ -42,6 +42,7 @@
 \contentsline {section}{\numberline {5.3}Integració convexa 2D: el cas primitiu}{38}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Integració convexa del cilindre $\mathcal Cil$}{39}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}Integració convexa del tor $\mathbb T^2$}{42}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Encabiment isomètric del tor pla}{45}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Conclusions}{47}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Glossari d'alguns termes traduïts de l'anglès al català}{48}{chapter.7}%
+\contentsline {section}{\numberline {5.4}Encabiment isomètric del tor pla}{46}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Demostració del teorema \ref {teo:Stage}}{47}{subsection.5.4.1}%
+\contentsline {chapter}{\numberline {6}Conclusions}{48}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Glossari d'alguns termes traduïts de l'anglès al català}{49}{chapter.7}%

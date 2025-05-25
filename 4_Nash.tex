@@ -1,15 +1,4 @@
 \chapter{Teorema Nash-Kuiper $C^1$}\label{chap:capitol_nash}
-{\color{blue} La idea d'aquest capítol ha de ser la següent:
-\begin{itemize}
-    \item Motivar que estem parlant d'això inspirats per l'acordió de Möbius.
-    \item Enunciar i demostrar el teorema de Nash.
-    \item Com a mínim explicar les millores de Kuiper i Thurston.
-\end{itemize}
-}
-
-{\color{red}Cal canviar les passes per passos}
-
-
 
 \section{Introducció al capítol}
 Al final del capítol anterior hem vist que és possible trobar immersions i encabiments isomètrics que resultarien impossibles en altres condicions si no imposem que aquestes aplicacions siguin de classe $C^\infty$. Aquest capítol està dedicat a una formalització d'aquesta idea mitjançant el teorema de Nash-Kuiper. El cos principal del capítol consistirà en la demostració dels teoremes originals tals com els va demostrar \cite{nash1954}, de manera que veurem que si una varietat Riemanniana es pot encabir de manera curta en un espai euclidià de dimensió $k\ge n+2$, aleshores es pot modificar aquesta aplicació per obtenir-ne una d'isomètrica tan propera com vulguem. Al final del capítol veurem una millora clau en la demostració, comentant breument l'article de Nicolaas H. Kuiper, \cite{kuiper1955}, que demostra el mateix resultat per a immersions $C^\infty$ de dimensió $n+1$.
@@ -236,7 +225,7 @@ Combinant aquest resultat amb la desigualtat \ref{eq:primera_derivada_cota}, obt
 \qed
 }
 \subsection{Convergència dels passos en una etapa}
-A continuació ens interessa veure quines són les constants $\set{\lambda_\nu}$ necessàries en les diferents passes d'una etapa per tal que el procés convergeixi tal com desitgem.
+A continuació ens interessa veure quines són les constants $\set{\lambda_\nu}$ necessàries en els diferents passos d'una etapa per tal que el procés convergeixi tal com desitgem.
 \begin{defi}
     Sigui $N_p$ un entorn del recobriment de $M$, i considerem el pas $\nu$ d'una etapa donada.
 \end{defi}
@@ -294,7 +283,7 @@ podem prendre l'equació \ref{eq:delta_prima} i veure que
 \end{align}
 Amb això queda demostrat que es pot escollir $e_{ij}$ tal que la mida de $\delta_{ij}'$ sigui aproximadament $2/3$ de la mida de $\delta_{ij}$ després de cada etapa. Així, és clar que la diferència entre la mètrica de la immersió i $g_{ij}$ convergeix a $0$ en el límit.
 
-Hem obtingut dues restriccions a la mida de $e_{ij}$ que cal complir, les desigualtats \ref{eq:epsilon_p} i \ref{eq:e_cota}. Ara cal relacionar-les amb les passes de l'etapa, per tal d'obtenir la successió $\set{B_{1\nu}}_{\nu}$ desitjada. 
+Hem obtingut dues restriccions a la mida de $e_{ij}$ que cal complir, les desigualtats \ref{eq:epsilon_p} i \ref{eq:e_cota}. Ara cal relacionar-les amb els passos de l'etapa, per tal d'obtenir la successió $\set{B_{1\nu}}_{\nu}$ desitjada. 
 
 Primer de tot, recordem que els entorns $N_p$ poden intersecar amb altres entorns $N_q$. Així, els canvis que fem en $N_p$ poden afectar a $N_q$. Afortunadament, el nombre d'entorns que intersequen cada $N_p$ és finit. Si $N_p$ interseca amb un nombre $\sigma$ d'entorns $N_q$, incloent $N_p$ mateix, aleshores podem prendre les restriccions de $N_p$, dividir-les per $\sigma$, i imposar-les a tots els $N_q$. Sigui $\varepsilon_p^*$ el mínim de totes aquestes restriccions sobre l'error de $N_p$.
 
@@ -303,7 +292,7 @@ Notem que hi ha dues fonts de l'error en $N_p$: el primer és l'aproximació pre
     \left|\frac12\varphi_p\delta_{ij}-\frac12\varphi_p\beta_{ij}\right|_{N_p} \le \frac12\varepsilon_p^*.
 \end{equation}
 Ens resta $\frac12\varepsilon_p^*$
-per a l'error de les passes individuals, que podem assignar de la següent manera:
+per a l'error dels passos individuals, que podem assignar de la següent manera:
 \begin{equation}\label{eq:error_passos}
     B_{1\nu} \le \frac{1}{2^{\nu+1}}\varepsilon_p^*.
 \end{equation}
@@ -326,7 +315,7 @@ Procedim per inducció. Suposem que cada pas pas pren una immersió que produeix
     \item El procés es divideix en una sèrie \textbf{d'etapes}. Cada una d'elles és igual que la resta, però la primera necessita una immersió $f$ de classe $C^\infty$ curta. Després de cada etapa, la nova immersió segueix sent $C^\infty$ i curta, però l'error mètric és com a molt $2/3$ de l'error de la immersió de l'etapa anterior.
     \item S'escull un recobriment localment finit de $M$ per conjunts tancats $N_p$. És a dir, tal que cada punt de $M$ pertany a, com a molt, un nombre finit de conjunts $N_p$.
     \item Cada etapa es divideix en un nombre finit de \textbf{passos}. Primer, la correcció es divideix entre tots els conjunts $N_p$ amb unes funcions pes $\varphi_p$. Aleshores es divideix la correcció de cada $N_p$ en un nombre finit de passos, en l'equació \ref{eq:lema_descomp}
-    \item Els passos s'han de realitzar un rere l'altre. L'ordre concret no importa, però s'ha d'escollir un ordre i seguir-lo. En varietats obertes, el nombre de passes és infinit, però en cada entorn compacte el nombre de passos és finit.
+    \item Els passos s'han de realitzar un rere l'altre. L'ordre concret no importa, però s'ha d'escollir un ordre i seguir-lo. En varietats obertes, el nombre de passos és infinit, però en cada entorn compacte el nombre de passos és finit.
 \end{itemize}
 
 \subsection{Convergència de la immersió}
@@ -444,7 +433,7 @@ En efecte, al final de l'article original, \cite{nash1954}, Nash mateix conjectu
 El mètode de Kuiper és molt similar al de Nash, però fa servir un tipus de pertorbació diferent, que anomenem \textbf{corrugació} (en anglès, \textit{strain}). Sigui $x^1$ la primera coordenada local de la varietat $M$, i $h_{ij}$ el tensor mètric induït per una primera immersió curta $C^\infty$ de la varietat en $\mathbb R^k$. Sigui $\eta$ un camp vectorial unitari normal a la imatge de la immersió, i $\xi$ el camp vectorial tangent tal que $\xi^\beta := \frac{\partial z^\beta}{\partial x^1}$, on $\set{z^\beta}$ és el sistema de coordenades de l'espai euclidià. Aleshores, la pertorbació de Kuiper és
 \begin{equation*}
     \boxed{
-        \overline{z}^\beta = z^\beta - \left(\frac{\overline \alpha^2}{8\lambda}\right)h\sin\left(2\lambda x^1\right)\xi^\beta + \left(\frac{\overline\alpha}{\lambda}\right)\sin\left(\lambda x^1 - \left(\frac{\overline\alpha ^2}{8}\right)\sin\left(2\lambda x^1\right)\right)h\eta^\beta
+        \overline{z}^\beta = z^\beta - \left(\frac{\overline \alpha^2}{8\lambda}\right)h\sin\left(2\lambda x^1\right)\xi^\beta + \left(\frac{\overline\alpha}{\lambda}\right)\sin\left(\lambda x^1 - \left(\frac{\overline\alpha ^2}{8}\right)\sin\left(2\lambda x^1\right)\right)h\eta^\beta,
         }
 \end{equation*}
 on $h$ és un valor derivat de la mètrica induïda tal que $h^2 = h_{11}$, $\overline\alpha = \alpha / \sqrt{h_{11}}$ amb $\alpha$ constant i  $\lambda$ és una constant que juga el mateix rol que a la pertorbació de Nash. Aquesta no és la única manera d'obtenir una pertorbació que arribi a un encabiment isomètric, sinó que es poden trobar altres mètodes que s'ajustin millor a la varietat concreta que es vulgui encabir.
