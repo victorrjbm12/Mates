@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  25 MAY 2025 18:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  27 MAY 2025 09:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -935,12 +935,14 @@ Cap\'{\i }tol 1.
 
 ]
 
+[6]
+
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.42 
-      [1]
+l.41 ... \set{(x,v)\in \nu: ||v|| < \varepsilon}$$
+                                                   [1]
 
 [2])
 \openout2 = `2_Suavitat.aux'.
@@ -1012,7 +1014,7 @@ Cap\'{\i }tol 3.
 ]
 
 [20]
-<dibuix_cilindre_1.pdf, id=499, 107.0178pt x 106.84015pt>
+<dibuix_cilindre_1.pdf, id=510, 107.0178pt x 106.84015pt>
 File: dibuix_cilindre_1.pdf Graphic file (type pdf)
 <use dibuix_cilindre_1.pdf>
 Package pdftex.def Info: dibuix_cilindre_1.pdf  used on input line 125.
@@ -1021,7 +1023,7 @@ Package pdftex.def Info: dibuix_cilindre_1.pdf  used on input line 125.
 
 LaTeX Font Warning: Command \Large invalid in math mode on input line 126.
 
-<dibuix_cilindre_2.pdf, id=500, 171.51678pt x 106.84015pt>
+<dibuix_cilindre_2.pdf, id=511, 171.51678pt x 106.84015pt>
 File: dibuix_cilindre_2.pdf Graphic file (type pdf)
 <use dibuix_cilindre_2.pdf>
 Package pdftex.def Info: dibuix_cilindre_2.pdf  used on input line 127.
@@ -1029,7 +1031,7 @@ Package pdftex.def Info: dibuix_cilindre_2.pdf  used on input line 127.
 
 
 [21]
-<dibuix_esfera_1.pdf, id=511, 171.51678pt x 106.84015pt>
+<dibuix_esfera_1.pdf, id=522, 171.51678pt x 106.84015pt>
 File: dibuix_esfera_1.pdf Graphic file (type pdf)
 <use dibuix_esfera_1.pdf>
 Package pdftex.def Info: dibuix_esfera_1.pdf  used on input line 136.
@@ -1038,7 +1040,7 @@ Package pdftex.def Info: dibuix_esfera_1.pdf  used on input line 136.
 
 LaTeX Font Warning: Command \Large invalid in math mode on input line 137.
 
-<dibuix_esfera_2.pdf, id=512, 122.52174pt x 106.84015pt>
+<dibuix_esfera_2.pdf, id=523, 122.52174pt x 106.84015pt>
 File: dibuix_esfera_2.pdf Graphic file (type pdf)
 <use dibuix_esfera_2.pdf>
 Package pdftex.def Info: dibuix_esfera_2.pdf  used on input line 138.
@@ -1046,12 +1048,12 @@ Package pdftex.def Info: dibuix_esfera_2.pdf  used on input line 138.
 
 
 [22 <./dibuix_cilindre_1.pdf> <./dibuix_cilindre_2.pdf> <./dibuix_esfera_1.pdf> <./dibuix_esfera_2.pdf>]
-<dibuix_mobius_1.pdf, id=574, 194.09814pt x 134.9311pt>
+<dibuix_mobius_1.pdf, id=585, 194.09814pt x 134.9311pt>
 File: dibuix_mobius_1.pdf Graphic file (type pdf)
 <use dibuix_mobius_1.pdf>
 Package pdftex.def Info: dibuix_mobius_1.pdf  used on input line 218.
 (pdftex.def)             Requested size: 201.31529pt x 139.94067pt.
-<dibuix_mobius_2.pdf, id=575, 115.62799pt x 132.70177pt>
+<dibuix_mobius_2.pdf, id=586, 115.62799pt x 132.70177pt>
 File: dibuix_mobius_2.pdf Graphic file (type pdf)
 <use dibuix_mobius_2.pdf>
 Package pdftex.def Info: dibuix_mobius_2.pdf  used on input line 222.
@@ -1189,18 +1191,18 @@ Package rerunfilecheck Info: File `TFG.out' has not changed.
 (rerunfilecheck)             Checksum: 98AFC67032083A3B747C4726D3FBC012;8751.
  ) 
 Here is how much of TeX's memory you used:
- 39322 strings out of 473201
- 869074 string characters out of 5716120
+ 39323 strings out of 473201
+ 869081 string characters out of 5716120
  1386350 words of memory out of 5000000
  61042 multiletter control sequences out of 15000+600000
  617667 words of font info for 421 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,105p,1599b,691s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on TFG.pdf (57 pages, 1011231 bytes).
+Output written on TFG.pdf (58 pages, 1016332 bytes).
 PDF statistics:
- 1149 PDF objects out of 1200 (max. 8388607)
- 984 compressed objects within 10 object streams
- 321 named destinations out of 1000 (max. 500000)
+ 1159 PDF objects out of 1200 (max. 8388607)
+ 993 compressed objects within 10 object streams
+ 322 named destinations out of 1000 (max. 500000)
  94616 words of extra memory for PDF output out of 106986 (max. 10000000)
 
