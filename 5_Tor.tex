@@ -1,9 +1,6 @@
 \chapter{Encabiments isomètrics del tor pla}
-{\color{blue}
-Ens hauriem de mirar bé què és això de $W\cdot F$
-}
 \section{Introducció al capítol}
-Al capítol anterior hem enunciat i demostrat els teoremes d'encabiments isomètrics $C^1$ de Nash, i hem vist la manera en què Kuiper va reduir la codimensió de l'espai ambient a 1. A continuació revisitarem el tor, una varietat topològica que no es pot encabir isomètricament de manera suau en $\mathbb R^3$, com hem vist al capítol \ref{cap:intro}, i calcularem la manera en què es pot encabir isomètricament de manera $C^1$. 
+Al capítol anterior hem enunciat i demostrat els teoremes d'encabiments isomètrics $C^1$ de Nash, i hem vist la manera en què Kuiper va reduir la codimensió de l'espai ambient a 1. A continuació revisitarem el tor, una varietat topològica que no es pot encabir isomètricament de manera suau en $\mathbb R^3$, com hem vist al capítol \ref{cap:intro}, i descriurem el mètode amb el qual es pot encabir isomètricament de manera $C^1$. 
 Veurem que aquesta demostració ja utilitza el llenguatge de la integració convexa, que hem introduït al final del capítol anterior.
 
 L'elaboració d'aquest encabiment va ser realitzada per Vincent Borrelli, Saïd Jabrane, Francis Lazarus i Boris Thibert i publicada l'any 2013. La cita principal d'aquest capítol és \cite{borrelli2013}. En aquest capítol no donem, en general, les demostracions de lemes i sublemes, que es troben a \cite{borrelli2013}.
@@ -68,7 +65,7 @@ Considerem el problema que volem resoldre, és a dir, trobar un encabiment isom�
 \end{equation}
 on $\ell$ identifica plans tangents de $\mathbb T^2$ amb $\mathbb R^2$ i $\rho:\mathbb T^2\to\mathbb R_+$ és una funció positiva. Vegeu la definició \ref{def:pullback_metric} del capítol \ref{cap:intro} per a la definició de \textit{pullback} de mètriques.
 
-Sigui $V\in\ker(\ell)$ un vector amb coordenades enteres coprimeres. Aleshores, la corba $f_V$ donada per 
+Sigui $V\in\ker(\ell)$ un vector amb coordenades enteres coprimeres. Aleshores, la corba $\gamma$ donada per 
 \begin{align}
     \nonumber\gamma:[0,1]&\to\mathbb T^2\\
     \nonumber t&\mapsto [O+tV],
@@ -81,7 +78,7 @@ A més, canviem l'escala tal que $\ell(U)=\|U\|$.
 
 \subsection{Integració convexa del cilindre $\mathcal Cil$}
 \begin{nota}
-    En aquest capítol, denotem per $X\cdot f$ la derivada de l'aplicació $f$ al llarg del camp vectorial $X$, és a dir, $X\cdot f = \text df(X)$.
+    En aquest capítol, denotem per $X\cdot f$ la derivada de l'aplicació $f$ al llarg del camp vectorial $X$, és a dir, $X\cdot f := \text df(X)$.
 \end{nota}
 Per tal de poder aplicar el lema \ref{lema:C0-1D}, no és prou amb prendre una família de corbes unidimensionals qualssevol, com
 \begin{align}
@@ -100,11 +97,11 @@ Observem que, amb aquesta definició, $\mu(W,V)=0$. Ara podem definir la famíli
 \end{equation*}
 Resolent l'equació diferencial, obtenim
 \begin{equation*}
-    \varphi(t,s) = O + sU + \psi(t,s)V.
+    \varphi(t,s) = O + sU + \psi(t,s)V
 \end{equation*}
 per alguna funció $\psi:(\mathbb R/\mathbb Z)\times[0,1]\to\mathbb R$ amb $\psi(t,0)=t$. En particular, $\varphi(t,\cdot)$ connecta $O+tV$ i $O+U+\psi(t,1)V$. Així, $\varphi:\mathbb R/\mathbb Z\times[0,1]\to\mathcal Cil$ és un difeomorfisme. A més, 
 \begin{equation*}
-    \ell\left( \frac{\partial\varphi}{\partial t} \right) = 0, \text{ i } \mu\left( \frac{\partial\varphi}{\partial s}, W \right) = 0.
+    \ell\left( \frac{\partial\varphi}{\partial t} \right) = 0, \text{ i } \mu\left( \frac{\partial\varphi}{\partial t}, W \right) = 0.
 \end{equation*}
 
 Voldrem aplicar integració convexa a cada corba $f\circ\varphi(t,\cdot)$. Per fer-ho, considerem ara les voltes $h(t,s,u)$ donades per
@@ -199,10 +196,8 @@ A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $
 \end{lema}
 
 \begin{obs}
-    Observem que 
+    Observem que els lemes que acabem d'enunciar tenen una relació directa amb els lemes i proposicions que hem demostrat al capítol anterior. Si bé la pertorbació que fem és diferent a la de Nash, és evident, per exemple, que el lema \ref{lema:lema2} és equivalent a la observació que la pertorbació \eqref{eq:pertorbacio} té terme d'error $O\left(\frac{1}{\lambda}\right)$. De la mateixa manera, el lema \ref{lema:lema6} ens relaciona el canvi en primeres derivades, com en la proposició \ref{prop:primer_derivada}, i el canvi mètric del lema \ref{lema:lema7} és similar al demostrat en la proposició \ref{prop:mida_pertorbacio}.
 \end{obs}
-
-{\color{blue} Mirar això que ho he escrit amb molta son.}
 
 
 % {
@@ -274,12 +269,6 @@ A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $
 
 
 
-{
-\color{blue}
-\begin{obs}
-    Aquí podríem donar unes interpretacions d'aquests lemes, comparant-los amb els del teorema de Nash.
-\end{obs}
-}
     
 \subsection{Integració convexa del tor $\mathbb T^2$}
 Amb la integració convexa del cilindre, hem obtingut una aplicació $F:(\mathcal Cil, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ gairebé isomètrica i $C_0$-propera a l'aplicació induïda sobre $\mathcal Cil$ per $f:(\mathbb T^2, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$. Ara bé, les imatges de les dues corbes que defineixen la frontera del cilindre no coincideixen necessàriament. Per tant, el nostre objectiu serà deformar $F$ de tal manera que coincideixin, tal que sigui possible prendre el quocient d'aquesta nova aplicació per a obtenir un encabiment isomètric del tor pla.
@@ -298,11 +287,11 @@ on $w:I\to I$ és una funció $C^\infty$ tal que
     Si $f:\mathbb T^2\to\mathbb R^3$ i $w:I\to I$ són de classe $C^\infty$, aleshores $\bar F$ és de classe $C^\infty$ com a aplicació de $\mathbb T^2$ en $\mathbb R^3$.
 \end{lema}
 Podem reunir tots aquests tots els resultats que hem enunciat fins ara en el teorema següent, el \textbf{\textit{One Step Theorem}}. És evident que aquest teorema recull tots els canvis que es donen en un pas d'integració convexa, en el sentit de \textit{pas} que hem vist a la demostració del teorema de Nash.
-\begin{teo}[One Step Theorem]
+\begin{teo}[One Step Theorem]\label{teo:OneStep}
     Sigui $f:(\mathbb T^2, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ un encabiment de classe $C^\infty$ tal que $\mu = f^*\langle\cdot, \cdot\rangle + \rho\ell\otimes\ell$ i $\rho\in L^\infty(\mathbb T^2)$. Aleshores, 
     \begin{enumerate}
         \item $\|\bar F-f\|_{C^0}\le\frac{K_1(h)}{N}$ i $\|\bar F-f\|_{C^0}\le 2\sqrt7\|U\|\cdot\|\rho\|^{1/2}_{C^0}$,
-        \item $\|\text d\bar F-\text df\|_{C^0}\le\frac{K_2(h,\zeta,\psi,w')}{N} + \sqrt7\|\rho\|^{1/2}_{C^0}\|$,
+        \item $\|\text d\bar F-\text df\|_{C^0}\le\frac{K_2(h,\zeta,\psi,w')}{N} + \sqrt7\|\rho\|^{1/2}_{C^0}$,
         \item $\|V\cdot\bar F-V\cdot f\|_{C^0}\le\frac{K_3(h,\psi)}{N}$,
         \item $\|W\cdot\bar F-W\cdot f\|_{C^0}\le\sqrt7\|U\|(1+\|w'\|_{C^0})\|\rho\|^{1/2}_{C^0}$, i
         \item $\|\mu - \bar F^*\langle\cdot, \cdot\rangle\|_{C^0}\le\frac{K_4(f\circ\varphi,r,h,w',\varphi^{-1})}{N}$.
@@ -463,9 +452,9 @@ Podem reunir tots aquests tots els resultats que hem enunciat fins ara en el teo
 % }
 
 \section{Encabiment isomètric del tor pla}
-{
-\color{blue} Per algun motiu, aquí canvien la mètrica de $\mu$ a $g$. Si veiem que no hi ha cap motiu, ho podem canviar.
-}
+\begin{nota}
+    En la secció anterior feiem servir $\mu$ per denotar una mètrica primitiva. Ara denotem $g$ la mètrica plana sobre el tor.
+\end{nota}
 
 A la secció anterior ens hem fixat en el cas primitiu, de manera que podíem construir una aplicació gairebé isomètrica $\bar f:(\mathbb T^2, g)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ a partir d'una immersió $f:\mathbb T^2\to\mathbb R^3$ quan
 \begin{equation*}
@@ -478,9 +467,8 @@ A continuació, prendrem aquests mètode i el generalitzarem al cas en què el d
 \end{equation*}
 és una mètrica. Aquest és el cas si i només si la immersió $f$ és estrictament curta. Per tal d'aplicar els resultats anteriors, haurem de descompondre aquest defecte isomètric en una suma de mètriques primitives. Observem que el conjunt de productes interiors en $\mathbb R^2$ és un con convex
 \begin{equation*}
-    Q_+ = \set{E\text dx\otimes\text dx + F(\text dx\otimes\text dy + \text dy\otimes\text dx) + G\text dy\otimes\text dy : EG-F^2>0, F>0, G>0},
+    Q_+ = \set{E\text dx\otimes\text dx + F(\text dx\otimes\text dy + \text dy\otimes\text dx) + G\text dy\otimes\text dy : EG-F^2>0, E>0, G>0}.
 \end{equation*}
-{\color{blue} estas segur de que aquest $F>0$ és correcte? potser és $E$.}
 Per tant, podem trobar una descomposició del defecte isomètric
 \begin{equation*}
     D = \sum_{j=1}^N \rho_j(D) \ell_j\otimes\ell_j,
@@ -504,7 +492,7 @@ on $\ell_1, \ell_2, \ell_3$ són formes lineals en $\mathbb R^2$ donades per
 \begin{equation*}
     \ell_1:=\text dx, \text{ } \ell_2:=\frac{1}{\sqrt5}(\text dx + 2\text dy) \text{ i } \ell_3:=\frac{1}{\sqrt5}(\text dx - 2\text dy).
 \end{equation*}
-Per reduir els tres coeficients del defecte isomètric, farem tres integracions convexes, és a dir, tres passos, successius. En efecte, prendrem primer
+Per reduir els tres coeficients del defecte isomètric, farem tres integracions convexes, és a dir, tres passos successius. En efecte, prendrem primer
 \begin{equation*}
     \mu_1 = f^*\langle\cdot, \cdot\rangle + \rho_1(D_1)\ell_1\otimes\ell_1,
 \end{equation*}
@@ -536,7 +524,7 @@ on $\mathcal F_0:=f$. En cada etapa, ens haurem de preocupar de que el defecte i
     \end{enumerate}
     Aleshores, existeixen enters $N_1, N_2, N_3$ tals que l'immersió
     \begin{equation*}
-        \bar f:=IC(\mathcal f, g_k, N_1, N_2, N_3)
+        \bar f:=IC(f, g, N_1, N_2, N_3)
     \end{equation*}
     satisfà
     \begin{enumerate}
@@ -547,7 +535,10 @@ on $\mathcal F_0:=f$. En cada etapa, ens haurem de preocupar de que el defecte i
     \end{enumerate}
 \end{teo}
 
-{\color{blue} Hauriem de posar la idea de demostració però no molt més}
+\begin{obs}
+    No donarem aquí la demostració d'aquest teorema, de la mateixa manera que no n'hem conat cap en aquest capítol. Tanmateix, notem que la demostració d'aquest teorema es redueix a aplicar el teorema \ref{teo:OneStep} tres vegades, escollint $N_1, N_2, N_3$ de manera adequada per tal de minimitzar l'error i garantir que el defecte isomètric sigui proper a zero. És, per tant, similar a la demostració del teorema de Nash a l'hora de triar $\lambda$ per obtenir els $B_1, B_2, B_3$ adequats, si bé és més senzilla pel fet que no cal dividir la varietat en entorns compactes.
+\end{obs}
+
 % \subsection{Demostració del teorema \ref{teo:Stage}}
 % Definim 
 % \begin{equation*}
@@ -563,5 +554,39 @@ on $\mathcal F_0:=f$. En cada etapa, ens haurem de preocupar de que el defecte i
 %         \max\set{|\rho_1|, |\rho_2|, |\rho_3|} \le \frac{5\sqrt3}8 \|B\|
 %     \end{equation*}
 % \end{lema}
-\section{Resultat i conclusió}
-{\color{blue} no sé què posar aquí}
+\subsection{La successió d'immersions}
+Acabem aquesta secció amb l'aplicació concreta del teorema \ref{teo:Stage} al cas del tor pla que ens interessa, de tal manera que obtindrem finalment una immersió isomètrica.
+
+Sigui $\mathcal F_0:\mathbb T^2\to\mathbb R^3$ una immersió tal que
+\begin{equation*}
+    \Delta := \langle\cdot, \cdot\rangle_{\mathbb R^2} - \mathcal F_0^*\langle\cdot, \cdot\rangle\in C^\infty(\mathbb T^2, \mathcal C).
+\end{equation*}
+Un encabiment clàssic del tor com el de l'exemple \ref{ex:tor} amb $R$ i $r$ adequats satisfà aquesta condició. Sigui $\set{\delta_k}_k$ una successió de nombres reals positius monòtona creixent que tendeix a 1. Podem considerar una successió creixent de mètriques
+\begin{equation*}
+    g_k := \mathcal F_0^*\langle\cdot, \cdot\rangle + \delta_k\Delta.
+\end{equation*}
+que convergeix a la mètrica plana en el tor. Podem construir una successió d'immersions
+\begin{equation*}
+    \mathcal F_k := IC(\mathcal F_{k-1}, g_k, N_1, N_2, N_3)
+\end{equation*}
+aplicant el teorema \ref{teo:Stage} per a cada $k\in\mathbb N$. Observem que
+\begin{equation*}
+    g_{k+1} - g_k = (\delta_{k+1}-\delta_k)\Delta\in C^\infty(\mathbb T^2, \mathcal C),
+\end{equation*}
+de manera que es verifica la condició 1 del teorema \ref{teo:Stage}. Per altra banda, la condició 2 es verifica per inducció per la conseqüència 2 del teorema.
+
+Així, podem afirmar el següent resultat.
+\begin{teo}
+    Si $\sum\sqrt{\delta_k-\delta_{k-1}}<\infty$, la successió d'immersions $\set{\mathcal F_k}_k$ convergeix a una immersió isomètrica $C^1$ $\mathcal F_\infty:(\mathbb T^2, \langle\cdot, \cdot\rangle_{\mathbb R^2})\to\mathbb (R^3, \langle\cdot, \cdot\rangle)$.
+\end{teo}
+
+\section{Resultat: un objecte contraintuïtiu}
+A més del mètode que hem descrit aquí, \cite{borrelli2013} dissenyen un algoritme que permet implementar el procés en el llenguatge de programació $C++$, que està fora de l'abast d'aquest treball. Tanmateix, la figura \ref{fig:tor_pl} mostra el resultat d'aplicar aquest algoritme a un encabiment clàssic del tor.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Tor/tor pla.jpg}
+    \caption{Encabiment isomètric del tor pla obtingut amb integració convexa.{\color{blue} citar bé}}
+    \label{fig:tor_pl}
+\end{figure}
+
+Així, aquesta imatge no és només una curiositat matemàtica abstracta, sinó que representa la sorprenent flexibilitat que guanyen les varietats riemannianes quan es redueix la seva regularitat.
