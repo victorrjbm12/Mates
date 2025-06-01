@@ -1,33 +1,31 @@
 \chapter{Cinta de Möbius de paper òptima}
-{\color{red} Manca fer un repàs al que hem escrit i assegurar que s'entengui tot, però està bastant bé.
-}
 \section{Introducció al capítol}
-Al capítol anterior hem vist que, tot i que pel teorema de Whitney sempre existeix algun espai euclidià de dimensió prou alta tal que s'hi pugui encabir una varietat topològica $C^\infty$, no sempre és possible encabir-los en un espai de dimensió 3. En concret, fins i tot per varietats que sí es poden encabir suaument en $\mathbb R^3$, hem vist que no sempre és possible encabir-les isomètricament, com és el cas del tor. 
+Al capítol anterior hem vist que, tot i que pel teorema de Whitney sempre existeix algun espai euclidià de dimensió prou alta tal que s'hi pugui encabir suaument una varietat diferenciable $C^\infty$, no sempre és possible encabir-los en un espai de dimensió 3. A més, fins i tot per varietats riemannianes que sí es poden encabir suaument en $\mathbb R^3$, hem vist que no sempre és possible encabir-les isomètricament, com és el cas del tor pla. 
 
 A continuació presentem un resultat obtingut recentment, l'any 2023, per Richard Evan Schwartz, on demostra una altra restricció per una varietat amb frontera, aquesta vegada en el cas de les cintes de Möbius. Veurem que, tot i que és possible encabir-les suaument i isomètrica en $\mathbb R^3$ quan el costat llarg de la cinta de Möbius és $\sqrt3$ vegades major que el curt, no és possible fer-ho quan és més petit. 
 
-L'objectiu d'aquest capítol no serà només veure aquest resultat, sinó també veure com el podem "esquivar" relaxant les condicions del nostre encabiment isomètric. La manera en què ho aconseguirem apuntarà cap al que veurem al capítol següent, on demostrarem el teorema de Nash. 
+L'objectiu d'aquest capítol no serà només veure aquest resultat, sinó també veure com el podem \say{esquivar} relaxant les condicions del nostre encabiment isomètric. La manera en què ho aconseguirem apuntarà cap al que veurem al capítol següent, on demostrarem el teorema de Nash. 
 
-La font d'aquest capítol és gairebé exclusivament la versió més nova de l'article de Richard Evan Schwartz, \cite{schwartz2024}. Aquest article és molt senzill, curt i fàcil de llegir, de manera que seguim de manera molt propera la seva demostració. Hem afegit els diagrames de la demostració del lema T per tal de fer més evident l'argument topològic que fa servir Schwartz.
+La font d'aquest capítol és gairebé exclusivament la versió més recent de l'article \cite{schwartz2024}. Aquest article és molt senzill, curt i fàcil de llegir, de manera que seguim de manera molt propera la seva demostració. Hem afegit els diagrames de la demostració del lema T per tal de fer més evident l'argument topològic que fa servir Schwartz.
 
-{\color{red} El Schwartz menciona aquí uns papers que expliquem més sobre la banda de Möbius, si volem escriure més sobre el tema els podem utilitzar.}
+%{\color{red} El Schwartz menciona aquí uns papers que expliquem més sobre la banda de Möbius, si volem escriure més sobre el tema els podem utilitzar.}
 
 \section{Introducció al problema}
-Comencem introduint un tipus d'objecte que no havíem vist fins ara, la varietat topològica amb frontera. No dedicarem gaire espai a estudiar-les, però és important entendre que molts dels conceptes i resultats que hem vist al capítol anterior es poden generalitzar a varietats topològiques amb frontera, tractant la frontera com un altre varietat topològica de dimensió $n-1$.
-\begin{defi}
+Comencem introduint un tipus d'objecte que no havíem definit fins ara, la varietat topològica amb frontera. No dedicarem gaire espai a estudiar-les per separat, però és important entendre que molts dels conceptes i resultats que hem vist al capítol anterior es poden generalitzar a varietats topològiques amb frontera, tractant la frontera com un altra varietat topològica de dimensió $n-1$.
+\begin{defi}\label{def:varietat_topologica_amb_frontera}
     Sigui $M$ un espai topològic Hausdorff i tal que verifica el segon axioma de numerabilitat. Diem que $M$ és una \textbf{varietat topològica amb frontera de dimensió $n$} si per a cada $p\in M$ existeix un entorn obert $U\subseteq M$ de $p$ que és homeomorf a un obert de $\mathbb R^n$ o a un obert del semiespai superior $\mathbb H^n := \set{(x_1, \dots, x_n)\in\mathbb R^n:x_n\geq 0}$. 
 \end{defi}
 
-\begin{nota}
-    Escriurem $\partial M$ per denotar \textbf{la frontera de $M$}, és a dir, el subconjunt de punts de $M$ al voltant dels quals la varietat topològica amb frontera té un entorn homeomorf a $\mathbb H^n$ però no en té cap d'homeomorf a $\mathbb R^n$. Recíprocament, anomenarem $Int(M)$ l' \textbf{interior de $M$}, és a dir, els punts de $M$ que no pertanyen a $\partial M$.
+\begin{nota}\label{nota:frontier_and_interior}
+    Escriurem $\partial M$ per denotar \textbf{la frontera de $M$}, és a dir, el subconjunt de punts de $M$ al voltant dels quals la varietat topològica amb frontera té un entorn homeomorf a $\mathbb H^n$ però no en té cap d'homeomorf a $\mathbb R^n$. Recíprocament, anomenarem $int(M)$ l' \textbf{interior de $M$}, és a dir, els punts de $M$ que no pertanyen a $\partial M$.
 \end{nota}
 
-
-\subsection{Definicions}
+A continuació, presentem la definició de la cinta de Möbius plana i del seu encabiment isomètric suau en $\mathbb R^3$.
 \begin{defi}
-    Anomenem \textbf{cinta de Möbius plana de raó d'aspecte $\lambda$} la varietat topològica amb frontera {\color{blue} Hem de definir a la secció anterior varietat topològica amb frontera} obtinguda amb la següent identificació d'un rectangle
+    Anomenem \textbf{cinta de Möbius plana de raó d'aspecte $\lambda$} la varietat topològica amb frontera obtinguda amb la següent identificació d'un rectangle
     $$M_\lambda := ([0,\lambda] \times [0,1])/\sim, \quad\quad (0,y)\sim(\lambda,1-y).$$
 \end{defi}
+{\color{blue} Hem de posar un dibuixet de la cinta de Möbius plana.}
 
 \begin{defi}\label{def:cinta_mobius_paper}
     Una \textbf{cinta de Möbius de paper de raó d'aspecte $\lambda$} és una aplicació isomètrica $I:M_{\lambda}\to\mathbb R^3$ de classe $C^\infty$
@@ -40,9 +38,9 @@ Comencem introduint un tipus d'objecte que no havíem vist fins ara, la varietat
     Anomenem \textbf{cinta de Möbius de paper triangular} la cinta de Möbius de paper de raó d'aspecte $\lambda = \sqrt{3}$.
 \end{ex}
 
-\subsection{Enunciats dels teoremes}
+A continuació presentem el teorema principal que demostrarem en aquest capítol. A més d'aquest, \cite{schwartz2024} demostra el \say{Teorema del límit triangular}, que esmentarem a les conclusions d'aquest capítol. 
 \begin{teo}[\textbf{Principal}]\label{teo:Main Schwartz}
-    Una cinta de Möbius de paper encabida en $\mathbb R^3$ té raó d'aspecte més gran que $\sqrt{3}$.
+    Qualsevol cinta de Möbius de paper encabida en $\mathbb R^3$ té raó d'aspecte més gran que $\sqrt{3}$.
 \end{teo}
 
 
@@ -54,7 +52,7 @@ Comencem introduint un tipus d'objecte que no havíem vist fins ara, la varietat
 \begin{defi}
     Sigui $B'$ un plec. Anomenem \textbf{pre-plec} a la preimatge $B=I^{-1}(B')$.
 \end{defi}
-Veurem més endavant que tota cinta de Möbius de paper encabida té una foliació per plecs. A més, degut al fet que $I$ no incrementa distàncies, és fàcil veure que els pre-plecs també són segments de recta, i que $M_\lambda$ té una foliació per pre-plecs. {\color{blue} Hem de definir foliació preferiblement.}
+Veurem més endavant que tota cinta de Möbius de paper encabida té una foliació per plecs, és a dir, que $\Omega$ es pot descompondre com una unió disjunta de plecs. A més, degut al fet que $I$ no incrementa distàncies, és fàcil veure que els pre-plecs també són segments de recta, i que $M_\lambda$ té una foliació per pre-plecs.
 \begin{defi}
     Un \textbf{patró T en $\Omega$} (en anglès, \textit{T-pattern}) és un parell de plecs que es troben en rectes perpendiculars que intersequen en un punt. Diem que el patró T està \textbf{encabit} en $\Omega$ si els plecs no intersequen.
 \end{defi}
@@ -70,14 +68,15 @@ El Teorema Principal es conseqüència directa dels dos lemes que enunciem a con
 
 \section{Demostració}
 \subsection{Existència de la foliació per plecs}
-Sigui $\Omega^\circ$ l'interior de $\Omega$, i $U$ el subconjunt de $\Omega^\circ$ format pels punts té curvatura mitjana {\color{blue} Hem de definir curvatura mitjana!!!} diferent de zero.
+Sigui $int(\Omega)$ l'interior de $\Omega$, i $U$ el subconjunt de $int(\Omega)$ format pels punts amb curvatura mitjana diferent de zero, tal com hem definit a l'equació \eqref{eq:curvatura_mitjana}.
 
-Per demostrar l'existència de la foliació per plecs, utilitzarem el lema següent:
+Per demostrar l'existència de la foliació per plecs, utilitzarem el lema següent, que no demostrarem:
 \begin{lema}\label{lema:2.2}
-    Tot punt $p\in U$ pertany a un únic plec $\gamma$, i tot punt de $\gamma$ té curvatura mitjana diferent de zero, fins i tot a la frontera. {\color{blue} hauríem de mirar de demostrar això si és possible.}
+    Tot punt $p\in U$ pertany a un únic plec $\gamma$, i tot punt de $\gamma$ té curvatura mitjana diferent de zero, fins i tot als extrems.
 \end{lema}
+Podem parlar de curvatura mitjana en un punt de la frontera $p\in\partial \Omega$ prenent una extensió suau de $\Omega$ en un entorn de $p$.
 
-\begin{teo}[\textbf{Existència de la foliació per plecs}]\label{teo:existencia_foliacio_plecs}
+\begin{teo}\label{teo:existencia_foliacio_plecs}
     $\Omega$ té una foliació per plecs.
 \end{teo}
 {
@@ -111,14 +110,14 @@ Per demostrar l'existència de la foliació per plecs, utilitzarem el lema segü
     \color{green!50!black}
     \textit{Prova.}
     Sigui $u$ un pre-plec, i $\ell(u)$ la seva longitud. Si $\ell(u)<\sqrt{1+\lambda^2}$, es pot desplaçar per una isometria per tal que no toqui les verticals del rectangle, de manera que clarament ha de tallar a la línia central en un únic punt.
-    Suposem, per tant, que $\ell(u)\geq\sqrt{1+\lambda^2}$. Aleshores, $\ell(u)>\lambda$. Però la frontera $\partial \Omega$ és un cercle (topològic) de longitud $2\lambda$ que conté els extrems del plec $I(u)$. Per tant, $2\lambda = \ell(\partial \Omega) \ge  2\ell(I(u)) = 2\ell(u)>2\lambda$, que és una contradicció.
+    Suposem, per tant, que $\ell(u)\geq\sqrt{1+\lambda^2}$. Aleshores, $\ell(u)>\lambda$. Però la frontera $\partial \Omega$ és un cercle (topològic) de longitud $2\lambda$ que conté els extrems del plec $I(u)$. Així, $I(u)$ és un plec que divideix la frontera en dos arcs, i cada un d'aquests ha de tenir longitud més gran que $\ell(I(u))$. És a dir, $\ell(\partial \Omega) \ge  2\ell(I(u)) = 2\ell(u)>2\lambda$. Però això és una contradicció, ja que $\ell(\partial \Omega) = 2\lambda$.
     \qed
 }
 \begin{obs}
     Escollint una foliació per plecs $\beta$, el fet que $I$ és un encabiment implica que la proposició també és certa per plecs: tot plec interseca la línia central de $\Omega$ en un únic punt. Així, podem associar a cada plec de $\beta$ un únic valor de $\mathbb R/2\pi$
 \end{obs}
 
-Sigui $\Gamma$ l'espai de parelles $(x_0,x_1)\in(\mathbb R/2\pi)^2$ tals que $x_0\neq x_1$. Per la observació anterior, cada parella de plecs de $\beta$ diferents es correspon amb un únic element de $\Gamma$. $\Gamma$ és homeomorf a un cilindre.
+Sigui $\Gamma$ l'espai de parelles $(x_0,x_1)\in(\mathbb R/2\pi)^2$ tals que $x_0\neq x_1$. Per la observació anterior, cada parella de plecs de $\beta$ diferents es correspon amb un únic element de $\Gamma$. $\Gamma$ és homeomorf a un cilindre. Vegeu la figura \ref{fig:cilindre}.
 
 \begin{figure}[htbp]
     \centering
@@ -129,7 +128,7 @@ Sigui $\Gamma$ l'espai de parelles $(x_0,x_1)\in(\mathbb R/2\pi)^2$ tals que $x_
     \label{fig:cilindre}
 \end{figure}
 
-Podem compactificar $\Gamma$ afegint $\partial_+$ com el límit de les parelles en què $x_1$ va just abans que $x_0$ en el cilindre, i $\partial_-$ com el límit de les parelles en què $x_1$ va just després que $x_0$. Aquest nou espai, $\overline{\Gamma}$, és homeomorf a l'esfera $\mathbb S^2$. L'aplicació $\Sigma(x_0,x_1) = (x_0,x_1)$ es pot estendre a una aplicació contínua de l'esfera que bescanvia $\partial_+$ i $\partial_-$.
+Podem compactificar $\Gamma$ afegint $\partial_+$ com el límit de les parelles en què $x_1$ va just abans que $x_0$ en el cilindre, i $\partial_-$ com el límit de les parelles en què $x_1$ va just després que $x_0$. Aquest nou espai, $\overline{\Gamma}$, és homeomorf a l'esfera $\mathbb S^2$. L'aplicació $\Sigma(x_0,x_1) = (x_0,x_1)$ es pot estendre a una aplicació contínua de l'esfera que bescanvia $\partial_+$ i $\partial_-$. Vegeu la figura \ref{fig:esfera}.
 
 \begin{figure}[htbp]
     \centering
@@ -172,7 +171,7 @@ on $\vec u_0\rightsquigarrow\vec u_1$. Notem que la definició és independent d
     \qed
 }
 
-A més, pels punts antipodals $\partial_+$ i $\partial_-$ tenim que $\overline{F}(\partial_+) = \overline{F}(\partial_-) = (1,0)$.
+A més, pels punts antipodals $\partial_+$ i $\partial_-$ tenim que $\overline{F}(\partial_+) = (1,0)$ i $\overline{F}(\partial_-) = (-1,0)$.
 
 Com $\overline{F}$ és contínua una aplicació contínua sobre un domini homeomorf a una esfera tal que $\overline{F}\circ\Sigma = -\overline{F}$, pel teorema de Borsuk-Ulam, existeix algun punt del domini amb imatge nul·la. Aquest punt no pot ser $\partial_+$ ni $\partial_-$, ja que $\overline{F}(\partial_\pm) = (\pm1,0)$, per tant ha de pertànyer a $\Gamma$.
 
@@ -211,7 +210,7 @@ Sigui $I:M_\lambda\to\Omega$ una cinta de Möbius de paper encabida amb un patr�
     Per qualsevol subconjunt $S\subseteq M_\lambda$, anomenem $S'=I(S)$ la imatge de $S$ per $I$.
 \end{nota}
 
-Rotem $\Omega$ tal que un plec sigui horitzontal, $T'$, i l'altre estigui per sota en el mateix pla, $B'$. Observant $\Omega$ i $M_\lambda$, verifiquem que tenen la forma de la figura {\color{red} Explicar com s'ha de llegir el dibuixet!!!}
+Rotem $\Omega$ tal que un plec sigui horitzontal, $T'$, i l'altre estigui per sota en el mateix pla, $B'$. Observant $\Omega$ i $M_\lambda$, verifiquem que tenen la forma de la figura \ref{fig:mobius_1}, on la representació de $\Omega$ és una simplificació del que es veuria si projectéssim $\Omega$ en el pla format per $T'$ i $B'$.
 
 \begin{figure}[htbp]
     \centering
@@ -220,7 +219,7 @@ Rotem $\Omega$ tal que un plec sigui horitzontal, $T'$, i l'altre estigui per so
     \raisebox{4\height}{$\xrightarrow{\scalebox{1.5}{$I$}}$}
     \quad
     \includegraphics[height=0.33\textwidth]{dibuix_mobius_2}
-    \caption{Cinta de Möbius de paper encabida amb un patró T encabit.}
+    \caption{Cinta de Möbius plana tallada per $T$ (dreta) i cinta de Möbius de paper encabida amb un patró T encabit (esquerra).}
     \label{fig:mobius_1}
 \end{figure}
 
@@ -249,7 +248,6 @@ Definim les corbes
         \beta(t) := 2\sqrt{5+t^2}-2t < 2\ell(D)-2t = \ell(D) + \ell(H) = 2\lambda
     \end{cases}
 \end{equation*}
-{\color{red} Una mica hadwavey, de nou. Caldria argumentar millor.}
 
 Per tant, $2\lambda > \max(\alpha(t),\beta(t))$. Posant $t_0 = 1/\sqrt{3}$, tenim que $\alpha(t_0) = \beta(t_0) = 2\sqrt3$.
 
@@ -263,6 +261,7 @@ Amb això hem vist i demostrat una nova restricció sobre els encabiments isomè
 \end{teo}
 
 Ara bé, hi ha una manera de prendre un tros de paper de raó d'aspecte $\lambda = 1$, i doblegar-lo de tal manera que el resultat sigui \textit{gairebé} idèntic a una cinta de Möbius de paper encabida. Per aconseguir això, només cal prendre el tros de paper i doblegar-lo un nombre parell de vegades, de tal manera que quedi dividit en un nombre senar de seccions iguals. Si aquestes seccions es dobleguen de manera alternant, com un acordió, podem enganxar els dos extrems i aconseguir un \textbf{acordió de Möbius}. De fet, amb aquest mètode podem aconseguir prendre un paper rectangular de qualsevol raó d'aspecte i tornar-lo en un acordió de Möbius. 
+{\color{blue} Hem de posar un dibuixet de l'acordió de Möbius.}
 
 Què té d'especial l'acordió de Möbius que impedeix que serveixi com a contraexemple del teorema Principal? Aquest objecte no és una cinta de Möbius de paper encabida, tal com l'hem definit a la definició \ref{def:cinta_mobius_paper}, perquè els dos extrems no poden encaixar correctament sense doblegar el paper de manera suau. Els punts per on dobleguem, dit d'altra manera, no són regulars, de manera que l'encabiment no és $C^\infty$. En concret, hem necessitat regularitat com a mínim $C^2$ per poder definir la curvatura mitjana en la demostració del teorema \ref{teo:existencia_foliacio_plecs}. Si l'encabiment no és prou regular, no hi ha la foliació per plecs necessària per demostrar el teorema Principal. 
 

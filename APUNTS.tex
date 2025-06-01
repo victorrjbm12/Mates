@@ -208,7 +208,7 @@ Definició de laminat escala: tenim un conjunt $K\in M^{d\times m}$ on vull que 
     \frac12\varphi_p\beta_{ij} = \sum_{\nu}a_{\nu}\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}
 \end{equation}
 \begin{lema}
-    L'equació \ref{eq:un_mig_de_phi_p} es pot satisfer amb les condicions necessàries.
+    L'equació \eqref{eq:un_mig_de_phi_p} es pot satisfer amb les condicions necessàries.
 \end{lema}
 {\color{green!50!black}\textit{Prova.} Les matrius simètriques definides positives formen un con de dimensió $\frac12n(n+1)$.{\color{blue} D'on surt això? És molt estrany} És possible cobrir aquest con amb conjunts simplicials {\color{blue} MIRAR A WIKIPEDIA EL QUE ÉS} geomètrics oberts, de tal manera que cada punt del con estigui cobert per, com a molt, un nombre $W$ d'aquests entorns, on $W$ depèn només de $n$. 
 
@@ -234,7 +234,7 @@ Si $\psi_r$ és per cada $r$ la funció lineal dels paràmetres locals pels qual
 \begin{equation}
     M_{(\mu,\nu)ij} = \sum_{r}\frac{\partial\psi_r}{\partial x^i}\frac{\partial\psi_r}{\partial x^j}
 \end{equation}
-i, substituint en \ref{eq:beta_con}, tenim que
+i, substituint en \eqref{eq:beta_con}, tenim que
 \begin{equation}
     \beta_{ij} = \sum_{r}\sum_{\mu,\nu}C_{\mu,\nu}^*M_{(\mu,\nu)ij}\frac{\partial\psi_r}{\partial x^i}\frac{\partial\psi_r}{\partial x^j}
 \end{equation}
@@ -663,4 +663,26 @@ Aquí hauriem de parlar d'embedding preferiblement.
 
 
 
+\newpage
+\section{Temes de les reunions}
+Sigui $\mathcal M$ una varietat diferenciable amb una distància $d$, i sigui $$\nu = \set{(x,v)\in \mathcal M \times \mathbb R^n: v\in T_x\mathcal M^{\perp}}.$$ Per qualsevol $\varepsilon > 0$, definim el subconjunt $$\nu_\varepsilon = \set{(x,v)\in \nu: ||v|| < \varepsilon}$$
+i l'aplicació $$\begin{aligned}
+    \sigma:\nu_\varepsilon &\to \mathbb R^n \\
+    (x,v) &\mapsto x+v
+\end{aligned}$$
+\begin{teo}
+    Si $\varepsilon$ és prou petit, aleshores $\sigma:\nu_\varepsilon \to \sigma(\nu_\varepsilon)$ és homeomorfisme.
+\end{teo}
+{\color{green!50!black}\textit{Prova. (Meva, està molt millor al John M. Lee)} Primer, volem veure que $\sigma$ és injectiva. Suposem que $\mathcal M$ és $C^\infty$ (amb $C^2$ hauria de ser prou). Donat qualsevol punt $x\in\mathcal M$ existeix un entorn prou petit $U_x$ de $x$ en $\mathcal M$ tal que $\nu_1$ és injectiva. Això és degut al fet que, localment, la varietat és aproximadament igual al seu espai tangent. 
+
+Sigui $x_0$ el punt amb l'entorn $U_{x_0}$ més petit que verifica la propietat anterior, i sigui $y_0$ el punt de $\mathcal M\setminus U_{x_0}$ tal amb el vector $w_0\in T_{y_0}\mathcal M$ més curt tal que existeix algun $v_0\in T_{x_0}\mathcal M$ tal que $x_0+v_0=y_0+w_0$. 
+Sigui $l=||w_0||$. Aleshores, posant $\varepsilon = l/2$, tenim que $\sigma$ és injectiva. 
+
+Pel que fa a la exhaustivitat, $\sigma:\nu_\varepsilon \to \sigma(\nu_\varepsilon)$ és exhaustiva per definició. A més, en ser la suma de dos vectors en $\mathbb R^n$, $\sigma$ és contínua.
+
+Cal veure que la inversa $\sigma^{-1}$ és contínua. Sigui $a\in \sigma(\nu_\varepsilon)$. Aleshores, existeixen $x\in \mathcal M$ i $v\in \mathbb R^n$ tals que $a=\sigma(x,v)=x+v$. Com $\sigma^{-1}$ projecta punts de $\sigma(\nu_\varepsilon)$ en el punt de $\nu_\varepsilon$ més proper, tenim que $\sigma^{-1}$ és contínua.
+Per tant, $\sigma$ és un homeomorfisme. \qed}
+\begin{obs} 
+    D'aquí surt el que fa servir Nash per allò del conjunt que no admet dues perpendiculars.
+\end{obs}
 \newpage

@@ -5,22 +5,22 @@
 {\color{red} ÉS MOLT IMPORTANT QUE DESPRÉS MIREM LA PÀGINA 24 DEL LEE, ON DEFINEIX TAMBÉ VARIETATS AMB FRONTERA}
 
 \section{Introducció al capítol}
-L'objectiu d'aquest capítol serà oferir els fonaments matemàtics necessaris per a entendre i justificar els resultats que es mostraran en els capítols posteriors, alhora que volem motivar l'interès d'aquests. Així, es definiran els conceptes i objectes matemàtics basics amb els quals treballarem, veurem algunes de les seves propietats i enunciarem i demostrarem alguns teoremes que seran clau en el treball que segueix.
+L'objectiu d'aquest capítol serà oferir els fonaments matemàtics necessaris per a entendre i justificar els resultats que es mostraran en els capítols posteriors, alhora que volem motivar l'interès d'aquests. Així, es definiran els conceptes i objectes matemàtics bàsics amb els quals treballarem, veurem algunes de les seves propietats i enunciarem i demostrarem alguns teoremes que seran clau en el treball que segueix.
 
 Voldrem estudiar, al llarg d'aquest capítol, els conceptes de varietat topològica, varietat diferenciable i varietat Riemanniana. A un nivell intuïtiu, es tractarà d'espais topològics que es poden veure localment com espais reals $\mathbb R^n$, sobre els quals es pot fer càlcul infinitesimal i que es poden dotar de diferents mètriques. Prendrem especial atenció a la manera en què aquests espais es poden encabir (en anglès, \textit{embed}) en altres varietats i espais ambients. Si bé és generalment fàcil entendre i visualitzar aquests espais quan es consideren encabits en un espai $\mathbb R^n$, com el cas de les superfícies regulars en $\mathbb R^3$, cal notar que les varietats topològiques no requereixen aquest espai ambient per a la seva definició i estudi, sinó que en són independents. Aquest fet és molt rellevant, tot i que no el veurem aquí, en una de les aplicacions més interessants de la geometria diferencial, la teoria de la relativitat general, on l'espai-temps es modela com una varietat diferenciable de dimensió 4 i on no hi ha motiu per introduir cap espai ambient en el sentit clàssic.
 
-Si bé seguirem la línia general d'estudi en molts llibres de referència, centrant-nos en funcions i aplicacions de regularitat $C^\infty$, més endavant ens caldrà treballar amb regularitats més baixes. Per aquest motiu, el primer que ens ocuparem de definir, serà el de funcions i aplicacions de classe $C^k$ i les normes associades. Això serà rellevant pel fet que també es pot definir la classe de regularitat d'una varietat diferenciable en un punt, i direm que una varietat és suau (en anglès, \textit{smooth}) quan és de classe $C^\infty$. La noció de suavitat no pot ser una propietat purament topològica, ja que no és preservada per homeomorfismes. L'exemple més evident és el d'un cercle i un quadrat, que són homeomorfs en $\mathbb R^2$, però el cercle és suau mentre que el quadrat no ho és. 
+Si bé seguirem la línia general d'estudi en molts llibres de referència, centrant-nos en funcions i aplicacions de regularitat $C^\infty$, més endavant ens caldrà treballar amb regularitats més baixes. Per aquest motiu, del primer que ens ocuparem serà de definir les funcions i aplicacions de classe $C^k$ i les normes associades. Això serà rellevant pel fet que també es pot definir la classe de regularitat d'una varietat diferenciable en un punt, i direm que una varietat és suau (en anglès, \textit{smooth}) quan és de classe $C^\infty$. La noció de suavitat no pot ser una propietat purament topològica, ja que no és preservada per homeomorfismes. L'exemple més evident és el d'un cercle i un quadrat, que són homeomorfs en $\mathbb R^2$, però el cercle és suau mentre que el quadrat no ho és. 
 
-La suavitat de les varietats diferenciables serà clau per a desenvolupar eines potents en geometria diferencial, com veurem amb l'existència de particions de la unitat i el teorema de Whitney. Ara bé, veurem que això comporta un grau afegit de rigidesa en les propietats de les varietats Riemannianes pel que fa a la seva relació amb els encabiments (en anglès, \textit{embeddings}). La última part d'aquest capítol serà dedicada a un exemple d'això mateix: demostrar que no existeix cap encabiment  $C^\infty$ del tor pla en $\mathbb R^3$ tal que preservi les distàncies entre els seus punts. Veurem, de fet, que el motiu principal d'aquesta impossibilitat es relaciona amb el concepte de curvatura gaussiana, que només es pot definir per a superfícies immerses en $\mathbb R^3$ de regularitat $C^2$ o superior. 
+La suavitat de les varietats diferenciables serà clau per a desenvolupar eines potents en geometria diferencial, com veurem amb l'existència de particions de la unitat i el teorema de Whitney. Ara bé, veurem que això comporta un grau afegit de rigidesa en les propietats de les varietats Riemannianes pel que fa a la seva relació amb els encabiments (en anglès, \textit{embeddings}). L'última part d'aquest capítol serà dedicada a un exemple d'això mateix: demostrar que no existeix cap encabiment  $C^\infty$ del tor pla en $\mathbb R^3$ tal que preservi les distàncies entre els seus punts. Veurem, de fet, que el motiu principal d'aquesta impossibilitat es relaciona amb el concepte de curvatura gaussiana, que només es pot definir per a superfícies immerses en $\mathbb R^3$ de regularitat $C^2$ o superior. 
 
-{\color{blue} Les cites principals en aquest capítol seran \cite{lee2013} i \cite{warner1983}, pel que fa a varietats suaus, i \cite{chavel2006}, pel que fa a varietats Riemannianes.}
+Les cites principals en aquest capítol seran \cite{lee2013} i \cite{warner1983}, pel que fa a varietats suaus, i \cite{chavel2006}, pel que fa a varietats Riemannianes.
 
 \section{Classes de regularitat}
 Comencem amb la definició estàndard de classes de regularitat de funcions i aplicacions.
 \begin{defi}
     Siguin $U\subseteq\mathbb R^n$ un conjunt obert i $f:U\to\mathbb R$ una funció real contínua.
     Diem que $f$ és \textbf{ $k$-vegades derivable contínuament}, o \textbf{de classe $C^k(U)$}, amb $k\in\mathbb N_0$, si totes les derivades parcials d'ordre $k$, \begin{equation*}
-        \frac{\partial^k f}{\partial x_1^{\alpha_1}\cdots\partial x_n^{\alpha_n}}\quad\text{tal que }\sum_{i=1}^n\alpha_i = k,
+        \frac{\partial^k f}{\partial (x^1)^{\alpha_1}\cdots\partial (x^n)^{\alpha_n}}\quad\text{tal que }\sum_{i=1}^n\alpha_i = k,
     \end{equation*} existeixen i són contínues en $U$.
 
     Si $g:U\to\mathbb R^m$ és una aplicació contínua, diem que $g$ és \textbf{ $k$-vegades derivable contínuament}, o \textbf{de classe $C^k(U)$}, si totes les seves components $g_i:U\to\mathbb R$ són $k$-vegades derivables contínuament.
@@ -49,7 +49,7 @@ Comencem amb la definició estàndard de classes de regularitat de funcions i ap
     \end{equation*}
     on $\alpha = (\alpha_1, \dots, \alpha_n)$, $|\alpha| = \alpha_1 + \dots + \alpha_n$, i
     \[
-    \partial^\alpha f(x) := \frac{\partial^{|\alpha|} f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}.
+    \partial^\alpha f(x) := \frac{\partial^{|\alpha|} f(x)}{\partial (x^1)^{\alpha_1}\cdots\partial (x^n)^{\alpha_n}}.
     \]
 
     Per una aplicació $g:U\to\mathbb{R}^m$ de classe $C^k(U)$, definim la \textbf{norma $\|\cdot\|_{C^k(U)}$} de $g$ com
@@ -155,7 +155,7 @@ A continuació veurem algunes propietats de les varietats diferenciables que es 
     Ara sigui $\set{U_\alpha:\alpha\in A}$ un recobriment per oberts qualsevol. El conjunt $\overline{G_{k+1}}\setminus G_{k-1}$ és compacte i contingut en l'obert $G_{k+1}\setminus \overline{G_{k-2}}$. Per tot $i\ge3$, podem escollir un subrecobriment finit del recobriment per oberts $U_\alpha\cap(G_{k+1}\setminus \overline{G_{k-2}})$ de $\overline{G_k}\setminus G_{k-1}$, i es pot escollir un subrecobriment finit del recobriment per oberts $U_\alpha\cap G_3$ del conjunt compacte $\overline{G_2}$. Aquesta nova col·lecció serà un refinament numerable i localment finit per oberts d'adherència compacta del recobriment $\set{U_\alpha}$, com volíem veure. \qed
 }
 \begin{lema}\label{lema:bump}
-    Existeix una funció real no-negativa $\varphi:\mathbb R^n\to\mathbb R$ de classe $C^\infty$ que és igual a 1 en $[-1,1]^n$ i $0$ en el complementari de $(-2,2)^n$.
+    Existeix una funció real no negativa $\varphi:\mathbb R^n\to\mathbb R$ de classe $C^\infty$ que és igual a 1 en $[-1,1]^n$ i $0$ en el complementari de $(-2,2)^n$.
 \end{lema}
 
 {\color{green!50!black} 
@@ -193,7 +193,7 @@ A continuació veurem algunes propietats de les varietats diferenciables que es 
 
 \begin{teo}[\textbf{Existència de particions de la unitat}]
 
-    Sigui $M$ una varietat diferenciable de classe $C^\infty$ i $\set{U_\alpha:\alpha\in A}$ un recobriment per oberts de $M$. Aleshores, existeix una partició de la unitat numberable $\set{\varphi_i:i\in I}$ subordinada al recobriment $\set{U_\alpha}$ amb suports $\set{\text{supp}\varphi_i}$ compactes. A més, si no exigim que els suports siguin compactes, existeix una partició de la unitat $\set{\varphi_\alpha}$ subordinada al recobriment $\set{U_\alpha}$ amb $\text{supp}\varphi_\alpha \subseteq U_\alpha$ per a tot $\alpha\in A$, amb com a molt un conjunt numerable dels $\varphi_\alpha$ no idènticament zero.
+    Sigui $M$ una varietat diferenciable de classe $C^\infty$ i $\set{U_\alpha:\alpha\in A}$ un recobriment per oberts de $M$. Aleshores, existeix una partició de la unitat numerable $\set{\varphi_i:i\in I}$ subordinada al recobriment $\set{U_\alpha}$ amb suports $\set{\text{supp}\varphi_i}$ compactes. A més, si no exigim que els suports siguin compactes, existeix una partició de la unitat $\set{\varphi_\alpha}$ subordinada al recobriment $\set{U_\alpha}$ amb $\text{supp}\varphi_\alpha \subseteq U_\alpha$ per a tot $\alpha\in A$, amb com a molt un conjunt numerable dels $\varphi_\alpha$ no idènticament zero.
 \end{teo}
 
 {\color{green!50!black} 
@@ -207,7 +207,7 @@ A continuació veurem algunes propietats de les varietats diferenciables que es 
             0 & \text{fora de } V.
         \end{cases}
     \end{equation*}
-    on $\varphi$ és tal com l'hem definit a l'equació \ref{eq:phi}. Aleshores, $\psi_p$ és una funció de classe $C^\infty$ en $M$ que val $1$ en un entorn $W_p$ de $p$ i té suport compacte en $V\subseteq U_{\alpha_p}\cap(G_{i_p+2}\setminus \overline{G_{i_p}})$. Per cada $i\ge1$, escollim un nombre finit de punts $p\in M$ tals que els respectius $W_p$ siguin un recobriment de $\overline{G_i}\setminus G_{i-1}$. Podem escollir un ordre qualsevol per les funcions corresponents $\psi_p$ per obtenir una successió $\set{\psi_j}$, i els seus suports formen una col·lecció localment finita de subconjunts de $M$. Amb això veiem que la funció 
+    on $\varphi$ és tal com l'hem definit a l'equació \eqref{eq:phi}. Aleshores, $\psi_p$ és una funció de classe $C^\infty$ en $M$ que val $1$ en un entorn $W_p$ de $p$ i té suport compacte en $V\subseteq U_{\alpha_p}\cap(G_{i_p+2}\setminus \overline{G_{i_p}})$. Per cada $i\ge1$, escollim un nombre finit de punts $p\in M$ tals que els respectius $W_p$ siguin un recobriment de $\overline{G_i}\setminus G_{i-1}$. Podem escollir un ordre qualsevol per les funcions corresponents $\psi_p$ per obtenir una successió $\set{\psi_j}$, i els seus suports formen una col·lecció localment finita de subconjunts de $M$. Amb això veiem que la funció 
     \begin{equation*}
         \psi = \sum_{j=1}^\infty \psi_j
     \end{equation*}
@@ -265,7 +265,7 @@ A continuació utilitzarem l'existència de particions de la unitat per a demost
 \subsection{Vectors tangents}
 Un vector en $\mathbb R^n$ es pot pensar com un operador lineal sobre funcions reals diferenciables. En concret, donada una funció $f$ diferenciable en un punt $p\in\mathbb R^n$, el vector $v$ assigna a $f$ un valor real que és la derivada direccional de $f$ en la direcció i sentit de $v$ a $p$,
 \begin{equation*}
-    v(f) = v_1\frac{\partial f}{\partial x_1}\Big|_p + \cdots + v_n\frac{\partial f}{\partial x_n}\Big|_p,
+    v(f) = v_1\frac{\partial f}{\partial x^1}\Big|_p + \cdots + v_n\frac{\partial f}{\partial x^n}\Big|_p,
 \end{equation*}
 amb les propietats de linealitat esperades,
 \begin{equation*}
@@ -297,9 +297,9 @@ per qualssevol $f,g\in C^\infty(\mathbb R^n)$ i $\lambda\in\mathbb R$.
 
 En concret, podem construir els següents vectors tangents:
 \begin{equation*}
-    \frac{\partial}{\partial z_i}\Big|_p(f) := \frac{\partial(f\circ\varphi^{-1})}{\partial \hat z_i}(\varphi(p)),
+    \frac{\partial}{\partial x^i}\Big|_p(f) := \frac{\partial(f\circ\varphi^{-1})}{\partial x^i}(\varphi(p)),
 \end{equation*}
-on $\hat z_i$ és la $i$-èssima coordenada de $\varphi(p)$ en la carta coordenada $(U,\varphi)$ centrada en $p$. Es pot demostrar que aquests vectors tangents formen una base de $T_pM$, de manera que $T_pM$ un espai vectorial de dimensió $n$. Tractant-lo com a tal, podem definir el seu espai dual.
+on $(x^1,\dots,x^n)$ són les coordenades canòniques de $\mathbb R^n$ i $(U,\varphi)$ una carta coordenada centrada en $p$. Es pot demostrar que aquests vectors tangents formen una base de $T_pM$, de manera que $T_pM$ un espai vectorial de dimensió $n$. Tractant-lo com a tal, podem definir el seu espai dual.
 
 \begin{defi}
     Sigui $M$ una varietat diferenciable. Per cada punt $p\in M$, definim \textbf{l'espai cotangent} a $p$, $T^*_pM$, com l'espai vectorial dual de $T_pM$,
@@ -326,7 +326,7 @@ Una eina essencial per treballar amb vectors tangents serà el concepte de \text
     per a tota $f\in C^\infty(N)$.
 \end{defi}
 \begin{defi}
-    Diem que una aplicació $F$ és \textbf{no-singular} en $p\in M$ si $dF_p$ no és singular, és a dir, si el seu nucli és $\set0$.
+    Diem que una aplicació $F$ és \textbf{no singular} en $p\in M$ si $dF_p$ no és singular, és a dir, si el seu nucli és $\set0$.
 \end{defi}
 Dualitzant l'aplicació que defineix el diferencial, podem definir el \textit{pullback} d'una funció diferenciable, que serà particularment important per a l'estudi de mètriques Riemannianes.
 \begin{defi}
@@ -375,21 +375,21 @@ Es pot demostrar, tot i que no ho farem aquí, que tant el fibrat tangent com el
 \end{defi}
 
 \begin{defi}
-    Un \textbf{camp vectorial} $X$ \textbf{al llarg d'una corba} $\sigma:[a,b]\to M$ és una aplicació $X:[a,b]\to T(M)$ que \say{aixeca} $\sigma$, és a dir, tal que $\pi\circ X = \sigma$, on $\pi$ és la projecció del fibrat tangent tal com l'hem definit abans. 
+    Un \textbf{camp vectorial} $X$ \textbf{al llarg d'una corba} $\sigma:[a,b]\to M$ és una aplicació $X:[a,b]\to TM$ que \say{aixeca} $\sigma$, és a dir, tal que $\pi\circ X = \sigma$, on $\pi$ és la projecció del fibrat tangent tal com l'hem definit abans. 
 
-    Un \textbf{camp vectorial} $X$ \textbf{en un conjunt obert} $U\subseteq M$ és una aplicació $X:U\to T(M)$ que \say{aixeca} $U$, és a dir, tal que $\pi\circ X = \text{id}_U$.
+    Un \textbf{camp vectorial} $X$ \textbf{en un conjunt obert} $U\subseteq M$ és una aplicació $X:U\to TM$ que \say{aixeca} $U$, és a dir, tal que $\pi\circ X = \text{id}_U$.
 \end{defi}
 
 
 \subsection{Subvarietats, immersions, encabiments i difeomorfismes}
-{\color{blue} Important motivar bé aquesta secció perquè és de les més importants per al nostre TFG}
+A continuació, definirem alguns dels conceptes més importants per aquest treball, en particular el concepte d'encabiment. A més, demostrarem el teorema de Whitney, que afirma que tota varietat diferenciable suau $n$-dimensional admet un encabiment suau en un espai euclidià. 
 \begin{defi}
-    Sigui $\psi:M\to N$ una aplicació diferenciable {\color{blue} $C^\infty$}.
+    Sigui $\psi:M\to N$ una aplicació diferenciable amb regularitat $C^k$, $k\ge 1$.
     \begin{enumerate}
-        \item Diem que $\psi$ és una \textbf{immersió} si $d\psi_p$ és no-singular per a tot $p\in M$.
-        \item Diem que $\psi$ és un \textbf{encabiment} (en anglès, \textit{embedding}) si és una immersió injectiva i un homeomorfisme sobre la seva imatge.
-        \item Diem que $\psi$ és un \textbf{difeomorfisme} si és una injectiva amb inversa diferenciable {\color{blue} $C^\infty$}.
-        \item El parell $(M, \psi)$ és una \textbf{subvarietat de $N$} si $\psi$ és una immersió injectiva, i és una \textbf{subvarietat encabida} (en anglès, \textit{embedded submanifold}) si és un encabiment.
+        \item Diem que $\psi$ és una \textbf{immersió} si $d\psi_p$ és no singular per a tot $p\in M$.
+        \item Diem que $\psi$ és un \textbf{encabiment} si és una immersió injectiva i un homeomorfisme sobre la seva imatge.
+        \item Diem que $\psi$ és un \textbf{difeomorfisme} $C^r$ si és una injectiva amb inversa diferenciable amb regularitat $C^r$, $r\le k$.
+        \item El parell $(M, \psi)$ és una \textbf{subvarietat de $N$} si $\psi$ és una immersió injectiva, i és una \textbf{subvarietat encabida} si és un encabiment.
     \end{enumerate}
 \end{defi}
 
@@ -426,6 +426,9 @@ Un dels tipus de subvarietats que més ens interessarà seran les subvarietats e
 La possibilitat de prendre varietats diferenciables arbitràries com a subvarietats d'altres espais amb estructura més senzilla, com és el cas de $\mathbb R^n$, pot oferir una major facilitat a l'hora de treballar amb aquestes varietats. Si bé, com hem dit més amunt i hem vist fins ara, les varietats diferenciables suaus no requereixen ser subvarietat de cap espai euclidià, sí és cert que totes elles poden ser subvarietats encabides de $\mathbb R^N$ per a $N$ prou gran.
 
 El teorema de Whitney (o teoremes, degut a les seves diverses formulacions) afirma això mateix, que tota varietat diferenciable suau $n$-dimensional $M$ admet un encabiment suau en $\mathbb R^{2n+1}$. Per demostrar el teorema de Whitney, cal utilitzar el teorema de Sard. No demostrarem aquest darrer teorema, però el farem servir en la demostració del teorema de Whitney.
+\begin{nota}
+    Sempre que parlem d'encabiments o immersions de varietats en espais $\mathbb R^n$, suposarem que aquests tenen la mètrica euclidiana.
+\end{nota}
 \begin{defi}
     Sigui $F:M\to N$ una aplicació diferenciable. Diem que $p\in M$ és un \textbf{punt regular} de $F$ si $dF_p$ és exhaustiva. Altrament, diem que és un \textbf{punt crític}. Un punt $c\in N$ és un \textbf{valor regular} de $F$ si tots els punts de la preimatge $F^{-1}(c)$ són regulars.
 \end{defi}
@@ -435,7 +438,7 @@ El teorema de Whitney (o teoremes, degut a les seves diverses formulacions) afir
 \end{teo}
 
 \begin{lema}
-    Sigui $M\subseteq\mathbb R^N$ una subvarietat suau $n$-dimensional. Per tot $v\in \mathbb R^N\setminus R^{N-1}$, sigui $\pi_v : \mathbb R^N\setminus R^{N-1}\to S^{N-1}$ la projecció amb nucli $\mathbb Rv$, on identifiquem $\mathbb R^{N-1}$ amb el subespai de $\mathbb R^N$ amb la última coordenada nul·la. Si $N>2n+1$, aleshores hi ha un conjunt dens de vectors $v\in \mathbb R^N\setminus R^{N-1}$ tals que hi ha un conjunt dens de vectors $v\in \mathbb R^N\setminus R^{N-1}$ tals que $\pi_v|_M$ és una immersió injectiva de $M$ en $\mathbb R^{N-1}$.
+    Sigui $M\subseteq\mathbb R^N$ una subvarietat suau $n$-dimensional. Per tot $v\in \mathbb R^N\setminus R^{N-1}$, sigui $\pi_v : \mathbb R^N\setminus R^{N-1}\to S^{N-1}$ la projecció amb nucli $\mathbb Rv$, on identifiquem $\mathbb R^{N-1}$ amb el subespai de $\mathbb R^N$ amb la última coordenada nul·la. Si $N>2n+1$, aleshores hi ha un conjunt dens de vectors $v\in \mathbb R^N\setminus R^{N-1}$ tals que $\pi_v|_M$ és una immersió injectiva de $M$ en $\mathbb R^{N-1}$.
 \end{lema}
 {
     \color{green!50!black} 
@@ -443,7 +446,7 @@ El teorema de Whitney (o teoremes, degut a les seves diverses formulacions) afir
     Observem les següents equivalències entre propietats:
     \begin{itemize}
         \item $\pi_v|_M$ és injectiva $\iff$ $p-q$ mai és paral·lel a $v$ per a $p,q\in M$ diferents.
-        \item $\pi_v|_M$ és una immersió suau $\iff$ $T_pM$ no conté vectors no-nuls de $\ker d(\pi_v)_p$ per a $p\in M$.
+        \item $\pi_v|_M$ és una immersió suau $\iff$ $T_pM$ no conté vectors no nuls de $\ker d(\pi_v)_p$ per a $p\in M$.
     \end{itemize}
     Com $\pi_v$ és lineal, el seu diferencial és la mateixa aplicació lineal, de manera que aquesta última condició és equivalent a demanar que $T_pM$ no contingui vectors no nuls paral·lels a $v$.
 
@@ -498,14 +501,14 @@ Al lema anterior, \textbf{propi} tan sols vol dir que l'encabiment és una aplic
     Vegem que $F$ és una immersió suau. Sigui $p\in M$ i $p\in B_i$. Com $\rho_i\equiv1$ en un entorn de $p$, tenim $d(\rho_i\varphi_i)_p = d\varphi_p$, que és injectiva. Per tant, $dF_p$ és injectiva, i $F$ és una immersió suau.
     Amb això acabem el cas de $M$ compacte.
 
-    Suposem ara que $M$ no és compacte. Sigui $f:M\to \mathbb R$ una funció d'exhauriment suau, tal com les hem definit a la definició \ref{def:funció_exhauriment}. Pel teorema de Sard, per tot enter no-negatiu $i$ existeixen valors regulars $a_i,b_i$ de $f$ tals que $i<a_i<b_i<i+1$. Definim els subconjunts de $M$
+    Suposem ara que $M$ no és compacte. Sigui $f:M\to \mathbb R$ una funció d'exhauriment suau, tal com les hem definit a la definició \ref{def:funció_exhauriment}. Pel teorema de Sard, per tot enter no negatiu $i$ existeixen valors regulars $a_i,b_i$ de $f$ tals que $i<a_i<b_i<i+1$. Definim els subconjunts de $M$
     \begin{align*}
         D_0 &= f^{-1}(-\infty,1],\quad E_0 = f^{-1}(-\infty,a_1],\\
         D_i &= f^{-1}(i,i+1],\quad E_i = f^{-1}(b_{i-1},a_{i+1}],\\
     \end{align*}
-    Cada $E_i$ és un domini regular compacte {\color{blue} definició?}. Tenim que $D_i\subseteq Int(E_i)$, $M=\bigcup_i D_i$ i $E_i\cap E_j = \emptyset$ si $j\not\in\set{i-1,i,i+1}$. 
+    Cada $E_i$ és un domini regular compacte, és a dir, un subconjunt compacte de $M$ tal que la frontera $\partial E$ és una subvarietat suau de dimensió $n-1$, ja que els seus límits són preimatge de valors regulars. Vegeu la definició \ref{def:varietat_topologica_amb_frontera} i la notació \ref{nota:frontier_and_interior} per la definició de frontera i interior. Tenim que $D_i\subseteq int(E_i)$, $M=\bigcup_i D_i$ i $E_i\cap E_j = \emptyset$ si $j\not\in\set{i-1,i,i+1}$. 
 
-    Vegem que per tot $i$ hi ha un encabiment suau de $E_i$ en algun espai $\mathbb R^N$. Per tot $i$, sigui $\rho_i:M\to \mathbb R$ una funció de relleu que val 1 en un entorn de $D_i$ i té suport en $Int(E_i)$. Definim
+    Vegem que per tot $i$ hi ha un encabiment suau de $E_i$ en algun espai $\mathbb R^N$. Per tot $i$, sigui $\rho_i:M\to \mathbb R$ una funció de relleu que val 1 en un entorn de $D_i$ i té suport en $int(E_i)$. Definim
     \begin{align*}
         F:M&\to\mathbb R^{2n + 1}\times\mathbb R^{2n + 1}\times\mathbb R.\\
         p&\mapsto \left(    \sum_{i\text{ parell}}    \rho_i(p)\varphi_i(p), \sum_{i\text{ senar}}    \rho_i(p)\varphi_i(p), f(p)\right)
@@ -514,9 +517,10 @@ Al lema anterior, \textbf{propi} tan sols vol dir que l'encabiment és una aplic
     Per veure que $F$ és injectiva, notem que si $F(p)=F(q)$, aleshores $p\in D_j$ i com $f(p)=f(q)$, $q\in D_j$. Per un argument com el del cas compacte, tenim que $p=q$.
     Per veure que $F$ és una immersió, sigui $p\in M$ i $p\in D_j$. Aleshores $\rho_j\equiv1$ en un entorn de $p$. Si $j$ és senar, aleshores tenim que per tot $q$ en aquest entorn de $p$, 
     \begin{equation*}
-        F(p) = (\varphi_j(q),\dots,\dots)
+        F(p) = (\varphi_j(p),\dots,\dots)
     \end{equation*}
-    de manera que $dF_p$ és injectiva. Si $j$ és parell, un argument anàleg ens diu que $dF_p$ és injectiva. {\color{blue}MIRAR PER QUÈ AIXÒ ÉS VERITAT ABANS D'ENTREGAR}
+    de manera que $dF_p$ és injectiva perquè $\varphi_j$ és injectiva. Si $j$ és parell, un argument anàleg ens diu que $dF_p$ és injectiva. 
+    %{\color{blue}MIRAR PER QUÈ AIXÒ ÉS VERITAT ABANS D'ENTREGAR}
 
     Amb això, hem vist que tota varietat diferenciable suau $n$-dimensional admet un encabiment en $\mathbb R^{N}$. Pel lema \ref{lema:encabiment_whitney}, tenim que $M$ admet un encabiment en $\mathbb R^{2n+1}$.
     \qed
@@ -547,20 +551,20 @@ Per tal de poder parlar de geometria en varietats diferenciables arbitràries, n
     
     Anomenem \textbf{varietat Riemanniana} a una varietat diferenciable dotada d'una mètrica Riemanniana.
 \end{defi}
-En qualsevol sistema de coordenades tal que les coordenades siguin $z_1,\dots,z_n$, la mètrica Riemanniana es pot expressar com\footnote{Per l'última igualtat prenem la notació d'Einstein per als sumatoris.}
+En un sistema de coordenades locals $(x^1,\dots,x^n)$, la mètrica Riemanniana es pot expressar com\footnote{Per l'última igualtat prenem la notació d'Einstein per als sumatoris.}
 \begin{equation*}
-    g = \sum_{i,j=1}^n g_{ij}dz^i\otimes dz^j := g_{ij}dz^idz^j,
+    g = \sum_{i,j=1}^n g_{ij}dx^i\otimes dx^j := g_{ij}dx^idx^j,
 \end{equation*}
-on $g_{ij}$ són funcions diferenciables en $U$ i $dz^i$ són les 1-formes coordenades.
+on $g_{ij}$ són funcions diferenciables en $U$ i $dx^i$ són les 1-formes coordenades.
 
 \begin{defi}
-    Anomenem $1-$formes coordenades, $\set{dz^1,\dots,dz^n}$, a la base de $T_p^*M$ obtinguda dualitzant la base $\set{\frac{\partial}{\partial z_1},\dots,\frac{\partial}{\partial z_n}}$ de $T_pM$ en un sistema de coordenades $z_1,\dots,z_n$.
+    Anomenem $1-$formes coordenades, $\set{dx^1,\dots,dx^n}$, a la base de $T_p^*M$ obtinguda dualitzant la base $\set{\frac{\partial}{\partial x^1},\dots,\frac{\partial}{\partial x^n}}$ de $T_pM$ en un sistema de coordenades $x^1,\dots,x^n$.
 \end{defi}
 
 \begin{defi}
-    Anomenarem \textbf{mètrica euclidiana} en $\mathbb R^n$ la mètrica Riemanniana que en qualsevol sistema de coordenades tal que les coordenades siguin $z_1,\dots,z_n$ es pot expressar com
+    Anomenarem \textbf{mètrica euclidiana} en $\mathbb R^n$ la mètrica Riemanniana que en qualsevol sistema de coordenades tal que les coordenades siguin $x^1,\dots,x^n$ es pot expressar com
     \begin{equation*}
-        \langle\cdot,\cdot\rangle := \delta_{ij}dz^idz^j,
+        \langle\cdot,\cdot\rangle := \delta_{ij}dx^idx^j,
     \end{equation*}
     on $\delta_{ij}$ és la delta de Kronecker.
 \end{defi}
@@ -578,7 +582,7 @@ on $g_{ij}$ són funcions diferenciables en $U$ i $dz^i$ són les 1-formes coord
 \end{prop}
 {
     \color{green!50!black} \textit{Prova.}
-    Sigui $M$ una varietat diferenciable suau {\color{blue}amb o sense frontera}. Sigui $\set{(U_\alpha,\varphi_\alpha)}$ un recobriment per cartes coordenades. En cada domini de carta, existeix una mètrica Riemanniana $g_\alpha = \varphi_\alpha^*\langle\cdot,\cdot\rangle = \delta_{ij}dz^idz^j$. Sigui $\set{\psi_\alpha}$ una partició de la unitat subordinada a $\set{U_\alpha}$. Definim 
+    Sigui $M$ una varietat diferenciable suau. Sigui $\set{(U_\alpha,\varphi_\alpha)}$ un recobriment per cartes coordenades. En cada domini de carta, existeix una mètrica Riemanniana $g_\alpha = \varphi_\alpha^*\langle\cdot,\cdot\rangle = \delta_{ij}dx^idx^j$. Sigui $\set{\psi_\alpha}$ una partició de la unitat subordinada a $\set{U_\alpha}$. Definim 
     \begin{equation*}
         g = \sum_{\alpha} \psi_\alpha g_\alpha,
     \end{equation*}
@@ -588,20 +592,18 @@ on $g_{ij}$ són funcions diferenciables en $U$ i $dz^i$ són les 1-formes coord
     \begin{equation*}
         g_p(v,v) = \sum_\alpha \psi_\alpha(p) g_\alpha|_p(v,v)
     \end{equation*}
-    que és una suma de termes no-negatius. Com a mínim alguna de les $\psi_\alpha$ és positiva en $p$ i, per tant, $g_p(v,v) > 0$.
+    que és una suma de termes no negatius. Com a mínim alguna de les $\psi_\alpha$ és positiva en $p$ i, per tant, $g_p(v,v) > 0$.
     \qed
 }
 
 \begin{defi}
-    Siguin $(M,g)$ i $(\tilde M,\tilde g)$ dues varietats Riemannianes {\color{blue} suaus}. Una aplicació {\color{blue} $C^\infty$} $F: M\to \tilde M$ és una \textbf{isometria (Riemanniana)} si és un difeomorfisme i $F^*\tilde g = g$. Diem que $F$ és una \textbf{isometria local} si tot punt $p\in M$ té un entorn $U$ tal que $F|_U$ és una isometria d'un entorn de $F(p)$ en $\tilde M$. Si $F$ és una isometria, diem que $M$ i $\tilde M$ són \textbf{isomètriques}, i si $F$ és una isometria local, diem que $M$ i $\tilde M$ són \textbf{localment isomètriques}.
+    Siguin $(M,g)$ i $(\tilde M,\tilde g)$ dues varietats Riemannianes. Una aplicació $F: M\to \tilde M$ és una \textbf{isometria (Riemanniana)} si és un difeomorfisme i $F^*\tilde g = g$. Diem que $F$ és una \textbf{isometria local} si tot punt $p\in M$ té un entorn $U$ tal que $F|_U$ és una isometria d'un entorn de $F(p)$ en $\tilde M$. Si $F$ és una isometria, diem que $M$ i $\tilde M$ són \textbf{isomètriques}, i si $F$ és una isometria local, diem que $M$ i $\tilde M$ són \textbf{localment isomètriques}.
 \end{defi}
 
-Hi ha diverses propietats de les varietats Riemannianes que són invariants per isometries. La més important per nosaltres és la planitud (en anglès, \textit{flatness}).
+Hi ha diverses propietats de les varietats Riemannianes que són invariants per isometries locals. La més important per nosaltres és la planor (en anglès, \textit{flatness}).
 \begin{defi}\label{def:flatness}
-    Diem que una varietat Riemanniana $(M,g)$ és \textbf{plana} si és isomètrica a l'espai euclidià $\mathbb R^n$ amb la mètrica euclidiana.
+    Diem que una varietat Riemanniana $(M,g)$ és \textbf{plana} si és localment isomètrica a l'espai euclidià $\mathbb R^n$ amb la mètrica euclidiana.
 \end{defi}
-
-{\color{blue} estaria molt bé demostrar que la planitud és invariant per isometries}
 
 Si $(M,g)$ és una varietat Riemanniana, qualsevol subvarietat diferenciable $S\subseteq M$ admet una \textbf{mètrica induïda} $\imath^*g$, on $\imath:S\hookrightarrow M$ és la inclusió.
 
@@ -621,7 +623,7 @@ Un dels resultats més rellevants pel que fa a l'orientació de superfícies reg
     Tota superfície regular compacta és orientable.
 \end{teo}
 
-El diferencial de l'aplicació de Gauss $N$ d'una superfície regular orientable $S$, $dN_p:T_pS\to T_{N(p)}\mathbb S^2$, es pot interpretar com un operador lineal del pla tangent a $S$ en si mateix, ja que el pla tangent a $\mathbb S^2$ en $N(p)$ és el mateix que el pla tangent a $S$ en $p$. Per veure això, només cal considerar que $T_{N(p)}\mathbb S^2 = N(p)^\perp = T_pS$.{\color{blue} això és una mica handwavey} Per aquest motiu, denotem \textbf{endomorfisme de Weingarten} $W_p$ el diferencial de l'aplicació de Gauss quan és considerat com un endomorfisme de $T_pS$. Amb aquest endomorfisme, podem arribar a definir la curvatura d'una superfície regular orientada.
+El diferencial de l'aplicació de Gauss $N$ d'una superfície regular orientable $S$, $dN_p:T_pS\to T_{N(p)}\mathbb S^2$, es pot interpretar com un operador lineal del pla tangent a $S$ en si mateix, ja que el pla tangent a $\mathbb S^2$ en $N(p)$ és el mateix que el pla tangent a $S$ en $p$. Per veure això, només cal considerar que $T_{N(p)}\mathbb S^2 = N(p)^\perp = T_pS$. Per aquest motiu, denotem \textbf{endomorfisme de Weingarten} $W_p$ el diferencial de l'aplicació de Gauss quan és considerat com un endomorfisme de $T_pS$. Amb aquest endomorfisme, podem arribar a definir la curvatura d'una superfície regular orientada.
 
 \begin{defi}
     Sigui $S$ una superfície regular orientada, $p$ un punt de $S$. Anomenem \textbf{segona forma fonamental} de $S$ en $p$ la forma bilineal
@@ -636,11 +638,16 @@ El diferencial de l'aplicació de Gauss $N$ d'una superfície regular orientable
     Sigui $S$ una superfície regular orientada, $p$ un punt de $S$. Anomenem \textbf{curvatura de Gauss} $\kappa_S(p)$ de $S$ en $p$ el determinant de l'endomorfisme de Weingarten $W_p$.
 \end{defi}
 
-Es pot demostrar, {\color{blue} potser ho hauriem de fer, esta als apunts de l'Ignasi de geodif} de fet, que la l'endomorfisme de Weingarten diagonalitza amb valors propis reals $k_1$ i $k_2$, de manera que la curvatura de Gauss és
+Es pot demostrar, de fet, que l'endomorfisme de Weingarten diagonalitza amb valors propis reals $k_1$ i $k_2$, de manera que la curvatura de Gauss és
 \begin{equation*}
     \kappa_S(p) = k_1(p)k_2(p).
 \end{equation*}
-Anomenem $k_1(p)$ i $k_2(p)$ les \textbf{curvatures principals} de $S$ en $p$, i els vectors propis corresponents a aquests valors propis s'anomenen \textbf{direccions principals de curvatura}. Localment, corbes sobre la superfície que passen per $p$ i segueixen les direccions principals de curvatura coincideixen amb cercles encabits a $\mathbb R^3$ tangents a aquest mateix punt i de radis $1/|k_1(p)|$ i $1/|k_2(p)|$.  La curvatura de Gauss és negativa quan els centres d'aquests cercles, que anomenem \textbf{centres de curvatura}, es troben en costats oposats del pla tangent, i positiva quan estan en el mateix costat.  {\color{blue}mirar si això està ben explicat.}
+Anomenem $k_1(p)$ i $k_2(p)$ les \textbf{curvatures principals} de $S$ en $p$, i els vectors propis corresponents a aquests valors propis s'anomenen \textbf{direccions principals de curvatura}. 
+Anomenem \textbf{curvatura mitjana} en un punt $p$ d'una superfície regular el valor
+\begin{equation}\label{eq:curvatura_mitjana}
+    H(p) = \frac12 (k_1(p) + k_2(p))
+\end{equation}
+Localment, corbes sobre la superfície que passen per $p$ i segueixen les direccions principals de curvatura coincideixen amb cercles encabits a $\mathbb R^3$ tangents a aquest mateix punt i de radis $1/|k_1(p)|$ i $1/|k_2(p)|$.  La curvatura de Gauss és negativa quan els centres d'aquests cercles, que anomenem \textbf{centres de curvatura}, es troben en costats oposats del pla tangent, i positiva quan estan en el mateix costat.
 
 \begin{defi}
     Sigui $S$ una superfície regular orientada, $p$ un punt de $S$. Diem que $p$ és un \textbf{punt el·líptic} si $\kappa_S(p) > 0$.
@@ -661,7 +668,8 @@ Intuïtivament, una superfície regular és el·líptica en un punt si, localmen
     \end{align*}
     Com $S$ és compacta i $g$ és una funció real contínua, $g$ assoleix un màxim en un punt $p_{\max}\in S$. Sigui $R^2 = ||p_{\max}||^2$ el valor màxim de $g$. 
     
-    Com a $p_{\max}$ s'assoleix el màxim de la distància a l'origen, el vector posició $p_{\max}$ és ortogonal a la superfície en $p_{\max}$. És a dir, $p_{\max}$ és un punt comú de la superfície regular $S$ i la frontera de l'esfera $B_{R}(0)$, on els espais tangents a $S$ i $B_{R}(0)$ coincideixen. {\color{blue} crec que això és el que l'ignasi va quedar-se demostrant quan ho vam fer a classe}
+    Com a $p_{\max}$ s'assoleix el màxim de la distància a l'origen, el vector posició $p_{\max}$ és ortogonal a la superfície en $p_{\max}$. És a dir, $p_{\max}$ és un punt comú de la superfície regular $S$ i la frontera de l'esfera $B_{R}(0)$, on els espais tangents a $S$ i $B_{R}(0)$ coincideixen. 
+    %{\color{blue} crec que això és el que l'ignasi va quedar-se demostrant quan ho vam fer a classe}
 
     Tots els punts de $S$ tenen distància a l'origen menor que $R$, de manera que $S\subseteq B_{R}(0)$. Siguin $k_1$ i $k_2$ les curvatures principals de $S$ en $p_{\max}$, i $\alpha:[0,1]\to S$ i $\beta:[0,1]\to S$ corbes tangents a $S$ en $p_{\max}$ que corresponen a les direccions principals de curvatura. Les curvatures principals de l'esfera $B_{R}(0)$ en $p_{\max}$ són ambdues $1/R$ o ambdues $-1/R$, depenent de la orientació $N$ escollida. Escollim una orientació $N$ de $S$ tal que en $p_{\max}$ les curvatures principals de l'esfera siguin $1/R$. Aleshores, si alguna de les curvatures principals de $S$ és menor que $1/R$, la corba $\alpha$ o $\beta$ tindrà un radi de curvatura més gran que el de l'esfera, de manera que hi haurà un punt $\tilde p\in S$ proper a $p_{\max}$ que té distància a l'origen més gran que $R$. Això entra en contradicció amb el fet que la distància a l'origen de $p_{\max}$ és màxima. Per tant, ambdues curvatures principals de $S$ en $p_{\max}$ han de ser majors que $1/R$, i per tant $S$ té un punt el·líptic.
     \qed
@@ -673,7 +681,7 @@ A continuació enunciem un dels teoremes més importants de la geometria de corb
     La curvatura de Gauss d'una superfície regular només depèn de la mètrica de la superfície com a varietat Riemanniana. En concret, la curvatura de Gauss és invariant per isometries. 
 \end{teo}
 
-Un cas particular d'aquest teorema és que la planitud tal com l'hem definit a la definició \ref{def:flatness}, que la mètrica d'una varietat Riemanniana sigui la mètrica euclidiana, és equivalent a que la curvatura de Gauss sigui nul·la. Això té una implicació a l'hora de determinar quines varietats Riemannianes bidimensionals es poden encabir de manera isomètrica en $\mathbb R^3$. En concret, obtenim el següent resultat per al tor pla. 
+Un cas particular d'aquest teorema és que la planor tal com l'hem definit a la definició \ref{def:flatness}, que la mètrica d'una varietat Riemanniana sigui la mètrica euclidiana, és equivalent a que la curvatura de Gauss sigui nul·la. Això té una implicació a l'hora de determinar quines varietats Riemannianes bidimensionals es poden encabir de manera isomètrica en $\mathbb R^3$. En concret, obtenim el següent resultat per al tor pla. 
 
 \begin{defi}
     Anomenem \textbf{tor} la varietat topològica $\mathbb T^2 = \mathbb R^2/\mathbb Z^2 = [0,1]\times[0,1]/\sim$, on $\sim$ és la relació d'equivalència tal que $(x,0)\sim(x,1)$ i $(0,y)\sim(1,y)$ per a tot $x,y\in[0,1]$. Anomenem \textbf{tor pla} la varietat Riemanniana $(\mathbb T^2, g)$ on $\mathbb T^2$ és el tor, i $g$ és la mètrica euclidiana.

@@ -1,22 +1,15 @@
 \chapter{Teorema Nash-Kuiper $C^1$}\label{chap:capitol_nash}
 
 \section{Introducció al capítol}
-Al final del capítol anterior hem vist que és possible trobar immersions i encabiments isomètrics que resultarien impossibles en altres condicions si no imposem que aquestes aplicacions siguin de classe $C^\infty$. Aquest capítol està dedicat a una formalització d'aquesta idea mitjançant el teorema de Nash-Kuiper. El cos principal del capítol consistirà en la demostració dels teoremes originals tals com els va demostrar \cite{nash1954}, de manera que veurem que si una varietat Riemanniana es pot encabir de manera curta en un espai euclidià de dimensió $k\ge n+2$, aleshores es pot modificar aquesta aplicació per obtenir-ne una d'isomètrica tan propera com vulguem. Al final del capítol veurem una millora clau en la demostració, comentant breument l'article de Nicolaas H. Kuiper, \cite{kuiper1955}, que demostra el mateix resultat per a immersions $C^\infty$ de dimensió $n+1$.
+Al final del capítol anterior hem vist que és possible trobar immersions i encabiments isomètrics que resultarien impossibles en altres condicions si no imposem que aquestes aplicacions siguin de classe $C^\infty$. Aquest capítol està dedicat a una formalització d'aquesta idea mitjançant el teorema de Nash-Kuiper. El cos principal del capítol consistirà en la demostració dels teoremes originals tals com els va demostrar \cite{nash1954}, de manera que veurem que si una varietat Riemanniana es pot encabir de manera curta en un espai euclidià de dimensió $k\ge n+2$, aleshores es pot modificar aquesta aplicació per obtenir-ne una d'isomètrica tan propera com vulguem, però amb regularitat $C^1$. Al final del capítol veurem una millora clau en la demostració, comentant breument l'article de Nicolaas H. Kuiper, \cite{kuiper1955}, que demostra el mateix resultat per a immersions $C^\infty$ en espais de dimensió $n+1$. A més, farem un breu comentari de com el mètode de Nash va inspirar Mikhaïl Gromov en el desenvolupament de la integració convexa. 
 
-En aquesta secció enunciarem i demostrarem els quatre teoremes d'immersions isomètriques $C^1$ de John Forbes Nash Jr., seguint l'article en què els va publicar el 1954 a Annals of Mathematics, \cite{nash1954}.\\
-{\color{blue} explicar una mica el context i tal. El podem treure de la introducció del llibre del Tor.
+Cal destacar, abans de començar, que el resultat de Nash és molt sorprenent i contraintuïtiu. En efecte, el gran èmfasi en la geometria diferencial i riemanniana de varietats $C^\infty$ havia imposat una noció de la rigidesa de les varietats riemannianes pel que fa als encabiments isomètrics que no és cert en el cas $C^1$. Abans de l'article de Nash, s'havia demostrat l'existència d'encabiments isomètrics en espais euclidians de l'anomenada \textbf{dimensió de Janet}, $s_n = \frac{n(n+1)}{2}$ per varietats analítiques, una dimensió que pot arribar a ser molt més alta que la del teorema de Whitney per encabiments no isomètrics, $2n$. La dràstica baixada de regularitat és \say{el preu a pagar} per trencar aquesta rigidesa.
+\\
 
-Bàsicament, dir que és un teorema sorprenent perquè no se l'esperava ningú, explicar que el que fa és dividir en etapes i passos, i explicar que Kuiper fa una millora de la demostració de Nash per a una dimensió menys.
-
-Important tornar a llegir i revisar quan dic successió i quan dic sèrie.}
-
+\subsection{Definicions preliminars}
 \begin{defi}
-    Diem que una varietat Riemanniana $M$ és \textbf{tancada} si és compacta, i diem que és \textbf{oberta} si tots els seus components connexos no són tancats. {\color{blue} Potser s'ha de moure a algun altre lloc?}
+    Diem que una varietat Riemanniana $M$ és \textbf{tancada} si és compacta, i diem que és \textbf{oberta} si cap dels seus components connexos és tancat.
 \end{defi}
-
-\begin{nota}
-    Sempre que parlem d'encabiments o immersions de varietats en espais $\mathbb R^n$, suposarem que aquests tenen la mètrica euclidiana.
-\end{nota}
 
 La imatge d'una varietat tancada per un encabiment o immersió contínua és compacta. Si la imatge és una subvarietat de $\mathbb R^k$, aleshores és tancada i acotada. Ara bé, per a una varietat oberta la imatge no és necessàriament compacta. En aquest cas, és possible definir el \textbf{conjunt límit} de la imatge, que és el conjunt de punts de $\mathbb R^k$ tals que són el límit de successions de punts de la imatge, però que no pertanyen a la imatge. 
 
@@ -82,8 +75,8 @@ En cada entorn $N_p$, voldrem que l'error mètric $\delta_{ij}$ sigui reduït en
 \begin{obs}
     Cal remarcar que aquest lema només és cert si $\beta_{ij}$ és definit positiu, i que el nombre de termes del sumatori és finit.
 \end{obs}
-{\color{green!50!black}\textit{Prova} ({\color{blue} Aquesta és la demostració del Nash. És una mica llarga però s'entén bastant bé si la mires amb cura. El Sung-Jin Oh té una versió més curta amb una notació diferent.}).
-El conjunt de les matrius simètriques definides positives de rang $n$ és un con de dimensió $\frac12n(n+1)${ \color{blue} Revisar d'on surt això abans de fer la presentació}. És possible cobrir aquest con amb conjunts simplicials oberts, de tal manera que cada punt del con estigui cobert per, com a molt, un nombre $W$ d'aquests entorns, on $W$ depèn només de $n$. 
+{\color{green!50!black}\textit{Prova}.
+El conjunt de les matrius simètriques definides positives de rang $n$ és un con de dimensió $\frac12n(n+1)$. És possible cobrir aquest con amb conjunts simplicials oberts, de tal manera que cada punt del con estigui cobert per, com a molt, un nombre $W$ d'aquests entorns, on $W$ depèn només de $n$. 
 
 Una matriu qualsevol representada per un punt interior d'un símplex és combinació lineal de les matrius que representen els vèrtexs del símplex. Podem posar
 $$\begin{aligned}
@@ -94,7 +87,7 @@ $$\begin{aligned}
 \end{aligned}$$
 els coeficients per $q$ representacions diferents d'una matriu del con que pertany a l'interior de $q$ símplexs diferents. 
 Ara podem escriure uns altres coeficients
-$$ C_{\mu,\nu}^* = \frac{C_{\mu,\nu} \exp\set{-\sum_\sigma 1/C_{\mu,\sigma}}}{\sum_{\rho}\exp\set{-\sum_\sigma 1/C_{\rho,\sigma}}}, $$ on cal considerar que els exponencials són nuls si qualsevol dels termes del seu sumatori ho és. 
+$$ C_{\mu,\nu}^* = \frac{C_{\mu,\nu} \exp\set{-\sum_\sigma 1/C_{\mu,\sigma}}}{\sum_{\rho}\exp\set{-\sum_\sigma 1/C_{\rho,\sigma}}}, $$ on un terme del sumatori al numerador o denominador es considera zero si el corresponent $C_{\mu,\nu}$ és zero, o si algun $C_{\rho,\sigma}$ és zero o no definit. 
 Observem que aquests coeficients són $C^\infty$ com a funcions de la matriu que representen. A més, per cada matriu, com a molt $W[\frac12n(n+1)+1]$ coeficients $C_{\mu,\nu}^*$ són no-nuls.
 
 Si ara considerem que $\beta_{ij}$ defineix una aplicació de classe $C^\infty$ de $N_p$ al con, aleshores podem escriure 
@@ -103,11 +96,11 @@ Si ara considerem que $\beta_{ij}$ defineix una aplicació de classe $C^\infty$ 
 \end{equation}
 on $M_{(\mu,\nu)ij}$ són les diferents matrius que representen els vèrtexs dels símplexs. Ara, per cada matriu $M_{(\mu,\nu)ij}$ obtenim $n$ autovectors unitaris ortogonals $\set{V_r}$ i els seus autovalors $\set{v_r}$.
 
-Si $\psi_r$ és per cada $r$ la funció lineal dels paràmetres locals pels quals $\sqrt{v_r}V_r$ és el vector gradient {\color{blue}Aquesta és la part més rara, entenc que simplement es pot fer}, tenim que
+Si $\psi_r$ és per cada $r$ la funció lineal dels paràmetres locals pels quals $\sqrt{v_r}V_r$ és el vector gradient, tenim que
 \begin{equation*}
     M_{(\mu,\nu)ij} = \sum_{r}\frac{\partial\psi_r}{\partial x^i}\frac{\partial\psi_r}{\partial x^j}
 \end{equation*}
-i, substituint en l'equació \ref{eq:beta_con}, tenim que
+i, substituint en l'equació \eqref{eq:beta_con}, tenim que
 \begin{equation*}
     \beta_{ij} = \sum_{r}\sum_{\mu,\nu}C_{\mu,\nu}^*M_{(\mu,\nu)ij}\frac{\partial\psi_r}{\partial x^i}\frac{\partial\psi_r}{\partial x^j}
 \end{equation*}
@@ -130,10 +123,10 @@ Amb aquests camps vectorials, la pertorbació trobada per Nash de la immersió c
 \end{equation}
 on $\lambda$ és una constant positiva tan gran com vulguem.
 
-Ara cal veure que el canvi mètric $\sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}$ és aproximadament igual al terme $\nu$ del sumatori de l'equació \ref{eq:lema_descomp}.
+Ara cal veure que el canvi mètric $\sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}$ és aproximadament igual al terme $\nu$ del sumatori de l'equació \eqref{eq:lema_descomp}.
 
 \begin{prop}\label{prop:mida_pertorbacio}
-    El canvi mètric a l'entorn $N_p$ en el pas associat a $a_\nu$ i $\psi^\nu$ donat per l'equació \ref{eq:pertorbacio} compleix
+    El canvi mètric a l'entorn $N_p$ en el pas associat a $a_\nu$ i $\psi^\nu$ donat per l'equació \eqref{eq:pertorbacio} compleix
     \begin{equation}\label{eq:pertorbacio_cota}
         \sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j} =  a_\nu \frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right)
     \end{equation}
@@ -163,12 +156,12 @@ Observem que els dos primers termes d'aquesta suma són $O\left(\frac1\lambda\ri
     \frac{\partial}{\partial x^i}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right) = -
     \zeta^\alpha\sqrt{a_\nu}\sin(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i} + O\left(\frac1\lambda\right).
 \end{equation*}
-El producte d'aquest terme amb la derivada respecte de $x^j$ en l'equació \ref{eq:pertorbacio_descomp} és, per tant,
+El producte d'aquest terme amb la derivada respecte de $x^j$ en l'equació \eqref{eq:pertorbacio_descomp} és, per tant,
 \begin{equation*}
     \frac{\partial}{\partial x^i}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right) \frac{\partial}{\partial x^j}\left( \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu)\right) = 
     (\zeta^\alpha)^2{a_\nu}\sin^2(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right).
 \end{equation*}
-Sumant aquest resultat amb el corresponent a $\eta^\alpha$, obtenim que el terme $\alpha$ del sumatori de l'equació \ref{eq:pertorbacio_descomp} és
+Sumant aquest resultat amb el corresponent a $\eta^\alpha$, obtenim que el terme $\alpha$ del sumatori de l'equació \eqref{eq:pertorbacio_descomp} és
 \begin{align*}
     &(\zeta^\alpha)^2{a_\nu}\sin^2(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + (\eta^\alpha)^2{a_\nu}\cos^2(\lambda \psi^\nu)\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j} + O\left(\frac1\lambda\right)
     \\&=
@@ -188,7 +181,7 @@ De manera que
 on per a la darrera igualtat hem usat que $\sum_\alpha(\zeta^\alpha)^2 = \sum_\alpha(\eta^\alpha)^2 = 1$.\qed
 }
 
-Amb aquesta última proposició s'ha demostrat que la pertorbació indueix un canvi mètric molt proper al que volem, amb un error d'ordre $O\left(\frac1\lambda\right)$. De la mateixa manera, observem que la pertorbació en un pas, \ref{eq:pertorbacio}, és també d'ordre $O\left(\frac1\lambda\right)$. 
+Amb aquesta última proposició s'ha demostrat que la pertorbació indueix un canvi mètric molt proper al que volem, amb un error d'ordre $O\left(\frac1\lambda\right)$. De la mateixa manera, observem que la pertorbació en un pas, \eqref{eq:pertorbacio}, és també d'ordre $O\left(\frac1\lambda\right)$. 
 
 A continuació, volem veure quin és el canvi en les primeres derivades després d'una etapa del procés en un entorn $N_p$. És a dir, volem aproximar l'efecte de totes les pertorbacions associades a cada pas de l'etapa. Per fer-ho, primer notem que el canvi en les primeres derivades associat al pas $\nu$ és el següent:
 \begin{equation}\label{eq:primera_derivada_cota}
@@ -204,11 +197,11 @@ A continuació, volem veure quin és el canvi en les primeres derivades després
 \end{prop}
 {
 \color{green!50!black}\textit{Prova}.
-Considerem l'element $i$ de la diagonal de les matrius de l'equació \ref{eq:lema_descomp}:
+Considerem l'element $i$ de la diagonal de les matrius de l'equació \eqref{eq:lema_descomp}:
 \begin{equation*}
     \frac12\varphi_p\beta_{ii} = \sum_\nu a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)^2 = \sum_\nu \left(\sqrt{a_\nu}\left|\frac{\partial\psi^\nu}{\partial x^i}\right|\right)^2.
 \end{equation*}
-Recordem de la prova del lema \ref{eq:lema_descomp} que hi ha com a molt $M = W[\frac12n(n+1)+1]$ coeficients no nuls del sumatori, on $W$ és una constant que només depèn de la dimensió $n$ de la varietat. Així doncs, per la desigualtat de Cauchy-Schwarz,
+Recordem de la prova del lema \eqref{eq:lema_descomp} que hi ha com a molt $M = W[\frac12n(n+1)+1]$ coeficients no nuls del sumatori, on $W$ és una constant que només depèn de la dimensió $n$ de la varietat. Així doncs, per la desigualtat de Cauchy-Schwarz,
 \begin{align*}
     \sum_\nu \sqrt{a_\nu}\left|\frac{\partial\psi^\nu}{\partial x^i}\right| 
     \le 
@@ -218,9 +211,9 @@ Recordem de la prova del lema \ref{eq:lema_descomp} que hi ha com a molt $M = W[
     \le
     \sqrt{\left(K\beta_{ii}\right)}.
 \end{align*}
-Combinant aquest resultat amb la desigualtat \ref{eq:primera_derivada_cota}, obtenim que el canvi en les primeres derivades associat a una etapa del procés en un entorn $N_p$ és
+Combinant aquest resultat amb la desigualtat \eqref{eq:primera_derivada_cota}, obtenim que el canvi en les primeres derivades associat a una etapa del procés en un entorn $N_p$ és
 \begin{equation*}
-    \left| \frac{\partial\overline{z}^\alpha}{\partial x^i} - \frac{\partial z^\alpha}{\partial x^i} \right| \le \sqrt{K\beta_{ii}} + O\left(\frac1{\lambda_1}\right) + O\left(\frac1{\lambda_2}\right) + \cdots + O\left(\frac1{\lambda_\nu}\right) + \cdots.
+    \left| \frac{\partial\overline{z}^\alpha}{\partial x^i} - \frac{\partial z^\alpha}{\partial x^i} \right| \le 2\sqrt{K\beta_{ii}} + O\left(\frac1{\lambda_1}\right) + O\left(\frac1{\lambda_2}\right) + \cdots + O\left(\frac1{\lambda_\nu}\right) + \cdots.
 \end{equation*}
 \qed
 }
@@ -230,8 +223,8 @@ A continuació ens interessa veure quines són les constants $\set{\lambda_\nu}$
     Sigui $N_p$ un entorn del recobriment de $M$, i considerem el pas $\nu$ d'una etapa donada.
 \end{defi}
 \begin{itemize}\label{def: B1 B2 B3}
-    \item \textit{Anomenem $B_1$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi mètric per $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right)$ en l'equació \ref{eq:pertorbacio_cota}, per tots els parells $(i,j)$ i tots els punts de l'entorn $N_p$.}
-    \item \textit{Anomenem $B_2$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi de les primeres derivades en la desigualtat \ref{eq:primera_derivada_cota}, per tots els punts de l'entorn $N_p$.}
+    \item \textit{Anomenem $B_1$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi mètric per $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right)$ en l'equació \eqref{eq:pertorbacio_cota}, per tots els parells $(i,j)$ i tots els punts de l'entorn $N_p$.}
+    \item \textit{Anomenem $B_2$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi de les primeres derivades en la desigualtat \eqref{eq:primera_derivada_cota}, per tots els punts de l'entorn $N_p$.}
     \item \textit{Anomenem $B_3$ la cota superior permesa del canvi $\overline{z}^\alpha - z^\alpha$ en $N_p$.}
 \end{itemize}
 \begin{obs}
@@ -263,7 +256,8 @@ A continuació, volem assegurar que $\delta_{ij}'$ sigui definit positiu, i que 
     \item \textit{La convergència és tal que la mida de $\delta_{ij}'$ és aproximadament $2/3$ de la mida de $\delta_{ij}$ després de cada etapa. }
 \end{itemize}
 \begin{obs}
-    Aquest resultat confirma que el procés convergeix, de tal manera que la immersió resultant després de realitzar totes les etapes és isomètrica. {\color{blue} Potser seria més correcte dir que la mètrica resultant és isomètrica, però encara no sabem si la immersió convergeix correctament.}
+    Aquest resultat confirma que el procés de correcció de la mètrica convergeix, de tal manera que la mètrica induïda per la successió d'immersions s'aproxima a la mètrica intrínseca $g_{ij}$.
+    La convergència de la immersió com a tal es tractarà més endavant. 
 \end{obs}
 {\color{green!50!black} \textit{Prova.} 
 En $N_p$, sempre es pot trobar una constant real $\varepsilon_p>0$ tal que, si imposem 
@@ -276,14 +270,14 @@ Si també imposem que, després d'una etapa,
 \begin{equation}\label{eq:e_cota}
     \max|e_{ij}|_{N_p} \le \frac16\min|\delta_{ij}|_{N_p},
 \end{equation}
-podem prendre l'equació \ref{eq:delta_prima} i veure que
+podem prendre l'equació \eqref{eq:delta_prima} i veure que
 \begin{align}\label{eq:delta_prima_cota}
     \nonumber\max|\delta_{ij}'|_{N_p} = \max\left|\frac12\delta_{ij} - e_{ij}\right|_{N_p} \le \max\left|\frac12\delta_{ij}\right|_{N_p} + \max|e_{ij}|_{N_p} \\
     \le \frac12\max|\delta_{ij}|_{N_p} + \frac16\min|\delta_{ij}|_{N_p} \le \frac23\max|\delta_{ij}|_{N_p}.
 \end{align}
 Amb això queda demostrat que es pot escollir $e_{ij}$ tal que la mida de $\delta_{ij}'$ sigui aproximadament $2/3$ de la mida de $\delta_{ij}$ després de cada etapa. Així, és clar que la diferència entre la mètrica de la immersió i $g_{ij}$ convergeix a $0$ en el límit.
 
-Hem obtingut dues restriccions a la mida de $e_{ij}$ que cal complir, les desigualtats \ref{eq:epsilon_p} i \ref{eq:e_cota}. Ara cal relacionar-les amb els passos de l'etapa, per tal d'obtenir la successió $\set{B_{1\nu}}_{\nu}$ desitjada. 
+Hem obtingut dues restriccions a la mida de $e_{ij}$ que cal complir, les desigualtats \eqref{eq:epsilon_p} i \eqref{eq:e_cota}. Ara cal relacionar-les amb els passos de l'etapa, per tal d'obtenir la successió $\set{B_{1\nu}}_{\nu}$ desitjada. 
 
 Primer de tot, recordem que els entorns $N_p$ poden intersecar amb altres entorns $N_q$. Així, els canvis que fem en $N_p$ poden afectar a $N_q$. Afortunadament, el nombre d'entorns que intersequen cada $N_p$ és finit. Si $N_p$ interseca amb un nombre $\sigma$ d'entorns $N_q$, incloent $N_p$ mateix, aleshores podem prendre les restriccions de $N_p$, dividir-les per $\sigma$, i imposar-les a tots els $N_q$. Sigui $\varepsilon_p^*$ el mínim de totes aquestes restriccions sobre l'error de $N_p$.
 
@@ -296,7 +290,7 @@ per a l'error dels passos individuals, que podem assignar de la següent manera:
 \begin{equation}\label{eq:error_passos}
     B_{1\nu} \le \frac{1}{2^{\nu+1}}\varepsilon_p^*.
 \end{equation}
-De manera que l'error total obtingut sumant les cotes \ref{eq:error_aproximacio} i \ref{eq:error_passos} és menor que
+De manera que l'error total obtingut sumant les cotes \eqref{eq:error_aproximacio} i \eqref{eq:error_passos} és menor que
 \begin{equation*}
     \frac12\varepsilon_p^* + \sum_{\nu=1}^\infty \frac1{2^{\nu+1}}\varepsilon_p^* = \varepsilon_p^*.
 \end{equation*}
@@ -314,7 +308,7 @@ Procedim per inducció. Suposem que cada pas pas pren una immersió que produeix
 \begin{itemize}
     \item El procés es divideix en una sèrie \textbf{d'etapes}. Cada una d'elles és igual que la resta, però la primera necessita una immersió $f$ de classe $C^\infty$ curta. Després de cada etapa, la nova immersió segueix sent $C^\infty$ i curta, però l'error mètric és com a molt $2/3$ de l'error de la immersió de l'etapa anterior.
     \item S'escull un recobriment localment finit de $M$ per conjunts tancats $N_p$. És a dir, tal que cada punt de $M$ pertany a, com a molt, un nombre finit de conjunts $N_p$.
-    \item Cada etapa es divideix en un nombre finit de \textbf{passos}. Primer, la correcció es divideix entre tots els conjunts $N_p$ amb unes funcions pes $\varphi_p$. Aleshores es divideix la correcció de cada $N_p$ en un nombre finit de passos, en l'equació \ref{eq:lema_descomp}
+    \item Cada etapa es divideix en un nombre finit de \textbf{passos}. Primer, la correcció es divideix entre tots els conjunts $N_p$ amb unes funcions pes $\varphi_p$. Aleshores es divideix la correcció de cada $N_p$ en un nombre finit de passos, en l'equació \eqref{eq:lema_descomp}
     \item Els passos s'han de realitzar un rere l'altre. L'ordre concret no importa, però s'ha d'escollir un ordre i seguir-lo. En varietats obertes, el nombre de passos és infinit, però en cada entorn compacte el nombre de passos és finit.
 \end{itemize}
 
@@ -323,13 +317,13 @@ Per la proposició \ref{prop:dos de tres}, sabem que la mètrica resultant del p
 \begin{equation}\label{eq:b3_cota}
     B_{3} \le \frac1{2^{(s+r)}},
 \end{equation}
-de manera que la successió dels $B_3$ sigui més petita que una successió convergent.
+de manera que la successió dels $B_3$ sigui més petita que els termes d'una sèrie convergent.
 
 Imposant les mateixes fites per la successió de $B_2$, 
 \begin{equation}
     B_2 \le \frac1{2^{(s+r)}},
 \end{equation}
-controlem els termes d'error d'ordre $O\left(\frac1{\lambda}\right)$ de l'equació \ref{eq:moltes_lambdes}. Ara bé, per tal que les primeres derivades convergeixin al final del procés, cal que el terme irreductible $2\sqrt{K\beta_{ii}}$ també convergeixi.
+controlem els termes d'error d'ordre $O\left(\frac1{\lambda}\right)$ de l'equació \eqref{eq:moltes_lambdes}. Ara bé, per tal que les primeres derivades convergeixin al final del procés, cal que el terme irreductible $2\sqrt{K\beta_{ii}}$ també convergeixi.
 
 \begin{prop}
     La sèrie formada per la successió $\set{2\sqrt{K\beta_{ii}}}_{\nu}$ convergeix per cada $i$ i uniformement en cada entorn $N_p$.
@@ -337,7 +331,7 @@ controlem els termes d'error d'ordre $O\left(\frac1{\lambda}\right)$ de l'equaci
 {
 \color{green!50!black} \textit{Prova.} 
 $K$ és una constant que només depèn de la dimensió $n$ de la varietat, de manera que només ens hem d'ocupar de $\beta_{ii}$.
-El tensor $\beta_{ij}$ aproxima l'error mètric $\delta_{ij}$, que es redueix per un factor $1/3$ o major després de cada etapa, com hem vist a la desigualtat \ref{eq:delta_prima_cota} {\color{blue} Nash diu que això és després de cada pas, em fa pal ara mirar com és.}. Cal veure que $\beta_{ij}$ decreix de manera similar. Podem imposar que $\beta_{ij}$ sigui prou proper a $\delta_{ij}$ tal que 
+El tensor $\beta_{ij}$ aproxima l'error mètric $\delta_{ij}$, que es redueix per un factor $1/3$ o major després de cada etapa, com hem vist a la desigualtat \eqref{eq:delta_prima_cota}. Cal veure que $\beta_{ij}$ decreix de manera similar. Podem imposar que $\beta_{ij}$ sigui prou proper a $\delta_{ij}$ tal que 
 \begin{equation}
     \frac{9}{10} \le \frac{\max|\beta_{ij}|_{N_p}}{\max|\delta_{ij}|_{N_p}} \le \frac{9}{8}.
 \end{equation}
@@ -360,14 +354,14 @@ La demostració per encabiments és la mateixa que per immersions generals, per�
 
 Ens haurem de fixar primer en què cada pas es pugui fer sense que el nou encabiment intersequi amb si mateix, i després en què l'encabiment resultant en el límit del procés sigui injectiu.
 \begin{obs}
-    Si la varietat és oberta, l'elecció de $B_3$ a \ref{eq:b3_cota} assegura que el conjunt límit roman fix durant tot el procés.
+    Si la varietat és oberta, l'elecció de $B_3$ a \eqref{eq:b3_cota} assegura que el conjunt límit roman fix durant tot el procés.
 \end{obs}
 \begin{prop}
     En qualsevol pas d'una etapa i en qualsevol entorn $N_p$ de la frontera de l'encabiment, es pot escollir una $\lambda$ prou gran tal que el pas no produeixi interseccions de l'encabiment amb si mateix ni amb el conjunt límit.
 \end{prop}
 {
 \color{green!50!black} \textit{Prova.} 
-    Sigui $K$ un component compacte de l'encabiment que inclogui $N_p$ al seu interior. $K$, al seu torn, està inclòs en un entorn obert $H$ tan proper a $K$ tal que per qualsevol punt $P$ en $H$ no pot tenir dues perpendiculars a $K$ en $H$. {\color{blue} Això és el que vam parlar amb l'Ignasi. Podríem mirar si cal posar una demostració o un dibuixet o algo.}
+    Sigui $K$ un component compacte de l'encabiment que inclogui $N_p$ al seu interior. $K$, al seu torn, està inclòs en un entorn obert $H$ tan proper a $K$ tal que per qualsevol punt $P$ en $H$ no pot tenir dues perpendiculars a $K$ en $H$.
 
     Sigui $Q$ la unió de la frontera de l'encabiment i la part de l'encabiment que no està inclòs en $K$. Com $Q$ és un conjunt tancat, una pertorbació prou petita no pot intersecar $Q$. A més, com la pertorbació és normal a l'encabiment, estarà dins de $H$ i els punts de $K$ no es podran intersecar. Així doncs, el pas no produeix interseccions de l'encabiment amb si mateix ni amb el conjunt límit.\qed
 }
@@ -437,3 +431,7 @@ El mètode de Kuiper és molt similar al de Nash, però fa servir un tipus de pe
         }
 \end{equation*}
 on $h$ és un valor derivat de la mètrica induïda tal que $h^2 = h_{11}$, $\overline\alpha = \alpha / \sqrt{h_{11}}$ amb $\alpha$ constant i  $\lambda$ és una constant que juga el mateix rol que a la pertorbació de Nash. Aquesta no és la única manera d'obtenir una pertorbació que arribi a un encabiment isomètric, sinó que es poden trobar altres mètodes que s'ajustin millor a la varietat concreta que es vulgui encabir.
+\section{El naixement de la integració convexa}
+El mètode de Nash-Kuiper per obtenir encabiments isometrics $C^1$ com a límits de successions d'encabiments curts $C^\infty$ mitjançant moviments oscil·lants d'alta freqüència va semblar una peculiaritat als matemàtics de l'època. Ara bé, el matemàtic rus Mikhaïl Gromov va prendre l'essència d'aquesta mena de demostracions i les va generalitzar, formalitzar i unificar sota el concepte de la \textbf{integració convexa}. A grans trets, la integració convexa consisteix en trobar solucions formals a certes relacions diferencials parcials i deformar-les per trobar solucions geomètriques reals, si aquestes relacions diferencials parcials verifiquen un criteri de flexibilitat anomenat el principi $h$.
+
+Al següent capítol veurem un encabiment isomètric $C^1$ del tor en $\mathbb R^3$ que no seguirà al peu de la lletra els mètodes de Nash ni de Kuiper, sinó que tractarà el problema amb el llenguatge general de la integració convexa. 

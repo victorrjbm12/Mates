@@ -1,0 +1,233 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Acta Physica Sinica Vol. 73, No. 15 (2024) 150201}
+\cfoot{\thepage}
+
+\title{\textbf{Free Electron Laser Preparation of High-Intensity Metastable Helium Atoms and Helium-like Ions}}
+
+\author{
+Du Xiaojiao$^{1)}$, Wei Long$^{1)}$, Sun Yu$^{1)\dagger}$, Hu Shuiming$^{2)}$ \\
+\\
+$^{1)}$Shenzhen Institute of Advanced Particle Facilities, Shenzhen 518107 \\
+$^{2)}$Department of Chemical Physics, University of Science and Technology of China, Hefei 230026 \\
+\\
+$^\dagger$Corresponding author. E-mail: sunyu@mail.iasf.ac.cn
+}
+
+\date{Received: April 23, 2024; Revised manuscript received: June 3, 2024}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In the precision spectroscopy of few-electron atoms, the generation of high-intensity, single-quantum-state helium atoms and helium-like ions is key to experimental research and a decisive factor in improving the signal-to-noise ratio of experimental measurements. This paper proposes an experimental scheme to obtain high-intensity metastable helium atoms and helium-like ions using a free-electron laser. The preparation efficiency of the laser can be obtained by solving the master equation of the light-atom interaction. According to the design parameters and experimental conditions of the proposed Shenzhen Free Electron Laser facility, the calculated preparation efficiencies for metastable He, Li$^{+}$, and Be$^{2+}$ can reach over 3\%, 6\%, and 2\%, respectively. Compared with common preparation methods such as gas discharge and electron bombardment, laser excitation to produce metastable atoms/ions can not only improve the preparation yield but also reduce the influence of high-energy stray particles such as electrons, ions, and photons generated during discharge. The use of free-electron lasers to excite and prepare metastable helium atoms and helium-like ions is expected to be applied in multiple research fields.
+\end{abstract}
+
+\textbf{Keywords:} metastable helium atoms and helium-like ions, precision spectroscopy, free electron laser, signal-to-noise ratio, preparation efficiency
+
+\textbf{PACS:} 02.60.Cb, 21.45.+v, 32.30.-r, 41.60.Cr
+
+\textbf{DOI:} 10.7498/aps.73.20240554
+
+\section{Introduction}
+
+Helium atoms and helium-like ions are the simplest few-body particle systems. Their long-lived metastable states have been extensively studied experimentally \cite{ref1-20} and theoretically \cite{ref26-36}. Compared to the ground state, transitions involving metastable states are mostly concentrated in the visible and infrared bands, which can be realized with commercial lasers. Therefore, metastable states can be used as ``equivalent ground states'' for related experimental research. At the same time, theorists believe that transitions from the $2^3S$ metastable state of helium atoms or helium-like ions to other energy levels are relatively sensitive to quantum electrodynamics (QED) effects. This has led to a large amount of work in the field of precision spectroscopy focusing on the high-precision measurement of fine and hyperfine energy level structures \cite{ref1,ref7-10,ref14-20,ref26-35}, Zemach radius \cite{ref19,ref34}, and nuclear charge radius \cite{ref11,ref13} of metastable helium atoms or helium-like ions.
+
+Among them, the precision spectroscopy research of Be$^{2+}$ is mostly limited to theoretical work. If high-precision experimental measurements can be achieved in the future, it will make important contributions to testing relativistic effects, higher-order QED theory, and nuclear effects in few-body systems \cite{ref10,ref33}. The $2^3P$ fine structure level of helium is an important transition for determining the fine-structure constant. This scheme was proposed by Schwartz in 1964 and gave the fine-structure constant with an accuracy of the order of $10^{-6}$ \cite{ref21}.
+
+In the last 20 years, high-precision measurements of the helium atom's $2P$ fine structure have been achieved, with measurement accuracy gradually improving from kHz to sub-kHz or even higher levels \cite{ref1,ref7,ref10,ref11,ref14,ref16-18}. However, discrepancies have appeared between these high-precision experimental and theoretical results. For example, in 2018, Hessels' group at York University in Canada reported the helium atom fine structure level $2^3P_1 - 2^3P_2$ (about \SI{2.3}{GHz}). The measurement uncertainty of this result reached $1 \times 10^{-8}$, which is consistent with the separated oscillatory field spectroscopy result after correcting for quantum interference effects. However, the result value is 20\% lower than the current theoretical calculation result and 2.9 standard deviations lower than the result reported by the University of Science and Technology of China group in 2017.
+
+For the helium atom $2^3P$ fine structure level ($2^3P_0 - 2^3P_1$, about \SI{29.6}{GHz}), Heydarizadmotlagh et al. recently reported the latest result with a measurement accuracy of \SI{60}{Hz}, and an uncertainty of $2 \times 10^{-9}$. This is about 4.5 standard deviations higher than the result previously reported by their laboratory \cite{ref18} and $6.7\sigma$ higher than the result from the University of Science and Technology of China group. Since the current theoretical calculation accuracy is \SI{1.7}{kHz}, the results from current theory and various experiments are all consistent \cite{ref20}. These results indicate that there may still be some unknown systematic effects in related experimental work that have not yet been discovered. More experimental measurement methods need to be developed for verification to avoid these systematic errors and improve experimental measurement accuracy.
+
+Furthermore, because $2^3S$ metastable helium atoms or helium-like ions themselves carry high internal state energy, when a metastable helium atom or ion collides with another atom or molecule whose ionization energy is lower than this energy, a charge transfer process occurs. That is, an electron jumps from the neutral atom or molecule to the 1s orbit of the helium atom or helium-like ion, accompanied by the ionization of the 2s orbit electron \cite{ref22-24}. Moreover, the helium atom and helium-like ion systems are simple, facilitating high-precision theoretical calculations and simulations of electronic structures and potential energy surfaces \cite{ref25,ref36}.
+
+In the field of chemical reaction dynamics, the study of collisions between ultra-low temperature atoms/ions and molecules helps to understand the physical mechanisms of resonant quantum effects (such as Shape resonance and Feshbach resonance). Related data can also provide benchmarks for the optimization of theoretical models and the establishment of databases \cite{ref22,ref23,ref25,ref36}. Whether it is precision spectroscopy measurement or collision reaction dynamics, the key to related experimental research is to produce high-intensity, single-quantum-state helium atoms or helium-like ions, which is also the focus of this work.
+
+To obtain metastable helium atoms or helium-like ions, gas discharge and electron bombardment are commonly used preparation methods. Through energy exchange between charged particles and target particles, various particles including $2^3S$ and $2^1S$ metastable atoms, ions, and high-energy ultraviolet photons can be obtained \cite{ref37,ref38}. However, while these methods prepare $2^3S$ metastable atoms or ions, the generation of a large number of stray particles can cause background noise, thereby affecting the signal-to-noise ratio of experimental measurements. Moreover, electron collisions can also cause de-excitation or direct ionization of metastable atoms, thus reducing the population of metastable atoms. In addition, the preparation conditions for gas discharge and electron bombardment methods are harsh, with high requirements for environmental stability and continuous particle discharge. Currently, the excitation efficiency for the helium atom $2^3S$ state is about $10^{-4} - 10^{-5}$, and the preparation efficiency for Li$^{+}$ and Be$^{2+}$ is 1\%-3\% \cite{ref39,ref40}.
+
+Inert gas collision and laser charge transfer are also experimental techniques for preparing metastable ions. Although these methods can achieve high-efficiency preparation, the energy of the ion and atom beams required in the experiment is relatively high, and the latter technique has not yet been experimentally reported.
+
+In addition to the above methods, light can also be used to excite and prepare metastable helium atoms or ions. This method can overcome the problems of low preparation efficiency and high experimental difficulty, and can also reduce the influence of high-energy stray particles such as electrons, ions, and photons generated during discharge. One scheme is to use multiphoton excitation, including monochromatic multiphoton and multicolor multiphoton transitions. These processes involve the excitation process of ground state-intermediate state-metastable state \cite{ref41,ref42}. For the former, the intermediate state may be a virtual energy state, requiring higher laser power density to increase the Rabi frequency to achieve the transition. For multicolor multiphoton transitions, it is required that multiple laser beams are resonant with the atomic transition energy levels, and the laser intensity is sufficiently high.
+
+Another scheme is to directly excite atoms from the ground state to the metastable state through a single laser beam. However, since the transition from the ground state to the metastable state of helium atoms is a typical optically dipole-forbidden process, only a light source that satisfies the resonant wavelength and has sufficiently high intensity can possibly achieve it. For simple atoms/ions, most transitions related to the ground state are concentrated in the vacuum ultraviolet (VUV) band. Currently, the main methods for generating VUV band lasers include four-wave mixing, synchrotron radiation, and free-electron lasers.
+
+Among them, the free-electron laser (FEL) has outstanding features such as high repetition rate, high brightness, and continuous wavelength tunability. In recent years, China has been accelerating the construction of large-scale scientific facilities. The construction of high-quality free-electron lasers provides a great advantage for obtaining high-intensity helium atom or helium-like ion beams. The Shenzhen Free Electron Laser project has been officially launched. This light source can generate lasers in the VUV and soft X-ray bands. Its output laser has a designed pulse width of \SI{100}{fs}, an emission spectral width close to the Fourier transform limit, a pulse repetition rate of up to \SI{1}{MHz}, and a single pulse photon number of $10^{12}$ photons. The laser spot size is tunable from sub-millimeter to \SI{10}{mm}. These laser characteristics lay a solid foundation for achieving high-intensity preparation of metastable helium atoms and helium-like ions.
+
+To obtain high-intensity, single-quantum-state helium atoms and helium-like ions, this paper proposes an experimental scheme for preparing metastable $2^3S$ He atoms, Li$^{+}$, and Be$^{2+}$ ions based on a free-electron laser. At the same time, by solving the master equation of the light-atom interaction, it is estimated that the excitation efficiency of metastable helium atoms can be as high as 3\%-5.5\%. Compared with common methods such as gas discharge and electron bombardment, the preparation efficiency is at least 1-2 orders of magnitude higher. For metastable Li$^{+}$ and Be$^{2+}$, the preparation efficiency of this scheme is also expected to reach 2\%-6\%.
+
+This article introduces the application fields and common preparation methods of metastable helium atoms and helium-like ions, and gives the excitation efficiency and limitations of the corresponding methods. It also proposes an experimental scheme using free-electron lasers to prepare high-intensity metastable atoms and ions, which is expected to improve the preparation efficiency of metastable atoms. Section 2 describes in detail the experimental preparation scheme of metastable atoms and the simulation calculation of preparation efficiency, and compares it with synchrotron radiation light sources. Finally, the results of the scheme are summarized, and the future work is prospected.
+
+\section{Experimental Scheme and Numerical Simulation}
+
+\subsection{Preparation of Metastable Atoms}
+
+Figure \ref{fig:energy_levels} shows the relevant energy levels for the free-electron laser excitation and preparation of metastable helium atoms and a schematic diagram of the experimental setup. Figure \ref{fig:energy_levels}(a) shows the preparation path of metastable helium atoms. A free-electron laser with a wavelength of \SI{58}{nm} and commercial lasers of \SI{667}{nm} and \SI{1870}{nm} sequentially excite helium atoms from the ground state to $2^1P$, $3^1D$, and $4^3F$. The scattering rate coefficients for the three laser-corresponding transitions are $1.80 \times 10^9 \, \text{s}^{-1}$, $6.37 \times 10^7 \, \text{s}^{-1}$, and $4.85 \times 10^6 \, \text{s}^{-1}$, respectively. Subsequently, electrons will spontaneously radiate and de-excite to the metastable $2^3S$ state. The characteristics of the free-electron laser, such as continuous wavelength tunability, high brightness, and high repetition rate, enable high-efficiency preparation of metastable helium atoms.
+
+To achieve free-electron laser excitation and preparation of metastable helium atoms, Figure \ref{fig:energy_levels}(b) shows the corresponding experimental setup. This setup mainly consists of four parts: the FEL laser incidence and collection system, the atom beam pre-cooling system, the FEL optical path differential pumping system, and the two-dimensional transverse cooling system for the atom beam.
+
+The free-electron laser generated by the superconducting cavity and undulator passes through the differential pumping system and enters through the flange port. It interacts perpendicularly with the helium atom or helium-like ion beam at a position \SI{3}{mm} from the outlet of the gas pipeline. The other two commercial laser beams enter through the flange port perpendicular to the FEL light and the atom beam direction, as shown by the red arrow in the enlarged area in the upper right corner of Figure \ref{fig:energy_levels}(b). These two beams are continuous lasers, ensuring continuous interaction between the atoms and the laser.
+
+The atom beam will be pre-cooled by a Cryogenic cold head (RDK-408D2) (the secondary cooling temperature can reach \SI{4.2}{K}). The cooled atoms have a relatively narrow velocity distribution and a lower most probable velocity (about \SI{160}{m/s}), thereby reducing gas beam diffusion and increasing the interaction time with the laser. After interacting with the atoms, the FEL laser exits through the flange port and is collected by a Beam Dump (the Beam Dump is located in the collection system marked as 1 on the right side of Figure \ref{fig:energy_levels}(b)). The purpose is to prevent the laser from scattering randomly in the beam chamber and reducing the excitation efficiency.
+
+When the laser and atoms interact, the atoms not only absorb photon energy but also transfer photon momentum, so the atoms will experience transverse velocity broadening. To reduce the beam loss caused by transverse velocity divergence, the scattering force of the laser on the atoms can be used for transverse cooling. The two-dimensional transverse cooling device adopts the design of the helium atom precision spectroscopy group at the University of Science and Technology of China \cite{ref20}, which will not be described in detail here.
+
+The design of the differential pumping system is to reduce the light intensity loss of the FEL light during propagation. The system consists of a molecular pump with a pumping speed of \SI{700}{L/s}, a chamber, and a differential pumping tube. The volume of the chamber is about \SI{3}{L}, the inner diameter of the differential pumping tube is \SI{20}{mm}, and the length is \SI{20}{cm}. Its conductance is about \SI{12.8}{L/s}, which can ensure at least two orders of magnitude pressure difference between the helium atom beam chamber and the free-electron laser optical path, and can avoid gas contamination of the laser optical path in the chamber. It should be noted that when preparing metastable helium-like ions, the experimental setup in Figure \ref{fig:energy_levels}(b) also needs to add an ion source generation part.
+
+\subsection{Numerical Calculation of Excitation Efficiency}
+
+To evaluate the transition efficiency of free-electron laser excitation of metastable helium atoms and helium-like ions, the master equation of the light-atom/ion interaction can be solved to explore the time evolution process of the population of each excited state of helium atoms/ions during the photoexcitation process. Referring to the preparation energy levels in Figure \ref{fig:energy_levels}(a) and the experimental design conditions in Figure \ref{fig:energy_levels}(b), the interaction process between a single helium atom and a single pulse of the free-electron laser was first calculated.
+
+This system includes 5 bound states, namely the ground state $\ket{1}$, intermediate states $\ket{2}$ and $\ket{3}$, excited state $\ket{4}$, and metastable state $\ket{5}$, as well as a continuum state $\ket{6}$. Among them, $\ket{1} - \ket{5}$ is an electric dipole forbidden transition, while $\ket{1} - \ket{2}$, $\ket{2} - \ket{3}$, and $\ket{3} - \ket{4}$ are all optically dipole-allowed transitions. Three laser beams are coupled to these three dipole-allowed transitions, respectively. The central frequencies of the lasers are $\omega_1$, $\omega_2$, and $\omega_3$, respectively. The coupling strengths of the lasers are represented by $\Omega_1$, $\Omega_2$, and $\Omega_3$ for $2^1P_1 \rightarrow 1^1S_0$, $3^1D_2 \rightarrow 2^1P_1$, $4^3F_2 \rightarrow 3^1D_2$, and $4^3F_3 \rightarrow 2^3S_1$.
+
+The radiative rates for the transitions are $\Gamma_{21}$ and $\Gamma_{45}$, respectively, where $\Gamma_{45}$ includes the multi-level de-excitation process $4^3F_3 \rightarrow 3^3D_2 \rightarrow 2^3P_1 \rightarrow 2^3S_1$. It should be mentioned that electrons in the $2^1P_1$ energy level also have a certain probability of de-exciting to the singlet metastable state $2^1S_0$, easily detaching from the ``excitation-radiation'' cycle. However, the scattering rate of this transition is of the order of $10^6 \, \text{s}^{-1}$, which is one-thousandth of the $2^1P_1 \rightarrow 1^1S_0$ transition. This means that after an atom undergoes one cycle, nearly 0.1\% of the atoms will no longer participate in the cycle. Therefore, when considering the de-excitation process of $2^1P_1 \rightarrow 2^1S_0$, after multiple cycles of light-atom interaction, the population efficiency to the triplet metastable state $2^3S_1$ will be about 0.1\% less than the result without considering this de-excitation path. In the actual calculation process, the influence of this de-excitation process was ignored.
+
+Short-pulse free-electron lasers have high energy and power density, so they will ionize helium atoms in different excited states. Laser photoionization is an important dephasing pathway. The larger the ionization cross-section, the more severe the dephasing effect. The ionization cross-section decreases with increasing laser frequency. Here, only the single-photon ionization effect of the laser on the $4^3F$ state is considered, and the ionization rate is $R_i$.
+
+Under the dipole approximation and rotating wave approximation, the time evolution process of the atom follows the Lindblad master equation \cite{ref43}, i.e.:
+\begin{equation}
+\dot{\rho} = -\frac{i}{\hbar}[H_A + H_{AF}, \rho] + \mathcal{D}[G]\rho,
+\end{equation}
+where $\mathcal{D}[c]\rho \equiv c\rho c^\dagger - \frac{1}{2}(c^\dagger c \rho + \rho c^\dagger c)$ is the Lindblad superoperator, $H_A$ represents the free atom Hamiltonian, $H_{AF}$ represents the Hamiltonian of the interaction between the external field and the atom, and $G$ is the spontaneous emission operator.
+
+For the preparation energy levels shown in Figure \ref{fig:energy_levels}(a), the system Hamiltonian and spontaneous emission operator can be expressed as:
+\begin{align}
+H_A &= -\hbar\Delta_1 \ket{2}\bra{2} - \hbar(\Delta_1 + \Delta_2) \ket{3}\bra{3} - \hbar(\Delta_1 + \Delta_2 + \Delta_3) \ket{4}\bra{4}, \\
+H_{AF} &= \frac{\hbar}{2} (\Omega_1^* \ket{2}\bra{1} + \Omega_2^* \ket{3}\bra{2} + \Omega_3^* \ket{4}\bra{3} + \text{h.c.}), \\
+\mathcal{D}[c] &= \sqrt{\Gamma_{21}} \ket{1}\bra{2} + \sqrt{\Gamma_{32}} \ket{2}\bra{3} + \sqrt{\Gamma_{43}} \ket{3}\bra{4} + \sqrt{\Gamma_{45}} \ket{5}\bra{4} + \sqrt{R_i} \ket{6}\bra{4}.
+\end{align}
+
+where the diagonal element $\rho_{ii} = \ket{i}\bra{i}$ represents the population of the atom in state $\ket{i}$, and the off-diagonal element $\rho_{ij} = \ket{i}\bra{j}$ ($i \neq j$) represents the quantum coherence between state $\ket{i}$ and state $\ket{j}$; $\Delta_1$, $\Delta_2$, and $\Delta_3$ represent laser detunings.
+
+The single-photon ionization formula is:
+\begin{equation}
+R_i = \frac{\xi}{2\hbar\omega} I(t),
+\end{equation}
+where $\xi$ represents the ionization cross-section, $I(t)$ is the laser intensity, and $\omega$ is the frequency of the ionizing laser. Considering the single-photon ionization of the $4^3F$ state by the \SI{58}{nm} laser, its ionization cross-section is about $7.5 \times 10^{-19} \, \text{cm}^2$ \cite{ref14}.
+
+In the calculation, the FEL light source was set to have $10^{12}$ photons per pulse, a repetition rate of \SI{1}{MHz}, and a pulse width of \SI{100}{fs}, and the FEL light can satisfy the Fourier transform limit. The powers of the \SI{668}{nm} and \SI{1870}{nm} continuous lasers are both \SI{1}{W}. The spot sizes of all lasers are $10 \, \text{mm} \times 10 \, \text{mm}$, and the corresponding saturation power densities are \SI{178}{W/cm^2}, \SI{14.0}{mW/cm^2}, and \SI{45.4}{\micro W/cm^2}, respectively. Moreover, the FEL laser can be regarded as a Gaussian pulse with a width of \SI{100}{fs}. When the FEL light interacts with the atoms, the other two laser beams act simultaneously.
+
+Atoms with a certain velocity will pass through the laser beam over time, so the laser interaction intensity also changes with the interaction time. In the calculation, the flight velocity of the cooled atoms is taken to be about \SI{200}{m/s}, the time for the atoms to pass through the laser is $t = \SI{50}{\micro s}$, and the laser is a focused Gaussian beam. It is assumed that all lasers are near resonance with the transition frequencies, i.e., $\Delta_1 = \Delta_2 = \Delta_3 = 0$.
+
+When the atom evolves on a femtosecond time scale, the time evolution relationship of the population of different energy levels of a single helium atom under the action of a single FEL pulse can be calculated by Python, as shown in Figure \ref{fig:time_evolution}. It can be seen that when the time evolves to about \SI{30}{\micro s}, the population of the metastable $2^3S$ state tends to be stable, and the population efficiency at this time is about 0.004\%, as shown by the purple solid line in the figure. The population rate of the ionic state generated by laser photoionization is only $10^{-27}$, so this result is not shown in the figure, and this effect can also be ignored in subsequent calculations. The populations of the other intermediate states exhibit Rabi oscillation behavior with evolution time until the laser-atom interaction ends.
+
+If the excitation efficiency per second of a single atom is considered, the flight velocity of the atom and the repetition rate of the FEL light need to be taken into account. This means that the smaller the atomic velocity, the longer the interaction time between light and atom, and the higher the laser repetition rate, the more times light and atom interact, and ultimately the higher the efficiency of exciting metastable helium atoms. As can be seen from Figure \ref{fig:time_evolution}, under the simulation parameters set in this paper, the final excitation efficiency of the $2^3S$ state is stable at 0.2\%.
+
+Since the average number of photons in a free-electron laser is limited, if one wants to further improve the preparation efficiency of metastable helium atoms and helium-like ions, it is necessary to compress the laser spot to increase the laser intensity. Figure \ref{fig:spot_size} shows the simulation results of the preparation efficiency of the He atom $2^3S_1$ metastable state as a function of the laser spot size. It can be seen that when the laser spot is focused to a certain value, i.e., when the spot size is about \SI{0.4}{mm}, the excitation preparation efficiency of helium atoms is the highest, reaching 5.4\%. When the spot continues to shrink, the excitation efficiency gradually decreases due to the sharp reduction in the interaction time between the laser and the atoms/ions.
+
+Finally, considering the actual beam diameter of atoms or ions, the laser spot size should be controlled within the range of 0.2-\SI{0.3}{mm}. The corresponding excitation efficiency is concentrated in the red dashed box in Figure \ref{fig:spot_size}, and the excitation efficiency of metastable helium atoms is maintained above 3\%. This result is 1-2 orders of magnitude higher than the preparation efficiency obtained by traditional gas discharge or electron bombardment methods.
+
+The introduction has already mentioned that in addition to free-electron lasers, synchrotron radiation is also a large-scale light source with characteristics such as high photon flux and continuous wavelength tunability. To intuitively understand the dependence of excitation efficiency on laser photon flux, Figure \ref{fig:photon_flux} shows the trend of metastable helium atom excitation efficiency with photon flux. The light source parameters involved in the calculation refer to the second-generation synchrotron radiation light source—Hefei Light Source. The high-frequency injection frequency of electron bunches in the storage ring is \SI{500}{MHz}, and the bunch length is \SI{20}{ps}. The spot size is about $0.1 \, \text{mm} \times 0.1 \, \text{mm}$, and the electromagnetic radiation generated by bending magnets usually has no coherence.
+
+It can be seen that as the photon flux increases, the excitation efficiency increases linearly. When the photon flux reaches about $2.4 \times 10^{19} \, \text{phs} \cdot \text{s}^{-1} \cdot (0.1\% \text{BW})^{-1}$, the efficiency can reach about 1\%. This result is comparable to the free-electron laser preparation efficiency reported in this paper.
+
+Since the 1970s, synchrotron radiation light sources have begun the technological transition from the second generation to the third generation. In recent years, fourth-generation light sources have also gradually emerged, with the main goal of providing higher brightness and synchrotron radiation light sources with electron emittance close to the diffraction limit. For the existing second-generation synchrotron VUV light sources, such as Hefei Light Source, ALS and SLAC light sources in the United States, the photon flux they can provide is generally in the range of $10^{11} - 10^{13} \, \text{phs} \cdot \text{s}^{-1} \cdot (0.1\% \text{BW})^{-1}$ @ \SI{22}{eV}.
+
+However, most of the third-generation synchrotron radiation light sources that have been built are concentrated in the soft X-ray and hard X-ray bands. Fourth-generation synchrotron radiation light sources have only been built in three regions: Brazil (Sirius), Sweden (MAX IV), and Europe (ESRF EBS). There are still many light sources under construction. Among them, the SAPE beamline of Sirius can provide VUV band light sources, and its photon flux is about $10^{12} \, \text{phs} \cdot \text{s}^{-1} \cdot (0.1\% \text{BW})^{-1}$, which is comparable to the parameters of second-generation light sources. If future fourth-generation synchrotron radiation can provide vacuum ultraviolet light sources with higher photon flux, it will also have important advantages in preparing metastable helium atoms or helium-like ions. The Shenzhen Free Electron Laser project reported in this paper has clarified the construction period and scientific goals, which will provide an important guarantee for rapidly achieving high-intensity metastable helium atom or helium-like ion beams.
+
+Similar to helium atoms, free-electron lasers can also efficiently excite helium-like ions (Li$^{+}$ and Be$^{2+}$). Figure \ref{fig:ion_levels} shows a schematic diagram of the relevant energy levels for preparing metastable Li$^{+}$ and Be$^{2+}$. The system Hamiltonian for the interaction between light and ions is similar to that of helium atoms, but the effect of photoionization is not considered here. In addition, for Li$^{+}$ and Be$^{2+}$, the scattering rates of the $3^1P_1 \rightarrow 2^1S_0$ and $4^1P_1 \rightarrow 2^1S_0$ transitions are 3.6\% and 4.7\% of $3^1P_1 \rightarrow 1^1S_0$ and $4^1P_1 \rightarrow 1^1S_0$, respectively. The effect on the preparation efficiency of the metastable $2^3S_1$ state can still be ignored.
+
+When the laser preparation conditions are consistent with those for helium atoms and the spot size is \SI{0.3}{mm}, the calculated excitation efficiency of metastable Li$^{+}$ is higher than 6\%, and that of Be$^{2+}$ is around 2\%. In addition, for ions, mature ion trapping technology can ensure long-term interaction between ions and lasers, which can increase the efficiency of laser preparation of metastable ions by several orders of magnitude.
+
+\section{Conclusion}
+
+This work proposes a new method for preparing high-intensity metastable helium atoms and helium-like ions, using a free-electron laser as the excitation source, and provides a corresponding experimental design scheme. To verify the feasibility of the scheme, the preparation efficiency of metastable helium atoms and helium-like ions can be obtained by calculating the master equation of the light-atom interaction.
+
+Under the experimental conditions where the number of photons per pulse of the free-electron laser is $10^{12}$ photons, the repetition rate is \SI{1}{MHz}, and the pulse width is \SI{100}{fs}, and with synchronous excitation by a commercial continuous laser, high excitation efficiency can be obtained. When the power of the continuous laser is \SI{1}{W}, the excitation efficiency of the metastable $2^3S$ He atom can reach nearly 5.4\%. Considering the limitation of the actual atom or ion beam diameter, when the laser spot size is controlled at 0.2-\SI{0.3}{mm}, the excitation efficiency of metastable helium atoms is maintained above 3\%, the efficiency of metastable Li$^{+}$ is higher than 6\%, and that of Be$^{2+}$ is around 2\%.
+
+Compared with preparation methods such as electron bombardment and gas discharge, laser excitation can achieve higher preparation efficiency for helium atoms. Moreover, the experimental technique of using laser excitation to prepare metastable helium atoms or helium-like ions is simple and can reduce the influence of high-energy stray particles such as electrons, ions, and photons generated during discharge. For Li$^{+}$ and Be$^{2+}$ ions, very mature ion trapping technology can ensure long-term interaction between ions and lasers, which can increase the efficiency of laser preparation of metastable ions by several orders of magnitude.
+
+Preparing high-intensity metastable helium atom/ion beams can effectively improve the measurement accuracy of atomic or ionic precision spectroscopy. This also means that if a new method for studying the $2^3P$ fine structure energy levels is developed based on free-electron laser excitation and preparation of metastable helium atoms, it is expected to achieve energy level accuracy beyond the sub-hundred hertz level, thereby enabling the determination of more precise fine-structure constants and providing important references for testing QED theory.
+
+In addition, to obtain higher measurement accuracy, new detection techniques need to be developed to reduce or even avoid more systematic effects. For example, the quantum interference effect proposed in recent years seriously affects the accuracy of fine structure energy levels. If the coherent effect of downward radiation from different excited energy levels can be avoided when detecting target energy levels, the influence of the quantum interference effect on measurement accuracy can be avoided.
+
+For higher-charge helium-like ions, combined with high-charge ion technology, they can also be excited and prepared into their metastable states. X-ray free-electron lasers have a wide wavelength coverage range and also have significant advantages in preparing metastable high-Z helium-like ions. In addition to the field of precision measurement, the use of high-intensity metastable atom or ion beams in chemical reaction dynamics can also help to significantly improve the accuracy and sensitivity of measurements.
+
+\section*{Acknowledgements}
+We thank Dr. Dong Xize from the Department of Physical Chemistry, University of Science and Technology of China, for the discussion.
+
+\begin{thebibliography}{99}
+\bibitem{ref1} Heydarizadmotlagh F, Skinner TDG, Kato K, George MC, Hessels EA 2024 Phys. Rev. Lett. 132 163001
+\bibitem{ref7} Kato K, Skinner T, Hessels E 2018 Phys. Rev. Lett. 121 143002
+\bibitem{ref10} Feng GP, Zheng X, Sun YR, Hu SM 2015 Phys. Rev. A 91 030502
+\bibitem{ref11} Zheng X, Sun Y, Chen JJ, Jiang W, Pachucki K, Hu SM 2017 Phys. Rev. Lett. 118 063001
+\bibitem{ref13} Pastor PC, Consolino L, Giusfredi G, De Natale P, Inguscio M, Yerokhin V, Pachucki K 2012 Phys. Rev. Lett. 108 143001
+\bibitem{ref14} Smiciklas M, Shiner D 2010 Phys. Rev. Lett. 105 123001
+\bibitem{ref16} Giusfredi G, Pastor PC, Natale PD, Mazzotti D, Mauro Cd, Fallani L, Hagel G, Krachmalnicoff V, Inguscio M 2005 Can. J. Phys. 83 301
+\bibitem{ref18} George M, Lombardi L, Hessels E 2001 Phys. Rev. Lett. 87 173002
+\bibitem{ref19} Sun W, Zhang PP, Zhou PP, Chen SL, Zhou ZQ, Huang Y, Qi XQ, Yan ZC, Shi TY, Drake GWF, Zhong ZX, Guan H, Gao KL 2023 Phys. Rev. Lett. 131 103002
+\bibitem{ref20} Scholl TJ, Cameron R, Rosner SD, Zhang L, Holt RA, Sansonetti CJ, Gillaspy JD 1993 Phys. Rev. Lett. 71 2188
+\bibitem{ref21} Schwartz C 1964 Phys. Rev. 134 A1181
+\bibitem{ref22} Paliwal P, Deb N, Reich DM, van der Avoird A, Koch CP, Narevicius E 2021 Nat. Chem. 13 94
+\bibitem{ref23} Klein A, Shagam Y, Skomorowski W, Zuchowski PS, Pawlak M, Janssen LM, Moiseyev N, Meerakker SYVD, Avoird AVD, Koch CP, Narevicius E 2017 Nat. Phys. 13 35
+\bibitem{ref24} Henson AB, Gersten S, Shagam Y, Narevicius J, Narevicius E 2012 Science 338 234
+\bibitem{ref25} Martin DW, Weiser C, Sperlein RF, Bernfeld DL, Siska PE 1989 J. Chem. Phys. 90 1564
+\bibitem{ref26} Pachucki K, Yerokhin VA 2023 Phys. Rev. Lett. 130 053002
+\bibitem{ref33} Qi XQ, Zhang PP, Yan ZC, Shi TY, Drake GWF, Chen AX, Zhong ZX 2023 Phys. Rev. A 107 L010802
+\bibitem{ref34} Qi XQ, Zhang PP, Yan ZC, Drake GWF, Zhong ZX, Shi TY, Chen SL, Huang Y, Guan H, Gao KL 2020 Phys. Rev. Lett. 125 183002
+\bibitem{ref36} Tang KT, Toennies JP 1984 J. Chem. Phys. 80 3726
+\bibitem{ref37} Cheng CF, Jiang W, Yang GM, Sun YR, Pan H, Gao Y, Liu AW, Hu SM 2010 Rev. Sci. Instrum. 81 123106
+\bibitem{ref38} Kropot A, Hughes VW, Johnson CE, Lewis SA, Pichanick FMJ 1981 Phys. Rev. A 24 264
+\bibitem{ref39} Scholl TJ, Holt RA, Rosner SD 1989 Phys. Rev. A 39 1163
+\bibitem{ref40} Chen SL, Liang SY, Sun W, Huang Y, Guan H, Gao KL 2019 Rev. Sci. Instrum. 90 043112
+\bibitem{ref41} Bergeson SD, Balakrishnan A, Baldwin K, Lucatorto TB, Marangos J, Mellrath T, O'Brian TR, Rolston S, Sansonetti CJ, Wen J 1998 Phys. Rev. Lett. 80 3475
+\bibitem{ref42} Wang JS, Ritterbusch F, Dong XZ, Gao C, Li H, Jiang W, Liu SY, Lu ZT, Wang WH, Yang GM, Zhang YS, Zhang ZY 2021 Phys. Rev. Lett. 127 023201
+\bibitem{ref43} Steck DA 2017 Quantum and Atom Optics (Eugene: University of Oregon)
+\end{thebibliography}
+
+% Note: Figures would need to be created separately and included using \includegraphics
+% The following are placeholders for the figure references:
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=0.8\textwidth]{figure1.png}
+\caption{(a) Energy levels for the preparation of metastable helium; (b) schematic of designed apparatus for the preparation of metastable helium/helium-like ions.}
+\label{fig:energy_levels}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=0.6\textwidth]{figure2.png}
+\caption{Time evolution for different energy levels of helium by single-pulse excitation.}
+\label{fig:time_evolution}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=0.6\textwidth]{figure3.png}
+\caption{Simulation results of preparation efficiency of metastable helium with respect to spot size.}
+\label{fig:spot_size}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=0.6\textwidth]{figure4.png}
+\caption{Excitation efficiency as a function of the photon flux for synchrotron radiation sources.}
+\label{fig:photon_flux}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=0.6\textwidth]{figure5.png}
+\caption{Energy levels of metastable Li$^+$ and Be$^{2+}$.}
+\label{fig:ion_levels}
+\end{figure}
+
+\end{document} 

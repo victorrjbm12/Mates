@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  27 MAY 2025 09:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  1 JUN 2025 12:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -870,7 +870,7 @@ Couldn't patch \deferred@thm@head!
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count364
-<matematiquesinformatica-pos-rgb.png, id=187, 1352.05125pt x 639.89063pt>
+<matematiquesinformatica-pos-rgb.png, id=171, 1352.05125pt x 639.89063pt>
 File: matematiquesinformatica-pos-rgb.png Graphic file (type png)
 <use matematiquesinformatica-pos-rgb.png>
 Package pdftex.def Info: matematiquesinformatica-pos-rgb.png  used on input line 88.
@@ -937,26 +937,28 @@ Cap\'{\i }tol 1.
 
 [6]
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.41 ... \set{(x,v)\in \nu: ||v|| < \varepsilon}$$
-                                                   [1]
-
-[2])
+[7])
 \openout2 = `2_Suavitat.aux'.
 
  (./2_Suavitat.tex
 Cap\'{\i }tol 2.
 
 
-[3
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.14 L
+      a suavitat de les varietats diferenciables serà clau per a desenvolup... [1
 
 
 
 
 ]
+
+[2]
+
+[3]
 
 [4]
 
@@ -978,231 +980,9 @@ Cap\'{\i }tol 2.
 
 [13]
 
-[14]
-
-[15]
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 609.
+(hyperref)                removing `math shift' on input line 611.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 609.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 609.
-
-
-
-[16]
-
-[17]
-
-[18])
-\openout2 = `3_Mobius.aux'.
-
- (./3_Mobius.tex
-Cap\'{\i }tol 3.
-
-
-[19
-
-
-
-
-]
-
-[20]
-<dibuix_cilindre_1.pdf, id=510, 107.0178pt x 106.84015pt>
-File: dibuix_cilindre_1.pdf Graphic file (type pdf)
-<use dibuix_cilindre_1.pdf>
-Package pdftex.def Info: dibuix_cilindre_1.pdf  used on input line 125.
-(pdftex.def)             Requested size: 106.19452pt x 106.01508pt.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 126.
-
-<dibuix_cilindre_2.pdf, id=511, 171.51678pt x 106.84015pt>
-File: dibuix_cilindre_2.pdf Graphic file (type pdf)
-<use dibuix_cilindre_2.pdf>
-Package pdftex.def Info: dibuix_cilindre_2.pdf  used on input line 127.
-(pdftex.def)             Requested size: 170.19731pt x 106.01508pt.
-
-
-[21]
-<dibuix_esfera_1.pdf, id=522, 171.51678pt x 106.84015pt>
-File: dibuix_esfera_1.pdf Graphic file (type pdf)
-<use dibuix_esfera_1.pdf>
-Package pdftex.def Info: dibuix_esfera_1.pdf  used on input line 136.
-(pdftex.def)             Requested size: 170.19731pt x 106.01508pt.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 137.
-
-<dibuix_esfera_2.pdf, id=523, 122.52174pt x 106.84015pt>
-File: dibuix_esfera_2.pdf Graphic file (type pdf)
-<use dibuix_esfera_2.pdf>
-Package pdftex.def Info: dibuix_esfera_2.pdf  used on input line 138.
-(pdftex.def)             Requested size: 121.5792pt x 106.01508pt.
-
-
-[22 <./dibuix_cilindre_1.pdf> <./dibuix_cilindre_2.pdf> <./dibuix_esfera_1.pdf> <./dibuix_esfera_2.pdf>]
-<dibuix_mobius_1.pdf, id=585, 194.09814pt x 134.9311pt>
-File: dibuix_mobius_1.pdf Graphic file (type pdf)
-<use dibuix_mobius_1.pdf>
-Package pdftex.def Info: dibuix_mobius_1.pdf  used on input line 218.
-(pdftex.def)             Requested size: 201.31529pt x 139.94067pt.
-<dibuix_mobius_2.pdf, id=586, 115.62799pt x 132.70177pt>
-File: dibuix_mobius_2.pdf Graphic file (type pdf)
-<use dibuix_mobius_2.pdf>
-Package pdftex.def Info: dibuix_mobius_2.pdf  used on input line 222.
-(pdftex.def)             Requested size: 121.94756pt x 139.94067pt.
-
-
-[23 <./dibuix_mobius_1.pdf> <./dibuix_mobius_2.pdf>]
-
-[24])
-\openout2 = `4_Nash.aux'.
-
- (./4_Nash.tex
-Cap\'{\i }tol 4.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1.
-
-
-
-[25
-
-
-
-
-]
-
-[26]
-
-[27]
-
-[28]
-
-[29]
-
-[30]
-
-[31]
-
-[32]
-
-[33]
-
-[34]
-
-[35])
-
-[36]
-\openout2 = `5_Tor.aux'.
-
- (./5_Tor.tex
-Cap\'{\i }tol 5.
-
-
-[37
-
-
-
-
-]
-
-[38]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 74.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 74.
-
-
-
-[39]
-
-[40]
-
-[41]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 267.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 267.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 267.
-
-
-
-[42]
-
-[43]
-
-[44]
-
-[45]
-
-[46])
-
-[47]
-Cap\'{\i }tol 6.
-
-
-[48
-
-
-
-]
-Cap\'{\i }tol 7.
-
-
-[49
-
-]
-
-[50]
-
-[51
-
-] (./TFG.aux (./1_Introducció.aux) (./2_Suavitat.aux) (./3_Mobius.aux) (./4_Nash.aux) (./5_Tor.aux))
- ***********
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-01-18>
- ***********
-Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 98AFC67032083A3B747C4726D3FBC012;8751.
- ) 
-Here is how much of TeX's memory you used:
- 39323 strings out of 473201
- 869081 string characters out of 5716120
- 1386350 words of memory out of 5000000
- 61042 multiletter control sequences out of 15000+600000
- 617667 words of font info for 421 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 99i,16n,105p,1599b,691s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on TFG.pdf (58 pages, 1016332 bytes).
-PDF statistics:
- 1159 PDF objects out of 1200 (max. 8388607)
- 993 compressed objects within 10 object streams
- 322 named destinations out of 1000 (max. 500000)
- 94616 words of extra memory for PDF output out of 106986 (max. 10000000)
-
+(hyperref)                removing `superscript' on inp
