@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  1 JUN 2025 16:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  1 JUN 2025 18:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -948,8 +948,8 @@ Cap\'{\i }tol 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14 L
-      a suavitat de les varietats diferenciables serà clau per a desenvolup... [1
+l.15 
+      [1
 
 
 
@@ -1015,29 +1015,29 @@ Cap\'{\i }tol 3.
 <dibuix_cilindre_1.pdf, id=498, 107.0178pt x 106.84015pt>
 File: dibuix_cilindre_1.pdf Graphic file (type pdf)
 <use dibuix_cilindre_1.pdf>
-Package pdftex.def Info: dibuix_cilindre_1.pdf  used on input line 124.
+Package pdftex.def Info: dibuix_cilindre_1.pdf  used on input line 127.
 (pdftex.def)             Requested size: 106.19452pt x 106.01508pt.
 
 
-LaTeX Font Warning: Command \Large invalid in math mode on input line 125.
+LaTeX Font Warning: Command \Large invalid in math mode on input line 128.
 
 <dibuix_cilindre_2.pdf, id=499, 171.51678pt x 106.84015pt>
 File: dibuix_cilindre_2.pdf Graphic file (type pdf)
 <use dibuix_cilindre_2.pdf>
-Package pdftex.def Info: dibuix_cilindre_2.pdf  used on input line 126.
+Package pdftex.def Info: dibuix_cilindre_2.pdf  used on input line 129.
 (pdftex.def)             Requested size: 170.19731pt x 106.01508pt.
 <dibuix_esfera_1.pdf, id=501, 171.51678pt x 106.84015pt>
 File: dibuix_esfera_1.pdf Graphic file (type pdf)
 <use dibuix_esfera_1.pdf>
-Package pdftex.def Info: dibuix_esfera_1.pdf  used on input line 135.
+Package pdftex.def Info: dibuix_esfera_1.pdf  used on input line 138.
 (pdftex.def)             Requested size: 170.19731pt x 106.01508pt.
 
-LaTeX Font Warning: Command \Large invalid in math mode on input line 136.
+LaTeX Font Warning: Command \Large invalid in math mode on input line 139.
 
 <dibuix_esfera_2.pdf, id=502, 122.52174pt x 106.84015pt>
 File: dibuix_esfera_2.pdf Graphic file (type pdf)
 <use dibuix_esfera_2.pdf>
-Package pdftex.def Info: dibuix_esfera_2.pdf  used on input line 137.
+Package pdftex.def Info: dibuix_esfera_2.pdf  used on input line 140.
 (pdftex.def)             Requested size: 121.5792pt x 106.01508pt.
 
 
@@ -1047,12 +1047,12 @@ Package pdftex.def Info: dibuix_esfera_2.pdf  used on input line 137.
 <dibuix_mobius_1.pdf, id=575, 194.09814pt x 134.9311pt>
 File: dibuix_mobius_1.pdf Graphic file (type pdf)
 <use dibuix_mobius_1.pdf>
-Package pdftex.def Info: dibuix_mobius_1.pdf  used on input line 217.
+Package pdftex.def Info: dibuix_mobius_1.pdf  used on input line 220.
 (pdftex.def)             Requested size: 201.31529pt x 139.94067pt.
 <dibuix_mobius_2.pdf, id=576, 115.62799pt x 132.70177pt>
 File: dibuix_mobius_2.pdf Graphic file (type pdf)
 <use dibuix_mobius_2.pdf>
-Package pdftex.def Info: dibuix_mobius_2.pdf  used on input line 221.
+Package pdftex.def Info: dibuix_mobius_2.pdf  used on input line 224.
 (pdftex.def)             Requested size: 121.94756pt x 139.94067pt.
 
 
@@ -1126,30 +1126,30 @@ Cap\'{\i }tol 5.
 [36]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 79.
+(hyperref)                removing `math shift' on input line 85.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 79.
+(hyperref)                removing `math shift' on input line 85.
 
 
 
 [37]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 273.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 273.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 273.
-
-
-
 [38]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 281.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 281.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 281.
+
+
 
 [39]
 
@@ -1159,7 +1159,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 <Tor/tor pla.jpg, id=884, 7898.50874pt x 5611.96625pt>
 File: Tor/tor pla.jpg Graphic file (type jpg)
 <use Tor/tor pla.jpg>
-Package pdftex.def Info: Tor/tor pla.jpg  used on input line 587.
+Package pdftex.def Info: Tor/tor pla.jpg  used on input line 597.
 (pdftex.def)             Requested size: 212.03017pt x 150.62598pt.
 )
 
@@ -1180,13 +1180,13 @@ Package rerunfilecheck Info: File `TFG.out' has not changed.
 Here is how much of TeX's memory you used:
  39295 strings out of 473201
  868840 string characters out of 5716120
- 1386041 words of memory out of 5000000
+ 1386040 words of memory out of 5000000
  61037 multiletter control sequences out of 15000+600000
  617409 words of font info for 419 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,16n,105p,1567b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,16n,105p,1567b,691s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on TFG.pdf (51 pages, 10434960 bytes).
+Output written on TFG.pdf (51 pages, 10434146 bytes).
 PDF statistics:
  1099 PDF objects out of 1200 (max. 8388607)
  939 compressed objects within 10 object streams
