@@ -25,7 +25,14 @@ A continuació, presentem la definició de la cinta de Möbius plana i del seu e
     Anomenem \textbf{cinta de Möbius plana de raó d'aspecte $\lambda$} la varietat topològica amb frontera obtinguda amb la següent identificació d'un rectangle
     $$M_\lambda := ([0,\lambda] \times [0,1])/\sim, \quad\quad (0,y)\sim(\lambda,1-y).$$
 \end{defi}
-{\color{blue} PRIMERA FOTO}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{cinta}
+    \caption{Cinta de Möbius plana de raó d'aspecte $\lambda$.}
+    \label{fig:mobius_plana}
+\end{figure}
+
 
 \begin{defi}\label{def:cinta_mobius_paper}
     Una \textbf{cinta de Möbius de paper de raó d'aspecte $\lambda$} és una aplicació isomètrica $I:M_{\lambda}\to\mathbb R^3$ de classe $C^\infty$
@@ -37,12 +44,21 @@ A continuació, presentem la definició de la cinta de Möbius plana i del seu e
 \begin{ex}
     Anomenem \textbf{cinta de Möbius de paper triangular} la cinta de Möbius de paper de raó d'aspecte $\lambda = \sqrt{3}$.
 \end{ex}
-{\color{blue} SEGONA FOTO}
+
+
+
 
 A continuació presentem el teorema principal que demostrarem en aquest capítol. A més d'aquest, \cite{schwartz2024} demostra el \say{Teorema del límit triangular}, que esmentarem a les conclusions d'aquest capítol. 
 \begin{teo}[\textbf{Principal}]\label{teo:Main Schwartz}
     Qualsevol cinta de Möbius de paper encabida en $\mathbb R^3$ té raó d'aspecte més gran que $\sqrt{3}$.
 \end{teo}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{cinta_triangular}
+    \caption{Cinta de Möbius plana triangular.}
+    \label{fig:mobius_triangular}
+\end{figure}
 
 
 \subsection{Preliminars a la demostració}
@@ -90,7 +106,12 @@ Podem parlar de curvatura mitjana en un punt de la frontera $p\in\partial \Omega
     Si $\tau'$ té punts al seu interior, aleshores tots ells tenen curvatura mitjana zero, de manera que pertanyen a un sol pla.
     Sigui $\tau = I^{-1}(\tau')$. $I|_{\tau}$ és un encabiment isomètric entre regions planes i $\tau$ és un trapezoide convex. Per tant, $I|_{\tau}$ és una isometria global, de manera que les imatges de segments de recta en $\tau$ són segments de recta. Podem obtenir una foliació per pre-plecs de $\tau$ de manera senzilla interpolant entre els dos pre-plecs de la seva frontera, i prendre la imatge per $I$ d'aquesta foliació per obtenir una foliació per plecs de $\tau'$.
     
-    {\color{blue} TERCERA FOTO}
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Fotos/TERCERA.jpg}
+        \caption{{\color{blue}TEXT}}
+        \label{fig:foliacio_plecs}
+    \end{figure}
 
     Realitzant aquest procés per cada component connex de $\Omega\setminus U^*$, obtenim una foliació per plecs de $\Omega$.
     \qed
@@ -265,7 +286,12 @@ Amb això hem vist i demostrat una nova restricció sobre els encabiments isomè
 
 Ara bé, hi ha una manera de prendre un tros de paper de raó d'aspecte $\lambda = 1$, i doblegar-lo de tal manera que el resultat sigui \textit{gairebé} idèntic a una cinta de Möbius de paper encabida. Per aconseguir això, només cal prendre el tros de paper i doblegar-lo un nombre parell de vegades, de tal manera que quedi dividit en un nombre senar de seccions iguals. Si aquestes seccions es dobleguen de manera alternant, com un acordió, podem enganxar els dos extrems i aconseguir un \textbf{acordió de Möbius}. De fet, amb aquest mètode podem aconseguir prendre un paper rectangular de qualsevol raó d'aspecte i tornar-lo en un acordió de Möbius. 
 
-{\color{blue} QUARTA FOTO}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Fotos/QUARTA.jpg}
+    \caption{{\color{blue}TEXT}}
+    \label{fig:acordio_mobius}
+\end{figure}
 
 Què té d'especial l'acordió de Möbius que impedeix que serveixi com a contraexemple del teorema Principal? Aquest objecte no és una cinta de Möbius de paper encabida, tal com l'hem definit a la definició \ref{def:cinta_mobius_paper}, perquè els dos extrems no poden encaixar correctament sense doblegar el paper de manera suau. Els punts per on dobleguem, dit d'altra manera, no són regulars, de manera que l'encabiment no és $C^\infty$. En concret, hem necessitat regularitat com a mínim $C^2$ per poder definir la curvatura mitjana en la demostració del teorema \ref{teo:existencia_foliacio_plecs}. Si l'encabiment no és prou regular, no hi ha la foliació per plecs necessària per demostrar el teorema Principal. 
 
