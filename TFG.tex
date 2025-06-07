@@ -20,9 +20,12 @@
 \usetikzlibrary{arrows}
 \usepackage{wrapfig}
 \usepackage{fancyhdr}
-\usepackage{parskip}
-\parskip=5pt
-\parindent=15pt
+
+
+
+% \usepackage{parskip}
+% \parskip=5pt
+% \parindent=15pt
 \usepackage[margin=1.2in]{geometry}
 \usepackage{graphicx}
 \usepackage{listings}
@@ -110,7 +113,7 @@
 
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ll}
-\textbf{\Large Director:} & \textbf{\Large Dr. Ignasi Mundet Riera } \\
+\textbf{\Large Director:} & \textbf{\Large Dr. Ignasi Mundet i Riera } \\
 \textbf{\Large Realitzat a:} & \textbf{\Large  Departament de matemàtiques i informàtica   } \\
 \\
 \textbf{\Large Barcelona,} & \textbf{\Large \today }
@@ -124,14 +127,14 @@
 \pagenumbering{roman} 
 
 \section*{Abstract}
-This work deals with isometric embeddings of riemannian manifolds in Euclidean spaces, paying special attention to the flexibility obtained by relaxing the $C^\infty$ regularity condition to $C^1$. To this end, the proof of Nash's isometric embedding theorem is presented, as it appears in \cite{nash1954}, which states that any $C^\infty$ embedding of an $n$-dimensional riemannian manifold in a Euclidean space of dimension $n+k$, with $k \geq 2$, can be modified to obtain a $C^1$ isometric embedding. The improvement by \cite{kuiper1955}, which lowers the codimension to $k \geq 1$, is also presented.
+This work deals with isometric embeddings of riemannian manifolds in Euclidean spaces, paying special attention to the flexibility obtained by relaxing the $C^\infty$ regularity condition to $C^1$. To this end, the proof of Nash's isometric embedding theorem is presented as it appears in \cite{nash1954}, stating that for any short $C^\infty$ embedding of an $n$-dimensional riemannian manifold in a Euclidean space of dimension $n+k$, with $k \geq 2$, there exists a $C^1$ isometric embedding that is arbitrarily close to the original embedding. The improvement by \cite{kuiper1955}, which lowers the codimension to $k \geq 1$, is also presented.
 
 To illustrate the rigidity of $C^\infty$ embeddings, this work demonstrates the classic result of the non-existence of $C^\infty$ isometric embeddings of the flat torus in $\mathbb R^3$. Furthermore, drawing from the article by \cite{schwartz2024}, the minimum aspect ratio required for a Möbius strip to be isometrically and $C^\infty$ embedded in a 3-dimensional Euclidean space is presented. On the other hand, the flexibility of $C^1$ embeddings is showcased through the explicit construction of a $C^1$ isometric embedding of the flat torus in $\mathbb R^3$, following the work of \cite{borrelli2013}. This latter construction is directly related to the Nash-Kuiper theorem and employs convex integration methods.
 
 
 
 \section*{Resum}
-Aquest treball tracta sobre encabiments (\textit{embeddings}) isomètrics de varietats riemannianes en espais euclidians, parant especial atenció a la flexibilitat que s'obté en relaxar la condició de regularitat $C^\infty$ a $C^1$. Amb aquesta finalitat, es presenta la demostració del teorema d'encabiments isomètrics de Nash, tal com apareix en \cite{nash1954}, que afirma que qualsevol encabiment $C^\infty$ d'una varietat riemanniana de dimensió $n$ en un espai euclidià de dimensió $n+k$, amb $k \geq 2$, es pot modificar per obtenir un encabiment isomètric $C^1$. També es presenta la millora de \cite{kuiper1955} que baixa la codimensió a $k\ge1$. 
+Aquest treball tracta sobre encabiments (\textit{embeddings}) isomètrics de varietats riemannianes en espais euclidians, parant especial atenció a la flexibilitat que s'obté en relaxar la condició de regularitat $C^\infty$ a $C^1$. Amb aquesta finalitat, es presenta la demostració del teorema d'encabiments isomètrics de Nash tal com apareix en \cite{nash1954}, afirmant que per a qualsevol encabiment $C^\infty$ curt d'una varietat riemanniana de dimensió $n$ en un espai euclidià de dimensió $n+k$, amb $k \geq 2$, existeix un encabiment isomètric $C^1$ que és arbitràriament proper a l'encabiment original. També es presenta la millora de \cite{kuiper1955} que baixa la codimensió a $k\ge1$. 
 
 Per il·lustrar la rigidesa dels encabiments $C^\infty$, es demostra el resultat clàssic de la inexistència d'encabiments isomètrics $C^\infty$ en $\mathbb R^3$ del tor amb la mètrica plana, i es demostra a partir de l'article de \cite{schwartz2024} una mida mínima per què una cinta de Möbius es pugui encabir isomètricament i $C^\infty$ en un espai euclidià de dimensió 3. Per l'altra banda, es mostra la flexibilitat dels encabiments $C^1$ amb la construcció explícita d'un encabiment isomètric $C^1$ del tor pla amb l'article de \cite{borrelli2013}. Aquesta darrera construcció és directament relacionada amb el teorema de Nash-Kuiper i utilitza mètodes d'integració convexa.
 
@@ -139,7 +142,11 @@ Per il·lustrar la rigidesa dels encabiments $C^\infty$, es demostra el resultat
 
 
 \section*{Agra\"{\i}ments}
-
+Vull agrair a totes les persones que han fet possible la realització d'aquest treball de final de grau.
+Al meu tutor, Ignasi Mundet i Riera, pels suggeriments, les revisions i les correccions que m'ha fet al llarg de tot el procés de redacció d'aquest treball. També per totes les reunions i les converses que hem tingut aquest semestre.
+Als meus pares, els millors que hauria pogut demanar, per donar-me suport en tot moment i fer-me la persona que soc.
+Als meus amics de Matemàtiques i Física, per les hores i hores a les sales de Farmàcia i de Raval.
+A la Marina, pel seu amor.
 
 \newpage
 
@@ -210,6 +217,16 @@ Schwartz, R. E. (2024)
 Kuiper, N. H. (1955)
 \newblock \textit{On $C^1$-isometric imbeddings. I}
 \newblock Indagationes Mathematicae(Proceedings), 58, 545-556.
+
+\bibitem[Cartan(1927)]{cartan1927}
+Cartan, E. (1927)
+\newblock \textit{Sur la possibilité de plonger un espace riemannien donné dans un espace euclidien.}
+\newblock Ann. Soc. Pol. Math., 6, 1-7.
+
+\bibitem[Rokhlin(1970)]{rokhlin1970}
+Gromov, M. i Rokhlin, V. (1970)
+\newblock \textit{Embeddings and immersions in riemannian geometry.}
+\newblock Russian Math. Survey, 5, 1-57.
 
 
 

@@ -1,5 +1,5 @@
 \chapter{Encabiments isomètrics del tor pla}
-\section{Introducció al capítol}
+
 Al capítol anterior hem enunciat i demostrat els teoremes d'encabiments isomètrics $C^1$ de Nash, i hem vist la manera en què Kuiper va reduir la codimensió de l'espai ambient a 1. A continuació revisitarem el tor, una varietat topològica que no es pot encabir isomètricament de manera suau en $\mathbb R^3$, com hem vist al capítol \ref{cap:intro}, i descriurem el mètode amb el qual es pot encabir isomètricament de manera $C^1$. 
 Veurem que aquesta demostració ja utilitza el llenguatge de la integració convexa, que hem introduït al final del capítol anterior.
 
@@ -33,8 +33,8 @@ Si aquestes voltes existeixen, podem utilitzar-les per obtenir una nova aplicaci
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Fotos/CINQUENA.jpg}
-    \caption{{\color{blue}TEXT}}
+    \includegraphics[width=0.65\textwidth]{voltes.png}
+    \caption{Representació de $h(x,\set{Nx})$. La imatge de $h$ roman dins la relació diferencial $\mathcal R$, en blau. Figura de \cite{borrelli2013}.}
     \label{fig:cinquena_foto}
 \end{figure}
 
@@ -65,8 +65,8 @@ es verifica la condició de l'equació \eqref{eq:def voltes}.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Fotos/SISENA.jpg}
-    \caption{{\color{blue}TEXT}}
+    \includegraphics[width=0.35\textwidth]{J0.png}
+    \caption{Cada volta $h(s,\cdot)$ comença al punt alt de la corba vermella, baixa i torna a l'inici, de tal manera que la seva integral sobre $s$ val $f'(s)$. Figura de \cite{borrelli2013}.}
     \label{fig:sisena_foto}
 \end{figure}
 
@@ -92,8 +92,8 @@ A més, canviem l'escala tal que $\ell(U)=\|U\|$.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Fotos/SETENA.jpg}
-    \caption{{\color{blue}TEXT}}
+    \includegraphics[height=0.3\textwidth]{domini.png}
+    \caption{Domini fonamental de $\mathbb T^2$ que genera el cilindre $\mathcal Cil$. Figura de \cite{borrelli2013}.}
     \label{fig:setena_foto}
 \end{figure}
 
@@ -127,8 +127,8 @@ per alguna funció $\psi:(\mathbb R/\mathbb Z)\times[0,1]\to\mathbb R$ amb $\psi
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Fotos/VUITENA.jpg}
-    \caption{{\color{blue}TEXT}}
+    \includegraphics[height=0.33\textwidth]{W.png}
+    \caption{Corba integral $\varphi(t,s)$ del vector $W$. Figura de \cite{borrelli2013}.}
     \label{fig:vuitena_foto}
 \end{figure}
 
@@ -196,7 +196,7 @@ A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $
     on $K(\zeta,\psi,h)$ només depèn de $\|\zeta\|_{C^0}$, de $\left\|\left(  \frac{\partial\psi}{\partial t}\right)^{-1}\right\|_{C^0}$ i $\|h\|_{C^2}$.
 \end{lema}
 
-% {\color{green!50!black}
+% {\color{black}
 %     \textit{Prova.} Com $(U,V)$ és una base directa ortogonal, aleshores 
 %     \begin{equation*}
 %         \|dF-df\|\le \frac{\|U\cdot F - U\cdot f\|}{\|U\|} + \frac{\|V\cdot F - V\cdot f\|}{\|V\|}.
@@ -229,7 +229,7 @@ A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $
 
 
 % {
-% \color{green!50!black}
+% \color{black}
 % \textit{Prova.} 
 % Primer volem acotar la diferència entre $\varphi^*\mu$ i $\varphi^*F^*\langle\cdot, \cdot\rangle = (F\circ\varphi)^*\langle\cdot, \cdot\rangle$. Notem que 
 % \begin{align*}
@@ -301,12 +301,12 @@ A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $
 \subsection{Integració convexa del tor $\mathbb T^2$}
 Amb la integració convexa del cilindre, hem obtingut una aplicació $F:(\mathcal Cil, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ gairebé isomètrica i $C_0$-propera a l'aplicació induïda sobre $\mathcal Cil$ per $f:(\mathbb T^2, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$. Ara bé, les imatges de les dues corbes que defineixen la frontera del cilindre no coincideixen necessàriament. Per tant, el nostre objectiu serà deformar $F$ de tal manera que coincideixin, tal que sigui possible prendre el quocient d'aquesta nova aplicació per a obtenir un encabiment isomètric del tor pla.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Fotos/NOVENA.jpg}
-    \caption{{\color{blue}TEXT}}
-    \label{fig:novena_foto}
-\end{figure}
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.5\textwidth]{Fotos/NOVENA.jpg}
+%     \caption{{\color{blue}TEXT}}
+%     \label{fig:novena_foto}
+% \end{figure}
 
 Definim una nova aplicació $\bar F$ tal que
 \begin{equation}
@@ -347,7 +347,7 @@ Podem reunir tots aquests tots els resultats que hem enunciat fins ara en el teo
     l'aplicació obtinguda amb un pas d'integració convexa de l'aplicació $f$, la mètrica $\mu$ i el nombre d'oscil·lació $N$.
 \end{nota}
 % {
-%     \color{green!50!black}
+%     \color{black}
 %     \textit{Prova.}
 
 %     \underline{Primer punt.}
@@ -620,7 +620,7 @@ A més del mètode que hem descrit aquí, \cite{borrelli2013} dissenyen un algor
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Tor/tor pla.jpg}
-    \caption{Encabiment isomètric del tor pla obtingut amb integració convexa.{\color{blue} CITAR BÉ}}
+    \caption{Encabiment isomètric del tor pla obtingut amb integració convexa. Figura de \cite{borrelli2013}.}
     \label{fig:tor_pl} 
 \end{figure}
 

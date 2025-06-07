@@ -17,13 +17,28 @@
 ]
 
 \def\squaresize{2}
-\fill[gray!10] (0,0) -- (0,\squaresize) -- (3 * \squaresize, \squaresize) -- (3 * \squaresize,0) -- cycle;
-\draw (0,0) rectangle (3 * \squaresize,\squaresize);
-\draw[black] (0,\squaresize) -- node[edge_label, above] {} (3 * \squaresize,\squaresize);
-\draw[black] (0,0)       -- node[edge_label, below]  {$\lambda$} (3 * \squaresize,0);
-\draw[identified_edge] (0,0)       -- node[edge_label, left]  {1} (0,\squaresize);
-\draw[identified_edge] (3 * \squaresize,\squaresize) -- node[edge_label, right] {} (3 * \squaresize,0);
+\def\dentsize{0.2}
+% \fill[gray!10] (0,0) -- (0,\squaresize) -- (\squaresize, \squaresize) -- (\squaresize,0) -- cycle;
+% \draw (0,0) rectangle (\squaresize,\squaresize);
+% \draw[black] (0,\squaresize) -- node[edge_label, above] {} (\squaresize,\squaresize);
+% \draw[black] (0,0)       -- node[edge_label, below]  {$\lambda$} (\squaresize,0);
 
+% Draw 5 triangles along the top edge
+\foreach \x in {0,0.8} {
+    \fill[gray!10] (\x + 0.4,\squaresize - \dentsize) -- (\x + 0.4,-\dentsize) -- (\x + 0.8,0) -- (\x + 0.8,\squaresize) -- cycle;
+    \draw (\x,\squaresize) -- (\x + 0.4,\squaresize - \dentsize) -- (\x + 0.8,\squaresize);
+    \draw (\x,0) -- (\x + 0.4,-\dentsize) -- (\x + 0.8,0);   
+}
+
+\draw (1.6,\squaresize) -- (1.6 + 0.4,\squaresize - \dentsize);
+\draw (1.6,0) -- (1.6 + 0.4,-\dentsize);
+\foreach \x in {0.2,1.0} {
+    \draw[dashed] (\x + 0.6,\squaresize) -- (\x + 0.6,0);
+    \draw[dashed] (\x + 0.2,\squaresize-\dentsize) -- (\x + 0.2,-\dentsize);
+}
+
+\draw[identified_edge] (0,0)       -- node[edge_label, left]  {1} (0,\squaresize);
+\draw[identified_edge] (\squaresize,\squaresize - \dentsize) -- node[edge_label, right] {} (\squaresize,-\dentsize);
 \end{tikzpicture}
 
 \end{document}

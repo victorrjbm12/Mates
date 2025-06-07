@@ -1,17 +1,12 @@
 \chapter{Introducció a la geometria diferencial}\label{cap:intro}
 
-% {\color{red} El que haurem de fer per a que tot tingui sentit un cop estigui acabat és assegurar-nos que anomenem $x$ a les coordenades normals i $z$ a les coordenades de la carta. DE FET EL QUE TENIM AL CAPíTOL DE NASH ÉS $z$ per l'espai ambient i $x$ per la varietat.}
-
-% {\color{red} ÉS MOLT IMPORTANT QUE DESPRÉS MIREM LA PÀGINA 24 DEL LEE, ON DEFINEIX TAMBÉ VARIETATS AMB FRONTERA}
-
-\section{Introducció al capítol}
 L'objectiu d'aquest capítol serà oferir els fonaments matemàtics necessaris per a entendre i justificar els resultats que es mostraran en els capítols posteriors, alhora que volem motivar l'interès d'aquests. Així, es definiran els conceptes i objectes matemàtics bàsics amb els quals treballarem, veurem algunes de les seves propietats i enunciarem i demostrarem alguns teoremes que seran clau en el treball que segueix.
 
-Voldrem estudiar, al llarg d'aquest capítol, els conceptes de varietat topològica, varietat diferenciable i varietat Riemanniana. A un nivell intuïtiu, es tractarà d'espais topològics que es poden veure localment com espais reals $\mathbb R^n$, sobre els quals es pot fer càlcul infinitesimal i que es poden dotar de diferents mètriques. Prendrem especial atenció a la manera en què aquests espais es poden encabir (en anglès, \textit{embed}) en altres varietats i espais ambients. Si bé és generalment fàcil entendre i visualitzar aquests espais quan es consideren encabits en un espai $\mathbb R^n$, com el cas de les superfícies regulars en $\mathbb R^3$, cal notar que les varietats topològiques no requereixen aquest espai ambient per a la seva definició i estudi, sinó que en són independents. Aquest fet és molt rellevant, tot i que no el veurem aquí, en una de les aplicacions més interessants de la geometria diferencial, la teoria de la relativitat general, on l'espai-temps es modela com una varietat diferenciable de dimensió 4 i on no hi ha motiu per introduir cap espai ambient en el sentit clàssic.
+Voldrem estudiar, al llarg d'aquest capítol, els conceptes de varietat topològica, varietat diferenciable i varietat Riemanniana. A un nivell intuïtiu, es tractarà d'espais topològics que es poden veure localment com espais reals $\mathbb R^n$, sobre els quals es pot fer càlcul infinitesimal i que es poden dotar de diferents mètriques. Prendrem especial atenció a la manera en què aquests espais es poden encabir (en anglès, \textit{embed}) en altres varietats i espais ambients. Si bé és generalment fàcil entendre i visualitzar aquests espais quan es consideren encabits en un espai $\mathbb R^n$, com el cas de les superfícies regulars en $\mathbb R^3$, cal notar que les varietats topològiques no requereixen aquest espai ambient per a la seva definició i estudi, sinó que en són independents. Aquest fet és molt rellevant en una de les aplicacions més interessants de la geometria diferencial, la teoria de la relativitat general, on l'espai-temps es modela com una varietat diferenciable de dimensió 4 i on no hi ha motiu per introduir cap espai ambient en el sentit clàssic.
 
 Si bé seguirem la línia general d'estudi en molts llibres de referència, centrant-nos en funcions i aplicacions de regularitat $C^\infty$, més endavant ens caldrà treballar amb regularitats més baixes. Per aquest motiu, del primer que ens ocuparem serà de definir les funcions i aplicacions de classe $C^k$ i les normes associades. Això serà rellevant pel fet que també es pot definir la classe de regularitat d'una varietat diferenciable en un punt, i direm que una varietat és suau (en anglès, \textit{smooth}) quan és de classe $C^\infty$. La noció de suavitat no pot ser una propietat purament topològica, ja que no és preservada per homeomorfismes. L'exemple més evident és el d'un cercle i un quadrat, que són homeomorfs en $\mathbb R^2$, però el cercle és suau mentre que el quadrat no ho és. 
 
-La suavitat de les varietats diferenciables serà clau per a desenvolupar eines potents en geometria diferencial, com veurem amb l'existència de particions de la unitat i el teorema de Whitney. Ara bé, veurem que això comporta un grau afegit de rigidesa en les propietats de les varietats Riemannianes pel que fa a la seva relació amb els encabiments (en anglès, \textit{embeddings}). L'última part d'aquest capítol serà dedicada a un exemple d'això mateix: demostrar que no existeix cap encabiment  $C^\infty$ del tor pla en $\mathbb R^3$ tal que preservi les distàncies entre els seus punts. Veurem, de fet, que el motiu principal d'aquesta impossibilitat es relaciona amb el concepte de curvatura gaussiana, que només es pot definir per a superfícies immerses en $\mathbb R^3$ de regularitat $C^2$ o superior. 
+La suavitat de les varietats diferenciables serà clau per a desenvolupar eines potents en geometria diferencial, com veurem amb l'existència de particions de la unitat i el teorema de Whitney. Ara bé, veurem que aquesta condició de regularitat comporta un grau afegit de rigidesa en les propietats de les varietats Riemannianes pel que fa a la seva relació amb els encabiments (en anglès, \textit{embeddings}). L'última part d'aquest capítol serà dedicada a un exemple d'això mateix: demostrar que no existeix cap encabiment  $C^\infty$ del tor pla en $\mathbb R^3$ tal que preservi les distàncies entre els seus punts. Veurem, de fet, que el motiu principal d'aquesta impossibilitat es relaciona amb el concepte de curvatura gaussiana, que només es pot definir per a superfícies immerses en $\mathbb R^3$ de regularitat $C^2$ o superior. 
 
 Les cites principals en aquest capítol seran \cite{lee2013} i \cite{warner1983}, pel que fa a varietats suaus, i \cite{chavel2006}, pel que fa a varietats Riemannianes.
 
@@ -40,9 +35,12 @@ Comencem amb la definició estàndard de classes de regularitat de funcions i ap
     Direm que una aplicació és \textbf{suau} o \textbf{de classe $C^\infty$} si és infinitament derivable, és a dir, si és $k$-vegades derivable contínuament per a tot $k\in\mathbb N_0$.
 \end{defi}
 
+\begin{nota}
+    En general, en parlar de regularitat $C^k$, suposarem $k\in\mathbb N_0\cup\set{\infty}$.
+\end{nota}
+
 \begin{defi}
-    
-    Siguin $U\subseteq \mathbb R^n$ un obert i $f:U\to\mathbb R$ una funció de classe $C^k(U)$. Definim la \textbf{norma $\|\cdot\|_{C^k(U)}$} de $f$ com
+    Siguin $U\subseteq \mathbb R^n$ un obert acotat i $f:U\to\mathbb R$ una funció de classe $C^k(U)$. Si $f$ es pot estendre a un obert $V\supseteq \overline U$ de manera que la funció resultant sigui de classe $C^k(V)$, definim la \textbf{norma $\|\cdot\|_{C^k(U)}$} de $f$ com
 
     \begin{equation*}
         \|f\|_{C^k(U)} := \sum_{|\alpha| \leq k} \sup_{x\in U} \left| \partial^\alpha f(x) \right|.
@@ -52,7 +50,7 @@ Comencem amb la definició estàndard de classes de regularitat de funcions i ap
     \partial^\alpha f(x) := \frac{\partial^{|\alpha|} f(x)}{\partial (x^1)^{\alpha_1}\cdots\partial (x^n)^{\alpha_n}}.
     \]
 
-    Per una aplicació $g:U\to\mathbb{R}^m$ de classe $C^k(U)$, definim la \textbf{norma $\|\cdot\|_{C^k(U)}$} de $g$ com
+    Sigui $g:U\to\mathbb{R}^m$ de classe $C^k(U)$. Si $g$ es pot estendre a un obert $V\supseteq \overline U$ de manera que la funció resultant sigui de classe $C^k(V)$, definim la \textbf{norma $\|\cdot\|_{C^k(U)}$} de $g$ com
     \begin{equation*}
         \|g\|_{C^k(U)} := \sum_{|\alpha| \leq k} \sup_{x\in U} \left\| \partial^\alpha g(x) \right\|.
     \end{equation*}    
@@ -86,7 +84,7 @@ Per tal de poder descriure localment els punts de les varietats i de poder opera
     \begin{itemize}
         \item $\bigcup_{\alpha\in A} U_\alpha = M$,
         \item Si $U_\alpha\cap U_\beta\neq\emptyset$, aleshores $\varphi_\beta\circ\varphi_\alpha^{-1}$ és $C^k$.
-        \item $\mathcal F$ és maximal respecte de la propietat anterior, és a dir, si $\mathcal G$ és una altra estructura diferenciable de classe $C^k$ en $M$ i $\mathcal F\subseteq\mathcal G$, aleshores $\mathcal F = \mathcal G$.
+        \item $\mathcal F$ és maximal respecte de la propietat anterior, és a dir, si $\mathcal G$ és una altra col·lecció de cartes coordenades que compleix les propietats anteriors i $\mathcal F\subseteq\mathcal G$, aleshores $\mathcal F = \mathcal G$.
     \end{itemize}
 \end{defi}
 
@@ -134,7 +132,7 @@ A continuació veurem algunes propietats de les varietats diferenciables que es 
 \begin{lema}\label{lema:paracompact}
     Sigui $X$ un espai topològic localment compacte (és a dir, tal que tot punt de $X$ té un entorn compacte), Hausdorff i tal que verifica el segon axioma de numerabilitat. Aleshores $X$ és paracompacte, i cada recobriment per oberts de $X$ té un refinament numerable i localment finit per oberts d'adherència compacta.
 \end{lema}
-{\color{green!50!black} 
+{\color{black} 
     \textit{Prova.} 
     Com $X$ verifica el segon axioma de numerabilitat, existeix una base numerable de la topologia de $X$. Com $X$ és localment compacte, podem prendre d'aquesta base numerable els conjunts amb adherència compacta, i pel fet que $X$ és Hausdorff, aquesta col·lecció de subconjunts serà una base en si mateixa. Sigui $\set{U_i}_{i\in I}$ aquesta base.
 
@@ -158,7 +156,7 @@ A continuació veurem algunes propietats de les varietats diferenciables que es 
     Existeix una funció real no negativa $\varphi:\mathbb R^n\to\mathbb R$ de classe $C^\infty$ que és igual a 1 en $[-1,1]^n$ i $0$ en el complementari de $(-2,2)^n$.
 \end{lema}
 
-{\color{green!50!black} 
+{\color{black} 
     \textit{Prova.} 
     Sigui
     \begin{equation*}
@@ -196,7 +194,7 @@ A continuació veurem algunes propietats de les varietats diferenciables que es 
     Sigui $M$ una varietat diferenciable de classe $C^\infty$ i $\set{U_\alpha:\alpha\in A}$ un recobriment per oberts de $M$. Aleshores, existeix una partició de la unitat numerable $\set{\varphi_i:i\in I}$ subordinada al recobriment $\set{U_\alpha}$ amb suports $\set{\text{supp}\varphi_i}$ compactes. A més, si no exigim que els suports siguin compactes, existeix una partició de la unitat $\set{\varphi_\alpha}$ subordinada al recobriment $\set{U_\alpha}$ amb $\text{supp}\varphi_\alpha \subseteq U_\alpha$ per a tot $\alpha\in A$, amb com a molt un conjunt numerable dels $\varphi_\alpha$ no idènticament zero.
 \end{teo}
 
-{\color{green!50!black} 
+{\color{black} 
     \textit{Prova.} 
     Sigui $\set{G_i}$ un recobriment com el definit a la demostració del lema \ref{lema:paracompact} i definim $G_0=\emptyset$. Per cada punt $p\in M$, sigui $i_p$ l'enter més gran tal que $p\in M\setminus \overline{G_{i_p}}$. Escollim un $\alpha_p$ tal que $p\in U_{\alpha_p}$ i sigui $(V,\tau)$ una carta coordenada centrada en $p$ (és a dir, tal que $\tau(p)=0$) i tal que $V\subseteq U_{\alpha_p}\cap(G_{i_p+2}\setminus \overline{G_{i_p}})$ i $[-2,2]^n\subseteq\tau(V)$.
 
@@ -231,7 +229,7 @@ A continuació veurem algunes propietats de les varietats diferenciables que es 
     \end{enumerate}
 \end{corol}
 {
-\color{green!50!black} \textit{Prova.} 
+\color{black} \textit{Prova.} 
 Existeix una partició de la unitat $\set{\varphi, \psi}$ subordinada al recobriment $\set{G, M\setminus A}$ de $M$ amb $\text{supp}\varphi\subseteq G$ i $\text{supp}\psi\subseteq M\setminus A$. $\varphi$ és, per tant, la funció desitjada. \qed
 }
 
@@ -245,7 +243,7 @@ A continuació utilitzarem l'existència de particions de la unitat per a demost
     Sigui $M$ una varietat diferenciable suau. Aleshores, existeix una funció d'exhauriment $f:M\to\mathbb R_+$ de classe $C^\infty$.
 \end{prop}
 {
-    \color{green!50!black} \textit{Prova.} 
+    \color{black} \textit{Prova.} 
     Sigui $\set{V_j}_j$ un recobriment numerable per oberts de $M$ per oberts amb adherències compactes, i sigui $\set{\psi_j}_j$ una partició de la unitat suau subordinada a aquest recobriment. Definim la funció
     \begin{equation*}
         f(p) = \sum_{j=1}^\infty j\psi_j(p)
@@ -254,7 +252,7 @@ A continuació utilitzarem l'existència de particions de la unitat per a demost
 
     Cal veure que és, efectivament, una funció d'exhauriment. Sigui $c\in\mathbb R$ i $N>c$ un enter. Per $p\not\in\bigcup_{j=1}^N \overline{V_j}$, tenim que $\psi_j(p)=0$ per a tot $1\le j\le N$. Per tant,
     \begin{equation*}
-        f(p) = \sum_{j=N+1}^N j\psi_j(p) \ge \sum_{j=N+1}^N N\psi_j(p) =N\sum_{j=1}^N\psi_j(p) = N>c.
+        f(p) = \sum_{j=N+1}^\infty j\psi_j(p) \ge \sum_{j=N+1}^\infty N\psi_j(p) =N\sum_{j=1}^\infty\psi_j(p) = N>c.
     \end{equation*}
     Equivalentment, si $f(p)\le c$, aleshores $p\in\bigcup_{j=1}^N \overline{V_j}$. Per tant, $f^{-1}(-\infty,c]$ és un subconjunt tancat del conjunt compacte $\bigcup_{j=1}^N \overline{V_j}$, i per tant és compacte.
     \qed
@@ -381,14 +379,14 @@ Es pot demostrar, tot i que no ho farem aquí, que tant el fibrat tangent com el
 \end{defi}
 
 
-\subsection{Subvarietats, immersions, encabiments i difeomorfismes}
+\subsection{Subvarietats, immersions i encabiments}
 A continuació, definirem alguns dels conceptes més importants per aquest treball, en particular el concepte d'encabiment. A més, demostrarem el teorema de Whitney, que afirma que tota varietat diferenciable suau $n$-dimensional admet un encabiment suau en un espai euclidià. 
 \begin{defi}
     Sigui $\psi:M\to N$ una aplicació diferenciable amb regularitat $C^k$, $k\ge 1$.
     \begin{enumerate}
         \item Diem que $\psi$ és una \textbf{immersió} si $d\psi_p$ és no singular per a tot $p\in M$.
         \item Diem que $\psi$ és un \textbf{encabiment} si és una immersió injectiva i un homeomorfisme sobre la seva imatge.
-        \item Diem que $\psi$ és un \textbf{difeomorfisme} $C^r$ si és una injectiva amb inversa diferenciable amb regularitat $C^r$, $r\le k$.
+        % \item Diem que $\psi$ és un \textbf{difeomorfisme} $C^r$ si és injectiva amb inversa diferenciable amb regularitat $C^r$, $r\le k$. (Ho trec perquè està abans ja definit)
         \item El parell $(M, \psi)$ és una \textbf{subvarietat de $N$} si $\psi$ és una immersió injectiva, i és una \textbf{subvarietat encabida} si és un encabiment.
     \end{enumerate}
 \end{defi}
@@ -419,7 +417,7 @@ Un dels tipus de subvarietats que més ens interessarà seran les subvarietats e
     \begin{equation*}
         \psi(u,v) = \left( (R+r\cos(2\pi v))\cos(2\pi u), (R+r\cos(2\pi v))\sin(2\pi u), r\sin(2\pi v) \right).
     \end{equation*}
-    Aleshores, $\psi$ és un encabiment suau i $S = \psi(T)$ és una superfície regular. Aquest és un dels possibles encabiments del \textbf{tor} en $\mathbb R^3$ com a superfície regular.
+    Aleshores, $\psi$ és un encabiment suau i $S = \psi(T)$ és una superfície regular. Observem que aquest és un dels possibles encabiments d'un \textbf{tor} $\mathbb T^2 = \mathbb R^2/\mathbb Z^2$ en $\mathbb R^3$ com a superfície regular.
 \end{ex}
 
 \subsubsection{Els teoremes de Whitney}
@@ -433,6 +431,12 @@ El teorema de Whitney (o teoremes, degut a les seves diverses formulacions) afir
     Sigui $F:M\to N$ una aplicació diferenciable. Diem que $p\in M$ és un \textbf{punt regular} de $F$ si $dF_p$ és exhaustiva. Altrament, diem que és un \textbf{punt crític}. Un punt $c\in N$ és un \textbf{valor regular} de $F$ si tots els punts de la preimatge $F^{-1}(c)$ són regulars.
 \end{defi}
 
+\begin{defi}
+    Sigui $S\subseteq\mathbb R^n$. Diem que $S$ té \textbf{mesura zero} si, per a tot $\epsilon>0$, existeix una col·lecció numerable de boles $\set{B_i}_{i\in\mathbb N}$ tal que $S \subseteq \bigcup_{i=1}^\infty B_i$ i la suma dels seus volums verifica $\sum_{i=1}^\infty \text{vol}(B_i) < \epsilon$.
+
+    Sigui $M$ una varietat diferenciable $n$-dimensional. Diem que un subconjunt $S\subseteq M$ té \textbf{mesura zero en $M$} si per a tot $p\in M$ existeix un entorn $U$ de $p$ i una carta coordenada $\varphi:U\to\mathbb R^n$ tal que $\varphi(S\cap U)$ té mesura zero en $\mathbb R^n$.
+\end{defi}
+
 \begin{teo}[\textbf{Teorema de Sard}]
     Siguin $M, N$ varietats diferenciables suaus i $F:M\to N$ una aplicació de classe $C^\infty$. Aleshores, la imatge del conjunt de punts crítics és un subconjunt de mesura zero de $N$. En concret, si la dimensió de $M$ és menor que la de $N$, $F(M)$ té mesura zero en $N$.
 \end{teo}
@@ -441,7 +445,7 @@ El teorema de Whitney (o teoremes, degut a les seves diverses formulacions) afir
     Sigui $M\subseteq\mathbb R^N$ una subvarietat suau $n$-dimensional. Per tot $v\in \mathbb R^N\setminus R^{N-1}$, sigui $\pi_v : \mathbb R^N\setminus R^{N-1}\to S^{N-1}$ la projecció amb nucli $\mathbb Rv$, on identifiquem $\mathbb R^{N-1}$ amb el subespai de $\mathbb R^N$ amb la última coordenada nul·la. Si $N>2n+1$, aleshores hi ha un conjunt dens de vectors $v\in \mathbb R^N\setminus R^{N-1}$ tals que $\pi_v|_M$ és una immersió injectiva de $M$ en $\mathbb R^{N-1}$.
 \end{lema}
 {
-    \color{green!50!black} 
+    \color{black} 
     \textit{Prova.}
     Observem les següents equivalències entre propietats:
     \begin{itemize}
@@ -483,7 +487,7 @@ Al lema anterior, \textbf{propi} tan sols vol dir que l'encabiment és una aplic
     Tota varietat diferenciable suau $n$-dimensional admet un encabiment suau en $\mathbb R^{2n+1}$.
 \end{teo}
 {
-    \color{green!50!black} \textit{Prova.}
+    \color{black} \textit{Prova.}
     Sigui $M$ una varietat diferenciable suau $n$-dimensional. Com hem dit, només cal veure que $M$ admet un encabiment en algun espai $\mathbb R^N$ amb $N$ prou gran.
 
     Suposem primer que $M$ és compacta. Aquest és el cas més senzill. Sigui $\set{B_1,\dots,B_m}$ un recobriment finit per boles coordenades, de manera que per cada $i$ existeix un domini de coordenades $B_i'\supseteq \overline{B_i}$ i una carta coordenada $\varphi_i:B_i'\to\mathbb R^n$ que és homeomorfisme de $\overline{B_i}$ amb un compacte de $\mathbb R^n$.
@@ -581,7 +585,7 @@ on $g_{ij}$ són funcions diferenciables en $U$ i $dx^i$ són les 1-formes coord
     Tota varietat diferenciable suau admet una mètrica Riemanniana.
 \end{prop}
 {
-    \color{green!50!black} \textit{Prova.}
+    \color{black} \textit{Prova.}
     Sigui $M$ una varietat diferenciable suau. Sigui $\set{(U_\alpha,\varphi_\alpha)}$ un recobriment per cartes coordenades. En cada domini de carta, existeix una mètrica Riemanniana $g_\alpha = \varphi_\alpha^*\langle\cdot,\cdot\rangle = \delta_{ij}dx^idx^j$. Sigui $\set{\psi_\alpha}$ una partició de la unitat subordinada a $\set{U_\alpha}$. Definim 
     \begin{equation*}
         g = \sum_{\alpha} \psi_\alpha g_\alpha,
@@ -659,7 +663,7 @@ Intuïtivament, una superfície regular és el·líptica en un punt si, localmen
     Tota superfície regular compacta té un punt el·líptic.
 \end{teo}
 {
-    \color{green!50!black}
+    \color{black}
     \textit{Prova.}
     Sigui $S$ una superfície regular compacta, i considerem l'aplicació 
     \begin{align*}
@@ -669,7 +673,6 @@ Intuïtivament, una superfície regular és el·líptica en un punt si, localmen
     Com $S$ és compacta i $g$ és una funció real contínua, $g$ assoleix un màxim en un punt $p_{\max}\in S$. Sigui $R^2 = ||p_{\max}||^2$ el valor màxim de $g$. 
     
     Com a $p_{\max}$ s'assoleix el màxim de la distància a l'origen, el vector posició $p_{\max}$ és ortogonal a la superfície en $p_{\max}$. És a dir, $p_{\max}$ és un punt comú de la superfície regular $S$ i la frontera de l'esfera $B_{R}(0)$, on els espais tangents a $S$ i $B_{R}(0)$ coincideixen. 
-    %{\color{blue} crec que això és el que l'ignasi va quedar-se demostrant quan ho vam fer a classe}
 
     Tots els punts de $S$ tenen distància a l'origen menor que $R$, de manera que $S\subseteq B_{R}(0)$. Siguin $k_1$ i $k_2$ les curvatures principals de $S$ en $p_{\max}$, i $\alpha:[0,1]\to S$ i $\beta:[0,1]\to S$ corbes tangents a $S$ en $p_{\max}$ que corresponen a les direccions principals de curvatura. Les curvatures principals de l'esfera $B_{R}(0)$ en $p_{\max}$ són ambdues $1/R$ o ambdues $-1/R$, depenent de la orientació $N$ escollida. Escollim una orientació $N$ de $S$ tal que en $p_{\max}$ les curvatures principals de l'esfera siguin $1/R$. Aleshores, si alguna de les curvatures principals de $S$ és menor que $1/R$, la corba $\alpha$ o $\beta$ tindrà un radi de curvatura més gran que el de l'esfera, de manera que hi haurà un punt $\tilde p\in S$ proper a $p_{\max}$ que té distància a l'origen més gran que $R$. Això entra en contradicció amb el fet que la distància a l'origen de $p_{\max}$ és màxima. Per tant, ambdues curvatures principals de $S$ en $p_{\max}$ han de ser majors que $1/R$, i per tant $S$ té un punt el·líptic.
     \qed
@@ -691,7 +694,7 @@ Un cas particular d'aquest teorema és que la planor tal com l'hem definit a la 
     No existeix cap encabiment isomètric $C^\infty$ del tor pla en $\mathbb R^3$.
 \end{teo}
 {
-    \color{green!50!black}
+    \color{black}
     \textit{Prova.}
     Primer de tot, cal veure que el tor és un espai topològic compacte. En efecte, el tor és la imatge del quadrat $[0,1]\times[0,1]$ pel quocient $\pi:[0,1]\times[0,1]\to\mathbb T^2$. Com el quocient és una aplicació contínua i el quadrat és compacte, el tor és compacte.
 
