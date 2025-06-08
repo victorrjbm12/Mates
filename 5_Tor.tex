@@ -1,6 +1,6 @@
-\chapter{Encabiments isomètrics del tor pla}
+\chapter{Un encabiment isomètric $C^1$ d'un tor pla}
 
-Al capítol anterior hem enunciat i demostrat els teoremes d'encabiments isomètrics $C^1$ de Nash, i hem vist la manera en què Kuiper va reduir la codimensió de l'espai ambient a 1. A continuació revisitarem el tor, una varietat topològica que no es pot encabir isomètricament de manera suau en $\mathbb R^3$, com hem vist al capítol \ref{cap:intro}, i descriurem el mètode amb el qual es pot encabir isomètricament de manera $C^1$. 
+Al capítol anterior hem enunciat i demostrat els teoremes d'encabiments isomètrics $C^1$ de Nash, i hem vist la manera en què Kuiper va reduir la codimensió de l'espai ambient a 1. A continuació revisitarem el tor pla $(\mathbb T^2, g)$, una varietat topològica que no es pot encabir isomètricament de manera suau en $\mathbb R^3$, com hem vist al capítol \ref{cap:intro}, i descriurem el mètode amb el qual es pot encabir isomètricament de manera $C^1$. 
 Veurem que aquesta demostració ja utilitza el llenguatge de la integració convexa, que hem introduït al final del capítol anterior.
 
 L'elaboració d'aquest encabiment va ser realitzada per Vincent Borrelli, Saïd Jabrane, Francis Lazarus i Boris Thibert i publicada l'any 2013. La cita principal d'aquest capítol és \cite{borrelli2013}. En aquest capítol no donem, en general, les demostracions de lemes i sublemes, que es troben a l'article original.
@@ -179,15 +179,6 @@ A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $
     \end{equation*}
 \end{lema}
 
-% \begin{lema}
-%     {\color{blue} SI AQUEST LEMA NO ES FA SERVIR ENS EL CARREGUEM}
-%     Es verifica
-%     \begin{equation*}
-%         1+J_0^2(\alpha)-2J_0(\alpha)\cos(\alpha) \le 7(1-J_0^2(\alpha)).
-%     \end{equation*}
-%     per tot $\alpha\in[0,z]$, on $z$ és el primer zero de $J_0$.
-% \end{lema}
-
 \begin{lema}
     \label{lema:lema6}
     \begin{equation*}
@@ -196,25 +187,6 @@ A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $
     on $K(\zeta,\psi,h)$ només depèn de $\|\zeta\|_{C^0}$, de $\left\|\left(  \frac{\partial\psi}{\partial t}\right)^{-1}\right\|_{C^0}$ i $\|h\|_{C^2}$.
 \end{lema}
 
-% {\color{black}
-%     \textit{Prova.} Com $(U,V)$ és una base directa ortogonal, aleshores 
-%     \begin{equation*}
-%         \|dF-df\|\le \frac{\|U\cdot F - U\cdot f\|}{\|U\|} + \frac{\|V\cdot F - V\cdot f\|}{\|V\|}.
-%     \end{equation*}
-%     A més, $\frac{\partial \varphi}{\partial t} = \frac{\partial \psi}{\partial t}V$. Per tant,
-%     \begin{equation}\label{eq: dospuntonze}
-%         \|V\cdot F - V\cdot f\| = \left|\frac{\partial\psi}{\partial t}\right|^{-1} \left\| \frac{\partial(F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right\|.
-%     \end{equation}
-%     Com $W=U+\zeta V$, obtenim
-%     \begin{equation*}
-%         \|U\cdot F - U\cdot f\| \le \|W\cdot F - W\cdot f\| + |\zeta |\cdot\|V\cdot F - V\cdot f\|.
-%     \end{equation*}
-%     Per últim, prenent les últimes tres equacions,
-%     \begin{equation}\label{eq:demo lema 6}
-%         \|dF-df\|\le \frac{\|W\cdot F - W\cdot f\|}{\|U\|} + \frac{|\zeta|\cdot\|V\|^2+1}{\|V\|}\left|\frac{\partial\psi}{\partial t}\right|^{-1} \left\| \frac{\partial(F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right\|.
-%     \end{equation}
-%     Aplicant els lemes \ref{lema:lema3} i \ref{lema:lema4}, obtenim el resultat. \qed
-% }
 \begin{lema}
     \label{lema:lema7}
     \begin{equation*}
@@ -226,87 +198,9 @@ A continuació, enunciem alguns lemes que caracteritzaran la diferència entre $
 \begin{obs}
     Observem que els lemes que acabem d'enunciar tenen una relació directa amb els lemes i proposicions que hem demostrat al capítol anterior. Si bé la pertorbació que fem és diferent a la de Nash, és evident, per exemple, que el lema \ref{lema:lema2} és equivalent a la observació que la pertorbació \eqref{eq:pertorbacio} té terme d'error $O\left(\frac{1}{\lambda}\right)$. De la mateixa manera, el lema \ref{lema:lema6} ens relaciona el canvi en primeres derivades, com en la proposició \ref{prop:primer_derivada}, i el canvi mètric del lema \ref{lema:lema7} és similar al demostrat en la proposició \ref{prop:mida_pertorbacio}.
 \end{obs}
-
-
-% {
-% \color{black}
-% \textit{Prova.} 
-% Primer volem acotar la diferència entre $\varphi^*\mu$ i $\varphi^*F^*\langle\cdot, \cdot\rangle = (F\circ\varphi)^*\langle\cdot, \cdot\rangle$. Notem que 
-% \begin{align*}
-%     (F\circ\varphi)^*\langle\cdot, \cdot\rangle(\partial_s, \partial_s) 
-%     &= \left\|\frac{\partial(F\circ\varphi)}{\partial s}\right\|^2
-%     \\
-%     &= \|h(t,s,\set{Ns})\|^2
-%     \\
-%     &= \mu(W,W)
-%     \\
-%     &= \varphi^*(\mu)(\partial_s, \partial_s).
-% \end{align*}
-% Per tant, com $\mu\left(\frac{\partial\varphi}{\partial t},\frac{\partial\varphi}{\partial t}\right) = f^*\langle\cdot, \cdot\rangle\left(\frac{\partial\varphi}{\partial t},\frac{\partial\varphi}{\partial t}\right)$, tenim que
-% \begin{align*}
-%     |((F\circ\varphi)^*\langle\cdot, \cdot\rangle - \varphi^*\mu)(\partial_t, \partial_t)| 
-%     &= 
-%     \left|
-%     \left\|  \frac{\partial F\circ\varphi}{\partial t} \right\|^2 - \left\|\frac{\partial f\circ\varphi}{\partial t}\right\|
-%     \right|
-%     \\
-%     &\le \left\|\frac{\partial F\circ\varphi}{\partial t} - \frac{\partial f\circ\varphi}{\partial t}\right\|\left\|\frac{\partial F\circ\varphi}{\partial t} - \frac{\partial f\circ\varphi}{\partial t}\right\|
-%     \\
-%     &\le \left\|\frac{\partial F\circ\varphi}{\partial t} - \frac{\partial f\circ\varphi}{\partial t}\right\|\left(2\left\|\frac{\partial f\circ\varphi}{\partial t}\right\|+\left\|\frac{\partial F\circ\varphi}{\partial t} - \frac{\partial f\circ\varphi}{\partial t}\right\|\right)
-% \end{align*}
-% De manera que, pel lema \ref{lema:lema3},
-% \begin{equation*}
-%     |((F\circ\varphi)^*\langle\cdot, \cdot\rangle - \varphi^*\mu)(\partial_t, \partial_t)| \le \frac{K_1(f\circ\varphi,h)}{N},
-% \end{equation*}
-% on $K_1(f\circ\varphi,h)$ només depèn de $\|\frac{\partial(f\circ\varphi)}{\partial t}\|_{C^0}$ i de $\|h\|_{C^2}$. 
-
-% Per la manera en què hem definit els vectors, tenim que 
-% \begin{equation*}
-%     f^*\langle\cdot, \cdot\rangle\left(\frac{\partial\varphi}{\partial t},\frac{\partial\varphi}{\partial s}\right) = \mu\left(\frac{\partial\varphi}{\partial t},\frac{\partial\varphi}{\partial s}\right) = \mu\left(\frac{\partial\varphi}{\partial t},W\right) = 0,
-% \end{equation*}
-% d'on podem inferir que 
-% \begin{equation*}
-%     \left\langle \frac{\partial(f\circ\varphi)}{\partial t}, h(t,s,\set{Ns})\right\rangle = 0.
-% \end{equation*}
-% Per tant,
-% \begin{align*}
-%     |((F\circ\varphi)^*\langle\cdot,\cdot\rangle-\varphi^*\mu)(\partial_t,\partial_s)| &= |(F\circ\varphi)^*\langle\partial_t,\partial_s\rangle - \varphi^*\mu(\partial_t,\partial_s)|
-%     \\
-%     &= \left|\left\langle \frac{\partial(F\circ\varphi)}{\partial t}, h(t,s,\set{Ns}) \right\rangle\right|
-%     \\
-%     &= \left|\left\langle \frac{\partial(F\circ\varphi)}{\partial t}-\frac{\partial(f\circ\varphi)}{\partial t}, h(t,s,\set{Ns}) \right\rangle\right|
-%     \\
-%     &\le \left\| \frac{\partial(F\circ\varphi)}{\partial t} -\frac{\partial(f\circ\varphi)}{\partial t}\right\\||h(t,s,\set{Ns})\|.
-% \end{align*}
-% De manera que, de nou pel lema \ref{lema:lema3},
-% \begin{equation}\label{eq:cosa_K2}
-%     |((F\circ\varphi)^*\langle\cdot,\cdot\rangle-\varphi^*\mu)(\partial_t,\partial_s)| \le \frac{K_2(h)}{N},
-% \end{equation}
-% Tot plegat, 
-% \begin{equation*}
-%     \|\varphi^*\mu - \varphi^*F^*\langle\cdot,\cdot\rangle\|_{C^0} \le \frac{K_1(f\circ \varphi, h) + 2K_2(h)}{N}.
-% \end{equation*}
-% I acabem amb 
-% \begin{equation*}
-%     \|\mu-F^*\langle\cdot,\cdot\rangle\| \le \|\varphi^*\mu - \varphi^*F^*\langle\cdot,\cdot\rangle\| \|d\varphi^{-1}\|^2_{C^0}.
-% \end{equation*}
-% \qed
-% }
-
-
-
-
-
     
 \subsection{Integració convexa del tor $\mathbb T^2$}
 Amb la integració convexa del cilindre, hem obtingut una aplicació $F:(\mathcal Cil, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$ gairebé isomètrica i $C_0$-propera a l'aplicació induïda sobre $\mathcal Cil$ per $f:(\mathbb T^2, \mu)\to(\mathbb R^3, \langle\cdot, \cdot\rangle)$. Ara bé, les imatges de les dues corbes que defineixen la frontera del cilindre no coincideixen necessàriament. Per tant, el nostre objectiu serà deformar $F$ de tal manera que coincideixin, tal que sigui possible prendre el quocient d'aquesta nova aplicació per a obtenir un encabiment isomètric del tor pla.
-
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=0.5\textwidth]{Fotos/NOVENA.jpg}
-%     \caption{{\color{blue}TEXT}}
-%     \label{fig:novena_foto}
-% \end{figure}
 
 Definim una nova aplicació $\bar F$ tal que
 \begin{equation}
@@ -346,145 +240,6 @@ Podem reunir tots aquests tots els resultats que hem enunciat fins ara en el teo
     \end{equation*}
     l'aplicació obtinguda amb un pas d'integració convexa de l'aplicació $f$, la mètrica $\mu$ i el nombre d'oscil·lació $N$.
 \end{nota}
-% {
-%     \color{black}
-%     \textit{Prova.}
-
-%     \underline{Primer punt.}
-%     De la definició \eqref{eq:def_barF}, tenim que
-%     \begin{equation}\label{eq: 2Ff}
-%         \|\bar F(p)-f(p)\|\le\|F(p)-f(p)\| + \|w(s)\|_{C^0} \|F-f\|_{C^0} \le 2\|F-f\|_{C^0}.
-%     \end{equation}
-%     Pel lema \ref{lema:lema2}, $\|F-f\|_{C^0}\le\frac{K(h)}{N}$. Així, obtenim la primera desigualtat del primer punt del teorema,
-%     \begin{equation*}
-%         \|\bar F(p)-f(p)\|_{C^0}\le\frac{K_1(h)}{N}.
-%     \end{equation*}
-%     Per la segona desigualtat, considerem
-%     \begin{align*}
-%         \|F\circ\varphi(t,s)-f\circ\varphi(t,s)\| &= \left\|\int_0^s \left( \frac{\partial F\circ\varphi}{\partial s}(t,u) -  \frac{\partial f\circ\varphi}{\partial s}(t,u)\right)\text du\right\|\\
-%         &\le \int_0^s\left\| 
-%             (W\cdot F)(\varphi(t,u)) - (W\cdot f)(\varphi(t,u))
-%         \right\|\text du\\
-%         &\le \|W\cdot F-W\cdot f\|_{C^0}.
-%     \end{align*}
-%     Pel lema \ref{lema:lema4}, $\|W\cdot F-W\cdot f\|_{C^0}\le\sqrt7\|U\|\cdot\|\rho\|^{1/2}_{C^0}$. Prenent això i la desigualtat \eqref{eq: 2Ff}, obtenim la segona desigualtat del primer punt del teorema,
-%     \begin{equation*}
-%         \|\bar F-f\|_{C^0}\le 2\sqrt7\|U\|\cdot\|\rho\|^{1/2}_{C^0}.
-%     \end{equation*}
-
-%     \underline{Segon punt.}
-%     Seguim la demostració del lema \ref{lema:lema6} per a obtenir una desigualtat anàloga a \eqref{eq:demo lema 6},
-%     \begin{equation*}
-%         \|d\bar F-df\|\le \frac{\|W\cdot\bar F - W\cdot f\|}{\|U\|} + \frac{|\zeta|\cdot\|V\|^2+1}{\|V\|}\left|\frac{\partial\psi}{\partial t}\right|^{-1} \left\| \frac{\partial(\bar F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right\|.
-%     \end{equation*}
-%     Derivant la definició \eqref{eq:def_barF} respecte de $t$ i $s$, obtenim les desigualtats
-%     \begin{equation}\label{eq: respecte t}
-%         \|W\cdot\bar F - W\cdot f\| \le \|W\cdot F - W\cdot f\|_{C^0} + \|w'\|_{C^0}\|F - f\|_{C^0}.
-%     \end{equation}
-%     \begin{equation}\label{eq: respecte s}
-%         \left\| \frac{\partial(\bar F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right\| \le 2\left\| \frac{\partial(F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right\|_{C^0}
-%     \end{equation}
-%     Prenent aquestes tres desigualtats, 
-%     \begin{align*}
-%         \|d\bar F-df\|_{C^0}
-%         &\le\frac{1}{\|U\|}\left(\|W\cdot F - W\cdot f\|_{C^0} + \|w'\|_{C^0}\|F - f\|_{C^0}\right) 
-%         \\&\quad\quad\quad+ \frac{|\zeta|\cdot\|V\|^2+1}{\|V\|}\left|\frac{\partial\psi}{\partial t}\right|^{-1}\left( 2\left\| \frac{\partial(F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right\|_{C^0}\right),
-%     \end{align*}
-%     i amb els lemes \ref{lema:lema2}, \ref{lema:lema3} i \ref{lema:lema4}, obtenim la desigualtat del segon punt del teorema.
-
-%     \underline{Tercer punt.}
-%     Prenent una equació com la de \eqref{eq: dospuntonze} i considerant la desigualtat obtinguda derivant respecte de $s$, \eqref{eq: respecte s}, trobem
-%     \begin{align*}
-%         \|V\cdot \bar F - V\cdot f\| &= \left|\frac{\partial\psi}{\partial t}\right|^{-1} \left\| \frac{\partial(\bar F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right\|\\
-%         &\le 2\left|\frac{\partial\psi}{\partial t}\right|^{-1} \left\| \frac{\partial(F\circ\varphi)}{\partial t} - \frac{\partial(f\circ\varphi)}{\partial t} \right\|_{C^0}.
-%     \end{align*}
-%     aplicant el lema \ref{lema:lema3}, obtenim el tercer punt del teorema.
-
-%     \underline{Quart punt.}
-%     Prenent la desigualtat obtinguda derivant respecte de $t$, \eqref{eq: respecte t}, i considerant que $\|F-f\|_{C^0}\le\|W\cdot F - W\cdot f\|_{C^0}$, obtenim
-%     \begin{equation*}
-%         \|W\cdot\bar F - W\cdot f\|_{C^0}\le \|W\cdot F - W\cdot f\|_{C^0} + \|w'\|_{C^0}\|W\cdot F - W\cdot f\|_{C^0}.
-%     \end{equation*}
-%     Pel lema \ref{lema:lema4}, $\|W\cdot F - W\cdot f\|_{C^0}\le\sqrt7\|U\|\cdot\|\rho\|^{1/2}_{C^0}$, de manera que
-%     \begin{equation*}
-%         \|W\cdot\bar F - W\cdot f\|_{C^0}\le\sqrt7\|U\|\cdot\|\rho\|^{1/2}_{C^0}(1+\|w'\|_{C^0}),
-%     \end{equation*}
-%     tal com volíem.
-
-%     \underline{Cinquè punt.} 
-%     Seguim la demostració del lema \ref{lema:lema7} per acotar la diferència entre $\varphi^*\mu$ i $(F\circ\varphi)^*\langle\cdot,\cdot\rangle$. Per la definició \eqref{eq:def_barF}, tenim que
-%     \begin{equation*}
-%         (\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle (\partial_s, \partial_s) = \left\|\frac{\partial(\bar F\circ\varphi)}{\partial s}\right\|^2 = \left\| W\cdot F - w'(s)(F\circ\varphi(t,1)-f\circ\varphi(t,1)) \right\|^2,
-%     \end{equation*}
-%     i com $\varphi^*\mu(\partial_s,\partial_s) = \|W\cdot F\|^2 = r^2$, obtenim
-%     \begin{equation*}
-%         |(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_s, \partial_s) - \varphi^*\mu(\partial_s, \partial_s)| \le \|w'\|_{C^0}\|F-f\|_{C^0}(2\|r\|_{C^0} + \|w'\|_{C^0}\|F-f\|_{C^0}).
-%     \end{equation*}
-%     Pel lema \ref{lema:lema2}, obtenim
-%     \begin{equation}\label{eq:X}
-%         |(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_s, \partial_s) - \varphi^*\mu(\partial_s, \partial_s)| \le \frac{X(w',r,h)}{N}
-%     \end{equation}
-%     on $X(w',r,h)$ depèn de $\|w'\|_{C^0}$, $\|r\|_{C^0}$ i $\|h\|_{C^2}$.
-
-%     Ara, com $\varphi^*\mu(\partial_t,\partial_t) = \left\| \frac{\partial f\circ\varphi}{\partial t} \right\|^2$, obtenim
-%     \begin{align*}
-%         |(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_t, \partial_t) - \varphi^*\mu(\partial_t, \partial_t)| &\le 
-%         \Bigg|\left\|\frac{\partial F\circ\varphi}{\partial t}-w(s)\left(\frac{\partial F\circ\varphi}{\partial t}(t,1) - \frac{\partial f\circ\varphi}{\partial t}(t,1)\right)\right\|^2 \\&\quad\quad\quad- \left\| \frac{\partial f\circ\varphi}{\partial t} \right\|^2\Bigg|
-%     \end{align*}
-%     Podem escriure $A:=\frac{\partial F\circ\varphi}{\partial t}$, $B:=\frac{\partial F\circ \varphi}{\partial t}(t,1) - \frac{\partial f\circ\varphi}{\partial t}(t,1)$ i $C:=\frac{\partial f\circ\varphi}{\partial t}$.
-%     \begin{align*}
-%         |(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_t, \partial_t) - \varphi^*\mu(\partial_t, \partial_t)| 
-%         &=
-%         \left\|\left|A-w(s)B\right\|^2 - \left\|C\right\|^2\right|
-%         \\&\le
-%         \left\|A-w(s)B - C\right\|\left\|A-w(s)B + C\right\|
-%         \\&\le
-%         (\left\|A - C\right\| + \left\|B\right\|)(\left\|A-C\right\| + 2\left\|C\right\|+\left\|B\right\|),
-%     \end{align*}
-%     així,
-%     \begin{align*}
-%         |(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_t, \partial_t) - \varphi^*\mu(\partial_t, \partial_t)| \le 
-%         4&\left\|\frac{\partial F\circ\varphi}{\partial t}-\frac{\partial f\circ\varphi}{\partial t}\right\|_{C^0}\cdot\\
-%         &\left(\left\|\frac{\partial F\circ\varphi}{\partial t}-\frac{\partial f\circ\varphi}{\partial t}\right\|_{C^0}+\left\|\frac{\partial f\circ\varphi}{\partial t}\right\|_{C^0}\right).
-%     \end{align*}
-
-%     Ara pel lema \ref{lema:lema3}, tenim que 
-%     \begin{equation}\label{eq:Y}
-%         \left|(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_t, \partial_t) - \varphi^*\mu(\partial_t, \partial_t)\right|\le\frac{Y(f\circ\varphi,h)}{N},
-%     \end{equation}
-%     on $Y(f\circ\varphi,h)$ depèn de $\|\frac{\partial(f\circ\varphi)}{\partial t}\|_{C^0}$ i de $\|h\|_{C^2}$.
-
-%     Com $\varphi^*\mu(\partial_t,\partial_s) = \mu(\frac{\partial\varphi}{\partial t}, W)=0$, tenim
-%     \begin{equation*}
-%         \left|(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_t, \partial_s) - \varphi^*\mu(\partial_t, \partial_s)\right| = \left| (\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_t, \partial_s) \right|
-%     \end{equation*}
-
-%     Posant $D=\frac{\partial F\circ\varphi}{\partial s}$, $E=F\circ\varphi(t,1) - f\circ\varphi(t,1)$ amb la notació anterior, tenim
-%     \begin{align*}
-%         \left|(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_t, \partial_s)\right| &= \left|\langle A-wB, D-w'E \rangle\right|\\
-%         &\le |\langle A, D\rangle| + |w'|\|E\|(\|A\| + \|B\|) + \|B\|\|D\|.
-%     \end{align*}
-
-%     Notem que $\langle A, D\rangle = (F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_t,\partial_s)$, de manera que, per la desigualtat \eqref{eq:cosa_K2}, $|\langle A, D\rangle|\le\frac{Z_1(h)}{N}$ per alguna $Z_1$ que només depèn de $\|h\|_{C^2}$. Pel lema \ref{lema:lema2}, $\|E\|\le\frac{Z_2(h)}{N}$ per alguna $Z_2$ que només depèn de $\|h\|_{C^1}$. A més, pel lema \ref{lema:lema3}, $\|B\|\le\|A-C\|_{C^0}\le\frac{Z_3(h)}{N}$ per alguna $Z_3$ que només depèn de $\|h\|_{C^2}$. Notant que $\|A\|\le\|A-C\|+\|C\|$, obtenim $\|A\|\le\frac{Z_3(h)}{N}+\|C\|$. A més, notem que $\|D\| = \|W\cdot F\| = r$. Tot junt, obtenim
-%     \begin{equation}\label{eq:Z}
-%         \left|(\bar F\circ\varphi)^*\langle\cdot,\cdot\rangle(\partial_t, \partial_s)-\varphi^*\mu(\partial_t, \partial_s)\right|\le\frac{Z(f\circ\varphi,w',r,h)}{N},
-%     \end{equation}
-%     on 
-%     \begin{equation*}
-%         Z(f\circ\varphi,w',r,h) = Z_1(h) + \|w'\|_{C^0} Z_2(h)\left( \left\|\frac{\partial(f\circ\varphi)}{\partial t}\right\|_{C^0} + 2\frac{Z_3(h)}{N} \right) + Z_3(h)r.
-%     \end{equation*}
-
-%     Ara, com en la demostració del lema \ref{lema:lema7}, tenim que 
-%     \begin{equation*}
-%         \|\mu-\bar F^*\langle\cdot,\cdot\rangle\|\le\|\varphi^*\mu-\varphi^*\bar F^*\langle\cdot,\cdot\rangle\|\cdot\|d\varphi^{-1}\|_{C^0}.
-%     \end{equation*}
-
-%     Amb aquesta última desigualtat i les desigualtats \eqref{eq:X}, \eqref{eq:Y} i \eqref{eq:Z}, resolem el quart punt del teorema amb 
-%     \begin{equation*}
-%         K_4(f\circ\varphi,r,h,w',\varphi^{-1}) = (X(w',r,h) + Y(f\circ\varphi,h) + 2Z(f\circ\varphi,w',r,h))\|d\varphi^{-1}\|^2_{C^0}.
-%     \end{equation*}
-%     \qed
-% }
 
 \section{Encabiment isomètric del tor pla}
 \begin{nota}
@@ -548,7 +303,7 @@ Per tal d'obtenir un encabiment isomètric, no és prou amb triar $N_1, N_2, N_3
 on $\mathcal F_0:=f$. En cada etapa, ens haurem de preocupar de que el defecte isomètric $D_k:=g-f_{k-1}^*\langle\cdot, \cdot\rangle$ pertanyi al con convex $\mathcal C$.
 
 \begin{teo}[Stage Theorem]\label{teo:Stage}
-    Siguin $g$ i $\bar g$ dues mètriques Riemannianes sobre $\mathbb T^2$ i sigui 
+    Siguin $g$ i $\bar g$ dues mètriques riemannianes sobre $\mathbb T^2$ i sigui 
     \begin{equation*}
         f:(\mathbb T^2, g)\to\mathbb E^3
     \end{equation*}
@@ -574,21 +329,6 @@ on $\mathcal F_0:=f$. En cada etapa, ens haurem de preocupar de que el defecte i
     No donarem aquí la demostració d'aquest teorema, de la mateixa manera que no n'hem conat cap en aquest capítol. Tanmateix, notem que la demostració d'aquest teorema es redueix a aplicar el teorema \ref{teo:OneStep} tres vegades, escollint $N_1, N_2, N_3$ de manera adequada per tal de minimitzar l'error i garantir que el defecte isomètric sigui proper a zero. És, per tant, similar a la demostració del teorema de Nash a l'hora de triar $\lambda$ per obtenir els $B_1, B_2, B_3$ adequats, si bé és més senzilla pel fet que no cal dividir la varietat en entorns compactes.
 \end{obs}
 
-% \subsection{Demostració del teorema \ref{teo:Stage}}
-% Definim 
-% \begin{equation*}
-%     U(1):=\partial_x, \text{ } U(2):=\frac15(\partial_x+2\partial_y), \text{ } U(3):=\frac15(\partial_x-2\partial_y),
-% \end{equation*}
-% i 
-% \begin{equation*}
-%     V(1):=\partial_y, \text{ } V(2):=-2\partial_x+\partial_y, \text{ } V(3):=2\partial_x+\partial_y.
-% \end{equation*}
-% \begin{lema}
-%     Sigui $B:=\rho_1\ell_1\otimes\ell_1 + \rho_2\ell_2\otimes\ell_2 + \rho_3\ell_3\otimes\ell_3$ una forma bilineal simètrica {\color{blue} definició?}. Aleshores,
-%     \begin{equation*}
-%         \max\set{|\rho_1|, |\rho_2|, |\rho_3|} \le \frac{5\sqrt3}8 \|B\|
-%     \end{equation*}
-% \end{lema}
 \subsection{La successió d'immersions}
 Acabem aquesta secció amb l'aplicació concreta del teorema \ref{teo:Stage} al cas del tor pla que ens interessa, de tal manera que obtindrem finalment una immersió isomètrica.
 
@@ -596,11 +336,11 @@ Sigui $\mathcal F_0:\mathbb T^2\to\mathbb R^3$ una immersió tal que
 \begin{equation*}
     \Delta := \langle\cdot, \cdot\rangle_{\mathbb R^2} - \mathcal F_0^*\langle\cdot, \cdot\rangle\in C^\infty(\mathbb T^2, \mathcal C).
 \end{equation*}
-Un encabiment clàssic del tor com el de l'exemple \ref{ex:tor} amb $R$ i $r$ adequats satisfà aquesta condició. Sigui $\set{\delta_k}_k$ una successió de nombres reals positius monòtona creixent que tendeix a 1. Podem considerar una successió creixent de mètriques
+Un encabiment clàssic d'un tor com el de l'exemple \ref{ex:tor} amb $R$ i $r$ adequats satisfà aquesta condició. Sigui $\set{\delta_k}_k$ una successió de nombres reals positius monòtona creixent que tendeix a 1. Podem considerar una successió creixent de mètriques
 \begin{equation*}
-    g_k := \mathcal F_0^*\langle\cdot, \cdot\rangle + \delta_k\Delta.
+    g_k := \mathcal F_0^*\langle\cdot, \cdot\rangle + \delta_k\Delta,
 \end{equation*}
-que convergeix a la mètrica plana en el tor. Podem construir una successió d'immersions
+que convergeix a la mètrica plana al tor. Podem construir una successió d'immersions
 \begin{equation*}
     \mathcal F_k := IC(\mathcal F_{k-1}, g_k, N_1, N_2, N_3)
 \end{equation*}
@@ -616,7 +356,7 @@ Així, podem afirmar el següent resultat.
 \end{teo}
 
 \section{Resultat: un objecte contraintuïtiu}
-A més del mètode que hem descrit aquí, \citet{borrelli2013} dissenyen un algoritme que permet implementar el procés en el llenguatge de programació $C++$, que està fora de l'abast d'aquest treball. Tanmateix, la figura \ref{fig:tor_pl} mostra el resultat d'aplicar aquest algoritme a un encabiment clàssic del tor.
+A més del mètode que hem descrit aquí, \citet{borrelli2013} dissenyen un algoritme que permet implementar el procés en el llenguatge de programació $C++$, que està fora de l'abast d'aquest treball. Tanmateix, la figura \ref{fig:tor_pl} mostra el resultat d'aplicar aquest algoritme a un encabiment clàssic d'un tor.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Tor/tor pla.jpg}

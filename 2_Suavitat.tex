@@ -2,13 +2,13 @@
 
 L'objectiu d'aquest capítol serà oferir els fonaments matemàtics necessaris per a entendre i justificar els resultats que es mostraran en els capítols posteriors, alhora que volem motivar l'interès d'aquests. Així, es definiran els conceptes i objectes matemàtics bàsics amb els quals treballarem, veurem algunes de les seves propietats i enunciarem i demostrarem alguns teoremes que seran clau en el treball que segueix.
 
-Voldrem estudiar, al llarg d'aquest capítol, els conceptes de varietat topològica, varietat diferenciable i varietat Riemanniana. A un nivell intuïtiu, es tractarà d'espais topològics que es poden veure localment com espais reals $\mathbb R^n$, sobre els quals es pot fer càlcul infinitesimal i que es poden dotar de diferents mètriques. Prendrem especial atenció a la manera en què aquests espais es poden encabir (en anglès, \textit{embed}) en altres varietats i espais ambients. Si bé és generalment fàcil entendre i visualitzar aquests espais quan es consideren encabits en un espai $\mathbb R^n$, com el cas de les superfícies regulars en $\mathbb R^3$, cal notar que les varietats topològiques no requereixen aquest espai ambient per a la seva definició i estudi, sinó que en són independents. Aquest fet és molt rellevant en una de les aplicacions més interessants de la geometria diferencial, la teoria de la relativitat general, on l'espai-temps es modela com una varietat diferenciable de dimensió 4 i on no hi ha motiu per introduir cap espai ambient en el sentit clàssic.
+Voldrem estudiar, al llarg d'aquest capítol, els conceptes de varietat topològica, varietat diferenciable i varietat riemanniana. A un nivell intuïtiu, es tractarà d'espais topològics que es poden veure localment com espais reals $\mathbb R^n$, sobre els quals es pot fer càlcul infinitesimal i que es poden dotar de diferents mètriques. Prendrem especial atenció a la manera en què aquests espais es poden encabir (en anglès, \textit{embed}) en altres varietats i espais ambients. Si bé és generalment fàcil entendre i visualitzar aquests espais quan es consideren encabits en un espai $\mathbb R^n$, com el cas de les superfícies regulars en $\mathbb R^3$, cal notar que les varietats topològiques no requereixen aquest espai ambient per a la seva definició i estudi, sinó que en són independents. Aquest fet és molt rellevant en una de les aplicacions més interessants de la geometria diferencial, la teoria de la relativitat general, on l'espai-temps es modela com una varietat diferenciable de dimensió 4 i on no hi ha motiu per introduir cap espai ambient en el sentit clàssic.
 
 Si bé seguirem la línia general d'estudi en molts llibres de referència, centrant-nos en funcions i aplicacions de regularitat $C^\infty$, més endavant ens caldrà treballar amb regularitats més baixes. Per aquest motiu, del primer que ens ocuparem serà de definir les funcions i aplicacions de classe $C^k$ i les normes associades. Això serà rellevant pel fet que també es pot definir la classe de regularitat d'una varietat diferenciable en un punt, i direm que una varietat és suau (en anglès, \textit{smooth}) quan és de classe $C^\infty$. La noció de suavitat no pot ser una propietat purament topològica, ja que no és preservada per homeomorfismes. L'exemple més evident és el d'un cercle i un quadrat, que són homeomorfs en $\mathbb R^2$, però el cercle és suau mentre que el quadrat no ho és. 
 
-La suavitat de les varietats diferenciables serà clau per a desenvolupar eines potents en geometria diferencial, com veurem amb l'existència de particions de la unitat i el teorema de Whitney. Ara bé, veurem que aquesta condició de regularitat comporta un grau afegit de rigidesa en les propietats de les varietats Riemannianes pel que fa a la seva relació amb els encabiments (en anglès, \textit{embeddings}). L'última part d'aquest capítol serà dedicada a un exemple d'això mateix: demostrar que no existeix cap encabiment  $C^\infty$ del tor pla en $\mathbb R^3$ tal que preservi les distàncies entre els seus punts. Veurem, de fet, que el motiu principal d'aquesta impossibilitat es relaciona amb el concepte de curvatura gaussiana, que només es pot definir per a superfícies immerses en $\mathbb R^3$ de regularitat $C^2$ o superior. 
+La suavitat de les varietats diferenciables serà clau per a desenvolupar eines potents en geometria diferencial, com veurem amb l'existència de particions de la unitat i el teorema de Whitney. Ara bé, veurem que aquesta condició de regularitat comporta un grau afegit de rigidesa en les propietats de les varietats riemannianes pel que fa a la seva relació amb els encabiments (en anglès, \textit{embeddings}). L'última part d'aquest capítol serà dedicada a un exemple d'això mateix: demostrar que no existeix cap encabiment $C^\infty$ d'un tor pla en $\mathbb R^3$ tal que preservi les distàncies entre els seus punts. Veurem, de fet, que el motiu principal d'aquesta impossibilitat es relaciona amb el concepte de curvatura gaussiana, que només es pot definir per a superfícies immerses en $\mathbb R^3$ de regularitat $C^2$ o superior. 
 
-Les cites principals en aquest capítol seran \citet{lee2013} i \citet{warner1983}, pel que fa a varietats suaus, i \citet{chavel2006}, pel que fa a varietats Riemannianes.
+Les cites principals en aquest capítol seran \citet{lee2013} i \citet{warner1983}, pel que fa a varietats suaus, i \citet{chavel2006}, pel que fa a varietats riemannianes.
 
 \section{Classes de regularitat}
 Comencem amb la definició estàndard de classes de regularitat de funcions i aplicacions.
@@ -330,7 +330,7 @@ Una eina essencial per treballar amb vectors tangents serà el concepte de \text
 \begin{defi}
     Diem que una aplicació $F$ és \textbf{no singular} en $p\in M$ si $dF_p$ no és singular, és a dir, si el seu nucli és $\set0$.
 \end{defi}
-Dualitzant l'aplicació que defineix el diferencial, podem definir el \textit{pullback} d'una funció diferenciable, que serà particularment important per a l'estudi de mètriques Riemannianes.
+Dualitzant l'aplicació que defineix el diferencial, podem definir el \textit{pullback} d'una funció diferenciable, que serà particularment important per a l'estudi de mètriques riemannianes.
 \begin{defi}
     Siguin $M$ i $N$ varietats diferenciables suaus, $F:M\to N$ una aplicació diferenciable i $p\in M$. Anomenem \textbf{\textit{pullback} puntual de $F$ en $p$} l'aplicació
     \begin{equation*}
@@ -538,8 +538,8 @@ Al lema anterior, \textbf{propi} tan sols vol dir que l'encabiment és una aplic
 
 
 
-\subsection{Geometria Riemanniana}
-Per tal de poder parlar de geometria en varietats diferenciables arbitràries, necessitem introduir el concepte de mètrica Riemanniana. Abans, però, recordem la definició de producte intern en espais vectorials reals.
+\subsection{Geometria riemanniana}
+Per tal de poder parlar de geometria en varietats diferenciables arbitràries, necessitem introduir el concepte de mètrica riemanniana. Abans, però, recordem la definició de producte intern en espais vectorials reals.
 \begin{defi}
     Un \textbf{producte intern} en un espai vectorial real $V$ és una aplicació $g:V\times V\to\mathbb R$ que és bilineal, simètrica i definida positiva, és a dir, que verifica
     \begin{enumerate}
@@ -551,15 +551,15 @@ Per tal de poder parlar de geometria en varietats diferenciables arbitràries, n
 \end{defi}
 
 \begin{defi}
-    Sigui $M$ una varietat diferenciable. Anomenem \textbf{mètrica Riemanniana} en $M$ una aplicació $g$ que assigna a cada punt $p$ en $M$ un producte intern $g_p:M_p\times M_p\to\mathbb R$ tal que per qualsevol obert $U\subseteq M$, si $X,Y$ són camps vectorials diferenciables en $U$, aleshores la funció $g(X,Y):U\to\mathbb R$ donada per
+    Sigui $M$ una varietat diferenciable. Anomenem \textbf{mètrica riemanniana} en $M$ una aplicació $g$ que assigna a cada punt $p$ en $M$ un producte intern $g_p:M_p\times M_p\to\mathbb R$ tal que per qualsevol obert $U\subseteq M$, si $X,Y$ són camps vectorials diferenciables en $U$, aleshores la funció $g(X,Y):U\to\mathbb R$ donada per
     \begin{equation*}
         g(X,Y)(p) = g_p(X_{|p},Y_{|p}),
     \end{equation*}
     és diferenciable.
     
-    Anomenem \textbf{varietat Riemanniana} a una varietat diferenciable dotada d'una mètrica Riemanniana.
+    Anomenem \textbf{varietat riemanniana} a una varietat diferenciable dotada d'una mètrica riemanniana.
 \end{defi}
-En un sistema de coordenades locals $(x^1,\dots,x^n)$, la mètrica Riemanniana es pot expressar com\footnote{Per l'última igualtat prenem la notació d'Einstein per als sumatoris.}
+En un sistema de coordenades locals $(x^1,\dots,x^n)$, la mètrica riemanniana es pot expressar com\footnote{Per l'última igualtat prenem la notació d'Einstein per als sumatoris.}
 \begin{equation*}
     g = \sum_{i,j=1}^n g_{ij}dx^i\otimes dx^j := g_{ij}dx^idx^j,
 \end{equation*}
@@ -570,7 +570,7 @@ on $g_{ij}$ són funcions diferenciables en $U$ i $dx^i$ són les 1-formes coord
 \end{defi}
 
 \begin{defi}
-    Anomenarem \textbf{mètrica euclidiana} en $\mathbb R^n$ la mètrica Riemanniana que en qualsevol sistema de coordenades tal que les coordenades siguin $x^1,\dots,x^n$ es pot expressar com
+    Anomenarem \textbf{mètrica euclidiana} en $\mathbb R^n$ la mètrica riemanniana que en qualsevol sistema de coordenades tal que les coordenades siguin $x^1,\dots,x^n$ es pot expressar com
     \begin{equation*}
         \langle\cdot,\cdot\rangle := \delta_{ij}dx^idx^j,
     \end{equation*}
@@ -578,19 +578,19 @@ on $g_{ij}$ són funcions diferenciables en $U$ i $dx^i$ són les 1-formes coord
 \end{defi}
 
 \begin{defi}\label{def:pullback_metric}
-    Siguin $M$ i $N$ dues varietats Riemannianes, $g$ una mètrica Riemanniana en $N$ i $F:M\to N$ una aplicació diferenciable. Anomenem \textbf{pullback de $g$ per $F$} la mètrica Riemanniana $F^*g$ en $M$ tal que, per qualsevol parell de vectors tangents $u,v\in T_pM$,
+    Siguin $M$ i $N$ dues varietats riemannianes, $g$ una mètrica riemanniana en $N$ i $F:M\to N$ una aplicació diferenciable. Anomenem \textbf{pullback de $g$ per $F$} la mètrica riemanniana $F^*g$ en $M$ tal que, per qualsevol parell de vectors tangents $u,v\in T_pM$,
     \begin{equation*}
         (F^*g)_p(v,u) = g_{F(p)}(dF_p(v),dF_p(u)),
     \end{equation*}
     on $dF_p$ és el diferencial de $F$ en $p$.
 \end{defi}
 
-\begin{prop}[\textbf{Existència de mètriques Riemannianes}]
-    Tota varietat diferenciable suau admet una mètrica Riemanniana.
+\begin{prop}[\textbf{Existència de mètriques riemannianes}]
+    Tota varietat diferenciable suau admet una mètrica riemanniana.
 \end{prop}
 {
     \color{black} \textit{Prova.}
-    Sigui $M$ una varietat diferenciable suau. Sigui $\set{(U_\alpha,\varphi_\alpha)}$ un recobriment per cartes coordenades. En cada domini de carta, existeix una mètrica Riemanniana $g_\alpha = \varphi_\alpha^*\langle\cdot,\cdot\rangle = \delta_{ij}dx^idx^j$. Sigui $\set{\psi_\alpha}$ una partició de la unitat subordinada a $\set{U_\alpha}$. Definim 
+    Sigui $M$ una varietat diferenciable suau. Sigui $\set{(U_\alpha,\varphi_\alpha)}$ un recobriment per cartes coordenades. En cada domini de carta, existeix una mètrica riemanniana $g_\alpha = \varphi_\alpha^*\langle\cdot,\cdot\rangle = \delta_{ij}dx^idx^j$. Sigui $\set{\psi_\alpha}$ una partició de la unitat subordinada a $\set{U_\alpha}$. Definim 
     \begin{equation*}
         g = \sum_{\alpha} \psi_\alpha g_\alpha,
     \end{equation*}
@@ -605,15 +605,15 @@ on $g_{ij}$ són funcions diferenciables en $U$ i $dx^i$ són les 1-formes coord
 }
 
 \begin{defi}
-    Siguin $(M,g)$ i $(\tilde M,\tilde g)$ dues varietats Riemannianes. Una aplicació $F: M\to \tilde M$ és una \textbf{isometria (Riemanniana)} si és un difeomorfisme i $F^*\tilde g = g$. Diem que $F$ és una \textbf{isometria local} si tot punt $p\in M$ té un entorn $U$ tal que $F|_U$ és una isometria d'un entorn de $F(p)$ en $\tilde M$. Si $F$ és una isometria, diem que $M$ i $\tilde M$ són \textbf{isomètriques}, i si $F$ és una isometria local, diem que $M$ i $\tilde M$ són \textbf{localment isomètriques}.
+    Siguin $(M,g)$ i $(\tilde M,\tilde g)$ dues varietats riemannianes. Una aplicació $F: M\to \tilde M$ és una \textbf{isometria (riemanniana)} si és un difeomorfisme i $F^*\tilde g = g$. Diem que $F$ és una \textbf{isometria local} si tot punt $p\in M$ té un entorn $U$ tal que $F|_U$ és una isometria d'un entorn de $F(p)$ en $\tilde M$. Si $F$ és una isometria, diem que $M$ i $\tilde M$ són \textbf{isomètriques}, i si $F$ és una isometria local, diem que $M$ i $\tilde M$ són \textbf{localment isomètriques}.
 \end{defi}
 
-Hi ha diverses propietats de les varietats Riemannianes que són invariants per isometries locals. La més important per nosaltres és la planor (en anglès, \textit{flatness}).
+Hi ha diverses propietats de les varietats riemannianes que són invariants per isometries locals. La més important per nosaltres és la planor (en anglès, \textit{flatness}).
 \begin{defi}\label{def:flatness}
-    Diem que una varietat Riemanniana $(M,g)$ és \textbf{plana} si és localment isomètrica a l'espai euclidià $\mathbb R^n$ amb la mètrica euclidiana.
+    Diem que una varietat riemanniana $(M,g)$ és \textbf{plana} si és localment isomètrica a l'espai euclidià $\mathbb R^n$ amb la mètrica euclidiana.
 \end{defi}
 
-Si $(M,g)$ és una varietat Riemanniana, qualsevol subvarietat diferenciable $S\subseteq M$ admet una \textbf{mètrica induïda} $\imath^*g$, on $\imath:S\hookrightarrow M$ és la inclusió.
+Si $(M,g)$ és una varietat riemanniana, qualsevol subvarietat diferenciable $S\subseteq M$ admet una \textbf{mètrica induïda} $\imath^*g$, on $\imath:S\hookrightarrow M$ és la inclusió.
 
 
 \subsection{Un resultat interessant en $\mathbb R^3$}
@@ -682,20 +682,24 @@ Intuïtivament, una superfície regular és el·líptica en un punt si, localmen
     \qed
 }
 
-A continuació enunciem un dels teoremes més importants de la geometria de corbes i superfícies regulars en $\mathbb R^3$, demostrat per Carl Friedrich Gauss el 1827, que relaciona la curvatura de Gauss d'una superfície regular amb la seva mètrica com a varietat Riemanniana.
+A continuació enunciem un dels teoremes més importants de la geometria de corbes i superfícies regulars en $\mathbb R^3$, demostrat per Carl Friedrich Gauss el 1827, que relaciona la curvatura de Gauss d'una superfície regular amb la seva mètrica com a varietat riemanniana.
 
 \begin{teo}[Teorema Egregi de Gauss]
-    La curvatura de Gauss d'una superfície regular només depèn de la mètrica de la superfície com a varietat Riemanniana. En concret, la curvatura de Gauss és invariant per isometries. 
+    La curvatura de Gauss d'una superfície regular només depèn de la mètrica de la superfície com a varietat riemanniana. En concret, la curvatura de Gauss és invariant per isometries. 
 \end{teo}
 
-Un cas particular d'aquest teorema és que la planor tal com l'hem definit a la definició \ref{def:flatness}, que la mètrica d'una varietat Riemanniana sigui la mètrica euclidiana, és equivalent a que la curvatura de Gauss sigui nul·la. Això té una implicació a l'hora de determinar quines varietats Riemannianes bidimensionals es poden encabir de manera isomètrica en $\mathbb R^3$. En concret, obtenim el següent resultat per al tor pla. 
+Un cas particular d'aquest teorema és que la planor tal com l'hem definit a la definició \ref{def:flatness}, que la mètrica d'una varietat riemanniana sigui la mètrica euclidiana, és equivalent a que la curvatura de Gauss sigui nul·la. Això té una implicació a l'hora de determinar quines varietats riemannianes bidimensionals es poden encabir de manera isomètrica en $\mathbb R^3$. En concret, obtenim el següent resultat per als tors plans. 
 
 \begin{defi}
-    Anomenem \textbf{tor} la varietat topològica $\mathbb T^2 = \mathbb R^2/\mathbb Z^2 = [0,1]\times[0,1]/\sim$, on $\sim$ és la relació d'equivalència tal que $(x,0)\sim(x,1)$ i $(0,y)\sim(1,y)$ per a tot $x,y\in[0,1]$. Anomenem \textbf{tor pla} la varietat Riemanniana $(\mathbb T^2, g)$ on $\mathbb T^2$ és el tor, i $g$ és la mètrica euclidiana.
+    Anomenem \textbf{tor} la varietat topològica $\mathbb T^2 = \mathbb R^2/\mathbb Z^2 = [0,1]\times[0,1]/\sim$, on $\sim$ és la relació d'equivalència tal que $(x,0)\sim(x,1)$ i $(0,y)\sim(1,y)$ per a tot $x,y\in[0,1]$. Anomenem \textbf{tor pla} la varietat riemanniana $(\mathbb T^2, g)$ on $\mathbb T^2$ és el tor, i $g$ és la mètrica euclidiana.
 \end{defi}
 
+\begin{obs}
+    De fet, podem anomenar \textbf{tor pla} a qualsevol varietat riemanniana obtinguda com a quocient del pla euclidià per una relació d'equivalència que identifiqui parelles de punts oposats d'un costat d'un rectangle.
+\end{obs}
+
 \begin{teo}
-    No existeix cap encabiment isomètric $C^\infty$ del tor pla en $\mathbb R^3$.
+    No existeix cap encabiment isomètric $C^\infty$ del tor pla $(\mathbb T^2, g)$ en $\mathbb R^3$.
 \end{teo}
 {
     \color{black}
