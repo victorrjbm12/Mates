@@ -1,4 +1,4 @@
-\chapter{Cinta de Möbius de paper òptima}
+\chapter{La cinta de Möbius de paper òptima}
 
 Al capítol anterior hem vist que, tot i que pel teorema de Whitney sempre existeix algun espai euclidià de dimensió prou alta tal que s'hi pugui encabir suaument una varietat diferenciable $C^\infty$, no sempre és possible encabir-los en un espai de dimensió 3. A més, fins i tot per varietats riemannianes que sí es poden encabir suaument en $\mathbb R^3$, hem vist que no sempre és possible encabir-les isomètricament, com és el cas del tor pla. 
 
@@ -6,9 +6,8 @@ A continuació presentem un resultat obtingut recentment, l'any 2023, per Richar
 
 L'objectiu d'aquest capítol no serà només veure aquest resultat, sinó també veure com el podem \say{esquivar} relaxant les condicions del nostre encabiment isomètric. La manera en què ho aconseguirem apuntarà cap al que veurem al capítol següent, on demostrarem el teorema de Nash. 
 
-La font d'aquest capítol és gairebé exclusivament la versió més recent de l'article \cite{schwartz2024}. Aquest article és molt senzill, curt i fàcil de llegir, de manera que seguim de manera molt propera la seva demostració. Hem afegit els diagrames de la demostració del lema T per tal de fer més evident l'argument topològic que fa servir Schwartz.
+La font d'aquest capítol és gairebé exclusivament la versió més recent de \citet{schwartz2024}. Aquest article és molt senzill, curt i fàcil de llegir, de manera que seguim de manera molt propera la seva demostració. Hem afegit els diagrames de la demostració del lema T per tal de fer més evident l'argument topològic que fa servir Schwartz.
 
-%{\color{red} El Schwartz menciona aquí uns papers que expliquem més sobre la banda de Möbius, si volem escriure més sobre el tema els podem utilitzar.}
 
 \section{Introducció al problema}
 Comencem introduint un tipus d'objecte que no havíem definit fins ara, la varietat topològica amb frontera. No dedicarem gaire espai a estudiar-les per separat, però és important entendre que molts dels conceptes i resultats que hem vist al capítol anterior es poden generalitzar a varietats topològiques amb frontera, tractant la frontera com un altra varietat topològica de dimensió $n-1$.
@@ -55,7 +54,7 @@ A continuació, presentem la definició de la cinta de Möbius plana i del seu e
 
 
 
-A continuació presentem el teorema principal que demostrarem en aquest capítol. A més d'aquest, \cite{schwartz2024} demostra el \say{Teorema del límit triangular}, que esmentarem a les conclusions d'aquest capítol. 
+A continuació presentem el teorema principal que demostrarem en aquest capítol. A més d'aquest, \citet{schwartz2024} demostra el \say{Teorema del límit triangular}, que esmentarem a les conclusions d'aquest capítol. 
 \begin{teo}[\textbf{Principal}]\label{teo:Main Schwartz}
     Qualsevol cinta de Möbius de paper encabida en $\mathbb R^3$ té raó d'aspecte més gran que $\sqrt{3}$.
 \end{teo}
@@ -106,13 +105,17 @@ Podem parlar de curvatura mitjana en un punt de la frontera $p\in\partial \Omega
     Sigui $\tau'$ un component connex de $\Omega\setminus U^*$.
     Si $\tau'$ té interior buit, aleshores és el límit d'una successió de plecs de $U^*$, i per tant és també un plec en ser un segment de recta.
     Si $\tau'$ té punts al seu interior, aleshores tots ells tenen curvatura mitjana zero, de manera que pertanyen a un sol pla.
-    Sigui $\tau = I^{-1}(\tau')$. $I|_{\tau}$ és un encabiment isomètric entre regions planes i $\tau$ és un trapezoide convex. Per tant, $I|_{\tau}$ és una isometria global, de manera que les imatges de segments de recta en $\tau$ són segments de recta. Podem obtenir una foliació per pre-plecs de $\tau$ de manera senzilla interpolant entre els dos pre-plecs de la seva frontera, i prendre la imatge per $I$ d'aquesta foliació per obtenir una foliació per plecs de $\tau'$.
+    Sigui $\tau = I^{-1}(\tau')$. $I|_{\tau}$ és un encabiment isomètric entre regions planes i $\tau$ és un trapezoide convex. Vegeu la figura \ref{fig:trapezoide}. Per tant, $I|_{\tau}$ és una isometria global, de manera que les imatges de segments de recta en $\tau$ són segments de recta. Podem obtenir una foliació per pre-plecs de $\tau$ de manera senzilla interpolant entre els dos pre-plecs de la seva frontera, i prendre la imatge per $I$ d'aquesta foliació per obtenir una foliació per plecs de $\tau'$.
     
     \begin{figure}[htbp]
         \centering
-        \includegraphics[width=0.5\textwidth]{Fotos/TERCERA.jpg}
-        \caption{{\color{blue}TEXT}}
-        \label{fig:foliacio_plecs}
+        \raisebox{0.2\height}{\includegraphics[width=0.5\textwidth]{verd2}}
+        \quad
+        \raisebox{2\height}{$\xleftarrow{\scalebox{1}{$I^{-1}$}}$}
+        \quad
+        \includegraphics[width=0.3\textwidth]{verd1}
+        \caption{$\tau'$ en $\Omega$ i $\tau = I^{-1}(\tau')$ en $M_\lambda$.}
+        \label{fig:trapezoide}
     \end{figure}
 
     Realitzant aquest procés per cada component connex de $\Omega\setminus U^*$, obtenim una foliació per plecs de $\Omega$.
@@ -280,7 +283,7 @@ Per tant, $2\lambda > \max(\alpha(t),\beta(t))$. Posant $t_0 = 1/\sqrt{3}$, teni
 Observem que $\alpha$ és creixent en $(0,\infty)$. Per tant, $\alpha(t)>2\sqrt3$ per a tot $t>t_0$. En canvi, $\beta$ és decreixent en $t\in\mathbb R$. Per tant, $\beta(t)>2\sqrt3$ per a tot $t<t_0$. Tot plegat, obtenim que $\lambda>\sqrt3$, com volíem demostrar.
 
 \section{Conclusions}
-Amb això hem vist i demostrat una nova restricció sobre els encabiments isomètrics d'una varietat amb vora tan familiar com és la cinta de Möbius. De fet, l'article de \cite{schwartz2024} va un pas més enllà, demostrant el següent teorema sobre successions de cintes de Möbius de paper encabides amb raons d'aspecte convergint a $\sqrt{3}$:
+Amb això hem vist i demostrat una nova restricció sobre els encabiments isomètrics d'una varietat amb vora tan familiar com és la cinta de Möbius. De fet, l'article \cite{schwartz2024} va un pas més enllà, demostrant el següent teorema sobre successions de cintes de Möbius de paper encabides amb raons d'aspecte convergint a $\sqrt{3}$:
 
 \begin{teo}[\textbf{Límit Triangular}]\label{teo:Límit triangular}
     Sigui $I_n:M_{\lambda_n}\to\mathbb R^3$ una successió de cintes de Möbius de paper encabides, tals que $\lambda_n\to\sqrt{3}$. Aleshores, $I_n$ convergeix uniformement a una cinta de Möbius de paper triangular, llevat d'isometria.

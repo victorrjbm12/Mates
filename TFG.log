@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  7 JUN 2025 19:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  8 JUN 2025 15:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -980,15 +980,15 @@ l.13 \section
 [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 619.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 615.
+(hyperref)                removing `superscript' on input line 619.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 619.
 
 
 
@@ -1009,76 +1009,81 @@ Cap\'{\i }tol 3.
 
 
 ]
-<cinta.pdf, id=490, 189.07338pt x 76.88725pt>
+<cinta.pdf, id=475, 189.07338pt x 76.88725pt>
 File: cinta.pdf Graphic file (type pdf)
 <use cinta.pdf>
-Package pdftex.def Info: cinta.pdf  used on input line 32.
+Package pdftex.def Info: cinta.pdf  used on input line 31.
 (pdftex.def)             Requested size: 212.03017pt x 86.22691pt.
-<cinta_triangular.pdf, id=491, 116.92082pt x 80.01694pt>
+<cinta_triangular.pdf, id=476, 116.92082pt x 80.01694pt>
 File: cinta_triangular.pdf Graphic file (type pdf)
 <use cinta_triangular.pdf>
-Package pdftex.def Info: cinta_triangular.pdf  used on input line 50.
+Package pdftex.def Info: cinta_triangular.pdf  used on input line 49.
 (pdftex.def)             Requested size: 127.21939pt x 87.06897pt.
 
 
 [19 <./cinta.pdf> <./cinta_triangular.pdf>]
-<Fotos/TERCERA.jpg, id=533, 4015.0pt x 3011.25pt>
-File: Fotos/TERCERA.jpg Graphic file (type jpg)
-<use Fotos/TERCERA.jpg>
-Package pdftex.def Info: Fotos/TERCERA.jpg  used on input line 113.
-(pdftex.def)             Requested size: 212.03017pt x 158.97978pt.
+<verd2.pdf, id=518, 298.65979pt x 71.0374pt>
+File: verd2.pdf Graphic file (type pdf)
+<use verd2.pdf>
+Package pdftex.def Info: verd2.pdf  used on input line 112.
+(pdftex.def)             Requested size: 212.03017pt x 50.43254pt.
+<verd1.pdf, id=519, 985.32013pt x 596.86992pt>
+File: verd1.pdf Graphic file (type pdf)
+<use verd1.pdf>
+Package pdftex.def Info: verd1.pdf  used on input line 116.
+(pdftex.def)             Requested size: 127.21939pt x 77.05846pt.
 
 
 [20]
-<dibuix_cilindre_1.pdf, id=544, 107.0178pt x 106.84015pt>
+<dibuix_cilindre_1.pdf, id=531, 107.0178pt x 106.84015pt>
 File: dibuix_cilindre_1.pdf Graphic file (type pdf)
 <use dibuix_cilindre_1.pdf>
-Package pdftex.def Info: dibuix_cilindre_1.pdf  used on input line 150.
+Package pdftex.def Info: dibuix_cilindre_1.pdf  used on input line 153.
 (pdftex.def)             Requested size: 106.19452pt x 106.01508pt.
 
 
-LaTeX Font Warning: Command \Large invalid in math mode on input line 151.
+LaTeX Font Warning: Command \Large invalid in math mode on input line 154.
 
-<dibuix_cilindre_2.pdf, id=545, 171.51678pt x 106.84015pt>
+<dibuix_cilindre_2.pdf, id=532, 171.51678pt x 106.84015pt>
 File: dibuix_cilindre_2.pdf Graphic file (type pdf)
 <use dibuix_cilindre_2.pdf>
-Package pdftex.def Info: dibuix_cilindre_2.pdf  used on input line 152.
+Package pdftex.def Info: dibuix_cilindre_2.pdf  used on input line 155.
 (pdftex.def)             Requested size: 170.19731pt x 106.01508pt.
-<dibuix_esfera_1.pdf, id=547, 171.51678pt x 106.84015pt>
+<dibuix_esfera_1.pdf, id=534, 171.51678pt x 106.84015pt>
 File: dibuix_esfera_1.pdf Graphic file (type pdf)
 <use dibuix_esfera_1.pdf>
-Package pdftex.def Info: dibuix_esfera_1.pdf  used on input line 161.
+Package pdftex.def Info: dibuix_esfera_1.pdf  used on input line 164.
 (pdftex.def)             Requested size: 170.19731pt x 106.01508pt.
 
-LaTeX Font Warning: Command \Large invalid in math mode on input line 162.
+LaTeX Font Warning: Command \Large invalid in math mode on input line 165.
 
-<dibuix_esfera_2.pdf, id=548, 122.52174pt x 106.84015pt>
+<dibuix_esfera_2.pdf, id=535, 122.52174pt x 106.84015pt>
 File: dibuix_esfera_2.pdf Graphic file (type pdf)
 <use dibuix_esfera_2.pdf>
-Package pdftex.def Info: dibuix_esfera_2.pdf  used on input line 163.
+Package pdftex.def Info: dibuix_esfera_2.pdf  used on input line 166.
 (pdftex.def)             Requested size: 121.5792pt x 106.01508pt.
 
 
-[21 <./Fotos/TERCERA.jpg>]
+[21 <./verd2.pdf> <./verd1.pdf> <./dibuix_cilindre_1.pdf> <./dibuix_cilindre_2.pdf>]
 
-[22 <./dibuix_cilindre_1.pdf> <./dibuix_cilindre_2.pdf> <./dibuix_esfera_1.pdf> <./dibuix_esfera_2.pdf>]
-<dibuix_mobius_1.pdf, id=620, 194.09814pt x 134.9311pt>
+[22 <./dibuix_esfera_1.pdf> <./dibuix_esfera_2.pdf>]
+<dibuix_mobius_1.pdf, id=636, 194.09814pt x 134.9311pt>
 File: dibuix_mobius_1.pdf Graphic file (type pdf)
 <use dibuix_mobius_1.pdf>
-Package pdftex.def Info: dibuix_mobius_1.pdf  used on input line 243.
+Package pdftex.def Info: dibuix_mobius_1.pdf  used on input line 246.
 (pdftex.def)             Requested size: 201.31529pt x 139.94067pt.
-<dibuix_mobius_2.pdf, id=621, 115.62799pt x 132.70177pt>
+<dibuix_mobius_2.pdf, id=637, 115.62799pt x 132.70177pt>
 File: dibuix_mobius_2.pdf Graphic file (type pdf)
 <use dibuix_mobius_2.pdf>
-Package pdftex.def Info: dibuix_mobius_2.pdf  used on input line 247.
+Package pdftex.def Info: dibuix_mobius_2.pdf  used on input line 250.
 (pdftex.def)             Requested size: 121.94756pt x 139.94067pt.
 
 
 [23 <./dibuix_mobius_1.pdf> <./dibuix_mobius_2.pdf>]
-<acordió.pdf, id=688, 75.26218pt x 62.99635pt>
+<acordió.pdf, id=698, 75.26218pt x 62.99635pt>
 File: acordió.pdf Graphic file (type pdf)
 <use acordió.pdf>
-Package pdftex.def Info: acordió.pdf  used on input line 293.
+Package pdftex.def Info: acordió.pdf  used on input line 296.
 (pdftex.def)             Requested size: 106.01508pt x 88.74217pt.
 
 
@@ -1150,12 +1155,12 @@ Cap\'{\i }tol 5.
 
 
 ]
-<voltes.png, id=844, 1454.43375pt x 444.66125pt>
+<voltes.png, id=847, 1454.43375pt x 444.66125pt>
 File: voltes.png Graphic file (type png)
 <use voltes.png>
 Package pdftex.def Info: voltes.png  used on input line 36.
 (pdftex.def)             Requested size: 275.63663pt x 84.2694pt.
-<J0.png, id=851, 933.4875pt x 766.865pt>
+<J0.png, id=852, 933.4875pt x 766.865pt>
 File: J0.png Graphic file (type png)
 <use J0.png>
 Package pdftex.def Info: J0.png  used on input line 68.
@@ -1163,7 +1168,7 @@ Package pdftex.def Info: J0.png  used on input line 68.
 
 
 [38 <./voltes.png>]
-<domini.png, id=869, 942.52126pt x 644.4075pt>
+<domini.png, id=868, 942.52126pt x 644.4075pt>
 File: domini.png Graphic file (type png)
 <use domini.png>
 Package pdftex.def Info: domini.png  used on input line 95.
@@ -1180,7 +1185,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 [39 <./J0.png>]
-<W.png, id=883, 673.51625pt x 468.75125pt>
+<W.png, id=880, 673.51625pt x 468.75125pt>
 File: W.png Graphic file (type png)
 <use W.png>
 Package pdftex.def Info: W.png  used on input line 130.
@@ -1209,7 +1214,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [43]
 
 [44]
-<Tor/tor pla.jpg, id=958, 7898.50874pt x 5611.96625pt>
+<Tor/tor pla.jpg, id=952, 7898.50874pt x 5611.96625pt>
 File: Tor/tor pla.jpg Graphic file (type jpg)
 <use Tor/tor pla.jpg>
 Package pdftex.def Info: Tor/tor pla.jpg  used on input line 622.
@@ -1228,21 +1233,21 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: A82101F79AD993EA7C07AC8B5863B94F;7558.
+(rerunfilecheck)             Checksum: 3B7F814A7DEC32C9248824E4C732293E;7667.
  ) 
 Here is how much of TeX's memory you used:
- 39340 strings out of 473201
- 869482 string characters out of 5716120
- 1387076 words of memory out of 5000000
- 61077 multiletter control sequences out of 15000+600000
- 617156 words of font info for 418 fonts, out of 8000000 for 9000
+ 39357 strings out of 473201
+ 869718 string characters out of 5716120
+ 1386104 words of memory out of 5000000
+ 61091 multiletter control sequences out of 15000+600000
+ 617233 words of font info for 419 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,16n,105p,1572b,689s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,16n,105p,1569b,689s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on TFG.pdf (54 pages, 16869909 bytes).
+Output written on TFG.pdf (54 pages, 13705542 bytes).
 PDF statistics:
- 1178 PDF objects out of 1200 (max. 8388607)
- 990 compressed objects within 10 object streams
- 313 named destinations out of 1000 (max. 500000)
- 94605 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1169 PDF objects out of 1200 (max. 8388607)
+ 977 compressed objects within 10 object streams
+ 314 named destinations out of 1000 (max. 500000)
+ 94610 words of extra memory for PDF output out of 106986 (max. 10000000)
 

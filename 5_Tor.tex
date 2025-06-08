@@ -3,7 +3,7 @@
 Al capítol anterior hem enunciat i demostrat els teoremes d'encabiments isomètrics $C^1$ de Nash, i hem vist la manera en què Kuiper va reduir la codimensió de l'espai ambient a 1. A continuació revisitarem el tor, una varietat topològica que no es pot encabir isomètricament de manera suau en $\mathbb R^3$, com hem vist al capítol \ref{cap:intro}, i descriurem el mètode amb el qual es pot encabir isomètricament de manera $C^1$. 
 Veurem que aquesta demostració ja utilitza el llenguatge de la integració convexa, que hem introduït al final del capítol anterior.
 
-L'elaboració d'aquest encabiment va ser realitzada per Vincent Borrelli, Saïd Jabrane, Francis Lazarus i Boris Thibert i publicada l'any 2013. La cita principal d'aquest capítol és \cite{borrelli2013}. En aquest capítol no donem, en general, les demostracions de lemes i sublemes, que es troben a \cite{borrelli2013}.
+L'elaboració d'aquest encabiment va ser realitzada per Vincent Borrelli, Saïd Jabrane, Francis Lazarus i Boris Thibert i publicada l'any 2013. La cita principal d'aquest capítol és \cite{borrelli2013}. En aquest capítol no donem, en general, les demostracions de lemes i sublemes, que es troben a l'article original.
 
 \section{Integració convexa 1D}
 A continuació exposarem el mètode d'integració convexa en el cas 1D, que és el cas més senzill i servirà de base per a la integració convexa en el cas 2D. Veurem que consisteix en trobar solucions de relacions diferencials a partir de termes oscil·lants d'alta freqüència, que anomenarem voltes. A més, donarem la funció exacta que determina aquestes voltes, en el cas dels encabiments isomètrics.
@@ -34,7 +34,7 @@ Si aquestes voltes existeixen, podem utilitzar-les per obtenir una nova aplicaci
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.65\textwidth]{voltes.png}
-    \caption{Representació de $h(x,\set{Nx})$. La imatge de $h$ roman dins la relació diferencial $\mathcal R$, en blau. Figura de \cite{borrelli2013}.}
+    \caption{Representació de $h(x,\set{Nx})$. La imatge de $h$ roman dins la relació diferencial $\mathcal R$, en blau. Figura de \citet{borrelli2013}.}
     \label{fig:cinquena_foto}
 \end{figure}
 
@@ -66,7 +66,7 @@ es verifica la condició de l'equació \eqref{eq:def voltes}.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.35\textwidth]{J0.png}
-    \caption{Cada volta $h(s,\cdot)$ comença al punt alt de la corba vermella, baixa i torna a l'inici, de tal manera que la seva integral sobre $s$ val $f'(s)$. Figura de \cite{borrelli2013}.}
+    \caption{Cada volta $h(s,\cdot)$ comença al punt alt de la corba vermella, baixa i torna a l'inici, de tal manera que la seva integral sobre $s$ val $f'(s)$. Figura de \citet{borrelli2013}.}
     \label{fig:sisena_foto}
 \end{figure}
 
@@ -93,7 +93,7 @@ A més, canviem l'escala tal que $\ell(U)=\|U\|$.
 \begin{figure}[htbp]
     \centering
     \includegraphics[height=0.3\textwidth]{domini.png}
-    \caption{Domini fonamental de $\mathbb T^2$ que genera el cilindre $\mathcal Cil$. Figura de \cite{borrelli2013}.}
+    \caption{Domini fonamental de $\mathbb T^2$ que genera el cilindre $\mathcal Cil$. Figura de \citet{borrelli2013}.}
     \label{fig:setena_foto}
 \end{figure}
 
@@ -128,7 +128,7 @@ per alguna funció $\psi:(\mathbb R/\mathbb Z)\times[0,1]\to\mathbb R$ amb $\psi
 \begin{figure}[htbp]
     \centering
     \includegraphics[height=0.33\textwidth]{W.png}
-    \caption{Corba integral $\varphi(t,s)$ del vector $W$. Figura de \cite{borrelli2013}.}
+    \caption{Corba integral $\varphi(t,s)$ del vector $W$. Figura de \citet{borrelli2013}.}
     \label{fig:vuitena_foto}
 \end{figure}
 
@@ -516,7 +516,7 @@ on $N$ és un enter i les $\ell_j$ es defineixen per entorns compactes, en gener
 El procés d'integració convexa que es presenta aquí aconsegueix trobar tres formes lineals $\ell_1, \ell_2, \ell_3$ que funcionen a un nivell global, de manera que $N$ es redueix a $3$ i no cal separar en entorns compactes.
 
 \begin{obs}
-    Aquest és el fet que simplifica enormement el càlcul de l'encabiment isomètric de \cite{borrelli2013}, ja que no cal utilitzar tota la maquinària de descomposició en entorns $\set{N_p}_p$ que hem vist a la demostració del teorema de Nash.
+    Aquest és el fet que simplifica enormement el càlcul de l'encabiment isomètric de \citet{borrelli2013}, ja que no cal utilitzar tota la maquinària de descomposició en entorns $\set{N_p}_p$ que hem vist a la demostració del teorema de Nash.
 \end{obs}
 
 En efecte, suposarem que la immersió $f$ és tal que el defecte isomètric pertany al con obert
@@ -616,11 +616,11 @@ Així, podem afirmar el següent resultat.
 \end{teo}
 
 \section{Resultat: un objecte contraintuïtiu}
-A més del mètode que hem descrit aquí, \cite{borrelli2013} dissenyen un algoritme que permet implementar el procés en el llenguatge de programació $C++$, que està fora de l'abast d'aquest treball. Tanmateix, la figura \ref{fig:tor_pl} mostra el resultat d'aplicar aquest algoritme a un encabiment clàssic del tor.
+A més del mètode que hem descrit aquí, \citet{borrelli2013} dissenyen un algoritme que permet implementar el procés en el llenguatge de programació $C++$, que està fora de l'abast d'aquest treball. Tanmateix, la figura \ref{fig:tor_pl} mostra el resultat d'aplicar aquest algoritme a un encabiment clàssic del tor.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Tor/tor pla.jpg}
-    \caption{Encabiment isomètric del tor pla obtingut amb integració convexa. Figura de \cite{borrelli2013}.}
+    \caption{Encabiment isomètric del tor pla obtingut amb integració convexa. Figura de \citet{borrelli2013}.}
     \label{fig:tor_pl} 
 \end{figure}
 
