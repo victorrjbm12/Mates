@@ -1,6 +1,6 @@
 \chapter{El teorema d'encabiments $C^1$ de Nash-Kuiper}\label{chap:capitol_nash}
 
-Al final del capítol anterior hem vist que és possible trobar immersions i encabiments isomètrics que resultarien impossibles en altres condicions si no imposem que aquestes aplicacions siguin de classe $C^\infty$. Aquest capítol està dedicat a una formalització d'aquesta idea mitjançant el teorema de Nash-Kuiper. El cos principal del capítol consistirà en la demostració dels teoremes originals tals com els va demostrar \citet{nash1954}, de manera que veurem que si una varietat riemanniana es pot encabir de manera curta en un espai euclidià de dimensió $k\ge n+2$, aleshores es pot modificar aquesta aplicació per obtenir-ne una d'isomètrica tan propera com vulguem, però amb regularitat $C^1$. Al final del capítol veurem una millora clau en la demostració, comentant breument l'article de Nicolaas H. Kuiper \cite{kuiper1955} que demostra el mateix resultat per a immersions $C^\infty$ en espais de dimensió $n+1$. A més, farem un breu comentari de com el mètode de Nash va inspirar Mikhaïl Gromov en el desenvolupament de la integració convexa. 
+Al final del capítol anterior hem vist que és possible trobar immersions i encabiments isomètrics que resultarien impossibles en altres condicions si no imposem que aquestes aplicacions siguin de classe $C^\infty$. Aquest capítol està dedicat a una formalització d'aquesta idea mitjançant el teorema de Nash-Kuiper. El cos principal del capítol consistirà en la demostració dels teoremes originals tals com els va demostrar \citet{nash1954}, de manera que veurem que si una varietat riemanniana es pot encabir de manera que l'encabiment escurci distàncies locals en un espai euclidià de dimensió $k\ge n+2$, aleshores es pot modificar aquesta aplicació per obtenir-ne una d'isomètrica tan propera com vulguem, però amb regularitat $C^1$. Al final del capítol veurem una millora clau en la demostració, comentant breument l'article de Nicolaas H. Kuiper \cite{kuiper1955} que demostra el mateix resultat per a immersions $C^\infty$ en espais de dimensió $n+1$. A més, farem un breu comentari de com el mètode de Nash va inspirar Mikhaïl Gromov en el desenvolupament de la integració convexa. 
 
 Cal destacar, abans de començar, que el resultat de Nash és molt sorprenent i contraintuïtiu. En efecte, el gran èmfasi en la geometria diferencial i riemanniana de varietats $C^\infty$ havia imposat una noció de la rigidesa de les varietats riemannianes pel que fa als encabiments isomètrics que no és cert en el cas $C^1$. Abans de l'article de Nash, s'havia demostrat l'existència d'encabiments isomètrics en espais euclidians de l'anomenada \textbf{dimensió de Janet}, $s_n = \frac{n(n+1)}{2}$ per varietats analítiques, una dimensió que pot arribar a ser molt més alta que la del teorema de Whitney per encabiments no isomètrics, $2n$. La dràstica baixada de regularitat és \say{el preu a pagar} per trencar aquesta rigidesa.
 \\
@@ -16,24 +16,76 @@ La imatge d'una varietat tancada per un encabiment o immersió contínua és com
     El conjunt límit de l'encabiment per la inclusió $\imath$ de la bola oberta $\mathbb B^2$ en $\mathbb R^2$ és el cercle $\mathbb S^1$.
 \end{ex}
 
-\section{Enunciat dels teoremes}
+\section{Enunciat dels teoremes i estratègia de la demostració}
+A continuació enunciem els teoremes que demostrarem al llarg d'aquest capítol. N'hi ha quatre, pel fet que cal tenir en compte per separat les varietats tancades, als teoremes \ref{teo:tancat_2n} i \ref{teo:tancat_k}, i les obertes, als teoremes \ref{teo:obert_2n+1} i \ref{teo:obert_k}. A més, els teoremes \ref{teo:tancat_2n} i \ref{teo:obert_2n+1} afirmen l'existència d'encabiments isomètrics en espais euclidians de dimensió $2n$ i $2n+1$, respectivament, mentre que els teoremes \ref{teo:tancat_k} i \ref{teo:obert_k} n'afirmen l'existència en $\mathbb R^k$ si $k\ge n+2$ i existeix un encabiment curt $C^\infty$ en $\mathbb R^{k}$. Vegeu \ref{def:curta} per a la definició d'aplicació curta.
 
-\begin{teo}
+\begin{teo}\label{teo:tancat_2n}
     Qualsevol varietat riemanniana tancada suau de dimensió $n$ té un encabiment isomètric $C^1$ en $\mathbb R^{2n}$.
 \end{teo}
-\begin{teo}
+\begin{teo}\label{teo:obert_2n+1}
     Qualsevol varietat riemanniana suau de dimensió $n$ té una immersió isomètrica $C^1$ en $\mathbb R^{2n}$ i un encabiment isomètric $C^1$ en $\mathbb R^{2n+1}$.
 \end{teo}
-\begin{teo}
+\begin{teo}\label{teo:tancat_k}
     Si una varietat riemanniana tancada de dimensió $n$ té una immersió o encabiment $C^\infty$ en $\mathbb R^{k}$ amb $k\ge n+2$, aleshores també té una immersió o encabiment, respectivament, isomètric en $\mathbb R^{k}$.
 \end{teo}
-\begin{teo}
+\begin{teo}\label{teo:obert_k}
     Si una varietat riemanniana oberta de dimensió $n$ té una immersió o encabiment $C^\infty$ curta en $\mathbb R^{k}$ amb $k\ge n+2$ que no interseca amb el seu conjunt límit (si aquest existeix), aleshores també té una immersió o encabiment, respectivament, isomètric en $\mathbb R^{k}$.
 \end{teo}
-\section{Demostració}
-Sigui $(M,g)$ una varietat riemanniana suau de dimensió $n$, amb la seva mètrica intrínseca donada per un tensor mètric $g_{ij}$. Volem trobar una immersió isomètrica d'aquesta varietat $M$ en algun espai euclidià.
+De fet, els teoremes \ref{teo:tancat_2n} i \ref{teo:obert_2n+1} són resultat d'aplicar els teoremes \ref{teo:tancat_k} i \ref{teo:obert_k}, respectivament. Només cal trobar una aplicació curta adequada en cada cas, que serà el primer que veurem a la subsecció \ref{sec:encabiment_inicial}.
 
-Suposem que tenim una immersió $f$ de $M$ en un espai euclidià $\mathbb R^k$, de manera que per un punt amb coordenades locals $\set{x^i}$ de $M$, les coordenades de la seva imatge en $\mathbb R^k$ són $\set{z^\alpha(x^1, \dots, x^n)}$,
+La resta de la demostració que veurem a continuació serà constructiva, i es basarà en un procés iteratiu que requereix un primer encabiment curt o immersió curta de regularitat $C^\infty$. Intuïtivament, es divideix en etapes que es divideixen en passos. En cada un dels passos, s'aplica a una regió de la imatge de l'encabiment una pertorbació o correcció, que veurem a l'equació \eqref{eq:pertorbacio}, i que consisteix en una mena de moviment espiral d'alta freqüència que augmenta la mètrica localment, fent la immersió menys curta. El que segueix és un petit esquema de la organització general del procés iteratiu.
+
+\begin{itemize}
+    \item El procés es divideix en una sèrie \textbf{d'etapes}. Cada una d'elles és igual que la resta, però la primera necessita una immersió $f$ de classe $C^\infty$ curta. Després de cada etapa, la nova immersió segueix sent $C^\infty$ i curta, però l'error mètric és com a molt $2/3$ de l'error de la immersió de l'etapa anterior.
+    \item S'escull un recobriment localment finit de $M$ per conjunts tancats $N_p$. És a dir, tal que cada punt de $M$ pertany, com a molt, a un nombre finit de conjunts $N_p$.
+    \item Cada etapa es divideix en un nombre finit de \textbf{passos}. Primer, la correcció es divideix entre tots els conjunts $N_p$ amb unes funcions pes $\varphi_p$. Aleshores es divideix la correcció de cada $N_p$ en un nombre finit de passos, en l'equació \eqref{eq:lema_descomp}
+    \item Els passos s'han de realitzar un rere l'altre. L'ordre concret no importa, però s'ha d'escollir un ordre i seguir-lo. En varietats obertes, el nombre de passos és infinit, però en cada entorn compacte el nombre de passos és finit.
+\end{itemize}
+
+\section{Demostració}
+\subsection{Obtenint la immersió o l'encabiment inicial}\label{sec:encabiment_inicial}
+En aquesta subsecció expliquem com trobar un encabiment curt $C^\infty$ en $\mathbb R^{2n}$ per varietats riemannianes suaus $n$-dimensionals tancades, i un encabiment curt $C^\infty$ en $\mathbb R^{2n+1}$ per varietats riemannianes suaus $n$-dimensionals obertes que pot ser rebaixat a $\mathbb R^{2n}$ com a immersió curta. Així, els teoremes \ref{teo:tancat_2n} i \ref{teo:obert_2n+1} són resultat d'aplicar els teoremes \ref{teo:tancat_k} i \ref{teo:obert_k} a aquestes aplicacions.
+
+En el cas d'una varietat tancada, podem obtenir l'encabiment inicial en $\mathbb R^{2n}$ mitjançant el teorema de Whitney. Per tal de fer-lo curt, només cal canviar l'escala de l'espai euclidià.
+
+\begin{obs}
+    El teorema de Whitney que hem demostrat en aquest treball, al teorema \ref{teo:whitney}, només ens assegura l'existència d'encabiments en espais de dimensió $2n+1$. Com hem mencionat allà, hi ha diferents formulacions del teorema de Whitney, amb la més forta assegurant l'existència d'encabiments en espais de dimensió $2n$ per a varietats tancades.
+\end{obs}
+
+En el cas d'una varietat oberta, s'escull un recobriment localment finit per conjunts compactes $\set{N_p}_p$ i una partició de la unitat $\set{\varphi_p}$ subordinada a aquest recobriment. La construcció d'aquest recobriment sempre és possible, com hem vist al lema \ref{lema:paracompact}. Denotem per $x_{p_i}$ la coordenada $i$-èssima de $N_p$. Suposem $|x_{p_i}|<1$ per a qualsevol $i$ i $p$. A més, imposem que cada $N_p$ interseca com a molt amb $s$ d'aquests conjunts, incloent-hi el mateix $N_p$. A continuació, separem els conjunts en $s$ classes, tals que cap conjunt interseca amb un altre de la mateixa classe. 
+
+Construïm un encabiment en un espai $s(n+2)$-dimensional $\mathbb R^{s(n+2)}$ amb les següents funcions:
+\begin{equation}
+    u_\sigma = 
+    \begin{cases}
+        \varepsilon_p\varphi_p & \text{en entorns $N_p$ de la classe $\sigma$} \\
+        0 & \text{a la resta d'entorns}
+    \end{cases}
+\end{equation}
+\begin{equation}
+    v_\sigma = 
+    \begin{cases}
+        \varepsilon_p^2\varphi_p & \text{en entorns $N_p$ de la classe $\sigma$} \\
+        0 & \text{a la resta d'entorns}
+    \end{cases}
+\end{equation}
+\begin{equation}
+    w_{\sigma i} = 
+    \begin{cases}
+        \varepsilon_p\varphi_p x_{p i} & \text{en entorns $N_p$ de la classe $\sigma$} \\
+        0 & \text{a la resta d'entorns}
+    \end{cases}
+\end{equation}
+on $\varepsilon_p$ formen part d'una successió monòtona decreixent i convergent a $0$. Qualsevol parell de punts de la varietat en entorns diferents es pot distingir per tenir diferents conjunts de raons $u_\sigma/v_\sigma$, i qualsevol parell de punts en el mateix entorn es pot distingir pels $w_{\sigma i}$ corresponents. A més, la frontera de l'encabiment és l'origen de coordenades.
+
+Per últim, aquesta immersió es pot fer curta escollint els $\varepsilon_p$ tal que, si la immersió amb els $p$ primers entorns és curta per un factor $\frac13(2-1/p)$ o més gran, prenem $\varepsilon_{p+1}$ prou petit perquè la immersió amb $p+1$ primers entorns sigui curta per un factor $\frac13(2-1/(p+1))$ o més gran. 
+
+Amb això obtenim un encabiment curt de classe $C^\infty$ de la varietat en un espai $s(n+2)$-dimensional. Mitjançant projeccions lineals com les de la demostració del teorema de Whitney, podem rebaixar la dimensió de l'espai de l'encabiment fins a $2n+1$, i fins a $2n$ per a immersions. Amb això, hem vist que es pode trobar aplicacions que compleixen els requeriments de les hipòtesis dels teoremes \ref{teo:tancat_k} i \ref{teo:obert_k} en els casos descrits als teoremes \ref{teo:tancat_2n} i \ref{teo:obert_2n+1}.
+
+
+\subsection{Inici de la demostració: l'error mètric}
+
+Sigui $(M,g)$ una varietat riemanniana suau de dimensió $n$, amb la seva mètrica intrínseca donada per un tensor mètric $g_{ij}$. Suposem que tenim una immersió $f$ de $M$ en un espai euclidià $\mathbb R^k$, de manera que per un punt amb coordenades locals $\set{x^i}$ de $M$, les coordenades de la seva imatge en $\mathbb R^k$ són $\set{z^\alpha(x^1, \dots, x^n)}$,
 \begin{align*}
     f:M&\to \mathbb R^k, \\
     \set{x^i} &\mapsto \set{z^\alpha(x^1, \dots, x^n)}. 
@@ -45,10 +97,10 @@ Aleshores, la mètrica induïda en $M$ és donada pel tensor mètric
 El nostre objectiu és equivalent a aconseguir que $h_{ij}=g_{ij}.$
 
 Per tal de començar la demostració, el primer que requerim és que la immersió original $f$ sigui de classe $C^\infty$ i \textit{curta}.
-\begin{defi}
+\begin{defi}\label{def:curta}
     Diem que una immersió $f:M\to \mathbb R^k$ és \textbf{curta} si l'error mètric és definit positiu, on l'\textbf{error mètric} és el tensor diferència $\delta_{ij} = g_{ij} - h_{ij}$.
 \end{defi}
-El més important d'aquesta definició és que, si $f$ és curta, els vectors tangents a $M$ mai s'allarguen sota $f$. És fàcil trobar immersions d'aquesta mena per a varietats tancades, mentre que per varietats obertes cal utilitzar un mecanisme més complicat. Discutim la manera d'obtenir aquestes immersions a la secció \ref{sec:encabiment_inicial}.
+El més important d'aquesta definició és que, si $f$ és curta, els vectors tangents a $M$ mai s'allarguen sota $f$. És fàcil trobar immersions d'aquesta mena per a varietats tancades, mentre que per varietats obertes cal utilitzar un mecanisme més complicat, com hem vist a la secció \ref{sec:encabiment_inicial}.
 
 Un cop trobada aquesta immersió curta, l'estructura de la demostració dels teoremes de Nash consisteix en fer una successió de pertorbacions de $f$ que disminueixen l'error mètric progressivament fins a convergir en una immersió isomètrica. En general, el procés de pertorbació es divideix en \textbf{etapes} (en anglès, \textit{stages}), i a cada etapa es divideix en \textbf{passos} (en anglès, \textit{steps}). Així, la primera etapa prendrà la nostra immersió curta $f$ i en retornarà una $f_1$ amb un error mètric com a molt la meitat del de $f$, que serà també $C^\infty$ i curta. Aquesta $f_1$ serà millorada en la segona etapa, i així successivament.
 
@@ -62,7 +114,7 @@ en la segona etapa, l'error mètric serà
 \end{equation*}
 on $\overline{h}_{ij}$ és la mètrica induïda per $f_1$. Aquest error mètric anirà disminuint geomètricament després de cada etapa, i en el límit obtindrem una immersió isomètrica.
 
-En cada etapa individual, el procés de pertorbació es divideix en passos. Cada pas afectarà només un cert entorn de $M$, però els passos s'hauran de dur a terme l'un rere l'altre, no simultàniament. Per tal de fer-ho, cal prendre un recobriment localment finit de $M$ per conjunts compactes $\set{N_p}_p$. La construcció d'aquest recobriment és sempre possible, com hem vist al lema \ref{lema:paracompact}. Sigui $\set{\varphi_p}_p$ una partició de la unitat subordinada a $\set{N_p}_p$. 
+En cada etapa individual, el procés de pertorbació es divideix en passos. Cada pas afectarà només un cert entorn de $M$, però els passos s'hauran de dur a terme l'un rere l'altre, no simultàniament. Per tal de fer-ho, cal prendre un recobriment localment finit de $M$ per conjunts compactes $\set{N_p}_p$, com hem fet més amunt. Sigui $\set{\varphi_p}_p$ una partició de la unitat subordinada a $\set{N_p}_p$. 
 
 En cada entorn $N_p$, voldrem que l'error mètric $\delta_{ij}$ sigui reduït en $\frac12\varphi_p\delta_{ij}$ després d'una etapa. Per fer-ho, necessitem aproximar $\delta_{ij}$ per un tensor de classe $C^\infty$ i definit positiu $\beta_{ij}$. Per tal de fer servir aquest $\beta_{ij}$ per reduir l'error mètric, necessitem el següent resultat:
 \begin{lema}
@@ -71,9 +123,9 @@ En cada entorn $N_p$, voldrem que l'error mètric $\delta_{ij}$ sigui reduït en
     \frac12\varphi_p\beta_{ij} = \sum_\nu a_\nu \left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right),
 \end{equation}
 \end{lema}
-\begin{obs}
-    Cal remarcar que aquest lema només és cert si $\beta_{ij}$ és definit positiu, i que el nombre de termes del sumatori és finit.
-\end{obs}
+\begin{obss}
+    Cal remarcar que aquest lema només és cert si $\beta_{ij}$ és definit positiu, i que el nombre de termes del sumatori és finit. Escrivim la demostració a continuació perquè la descomposició és clau per la demostració dels teoremes, però és una mica tècnica i no és essencial per entendre l'argument de Nash.
+\end{obss}
 {\color{black}\textit{Prova}.
 El conjunt de les matrius simètriques definides positives de rang $n$ és un con de dimensió $\frac12n(n+1)$. És possible cobrir aquest con amb conjunts simplicials oberts, de tal manera que cada punt del con estigui cobert per, com a molt, un nombre $W$ d'aquests entorns, on $W$ depèn només de $n$. 
 
@@ -216,7 +268,7 @@ Combinant aquest resultat amb la desigualtat \eqref{eq:primera_derivada_cota}, o
 \end{equation*}
 \qed
 }
-\subsection{Convergència dels passos en una etapa}
+\subsection{Control de l'error en cada etapa}
 A continuació ens interessa veure quines són les constants $\set{\lambda_\nu}$ necessàries en els diferents passos d'una etapa per tal que el procés convergeixi tal com desitgem.
 \begin{defi}
     Sigui $N_p$ un entorn del recobriment de $M$, i considerem el pas $\nu$ d'una etapa donada.
@@ -301,16 +353,6 @@ Per tal que els passos siguin realitzables, només cal tenir una immersió $C^\i
 
 Procedim per inducció. Suposem que cada pas pren una immersió que produeix una mètrica induïda definida positiva, i augmenta la mètrica induïda en $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}\right)$. Així, la mètrica induïda és definida positiva. Aquest augment és un tensor no-negatiu, i l'error és $O\left(\frac1{\lambda}\right)$, de manera que per una $\lambda$ prou gran, ens podem assegurar que la mètrica induïda és definida positiva.
 
-\subsection{Organització general}
-% {\color{blue} Aquest apartat haurem de mirar de moure'l a un lloc més adequat, potser. }
-
-\begin{itemize}
-    \item El procés es divideix en una sèrie \textbf{d'etapes}. Cada una d'elles és igual que la resta, però la primera necessita una immersió $f$ de classe $C^\infty$ curta. Després de cada etapa, la nova immersió segueix sent $C^\infty$ i curta, però l'error mètric és com a molt $2/3$ de l'error de la immersió de l'etapa anterior.
-    \item S'escull un recobriment localment finit de $M$ per conjunts tancats $N_p$. És a dir, tal que cada punt de $M$ pertany a, com a molt, un nombre finit de conjunts $N_p$.
-    \item Cada etapa es divideix en un nombre finit de \textbf{passos}. Primer, la correcció es divideix entre tots els conjunts $N_p$ amb unes funcions pes $\varphi_p$. Aleshores es divideix la correcció de cada $N_p$ en un nombre finit de passos, en l'equació \eqref{eq:lema_descomp}
-    \item Els passos s'han de realitzar un rere l'altre. L'ordre concret no importa, però s'ha d'escollir un ordre i seguir-lo. En varietats obertes, el nombre de passos és infinit, però en cada entorn compacte el nombre de passos és finit.
-\end{itemize}
-
 \subsection{Convergència de la immersió}
 Per la proposició \ref{prop:dos de tres}, sabem que la mètrica resultant del procés en el límit és la mètrica intrínseca de la varietat, com volíem. Ara bé, encara no hem demostrat que convergeixi en una immersió $C^1$. El primer que cal assegurar és que el resultat en el límit és, efectivament, una immersió. Amb aquest fi, podem imposar que en el pas $r$ de l'etapa $s$ del procés, el corresponent $B_3$ estigui fitat per
 \begin{equation}\label{eq:b3_cota}
@@ -374,45 +416,6 @@ Amb aquest resultat, obtenim per inducció que en qualsevol nombre finit de pass
 \color{black} \textit{Prova.} 
     Considerem una enumeració dels $N_p$ qualsevol. Sigui $S_r$ el conjunt de tots els parells de punts dels primers $r$ entorns tals que estaven separats per una distància major que $2^{-r}$ en l'encabiment curt original. Qualsevol parell de punts pertany a $S_r$ per algun $r$. A partir de l'etapa $r$ requerirem que el $B_3$ de l'etapa $\mu\le r$ i el pas $\nu$ sigui més petit que $\varepsilon_r2^{-\mu-\nu}$, on $\varepsilon_r$ s'escull prou petit per assegurar que cap parell de punts pugui ajuntar-se al límit. D'aquesta manera, tots els parells de punts queden protegits en el límit, i la immersió resultant és un encabiment. \qed
 }
-\subsection{Obtenint la immersió o l'encabiment inicial}\label{sec:encabiment_inicial}
-Amb tot el que hem demostrat fins aquí, ja hem vist que per qualsevol immersió o encabiment curt inicial $C^\infty$, es pot trobar una immersió o encabiment $C^1$ isomètric de la varietat en un espai euclidià. Només queda veure que es pot trobar aquesta immersió o aquest encabiment inicial. En aquesta subsecció expliquem el procés per obtenir-lo. 
-
-En el cas d'una varietat tancada, podem obtenir l'encabiment inicial en $\mathbb R^{2n}$ mitjançant el teorema de Whitney. Per tal de fer-lo curt, només cal canviar l'escala de l'espai euclidià.
-\begin{obs}
-    El teorema de Whitney que hem demostrat en aquest treball, al teorema \ref{teo:whitney}, només ens assegura l'existència d'encabiments en espais de dimensió $2n+1$. Com hem mencionat allà, hi ha diferents formulacions del teorema de Whitney, amb la més forta assegurant l'existència d'encabiments en espais de dimensió $2n$.
-\end{obs}
-
-En el cas d'una varietat oberta, s'escull un recobriment per tancats $N_p$ i una partició de la unitat $\set{\varphi_p}$ subordinada a aquest recobriment, com abans, i denotem $x_{p_i}$ per la coordenada $i$-èssima de $N_p$. Suposem $|x_{p_i}|<1$ per a qualsevol $i$ i $p$. A més, imposem que cada $N_p$ interseca com a molt amb $s$ d'aquests conjunts, incloent-hi el mateix $N_p$. A continuació, separem els conjunts en $s$ classes, tals que cap conjunt té intersecció amb un altre de la mateixa classe. 
-
-Construim un encabiment en un espai $s(n+2)$-dimensional $\mathbb R^{s(n+2)}$ amb les següents funcions:
-\begin{equation}
-    u_\sigma = 
-    \begin{cases}
-        \varepsilon_p\varphi_p & \text{en entorns $N_p$ de la classe $\sigma$} \\
-        0 & \text{en la resta d'entorns}
-    \end{cases}
-\end{equation}
-\begin{equation}
-    v_\sigma = 
-    \begin{cases}
-        \varepsilon_p^2\varphi_p & \text{en entorns $N_p$ de la classe $\sigma$} \\
-        0 & \text{en la resta d'entorns}
-    \end{cases}
-\end{equation}
-\begin{equation}
-    w_{\sigma i} = 
-    \begin{cases}
-        \varepsilon_p\varphi_p x_{p i} & \text{en entorns $N_p$ de la classe $\sigma$} \\
-        0 & \text{en la resta d'entorns}
-    \end{cases}
-\end{equation}
-on $\varepsilon_p$ formen part d'una successió monòtona decreixent i convergent a $0$. Qualsevol parell de punts de la varietat en entorns diferents es pot distingir per tenir diferents conjunts de raons $u_\sigma/v_\sigma$, i qualsevol parell de punts en el mateix entorn es pot distingir pels $w_{\sigma i}$ corresponents. A més, la frontera de l'encabiment és l'origen de coordenades.
-
-Per últim, aquesta immersió es pot fer curta escollint els $\varepsilon_p$ tal que, si la immersió amb els $p$ primers entorns és curta per un factor $\frac13(2-1/p)$ o més gran, prenem $\varepsilon_{p+1}$ prou petit perquè la immersió amb $p+1$ primers entorns sigui curta per un factor $\frac13(2-1/(p+1))$ o més gran. 
-
-Amb això obtenim un encabiment curt de classe $C^\infty$ de la varietat en un espai $s(n+2)$-dimensional. Mitjançant projeccions lineals com les de la demostració del teorema de Whitney, podem rebaixar la dimensió de l'espai de l'encabiment fins a $2n+1$, i fins a $2n$ per a immersions.
-
-Amb això hem acabat la demostració del teorema de Nash.
 
 \section{El refinament de Kuiper}
 El fet que Nash utilitzi dos camps vectorials unitaris ortogonals entre ells i a la immersió en l'entorn $N_p$ restringeix severament la utilitat del seu resultat. En concret, per varietats riemannianes de dimensió $2$, com l'esfera o el tor, el que ens interessa idealment és obtenir encabiments isomètrics en l'espai euclidià tridimensional, per tal de poder-les representar visualment, mentre que el resultat de Nash només ens permet construir encabiments isomètrics en un espai euclidià de dimensió $4$. 
@@ -420,7 +423,7 @@ El fet que Nash utilitzi dos camps vectorials unitaris ortogonals entre ells i a
 En efecte, al final de l'article original \cite{nash1954}, Nash mateix conjectura que és possible que el resultat es pugui refinar de tal manera que la codimensió de l'espai ambient sigui $1$ en lloc de $2$. Com hem mencionat a la introducció d'aquest capítol, Nicolaas H. Kuiper va demostrar aquest resultat l'any posterior a la publicació de Nash, de manera que acabem obtenint la següent formulació del teorema de Nash-Kuiper per encabiments $C^1$, \cite{kuiper1955}:
 
 \begin{teo}[\textbf{Nash-Kuiper}]
-    Qualsevol varietat riemanniana tancada de dimensió $n$ té una immersió o encabiment $C^\infty$ en $\mathbb R^k$ amb $k\ge n+1$, aleshores també té una immersió o encabiment, respectivament, isomètric en $\mathbb R^k$.
+    Si una varietat riemanniana de dimensió $n$ té un encabiment curt $C^\infty$ en $\mathbb R^k$ amb $k\ge n+1$, aleshores també té un encabiment isomètric en $\mathbb R^k$ de regularitat $C^1$ arbitràriament proper a l'encabiment original. En concret, existeix un encabiment isomètric $C^1$ en $\mathbb R^{2n}$ per varietats tancades i en $\mathbb R^{2n+1}$ per varietats obertes.
 \end{teo}
 
 El mètode de Kuiper és molt similar al de Nash, però fa servir un tipus de pertorbació diferent, que anomenem \textbf{corrugació} (en anglès, \textit{strain}). Sigui $x^1$ la primera coordenada local de la varietat $M$, i $h_{ij}$ el tensor mètric induït per una primera immersió curta $C^\infty$ de la varietat en $\mathbb R^k$. Sigui $\eta$ un camp vectorial unitari normal a la imatge de la immersió, i $\xi$ el camp vectorial tangent tal que $\xi^\beta := \frac{\partial z^\beta}{\partial x^1}$, on $\set{z^\beta}$ és el sistema de coordenades de l'espai euclidià. Aleshores, la pertorbació de Kuiper és
@@ -431,6 +434,6 @@ El mètode de Kuiper és molt similar al de Nash, però fa servir un tipus de pe
 \end{equation*}
 on $h$ és un valor derivat de la mètrica induïda tal que $h^2 = h_{11}$, $\overline\alpha = \alpha / \sqrt{h_{11}}$ amb $\alpha$ constant i $\lambda$ és una constant que juga el mateix rol que a la pertorbació de Nash. Aquesta no és la única manera d'obtenir una pertorbació que arribi a un encabiment isomètric, sinó que es poden trobar altres mètodes que s'ajustin millor a la varietat concreta que es vulgui encabir.
 \section{El naixement de la integració convexa}
-El mètode de Nash-Kuiper per obtenir encabiments isometrics $C^1$ com a límits de successions d'encabiments curts $C^\infty$ mitjançant moviments oscil·lants d'alta freqüència va semblar una peculiaritat als matemàtics de l'època. Ara bé, el matemàtic rus Mikhaïl Gromov va prendre l'essència d'aquesta mena de demostracions i les va generalitzar, formalitzar i unificar sota el concepte de la \textbf{integració convexa}. A grans trets, la integració convexa consisteix en prendre solucions formals a certes relacions diferencials parcials i deformar-les per trobar solucions geomètriques reals, si aquestes relacions diferencials parcials verifiquen un criteri de flexibilitat anomenat el principi $h$.
+El mètode de Nash-Kuiper per obtenir encabiments isometrics $C^1$ com a límits de successions d'encabiments curts $C^\infty$ mitjançant moviments oscil·lants d'alta freqüència va semblar una peculiaritat als matemàtics de l'època. Ara bé, el matemàtic rus Mikhaïl Gromov va prendre l'essència d'aquesta mena de demostracions i les va generalitzar, formalitzar i unificar sota el concepte de la \textbf{integració convexa}. A grans trets, la integració convexa permet prendre solucions formals a certes relacions diferencials parcials i deformar-les per trobar solucions geomètriques reals, si aquestes relacions diferencials parcials verifiquen un criteri de flexibilitat anomenat el principi $h$.
 
 Al següent capítol veurem un encabiment isomètric $C^1$ d'un tor pla en $\mathbb R^3$ que no seguirà al peu de la lletra els mètodes de Nash ni de Kuiper, sinó que tractarà el problema amb el llenguatge general de la integració convexa. 

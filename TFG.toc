@@ -20,16 +20,16 @@
 \contentsline {section}{\numberline {3.3}Conclusions}{24}{section.3.3}%
 \contentsline {chapter}{\numberline {4}El teorema d'encabiments $C^1$ de Nash-Kuiper}{25}{chapter.4}%
 \contentsline {subsection}{\numberline {4.0.1}Definicions preliminars}{25}{subsection.4.0.1}%
-\contentsline {section}{\numberline {4.1}Enunciat dels teoremes}{26}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Demostració}{26}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}La pertorbació en un pas}{28}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Convergència dels passos en una etapa}{30}{subsection.4.2.2}%
-\contentsline {subsubsection}{Realitzabilitat dels passos}{32}{section*.9}%
-\contentsline {subsection}{\numberline {4.2.3}Organització general}{33}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Convergència de la immersió}{33}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Encabiments isomètrics}{34}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}Obtenint la immersió o l'encabiment inicial}{34}{subsection.4.2.6}%
-\contentsline {section}{\numberline {4.3}El refinament de Kuiper}{35}{section.4.3}%
+\contentsline {section}{\numberline {4.1}Enunciat dels teoremes i estratègia de la demostració}{26}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Demostració}{27}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Obtenint la immersió o l'encabiment inicial}{27}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Inici de la demostració: l'error mètric}{28}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}La pertorbació en un pas}{30}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Control de l'error en cada etapa}{32}{subsection.4.2.4}%
+\contentsline {subsubsection}{Realitzabilitat dels passos}{34}{section*.9}%
+\contentsline {subsection}{\numberline {4.2.5}Convergència de la immersió}{34}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Encabiments isomètrics}{35}{subsection.4.2.6}%
+\contentsline {section}{\numberline {4.3}El refinament de Kuiper}{36}{section.4.3}%
 \contentsline {section}{\numberline {4.4}El naixement de la integració convexa}{36}{section.4.4}%
 \contentsline {chapter}{\numberline {5}Un encabiment isomètric $C^1$ d'un tor pla}{37}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Integració convexa 1D}{37}{section.5.1}%

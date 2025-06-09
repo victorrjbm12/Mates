@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  9 JUN 2025 13:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.17)  9 JUN 2025 16:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1167,12 +1167,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 ]
-<voltes.png, id=848, 1454.43375pt x 444.66125pt>
+<voltes.png, id=871, 1454.43375pt x 444.66125pt>
 File: voltes.png Graphic file (type png)
 <use voltes.png>
 Package pdftex.def Info: voltes.png  used on input line 36.
 (pdftex.def)             Requested size: 275.63663pt x 84.2694pt.
-<J0.png, id=853, 933.4875pt x 766.865pt>
+<J0.png, id=876, 933.4875pt x 766.865pt>
 File: J0.png Graphic file (type png)
 <use J0.png>
 Package pdftex.def Info: J0.png  used on input line 68.
@@ -1180,7 +1180,7 @@ Package pdftex.def Info: J0.png  used on input line 68.
 
 
 [38 <./voltes.png>]
-<domini.png, id=869, 942.52126pt x 644.4075pt>
+<domini.png, id=892, 942.52126pt x 644.4075pt>
 File: domini.png Graphic file (type png)
 <use domini.png>
 Package pdftex.def Info: domini.png  used on input line 95.
@@ -1197,7 +1197,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 [39 <./J0.png>]
-<W.png, id=881, 673.51625pt x 468.75125pt>
+<W.png, id=904, 673.51625pt x 468.75125pt>
 File: W.png Graphic file (type png)
 <use W.png>
 Package pdftex.def Info: W.png  used on input line 130.
@@ -1226,7 +1226,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [43]
 
 [44]
-<Tor/tor pla.jpg, id=953, 7898.50874pt x 5611.96625pt>
+<Tor/tor pla.jpg, id=976, 7898.50874pt x 5611.96625pt>
 File: Tor/tor pla.jpg Graphic file (type jpg)
 <use Tor/tor pla.jpg>
 Package pdftex.def Info: Tor/tor pla.jpg  used on input line 362.
@@ -1245,21 +1245,21 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 10B093F2DE7C16B19E8D0FB35F393FE8;7698.
+(rerunfilecheck)             Checksum: 0DBFF6FD465DEFC451151C54F654B408;7956.
  ) 
 Here is how much of TeX's memory you used:
- 39360 strings out of 473201
- 869744 string characters out of 5716120
- 1386104 words of memory out of 5000000
- 61091 multiletter control sequences out of 15000+600000
- 617338 words of font info for 420 fonts, out of 8000000 for 9000
+ 39359 strings out of 473201
+ 869747 string characters out of 5716120
+ 1385237 words of memory out of 5000000
+ 61096 multiletter control sequences out of 15000+600000
+ 617063 words of font info for 417 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,105p,1573b,689s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on TFG.pdf (54 pages, 13705786 bytes).
+Output written on TFG.pdf (54 pages, 13708578 bytes).
 PDF statistics:
- 1170 PDF objects out of 1200 (max. 8388607)
- 978 compressed objects within 10 object streams
+ 1194 PDF objects out of 1200 (max. 8388607)
+ 1001 compressed objects within 11 object streams
  315 named destinations out of 1000 (max. 500000)
  94610 words of extra memory for PDF output out of 106986 (max. 10000000)
 
