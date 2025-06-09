@@ -12,7 +12,7 @@
 \contentsline {subsection}{\numberline {2.2.6}Un resultat interessant en $\mathbb R^3$}{15}{subsection.2.2.6}%
 \contentsline {chapter}{\numberline {3}La cinta de Möbius de paper òptima}{18}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introducció al problema}{18}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Preliminars a la demostració}{19}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.1}Preliminars a la demostració}{20}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Demostració}{20}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Existència de la foliació per plecs}{20}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Demostració del lema T}{21}{subsection.3.2.2}%

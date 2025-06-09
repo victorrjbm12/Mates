@@ -446,7 +446,7 @@ El teorema de Whitney (o teoremes, degut a les seves diverses formulacions) afir
 \end{teo}
 
 \begin{lema}
-    Sigui $M\subseteq\mathbb R^N$ una subvarietat suau $n$-dimensional. Per tot $v\in \mathbb R^N\setminus R^{N-1}$, sigui $\pi_v : \mathbb R^N\setminus R^{N-1}\to S^{N-1}$ la projecció amb nucli $\mathbb Rv$, on identifiquem $\mathbb R^{N-1}$ amb el subespai de $\mathbb R^N$ amb la última coordenada nul·la. Si $N>2n+1$, aleshores hi ha un conjunt dens de vectors $v\in \mathbb R^N\setminus R^{N-1}$ tals que $\pi_v|_M$ és una immersió injectiva de $M$ en $\mathbb R^{N-1}$.
+    Sigui $M\subseteq\mathbb R^N$ una subvarietat suau $n$-dimensional. Per tot $v\in \mathbb R^N\setminus \mathbb R^{N-1}$, sigui $\pi_v : \mathbb R^N\to \mathbb R^{N-1}$ la projecció amb nucli $\mathbb Rv$, on identifiquem $\mathbb R^{N-1}$ amb el subespai de $\mathbb R^N$ amb la última coordenada nul·la. Si $N>2n+1$, aleshores hi ha un conjunt dens de vectors $v\in \mathbb R^N\setminus \mathbb R^{N-1}$ tals que $\pi_v|_M$ és una immersió injectiva de $M$ en $\mathbb R^{N-1}$.
 \end{lema}
 {
     \color{black} 
@@ -461,12 +461,12 @@ El teorema de Whitney (o teoremes, degut a les seves diverses formulacions) afir
     Siguin ara
     \begin{align*}
         \Delta_M &= \set{(p,p):p\in M}\subseteq M\times M,\\
-        M_0 &= \set{(p,0):p\in M}\subseteq TM,\\
+        M_0 &= \set{(p,0):p\in M}\subseteq TM,
     \end{align*}
     i considerem les aplicacions següents cap a l'espai projectiu real $\mathbb {RP}^{N-1}$:
     \begin{align*}
         \kappa:(M\times M)\setminus\Delta_M&\to\mathbb {RP}^{N-1},\\
-        (p,q) &\mapsto [p-q]\\
+        (p,q) &\mapsto [p-q]
     \end{align*}
     i
     \begin{align*}
@@ -497,7 +497,6 @@ Al lema anterior, \textbf{propi} tan sols vol dir que l'encabiment és una aplic
     Suposem primer que $M$ és compacta. Aquest és el cas més senzill. Sigui $\set{B_1,\dots,B_m}$ un recobriment finit per boles coordenades, de manera que per cada $i$ existeix un domini de coordenades $B_i'\supseteq \overline{B_i}$ i una carta coordenada $\varphi_i:B_i'\to\mathbb R^n$ que és homeomorfisme de $\overline{B_i}$ amb un compacte de $\mathbb R^n$.
 
     Sigui $\set{\rho_i}_i$ un conjunt de funcions de relleu, tals que $\rho_i$ val 1 en $\overline{B_i}$ i 0 en $\mathbb R^n\setminus B_i'$. L'existència d'aquests conjunts de funcions de relleu és conseqüència de l'existència de funcions de relleu en espais euclidians, com hem vist al lema \ref{lema:bump}. Definim una aplicació suau
-
     \begin{align*}
         F:M&\to\mathbb R^{nm + m},\\
         p&\mapsto \left(\rho_1(p)\varphi_1(p),\dots,\rho_m(p)\varphi_m(p), \rho_1(p),\dots,\rho_m(p)\right)
@@ -512,7 +511,7 @@ Al lema anterior, \textbf{propi} tan sols vol dir que l'encabiment és una aplic
     Suposem ara que $M$ no és compacte. Sigui $f:M\to \mathbb R$ una funció d'exhauriment suau, tal com les hem definit a la definició \ref{def:funció_exhauriment}. Pel teorema de Sard, per tot enter no negatiu $i$ existeixen valors regulars $a_i,b_i$ de $f$ tals que $i<a_i<b_i<i+1$. Definim els subconjunts de $M$
     \begin{align*}
         D_0 &= f^{-1}(-\infty,1],\quad E_0 = f^{-1}(-\infty,a_1],\\
-        D_i &= f^{-1}(i,i+1],\quad E_i = f^{-1}(b_{i-1},a_{i+1}],\\
+        D_i &= f^{-1}(i,i+1],\quad E_i = f^{-1}(b_{i-1},a_{i+1}],
     \end{align*}
     Cada $E_i$ és un domini regular compacte, és a dir, un subconjunt compacte de $M$ tal que la frontera $\partial E$ és una subvarietat suau de dimensió $n-1$, ja que els seus límits són preimatge de valors regulars. Vegeu la definició \ref{def:varietat_topologica_amb_frontera} i la notació \ref{nota:frontier_and_interior} per la definició de frontera i interior. Tenim que $D_i\subseteq int(E_i)$, $M=\bigcup_i D_i$ i $E_i\cap E_j = \emptyset$ si $j\not\in\set{i-1,i,i+1}$. 
 
@@ -563,14 +562,14 @@ En un sistema de coordenades locals $(x^1,\dots,x^n)$, la mètrica riemanniana e
 \begin{equation*}
     g = \sum_{i,j=1}^n g_{ij}dx^i\otimes dx^j := g_{ij}dx^idx^j,
 \end{equation*}
-on $g_{ij}$ són funcions diferenciables en $U$ i $dx^i$ són les 1-formes coordenades.
+on $g_{ij}$ són funcions diferenciables en $U$ i $dx^i$ són les 1-formes coordenades, que definim a continuació.
 
 \begin{defi}
-    Anomenem $1-$formes coordenades, $\set{dx^1,\dots,dx^n}$, a la base de $T_p^*M$ obtinguda dualitzant la base $\set{\frac{\partial}{\partial x^1},\dots,\frac{\partial}{\partial x^n}}$ de $T_pM$ en un sistema de coordenades $x^1,\dots,x^n$.
+    Anomenem \textbf{$1-$formes coordenades}, $\set{dx^1,\dots,dx^n}$, a la base de $T_p^*M$ obtinguda dualitzant la base $\set{\frac{\partial}{\partial x^1},\dots,\frac{\partial}{\partial x^n}}$ de $T_pM$ en un sistema de coordenades $x^1,\dots,x^n$.
 \end{defi}
 
 \begin{defi}
-    Anomenarem \textbf{mètrica euclidiana} en $\mathbb R^n$ la mètrica riemanniana que en qualsevol sistema de coordenades tal que les coordenades siguin $x^1,\dots,x^n$ es pot expressar com
+    Anomenem \textbf{mètrica euclidiana} en $\mathbb R^n$ la mètrica riemanniana que, en qualsevol sistema de coordenades tal que les coordenades siguin $x^1,\dots,x^n$, es pot expressar com
     \begin{equation*}
         \langle\cdot,\cdot\rangle := \delta_{ij}dx^idx^j,
     \end{equation*}
@@ -684,11 +683,11 @@ Intuïtivament, una superfície regular és el·líptica en un punt si, localmen
 
 A continuació enunciem un dels teoremes més importants de la geometria de corbes i superfícies regulars en $\mathbb R^3$, demostrat per Carl Friedrich Gauss el 1827, que relaciona la curvatura de Gauss d'una superfície regular amb la seva mètrica com a varietat riemanniana.
 
-\begin{teo}[Teorema Egregi de Gauss]
+\begin{teo}[Teorema egregi de Gauss]
     La curvatura de Gauss d'una superfície regular només depèn de la mètrica de la superfície com a varietat riemanniana. En concret, la curvatura de Gauss és invariant per isometries. 
 \end{teo}
 
-Un cas particular d'aquest teorema és que la planor tal com l'hem definit a la definició \ref{def:flatness}, que la mètrica d'una varietat riemanniana sigui la mètrica euclidiana, és equivalent a que la curvatura de Gauss sigui nul·la. Això té una implicació a l'hora de determinar quines varietats riemannianes bidimensionals es poden encabir de manera isomètrica en $\mathbb R^3$. En concret, obtenim el següent resultat per als tors plans. 
+Un cas particular d'aquest teorema és que la planor tal com l'hem definit a la definició \ref{def:flatness} és equivalent a que la curvatura de Gauss sigui nul·la en tot punt. Això té una implicació a l'hora de determinar quines varietats riemannianes bidimensionals es poden encabir de manera isomètrica en $\mathbb R^3$. En concret, obtenim el següent resultat per als tors plans. 
 
 \begin{defi}
     Anomenem \textbf{tor} la varietat topològica $\mathbb T^2 = \mathbb R^2/\mathbb Z^2 = [0,1]\times[0,1]/\sim$, on $\sim$ és la relació d'equivalència tal que $(x,0)\sim(x,1)$ i $(0,y)\sim(1,y)$ per a tot $x,y\in[0,1]$. Anomenem \textbf{tor pla} la varietat riemanniana $(\mathbb T^2, g)$ on $\mathbb T^2$ és el tor, i $g$ és la mètrica euclidiana.
@@ -708,7 +707,7 @@ Un cas particular d'aquest teorema és que la planor tal com l'hem definit a la 
 
     Sigui $f:\mathbb T^2\to\mathbb R^3$ un encabiment isomètric $C^\infty$ de $(\mathbb T^2, g)$, on $g$ és la mètrica euclidiana en $\mathbb R^2$. Com $f$ és un encabiment suau, $f(\mathbb T^2)$ és una superfície regular. A més,com $f$ és una aplicació contínua d'un espai topològic compacte, $f(\mathbb T^2)$ és compacte. Per tant, $f(\mathbb T^2)$ és una superfície regular compacta.
 
-    Pel Teorema Egregi de Gauss, la curvatura de Gauss de $f(\mathbb T^2)$ és invariant per isometries, i només depèn de la mètrica $g$. Com $g$ és la mètrica euclidiana, la curvatura de Gauss de $f(\mathbb T^2)$ ha de ser idènticament zero. Ara bé, pel Teorema \ref{teo:elliptic_point}, $f(\mathbb T^2)$ té un punt el·líptic, i per tant la curvatura de Gauss no pot ser idènticament zero. Així doncs, no existeix cap encabiment isomètric $C^\infty$ del tor pla en $\mathbb R^3$.
+    Pel Teorema egregi de Gauss, la curvatura de Gauss de $f(\mathbb T^2)$ és invariant per isometries, i només depèn de la mètrica $g$. Com $g$ és la mètrica euclidiana, la curvatura de Gauss de $f(\mathbb T^2)$ ha de ser idènticament zero. Ara bé, pel Teorema \ref{teo:elliptic_point}, $f(\mathbb T^2)$ té un punt el·líptic, i per tant la curvatura de Gauss no pot ser idènticament zero. Així doncs, no existeix cap encabiment isomètric $C^\infty$ del tor pla en $\mathbb R^3$.
     \qed
 }
 

@@ -2,7 +2,7 @@
 
 Al capítol anterior hem vist que, tot i que pel teorema de Whitney sempre existeix algun espai euclidià de dimensió prou alta tal que s'hi pugui encabir suaument una varietat diferenciable $C^\infty$, no sempre és possible encabir-los en un espai de dimensió 3. A més, fins i tot per varietats riemannianes que sí es poden encabir suaument en $\mathbb R^3$, hem vist que no sempre és possible encabir-les isomètricament, com és el cas del tor pla $(\mathbb T^2, g)$. 
 
-A continuació presentem un resultat obtingut recentment, l'any 2023, per Richard Evan Schwartz, on demostra una altra restricció per una varietat amb frontera, aquesta vegada en el cas de les cintes de Möbius. Veurem que, tot i que és possible encabir-les suaument i isomètrica en $\mathbb R^3$ quan el costat llarg de la cinta de Möbius és $\sqrt3$ vegades major que el curt, no és possible fer-ho quan és més petit. 
+A continuació presentem un resultat obtingut recentment, l'any 2023, per Richard Evan Schwartz, on demostra una altra restricció per una varietat amb frontera, aquesta vegada en el cas de les cintes de Möbius planes rectangulars. Veurem que, tot i que és possible encabir-les suaument i isomètrica en $\mathbb R^3$ quan el costat llarg de la cinta de Möbius és $\sqrt3$ vegades major que el curt, no és possible fer-ho quan és més petit. Parlarem de cintes de Möbius \say{de paper} degut a la familiaritat que es té amb aquest tipus d'objectes i pel fet que qualsevol manipulació suau d'un tros de paper és un encabiment isomètric, per la poca flexibilitat del material.
 
 L'objectiu d'aquest capítol no serà només veure aquest resultat, sinó també veure com el podem \say{esquivar} relaxant les condicions del nostre encabiment isomètric. La manera en què ho aconseguirem apuntarà cap al que veurem al capítol següent, on demostrarem el teorema de Nash. 
 
@@ -19,7 +19,7 @@ Comencem introduint un tipus d'objecte que no havíem definit fins ara, la varie
     Escriurem $\partial M$ per denotar \textbf{la frontera de $M$}, és a dir, el subconjunt de punts de $M$ al voltant dels quals la varietat topològica amb frontera té un entorn homeomorf a $\mathbb H^n$ però no en té cap d'homeomorf a $\mathbb R^n$. Recíprocament, anomenarem $int(M)$ l' \textbf{interior de $M$}, és a dir, els punts de $M$ que no pertanyen a $\partial M$.
 \end{nota}
 
-A continuació, presentem la definició de la cinta de Möbius plana i del seu encabiment isomètric suau en $\mathbb R^3$.
+A continuació, presentem la definició de la cinta de Möbius plana rectangular i del seu encabiment isomètric suau en $\mathbb R^3$.
 \begin{defi}
     Anomenem \textbf{cinta de Möbius plana de raó d'aspecte $\lambda$} la varietat topològica amb frontera obtinguda amb la identificació d'un rectangle de $\mathbb R^2$
     $$M_\lambda := ([0,\lambda] \times [0,1])/\sim, \quad\quad (0,y)\sim(\lambda,1-y)$$
@@ -54,7 +54,7 @@ A continuació, presentem la definició de la cinta de Möbius plana i del seu e
 
 
 
-A continuació presentem el teorema principal que demostrarem en aquest capítol. A més d'aquest, \citet{schwartz2024} demostra el \say{Teorema del límit triangular}, que esmentarem a les conclusions d'aquest capítol. 
+A continuació presentem el teorema principal que demostrarem en aquest capítol. A més d'aquest, \citet{schwartz2024} demostra el \say{Teorema del límit triangular}, que enunciarem a les conclusions d'aquest capítol. 
 \begin{teo}[\textbf{Principal}]\label{teo:Main Schwartz}
     Qualsevol cinta de Möbius de paper encabida en $\mathbb R^3$ té raó d'aspecte més gran que $\sqrt{3}$.
 \end{teo}
@@ -278,8 +278,7 @@ Definim les corbes
     \end{cases}
 \end{equation*}
 
-Per tant, $2\lambda > \max(\alpha(t),\beta(t))$. Posant $t_0 = 1/\sqrt{3}$, tenim que $\alpha(t_0) = \beta(t_0) = 2\sqrt3$.
-
+Per tant, $2\lambda > \max(\alpha(t),\beta(t))$. Posant $t_0 = 1/\sqrt{3}$, tenim que $\alpha(t_0) = \beta(t_0) = 2\sqrt3$. 
 Observem que $\alpha$ és creixent en $(0,\infty)$. Per tant, $\alpha(t)>2\sqrt3$ per a tot $t>t_0$. En canvi, $\beta$ és decreixent en $t\in\mathbb R$. Per tant, $\beta(t)>2\sqrt3$ per a tot $t<t_0$. Tot plegat, obtenim que $\lambda>\sqrt3$, com volíem demostrar.
 
 \section{Conclusions}
@@ -289,7 +288,7 @@ Amb això hem vist i demostrat una nova restricció sobre els encabiments isomè
     Sigui $I_n:M_{\lambda_n}\to\mathbb R^3$ una successió de cintes de Möbius de paper encabides, tals que $\lambda_n\to\sqrt{3}$. Aleshores, $I_n$ convergeix uniformement a una cinta de Möbius de paper triangular, llevat d'isometria.
 \end{teo}
 
-Ara bé, hi ha una manera de prendre un tros de paper de raó d'aspecte $\lambda = 1$, i doblegar-lo de tal manera que el resultat sigui \textit{gairebé} idèntic a una cinta de Möbius de paper encabida. Per aconseguir això, només cal prendre el tros de paper i doblegar-lo un nombre parell de vegades, de tal manera que quedi dividit en un nombre senar de seccions iguals. Si aquestes seccions es dobleguen de manera alternant, com un acordió, podem enganxar els dos extrems i aconseguir un \textbf{acordió de Möbius}. De fet, amb aquest mètode podem aconseguir prendre un paper rectangular de qualsevol raó d'aspecte i tornar-lo en un acordió de Möbius. 
+Ara bé, hi ha una manera de prendre un rectangle de paper de raó d'aspecte $\lambda = 1$, i doblegar-lo de tal manera que el resultat sigui \textit{gairebé} idèntic a una cinta de Möbius de paper encabida. Per aconseguir això, només cal prendre el tros de paper i doblegar-lo un nombre parell de vegades, de tal manera que quedi dividit en un nombre senar de seccions iguals. Si aquestes seccions es dobleguen de manera alternant, com un acordió, podem enganxar els dos extrems i aconseguir un \textbf{acordió de Möbius}. De fet, amb aquest mètode podem prendre un rectangle de paper de qualsevol raó d'aspecte i tornar-lo en un acordió de Möbius. 
 
 \begin{figure}[htbp]
     \centering
@@ -298,7 +297,7 @@ Ara bé, hi ha una manera de prendre un tros de paper de raó d'aspecte $\lambda
     \label{fig:acordio_mobius}
 \end{figure}
 
-Què té d'especial l'acordió de Möbius que impedeix que serveixi com a contraexemple del teorema Principal? Aquest objecte no és una cinta de Möbius de paper encabida, tal com l'hem definit a la definició \ref{def:cinta_mobius_paper}, perquè els dos extrems no poden encaixar correctament sense doblegar el paper de manera suau. Els punts per on dobleguem, dit d'altra manera, no són regulars, de manera que l'encabiment no és $C^\infty$. En concret, hem necessitat regularitat com a mínim $C^2$ per poder definir la curvatura mitjana en la demostració del teorema \ref{teo:existencia_foliacio_plecs}. Si l'encabiment no és prou regular, no hi ha la foliació per plecs necessària per demostrar el teorema Principal. 
+Què té d'especial l'acordió de Möbius que impedeix que serveixi com a contraexemple del teorema Principal? Aquest objecte no és una cinta de Möbius de paper encabida, tal com l'hem definit a la definició \ref{def:cinta_mobius_paper}, perquè els dos extrems no poden encaixar correctament doblegant el paper de manera suau. Els punts per on dobleguem, dit d'altra manera, no són regulars, de manera que l'encabiment no és $C^\infty$. En concret, hem necessitat regularitat com a mínim $C^2$ per poder definir la curvatura mitjana en la demostració del teorema \ref{teo:existencia_foliacio_plecs}. Si l'encabiment no és prou regular, no existeix la foliació per plecs necessària per demostrar el teorema Principal. 
 
 L'acordió de Möbius deixa clar que, relaxant les condicions de regularitat, aconseguim encabiments isomètrics de varietats que no n'admetrien altrament. Aquest fet destacable és el que podem generalitzar en el capítol que segueix, on estudiarem el Teorema de Nash d'immersions i encabiments isomètrics $C^1$.
 

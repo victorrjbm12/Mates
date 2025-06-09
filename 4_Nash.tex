@@ -19,19 +19,19 @@ La imatge d'una varietat tancada per un encabiment o immersió contínua és com
 \section{Enunciat dels teoremes}
 
 \begin{teo}
-    Qualsevol varietat riemanniana tancada de dimensió $n$ té un encabiment isomètric $C^1$ en $\mathbb R^{2n}$.
+    Qualsevol varietat riemanniana tancada suau de dimensió $n$ té un encabiment isomètric $C^1$ en $\mathbb R^{2n}$.
 \end{teo}
 \begin{teo}
-    Qualsevol varietat riemanniana de dimensió $n$ té una immersió isomètrica $C^1$ en $\mathbb R^{2n}$ i un encabiment isomètric $C^1$ en $\mathbb R^{2n+1}$.
+    Qualsevol varietat riemanniana suau de dimensió $n$ té una immersió isomètrica $C^1$ en $\mathbb R^{2n}$ i un encabiment isomètric $C^1$ en $\mathbb R^{2n+1}$.
 \end{teo}
 \begin{teo}
     Si una varietat riemanniana tancada de dimensió $n$ té una immersió o encabiment $C^\infty$ en $\mathbb R^{k}$ amb $k\ge n+2$, aleshores també té una immersió o encabiment, respectivament, isomètric en $\mathbb R^{k}$.
 \end{teo}
 \begin{teo}
-    Si una varietat riemanniana oberta de dimensió $n$ té una immersió o encabiment $C^\infty$ curta en $\mathbb R^{k}$ amb $k\ge n+2$ que no se solapa amb el seu conjunt límit (si aquest existeix), aleshores també té una immersió o encabiment, respectivament, isomètric en $\mathbb R^{k}$ del mateix tipus.
+    Si una varietat riemanniana oberta de dimensió $n$ té una immersió o encabiment $C^\infty$ curta en $\mathbb R^{k}$ amb $k\ge n+2$ que no interseca amb el seu conjunt límit (si aquest existeix), aleshores també té una immersió o encabiment, respectivament, isomètric en $\mathbb R^{k}$.
 \end{teo}
 \section{Demostració}
-Sigui $(M,g)$ una varietat diferenciable riemanniana de dimensió $n$, amb la seva mètrica intrínseca donada per un tensor mètric $g_{ij}$. Volem trobar una immersió isomètrica d'aquesta varietat $M$ en algun espai euclidià.
+Sigui $(M,g)$ una varietat riemanniana suau de dimensió $n$, amb la seva mètrica intrínseca donada per un tensor mètric $g_{ij}$. Volem trobar una immersió isomètrica d'aquesta varietat $M$ en algun espai euclidià.
 
 Suposem que tenim una immersió $f$ de $M$ en un espai euclidià $\mathbb R^k$, de manera que per un punt amb coordenades locals $\set{x^i}$ de $M$, les coordenades de la seva imatge en $\mathbb R^k$ són $\set{z^\alpha(x^1, \dots, x^n)}$,
 \begin{align*}
@@ -44,7 +44,7 @@ Aleshores, la mètrica induïda en $M$ és donada pel tensor mètric
 \end{equation*}
 El nostre objectiu és equivalent a aconseguir que $h_{ij}=g_{ij}.$
 
-Per tal de començar la demostració, el primer que necessitarem serà que la immersió original $f$ que sigui de classe $C^\infty$ i \textit{curta}.
+Per tal de començar la demostració, el primer que requerim és que la immersió original $f$ sigui de classe $C^\infty$ i \textit{curta}.
 \begin{defi}
     Diem que una immersió $f:M\to \mathbb R^k$ és \textbf{curta} si l'error mètric és definit positiu, on l'\textbf{error mètric} és el tensor diferència $\delta_{ij} = g_{ij} - h_{ij}$.
 \end{defi}
@@ -62,7 +62,7 @@ en la segona etapa, l'error mètric serà
 \end{equation*}
 on $\overline{h}_{ij}$ és la mètrica induïda per $f_1$. Aquest error mètric anirà disminuint geomètricament després de cada etapa, i en el límit obtindrem una immersió isomètrica.
 
-En cada etapa individual, el procés de pertorbació es divideix en passos. Cada pas afectarà només un cert entorn de $M$, però s'hauran de dur a terme l'un rere l'altre, no simultàniament. Per tal de fer-ho, cal prendre un recobriment localment finit de $M$ per conjunts compactes $\set{N_p}_p$. La construcció d'aquest recobriment és possible, com hem vist al lema \ref{lema:paracompact}. Sigui $\set{\varphi_p}_p$ una partició de la unitat subordinada a $\set{N_p}_p$. 
+En cada etapa individual, el procés de pertorbació es divideix en passos. Cada pas afectarà només un cert entorn de $M$, però els passos s'hauran de dur a terme l'un rere l'altre, no simultàniament. Per tal de fer-ho, cal prendre un recobriment localment finit de $M$ per conjunts compactes $\set{N_p}_p$. La construcció d'aquest recobriment és sempre possible, com hem vist al lema \ref{lema:paracompact}. Sigui $\set{\varphi_p}_p$ una partició de la unitat subordinada a $\set{N_p}_p$. 
 
 En cada entorn $N_p$, voldrem que l'error mètric $\delta_{ij}$ sigui reduït en $\frac12\varphi_p\delta_{ij}$ després d'una etapa. Per fer-ho, necessitem aproximar $\delta_{ij}$ per un tensor de classe $C^\infty$ i definit positiu $\beta_{ij}$. Per tal de fer servir aquest $\beta_{ij}$ per reduir l'error mètric, necessitem el següent resultat:
 \begin{lema}
@@ -222,8 +222,8 @@ A continuació ens interessa veure quines són les constants $\set{\lambda_\nu}$
     Sigui $N_p$ un entorn del recobriment de $M$, i considerem el pas $\nu$ d'una etapa donada.
 \end{defi}
 \begin{itemize}\label{def: B1 B2 B3}
-    \item \textit{Anomenem $B_1$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi mètric per $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right)$ en l'equació \eqref{eq:pertorbacio_cota}, per tots els parells $(i,j)$ i tots els punts de l'entorn $N_p$.}
-    \item \textit{Anomenem $B_2$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi de les primeres derivades en la desigualtat \eqref{eq:primera_derivada_cota}, per tots els punts de l'entorn $N_p$.}
+    \item \textit{Anomenem $B_1$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi mètric per $a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right)$ en l'equació \eqref{eq:pertorbacio_cota} per tots els parells $(i,j)$ i tots els punts de l'entorn $N_p$.}
+    \item \textit{Anomenem $B_2$ l'error d'ordre $O\left(\frac1{\lambda}\right)$ màxim permès en l'aproximació del canvi de les primeres derivades en la desigualtat \eqref{eq:primera_derivada_cota} per tots els punts de l'entorn $N_p$.}
     \item \textit{Anomenem $B_3$ la cota superior permesa del canvi $\overline{z}^\alpha - z^\alpha$ en $N_p$.}
 \end{itemize}
 \begin{obs}
