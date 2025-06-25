@@ -126,7 +126,7 @@ En cada entorn $N_p$, voldrem que l'error mètric $\delta_{ij}$ sigui reduït en
 \begin{obss}
     Cal remarcar que aquest lema només és cert si $\beta_{ij}$ és definit positiu, i que el nombre de termes del sumatori és finit. Escrivim la demostració a continuació perquè la descomposició és clau per la demostració dels teoremes, però és una mica tècnica i no és essencial per entendre l'argument de Nash.
 \end{obss}
-{\color{black}\textit{Prova}.
+{\color{black!50!green}\textit{Prova}.
 El conjunt de les matrius simètriques definides positives de rang $n$ és un con de dimensió $\frac12n(n+1)$. És possible cobrir aquest con amb conjunts simplicials oberts, de tal manera que cada punt del con estigui cobert per, com a molt, un nombre $W$ d'aquests entorns, on $W$ depèn només de $n$. 
 
 Una matriu qualsevol representada per un punt interior d'un símplex és combinació lineal de les matrius que representen els vèrtexs del símplex. Podem posar
@@ -183,7 +183,7 @@ Ara cal veure que el canvi mètric $\sum_\alpha\frac{\partial\overline{z}^\alpha
     \end{equation}
 \end{prop}
 
-{\color{black}\textit{Prova}. Desenvolupant les derivades parcials i cancel·lant els termes que apareixen en ambdós costats, tenim
+{\color{black!50!green}\textit{Prova}. Desenvolupant les derivades parcials i cancel·lant els termes que apareixen en ambdós costats, tenim
 \begin{align}\label{eq:pertorbacio_descomp}
     \nonumber\sum_\alpha\frac{\partial\overline{z}^\alpha}{\partial x^i}\frac{\partial\overline{z}^\alpha}{\partial x^j}-\sum_\alpha\frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}
     =
@@ -247,7 +247,7 @@ A continuació, volem veure quin és el canvi en les primeres derivades després
     on $K$ és una constant que depèn només de la dimensió $n$ de la varietat i les diferents $\lambda_\nu$ són els paràmetres de les pertorbacions.
 \end{prop}
 {
-\color{black}\textit{Prova}.
+\color{black!50!green}\textit{Prova}.
 Considerem l'element $i$ de la diagonal de les matrius de l'equació \eqref{eq:lema_descomp}:
 \begin{equation*}
     \frac12\varphi_p\beta_{ii} = \sum_\nu a_\nu\left(\frac{\partial\psi^\nu}{\partial x^i}\right)^2 = \sum_\nu \left(\sqrt{a_\nu}\left|\frac{\partial\psi^\nu}{\partial x^i}\right|\right)^2.
@@ -310,7 +310,7 @@ A continuació, volem assegurar que $\delta_{ij}'$ sigui definit positiu, i que 
     Aquest resultat confirma que el procés de correcció de la mètrica convergeix, de tal manera que la mètrica induïda per la successió d'immersions s'aproxima a la mètrica intrínseca $g_{ij}$.
     La convergència de la immersió com a tal es tractarà més endavant. 
 \end{obs}
-{\color{black} \textit{Prova.} 
+{\color{black!50!green} \textit{Prova.} 
 En $N_p$, sempre es pot trobar una constant real $\varepsilon_p>0$ tal que, si imposem 
 \begin{equation}\label{eq:epsilon_p}
     |e_{ij}|_{N_p} \le \varepsilon_p,
@@ -370,7 +370,7 @@ controlem els termes d'error d'ordre $O\left(\frac1{\lambda}\right)$ de l'equaci
     La sèrie formada per la successió $\set{2\sqrt{K\beta_{ii}}}_{\nu}$ convergeix per cada $i$ i uniformement en cada entorn $N_p$.
 \end{prop}
 {
-\color{black} \textit{Prova.} 
+\color{black!50!green} \textit{Prova.} 
 $K$ és una constant que només depèn de la dimensió $n$ de la varietat, de manera que només ens hem d'ocupar de $\beta_{ii}$.
 El tensor $\beta_{ij}$ aproxima l'error mètric $\delta_{ij}$, que es redueix per un factor $1/3$ o major després de cada etapa, com hem vist a la desigualtat \eqref{eq:delta_prima_cota}. Cal veure que $\beta_{ij}$ decreix de manera similar. Podem imposar que $\beta_{ij}$ sigui prou proper a $\delta_{ij}$ tal que 
 \begin{equation}
@@ -401,7 +401,7 @@ Ens haurem de fixar primer en què cada pas es pugui fer sense que el nou encabi
     En qualsevol pas d'una etapa i en qualsevol entorn $N_p$ de la frontera de l'encabiment, es pot escollir una $\lambda$ prou gran tal que el pas no produeixi interseccions de l'encabiment amb si mateix ni amb el conjunt límit.
 \end{prop}
 {
-\color{black} \textit{Prova.} 
+\color{black!50!green} \textit{Prova.} 
     Sigui $K$ un component compacte de l'encabiment que inclogui $N_p$ al seu interior. $K$, al seu torn, està inclòs en un entorn obert $H$ tan proper a $K$ tal que per qualsevol punt $P$ en $H$ no pot tenir dues perpendiculars a $K$ en $H$.
 
     Sigui $Q$ la unió de la frontera de l'encabiment i la part de l'encabiment que no està inclòs en $K$. Com $Q$ és un conjunt tancat, una pertorbació prou petita no pot intersecar $Q$. A més, com la pertorbació és normal a l'encabiment, estarà dins de $H$ i els punts de $K$ no es podran intersecar. Així doncs, el pas no produeix interseccions de l'encabiment amb si mateix ni amb el conjunt límit.\qed
@@ -413,7 +413,7 @@ Amb aquest resultat, obtenim per inducció que en qualsevol nombre finit de pass
     Es pot escollir una successió dels $B_3$ tal que el límit del procés sigui injectiu, és a dir, tal que la immersió resultant sigui un encabiment.
 \end{prop}
 {
-\color{black} \textit{Prova.} 
+\color{black!50!green} \textit{Prova.} 
     Considerem una enumeració dels $N_p$ qualsevol. Sigui $S_r$ el conjunt de tots els parells de punts dels primers $r$ entorns tals que estaven separats per una distància major que $2^{-r}$ en l'encabiment curt original. Qualsevol parell de punts pertany a $S_r$ per algun $r$. A partir de l'etapa $r$ requerirem que el $B_3$ de l'etapa $\mu\le r$ i el pas $\nu$ sigui més petit que $\varepsilon_r2^{-\mu-\nu}$, on $\varepsilon_r$ s'escull prou petit per assegurar que cap parell de punts pugui ajuntar-se al límit. D'aquesta manera, tots els parells de punts queden protegits en el límit, i la immersió resultant és un encabiment. \qed
 }
 

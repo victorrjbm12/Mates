@@ -1,0 +1,123 @@
+
+DIAPO 1 intro + resum
+Bon dia, soc el Víctor Rubio Jiménez i avui presentaré el meu treball de final de grau de matemàtiques. 
+El treball es titula \textbf{Encabiments isomètrics $C^1$ i $C^\infty$ en $\mathbb{R}^n$} i ha estat supervisat pel professor \textbf{Ignasi Mundet i Riera}.
+L'objectiu del treball és mostrar el guany en flexibilitat que suposa la regularitat $C^1$ en comparació amb la regularitat $C^\infty$ en la geometria diferencial, en concret en els problemes d'encabiments isomètrics.
+La presentació tindrà la següent estructura.
+Primer, donaré una introducció general als conceptes i resultats de geometria riemanniana que necessitem per a entendre el problema d'encabiments isomètrics.
+A continuació, introduiré la rigidesa $C^\infty$ mitjançant dos exemples en l'espai euclidià tridimensional: el tor pla i les cintes de Möbius. Veurem que els tors plans no es poden encabir de manera isomètrica $C^\infty$ en $\mathbb{R}^3$, i que hi ha una mida mínima per a les cintes de Möbius. Ara bé, veurem que podem "esquivar" la mida mínima de les cintes de Möbius si trenquem la regularitat $C^\infty$.
+Moguts per això, passarem a veure el teorema de Nash-Kuiper, que ens permet construir encabiments isomètrics $C^1$ per qualsevol varietat riemanniana en algun espai euclidià. 
+Finalment, veurem un exemple de construcció d'un encabiment isomètric $C^1$ d'un tor pla en $\mathbb{R}^3$.
+
+
+DIAPO 2
+El tipus d'objecte amb els que treballarem seran les varietats riemannianes. Les varietats riemannianes són varietats topològiques amb estructures diferenciables i mètriques riemannianes.
+Pel fet de ser varietats topològiques, són espais localment homeomorfs a un espai real de dimensió finita.
+Quan se'ls assigna una estructura diferenciable, es diu que són varietats diferenciables. Aleshores es poden definir els vectors tangents a la varietat i se'ls pot assignar una classe de regularitat $C^k$. Quan la seva classe de regularitat és $C^\infty$, diem que són varietats diferenciables suaus.
+Dotades d'una mètrica riemanniana, es poden mesurar distàncies i angles sobre la varietat, ja que la mètrica assigna a cada punt de la varietat un producte escalar dels vectors tangents en aquell punt.
+Aleshores, parlem de geometria INTRÍNSECA de la varietat riemanniana, ja que depèn només de la mètrica que li hem assignat.
+
+DIAPO 3
+Una aplicació $C^k$ entre dues varietats diferenciables és un encabiment si és injectiva, homeomorfisme sobre la seva imatge, i el seu diferencial és no-singular.
+Intuïtivament, un encabiment "fica" una varietat en una altra. 
+Si aquest altre espai té una mètrica riemanniana, la imatge de l'encabiment hereta una mètrica induïda per l'espai ambient. Això defineix una geometria EXTRÍNSECA de la varietat encabida, ja que no depèn de la seva pròpia mètrica sinó de la mètrica de l'espai ambient i de l'encabiment.
+Si l'encabiment preserva la mètrica, és a dir, si la mètrica intrínseca en tot punt coincideix amb la mètrica induïda en la imatge d'aquell punt, diem que l'encabiment és isomètric.
+
+DIAPO 4
+És aquí quan sorgeix la següent pregunta: 
+És sempre possible trobar un encabiment isomètric d'una varietat riemanniana en algun espai euclidià $R^N$?
+Pel teorema de Whitney, tota varietat diferenciable suau es pot encabir en $R^{2n+1}$, però això no garanteix que l'encabiment sigui isomètric.
+El que veurem en aquesta presentació és que, de fet, sempre és possible trobar un encabiment isomètric $C^1$ de qualsevol varietat riemanniana en algun espai euclidià $R^N$. A més, es pot fer en espais de dimensió sorprenentment baixa, ja que la regularitat $C^1$ és molt més flexible que la regularitat $C^\infty$.
+
+DIAPO 5
+Per il·lustrar la rigidesa de la regularitat $C^\infty$, veurem dos exemples en l'espai euclidià tridimensional: el tor pla i les cintes de Möbius.
+El tor és la varietat topològica que resulta d'identificar els costats oposats d'un rectangle sense invertir-los. En la imatge podem veure la identificació i un encabiment del tor en l'espai euclidià tridimensional.
+El tor pla és la varietat riemanniana que s'obté dotant el tor topològic de la mètrica euclidiana plana.
+
+DIAPO 6
+En efecte, considerem els següents dos teoremes clàssics de geometria de superfícies regulars.
+El teorema egregi de Gauss afirma que la curvatura de Gauss és una propietat intrínseca de les superfícies regulars encabides en R^3. En conret, si un encabiment és isomètric, la curvatura de la imatge ha de ser la mateixa que la de la varietat riemanniana original.
+A més, tenim un teorema que afirma que tota superfície regular compacta encabida suaument, és a dir C^infty en R^3 ha de tenir curvatura gaussiana positiva en algun punt.
+Com el tor és una varietat compacta de dimensió 2, qualsevol encabiment isomètric i suau del tor en R^3 ha de tenir curvatura gaussiana positiva en algun punt, però com el tor pla té curvatura gaussiana zero a tot arreu, aquest encabiment no pot ser isomètric.
+
+DIAPO 7
+Ara passem a un altre exemple: les cintes de Möbius planes rectangulars.
+Anomenem cinta de Möbius plana de raó d'aspecte \lambda la varietat topològica amb frontera que resulta d'identificar un rectangle euclidià de costats 1 i \lambda tal com es veu en la imatge. De nou, la podem tractar com a varietat riemanniana amb la mètrica heretada del rectangle. Parlem de cinta de Möbius de paper a la imatge d'una cinta de Möbius plana per un encabiment isomètric C^\infty en R^3.
+Aquesta és la imatge típica d'una cinta de Möbius encabida en R^3.
+
+DIAPO 8
+Doncs bé, recentment Richard Evan Schwartz va demostrar que qualsevol cinta de Möbius de paper encabida en R^3 té raó d'aspecte més gran que \sqrt{3}.
+Això és un altre teorema d'impossibilitat d'encabiments isomètrics, com el que hem vist abans pel tor pla.
+
+DIAPO 9
+Què uneix aquests dos exemples? En ambdós, l'obstacle principal és la curvatura de l'encabiment. En efecte, el fet que els encabiments isomètrics preserven la curvatura de gauss és el que impedeix l'encabiment isomètric C^\infty del tor pla. Per la cinta de Möbius, tot i que no ho hem vist, la demostració de Schwartz depèn del fet que tota cinta de Möbius de paper té una foliació per segments de recta, cosa que només es pot demostrar a través de certs arguments sobre la curvatura mitjana de la cinta de Möbius.
+
+DIAPO 10
+Ara bé, observem el següent "contraexemple" al teorema de Schwartz. Prenem un tros de paper quadrat. Això vol dir que la raó d'aspecte és 1,de manera que no hauria de ser possible encabir-la en R^3 de manera suau. Però podem fer el següent: un acordió de Möbius. Doblegant el paper cinc vegades, podem tancar-lo així i enganxar els dos costats i obtenir una cosa que com a mínim s'assembla molt a una cinta de Möbius. Com és que hem pogut fer això? Perquè en els punts on hem fet aquests plecs, la curvatura no està ben definida. En efecte, això és un encabiment C^\infty a trossos, però no és globalment C^\infty. 
+Això mostra que podem esquivar la rigidesa baixant la regularitat de l'encabiment. Ara bé, això que acabem de fer no és ni tan sols un encabiment C^1, ja que en aquests plecs tenim punts singulars. Podem aconseguir una cosa millor? Això és el que veurem a continuació.
+
+DIAPO 11
+Al 1956, Nash demostra el següent resultat:
+Qualsevol encabiment C^\infty curt, és a dir, que escurça les distàncies entre punts localment, d'una varietat n-dimensional en R^{n+k} amb k més gran o igual que 2, es pot aproximar per un encabiment isomètric C^1 arbitràriament proper. 
+A més, trobar encabiments isomètrics C^\infty curts és relativament fàcil, de manera que per qualsevol varietat riemanniana, podem trobar algun encabiment isomètric C^1 en algun espai euclidià.
+
+DIAPOS X (Idea de la demostració)
+A continuació explicaré la idea de la demostració del teorema de Nash d'encabiments isomètrics $C^1$.
+
+0) Organització general: Partirem de l'existència d'un encabiment $C^\infty$ curt, és a dir que escurça les distàncies localment. 
+El procés és iteratiu, dividint-se en etapes. Caldrà un nombre infinit d'etapes que es realitzen una rere l'altra, i tals que en cada etapa es pren l'encabiment obtingut en l'etapa anterior i es modifica perquè sigui menys curt. De fet, en cada etapa la diferència entre l'encabiment que obtenim i un encabiment isomètric es divideix aproximadament per 2.
+Cada una de les etapes, al seu torn, està dividida en passos. En cada un d'aquests passos s'afegirà una pertorbació en una regió de la varietat. En cada una d'aquestes regions caldrà realitzar un nombre finit de pertorbacions, però el nombre de regions no és necessariament finit, només numerable. Això és important perquè els passos es fan un rere l'altre, no tots alhora. 
+En tot moment hi ha certes aproximacions que inclouen errors, però es poden controlar escollint adequadament els paràmetres de les pertorbacions.
+Al final, veurem que obtenim un encabiment isomètric $C^1$ que és arbitràriament proper a l'encabiment inicial.
+
+
+1) El punt de partida: suposem que tenim un encabiment $f:M\to \mathbb{R}^N$ de classe $C^\infty$. La imatge de l'encabiment és una subvarietat de $\mathbb{R}^N$ de dimensió $n$. Diem que les seves coordenades són $z^\alpha = z^\alpha(x^1, \dots, x^n)$ per $x^i \in M$. Aleshores, la mètrica induïda en la imatge és $h_{ij} = \sum_{\alpha} \frac{\partial z^\alpha}{\partial x^i}\frac{\partial z^\alpha}{\partial x^j}$. 
+El que necessitem per demostrar el teorema és suposar que l'encabiment és curt, és a dir, que $g_{ij}(u,v) \ge h_{ij}(D_pf(u),D_pf(v))$ per a tot $u,v \in T_pM$.
+Obtenir un encabiment d'aquesta mena és sempre possible en algun espai euclidià de dimensió $2n$ o $2n+1$, depenent de si la varietat és oberta o no. Això es pot demostrar de manera fàcil amb el teorema de Whitney per varietats tancades, i per varietats obertes hi ha un mecanisme que no detallarem aquí.
+
+2) La partició: a continuació emprarem una eina de geometria diferencial anomenada partició de l'unitat. Aquesta eina ens permet dividir la varietat en entorns compactes $\{ N_p \}$ tals que cada un d'ells interseca amb com a molt un nombre finit d'altres entorns, i ens permet assignar a cada entorn una funció suau $\varphi_p: M \to \mathbb{R}_+$ que pren valors positius en $N_p$ i zero fora d'ell, de tal manera que $\sum_p \phi_p = 1$ en qualsevol punt de $M$. Aquesta col·lecció d'entorns compactes no és necessàriament finita, però és possible trobar-la numerable.
+
+3) L'error mètric: anomenem error mètric a la diferència $\delta_{ij} = g_{ij} - h_{ij}$, on $g$ és la mètrica de la varietat riemanniana original (és a dir, la que tindria un encabiment isomètric) i $h$ és la mètrica induïda en la imatge. És evident que obtenir un encabiment isomètric és equivalent a trobar un encabiment que anul·la l'error mètric. 
+Per fer-ho, primer notem que tot tensor $C^\infty$ definit positiu $\beta_{ij}$ sobre la varietat pot escriure de la forma
+\begin{equation}\label{eq:lema_descomp}
+    \frac12\varphi_p\beta_{ij} = \sum_\nu a_\nu \left(\frac{\partial\psi^\nu}{\partial x^i}\right)\left(\frac{\partial\psi^\nu}{\partial x^j}\right),
+\end{equation}
+on $a_\nu$ són funcions suaus no negatives i $\psi^\nu$ són un nombre finit de funcions lineals de les coordenades de la varietat riemanniana original.
+Prenem un tensor $\beta_{ij}$ que escrivim d'aquesta forma tal que aproximi l'error mètric $\delta_{ij}$. D'aquesta manera, el que estem aconseguint és separar l'error mètric en els diferents entorns compactes, i en cada un d'ells s'expressa com una suma finita.
+
+4) La pertorbació: amb l'aproximació de l'error mètric per un $\beta_{ij}$ de la forma anterior, definim una pertorbació de l'encabiment d'aquesta manera:
+\begin{equation*}
+    \overline{z}^\alpha = z^\alpha + \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu) + \eta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\sin(\lambda \psi^\nu)
+\end{equation*}
+on $\zeta$ i $\eta$ són dos camps vectorials normals a l'encabiment $\lambda$ és paràmetre que podem variar i recordem que $z^\alpha$ són les coordenades de l'encabiment inicial.
+La idea d'aquesta pertorbació és la següent: imaginem que tenim una certa corba i volem fer que la seva longitud d'arc augmenti, però que es mantingui a una distància molt petita de la corba original. (dibuixar a la pissarra). El que podem fer és deformar-la de tal manera que giri com una molla al voltant de la corba original. Si volem que sigui més propera encara, podem augmentar la freqüència de la molla. 
+Això és exactament el que fa aquesta pertorbació, amb $\lambda$ actuant com la freqüència de la molla. És per això que necessitem dues direccions normals a l'encabiment, de manera que la codimensió de l'espai ambient ha de ser com a mínim 2.
+
+5) L'efecte i el límit: un cop tenim la pertorbació definida d'aquesta manera, podem demostrar una sèrie de resultats:
+- La pertorbació canvia la mètrica en un entorn per aproximadament $a_\nu\frac{\partial\psi^\nu}{\partial x^i}\frac{\partial\psi^\nu}{\partial x^j}$.
+- El canvi en les primeres derivades després de realitzar totes les pertorbacions és aproximadament menor que $2\sqrt{K\beta_{ii}}$ on $K$ és una constant que només depèn de la dimensió de la varietat.
+A més, podem escollir adequadament les $\lambda$ de cada pertorbació de tal manera que controlem els errors de les aproximacions i la cota de la norma de la diferència entre l'encabiment inicial i l'encabiment final.
+Després d'infinites etapes, obtenim un encabiment isomètric $C^1$ que és arbitràriament proper a l'encabiment inicial.
+
+DIAPO 14
+Un any més tard, Kuiper va demostrar que es pot rebaixar la codimensió de l'espai ambient a 1. És a dir, la pertorbació ja no serà de la forma de molla que havíem vist abans, que necessita dues dimensions al voltant de l'encabiment, sinó una corrugació en una sola direcció.
+La pertorbació és la següent
+\begin{equation*}
+    \boxed{
+        \overline{z}^\beta = z^\beta - \left(\frac{\overline \alpha^2}{8\lambda}\right)h\sin\left(2\lambda x^1\right)\xi^\beta + \left(\frac{\overline\alpha}{\lambda}\right)\sin\left(\lambda x^1 - \left(\frac{\overline\alpha ^2}{8}\right)\sin\left(2\lambda x^1\right)\right)h\eta^\beta,
+        }
+\end{equation*}
+no entrarem en detalls però el que importa és que aquí només tenim un vector normal a l'encabiment, \eta, mentre \xi és un vector tangent.
+
+DIAPO 15
+Ara acabarem retornant al tor pla. Havíem vist abans que, degut a la curvatura, no es pot encabir de manera isomètrica C^\infty en R^3. Ara bé, gràcies al teorema de Nash-Kuiper, podem modificar un encabiment curt i C^\infty en R^3 del tor pla per tal d'obtenir un encabiment isomètric C^1. Tot i que la demostració de Nash és constructiva, el procés és complicat, de manera que això no s'havia aconseguit fins recentment. 
+Al 2013, Borrelli et al. van aconseguir prendre tècniques derivades del mètode de Nash-Kuiper per dibuixar amb ordinador un encabiment isomètric C^1 del tor pla en R^3. 
+Aquest és el resultat després de realitzar tres etapes del procés iteratiu. Com veiem, cada vegada les oscil·lacions són més petites i més ràpides. 
+
+DIAPO 16
+En aquest treball hem explorat el contrast fonamental entre la rigidesa de la regularitat $C^\infty$ i la flexibilitat de la regularitat $C^1$ en el problema dels encabiments isomètrics. 
+
+Hem vist que la regularitat $C^\infty$ imposa certes restriccions, com la impossibilitat d'encabir isomètricament el tor pla i la mida mínima de les cintes de Möbius. En canvi, la regularitat $C^1$ permet encabiments isomètrics en espais de dimensió relativament baixa, mitjançant corrugacions ràpidament oscil·lants que permeten incrementar progressivament la mètrica d'un encabiment suau. El guany en flexibilitat que suposa baixar la regularitat és immens, portant a una geometria més rica i contraintuïtiva que en el cas de la regularitat $C^\infty$.
+
+DIAPO 17
+Gràcies per la vostra atenció. 

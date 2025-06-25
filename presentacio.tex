@@ -1,0 +1,236 @@
+\documentclass{beamer}
+
+%------------------------------------------------------------
+% Paquets
+%------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+
+%------------------------------------------------------------
+% Tema i colors
+%------------------------------------------------------------
+\usetheme{Madrid}
+\usecolortheme{default}
+
+%------------------------------------------------------------
+% Informació del títol
+%------------------------------------------------------------
+\title[Encabiments Isomètrics $C^1$ i $C^\infty$]{Encabiments Isomètrics $C^1$ i $C^\infty$ en $\mathbb{R}^n$}
+\author{Víctor Rubio Jiménez}
+\institute{Facultat de Matemàtiques i Informàtica \\ Universitat de Barcelona}
+\date{Defensa del Treball Final de Grau - 27 de juny de 2025}
+\titlegraphic{\includegraphics[height=1.5cm]{matematiquesinformatica-pos-rgb.png}}
+
+%------------------------------------------------------------
+% Inici del document
+%------------------------------------------------------------
+\begin{document}
+
+% --- Diapositiva de Títol ---
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% --- Diapositiva d'Índex ---
+\begin{frame}
+  \frametitle{Índex de la presentació}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------
+\section{Introducció: El Problema dels Encabiments Isomètrics}
+%------------------------------------------------------------
+
+\begin{frame}
+  \frametitle{Varietats riemannianes}
+  \begin{itemize}
+    \item Una \textbf{varietat topològica de dimensió} $n$ és un espai topològic Hausdorff, 2-numerable i localment homeomorf a $\mathbb{R}^n$.
+    \item Una \textbf{carta coordenada} és un parell $(U, \varphi)$ on $U$ és un obert de $M$ i $\varphi: U \to \mathbb{R}^n$ és un homeomorfisme de $U$ amb la seva imatge.
+    \item Una \textbf{varietat diferenciable $C^k$} és una varietat topològica amb una estructura diferenciable, és a dir, un conjunt maximal de cartes coordenades $\{(U_\alpha, \varphi_\alpha)\}$ que recobreixen la varietat i tal que $\varphi_\alpha \circ \varphi_\beta^{-1}$ és $k$ vegades diferenciable per a tot $\alpha, \beta$ tals que $U_\alpha \cap U_\beta \neq \emptyset$.
+    \item Una \textbf{varietat riemanniana} és una varietat diferenciable amb una mètrica riemanniana, és a dir, una aplicació $g$ que assigna a cada punt $p \in M$ un producte intern $g_p: T_pM \times T_pM \to \mathbb{R}$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Encabiments de varietats diferenciables}
+    \begin{itemize}
+      \item Una \textbf{varietat topològica de dimensió} $n$ és un espai topològic Hausdorff, 2-numerable i localment homeomorf a $\mathbb{R}^n$.
+      \item Una \textbf{carta coordenada} és un parell $(U, \varphi)$ on $U$ és un obert de $M$ i $\varphi: U \to \mathbb{R}^n$ és un homeomorfisme de $U$ amb la seva imatge.
+      \item Una \textbf{varietat diferenciable $C^k$} és una varietat topològica amb una estructura diferenciable, és a dir, un conjunt maximal de cartes coordenades $\{(U_\alpha, \varphi_\alpha)\}$ que recobreixen la varietat i tal que $\varphi_\alpha \circ \varphi_\beta^{-1}$ és $k$ vegades diferenciable per a tot $\alpha, \beta$ tals que $U_\alpha \cap U_\beta \neq \emptyset$.
+      \item Una \textbf{varietat riemanniana} és una varietat diferenciable amb una mètrica riemanniana, és a dir, una aplicació $g$ que assigna a cada punt $p \in M$ un producte intern $g_p: T_pM \times T_pM \to \mathbb{R}$.
+    \end{itemize}
+  \end{frame}
+
+\begin{frame}
+  \frametitle{Què és un encabiment isomètric?}
+  
+  Una varietat riemanniana $(M, g)$ té una geometria \textbf{intrínseca}, definida per la seva mètrica $g$. 
+  
+  \vspace{1em}
+  
+  Si l'encabim en un espai euclidià $\mathbb{R}^n$ amb una aplicació $f: M \to \mathbb{R}^n$, la mètrica euclidiana indueix una geometria \textbf{extrínseca} sobre la imatge $f(M)$. 
+  
+  \vspace{1em}
+  
+  \begin{block}{Pregunta fonamental}
+    Quan podem trobar un encabiment $f$ tal que la geometria intrínseca i l'extrínseca coincideixin? És a dir, un \textbf{encabiment isomètric}. 
+  \end{block}
+  
+  \vspace{1em}
+  
+  La resposta depèn crucialment de la \textbf{regularitat} (suavitat) de l'aplicació $f$. 
+\end{frame}
+
+%------------------------------------------------------------
+\section{La Rigidesa dels Encabiments $C^\infty$}
+%------------------------------------------------------------
+
+\begin{frame}
+  \frametitle{La Rigidesa dels Encabiments $C^\infty$}
+  
+  Els encabiments suaus ($C^2$ o superior) són molt \textbf{rígids}. Les seves propietats geomètriques, com la curvatura, estan molt restringides. 
+  
+  \begin{block}{Teorema 1: El Tor Pla (Resultat clàssic)}
+    \textbf{No existeix} cap encabiment isomètric de classe $C^\infty$ (ni tan sols $C^2$) d'un tor pla en $\mathbb{R}^3$. 
+  \end{block}
+  
+  \begin{itemize}
+    \item \textbf{Motiu}: El \textit{Teorema Egregi} de Gauss afirma que la curvatura gaussiana és un invariant isomètric. 
+    \item Un tor pla té curvatura $K=0$ a tot arreu. 
+    \item Però, tota superfície compacta en $\mathbb{R}^3$ ha de tenir almenys un punt de curvatura positiva (un punt el·líptic). 
+  \end{itemize}
+  
+  Aquesta contradicció demostra la impossibilitat. 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Un altre exemple de rigidesa: La Cinta de Möbius}
+  
+  Fins i tot per a varietats que sí que es poden encabir, hi ha restriccions fortes.
+  
+  \begin{block}{Teorema 2: La Cinta de Möbius "de paper" (Schwartz, 2024)}
+    Una cinta de Möbius rectangular, per poder ser encabida isomètricament i de forma $C^\infty$ en $\mathbb{R}^3$, ha de tenir una raó d'aspecte $\lambda$ (llargada/amplada) estrictament més gran que $\sqrt{3}$. 
+    $$ \lambda > \sqrt{3} $$
+  \end{block}
+  
+  \begin{center}
+    %   \includegraphics[width=0.6\textwidth]{mobius_aspect.png} % Hauries de crear aquesta imatge a partir de la Figura 3.1 i 3.2
+  \end{center}
+  
+  Això demostra que la geometria intrínseca ($g$) imposa condicions molt restrictives sobre la forma extrínseca ($f(M)$) en el món $C^\infty$. 
+  
+\end{frame}
+
+
+%------------------------------------------------------------
+\section{La Flexibilitat dels Encabiments $C^1$}
+%------------------------------------------------------------
+
+\begin{frame}
+  \frametitle{La Flexibilitat dels Encabiments $C^1$}
+  
+  Què passa si relaxem la condició de regularitat de $C^\infty$ a $C^1$?
+  \begin{itemize}
+      \item La mètrica induïda continua estant ben definida.
+      \item Però la curvatura (que depèn de les segones derivades) \textbf{no ho està}. 
+  \end{itemize}
+
+  \vspace{1em}
+  
+  \begin{alertblock}{El Teorema de Nash-Kuiper (1954-55)}
+    Qualsevol encabiment $C^\infty$ \textbf{curt} d'una varietat riemanniana $n$-dimensional en $\mathbb{R}^{n+k}$ (amb $k \ge 1$) pot ser aproximat arbitràriament per un \textbf{encabiment isomètric de classe $C^1$}. 
+  \end{alertblock}
+  
+  Això implica que les restriccions de curvatura desapareixen i s'obre la porta a resultats sorprenents.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Com és possible? La idea de la demostració}
+  
+  La demostració de Nash és \textbf{constructiva i iterativa}. 
+  
+  \begin{enumerate}
+    \item \textbf{Punt de partida}: Un encabiment $C^\infty$ que "escurça" totes les distàncies (un encabiment curt). 
+    
+    \item \textbf{Procés iteratiu}: S'afegeixen pertorbacions a l'encabiment en cada etapa.
+    
+    \item \textbf{Les pertorbacions}: Són "arrugues" o "corrugacions" d'alta freqüència i baixa amplitud.  Aquestes corrugacions "estiren" la superfície el suficient per corregir el defecte isomètric.
+    
+    \item \textbf{Convergència}: El procés convergeix a una aplicació que és:
+    \begin{itemize}
+        \item \textbf{Isomètrica}: Les distàncies són les correctes.
+        \item \textbf{De classe $C^1$}: Les derivades primeres convergeixen.
+        \item \textbf{No $C^2$}: Les derivades segones (i per tant la curvatura) no convergeixen. 
+    \end{itemize}
+  \end{enumerate}
+  
+  Aquesta tècnica va donar lloc a la \textbf{integració convexa}. 
+\end{frame}
+
+%------------------------------------------------------------
+\section{Aplicació: El Tor Pla en $\mathbb{R}^3$}
+%------------------------------------------------------------
+
+\begin{frame}
+  \frametitle{El Retorn del Tor Pla}
+  
+  El teorema de Nash-Kuiper suggereix que la impossibilitat d'encabir el tor pla en $\mathbb{R}^3$ podria ser un artefacte de la rigidesa $C^\infty$.
+  
+  \vspace{1em}
+  
+  \begin{block}{Construcció $C^1$ (Borrelli et al., 2013)}
+    Utilitzant mètodes moderns d'integració convexa, es pot construir explícitament un \textbf{encabiment isomètric i de classe $C^1$} d'un tor pla en $\mathbb{R}^3$. 
+  \end{block}
+  
+  \begin{center}
+    % \includegraphics[width=0.8\textwidth]{torus_c1.png}
+    \tiny{Font: Borrelli et al. (2013). }
+  \end{center}
+  
+  Aquest objecte, tot i ser matemàticament un tor pla, té una estructura fractal i extremadament "arrugada", completament contraintuïtiva. 
+\end{frame}
+
+%------------------------------------------------------------
+\section{Conclusions}
+%------------------------------------------------------------
+
+\begin{frame}
+  \frametitle{Conclusions}
+  
+  El treball explora la dicotomia entre la rigidesa i la flexibilitat en els encabiments isomètrics.
+  
+  \begin{itemize}
+    \item \textbf{Regularitat $C^\infty \implies$ Rigidesa}: 
+    \begin{itemize}
+        \item Fortes restriccions geomètriques basades en la curvatura.
+        \item Impossibilitat d'encabir el tor pla en $\mathbb{R}^3$. 
+        \item Condicions geomètriques per a la cinta de Möbius ($\lambda > \sqrt{3}$). 
+    \end{itemize}
+    
+    \vspace{1em}
+    
+    \item \textbf{Regularitat $C^1 \implies$ Flexibilitat}: 
+    \begin{itemize}
+        \item Les restriccions de curvatura desapareixen.
+        \item Permet construccions "impossibles" i contraintuïtives, com l'encabiment $C^1$ del tor pla a $\mathbb{R}^3$. 
+        \item El teorema de Nash-Kuiper formalitza aquesta flexibilitat. 
+    \end{itemize}
+  \end{itemize}
+  
+  La pèrdua d'un grau de regularitat canvia radicalment el panorama geomètric.
+\end{frame}
+
+% --- Diapositiva Final ---
+\begin{frame}
+  \begin{center}
+    \Huge\bfseries
+    Gràcies per la vostra atenció.
+    \vspace{2em}
+    
+    Preguntes?
+  \end{center}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,268 @@
+\documentclass[aspectratio=169]{beamer}
+
+% --- PREÀMBUL ---
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{dirtytalk}
+\usepackage{tikz} % Per a diagrames
+\usepackage{hyperref} % Per a enllaços
+
+% --- DEFINICIONS DE TIKZ ---
+\usetikzlibrary{arrows.meta, positioning, decorations.markings}
+
+% --- TEMA I COLORS ---
+\usetheme{Copenhagen}
+\usecolortheme{whale}
+\setbeamertemplate{navigation symbols}{} % Amaga els símbols de navegació
+
+% --- INFORMACIÓ DEL TÍTOL ---
+\title[Encabiments Isomètrics $C^1$ i $C^\infty$]{Encabiments Isomètrics $C^{1}$ i $C^{\infty}$ en $\mathbb{R}^{n}$}
+\author{Víctor Rubio Jiménez}
+\institute{Facultat de Matemàtiques i Informàtica \\ Universitat de Barcelona}
+\date{Defensa de Treball Final de Grau \\ 9 de juny de 2025}
+
+% --- INICI DEL DOCUMENT ---
+\begin{document}
+
+% --- DIAPOSITIVA 1: TÍTOL ---
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% --- DIAPOSITIVA 2: MOTIVACIÓ ---
+\begin{frame}
+  \frametitle{Introducció: geometria intrínseca}
+  
+  \begin{itemize}
+    \item<1-> La geometria diferencial estudia les \textbf{varietats riemannianes}, varietats topològiques localment homeomorfes a $\mathbb{R}^n$, que tenen una estructura diferenciable i han estat dotades d'una mètrica riemanniana $g$.
+    \item<2-> L'estructura diferenciable permet definir els \textbf{vectors tangents} de la varietat, i assignar a la varietat una classe de regularitat $C^k$. Diem que la varietat és \textbf{suau} si és $C^\infty$.
+    \item<3-> La mètrica riemanniana $g$ assigna a cada punt $p$ de la varietat $M$ un producte intern $g_p: T_pM \times T_pM \to \mathbb{R}$, permetent mesurar distàncies i angles sobre la varietat, és a dir, definir una \textbf{geometria intrínseca}. 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Introducció: geometria extrínseca}
+  
+  \begin{itemize}
+    \item<1-> Una aplicació $C^k$ entre dues varietats diferenciables $f:M\to N$ és un \textbf{encabiment} (en anglès, \textit{embedding}) si és injectiva, un homeomorfisme sobre la seva imatge i el seu diferencial és no-singular.
+    \item<1-> Intuïtivament, un encabiment \say{fica} una varietat dins d'un altre espai.
+    \pause
+    \item<2-> Si aquest altre espai té una mètrica, la imatge de l'encabiment \say{hereta} una mètrica, la mètrica induïda per l'espai ambient. Això defineix una \textbf{geometria extrínseca} de la varietat, ja que depèn de l'encabiment i de l'espai ambient.
+    \pause
+    \item<2-> Un encabiment $f:M\to N$ és \textbf{isomètric} si la mètrica intrínseca de $M$ coincideix amb la mètrica de $f(M)$ induïda per la mètrica de $N$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{La pregunta pels encabiments isomètrics}
+    
+    \begin{itemize}
+      \begin{block}{Pregunta Central}
+        És sempre possible trobar un encabiment isomètric d'una varietat riemanniana en algun espai euclidià $\mathbb{R}^N$?
+      \end{block}
+      \pause
+      \item<2-> Pel \textbf{Teorema de Whitney (1936)}, tota varietat diferenciable suau es pot encabir en $\mathbb{R}^{2n+1}$, però no garanteix que l'encabiment sigui isomètric per a varietats riemannianes.
+      \item<3-> En aquesta defensa, veurem que les varietats i els encabiments de classe $C^1$ són menys rígids que els de classe $C^\infty$, permetent trobar encabiments isomètrics que no existirien altrament.
+    \end{itemize}
+\end{frame}
+
+% --- DIAPOSITIVA 4: RIGIDESA ---
+\begin{frame}
+    \frametitle{Rigidesa $C^\infty$: el tor pla en $\mathbb{R}^3$}
+      \begin{itemize}
+          \item<1->     Anomenem \textbf{tor} la varietat topològica $\mathbb T^2 = \mathbb R^2/\mathbb Z^2 = [0,1]\times[0,1]/\sim$, on $\sim$ és la relació d'equivalència tal que $(x,0)\sim(x,1)$ i $(0,y)\sim(1,y)$ per a tot $x,y\in[0,1]$. 
+          \item<1->Anomenem \textbf{tor pla} la varietat riemanniana $(\mathbb T^2, g)$ on $\mathbb T^2$ és el tor, i $g$ és la mètrica euclidiana.
+          \pause
+          \item<2-> IMATGE
+      \end{itemize}
+  \end{frame}
+\begin{frame}
+  \frametitle{Rigidesa $C^\infty$: el tor pla en $\mathbb{R}^3$}
+    \begin{itemize}
+        \begin{block}{Theorema Egregium (Gauss)}
+            La curvatura de Gauss és una propietat intrínseca de les superfícies regulars encabides en $\mathbb{R}^3$. Si un encabiment és isomètric, la curvatura de la imatge ha de ser la mateixa que la de la varietat original.
+        \end{block}
+        \begin{block}{Teorema}
+            Tota superfície regular compacta encabida suaument en $\mathbb{R}^3$ ha de tenir curvatura gaussiana positiva en algun punt.
+        \end{block}
+        \pause
+        \item<2-> El tor pla és una superfície regular compacta amb mètrica plana. Això implica que \textbf{no existeix cap encabiment isomètric $C^\infty$ del tor pla en $\mathbb{R}^3$}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Rigidesa $C^\infty$: les cintes de Möbius \say{de paper} en $\mathbb{R}^3$}
+      \begin{itemize}
+          \item<1->     Anomenem \textbf{cinta de Möbius plana de raó d'aspecte $\lambda$} la varietat topològica amb frontera obtinguda amb la identificació d'un rectangle de $\mathbb R^2$
+          $$M_\lambda := ([0,\lambda] \times [0,1])/\sim, \quad\quad (0,y)\sim(\lambda,1-y)$$
+          dotada de la mètrica euclidiana heretada del rectangle.
+          \pause
+          \item<2-> Una \textbf{cinta de Möbius de paper encabida de raó d'aspecte $\lambda$} és la imatge d'una cinta de Möbius plana de raó d'aspecte $\lambda$ per un encabiment isomètric $C^\infty$ en $\mathbb R^3$.
+          \item<3-> IMATGE
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Rigidesa $C^\infty$: les cintes de Möbius \say{de paper} en $\mathbb{R}^3$}
+      \begin{itemize}
+        \begin{block}{Teorema (Schartz, 2024)}
+            Qualsevol cinta de Möbius de paper encabida en $\mathbb R^3$ té raó d'aspecte $\lambda > \sqrt{3}$.
+        \end{block}
+          \item<1-> Aquest teorema demostra que no totes les cintes de Möbius planes es poden encabir isomètricament en $\mathbb R^3$.
+      \end{itemize}
+  \end{frame}
+% --- DIAPOSITIVA 5: EXEMPLES DE RIGIDESA ---
+\begin{frame}
+    \begin{alertblock}{L'obstacle principal}
+        En ambdós exemples, la curvatura ha estat un factor limitant en la construcció d'encabiments isomètrics.
+    \end{alertblock}
+  \frametitle{Rigidesa $C^\infty$: la curvatura}
+  
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \textbf{Cas 1: El tor pla}
+      \begin{itemize}
+        \item Tot tor encabit en $\mathbb R^3$ ha de tenir un punt amb curvatura de Gauss $K > 0$.
+        \item El tor pla té curvatura de Gauss $K = 0$ a tot arreu.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \textbf{Cas 2: La Cinta de Möbius}
+      \begin{itemize}
+        \item La demostració del teorema de Schartz (2024) depèn del fet que tot punt d'una cinta de Möbius de paper encabida en $\mathbb R^3$ té una foliació per plecs, cosa que depèn de la curvatura mitjana.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Esquivant la rigidesa}
+    
+    \begin{itemize}
+      \item<1-> Si relaxem la condició de suavitat a $C^1$, la curvatura (que està relacionada amb les segones derivades) deixa d'estar ben definida per a l'encabiment. 
+      \item<2-> \textbf{Acordió de Möbius:} si no requerim que l'encabiment sigui $C^\infty$, podem \say{encabir} isomètricament qualsevol cinta de Möbius plana en $\mathbb R^3$ amb la construcció següent.
+      \item<2-> IMATGE
+      \item<3-> Aquesta construcció no és $C^1$ als segments en què pleguem la cinta, només $C^0$. És possible obtenir encabiments isomètrics $C^1$?
+    \end{itemize}
+  \end{frame}
+
+% --- DIAPOSITIVA 6: NASH-KUIPER ---
+\begin{frame}
+  \frametitle{Flexibilitat $C^1$: el teorema de Nash-Kuiper}
+  
+  \begin{block}{Teorema (Nash 1954)}
+    Qualsevol encabiment $C^\infty$ \textbf{curt} (que escurça les distàncies) d'una varietat $n$-dimensional en $\mathbb{R}^{n+k}$ (amb $k \geq 2$) es pot aproximar arbitràriament per un encabiment \textbf{isomètric} de classe $C^1$. 
+  \end{block}
+  
+  \begin{itemize}
+    \item<1-> Aquest resultat és profundament anti-intuïtiu i demostra que la flexibilitat de les varietats $C^1$ és molt més gran que la de les varietats $C^\infty$. 
+    \item<2-> Juntament amb el teorema de Whitney, aquest resultat demostra que tota varietat diferenciable es pot encabir de manera isomètrica i $C^1$ en algun espai euclidià $\mathbb{R}^{N}$.
+  \end{itemize}
+\end{frame}
+
+% --- DIAPOSITIVA 7: COM FUNCIONA ---
+\begin{frame}
+  \frametitle{Flexibilitat $C^1$: el teorema de Nash-Kuiper}
+  
+  La demostració del teorema és un procés iteratiu i constructiu: 
+  
+  \begin{enumerate}
+    \item<1-> \textbf{Punt de partida:} Un encabiment inicial $C^\infty$ \emph{curt}, és a dir, tal que la mètrica induïda és més petita que la que volem. 
+    \pause
+    \item<2-> \textbf{La partició:} es divideix la varietat en entorns compactes $\{ N_p \}$ tals que cada un d'ells interseca amb com a molt un nombre finit d'altres entorns.
+    \pause
+    \item<3-> \textbf{La pertorbació:} A cada etapa del procés, cada entorn és modificat per una pertorbació de la forma
+    \begin{equation*}
+        \boxed{\overline{z}^\alpha = z^\alpha + \zeta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\cos(\lambda \psi^\nu) + \eta^\alpha\frac{\sqrt{a_\nu}}{\lambda}\sin(\lambda \psi^\nu)}
+    \end{equation*}
+    \pause
+    \item<4-> \textbf{L'efecte:} aquestes pertorbacions incrementen la mètrica induïda en la varietat, però sense allunyar-se gaire de l'encabiment inicial.
+    \pause
+    \item<5-> \textbf{El límit:} El procés convergeix a un objecte que ja no és $C^\infty$, sinó només $C^1$, però que és perfectament isomètric. 
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Flexibilitat $C^1$: el teorema de Nash-Kuiper}
+    
+    Kuiper va millorar el teorema de Nash, baixant la codimensió de l'espai euclidià en què es busca l'encabiment a $1$.
+    \begin{equation*}
+        \boxed{
+            \overline{z}^\beta = z^\beta - \left(\frac{\overline \alpha^2}{8\lambda}\right)h\sin\left(2\lambda x^1\right)\xi^\beta + \left(\frac{\overline\alpha}{\lambda}\right)\sin\left(\lambda x^1 - \left(\frac{\overline\alpha ^2}{8}\right)\sin\left(2\lambda x^1\right)\right)h\eta^\beta,
+            }
+    \end{equation*}
+    \begin{itemize}
+      \item<1-> Això permet trobar encabiments isomètrics $C^1$ de superfícies encabides en $\mathbb R^3$!
+    \end{itemize}
+  \end{frame}
+
+
+
+% --- DIAPOSITIVA 9: CAS PRÀCTIC 2 ---
+\begin{frame}
+  \frametitle{El tor pla $C^1$ en $\mathbb{R}^3$}
+  
+  \begin{itemize}
+    \item<1-> Recordem: l'encabiment $C^\infty$ era \textbf{impossible} degut a la curvatura. 
+    \pause
+    \item<2-> Aplicant tècniques d'integració convexa hereves del mètode de Nash, Borrelli et al. (2013) van construir un encabiment isomètric $C^1$ del tor pla en $\mathbb R^3$. 
+    \pause
+    \item<3-> La imatge resultant mostra corrugacions similars a les de la pertorbació de Kuiper.
+  \end{itemize}
+  
+  \centering
+  % Has de tenir una imatge anomenada 'torus_c1.png'
+%   \includegraphics[height=5cm]{torus_c1.png} \\
+  \tiny{Font: Borrelli et al. [4]}
+\end{frame}
+
+% --- DIAPOSITIVA 10: CONCLUSIONS ---
+\begin{frame}
+    \frametitle{Conclusions}
+    
+    Hi ha una dicotomia fonamental en la geometria isomètrica segons la regularitat exigida:
+    
+    \begin{columns}[T]
+      \begin{column}{0.5\textwidth}
+        \begin{alertblock}{Geometria $C^\infty$: RÍGIDA}
+          \begin{itemize}
+              \item Governat per invariants clàssics com la curvatura.
+              \item Teoremes forts d'existència i unicitat.
+              \item Impossible construir encabiments isomètrics de qualsevol superfície encabida en $\mathbb{R}^3$.
+          \end{itemize}
+        \end{alertblock}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{block}{Geometria $C^1$: FLEXIBLE}
+          \begin{itemize}
+              \item La curvatura no està ben definida.
+              \item Permet construir encabiments isomètrics de qualsevol superfície encabida en $\mathbb{R}^3$, mitjançant el teorema de Nash-Kuiper.
+          \end{itemize}
+        \end{block}
+      \end{column}
+    \end{columns}
+    
+    \vfill
+    
+    \begin{itemize}
+      \item Aquest treball ha explorat aquesta dualitat a través de la teoria (Nash-Kuiper) i exemples visuals i concrets (el tor pla i les cintes de Möbius).
+    \end{itemize}
+  \end{frame}
+
+% --- DIAPOSITIVA 11: GRÀCIES ---
+\begin{frame}
+  \frametitle{Gràcies}
+  
+  \vfill
+  \centering
+  \Huge
+  Moltes gràcies per la vostra atenció.
+  \vfill
+  \Large
+  Torn de preguntes.
+  
+\end{frame}
+
+\end{document}
